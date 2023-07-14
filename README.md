@@ -17,7 +17,7 @@ Check out:
 
 Use all our tools by logging in to [trunk.io](https://app.trunk.io/). Also, use Trunk Check via:
 
-- [Trunk CLI](check/cli.md)
+- [Trunk CLI](cli/overview.md)
 - [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
 - [GitHub Action](https://github.com/marketplace/actions/trunk-check)
 
