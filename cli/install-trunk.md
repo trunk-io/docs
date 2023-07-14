@@ -41,8 +41,8 @@ brew install trunk-io
 
 Trunk has a very minimal installation, and therefore there's not much to uninstall. The two system paths we use are:
 
-* `/usr/local/bin/trunk`: the <\<glossary:Trunk Launcher>>
-* `~/.cache/trunk`: cached versions of the trunk cli, linters, formatters, etc.
+- `/usr/local/bin/trunk`: the <\<glossary:Trunk Launcher>>
+- `~/.cache/trunk`: cached versions of the trunk cli, linters, formatters, etc.
 
 To cleanly uninstall:
 
@@ -70,11 +70,11 @@ https://trunk.io/releases/${version}/trunk-${version}-${platform}-x86_64.tar.gz
 
 Check out:
 
-* [Trunk Merge](doc:merge): a merge queue to make merging code in github safer and easier
-* [Trunk Check](doc:check): an extendable superlinter with a builtin language server and preexisting issue detection
-* [Trunk Actions](doc:actions): workflow automation for software engineers
+- [Trunk Merge](../merge): a merge queue to make merging code in github safer and easier
+- [Trunk Check](doc:check): an extendable superlinter with a builtin language server and preexisting issue detection
+- [Trunk Actions](doc:actions): workflow automation for software engineers
 
 As well as the other ways to use Trunk:
 
-* [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
-* [Web App (app.trunk.io)](https://app.trunk.io)
+- [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
+- [Web App (app.trunk.io)](https://app.trunk.io)
