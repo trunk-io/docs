@@ -94,9 +94,9 @@ In addition to specifying `version`, `cli` allows you to specify default command
 
 Some examples using the configuration above:
 
-* `trunk check` resolves to `trunk check -y --monitor=true`
-* `trunk check -n` resolves to `trunk check -n --monitor=true`
-* `trunk fmt` resolves to `trunk fmt -y --monitor=true`
+- `trunk check` resolves to `trunk check -y --monitor=true`
+- `trunk check -n` resolves to `trunk check -n --monitor=true`
+- `trunk fmt` resolves to `trunk fmt -y --monitor=true`
 
 ## `repo`
 
@@ -118,7 +118,7 @@ The above configuration is how you would specify that [https://github.com/github
 ```yaml
 api:
   # name of your trunk organization on app.trunk.io
-  org: {your-org-name}
+  org: { your-org-name }
 ```
 
 Some `trunk` features, like the CI Debugger, require knowledge of the trunk organization your repository is using. This information can be provided on the command-line or hard-coded in the `trunk.yaml` file.
@@ -149,31 +149,31 @@ runtimes:
 
 ## `lint`
 
-See the [check configuration](doc:check-config) and [custom linter](doc:custom-linters) documentation.
+See the [check configuration](../check/configuration.md)) and [custom linter](../check/custom-linters.md) documentation.
 
 ### `definitions`
 
-Documented in [custom linters](doc:custom-linters).
+Documented in [custom linters](../check/custom-linters.md).
 
 ### `enabled`
 
-Documented in [check configuration](doc:check-config#enable-linters).
+Documented in [check configuration](../check/configuration.md)#enable-linters).
 
 ### `disabled`
 
-Documented in [check configuration](doc:check-config#disable-linters).
+Documented in [check configuration](../check/configuration.md)#disable-linters).
 
 ### `ignore`
 
-Documented in [check configuration](doc:check-config#ignoring-files).
+Documented in [check configuration](../check/configuration.md)#ignoring-files).
 
 ### `threshold`
 
-Documented in [check configuration](doc:check-config#blocking-thresholds).
+Documented in [check configuration](../check/configuration.md)#blocking-thresholds).
 
 ### `triggers`
 
-Documented in [check configuration](doc:check-config#trigger-rules).
+Documented in [check configuration](../check/configuration.md)#trigger-rules).
 
 ## Overriding defaults
 

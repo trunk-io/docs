@@ -8,7 +8,7 @@ To use `trunk` locally, run:
 curl https://get.trunk.io -fsSL | bash
 ```
 
-For other installation options (`npm`, `brew`, direct download, etc) and details on exactly what we install or how to uninstall, see the [Install Trunk](doc:install) doc.
+For other installation options (`npm`, `brew`, direct download, etc) and details on exactly what we install or how to uninstall, see the [Install Trunk](../cli/install-trunk.md) doc.
 
 ### Step 2: Initialize `trunk`
 

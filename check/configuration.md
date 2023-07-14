@@ -1,6 +1,6 @@
 # Configuration
 
-The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of [`trunk.yaml`](doc:reference-trunk-yaml). Here's an example of what a fully-featured `lint` section looks like:
+The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of [`trunk.yaml`](../reference/trunk-yaml.md). Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -71,7 +71,7 @@ Check out our [configs](https://github.com/trunk-io/configs) repository for alwa
 
 If you'd like, trunk also supports migrating any linter configurations from the root of your repository into a `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run. Note that if you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.
 
-If you find that you want to tweak how trunk runs a given linter, you may want to consult the documentation on [overriding defaults](doc:reference-trunk-yaml#overriding-defaults) and [the various linter settings](doc:check-custom-linters); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
+If you find that you want to tweak how trunk runs a given linter, you may want to consult the documentation on [overriding defaults](../reference/trunk-yaml.md#overriding-defaults) and [the various linter settings](../check/custom-linters.md); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
 
 ```yaml
 lint:
@@ -101,7 +101,7 @@ lint:
     - hadolint@2.6.0
 ```
 
-Custom linters are slightly different; see [those docs](doc:check-custom-linters) to learn more.
+Custom linters are slightly different; see [those docs](../check/custom-linters.md) to learn more.
 
 > Note:You can also ask trunk to detect new linters and upgrade existing linters to their latest respective\
 > versions by running `trunk upgrade check`.
@@ -133,7 +133,7 @@ lint:
 
 #### Runtime versioning
 
-By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](doc:reference-trunk-yaml#runtimes).
+By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml.md#runtimes).
 
 ### Ignoring files
 
@@ -147,8 +147,9 @@ lint:
         # Ignore generated files
         - src/generated/**
         # Except for files ending in .foo
-        - !src/generated/**/*.foo
-        # Test data
+        - !src/generated/**/*.foo # Test data
+
+
         - test/test_data
 ```
 
@@ -163,7 +164,7 @@ Every entry in `ignore` defines both a set of linters and a set of paths to igno
 
 ### Blocking Thresholds
 
-All [issue severities](doc:check#issue-severity) are considered blocking by default. In cases where you might want to slowly try out a new linter, we provide a mechanism to set specific thresholds for each linter.
+All [issue severities](../check/overview.md#issue-severity) are considered blocking by default. In cases where you might want to slowly try out a new linter, we provide a mechanism to set specific thresholds for each linter.
 
 ```yaml
 lint:
