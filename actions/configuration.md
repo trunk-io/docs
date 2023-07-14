@@ -46,7 +46,7 @@ The command will implicitly run relative to your workspace, but you can also spe
 
 We sandbox action executions and allow you to control the runtime. You can do this by specifying a `runtime` and `packages_file`.
 
-You can specify one of our built-in runtimes (`node`, `python`, ...) or a system runtime that you define. See the [runtimes documentation](reference/trunk-yaml.md#runtimes)for more information.
+You can specify one of our built-in runtimes (`node`, `python`, ...) or a system runtime that you define. See the [runtimes documentation](../reference/trunk-yaml.md#runtimes)for more information.
 
 For the `python` and `node` runtimes, we additionally provide the ability to install a requirements file like `requirements.txt` or `package.json`.
 

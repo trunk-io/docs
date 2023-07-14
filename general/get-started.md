@@ -28,7 +28,7 @@ This will bring you into a flow to start getting results from [Trunk Check](../c
 trunk login
 ```
 
-To use [Trunk Merge](../merge/overview.md) and certain other Trunk features, you'll need an account on [trunk.io](https://app.trunk.io), but [Trunk Check](../check/overview.md) and [Trunk Actions](doc:actions) can be used entirely locally without depending on hosted services or having a Trunk account.
+To use [Trunk Merge](../merge/overview.md) and certain other Trunk features, you'll need an account on [trunk.io](https://app.trunk.io), but [Trunk Check](../check/overview.md) and [Trunk Actions](../actions/overview.md) can be used entirely locally without depending on hosted services or having a Trunk account.
 
 ### Help & Feedback
 

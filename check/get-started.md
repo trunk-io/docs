@@ -18,7 +18,7 @@ From the root of a git repo, run:
 trunk init
 ```
 
-This will bring you into a flow to start getting results from [Trunk Check](doc:check). For more details, see [here](doc:initialize-trunk-in-a-git-repo).
+This will bring you into a flow to start getting results from [Trunk Check](../check/overview.md). For more details, see [here](doc:initialize-trunk-in-a-git-repo).
 
 ### Step 3: Run `trunk check` against a sampling of files in your repo
 
