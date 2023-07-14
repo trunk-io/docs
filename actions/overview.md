@@ -8,7 +8,7 @@ description: Enabling and Writing your own Actions
 
 #### Triggers
 
-\[block:parameters] { "data": { "h-0": "trigger", "h-1": "description", "0-0": "time based", "0-1": "run on a schedule (once an hour, once per day, once per week)", "1-0": "file modification", "1-1": "run whenever a file or directory in your repo changes.", "2-0": "[githooks](doc:actions-git-hooks)", "2-1": "run whenever a listed githook event fires (e.g. pre-commit, on-push)", "3-0": "manual", "3-1": "run from the command line `trunk run <action-name>`" }, "cols": 2, "rows": 4 } \[/block]
+\[block:parameters] { "data": { "h-0": "trigger", "h-1": "description", "0-0": "time based", "0-1": "run on a schedule (once an hour, once per day, once per week)", "1-0": "file modification", "1-1": "run whenever a file or directory in your repo changes.", "2-0": "[githooks](../actions/git-hooks.md)", "2-1": "run whenever a listed githook event fires (e.g. pre-commit, on-push)", "3-0": "manual", "3-1": "run from the command line `trunk run <action-name>`" }, "cols": 2, "rows": 4 } \[/block]
 
 #### Command Line
 

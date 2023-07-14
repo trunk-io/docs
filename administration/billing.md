@@ -24,15 +24,15 @@ On Day 91, the user count would be two. We consider days 2 thru 91 (inclusive), 
 
 ### Calculating an Invoice
 
-At the end of every billing cycle, Trunk calculates what the next invoice should be. Trunk determines which products are billing eligible, then charges you for the number of users using that product. A product is billing eligible if you are already paying for that product, or if you have exceeded your [free tier usage limits](doc:billing#free-tier-limits) . See our section on [calculating user counts](doc:billing#calculating-user-counts) to determine how much we charge per product.
+At the end of every billing cycle, Trunk calculates what the next invoice should be. Trunk determines which products are billing eligible, then charges you for the number of users using that product. A product is billing eligible if you are already paying for that product, or if you have exceeded your [free tier usage limits](../administration/billing.md#free-plans-and-trials) . See our section on [calculating user counts](../administration/billing.md#calculating-user-counts) to determine how much we charge per product.
 
 For example, consider a team of 19 that owns many repositories. Assume that they are currently paying for Merge and Check, but are trying out CI Analytics.
 
 For the first billing cycle, their invoice would look something like this:
 
-![](https://files.readme.io/63bc876-Screen\_Shot\_2023-01-17\_at\_8.01.43\_PM.png)
+![](https://files.readme.io/63bc876-Screen_Shot_2023-01-17_at_8.01.43_PM.png)
 
-At the beginning of the next billing cycle, they have exceeded their [free tier usage](doc:billing#free-tier-limits) of CI Analytics. In that case, we would see three invoice line items; one for Merge, one for Check, and another for CI Analytics. The quantity per product would also be reflected with the [latest user counts](doc:billing#calculating-user-counts).
+At the beginning of the next billing cycle, they have exceeded their [free tier usage](../administration/billing.md#free-plans-and-trials) of CI Analytics. In that case, we would see three invoice line items; one for Merge, one for Check, and another for CI Analytics. The quantity per product would also be reflected with the [latest user counts](../administration/billing.md#calculating-user-counts).
 
 ### Free Plans and Trials
 
@@ -42,11 +42,11 @@ Trunk offers a free plan to experiment with each of our products. Each product h
 
 For example, this user is already paying for 19 users for Check and Merge, but was not paying for CI Analytics. On the next billing cycle, the user will start to be charged for CI Analytics.
 
-![](https://files.readme.io/f12daf8-Screen\_Shot\_2023-01-17\_at\_8.04.29\_PM.png)
+![](https://files.readme.io/f12daf8-Screen_Shot_2023-01-17_at_8.04.29_PM.png)
 
 **Free Tier Limits**
 
-Similar to [calculating user counts](doc:billing#calculating-user-counts), our free tier limits are calculated based on a 30 day rolling window.
+Similar to [calculating user counts]../administration/billing.md#calculating-user-counts), our free tier limits are calculated based on a 30 day rolling window.
 
 | Product      | Free Tier Limit         |
 | ------------ | ----------------------- |
@@ -64,11 +64,11 @@ Trunk offers you to trial products, either standalone or alongside a paying subs
 
 You can edit your payment details by navigating to Settings > Billing, and clicking on the pencil icon of the credit card. Trunk accepts both Credit Card and ACH; if you have a different preferred payment method, please contact us at sales@trunk.io
 
-![](https://files.readme.io/d7adf4f-Screen\_Shot\_2023-01-17\_at\_8.08.17\_PM.png)
+![](https://files.readme.io/d7adf4f-Screen_Shot_2023-01-17_at_8.08.17_PM.png)
 
 ### Cancelling a Plan
 
-You can cancel an active Trunk subscription by navigating to Settings > Billing and clicking the “Cancel Subscription” button. Your plan will transition back into the [free tier](doc:billing#free-plans); if you want to re-enable this plan, please contact us at sales@trunk.io.
+You can cancel an active Trunk subscription by navigating to Settings > Billing and clicking the “Cancel Subscription” button. Your plan will transition back into the [free tier](../administration/billing.md#free-plans-and-trials); if you want to re-enable this plan, please contact us at sales@trunk.io.
 
 > 🚧
 >
