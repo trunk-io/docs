@@ -28,4 +28,4 @@ Normally when you run `trunk check` we will only scan changed files, so in a rep
 trunk check --sample 5
 ```
 
-For more information on the sample flag see [here](doc:check-cli#--sample)
+For more information on the sample flag see [here](../check/command-line.md#sample)

@@ -2,7 +2,7 @@
 
 To create and share your own Trunk superpowers, you can publish a plugins repo: a Git repository which contains linter definitions that can be merged into your `.trunk/trunk.yaml`.
 
-> Note: Plugins are still in beta. Please [let us know](doc:community) what you think of them!
+> Note: Plugins are still in beta. Please [let us know](../general/community.md) what you think of them!
 
 ### Get started
 

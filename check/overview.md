@@ -4,10 +4,10 @@ Trunk Check manages, downloads, and runs dozens of linters, formatters, static a
 
 Use it via:
 
-* [Trunk CLI](doc:overview)
-* [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
-* [GitHub Action](https://github.com/marketplace/actions/trunk-check)
-* [Web App (app.trunk.io)](https://app.trunk.io)
+- [Trunk CLI](../cli/overview.md)
+- [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
+- [GitHub Action](https://github.com/marketplace/actions/trunk-check)
+- [Web App (app.trunk.io)](https://app.trunk.io)
 
 We currently support over 75 unique linters and we are adding new and updating old linters every sprint.
 
@@ -23,32 +23,34 @@ Formatting linters behave slightly differently under hold-the-line than other to
 
 #### A short story
 
-*   `src/adder.js`, which has 12 pre-existing issues, has a typo in a comment:
+- `src/adder.js`, which has 12 pre-existing issues, has a typo in a comment:
 
-    ```javascript
-    // Thsi method adds too numbers together
-    ```
-*   Engineer sees this typo and corrects it:
+  ```javascript
+  // Thsi method adds too numbers together
+  ```
 
-    ```javascript
-    // This method adds two numbers together
-    ```
-* Engineer pushes this super-simple, no-code-change Pull Request (PR)
-* PR is checked for formatting/lint issues on CI
+- Engineer sees this typo and corrects it:
+
+  ```javascript
+  // This method adds two numbers together
+  ```
+
+- Engineer pushes this super-simple, no-code-change Pull Request (PR)
+- PR is checked for formatting/lint issues on CI
 
 **Without `trunk`**
 
-* Engineer receives fail-mail and fail-slacks about their PR
-* Engineer wonders what in the world could've failed in a PR that fixes a typo in a comment
-* Engineer opens the failure notifications and starts going down the rabbit hole
-* 2 hours later, engineer finally understands how much work it would be to fix all the pre-existing issues
-* Engineer abandons PR
-* Not only has a good chunk of the day been blown, but now the engineer is significantly less inclined to ever do this in the future
+- Engineer receives fail-mail and fail-slacks about their PR
+- Engineer wonders what in the world could've failed in a PR that fixes a typo in a comment
+- Engineer opens the failure notifications and starts going down the rabbit hole
+- 2 hours later, engineer finally understands how much work it would be to fix all the pre-existing issues
+- Engineer abandons PR
+- Not only has a good chunk of the day been blown, but now the engineer is significantly less inclined to ever do this in the future
 
 **With `trunk`**
 
-* `trunk check` CI succeeds on their PR
-* Engineer merges their PR
+- `trunk check` CI succeeds on their PR
+- Engineer merges their PR
 
 ### Issue severity
 

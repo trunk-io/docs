@@ -32,4 +32,4 @@ To use [Trunk Merge](../merge/overview.md) and certain other Trunk features, you
 
 ### Help & Feedback
 
-Join the [Trunk Slack Community](https://slack.trunk.io) for help and to give feedback ([more info](doc:community)).
+Join the [Trunk Slack Community](https://slack.trunk.io) for help and to give feedback ([more info](../general/community.md)).

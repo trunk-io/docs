@@ -13,7 +13,7 @@ Trunk currently supports the following types of additional/proprietary linters:
 | [`arcanist`](broken-reference)  |             ✓             | Produces diagnostics as Arcanist JSON.                                                                                                   |
 | [`rewrite`](broken-reference)   |             ✓             | Writes the formatted version of a file to `stdout`.                                                                                      |
 
-If your linter produces a different output type, you can also write a [parser](doc:custom-parsers) to transform the linter's output into something trunk can understand.
+If your linter produces a different output type, you can also write a [parser](../check/custom-parsers.md) to transform the linter's output into something trunk can understand.
 
 To set up a custom linter, add it to `trunk.yaml` under `lint > definitions` and enable it:
 
@@ -46,17 +46,17 @@ Every custom linter must specify a name, the types of files it will run on, at l
 
 Running `trunk check` tells `trunk` to do the following:
 
-* compute the set of modified files (by comparing the current working tree and `upstream-ref`,\
+- compute the set of modified files (by comparing the current working tree and `upstream-ref`,\
   usually your `main` or `master` branch)
-* compute the set of lint actions to run based on the modified files
-  * each enabled linter is invoked once per applicable modified file ([details](broken-reference)); for\
+- compute the set of lint actions to run based on the modified files
+  - each enabled linter is invoked once per applicable modified file ([details](broken-reference)); for\
     example, if `pylint` and `flake8` are enabled, they will both be run on every modified `python`\
     file but not on any modified `markdown` files
-  * every lint action also will have a corresponding _upstream_ lint action, i.e. the linter will\
+  - every lint action also will have a corresponding _upstream_ lint action, i.e. the linter will\
     also be run on the upstream version of the file, so that we can determine which issues already\
     exist in your repository
-* execute uncached lint actions
-* determine which lint issues are new, existing, or fixed
+- execute uncached lint actions
+- determine which lint issues are new, existing, or fixed
 
 ### Linter Types
 
@@ -153,8 +153,8 @@ Running `trunk check` tells `trunk` to do the following:
 
 `output: pass_fail` linters find either:
 
-* no issues in a file, indicated by exiting with `exit_code=0`, or
-* a single file-level issue in a file, whose message is the linter's `stdout`, indicated by exiting\
+- no issues in a file, indicated by exiting with `exit_code=0`, or
+- a single file-level issue in a file, whose message is the linter's `stdout`, indicated by exiting\
   with `exit_code=1`.
 
 > Note: Exiting with `exit_code=1` but writing nothing to `stdout` is considered to be a linter tool failure.
@@ -167,12 +167,12 @@ Running `trunk check` tells `trunk` to do the following:
 
 `regex` supports capturing strings from a linter output for the following named capture groups:
 
-* `path`: file path (required)
-* `line`: line number
-* `col`: column number
-* `severity`: one of `allow`, `deny`, `disabled`, `error`, `info`, `warning`
-* `code`: linter diagnostic code
-* `message`: description
+- `path`: file path (required)
+- `line`: line number
+- `col`: column number
+- `severity`: one of `allow`, `deny`, `disabled`, `error`, `info`, `warning`
+- `code`: linter diagnostic code
+- `message`: description
 
 For example, the output
 
@@ -261,8 +261,8 @@ lint:
 
 This tells `trunk` that files matching either of the following criteria should be considered `python` files:
 
-* the extension is any of `.py`, `.py2`, or `.py3` (e.g. `lib.py`)
-* the shebang is any of `python` or `python3` (e.g. `#!/usr/bin/env python3`)
+- the extension is any of `.py`, `.py2`, or `.py3` (e.g. `lib.py`)
+- the shebang is any of `python` or `python3` (e.g. `#!/usr/bin/env python3`)
 
 #### Command
 
@@ -358,9 +358,9 @@ Linters often use different exit codes to categorize the outcome. For instance, 
 
 `trunk` supports specifying either `success_codes` or `error_codes` for a linter:
 
-* if `success_codes` are specified, `trunk` expects a successful linter invocation (which may or may\
+- if `success_codes` are specified, `trunk` expects a successful linter invocation (which may or may\
   not find issues) to return one of the specified `success_codes`;
-* if `error_codes` are specified, `trunk` expects a successful linter invocation to return any exit\
+- if `error_codes` are specified, `trunk` expects a successful linter invocation to return any exit\
   code which is _not_ one of the specified `error_codes`.
 
 `markdownlint`, for example, has `success_codes: [0, 1]` in its configuration.
@@ -442,17 +442,17 @@ lint:
 
 This tells `trunk` that, for `lorem-linter`:
 
-* you want to run version `4.0.2` on `javascript` and `typescript` files,
-* it is available for macOS and Linux at the specified URLs (expanded by replacing `${version}` with\
+- you want to run version `4.0.2` on `javascript` and `typescript` files,
+- it is available for macOS and Linux at the specified URLs (expanded by replacing `${version}` with\
   `4.0.2`), and
-* the download consists of a single executable binary, since `executable: true` is set;
+- the download consists of a single executable binary, since `executable: true` is set;
 
 for `ipsum-linter`:
 
-* you want to run version `0.1.6` on `rust` files,
-* it is available for macOS and Linux at the specified URLs (expanded by replacing `${version}` with\
+- you want to run version `0.1.6` on `rust` files,
+- it is available for macOS and Linux at the specified URLs (expanded by replacing `${version}` with\
   `0.1.6`), and
-* the download is a compressed archive, the linter binary is `strip_components: 2` directories deep\
+- the download is a compressed archive, the linter binary is `strip_components: 2` directories deep\
   inside the uncompressed archive, and `trunk` should automatically extract and unpack the linter\
   from the archive.
 
@@ -478,10 +478,10 @@ This will now create a hermetic directory in `~/.cache/trunk/linters/fizz-buzz` 
 
 Lint sessions are always associated with exactly one of the following session types:
 
-* `ci`: triggered by a `CI` run, i.e. `trunk check --ci` or when running inside the GitHub action,
-* `cli`: triggered by a human or script running `trunk check`,
-* `lsp`: triggered by VSCode, or
-* `monitor`: triggered by background linting.
+- `ci`: triggered by a `CI` run, i.e. `trunk check --ci` or when running inside the GitHub action,
+- `cli`: triggered by a human or script running `trunk check`,
+- `lsp`: triggered by VSCode, or
+- `monitor`: triggered by background linting.
 
 You can use `run_when` to specify which session types you want to run a linter in; for example, to always disable a linter during CI:
 
