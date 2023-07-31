@@ -4,13 +4,35 @@ description: Enabling and Writing your own Actions
 
 # Overview
 
-\*\*You can think of Trunk Actions as IFTTT for your repository. An action is a command that is run in reaction to a specified [trigger](../actions/overview.md#triggers) \*\*
+**You can think of Trunk Actions as IFTTT for your repository. An action is a command that is run in reaction to a specified** [**trigger**](overview.md#triggers)
 
 #### Triggers
 
-\[block:parameters] { "data": { "h-0": "trigger", "h-1": "description", "0-0": "time based", "0-1": "run on a schedule (once an hour, once per day, once per week)", "1-0": "file modification", "1-1": "run whenever a file or directory in your repo changes.", "2-0": "[githooks](../actions/git-hooks.md)", "2-1": "run whenever a listed githook event fires (e.g. pre-commit, on-push)", "3-0": "manual", "3-1": "run from the command line `trunk run <action-name>`" }, "cols": 2, "rows": 4 } \[/block]
 
-#### Command Line
+
+<table><thead><tr><th width="186">trigger</th><th>description</th></tr></thead><tbody><tr><td>time based</td><td>run on a schedule (once an hour, once per day, once per week)</td></tr><tr><td>file modification</td><td>run whenever a file or directory in your repo changes.</td></tr><tr><td><a href="git-hooks.md">githooks</a></td><td>run whenever a listed githook event fires (e.g. pre-commit, on-push)</td></tr><tr><td>manual</td><td>run from the command line trunk run</td></tr></tbody></table>
+
+Command Line\
+
+
+| list                    | list all available actions in the repository           |
+| ----------------------- | ------------------------------------------------------ |
+| history `<action-name>` | print the history for execution of the provided action |
+| enable `<action-name>`  | enable the provided action                             |
+| disable `<action-name>` | disable the provided action                            |
+| run `<action-name>`     | manually trigger the provided action                   |
+|                         |                                                        |
+
+#### Discovering Actions
+
+\
+\
+
+
+####
+
+\
+
 
 \[block:parameters] { "data": { "0-0": "list", "h-0": "trunk actions `<command>`", "h-1": "description", "0-1": "list all available actions in the repository", "1-0": "history `<action-name>`", "1-1": "print the history for execution of the provided action", "2-0": "enable `<action-name>`", "2-1": "enable the provided action", "3-0": "disable `<action-name>`", "3-1": "disable the provided action", "4-0": "run `<action-name>`", "4-1": "manually trigger the provided action" }, "cols": 2, "rows": 5 } \[/block]
 
