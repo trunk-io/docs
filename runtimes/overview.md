@@ -56,6 +56,3 @@ For most runtimes, this is as simple as executing the runtime's package manager 
 
 Once `prettier` is installed, we combine its runtime's `linter_environment` with any other environment variables that might be defined in a given `lint.definitions` entry (in this case there are none), and then use that as the environment when we execute the command for a given linter.
 
-## How did Trunk manage runtimes before there was a `runtimes` field in my `trunk.yaml`?
-
-Trunk used to automatically enable runtimes for you, based on whether or not you enabled a tool that depended on said runtime, and would infer a version for you. Inferring a version did, unfortunately, mean that users could be broken by changes in runtime version inference logic; this is why we instead now use your `trunk.yaml` file as the sole source of truth for runtime version management.
