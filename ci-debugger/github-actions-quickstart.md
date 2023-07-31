@@ -2,7 +2,9 @@
 
 ### Create a trunk organization
 
-To use the CI Debugger, you first need to create a trunk organization. See this document for detailed instructions. Note: You do not need to install the Trunk GitHub App to use the CI Debugger.
+To use the CI Debugger, you first need to create a trunk organization. See this [document](broken-reference) for detailed instructions. \
+\
+Note: You do not need to install the Trunk GitHub App to use the CI Debugger.
 
 ### Setup your Trunk CI Debugger API Token
 
