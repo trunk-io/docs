@@ -6,7 +6,7 @@ Trunk CI Debugger (beta invite required) is available at [app.trunk.io](https://
 
 Similar to any traditional debugger, the Trunk CI Debugger, operates on breakpoints configured through the trunk web app. Each breakpoint is tracked with a unique id and is configured through a set of conditional rules. For example, you can specify that breakpoint 'foo' always triggers when the exit code of its command is non-zero (or failing).
 
-\[block:embed] { "html": "\<iframe class="embedly-embed" src="//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FS\_l-h-qg3YA\&display\_name=YouTube\&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DS\_l-h-qg3YA\&key=7788cb384c9f4d5dbbdbeffd9fe4b92f\&type=text%2Fhtml\&schema=youtube" width="854" height="480" scrolling="no" title="YouTube embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true">", "url": "https://www.youtube.com/watch?v=S\_l-h-qg3YA", "favicon": "https://www.google.com/favicon.ico", "provider": "http://youtube.com", "href": "https://www.youtube.com/watch?v=S\_l-h-qg3YA", "typeOfEmbed": "youtube" } \[/block]
+{% embed url="https://youtube.com/watch?t=17s&v=S_l-h-qg3YA" %}
 
 ### How does it work?
 
@@ -14,15 +14,15 @@ At its most basic - the trunk ci debugger wraps the execution of whatever comman
 
 #### What happens a breakpoint is triggered?
 
-Upon triggering, the execution of your CI run will be paused and the system will attempt to notify someone that a breakpoint has been triggered. In practice when working with a pull request for example, this can be a Slack notification to the author of the PR, or a posting of a comment to the PR thread on GitHub.
+Upon triggering, the execution of your CI run will be paused and the system will attempt to notify someone that a breakpoint has been triggered. In practice, when working with a pull request for example, this can be a Slack notification to the author of the PR, or a posting of a comment to the PR thread on GitHub.
 
 The notification will include a link to connect to the debugging session and provides authenticated users with direct access to the machine that is being held.
 
 #### What can I do during a debug session?
 
-Anything! When connected over a debug session, you have live access to the terminal that is running your CI job; you are connecting to the live instance that is being used to run your job.
+Anything! When connected over a debug session, you have live access to the terminal running your CI job; you are connecting to the live instance being used to run your job.
 
-Besides running any normal shell command from the session, the debugger provides a set of command line tooling to further assist your debugging session.
+Besides running any normal shell command from the session, the debugger provides a set of command line tooling to assist your debugging session further.
 
 | command         | what does it do                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
