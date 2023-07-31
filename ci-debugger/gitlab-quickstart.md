@@ -15,7 +15,7 @@ You will need to have ports open for:
 
 <details>
 
-<summary>Create a trunk organization</summary>
+<summary>1 - Create a trunk organization</summary>
 
 
 
@@ -23,9 +23,7 @@ You will need to have ports open for:
 
 <details>
 
-<summary>Get your organization's API Token</summary>
-
-### Get your organization's API Token
+<summary>2 - Get your organization's API Token</summary>
 
 In the web app, click on your user avatar, then select settings
 
@@ -47,7 +45,7 @@ Copy or take note of your organization slug. It will be used in our example work
 
 <details>
 
-<summary>Create a breakpoint</summary>
+<summary>3 - Create a breakpoint</summary>
 
 In the CI DEBUGGER tab, click Add Breakpoint
 
@@ -63,7 +61,9 @@ Set the breakpoint condition. Here in this example, we set it to run on a non-ze
 
 </details>
 
-### Setup Your GitLab Workflow
+
+
+### 4 - Setup Your GitLab Workflow
 
 Here is an example workflow for the breakpoint. Replace the three values in the example with the ones specific to your setup.
 
