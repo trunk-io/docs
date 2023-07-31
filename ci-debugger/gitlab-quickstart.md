@@ -1,6 +1,6 @@
 # GitLab Quickstart
 
-### Precondition
+### Requirements
 
 Your CI machine needs to have the following tools installed:
 
@@ -10,8 +10,9 @@ Your CI machine needs to have the following tools installed:
 You will need to have ports open for:
 
 * api.trunk.io:443
-* api.trunk.io:8443\
+* api.trunk.io:8443
 
+### Preconditions
 
 <details>
 
@@ -61,9 +62,7 @@ Set the breakpoint condition. Here in this example, we set it to run on a non-ze
 
 </details>
 
-
-
-### 4 - Setup Your GitLab Workflow
+### Setup Your GitLab Workflow
 
 Here is an example workflow for the breakpoint. Replace the three values in the example with the ones specific to your setup.
 
