@@ -24,11 +24,11 @@ In the web app, click on your user avatar, then select settings
 
 In the settings menu, if you are an admin of your organization, you should be able to view your Token. If upon clicking "view" the token is still empty, click reset to populate one.
 
-\[block:image] { "images": \[ { "image": \[ "https://files.readme.io/3b7e9d5-Settings.png", null, "" ], "align": "center" } ] } \[/block]
-
 Copy or take note of the API token. It will be used in our example workflow in the entry marked by a \[1]
 
-\[block:image] { "images": \[ { "image": \[ "https://files.readme.io/4abbf6f-API-Key.png", null, "" ], "align": "center" } ] } \[/block]
+
+
+[https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F61Ep9MrYBkJa0Yq3zS1s%2Fuploads%2F392GQh7h7F4ezhvoS2gZ%2Fimage.png?alt=media\&token=817d5c69-441d-4a29-9618-aa18c0e9b461](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F61Ep9MrYBkJa0Yq3zS1s%2Fuploads%2F392GQh7h7F4ezhvoS2gZ%2Fimage.png?alt=media\&token=817d5c69-441d-4a29-9618-aa18c0e9b461)
 
 Copy or take note of you organization slug. It will be used in our example workflow in entry marked by a \[2]
 
