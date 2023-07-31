@@ -15,23 +15,13 @@ plugins:
       import_to_global: true
 ```
 
-| field                              | description                                                                                                                                   |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                                 | unique identifier for this repository                                                                                                         |
-| uri                                | address used to clone the target repository                                                                                                   |
-| ref                                | commit id or tag to checkout                                                                                                                  |
-| local                              | path to local (on-disk) repository                                                                                                            |
-| import\_to\_global (default: true) | import content into the global namespace. If set to false actions and linters defined in the plugin must be referenced by {plugin\_id}.{name} |
+<table><thead><tr><th width="174">field</th><th>description</th></tr></thead><tbody><tr><td>id</td><td>unique identifier for this repository</td></tr><tr><td>uri</td><td>address used to clone the target repository</td></tr><tr><td>ref</td><td>commit id or tag to checkout</td></tr><tr><td>local</td><td>path to local (on-disk) repository</td></tr><tr><td>import_to_global (default: true)</td><td>import content into the global namespace. If set to false actions and linters defined in the plugin must be referenced by {plugin_id}.{name}</td></tr></tbody></table>
 
 #### Custom linters and actions
 
 The root of a plugin repository can have any number of `plugin.yaml` files where linters and actions are defined. The `plugin.yaml` files look a lot like a standard `trunk.yaml` file with the addition of a special field `required_trunk_version` at the root level `plugin.yaml`, which indicates the minimum trunk version required to use that repo. All configuration is then merged into one composite plugin configuration.
 
 Beyond the `required_trunk_version` the definition of an action or linter is no different in a plugin repository.
-
-\[block:tutorial-tile] { "backgroundColor": "#118cfd", "emoji": "🕹️", "id": "63c7408c98071300a4fd3236", "link": "https://docs.trunk.io/v0.17.0-beta/recipes/define-a-new-action", "slug": "define-a-new-action", "title": "Define a new action" } \[/block]
-
-\[block:tutorial-tile] { "backgroundColor": "#fecb3e", "emoji": "🚀", "id": "63c7408c98071300a4fd3237", "link": "https://docs.trunk.io/v0.17.0-beta/recipes/define-a-new-linter", "slug": "define-a-new-linter", "title": "Define a new linter" } \[/block]
 
 #### Add a plugin to your `trunk.yaml` file
 
