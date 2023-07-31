@@ -1,3 +1,7 @@
+---
+description: enabling and writing your own actions
+---
+
 # Configuration
 
 Actions are defined and enabled in the `actions` section of [`trunk.yaml`](../reference/trunk-yaml.md).
@@ -126,7 +130,7 @@ Note: We only provide file triggers for files inside of your workspace.
 
 #### Git hooks
 
-You can also configure trunk to manage your git hooks. More detail is provided on this in our [git hooks reference](../actions/git-hooks.md).
+You can also configure trunk to manage your git hooks. More detail is provided on this in our [git hooks reference](git-hooks.md).
 
 ### Interactivity
 
