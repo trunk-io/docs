@@ -7,12 +7,12 @@ This setup guide will walk you through the initial setup for Trunk Merge.
 3.  Select the repository you would like to use and click Get Started. \
 
 
-    <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 4. Navigate to Merge using the navigation pane on the left side of the screen.
 5.  Enter the name of the target branch and the number of pull requests that can be tested in parallel.\
 
 
-    <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 
 6.  Merge uses [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) to determine whether a pull request can be merged. Configure these checks by adding them to the `trunk.yaml` configuration file in your repository:\
@@ -38,7 +38,7 @@ This setup guide will walk you through the initial setup for Trunk Merge.
 {% tab title="GitHub Pull Request View" %}
 Comment `/trunk merge` on a pull request
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Trunk CLI" %}
