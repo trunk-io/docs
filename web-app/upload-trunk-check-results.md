@@ -1,10 +1,14 @@
 # Upload Trunk Check Results
 
-Trunk Check has the ability to post its results to app.trunk.io. This will enable you to view your repository's Check history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix. The upload feature of Trunk Check will upload all of the issues found by Trunk to the Trunk services. In order to get an accurate picture of the state of your repository, you'll want to upload all of the Trunk Check issues for your whole repository. In order to keep the data up-to-date, you should upload Trunk Check results regularly in an automated fashion. Depending on the size of your repository and the linters you have configured to run, running Trunk Check on your whole repository may take a while. Because this run may take a while, we recommend uploading Trunk Check results once daily. However, the system supports uploading results for every commit, so the granularity of upload is up to you.
+Trunk Check has the ability to post its results to app.trunk.io. This will enable you to view your repository's Check history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix. The upload feature of Trunk Check will upload all of the issues found by Trunk to the Trunk services. In order to get an accurate picture of the state of your repository, you'll want to upload all of the Trunk Check issues for your whole repository.&#x20;
+
+In order to keep the data up-to-date, you should upload Trunk Check results regularly in an automated fashion. Depending on the size of your repository and the linters you have configured to run, running Trunk Check on your whole repository may take a while. Because this run may take a while, we recommend uploading Trunk Check results once daily. However, the system supports uploading results for every commit, so the granularity of upload is up to you.
 
 ### Running `trunk check --upload`
 
-\[block:callout] { "type": "warning", "body": "Before running `trunk check --upload` you must have [connected your Github repository to your Trunk account](docs:webapp)." } \[/block]
+{% hint style="info" %}
+Before running `trunk check --upload` you must have [connected your Github repository to your Trunk account](broken-reference).
+{% endhint %}
 
 #### CI Setup for nightly uploads
 
@@ -21,8 +25,6 @@ Example nightly workflow to upload results: [`nightly.yaml`](https://github.com/
    1. `--token`: The Trunk API token for this repository. You can find this by navigating to Settings → Repositories → {your repository} and clicking "View Api Token".
    2. `--series`: This is the name of the time-series this upload run is a part of. We recommend using the name of the branch you are running `trunk check` on. For example, we run `trunk check --upload` regularly on our `main` branch, so we use `--series main`. You may instead prefer to track specific releases or tags, or create an experimental series. The series name does not need to match any git object, it is available as a way to organize your upload data. If you're unsure of what to use for `--series`, just use the name of your main branch (typically `main` or `master`)
 
-> Info: Sample Command
-
 ```bash
 trunk check --all --upload --series main --token REDACTED
 ```
@@ -35,8 +37,6 @@ Normally we infer repo information from the `origin` remote, however if you don'
    1. `host`: Where your repository is hosted. Currently only Github is supported, so this value should be `github.com`,
    2. `owner`: The Github Owner of the repository, typically the first path section of your repository URL. For example, if we were connecting with [https://github.com/google/googletest](https://github.com/google/googletest), the `owner` would be `google`.
    3. `name`: The name of the repository. Continuing with our example above, the `name` would be `googletest`.
-
-> Info: Sample Configuration
 
 This is what the `repo` section of your config would look like if your repository was hosted at [https://github.com/google/googletest](https://github.com/google/googletest)
 
