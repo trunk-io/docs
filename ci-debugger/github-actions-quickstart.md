@@ -4,25 +4,11 @@
 
 To use the CI Debugger, you first need to create a trunk organization. See this document for detailed instructions. Note: You do not need to install the Trunk GitHub App to use the CI Debugger.
 
-### Setup your Trunk Repo Token in GitHub Actions
+### Setup your Trunk CI Debugger API Token
 
 In order for the CI Debugger to communicate with the trunk web app it needs to be able to authenticate from the GitHub Action instance to the trunk web application. Follow these instructions to setup a secret inside your repository:
 
-\[block:embed] { "html": false, "url": "https://scribehow.com/embed/Setup\_Trunk\_Repository\_API\_Token\_\_mY0ukXczRquh0Qe3S7aQ5g?skipIntro=true\&removeLogo=true", "provider": "scribehow.com", "href": "https://scribehow.com/embed/Setup\_Trunk\_Repository\_API\_Token\_\_mY0ukXczRquh0Qe3S7aQ5g?skipIntro=true\&removeLogo=true", "typeOfEmbed": "iframe", "height": "600px", "width": "100%", "iframe": true } \[/block]
-
-
-
-
-
-{% tabs %}
-{% tab title="First Tab" %}
-
-{% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
-{% endtabs %}
+{% embed url="https://scribehow.com/embed/Setup_Trunk_CI_Debugger_API_Token__mY0ukXczRquh0Qe3S7aQ5g?removeLogo=true&skipIntro=true" %}
 
 ### Wrap one of your GitHub steps in a `trunk breakpoint`
 
@@ -55,4 +41,4 @@ jobs:
 
 Finally we setup this breakpoint in the trunk web app. And create rules that will trigger a breakpoint when the command fails:
 
-\[block:embed] { "html": false, "url": "https://scribehow.com/embed/How\_to\_define\_a\_breaking\_in\_Trunks\_CI\_Debugger\_\_tybjplT2SwKLsUvOUyqtWw?skipIntro=true\&removeLogo=true", "provider": "scribehow.com", "href": "https://scribehow.com/embed/How\_to\_define\_a\_breaking\_in\_Trunks\_CI\_Debugger\_\_tybjplT2SwKLsUvOUyqtWw?skipIntro=true\&removeLogo=true", "typeOfEmbed": "iframe", "height": "600px", "width": "100%", "iframe": true } \[/block]
+{% embed url="https://scribehow.com/embed/How_to_define_a_breaking_in_Trunks_CI_Debugger__tybjplT2SwKLsUvOUyqtWw?removeLogo=true&skipIntro=true" %}
