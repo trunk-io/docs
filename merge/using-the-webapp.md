@@ -7,13 +7,13 @@ The Trunk web app has a UI for inspecting the status of pull requests or your qu
 The queue overview shows you which pull requests are currently in flight. \
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 In this view, you can see all the pull requests currently being tested, along with their progress. Merge waits for all [required status checks](https://docs.trunk.io/docs/reference#required-status-checks) to pass before merging a pull request. You can also see any pull requests that have not begun to merge, along with which statuses they are waiting on.
 
 ## Failures View
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Pull requests that fail to merge, or are canceled, do not show in the Queue Overview. Instead, they are viewable by clicking the Failures tab.
 
