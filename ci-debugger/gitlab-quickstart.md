@@ -10,45 +10,62 @@ Your CI machine needs to have the following tools installed:
 You will need to have ports open for:
 
 * api.trunk.io:443
-* api.trunk.io:8443
+* api.trunk.io:8443\
 
-### Create a trunk organization
 
-To use the CI Debugger, you first need to create a trunk organization. See this [document](broken-reference) for detailed instructions.
+<details>
+
+<summary>Create a trunk organization</summary>
+
+
+
+</details>
+
+<details>
+
+<summary>Get your organization's API Token</summary>
 
 ### Get your organization's API Token
 
 In the web app, click on your user avatar, then select settings
 
-![Open settings in the top-right corner](https://files.readme.io/8c5f295-image.png)
+<img src="https://files.readme.io/8c5f295-image.png" alt="Open settings in the top-right corner" data-size="original">
 
 In the settings menu, (if you are an admin of your organization), you should be able to view your Token. If upon clicking "view" the token is still empty, click reset to populate one.
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<img src="../.gitbook/assets/image (10).png" alt="" data-size="original">
 
 Copy or take note of the API token. It will be used in our example workflow in the entry marked by a \[1]
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<img src="../.gitbook/assets/image (11).png" alt="" data-size="original">
 
 Copy or take note of your organization slug. It will be used in our example workflow in entry marked by a \[2]
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<img src="../.gitbook/assets/image (12).png" alt="" data-size="original">
 
-### Create A Breakpoint
+</details>
+
+<details>
+
+<summary>Create a breakpoint</summary>
 
 In the CI DEBUGGER tab, click Add Breakpoint
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<img src="../.gitbook/assets/image (13).png" alt="" data-size="original">
 
 Give it a name, it will be referred in our example as \[3]
 
 Set the breakpoint condition. Here in this example, we set it to run on a non-zero exit code.
 
-![](https://files.readme.io/980a194-image.png)
+<img src="https://files.readme.io/980a194-image.png" alt="" data-size="original">
 
 ### Setup Your Workflow
 
-Here is an example workflow for the breakpoint. Replace the three values in the example to the ones specific to your setup.
+</details>
+
+### Setup Your GitLab Workflow
+
+Here is an example workflow for the breakpoint. Replace the three values in the example with the ones specific to your setup.
 
 Here the TRUNK\_TOKEN is pasted directly. In a real environment, it should be managed as a secret.
 
