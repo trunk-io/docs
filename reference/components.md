@@ -2,7 +2,7 @@
 
 ### Trunk Binary
 
-The trunk binary is a native executable that contains all the client-side code required to run `trunk check`, `trunk actions`, local `trunk merge` commands.
+The trunk binary is a native executable that contains all the client-side code required to run `trunk check`, `trunk actions`, and local `trunk merge` commands.
 
 ### Trunk Launcher
 

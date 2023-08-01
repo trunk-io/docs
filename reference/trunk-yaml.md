@@ -151,7 +151,17 @@ runtimes:
 
 See the [check configuration](../check/configuration.md) and [custom linter](../check/custom-linters.md) documentation.
 
-## Overriding defaults
+### Disable upgrade notifications
+
+Trunk will periodically tell you to upgrade to a newer version if one is available. If you prefer not to see these notifications, edit (or add) the section of your `.trunk/trunk.yaml` to include the following lines:
+
+```yaml
+actions:
+  disabled:
+    - trunk-upgrade-available
+```
+
+### Overriding defaults
 
 `trunk` ships with a default configuration which `trunk.yaml` is merged into to produce the actual configuration that `trunk` runs with. You can view this merged configuration using `trunk print-config`.
 
@@ -235,3 +245,4 @@ Notes:
 4. It is not possible to set sequences of non-zero length to zero length. For example, if the\
    default config has `success_codes: [0]`, you may override this to `success_codes: [0, 1]`, but you cannot clear its value.
 5. Merged configurations are subject to the same validation that custom linters are - they must all have a name, type, command, and either `success_codes` or `error_codes` set.
+
