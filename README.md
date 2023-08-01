@@ -1,6 +1,6 @@
 ---
 cover: .gitbook/assets/diamond_multi_large.png
-coverY: 0
+coverY: -254.65194996320827
 ---
 
 # What is Trunk?
