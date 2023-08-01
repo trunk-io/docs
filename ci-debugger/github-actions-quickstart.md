@@ -1,12 +1,20 @@
 # GitHub Actions Quickstart
 
+### Requirements
+
+Your CI machine needs to have the following tools installed:
+
+* Bash,&#x20;
+* Curl
+
+You will need to have ports open for:
+
+* api.trunk.io:443
+* api.trunk.io:8443
+
 ### Create a trunk organization
 
 To use the CI Debugger, you must first create a trunk organization. See this [document](broken-reference) for detailed instructions.&#x20;
-
-{% hint style="info" %}
-You do not need to install the Trunk GitHub App to use the CI Debugger.
-{% endhint %}
 
 ### Setup your Organization API Token
 

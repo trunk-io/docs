@@ -71,10 +71,10 @@
 
 * [Overview](ci-debugger/overview.md)
 * [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)
-* [GitLab Quickstart](ci-debugger/gitlab-quickstart.md)
-* [Jenkins Quickstart](ci-debugger/jenkins-quickstart.md)
-* [Buildkite Quickstart](ci-debugger/buildkite-quickstart.md)
-* [Command Line](ci-debugger/command-line.md)
+* [GitLab Quickstart](ci-debugger/github-actions-quickstart-1.md)
+* [Jenkins Quickstart](ci-debugger/github-actions-quickstart-2.md)
+* [Buildkite Quickstart](ci-debugger/github-actions-quickstart-3.md)
+* [Command Line Example](ci-debugger/github-actions-quickstart-4.md)
 * [FAQ](ci-debugger/faq.md)
 
 ## Reference
