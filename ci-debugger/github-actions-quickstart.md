@@ -1,34 +1,16 @@
 # GitHub Actions Quickstart
 
-### Requirements
-
-Your CI machine needs to have the following tools installed:
-
-* Bash,&#x20;
-* Curl
-
-You will need to have ports open for:
-
-* api.trunk.io:443
-* api.trunk.io:8443
-
 ### Create a trunk organization
 
-To use the CI Debugger, you must first create a trunk organization. See this [document](broken-reference) for detailed instructions.&#x20;
+To use the CI Debugger, you first need to create a trunk organization. See this [document](broken-reference) for detailed instructions. \
+\
+Note: You do not need to install the Trunk GitHub App to use the CI Debugger.
 
-### Setup your Organization API Token
+### Setup your Trunk CI Debugger API Token
 
-In order for the CI Debugger to communicate with the trunk web app it needs to be able to authenticate from the GitHub Action instance to the trunk web application.&#x20;
+{% embed url="https://app.supademo.com/edit/LPJsDyJYAsyvUabvkphHK" %}
 
-{% embed url="https://app.supademo.com/demo/LPJsDyJYAsyvUabvkphHK" %}
-
-### Add your token to GitHub secrets
-
-Securely store the TRUNK\_TOKEN in your GitHub repo so it can be referenced securely during a GitHub action run.
-
-{% embed url="https://app.supademo.com/demo/2UWXR9ccwhP4ng5-orZPG" %}
-Add your token to GitHub secrets
-{% endembed %}
+{% embed url="https://scribehow.com/embed/Setup_Trunk_CI_Debugger_API_Token__mY0ukXczRquh0Qe3S7aQ5g?removeLogo=true&skipIntro=true" %}
 
 ### Wrap one of your GitHub steps in a `trunk breakpoint`
 
@@ -59,6 +41,6 @@ jobs:
 
 ### Create the corresponding breakpoint in the trunk app
 
-Finally we setup this breakpoint in the trunk web app. And create rules that will trigger a breakpoint when on exit.
+Finally we setup this breakpoint in the trunk web app. And create rules that will trigger a breakpoint when the command fails:
 
-{% embed url="https://app.supademo.com/demo/PEuiLCcC1etLxXgcOf-cu" %}
+{% embed url="https://scribehow.com/embed/How_to_define_a_breaking_in_Trunks_CI_Debugger__tybjplT2SwKLsUvOUyqtWw?removeLogo=true&skipIntro=true" %}

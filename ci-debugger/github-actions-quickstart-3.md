@@ -1,4 +1,4 @@
-# Buildkite Quickstart
+# Jenkins Quickstart
 
 ### Requirements
 
@@ -26,25 +26,33 @@ In order for the CI Debugger to communicate with the trunk web app, it needs to 
 
 {% embed url="https://app.supademo.com/demo/LPJsDyJYAsyvUabvkphHK" %}
 
-### Setup Your Buildkite Workflow
+### Setup Your Jenkins Workflow
 
-Here is an a Buildkite workflow. Replace the three values in the example with the ones specific to your setup.
+Here is an example Jenkins workflow. Replace the three values in the example with the ones specific to your setup.
 
-Here the TRUNK\_TOKEN is pasted directly. In a real environment, it should be managed as a [secret](https://buildkite.com/docs/pipelines/secrets).
+Here the TRUNK\_TOKEN is pasted directly. In a real environment, it should be managed as a secret.
 
 {% code overflow="wrap" %}
 ```yaml
-steps:
-  - label: "Installing Trunk"
-    command: "curl https://get.trunk.io -fsSL | bash -s -- -y"
-    key: build
-
-  - label: "Running test"
-    env:
-      TRUNK_TOKEN: <INSERT YOUR TRUNK TOKEN HERE [1]>
-    command: "trunk breakpoint --org=<INSERT YOUR ORG NAME HERE [2]> --id=<Breakpoint Name [3]> -- /bin/false"
-    key: test
-    depends_on: build
+pipeline {
+    environment {
+        TRUNK_TOKEN = '<INSERT YOUR TRUNK TOKEN HERE [1]>'
+    }
+    stages {
+        stage('Install Trunk') {
+            steps {
+                echo "Installing Trunk"
+                curl https://get.trunk.io -fsSL | bash -s -- -y
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing"
+                trunk breakpoint --org=<INSERT YOUR ORG NAME HERE [2]> --id=<Breakpoint Name [3]> -- /bin/false
+            }
+        }
+    }
+}
 ```
 {% endcode %}
 
