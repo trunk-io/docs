@@ -94,9 +94,9 @@ In addition to specifying `version`, `cli` allows you to specify default command
 
 Some examples using the configuration above:
 
-- `trunk check` resolves to `trunk check -y --monitor=true`
-- `trunk check -n` resolves to `trunk check -n --monitor=true`
-- `trunk fmt` resolves to `trunk fmt -y --monitor=true`
+* `trunk check` resolves to `trunk check -y --monitor=true`
+* `trunk check -n` resolves to `trunk check -n --monitor=true`
+* `trunk fmt` resolves to `trunk fmt -y --monitor=true`
 
 ## `repo`
 
@@ -149,31 +149,7 @@ runtimes:
 
 ## `lint`
 
-See the [check configuration](../check/configuration.md)) and [custom linter](../check/custom-linters.md) documentation.
-
-### `definitions`
-
-Documented in [custom linters](../check/custom-linters.md).
-
-### `enabled`
-
-Documented in [check configuration](../check/configuration.md)#enable-linters).
-
-### `disabled`
-
-Documented in [check configuration](../check/configuration.md)#disable-linters).
-
-### `ignore`
-
-Documented in [check configuration](../check/configuration.md)#ignoring-files).
-
-### `threshold`
-
-Documented in [check configuration](../check/configuration.md)#blocking-thresholds).
-
-### `triggers`
-
-Documented in [check configuration](../check/configuration.md)#trigger-rules).
+See the [check configuration](../check/configuration.md) and [custom linter](../check/custom-linters.md) documentation.
 
 ## Overriding defaults
 
