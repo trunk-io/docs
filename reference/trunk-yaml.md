@@ -230,11 +230,8 @@ Notes:
 2. Scalar values are overridden in a straightforward manner - the value specified in the override\
    takes the place of the default, and otherwise, default values are retained.
 3. To override a sequence value in the default (ex. `environment` in the `node` runtime), it is\
-   necessary to fully specify the new sequence. This is why the `environment` override above also\
-   defines `HOME`. If you just wanted to add a new value, you would have to copy in the existing\
+   necessary to fully specify the new sequence. This is why the `environment` override above also defines `HOME`. If you just wanted to add a new value, you would have to copy in the existing\
    sequence to your overriding config, and add your new value to the end of the list.
 4. It is not possible to set sequences of non-zero length to zero length. For example, if the\
-   default config has `success_codes: [0]`, you may override this to `success_codes: [0, 1]`, but\
-   you cannot clear its value.
-5. Merged configurations are subject to the same validation that custom linters are - they must all\
-   have a name, type, command, and either `success_codes` or `error_codes` set.
+   default config has `success_codes: [0]`, you may override this to `success_codes: [0, 1]`, but you cannot clear its value.
+5. Merged configurations are subject to the same validation that custom linters are - they must all have a name, type, command, and either `success_codes` or `error_codes` set.
