@@ -1,4 +1,4 @@
-# GitHub Actions Quickstart
+# GitLab Quickstart
 
 ### Requirements
 
@@ -26,34 +26,28 @@ In order for the CI Debugger to communicate with the trunk web app, it needs to 
 
 {% embed url="https://app.supademo.com/demo/LPJsDyJYAsyvUabvkphHK" %}
 
-### Store your Organization Token as a GitHub Secret
+### Setup Your GitLab Workflow
 
-{% embed url="https://app.supademo.com/demo/2UWXR9ccwhP4ng5-orZPG" %}
+Here is an example GitLab workflow. Replace the three values in the example with the ones specific to your setup.
 
-### Wrap one of your GitHub steps in a `trunk breakpoint`
+Here the TRUNK\_TOKEN is pasted directly. In a real environment, it should be managed as a secret.
 
-Now for the magic 🪄. Open an existing GitHub Action and wrap one of your existing steps with a `trunk breakpoint` like this [(example here)](https://github.com/trunk-io/debugger-demo/blob/main/.github/workflows/pr.yml):
-
+{% code overflow="wrap" %}
 ```yaml
-name: Pull Request
-on:
-  - pull_request
+stages:          # List of stages for jobs, and their order of execution
+  - test
 
-jobs:
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Testing
-        uses: trunk-io/breakpoint@v1
-        with:
-          breakpoint-id: {INSERT_YOUR_BREAKPOINT_ID} [1]
-          run: ./run_tests.sh
-          trunk-token: ${{ secrets.TRUNK_TOKEN }} [3]
-          org: {INSERT_YOUR_TRUNK_ORGANIZATION} [2]
+unit-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  variables:
+    TRUNK_TOKEN: <INSERT YOUR TRUNK TOKEN HERE [1]>
+  script:
+    - echo "Installing Trunk"
+    - curl https://get.trunk.io -fsSL | bash -s -- -y
+    - echo "Done"
+    - echo "Testing"
+    - trunk breakpoint --org=<INSERT YOUR ORG NAME HERE [2]> --id=<Breakpoint Name [3]> -- /bin/false
+    - echo "Done"
 ```
+{% endcode %}
 

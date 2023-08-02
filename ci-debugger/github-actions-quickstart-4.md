@@ -1,8 +1,14 @@
-# Buildkite Quickstart
+---
+description: >-
+  The CI Debugger can be used from non-CI machines. For example your local
+  terminal or any machine under your control.
+---
+
+# Command Line Example
 
 ### Requirements
 
-Your CI machine needs to have the following tools installed:
+Your machine needs to have the following tools installed:
 
 * Bash,&#x20;
 * Curl
@@ -28,23 +34,15 @@ In order for the CI Debugger to communicate with the trunk web app, it needs to 
 
 ### Setup Your Buildkite Workflow
 
-Here is an a Buildkite workflow. Replace the three values in the example with the ones specific to your setup.
-
-Here the TRUNK\_TOKEN is pasted directly. In a real environment, it should be managed as a [secret](https://buildkite.com/docs/pipelines/secrets).
+Here is an example command of running the debugger directly from any command line. Replace the three values in the example with the ones specific to your setup.\
+\
+In this example we are downloading the trunk tool and then running the '/bin/false' command which will immediately fail and trigger a breakpoint.
 
 {% code overflow="wrap" %}
 ```yaml
-steps:
-  - label: "Installing Trunk"
-    command: "curl https://get.trunk.io -fsSL | bash -s -- -y"
-    key: build
-
-  - label: "Running test"
-    env:
-      TRUNK_TOKEN: <INSERT YOUR TRUNK TOKEN HERE [1]>
-    command: "trunk breakpoint --org=<INSERT YOUR ORG NAME HERE [2]> --id=<Breakpoint Name [3]> -- /bin/false"
-    key: test
-    depends_on: build
+curl https://get.trunk.io -fsSL | bash -s -- -y
+export TRUNK_TOKEN=<Insert your API key [1]>
+trunk breakpoint --org=<INSERT YOUR ORG NAME HERE [2]> --id=<Breakpoint Name [3]> -- /bin/false
 ```
 {% endcode %}
 
