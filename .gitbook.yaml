@@ -1,0 +1,9 @@
+root: ./
+
+​structure:  
+    readme: README.md  
+    summary: SUMMARY.md​
+
+redirects:  
+    docs: readme.md
+    docs/check-cli: check/command-line.md
