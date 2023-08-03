@@ -18,7 +18,7 @@ From the root of a git repo, run:
 trunk init
 ```
 
-This will bring you into a flow to start getting results from [Trunk Check](overview-2/). For more details, see [here](overview/init-in-a-git-repo.md).
+This will bring you into a flow to start getting results from [Trunk Check](check/). For more details, see [here](overview/init-in-a-git-repo.md).
 
 ### Step 3: Sign up for a Trunk account (optional)
 
@@ -28,7 +28,7 @@ This will bring you into a flow to start getting results from [Trunk Check](over
 trunk login
 ```
 
-To use [Trunk Merge](overview-1/) and certain other Trunk features, you'll need an account on [trunk.io](https://app.trunk.io), but [Trunk Check](overview-2/) and [Trunk Actions](overview-3/) can be used entirely locally without depending on hosted services or having a Trunk account.
+To use [Trunk Merge](merge/) and certain other Trunk features, you'll need an account on [trunk.io](https://app.trunk.io), but [Trunk Check](check/) and [Trunk Actions](actions/) can be used entirely locally without depending on hosted services or having a Trunk account.
 
 ### Help & Feedback
 

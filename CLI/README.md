@@ -20,15 +20,15 @@ Also check out the other ways to use Trunk:
 
 The Trunk CLI can be used for:
 
-* [Trunk Merge](../overview-1/): a merge queue to make merging code in github safer and easier
-* [Trunk Check](../overview-2/): a pluginable superlinter with a builtin language server and preexisting issue detection
-* [Trunk Actions](../overview-3/): workflow automation for software engineers
+* [Trunk Merge](../merge/): a merge queue to make merging code in github safer and easier
+* [Trunk Check](../check/): a pluginable superlinter with a builtin language server and preexisting issue detection
+* [Trunk Actions](../actions/): workflow automation for software engineers
 
-[Trunk Check](../overview-2/) and [Trunk Actions](../overview-3/) can be used entirely locally without depending on hosted services or even having a Trunk account
+[Trunk Check](../check/) and [Trunk Actions](../actions/) can be used entirely locally without depending on hosted services or even having a Trunk account
 
 ### Initialize Trunk in your repo
 
-Whether you aim to use [Trunk Check](../overview-2/), [Trunk Merge](../overview-1/), [Trunk Actions](../overview-3/), or all of the above, the first step is to initialize Trunk in your git repo:
+Whether you aim to use [Trunk Check](../check/), [Trunk Merge](../merge/), [Trunk Actions](../actions/), or all of the above, the first step is to initialize Trunk in your git repo:
 
 ```bash
 trunk init
@@ -38,8 +38,8 @@ Note: for an extra layer of security you can optionally run `trunk init --lock` 
 
 `init` scans the files in your repo and generates a `.trunk/trunk.yaml` configuration file tailored to your repo (it may also generate linter-specific config files, such as `.shellcheckrc`). The scan will identify all the particular languages and technologies you use and automatically configure the correct set of linters / formatters to run.
 
-If you only want to use [Trunk Merge](../overview-1/), you can safely ignore the linter setup, or even strip enabled linters from `.trunk/trunk.yaml`. You will additionally need to login to use [Trunk Merge](../overview-1/) via `trunk login`.
+If you only want to use [Trunk Merge](../merge/), you can safely ignore the linter setup, or even strip enabled linters from `.trunk/trunk.yaml`. You will additionally need to login to use [Trunk Merge](../merge/) via `trunk login`.
 
 ### Next Steps
 
-Check out the docs for [Trunk Merge](../overview-1/), [Trunk Check](../overview-2/), and [Trunk Actions](../overview-3/).
+Check out the docs for [Trunk Merge](../merge/), [Trunk Check](../check/), and [Trunk Actions](../actions/).
