@@ -12,9 +12,7 @@ layout:
     visible: false
 ---
 
-# General
-
-## Trunk Documentation
+# Trunk Documentation
 
 Trunk is a developer experience (DevEx) toolkit that enables you to ship code quickly while maintaining the guardrails necessary for a large team. Use Trunk for checking, testing, merging, and monitoring your code.
 
