@@ -2,9 +2,9 @@
 description: Enabling and Writing your own Actions
 ---
 
-# Overview
+# Actions
 
-**You can think of Trunk Actions as IFTTT for your repository. An action is a command that is run in reaction to a specified** [**trigger**](overview.md#triggers)
+**You can think of Trunk Actions as IFTTT for your repository. An action is a command that is run in reaction to a specified** [**trigger**](./#triggers)
 
 #### Triggers
 

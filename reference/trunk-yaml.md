@@ -149,7 +149,7 @@ runtimes:
 
 ## `lint`
 
-See the [check configuration](../check/configuration.md) and [custom linter](../check/custom-linters.md) documentation.
+See the [check configuration](../overview-2/configuration.md) and [custom linter](../overview-2/custom-linters.md) documentation.
 
 ### Disable upgrade notifications
 
@@ -245,4 +245,3 @@ Notes:
 4. It is not possible to set sequences of non-zero length to zero length. For example, if the\
    default config has `success_codes: [0]`, you may override this to `success_codes: [0, 1]`, but you cannot clear its value.
 5. Merged configurations are subject to the same validation that custom linters are - they must all have a name, type, command, and either `success_codes` or `error_codes` set.
-

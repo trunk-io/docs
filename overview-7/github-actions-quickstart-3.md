@@ -4,7 +4,7 @@
 
 Your CI machine needs to have the following tools installed:
 
-* Bash,&#x20;
+* Bash,
 * Curl
 
 You will need to have ports open for:
@@ -14,7 +14,7 @@ You will need to have ports open for:
 
 ### Create a trunk organization
 
-To use the CI Debugger, you must first create a trunk organization. See this [document](broken-reference) for detailed instructions.&#x20;
+To use the CI Debugger, you must first create a trunk organization. See this [document](../ci-debugger/broken-reference/) for detailed instructions.
 
 ### Create a breakpoint in the trunk app
 
@@ -22,7 +22,7 @@ To use the CI Debugger, you must first create a trunk organization. See this [do
 
 ### Setup your Organization API Token
 
-In order for the CI Debugger to communicate with the trunk web app, it needs to be able to authenticate from the GitHub Action instance to the trunk web application.&#x20;
+In order for the CI Debugger to communicate with the trunk web app, it needs to be able to authenticate from the GitHub Action instance to the trunk web application.
 
 {% embed url="https://app.supademo.com/demo/LPJsDyJYAsyvUabvkphHK" %}
 
@@ -47,4 +47,3 @@ steps:
     depends_on: build
 ```
 {% endcode %}
-

@@ -4,14 +4,14 @@ The beautiful thing about `trunk` is that you can leverage our caching and hold-
 
 Trunk currently supports the following types of additional/proprietary linters:
 
-| Linter Type                      | <p>Autofix<br>support</p> | Description                                                                                                                              |
-| -------------------------------- | :-----------------------: | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [`sarif`](broken-reference/)     |             ✓             | Produces diagnostics as [Static Analysis Results Interchange Format](https://docs.oasis-open.org/sarif/sarif/v2.0/sarif-v2.0.html) JSON. |
-| [`lsp_json`](broken-reference/)  |                           | Produces diagnostics as [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) JSON.                          |
-| [`pass_fail`](broken-reference/) |                           | Writes a single file-level diagnostic to `stdout`.                                                                                       |
-| [`regex`](broken-reference/)     |                           | Produces diagnostics using a custom regex format.                                                                                        |
-| [`arcanist`](broken-reference/)  |             ✓             | Produces diagnostics as Arcanist JSON.                                                                                                   |
-| [`rewrite`](broken-reference/)   |             ✓             | Writes the formatted version of a file to `stdout`.                                                                                      |
+| Linter Type                               | <p>Autofix<br>support</p> | Description                                                                                                                              |
+| ----------------------------------------- | :-----------------------: | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [`sarif`](../check/broken-reference/)     |             ✓             | Produces diagnostics as [Static Analysis Results Interchange Format](https://docs.oasis-open.org/sarif/sarif/v2.0/sarif-v2.0.html) JSON. |
+| [`lsp_json`](../check/broken-reference/)  |                           | Produces diagnostics as [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) JSON.                          |
+| [`pass_fail`](../check/broken-reference/) |                           | Writes a single file-level diagnostic to `stdout`.                                                                                       |
+| [`regex`](../check/broken-reference/)     |                           | Produces diagnostics using a custom regex format.                                                                                        |
+| [`arcanist`](../check/broken-reference/)  |             ✓             | Produces diagnostics as Arcanist JSON.                                                                                                   |
+| [`rewrite`](../check/broken-reference/)   |             ✓             | Writes the formatted version of a file to `stdout`.                                                                                      |
 
 If your linter produces a different output type, you can also write a [parser](custom-parsers.md) to transform the linter's output into something trunk can understand.
 
@@ -40,7 +40,7 @@ Every custom linter must specify a name, the types of files it will run on, at l
 > Info: Entries in `enabled` must specify both a linter name and a version. If you commit your linter into\
 > your repository, you should simply use `@SYSTEM`, which will run the linter with your shell's\
 > `PATH`. If you have a versioned release pipeline for your linter, though, you'll want to define your\
-> custom linter using a [`download`](broken-reference/) and specify the download version to use.
+> custom linter using a [`download`](../check/broken-reference/) and specify the download version to use.
 
 ### Execution Model
 
@@ -49,7 +49,7 @@ Running `trunk check` tells `trunk` to do the following:
 * compute the set of modified files (by comparing the current working tree and `upstream-ref`,\
   usually your `main` or `master` branch)
 * compute the set of lint actions to run based on the modified files
-  * each enabled linter is invoked once per applicable modified file ([details](broken-reference/)); for\
+  * each enabled linter is invoked once per applicable modified file ([details](../check/broken-reference/)); for\
     example, if `pylint` and `flake8` are enabled, they will both be run on every modified `python`\
     file but not on any modified `markdown` files
   * every lint action also will have a corresponding _upstream_ lint action, i.e. the linter will\
@@ -338,7 +338,7 @@ lint:
 
 #### Output
 
-The output format that `trunk` expects from a linter is determined by its [`type`](broken-reference/).
+The output format that `trunk` expects from a linter is determined by its [`type`](../check/broken-reference/).
 
 **`stdout`, `stderr` or `tmp_file`**
 
@@ -396,7 +396,7 @@ lint:
 
 Most `environment` entries are maps with `name` and `value` keys; these become `name=value` environment variables. For `PATH`, we allow specifying `list`, in which case we concatenate the entries with `:`.
 
-We use the same template syntax for `environment` as we do for [`command`](broken-reference/).
+We use the same template syntax for `environment` as we do for [`command`](../check/broken-reference/).
 
 #### Downloads
 

@@ -1,13 +1,13 @@
 # Upload Trunk Check Results
 
-Trunk Check has the ability to post its results to app.trunk.io. This will enable you to view your repository's Check history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix. The upload feature of Trunk Check will upload all of the issues found by Trunk to the Trunk services. In order to get an accurate picture of the state of your repository, you'll want to upload all of the Trunk Check issues for your whole repository.&#x20;
+Trunk Check has the ability to post its results to app.trunk.io. This will enable you to view your repository's Check history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix. The upload feature of Trunk Check will upload all of the issues found by Trunk to the Trunk services. In order to get an accurate picture of the state of your repository, you'll want to upload all of the Trunk Check issues for your whole repository.
 
 In order to keep the data up-to-date, you should upload Trunk Check results regularly in an automated fashion. Depending on the size of your repository and the linters you have configured to run, running Trunk Check on your whole repository may take a while. Because this run may take a while, we recommend uploading Trunk Check results once daily. However, the system supports uploading results for every commit, so the granularity of upload is up to you.
 
 ### Running `trunk check --upload`
 
 {% hint style="info" %}
-Before running `trunk check --upload` you must have [connected your Github repository to your Trunk account](broken-reference).
+Before running `trunk check --upload` you must have [connected your Github repository to your Trunk account](../web-app/broken-reference/).
 {% endhint %}
 
 #### CI Setup for nightly uploads

@@ -32,7 +32,7 @@ We currently support the following linters:
 | Scala                              | `scalafmt`                                                                                   |
 | SQL                                | `sql-formatter`, `sqlfluff`                                                                  |
 | SVG                                | `svgo`                                                                                       |
-| Terraform                          | `terraform` (`validate` and `fmt`), `tflint`[1](broken-reference/)                           |
+| Terraform                          | `terraform` (`validate` and `fmt`), `tflint`[1](../check/broken-reference/)                  |
 | TOML                               | `taplo`                                                                                      |
 | YAML                               | `prettier`, `semgrep`, `yamllint`                                                            |
 

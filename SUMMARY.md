@@ -1,81 +1,49 @@
 # Table of contents
 
-## General
-
-* [What is Trunk?](README.md)
-* [Get Started](general/get-started.md)
-* [Community](general/community.md)
-* [Integration for Slack](general/integration-for-slack.md)
-
-## CLI
-
-* [Overview](cli/overview.md)
-* [Install Trunk](cli/install-trunk.md)
-* [Init in a git repo](cli/init-in-a-git-repo.md)
-* [Compatibility](cli/compatibility.md)
-* [GitHub Codespaces](cli/github-codespaces.md)
-
-## VS Code
-
-* [Overview](vs-code/overview.md)
-
-## MERGE
-
-* [Overview](merge/overview.md)
-* [Getting Started](merge/getting-started.md)
-* [Reference](merge/reference.md)
-* [Using the Webapp](merge/using-the-webapp.md)
-* [Integration for Slack](merge/integration-for-slack.md)
-
-## Check
-
-* [Overview](check/overview.md)
-* [Get Started](check/get-started.md)
-* [Continuous Integration](check/continuous-integration.md)
-* [Command Line](check/command-line.md)
-* [Configuration](check/configuration.md)
-* [Custom Linters](check/custom-linters.md)
-* [Custom Parsers](check/custom-parsers.md)
-* [Debugging](check/debugging.md)
-* [Supported Linters](check/supported-linters.md)
-* [Ignoring Issues](check/ignoring-issues.md)
-* [Under the Hood](check/under-the-hood.md)
-* [GitHub Integration](check/github-integration.md)
-
-## Actions
-
-* [Overview](actions/overview.md)
-* [Configuration](actions/configuration.md)
-* [Git Hooks](actions/git-hooks.md)
-* [Notifications](actions/notifications.md)
-* [Logging and Troubleshooting](actions/logging-and-troubleshooting.md)
-
-## Runtimes
-
-* [Overview](runtimes/overview.md)
-* [Prevent Duplicate Runtimes](runtimes/prevent-duplicate-runtimes.md)
-
-## Plugins
-
-* [Overview](plugins/overview.md)
-* [Exported Configs](plugins/exported-configs.md)
-* [External Repositories](plugins/external-repositories.md)
-
-## Web App
-
-* [Overview](web-app/overview.md)
-* [Upload Trunk Check Results](web-app/upload-trunk-check-results.md)
-* [GitHub App Permissions](web-app/github-app-permissions.md)
-
-## CI Debugger
-
-* [Overview](ci-debugger/overview.md)
-* [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)
-* [GitLab Quickstart](ci-debugger/github-actions-quickstart-1.md)
-* [Jenkins Quickstart](ci-debugger/github-actions-quickstart-2.md)
-* [Buildkite Quickstart](ci-debugger/github-actions-quickstart-3.md)
-* [Command Line Example](ci-debugger/github-actions-quickstart-4.md)
-* [FAQ](ci-debugger/faq.md)
+* [General](README.md)
+* [Get Started](get-started.md)
+* [CLI](overview/README.md)
+  * [Install Trunk](overview/install-trunk.md)
+  * [Init in a git repo](overview/init-in-a-git-repo.md)
+  * [Compatibility](overview/compatibility.md)
+  * [GitHub Codespaces](overview/github-codespaces.md)
+* [Merge](overview-1/README.md)
+  * [Getting Started](overview-1/getting-started.md)
+  * [Reference](overview-1/reference.md)
+  * [Using the Webapp](overview-1/using-the-webapp.md)
+  * [Integration for Slack](overview-1/integration-for-slack.md)
+* [Check](overview-2/README.md)
+  * [Get Started](overview-2/get-started.md)
+  * [Continuous Integration](overview-2/continuous-integration.md)
+  * [Command Line](overview-2/command-line.md)
+  * [Configuration](overview-2/configuration.md)
+  * [Custom Linters](overview-2/custom-linters.md)
+  * [Custom Parsers](overview-2/custom-parsers.md)
+  * [Debugging](overview-2/debugging.md)
+  * [Supported Linters](overview-2/supported-linters.md)
+  * [Ignoring Issues](overview-2/ignoring-issues.md)
+  * [Under the Hood](overview-2/under-the-hood.md)
+  * [GitHub Integration](overview-2/github-integration.md)
+* [Actions](overview-3/README.md)
+  * [Configuration](overview-3/configuration.md)
+  * [Git Hooks](overview-3/git-hooks.md)
+  * [Notifications](overview-3/notifications.md)
+  * [Logging and Troubleshooting](overview-3/logging-and-troubleshooting.md)
+* [Runtimes](overview-4/README.md)
+  * [Prevent Duplicate Runtimes](overview-4/prevent-duplicate-runtimes.md)
+* [Plugins](overview-5/README.md)
+  * [Exported Configs](overview-5/exported-configs.md)
+  * [External Repositories](overview-5/external-repositories.md)
+* [Web App](overview-6/README.md)
+  * [Upload Trunk Check Results](overview-6/upload-trunk-check-results.md)
+  * [GitHub App Permissions](overview-6/github-app-permissions.md)
+* [CI Debugger](overview-7/README.md)
+  * [GitHub Actions Quickstart](overview-7/github-actions-quickstart.md)
+  * [GitLab Quickstart](overview-7/github-actions-quickstart-1.md)
+  * [Jenkins Quickstart](overview-7/github-actions-quickstart-2.md)
+  * [Buildkite Quickstart](overview-7/github-actions-quickstart-3.md)
+  * [Command Line Example](overview-7/github-actions-quickstart-4.md)
+  * [FAQ](overview-7/faq.md)
 
 ## Reference
 
@@ -84,9 +52,12 @@
 * [User YAML](reference/user-yaml.md)
 * [Components](reference/components.md)
 * [Usage Data](reference/usage-data.md)
+* [Integration for Slack](reference/integration-for-slack.md)
+* [VS Code](reference/overview.md)
 
 ## Administration
 
 * [Billing](administration/billing.md)
 * [Single Sign-On (SAML)](administration/single-sign-on-saml.md)
-* [Support](administration/support.md)
+* [Community](administration/community.md)
+* [Contact Support](administration/support.md)

@@ -70,9 +70,9 @@ https://trunk.io/releases/${version}/trunk-${version}-${platform}-x86_64.tar.gz
 
 Check out:
 
-* [Trunk Merge](broken-reference): a merge queue to make merging code in github safer and easier
-* [Trunk Check](broken-reference): an extendable superlinter with a builtin language server and preexisting issue detection
-* [Trunk Actions](broken-reference): workflow automation for software engineers
+* [Trunk Merge](../cli/broken-reference/): a merge queue to make merging code in github safer and easier
+* [Trunk Check](../cli/broken-reference/): an extendable superlinter with a builtin language server and preexisting issue detection
+* [Trunk Actions](../cli/broken-reference/): workflow automation for software engineers
 
 As well as the other ways to use Trunk:
 

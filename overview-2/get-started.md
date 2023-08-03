@@ -8,7 +8,7 @@ To use `trunk` locally, run:
 curl https://get.trunk.io -fsSL | bash
 ```
 
-For other installation options (`npm`, `brew`, direct download, etc) and details on exactly what we install or how to uninstall, see the [Install Trunk](../cli/install-trunk.md) doc.
+For other installation options (`npm`, `brew`, direct download, etc) and details on exactly what we install or how to uninstall, see the [Install Trunk](../overview/install-trunk.md) doc.
 
 ### Step 2: Initialize `trunk`
 
@@ -18,7 +18,7 @@ From the root of a git repo, run:
 trunk init
 ```
 
-This will bring you into a flow to start getting results from [Trunk Check](../check/overview.md). For more details, see [here](doc:initialize-trunk-in-a-git-repo).
+This will bring you into a flow to start getting results from [Trunk Check](./). For more details, see [here](doc:initialize-trunk-in-a-git-repo).
 
 ### Step 3: Run `trunk check` against a sampling of files in your repo
 
@@ -28,4 +28,4 @@ Normally when you run `trunk check` we will only scan changed files, so in a rep
 trunk check --sample 5
 ```
 
-For more information on the sample flag see [here](../check/command-line.md#sample)
+For more information on the sample flag see [here](command-line.md#sample)
