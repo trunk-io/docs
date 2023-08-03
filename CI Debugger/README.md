@@ -1,4 +1,4 @@
-# Overview
+# CI Debugger
 
 Trunk CI Debugger (beta invite required) is available at [app.trunk.io](https://app.trunk.io). With a sprinkling of code you can enable live debugging of your CI actions enabling real-time diagnosis, troubleshooting, and of course debugging of your otherwise ephemeral CI job.
 
