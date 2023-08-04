@@ -58,36 +58,4 @@ We intend to bring full feature support to Windows for Trunk. Currently, the fol
 
 Trunk runs most linters on all platforms. However, some linters are not yet supported on Windows. For a full list of all linters, see our [Plugins repo](https://github.com/trunk-io/plugins).
 
-| Linter               | Plans for Support                       |
-| -------------------- | --------------------------------------- |
-| ansible-lint         | Only supported on WSL                   |
-| brakeman             | Long-term plans for ruby linter support |
-| buf-breaking         | Short-term plans for support            |
-| buf-format           | Short-term plans for support            |
-| buf-lint             | Short-term plans for support            |
-| checkov              | Short-term plans for support            |
-| clang-format         | Long-term plans for LLVM linter support |
-| clang-tidy           | Long-term plans for LLVM linter support |
-| detekt               | Short-term plans for support            |
-| detekt-explicit      | Short-term plans for support            |
-| detekt-gradle        | Short-term plans for support            |
-| graphql-schema       | Short-term plans for support            |
-| haml-lint            | Long-term plans for ruby linter support |
-| include-what-you-use | Long-term plans for LLVM linter support |
-| ktlint               | Long-term plans for support             |
-| mypy                 | Short-term plans for support            |
-| nixpkgs-fmt          | Long-term plans for support             |
-| perlcritic           | No immediate plans for support          |
-| perltidy             | No immediate plans for support          |
-| remark-lint          | Long-term plans for support             |
-| rubocop              | Long-term plans for ruby linter support |
-| rufo                 | Long-term plans for ruby linter support |
-| scalafmt             | No download available for Windows       |
-| semgrep              | No download available for Windows       |
-| shellcheck           | No download available for Windows       |
-| sort-package-json    | Long-term plans for support             |
-| standardrb           | Long-term plans for ruby linter support |
-| stringslint          | Only supported on MacOS                 |
-| swiftformat          | Only supported on MacOS                 |
-| swiftlint            | Only supported on MacOS                 |
-| taplo                | No download available for Windows       |
+<table data-full-width="false"><thead><tr><th>Linter</th><th>Plans for Support</th></tr></thead><tbody><tr><td>ansible-lint</td><td>Only supported on WSL</td></tr><tr><td>brakeman</td><td>Long-term plans for ruby linter support</td></tr><tr><td>buf-breaking</td><td>Short-term plans for support</td></tr><tr><td>buf-format</td><td>Short-term plans for support</td></tr><tr><td>buf-lint</td><td>Short-term plans for support</td></tr><tr><td>checkov</td><td>Short-term plans for support</td></tr><tr><td>clang-format</td><td>Long-term plans for LLVM linter support</td></tr><tr><td>clang-tidy</td><td>Long-term plans for LLVM linter support</td></tr><tr><td>detekt</td><td>Short-term plans for support</td></tr><tr><td>detekt-explicit</td><td>Short-term plans for support</td></tr><tr><td>detekt-gradle</td><td>Short-term plans for support</td></tr><tr><td>graphql-schema</td><td>Short-term plans for support</td></tr><tr><td>haml-lint</td><td>Long-term plans for ruby linter support</td></tr><tr><td>include-what-you-use</td><td>Long-term plans for LLVM linter support</td></tr><tr><td>ktlint</td><td>Long-term plans for support</td></tr><tr><td>mypy</td><td>Short-term plans for support</td></tr><tr><td>nixpkgs-fmt</td><td>Long-term plans for support</td></tr><tr><td>perlcritic</td><td>No immediate plans for support</td></tr><tr><td>perltidy</td><td>No immediate plans for support</td></tr><tr><td>remark-lint</td><td>Long-term plans for support</td></tr><tr><td>rubocop</td><td>Long-term plans for ruby linter support</td></tr><tr><td>rufo</td><td>Long-term plans for ruby linter support</td></tr><tr><td>scalafmt</td><td>No download available for Windows</td></tr><tr><td>semgrep</td><td>No download available for Windows</td></tr><tr><td>shellcheck</td><td>No download available for Windows</td></tr><tr><td>sort-package-json</td><td>Long-term plans for support</td></tr><tr><td>standardrb</td><td>Long-term plans for ruby linter support</td></tr><tr><td>stringslint</td><td>Only supported on MacOS</td></tr><tr><td>swiftformat</td><td>Only supported on MacOS</td></tr><tr><td>swiftlint</td><td>Only supported on MacOS</td></tr><tr><td>taplo</td><td>No download available for Windows</td></tr></tbody></table>
