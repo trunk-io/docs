@@ -6,5 +6,5 @@ root: ./
 
 redirects:  
     docs: README.md
-    docs/check: check
+    docs/check: check/README.md
     docs/check-cli: check/command-line.md
