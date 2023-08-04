@@ -44,9 +44,6 @@
   * [Buildkite Quickstart](ci-debugger/buildkite-quickstart.md)
   * [Command Line Example](ci-debugger/commandline.md)
   * [FAQ](ci-debugger/faq.md)
-* [\[Reference\]](reference/README.md)
-  * [Glob Path Pattern](reference/glob-path-pattern.md)
-  * [Trunk YAML](reference/trunk-yaml.md)
 
 ## Reference
 
