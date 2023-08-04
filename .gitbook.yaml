@@ -25,3 +25,4 @@ redirects:
     docs/merge: merge/README.md
     docs/ci-debugger: ci-debugger/README.md
     docs/actions: actions/README.md
+    docs/check-github-integration: check/github-integration.md
