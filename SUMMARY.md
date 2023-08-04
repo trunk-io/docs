@@ -45,10 +45,6 @@
   * [Command Line Example](ci-debugger/commandline.md)
   * [FAQ](ci-debugger/faq.md)
 
-* [Reference]
-  * [Glob Path Pattern](reference/glob-path-pattern.md)
-  * [Trunk YAML](reference/trunk-yaml.md)
-
 ## Reference
 
 * [Glob Path Pattern](reference/glob-path-pattern.md)
