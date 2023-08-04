@@ -1,6 +1,6 @@
 # Table of contents
 
-* [General](README.md)
+* [Welcome to Trunk](README.md)
 * [Get Started](get-started.md)
 * [CLI](cli/README.md)
   * [Install Trunk](cli/install-trunk.md)
