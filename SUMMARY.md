@@ -44,17 +44,13 @@
   * [Buildkite Quickstart](ci-debugger/buildkite-quickstart.md)
   * [Command Line Example](ci-debugger/commandline.md)
   * [FAQ](ci-debugger/faq.md)
-
-## Reference
-
-* [User YAML](reference/user-yaml.md)
-* [Components](reference/components.md)
-* [Usage Data](reference/usage-data.md)
-* [Integration for Slack](reference/integration-for-slack.md)
-* [VS Code](reference/vs-code.md)
-
-***
-
+* [Reference](reference.md)
+* [Reference](reference-1/README.md)
+  * [User YAML](reference-1/user-yaml.md)
+  * [Components](reference-1/components.md)
+  * [Usage Data](reference-1/usage-data.md)
+  * [Integration for Slack](reference-1/integration-for-slack.md)
+  * [VS Code](reference-1/vs-code.md)
 * [Adminstration](adminstration/README.md)
   * [Billing](adminstration/billing.md)
   * [Single Sign-On (SAML)](adminstration/single-sign-on-saml.md)
