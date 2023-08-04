@@ -41,8 +41,8 @@ brew install trunk-io
 
 Trunk has a very minimal installation, and therefore there's not much to uninstall. The two system paths we use are:
 
-* `/usr/local/bin/trunk`: the <\<glossary:Trunk Launcher>>
-* `~/.cache/trunk`: cached versions of the trunk cli, linters, formatters, etc.
+- `/usr/local/bin/trunk`: the <\<glossary:Trunk Launcher>>
+- `~/.cache/trunk`: cached versions of the trunk cli, linters, formatters, etc.
 
 To cleanly uninstall:
 
@@ -70,13 +70,13 @@ https://trunk.io/releases/${version}/trunk-${version}-${platform}-x86_64.tar.gz
 
 Check out:
 
-* [Trunk Merge](broken-reference/): a merge queue to make merging code in github safer and easier
-* [Trunk Check](broken-reference/): an extendable superlinter with a builtin language server and preexisting issue detection
-* [Trunk Actions](broken-reference/): workflow automation for software engineers
+- [Trunk Merge](broken-reference/): a merge queue to make merging code in github safer and easier
+- [Trunk Check](broken-reference/): an extendable superlinter with a builtin language server and preexisting issue detection
+- [Trunk Actions](broken-reference/): workflow automation for software engineers
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Check</strong></td><td></td><td>An extendable superlinter with a builtin language server and preexisting issue detection</td><td><a href="../check/">check</a></td><td><a href="../.gitbook/assets/Check (4).svg">Check (4).svg</a></td></tr><tr><td><strong>Merge</strong></td><td></td><td>A merge queue to make merging code in GitHub safer and easier</td><td><a href="../merge/">merge</a></td><td><a href="../.gitbook/assets/Merge (4).svg">Merge (4).svg</a></td></tr><tr><td>Actions</td><td></td><td>Workflow automation for your repository</td><td><a href="../actions/">actions</a></td><td><a href="../.gitbook/assets/Actions.svg">Actions.svg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Check</strong></td><td></td><td>An extendable superlinter with a builtin language server and preexisting issue detection</td><td><a href="../check/">check</a></td><td><a href="../.gitbook/assets/check.svg">check.svg</a></td></tr><tr><td><strong>Merge</strong></td><td></td><td>A merge queue to make merging code in GitHub safer and easier</td><td><a href="../merge/">merge</a></td><td><a href="../.gitbook/assets/merge.svg">merge.svg</a></td></tr><tr><td>Actions</td><td></td><td>Workflow automation for your repository</td><td><a href="../actions/">actions</a></td><td><a href="../.gitbook/assets/actions.svg">actions.svg</a></td></tr></tbody></table>
 
 As well as the other ways to use Trunk:
 
-* [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
-* [Web App (app.trunk.io)](https://app.trunk.io)
+- [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
+- [Web App (app.trunk.io)](https://app.trunk.io)
