@@ -30,3 +30,4 @@ redirects:
     docs/merge-get-started: merge/get-started.md
     docs/actions-config: actions/config.md
     docs/github-codespaces: cli/github-codespaces.md
+    docs/trunk-app-for-slack: reference/integration-for-slack.md
