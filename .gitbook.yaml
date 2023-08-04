@@ -21,3 +21,7 @@ redirects:
     docs/check-get-started: check/get-started.md
     docs/reference-trunk-yaml: reference/trunk-yaml.md
     docs/initialize-trunk-in-a-git-repo: cli/init-in-a-git-repo.md
+    docs/cli: cli/README.md
+    docs/merge: merge/README.md
+    docs/ci-debugger: ci-debugger/README.md
+    docs/actions: actions/README.md
