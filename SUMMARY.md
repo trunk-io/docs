@@ -47,8 +47,8 @@
 
 ## Reference
 
-* [Glob Path Pattern](reference/glob-path-pattern.md)
-* [Trunk YAML](reference/trunk-yaml.md)
+*
+*
 * [User YAML](reference/user-yaml.md)
 * [Components](reference/components.md)
 * [Usage Data](reference/usage-data.md)
