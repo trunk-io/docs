@@ -53,15 +53,13 @@
 * [Integration for Slack](reference/integration-for-slack.md)
 * [VS Code](reference/vs-code.md)
 
-## Administration
-
-* [Billing](administration/billing.md)
-* [Single Sign-On (SAML)](administration/single-sign-on-saml.md)
-* [Community](administration/community.md)
-* [Contact Support](administration/support.md)
-
 ***
 
+* [Adminstration](adminstration/README.md)
+  * [Billing](adminstration/billing.md)
+  * [Single Sign-On (SAML)](adminstration/single-sign-on-saml.md)
+  * [Community](adminstration/community.md)
+  * [Contact Support](adminstration/support.md)
 * [Community Slack](https://slack.trunk.io)
 * [Feature Requests](https://features.trunk.io)
 * [Changelog](https://changelog.trunk.io/changelog)

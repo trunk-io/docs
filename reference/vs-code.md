@@ -4,7 +4,7 @@ Trunk is also available as a [VSCode extension](https://marketplace.visualstudio
 
 ### Get Started
 
-By default, Trunk will try to automatically initialize itself in single-player mode. This means that it'll create a Trunk configuration that is hidden from git, which allows you to try it out [without Trunk's versioning powers](overview.md#single-player-mode).
+By default, Trunk will try to automatically initialize itself in single-player mode. This means that it'll create a Trunk configuration that is hidden from git, which allows you to try it out [without Trunk's versioning powers](vs-code.md#single-player-mode).
 
 If Trunk has not initialized itself in single-player mode, then you will need to initialize it manually, either by pressing the 'Initialize Trunk' button in the Trunk side panel:
 
