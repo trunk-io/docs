@@ -1,3 +1,22 @@
+---
+cover: ../.gitbook/assets/Hero Check (3).svg
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: false
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Check
 
 Trunk Check manages, downloads, and runs dozens of linters, formatters, static analyzers, and security tools. It's also a platform to write your own custom checks and integrate them to run as part of your repo's check suite.
