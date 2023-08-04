@@ -8,3 +8,11 @@ redirects:
     docs: README.md
     docs/check: check/README.md
     docs/check-cli: check/command-line.md
+    docs/check-config: check/config.md
+    docs/check-supported-linters: check/supported-linters.md
+    docs/install: cli/install.md
+    docs/windows-beta: cli/windows-beta.md
+    docs/get-started: get-started.md
+    
+    
+    
