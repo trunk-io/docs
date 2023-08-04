@@ -38,7 +38,7 @@ When running on a pull request, Trunk Check will only flag _new_ issues, not exi
 >
 > This can be helpful if Check is flagging known issues in a given PR which you don't want to [ignore](docs:ignoring-issues), which if you're doing a large refactor, can come in very handy.
 
-If you don't want Trunk Check to run on pull requests, turn it off in your repository's settings.
+If you don't want Trunk Check to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io).
 
 ## Scanning your repository
 
@@ -49,7 +49,7 @@ This allows you to build confidence in the code health of your repositories:
 * You will be alerted quickly in a Heartbleed-type event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
 * You can monitor how many Check issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
 
-If you don't want Trunk Check to scan your repository on a daily cadence or notify you, you can turn it off in your repository's settings.
+If you don't want Trunk Check to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io).
 
 ## Hooking into Trunk invocations
 
