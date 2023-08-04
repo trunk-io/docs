@@ -20,4 +20,4 @@ redirects:
     docs/what-is-trunk: README.md
     docs/check-get-started: check/get-started.md
     docs/reference-trunk-yaml: reference/trunk-yaml.md
-    
+    docs/initialize-trunk-in-a-git-repo: cli/init-in-a-git-repo.md
