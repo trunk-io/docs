@@ -45,6 +45,10 @@
   * [Command Line Example](ci-debugger/commandline.md)
   * [FAQ](ci-debugger/faq.md)
 
+* [Reference]
+  * [Glob Path Pattern](reference/glob-path-pattern.md)
+  * [Trunk YAML](reference/trunk-yaml.md)
+
 ## Reference
 
 * [Glob Path Pattern](reference/glob-path-pattern.md)
@@ -53,7 +57,7 @@
 * [Components](reference/components.md)
 * [Usage Data](reference/usage-data.md)
 * [Integration for Slack](reference/integration-for-slack.md)
-* [VS Code](reference/overview.md)
+* [VS Code](reference/vs-code.md)
 
 ## Administration
 
