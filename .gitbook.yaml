@@ -9,10 +9,15 @@ redirects:
     docs/check: check/README.md
     docs/check-cli: check/command-line.md
     docs/check-config: check/config.md
-    docs/check-supported-linters: check/supported-linters.md
-    docs/install: cli/install.md
-    docs/windows-beta: cli/windows-beta.md
+    docs/check-custom-linters: check/custom-linters.md
+    docs/check-supported-linters: check/supported-linters.md    
     docs/get-started: get-started.md
-    
-    
+    docs/ignoring-issues: check/ignoring-issues.md
+    docs/install: cli/install.md
+    docs/overview: cli/README.md
+    docs/windows-beta: cli/windows-beta.md    
+    docs/vscode: reference/vs-code.md
+    docs/what-is-trunk: README.md
+    docs/check-get-started: check/get-started.md
+    docs/reference-trunk-yaml: reference/trunk-yaml.md
     
