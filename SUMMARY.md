@@ -52,7 +52,7 @@
   * [Usage Data](reference/usage-data.md)
   * [Components](reference/components.md)
   * [Glob Path Pattern](reference/glob-path-pattern.md)
-* [Adminstration](adminstration/README.md)
+* [Administration](adminstration/README.md)
   * [Billing](adminstration/billing.md)
   * [Single Sign-On (SAML)](adminstration/single-sign-on-saml.md)
   * [Community](adminstration/community.md)
