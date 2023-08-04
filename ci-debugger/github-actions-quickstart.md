@@ -14,21 +14,21 @@ You will need to have ports open for:
 
 ### Create a trunk organization
 
-To use the CI Debugger, you must first create a trunk organization. See this [document](../ci-debugger/broken-reference/) for detailed instructions.
+To use the CI Debugger, you must first create a trunk organization. See this [document](../web-app/) for detailed instructions.
 
 ### Create a breakpoint in the trunk app
 
-{% embed url="https://app.supademo.com/demo/PEuiLCcC1etLxXgcOf-cu" %}
+{% @supademo/embed demoId="PEuiLCcC1etLxXgcOf-cu" url="https://app.supademo.com/demo/PEuiLCcC1etLxXgcOf-cu" %}
 
 ### Setup your Organization API Token
 
 In order for the CI Debugger to communicate with the trunk web app, it needs to be able to authenticate from the GitHub Action instance to the trunk web application.
 
-{% embed url="https://app.supademo.com/demo/LPJsDyJYAsyvUabvkphHK" %}
+{% @supademo/embed demoId="LPJsDyJYAsyvUabvkphHK" url="https://app.supademo.com/demo/LPJsDyJYAsyvUabvkphHK" %}
 
 ### Store your Organization Token as a GitHub Secret
 
-{% embed url="https://app.supademo.com/demo/2UWXR9ccwhP4ng5-orZPG" %}
+{% @supademo/embed demoId="2UWXR9ccwhP4ng5-orZPG" url="https://app.supademo.com/demo/2UWXR9ccwhP4ng5-orZPG" %}
 
 ### Wrap one of your GitHub steps in a `trunk breakpoint`
 

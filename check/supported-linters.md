@@ -32,11 +32,9 @@ We currently support the following linters:
 | Scala                              | `scalafmt`                                                                                   |
 | SQL                                | `sql-formatter`, `sqlfluff`                                                                  |
 | SVG                                | `svgo`                                                                                       |
-| Terraform                          | `terraform` (`validate` and `fmt`), `tflint`[1](../check/broken-reference/)                  |
+| Terraform                          | `terraform` (`validate` and `fmt`), `tflint`                                                 |
 | TOML                               | `taplo`                                                                                      |
 | YAML                               | `prettier`, `semgrep`, `yamllint`                                                            |
-
-1. [Module inspection](https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/module-inspection.md), [deep Checking](https://github.com/terraform-linters/tflint-ruleset-aws/blob/master/docs/deep\_checking.md), and setting variables are not currently supported.
 
 ### Caching
 
