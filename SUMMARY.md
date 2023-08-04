@@ -2,7 +2,7 @@
 
 * [General](README.md)
 * [Get Started](get-started.md)
-* [CLI](overview/README.md)
+* [CLI](cli/README.md)
   * [Install Trunk](cli/install-trunk.md)
   * [Init in a git repo](cli/init-in-a-git-repo.md)
   * [Compatibility](cli/compatibility.md)
@@ -41,8 +41,8 @@
   * [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)
   * [GitLab Quickstart](ci-debugger/gitlab-quickstart.md)
   * [Jenkins Quickstart](ci-debugger/jenkins-quickstart.md)
-  * [Buildkite Quickstart](buildkite-quickstart.md)
-  * [Command Line Example](ci-debugger/commandline-quickstart.md)
+  * [Buildkite Quickstart](ci-debugger/buildkite-quickstart.md)
+  * [Command Line Example](ci-debugger/commandline.md)
   * [FAQ](ci-debugger/faq.md)
 
 ## Reference
