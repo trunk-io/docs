@@ -47,8 +47,6 @@
 
 ## Reference
 
-*
-*
 * [User YAML](reference/user-yaml.md)
 * [Components](reference/components.md)
 * [Usage Data](reference/usage-data.md)
@@ -61,3 +59,9 @@
 * [Single Sign-On (SAML)](administration/single-sign-on-saml.md)
 * [Community](administration/community.md)
 * [Contact Support](administration/support.md)
+
+***
+
+* [Community Slack](https://slack.trunk.io)
+* [Feature Requests](https://features.trunk.io)
+* [Changelog](https://changelog.trunk.io/changelog)
