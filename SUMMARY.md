@@ -53,7 +53,7 @@
 * [Components](reference/components.md)
 * [Usage Data](reference/usage-data.md)
 * [Integration for Slack](reference/integration-for-slack.md)
-* [VS Code](reference/overview.md)
+* [VS Code](reference/vs-code.md)
 
 ## Administration
 
