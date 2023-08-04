@@ -7,6 +7,7 @@
   * [Init in a git repo](cli/init-in-a-git-repo.md)
   * [Compatibility](cli/compatibility.md)
   * [GitHub Codespaces](cli/github-codespaces.md)
+  * [Windows Beta](cli/windows-beta.md)
 * [Check](check/README.md)
   * [Get Started](check/get-started.md)
   * [Continuous Integration](check/continuous-integration.md)
