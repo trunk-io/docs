@@ -8,7 +8,7 @@ To use `trunk` locally, run:
 curl https://get.trunk.io -fsSL | bash
 ```
 
-For other installation options (`npm`, `brew`, direct download, etc) and details on exactly what we install or how to uninstall, see the [Install Trunk](overview/install-trunk.md) doc.
+For other installation options (`npm`, `brew`, direct download, etc) and details on exactly what we install or how to uninstall, see the [Install Trunk](cli/install-trunk.md) doc.
 
 ### Step 2: Initialize Trunk in a git repo
 
@@ -18,7 +18,7 @@ From the root of a git repo, run:
 trunk init
 ```
 
-This will bring you into a flow to start getting results from [Trunk Check](check/). For more details, see [here](overview/init-in-a-git-repo.md).
+This will bring you into a flow to start getting results from [Trunk Check](check/). For more details, see [here](cli/init-in-a-git-repo.md).
 
 ### Step 3: Sign up for a Trunk account (optional)
 
@@ -32,4 +32,4 @@ To use [Trunk Merge](merge/) and certain other Trunk features, you'll need an ac
 
 ### Help & Feedback
 
-Join the [Trunk Slack Community](https://slack.trunk.io) for help and to give feedback ([more info](administration/community.md)).
+Join the [Trunk Slack Community](https://slack.trunk.io) for help and to give feedback ([more info](adminstration/community.md)).
