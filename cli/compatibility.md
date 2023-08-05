@@ -14,4 +14,4 @@ Trunk will run under windows from inside WSL. Future support for native windows 
 
 ### Backwards Compatibility
 
-We generally strive to maintain backward compatibility between the <\<glossary:Trunk Launcher>> and the Trunk binary, but you may need to occasionally upgrade the launcher to support the versions of Trunk.
+We generally strive to maintain backward compatibility between the [Trunk Launcher](../reference/components.md#trunk-launcher) and the Trunk binary, but you may need to occasionally upgrade the launcher to support the versions of Trunk.
