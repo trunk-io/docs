@@ -18,7 +18,7 @@ Trunk Check manages, downloads, and runs dozens of linters, formatters, static a
 
 Use it via:
 
-* [Trunk CLI](../overview/)
+* [Trunk CLI](../cli/)
 * [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
 * [GitHub Action](https://github.com/marketplace/actions/trunk-check)
 * [Web App (app.trunk.io)](https://app.trunk.io)
