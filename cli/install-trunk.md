@@ -41,7 +41,7 @@ brew install trunk-io
 
 Trunk has a very minimal installation, and therefore there's not much to uninstall. The two system paths we use are:
 
-* `/usr/local/bin/trunk`: the <\<glossary:Trunk Launcher>>
+* `/usr/local/bin/trunk`: the [Trunk Launcher](../reference/components.md#trunk-launcher)
 * `~/.cache/trunk`: cached versions of the trunk cli, linters, formatters, etc.
 
 To cleanly uninstall:

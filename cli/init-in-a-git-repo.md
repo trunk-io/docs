@@ -8,7 +8,7 @@ trunk init
 
 #### Security
 
-When initializing you can secure your trunk installation which will write the sha256 signatures of the trunk binary to the `trunk.yaml` file. These signatures are verified by the <\<glossary:Trunk Launcher>> to guarantee the binary has not been tampered with. To add this extra layer of protection to your `trunk` setup init like this:
+When initializing you can secure your trunk installation which will write the sha256 signatures of the trunk binary to the `trunk.yaml` file. These signatures are verified by the [Trunk Launcher](../reference/components.md#trunk-launcher) to guarantee the binary has not been tampered with. To add this extra layer of protection to your `trunk` setup init like this:
 
 ```bash
 trunk init --lock
