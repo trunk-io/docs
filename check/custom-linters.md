@@ -338,7 +338,7 @@ lint:
 
 #### Output
 
-The output format that `trunk` expects from a linter is determined by its [`type`](broken-reference/).
+The output format that `trunk` expects from a linter is determined by its [`type`](custom-linters.md#linter-types).
 
 **`stdout`, `stderr` or `tmp_file`**
 
@@ -396,7 +396,7 @@ lint:
 
 Most `environment` entries are maps with `name` and `value` keys; these become `name=value` environment variables. For `PATH`, we allow specifying `list`, in which case we concatenate the entries with `:`.
 
-We use the same template syntax for `environment` as we do for [`command`](broken-reference/).
+We use the same template syntax for `environment` as we do for [`command`](custom-linters.md#command).
 
 #### Downloads
 
