@@ -155,10 +155,7 @@ lint:
 
 Every entry in `ignore` defines both a set of linters and a set of paths to ignore.
 
-| Key     | Value                                                                                                                                                                                                                                                                    |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| linters | List of linters (i.e. `[black, eslint]`) or the special `[ALL]` tag                                                                                                                                                                                                      |
-| paths   | List of [glob paths](../reference/glob-path-pattern.md), relative to the root of the repo, to ignore. If a path begins with a `!` then it represents an inverse ignore. This means that any file matching that glob will not be ignored, even if matched by other globs. |
+<table><thead><tr><th width="86">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (i.e. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>paths</td><td>List of <a href="../reference/glob-path-pattern.md">glob paths</a>, relative to the root of the repo, to ignore. If a path begins with a <code>!</code> then it represents an inverse ignore. This means that any file matching that glob will not be ignored, even if matched by other globs.</td></tr></tbody></table>
 
 > Note:`trunk` is `git`-aware, which means it ignores `gitignore`d files by default.
 
