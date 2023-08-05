@@ -1,6 +1,6 @@
 # Configuration
 
-The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of [`trunk.yaml`](../reference/trunk-yaml.md). Here's an example of what a fully-featured `lint` section looks like:
+The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of [`trunk.yaml`](../reference/trunk-yaml.md#cli). Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -55,11 +55,7 @@ lint:
 
 Normally when you run `trunk check` or `trunk fmt` it runs only on files you've changed. We've made it easy to test how a linter will behave in your repo. As you're tuning your linter configuration simply run check with the `--sample` flag. When sampling trunk will find applicable files for the linters you've enabled and show you how the linter will behave against of sampling of inputs.
 
-| Sample                         | Command                                  |
-| ------------------------------ | ---------------------------------------- |
-| all linters on 5 files         | `trunk check --sample 5`                 |
-| a specific linter with 7 files | `trunk check --sample=7 --filter=clippy` |
-| all linters on a specific file | `trunk check foo.file`                   |
+<table><thead><tr><th width="260">Sample</th><th>Command</th></tr></thead><tbody><tr><td>all linters on 5 files</td><td><code>trunk check --sample 5</code></td></tr><tr><td>a specific linter with 7 files</td><td><code>trunk check --sample=7 --filter=clippy</code></td></tr><tr><td>all linters on a specific file</td><td><code>trunk check foo.file</code></td></tr></tbody></table>
 
 When sampling, `trunk` may run multiple linters on a single file, and may not run each linter on the full number of requested samples (if not enough applicable files can be found).
 
@@ -172,10 +168,7 @@ lint:
 
 Every entry in `threshold` defines a set of linters and the severity threshold that is considered blocking. In this example, we're saying that only `high` lint issues should be considered blocking for `clang-tidy`.
 
-| Key     | Value                                                                                                                                                  |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| linters | List of linters (e.g. `[black, eslint]`) or the special `[ALL]` tag                                                                                    |
-| level   | Threshold at which issues are considered blocking. One of : `low`, `medium`, `high`, or `none` (this last option will result in issues never blocking) |
+<table><thead><tr><th width="97">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (e.g. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>level</td><td>Threshold at which issues are considered blocking. One of : <code>low</code>, <code>medium</code>, <code>high</code>, or <code>none</code> (this last option will result in issues never blocking)</td></tr></tbody></table>
 
 ### Trigger rules
 
