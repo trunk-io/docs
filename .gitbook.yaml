@@ -1,21 +1,21 @@
 root: ./
 
 ​structure:  
-    readme: README.md  
+    readme: README.md
     summary: SUMMARY.md​
 
-redirects:  
+redirects:
     docs: README.md
     docs/check: check/README.md
     docs/check-cli: check/command-line.md
     docs/check-config: check/config.md
     docs/check-custom-linters: check/custom-linters.md
-    docs/check-supported-linters: check/supported-linters.md    
+    docs/check-supported-linters: check/supported-linters.md
     docs/get-started: get-started.md
     docs/ignoring-issues: check/ignoring-issues.md
-    docs/install: cli/install.md
+    docs/install: cli/install-trunk.md
     docs/overview: cli/README.md
-    docs/windows-beta: cli/windows-beta.md    
+    docs/windows-beta: cli/windows-beta.md
     docs/vscode: reference/vs-code.md
     docs/what-is-trunk: README.md
     docs/check-get-started: check/get-started.md
@@ -31,3 +31,4 @@ redirects:
     docs/actions-config: actions/config.md
     docs/github-codespaces: cli/github-codespaces.md
     docs/trunk-app-for-slack: reference/integration-for-slack.md
+    reference/reference-trunk-yaml: reference/trunk-yaml.md

@@ -50,7 +50,7 @@ which will commit `.trunk/trunk.yaml`, the Trunk configuration file.
 
 ### Learn more
 
-Check out how to [install the CLI](docs:install), [set it up in CI](docs:ci), [ignore issues](docs:ignoring-issues), and set up [Custom Linters](../check/custom-linters.md).
+Check out how to [install the CLI](https://docs.trunk.io/cli/install-trunk), [set it up in CI](https://readme.trunk.io/docs/check-github-integration), [ignore issues](https://docs.trunk.io/check/ignoring-issues), and set up [Custom Linters](../check/custom-linters.md).
 
 ![linter code docs](https://static.trunk.io/assets/vscode\_doc\_links.png)
 
