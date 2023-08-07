@@ -11,6 +11,7 @@ with open(".gitbook.yaml") as stream:
     config = yaml.safe_load(stream)
 
 redirects = config["redirects"]
+fail = False
 
 def validate_link(path, url):
     return False
@@ -24,6 +25,9 @@ for path in Path('.').rglob('*.md'):
             continue
         for match in matches:
           if not validate_link(path, match[1]):
+              fail = True
               print("{}: Invalid url: '{}' with description: '{}'".format(path, match[1], match[0]))
 
 
+if fail:
+    exit(1)
