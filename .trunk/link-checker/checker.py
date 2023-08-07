@@ -48,6 +48,9 @@ def check_fragment(source_path, link_dest, fragment):
 def validate_link(path, url):
     if url in ALLOW_LIST_URLS:
         return True
+    if url.startswith("https://docs.trunk.io/"):
+        print(">>> Link should be relative")
+        return False
     if url.startswith("http"):
         stripped_url = (
             urlparse(url, allow_fragments=False)
