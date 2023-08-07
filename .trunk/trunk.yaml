@@ -23,9 +23,19 @@ runtimes:
     - node@18.12.1
     - python@3.10.8
 actions:
+  definitions:
+    - id: link-checker
+      display_name: Link Checker
+      description: Check docs links to avoid 404s
+      runtime: python
+      packages_file: .trunk/link-checker/requirements.txt
+      run: python3 .trunk/link-checker/checker.py
+      triggers:
+        - git_hooks: [pre-commit]
   disabled:
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
   enabled:
     - trunk-upgrade-available
+    - link-checker
