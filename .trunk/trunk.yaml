@@ -8,9 +8,9 @@ plugins:
       uri: https://github.com/trunk-io/plugins
 lint:
   disabled:
-    - prettier
     - markdownlint
   enabled:
+    - prettier@3.0.1
     - checkov@2.3.356
     - git-diff-check
     - oxipng@8.0.0
@@ -18,6 +18,11 @@ lint:
     - trivy@0.44.0
     - trufflehog@3.46.3
     - yamllint@1.32.0
+  ignore:
+    - linters: [prettier]
+      paths:
+        - "**/*.md"
+
 runtimes:
   enabled:
     - node@18.12.1
