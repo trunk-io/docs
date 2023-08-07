@@ -1,6 +1,6 @@
 # VS Code
 
-Trunk is also available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=Trunk.io) that you can use to streamline your linting and formatting experiences.
+Trunk is also available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=trunk.io) that you can use to streamline your linting and formatting experiences.
 
 ### Get Started
 
