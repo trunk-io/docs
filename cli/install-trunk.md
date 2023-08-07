@@ -12,7 +12,7 @@ To install without prompting:
 curl https://get.trunk.io -fsSL | bash -s -- -y
 ```
 
-#### Commit the [Trunk Launcher ](../reference/components.md#trunk-launcher)directly into your repo
+#### Commit the [Trunk Launcher ](../reference/components.md#trunk-launcher) directly into your repo
 
 To allow your teammates to use `trunk` without installing anything, the launcher can be committed directly into your repo; Once committed, anyone working in your repository can use `trunk` without any additional installation. Fewer steps == less friction.
 
