@@ -31,7 +31,7 @@ actions:
       packages_file: .trunk/link-checker/requirements.txt
       run: python3 .trunk/link-checker/checker.py
       triggers:
-        - git_hooks: [pre-commit]
+        - git_hooks: [pre-push]
   disabled:
     - trunk-announce
     - trunk-check-pre-push
