@@ -11,6 +11,8 @@ lint:
     - prettier
     - markdownlint
   enabled:
+    - ruff@0.0.282
+    - black@23.7.0
     - checkov@2.3.356
     - git-diff-check
     - oxipng@8.0.0
