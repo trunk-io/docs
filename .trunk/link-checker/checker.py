@@ -84,6 +84,7 @@ def validate_link(path, url):
 
 # Iterate through markdown file and check links
 path = Path(filename)
+fail = False
 with open(path, "r") as file:
     file_lines = file.read().splitlines()
     for line_num, line in enumerate(file_lines, 1):
@@ -95,11 +96,11 @@ with open(path, "r") as file:
             if result == Result.FAIL_FRAGMENT:
                 fail = True
                 message = result.value.format(details, match[1])
-                print("{}:{}: {}".format(filename, line_num, message))
+                print("{}:{}: {} ({})".format(filename, line_num, message, result.name))
             elif result != Result.PASS:
                 fail = True
                 message = result.value.format(match[1], match[0])
-                print("{}:{}: {}".format(filename, line_num, message))
+                print("{}:{}: {} ({})".format(filename, line_num, message, result.name))
 
 if fail:
     exit(1)
