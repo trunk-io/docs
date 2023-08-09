@@ -338,7 +338,7 @@ lint:
 
 #### Output
 
-The output format that `trunk` expects from a linter is determined by its [`type`](custom-linters.md#linter-types).
+The output format that `trunk` expects from a linter is determined by its [`type`](#linter-types).
 
 **`stdout`, `stderr` or `tmp_file`**
 
