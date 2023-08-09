@@ -1,6 +1,10 @@
-# Tools
+---
+description: >-
+  Trunk Tools is a hermetic runtime and CLI tool manager. Seamlessly specify,
+  install, and upgrade the tooling in your repository with Trunk Tools.
+---
 
-**Trunk Tools is a hermetic runtime and CLI tool manager. Seamlessly specify, install, and upgrade the tooling in your repository with Trunk Tools.**
+# Tools
 
 #### Command Line
 
