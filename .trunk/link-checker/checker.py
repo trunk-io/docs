@@ -103,4 +103,4 @@ with open(path, "r") as file:
                 print("{}:{}: {} ({})".format(filename, line_num, message, result.name))
 
 if fail:
-    exit(1)
+    exit(2)

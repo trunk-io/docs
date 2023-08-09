@@ -36,7 +36,7 @@ lint:
           parse_regex: "(?P<path>.*?):(?P<line>\\d+): (?P<message>.*) \\((?P<code>\\w+)\\)"
           run: python3 ${workspace}/.trunk/link-checker/checker.py ${target}
           batch: false
-          success_codes: [0, 1]
+          success_codes: [0, 2]
       suggest_if: never
 runtimes:
   enabled:
