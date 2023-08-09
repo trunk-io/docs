@@ -6,8 +6,15 @@ import yaml
 from pathlib import Path
 from urllib.parse import urlparse
 
-# TODO: Create maps of frequently read files to improve performance
-# TODO: Parallize for performance
+import argparse
+from enum import Enum
+
+class Result(Enum):
+    PASS = 1
+    FAIL_404 = "Could not find url: '{}' with description: '{}'"
+    FAIL_RELATIVE = "'{}' should not be relative"
+    FAIL_FRAGMENT = "Could not find fragment '{}' in '{}'"
+    FAIL_UNKNOWN = "Failed to detect url: '{}' with description '{}'"
 
 LINK_REGEX = r"\[(?P<display>[^\]]+)\]\((?P<link>[^ \)]+)\)"
 ALLOW_LIST_URLS = [
@@ -22,6 +29,11 @@ ALLOW_LIST_URLS = [
 ]
 ALLOW_LIST_FRAGMENTS = ["sample"]
 
+parser = argparse.ArgumentParser()
+parser.add_argument('filename', nargs=1)
+args = parser.parse_args()
+filename = args.filename[0]
+
 # Load the set of redirects from the gitbook config file
 with open(".gitbook.yaml", "r") as stream:
     config = yaml.safe_load(stream)
@@ -30,34 +42,30 @@ redirects = config["redirects"]
 fail = False
 
 
-def check_fragment(source_path, link_dest, fragment):
+def check_fragment(link_dest, fragment):
     if fragment in ALLOW_LIST_FRAGMENTS:
-        return True
+        return (Result.PASS, None)
     fragment_regex = r"# [`*_]*{}".format(fragment.replace("-", "."))
     with open(link_dest, "r") as target:
         if re.search(fragment_regex, target.read(), re.IGNORECASE) is None:
-            print(
-                ">>> Could not detect fragment '{}' in file {} pointing to from {}".format(
-                    fragment, link_dest, source_path
-                )
-            )
-            return False
-        return True
+            return (Result.FAIL_FRAGMENT, fragment)
+        return (Result.PASS, None)
 
 
 def validate_link(path, url):
     if url in ALLOW_LIST_URLS:
-        return True
+        return (Result.PASS, None)
     if url.startswith("https://docs.trunk.io/"):
-        print(">>> Link should be relative")
-        return False
+        return (Result.FAIL_RELATIVE, None)
     if url.startswith("http"):
         stripped_url = (
             urlparse(url, allow_fragments=False)
             ._replace(query="", fragment="")
             .geturl()
         )
-        return requests.head(stripped_url).status_code != 404
+        if requests.head(stripped_url).status_code == 404:
+            return (Result.FAIL_404, None)
+        return (Result.PASS, None)
 
     fragment_index = url.find("#")
     if fragment_index > 0:
@@ -67,33 +75,37 @@ def validate_link(path, url):
         from_root_path = filename
 
         if filename == "." or filename == "./":
-            return check_fragment(path, path.parent.joinpath("README.md"), fragment)
+            return check_fragment(path.parent.joinpath("README.md"), fragment)
         if os.path.exists(from_file_path):
-            return check_fragment(path, from_file_path, fragment)
+            return check_fragment(from_file_path, fragment)
         if os.path.exists(from_root_path):
-            return check_fragment(path, from_root_path, fragment)
-        return False
+            return check_fragment(from_root_path, fragment)
+        return (Result.FAIL_UNKNOWN, None)
     else:
         if os.path.exists(path.parent.joinpath(url)) or os.path.exists(url):
-            return True
+            return (Result.PASS, None)
 
-    return False
+    return (Result.FAIL_UNKNOWN, None)
 
 
-# Iterate through all markdown files and check links
-for path in Path(".").rglob("*.md"):
-    with open(path, "r") as file:
-        matches = re.findall(LINK_REGEX, file.read())
+# Iterate through markdown file and check links
+path = Path(filename)
+with open(path, "r") as file:
+    file_lines = file.read().splitlines()
+    for line_num, line in enumerate(file_lines, 1):
+        matches = re.findall(LINK_REGEX, line)
         if len(matches) == 0:
             continue
         for match in matches:
-            if not validate_link(path, match[1]):
+            result, details = validate_link(path, match[1])
+            if result == Result.FAIL_FRAGMENT:
                 fail = True
-                print(
-                    "{}: Could not find url: '{}' with description: '{}'".format(
-                        path, match[1], match[0]
-                    )
-                )
+                message = result.value.format(filename, details)
+                print("{}:{}: {}".format(filename, line_num, message))
+            elif result != Result.PASS:
+                fail = True
+                message = result.value.format(filename, match[0])
+                print("{}:{}: {}".format(filename, line_num, message))
 
 if fail:
     exit(1)
