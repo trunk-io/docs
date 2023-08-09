@@ -1,6 +1,10 @@
 # Ignoring Issues
 
-\[block:callout] { "type": "info", "body": "If you're only looking to ignore issues in a single file, read on. If you want to ignore issues across multiple files, you probably want the docs for [`lint.ignore`](https://docs.trunk.io/docs/check-config#ignoring-files) in `.trunk/trunk.yaml` (note that Check also ignores issues in `gitignore`-d files)." } \[/block] Sometimes we want to deliberately tell a linter that, yes, I know what I'm doing, and yes, in any other situation I should _not_ do this, but in this specific case it's fine. Maybe there's a dummy private key you're using for a test stack, or fixing the lint issue will actually make your code less readable: whatever it is, you now need to figure out how to suppress a given lint issue.
+{% hint style="info" %}
+If you're only looking to ignore issues in a single file, read on. If you want to ignore issues across multiple files, you probably want the docs for [`lint.ignore`](configuration.md#ignoring-files) in `.trunk/trunk.yaml` (note that Check also ignores issues in `gitignore`-d files)&#x20;
+{% endhint %}
+
+Sometimes we want to deliberately tell a linter that, yes, I know what I'm doing, and yes, in any other situation I should _not_ do this, but in this specific case it's fine. Maybe there's a dummy private key you're using for a test stack, or fixing the lint issue will actually make your code less readable: whatever it is, you now need to figure out how to suppress a given lint issue.
 
 `trunk` provides a simple, standardized mechanism to do this, saving you from having to look up the linter-specific syntax for doing so:
 

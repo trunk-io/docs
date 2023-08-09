@@ -19,4 +19,4 @@ Over the course of a `trunk check` run, changes made to the filesystem outside o
 
 ## Why does trunk only work in a git repo?
 
-`trunk` uses git to detect your changes so we only check the code you've changed. Additionally we use it to accurately detect errors _caused_ by your changes, even if the errors aren't on lines you changed. You'll read more about [hold-the-line](./#hold-the-lineld-the-line) later in the docs.
+`trunk` uses git to detect your changes so we only check the code you've changed. Additionally we use it to accurately detect errors _caused_ by your changes, even if the errors aren't on lines you changed. You'll read more about [hold-the-line](./#hold-the-line) later in the docs.
