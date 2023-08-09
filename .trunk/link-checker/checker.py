@@ -12,7 +12,7 @@ from enum import Enum
 class Result(Enum):
     PASS = 1
     FAIL_404 = "Could not find url: '{}' with description: '{}'"
-    FAIL_RELATIVE = "'{}' should not be relative"
+    FAIL_RELATIVE = "'{}' should be relative"
     FAIL_FRAGMENT = "Could not find fragment '{}' in '{}'"
     FAIL_UNKNOWN = "Failed to detect url: '{}' with description '{}'"
 
@@ -100,11 +100,11 @@ with open(path, "r") as file:
             result, details = validate_link(path, match[1])
             if result == Result.FAIL_FRAGMENT:
                 fail = True
-                message = result.value.format(filename, details)
+                message = result.value.format(details, match[1])
                 print("{}:{}: {}".format(filename, line_num, message))
             elif result != Result.PASS:
                 fail = True
-                message = result.value.format(filename, match[0])
+                message = result.value.format(match[1], match[0])
                 print("{}:{}: {}".format(filename, line_num, message))
 
 if fail:
