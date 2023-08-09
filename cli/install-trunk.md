@@ -12,7 +12,7 @@ To install without prompting:
 curl https://get.trunk.io -fsSL | bash -s -- -y
 ```
 
-#### Commit the [Trunk Launcher ](../reference/components.md#trunk-launcher) directly into your repo
+#### Commit the [Trunk Launcher ](../reference/components.md#trunk-launcher)directly into your repo
 
 To allow your teammates to use `trunk` without installing anything, the launcher can be committed directly into your repo; Once committed, anyone working in your repository can use `trunk` without any additional installation. Fewer steps == less friction.
 
@@ -68,7 +68,7 @@ https://trunk.io/releases/${version}/trunk-${version}-${platform}-x86_64.tar.gz
 
 #### Next Steps check out:
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Check</strong></td><td></td><td>An extendable superlinter with a builtin language server and preexisting issue detection</td><td><a href="../check/">check</a></td><td><a href="../.gitbook/assets/Check.svg">Check.svg</a></td></tr><tr><td>Actions</td><td></td><td>Workflow automation for your repository</td><td><a href="../actions/">actions</a></td><td><a href="../.gitbook/assets/Actions (2).svg">Actions (2).svg</a></td></tr><tr><td><strong>Merge</strong></td><td></td><td>A merge queue to make merging code in GitHub safer and easier</td><td><a href="../merge/">merge</a></td><td><a href="../.gitbook/assets/Merge.svg">Merge.svg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Check</strong></td><td></td><td>An extendable superlinter with a builtin language server and preexisting issue detection</td><td><a href="../check/">check</a></td><td><a href="../.gitbook/assets/Check.svg">Check.svg</a></td></tr><tr><td><strong>Actions</strong></td><td></td><td>Workflow automation for your repository</td><td><a href="../actions/">actions</a></td><td><a href="../.gitbook/assets/Actions (2).svg">Actions (2).svg</a></td></tr><tr><td><strong>Merge</strong></td><td></td><td>A merge queue to make merging code in GitHub safer and easier</td><td><a href="../merge/">merge</a></td><td><a href="../.gitbook/assets/Merge.svg">Merge.svg</a></td></tr></tbody></table>
 
 As well as the other ways to use Trunk:
 

@@ -68,7 +68,9 @@ struct FooBar {
 };
 ```
 
-\[block:callout] { "type": "info", "body": " `trunk-ignore-all` is not required to be the first line of a file, because we recognize that other constructs (shebangs, front matter, docstrings) may need to take precedence." } \[/block]
+{% hint style="info" %}
+`trunk-ignore-all` is not required to be the first line of a file, because we recognize that other constructs (shebangs, front matter, docstrings) may need to take precedence.
+{% endhint %}
 
 #### Ignoring all issues in a code block
 
