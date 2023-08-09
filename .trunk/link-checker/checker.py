@@ -9,12 +9,14 @@ from urllib.parse import urlparse
 import argparse
 from enum import Enum
 
+
 class Result(Enum):
     PASS = 1
     FAIL_404 = "Could not find url: '{}' with description: '{}'"
     FAIL_RELATIVE = "'{}' should be relative"
     FAIL_FRAGMENT = "Could not find fragment '{}' in '{}'"
     FAIL_UNKNOWN = "Failed to detect url: '{}' with description '{}'"
+
 
 LINK_REGEX = r"\[(?P<display>[^\]]+)\]\((?P<link>[^ \)]+)\)"
 ALLOW_LIST_URLS = [
@@ -30,7 +32,7 @@ ALLOW_LIST_URLS = [
 ALLOW_LIST_FRAGMENTS = ["sample"]
 
 parser = argparse.ArgumentParser()
-parser.add_argument('filename', nargs=1)
+parser.add_argument("filename", nargs=1)
 args = parser.parse_args()
 filename = args.filename[0]
 
