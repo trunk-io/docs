@@ -1,6 +1,6 @@
 Let's look at how to configure `trunk tools`.
 
-Tools are configured in the `tools` section of [`trunk.yaml`](doc:reference-trunk-yaml). As with other settings, you can override these values in your [User YAML](doc:reference-user-trunk-yaml).
+Tools are configured in the `tools` section of [`trunk.yaml`](../reference//trunk-yaml.md). As with other settings, you can override these values in your [User YAML](../reference/user-yaml.md).
 
 ```yaml
 tools:
