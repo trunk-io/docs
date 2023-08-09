@@ -1,15 +1,17 @@
+# Tools
+
 **Trunk Tools is a hermetic runtime and CLI tool manager. Seamlessly specify, install, and upgrade the tooling in your repository with Trunk Tools.**
 
-### Command Line
+#### Command Line
 
 | trunk tools `<command>`        | description                                                                    |
-| :----------------------------- | :----------------------------------------------------------------------------- |
+| ------------------------------ | ------------------------------------------------------------------------------ |
 | list                           | list all available tools in the repository and whether they are enabled or not |
 | install                        | install your enabled tools into `.trunk/tools`                                 |
 | enable `<tool-name>[@version]` | enable the provided tool, optionally at a specified version                    |
 | disable `<tool-name>`          | disable the provided tool                                                      |
 
-### Discovering Tools
+#### Discovering Tools
 
 The trunk [plugins](https://github.com/trunk-io/plugins) repo ships with a collection of tools that can help supercharge your repository and provide examples for how to write your own. To see a list of tools that you can enable in your own repo run:
 
@@ -17,22 +19,11 @@ The trunk [plugins](https://github.com/trunk-io/plugins) repo ships with a colle
 trunk tools list
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/04eaa8c-Screenshot_2023-08-03_at_4.46.48_PM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
 
-### Running Tools
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
+
+#### Running Tools
 
 `Trunk` installs your enabled tools into the `.trunk/tools` directory. Each tool exposes as list of **shims** (these may or may not be identically named to the tool - most typically a tool has one shim matching the name of the tool). Each shim is installed into the `.trunk/tools` directory.
 
