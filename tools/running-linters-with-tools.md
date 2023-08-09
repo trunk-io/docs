@@ -2,4 +2,4 @@
 
 ## Configuring linters
 
-See [Check Configuration for Tools](doc:check-custom-linters#tools) for more information on how to use tools to define and run linters.
+See [Check Configuration for Tools](../check/custom-linters.md#tools) for more information on how to use tools to define and run linters.
