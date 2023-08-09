@@ -36,14 +36,6 @@ parser.add_argument("filename", nargs=1)
 args = parser.parse_args()
 filename = args.filename[0]
 
-# Load the set of redirects from the gitbook config file
-with open(".gitbook.yaml", "r") as stream:
-    config = yaml.safe_load(stream)
-
-redirects = config["redirects"]
-fail = False
-
-
 def check_fragment(link_dest, fragment):
     if fragment in ALLOW_LIST_FRAGMENTS:
         return (Result.PASS, None)
