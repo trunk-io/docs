@@ -8,7 +8,7 @@ description: >-
 
 #### Command Line
 
-| trunk tools `<command>`        | description                                                                    |
+| trunk tools \<command>         | description                                                                    |
 | ------------------------------ | ------------------------------------------------------------------------------ |
 | list                           | list all available tools in the repository and whether they are enabled or not |
 | install                        | install your enabled tools into `.trunk/tools`                                 |
