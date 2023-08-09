@@ -2,7 +2,6 @@
 import os
 import re
 import requests
-import yaml
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -35,6 +34,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("filename", nargs=1)
 args = parser.parse_args()
 filename = args.filename[0]
+
 
 def check_fragment(link_dest, fragment):
     if fragment in ALLOW_LIST_FRAGMENTS:

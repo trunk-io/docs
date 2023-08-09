@@ -28,7 +28,7 @@ lint:
   definitions:
     - name: link-checker
       runtime: python
-      extra_packages: [PyYAML, requests]
+      extra_packages: [requests]
       commands:
         - name: lint
           files: [markdown]
