@@ -18,20 +18,9 @@ You can always find this list using `trunk check --help`.
 Run all applicable formatters as configured in `trunk.yaml`. `trunk fmt` is short-hand for running\
 `trunk check` with a `--fix --filter` set to all formatters enabled in your repository.
 
-| options              |                                                                                                                                       |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `--all`              | Run on all the files in the repository. Useful if trying to assess a new linter in the system, or to find and fix pre-existing issues |
-| `--fix`              | Auto-apply all suggested fixes                                                                                                        |
-| `--no-fix`           | Surface, but do not prompt for autofixes                                                                                              |
-| `--filter`           | List of comma-separated linters to run. Specify `--filter=-linter` to disable a linter.                                               |
-| `--sample=N`         | Run check on a [sampling](command-line.md#sample) of all files in the repo                                                            |
-| `--ci`               | Run in Continuous Integration mode                                                                                                    |
-| `--no-progress`      | Do not show progress while running                                                                                                    |
-| `--ci-progress`      | Only show progress every 30s while running (useful for CI jobs). Implied by `--ci`.                                                   |
-| `--output`           | Output results in specified format: text (default) or json                                                                            |
-| `--output-file=FILE` | Write json results to specified file                                                                                                  |
-| `--show-fixed`       | Include fixed issues in the output                                                                                                    |
-| `--help`             | Output help information                                                                                                               |
+## Options
+
+<table><thead><tr><th width="238">options</th><th></th></tr></thead><tbody><tr><td><code>--all</code></td><td>Run on all the files in the repository. Useful if trying to assess a new linter in the system, or to find and fix pre-existing issues</td></tr><tr><td><code>--fix</code></td><td>Auto-apply all suggested fixes</td></tr><tr><td><code>--no-fix</code></td><td>Surface, but do not prompt for autofixes</td></tr><tr><td><code>--filter</code></td><td>List of comma-separated linters to run. Specify <code>--filter=-linter</code> to disable a linter.</td></tr><tr><td><code>--sample=N</code></td><td>Run check on a <a href="command-line.md#sample">sampling</a> of all files in the repo</td></tr><tr><td><code>--ci</code></td><td>Run in Continuous Integration mode</td></tr><tr><td><code>--no-progress</code></td><td>Do not show progress while running</td></tr><tr><td><code>--ci-progress</code></td><td>Only show progress every 30s while running (useful for CI jobs). Implied by <code>--ci</code>.</td></tr><tr><td><code>--output</code></td><td>Output results in specified format: text (default) or json</td></tr><tr><td><code>--output-file=FILE</code></td><td>Write json results to specified file</td></tr><tr><td><code>--show-fixed</code></td><td>Include fixed issues in the output</td></tr><tr><td><code>--jobs</code></td><td>number of concurrent jobs (does not affect background linting)</td></tr><tr><td><code>--help</code></td><td>Output help information</td></tr></tbody></table>
 
 ### Recipes
 

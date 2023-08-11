@@ -36,9 +36,7 @@ We currently support the following linters:
 | TOML                               | `taplo`                                                                                      |
 | YAML                               | `prettier`, `semgrep`, `yamllint`                                                            |
 
-### Caching
 
-Caching is currently enabled for about half the linters/formatters. Since Trunk needs to know all the inputs to a linter for a file/directory in order to cache the results, we don't yet cache every linter, but we are building out the functionality to do so. You can see which linters are currently configured to be cached by running `trunk print-config` and seeing which linter configurations have `cache_results: true` set. That's also how you can enable/disable caching for any custom linters you integrate.
 
 ### Linter-specific Configuration
 
