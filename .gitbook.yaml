@@ -26,7 +26,7 @@ redirects:
   docs/ci-debugger: ci-debugger/README.md
   docs/actions: actions/README.md
   docs/check-github-integration: check/github-integration.md
-  docs/upload-check-results: check/github-integration.md
+  docs/upload-check-results: web-app/upload-trunk-check-results.md
   docs/plugins: plugins/README.md
   docs/merge-get-started: merge/get-started.md
   docs/actions-config: actions/config.md
