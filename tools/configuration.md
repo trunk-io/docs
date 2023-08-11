@@ -1,6 +1,8 @@
+# Configuration
+
 Let's look at how to configure `trunk tools`.
 
-Tools are configured in the `tools` section of [`trunk.yaml`](../reference//trunk-yaml.md). As with other settings, you can override these values in your [User YAML](../reference/user-yaml.md).
+Tools are configured in the `tools` section of [`trunk.yaml`](../reference/trunk-yaml/). As with other settings, you can override these values in your [User YAML](../reference/user-yaml.md).
 
 ```yaml
 tools:
@@ -24,13 +26,13 @@ tools:
       shims: [gh]
 ```
 
-Like with actions and linters, we have a (versioned) `enabled` section and a `disabled` section, which can be manipulated using `trunk tools enable/disable`. There is also a list of `definitions`, which are merged across your `trunk.yaml`, `user.yaml`, as well as any plugins that you use. 
+Like with actions and linters, we have a (versioned) `enabled` section and a `disabled` section, which can be manipulated using `trunk tools enable/disable`. There is also a list of `definitions`, which are merged across your `trunk.yaml`, `user.yaml`, as well as any plugins that you use.
 
-`auto_sync` controls whether or not `trunk` automatically installs your tools for you when your config changes. This defaults to `true`. Note that the daemon must be running with the monitor in order for this to function properly. 
+`auto_sync` controls whether or not `trunk` automatically installs your tools for you when your config changes. This defaults to `true`. Note that the daemon must be running with the monitor in order for this to function properly.
 
-## Tool definitions.
+### Tool definitions.
 
-Each tool definition shares a set of attributes - 
+Each tool definition shares a set of attributes -
 
 `name`: the name of the tool. Must be unique.
 
@@ -40,11 +42,11 @@ Each tool definition shares a set of attributes -
 
 `environment`: You can specify an environment for the tool. We provide the `${tool}` template argument that resolves to the installation directory of the tool. By default, we prepend this to `$PATH` within the shim script, so this is used to locate the binary. For legacy reasons, `${linter}` also resolves to this directory.
 
-Otherwise, if the tool has a `runtime` attribute, the runtime's environment is merged in (discussed in the examples below). 
+Otherwise, if the tool has a `runtime` attribute, the runtime's environment is merged in (discussed in the examples below).
 
 Broadly speaking, there are 3 kinds of tools - download, package, and runtime-based tools. We'll look at each one in turn:
 
-### Download-based tools
+#### Download-based tools
 
 Download-based tools are straightforward: They reference a named download configuration in the global `downloads` section. Here is an example:
 
@@ -95,7 +97,7 @@ tools:
 
 Note that for the downloaded archive, the binary named `gh` is inside the `bin` directory, so we use the environment to point the `$PATH` there.
 
-### Package-based tools
+#### Package-based tools
 
 Package-based tools depend on specified `package` and `runtime` attributes. Here is an example of configuring `mypy` as a tool:
 
@@ -116,7 +118,7 @@ tools:
 
 The version of the primary package (in this case, `mypy`) is specified in the `tools.enabled`. So to enable the `mypy` tool at `1.4.0`, list it as `- mypy@1.4.0`.
 
-### Runtime-based tools
+#### Runtime-based tools
 
 Runtime-based tools are a special case that are not explicitly defined. Rather, each runtime object exposes a set of `shims` (just like `tool` definitions) that are automatically installed in the `shims` directory for enabled runtimes. Thus you can run `python`, `pip`, etc as `trunk`-managed tools.
 
