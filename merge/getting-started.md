@@ -66,6 +66,7 @@ jobs:
 
       # Add more steps here...
 ```
+
 8. Submit a pull request, either using the Trunk CLI or in the GitHub Pull Request UI
 
 
