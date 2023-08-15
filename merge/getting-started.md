@@ -25,7 +25,7 @@ This setup guide will walk you through the initial setup for Trunk Merge.
       required_statuses:
         - Trunk Check
         - Unit tests & test coverage
-        - Integration tests
+        # Add more required statuses here
     ```
 
 
@@ -43,28 +43,22 @@ on:
 
 jobs:
   trunk_check:
+    runs-on: ubuntu-latest
     name: Trunk Check
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Add more steps here...
+    # Add more steps here...
 
   unit_tests:
+    runs-on: ubuntu-latest
     name: Unit tests & test coverage
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Add more steps here...
-
-  integration_tests:
-    name: Integration tests
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      # Add more steps here...
+    # Add more steps here..    
 ```
 
 8. Submit a pull request, either using the Trunk CLI or in the GitHub Pull Request UI
