@@ -12,7 +12,7 @@ If you pass `--verbose` flag when running check you can see which results were p
 
 ## CPU Utilization
 
-By default `check` will run concurrent jobs using up to half the available cores on your machine. This default is intended to balance system utilization and check responsiveness. If `check` detects that it is running in a continuous integration environment or you pass the `--ci` flag, then it will instead use all cores on the machine. This behavior can be overwritten by manually calling `check` with the [`--jobs`](command-line.md#options) argument.&#x20;
+By default `check` will run concurrent jobs using up to half the available cores on your machine. This default is intended to balance system utilization and check responsiveness. If `check` detects that it is running in a continuous integration environment or you pass the [`--ci`](command-line.md) flag, then it will instead use all cores on the machine. This behavior can be overwritten by manually calling `check` with the [`--jobs`](command-line.md#options) argument.&#x20;
 
 ## Memory Utilization
 
