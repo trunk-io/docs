@@ -31,7 +31,7 @@ trunk tools list
 
 `Trunk` installs your enabled tools into the `.trunk/tools` directory. Each tool exposes as list of **shims** (these may or may not be identically named to the tool - most typically a tool has one shim matching the name of the tool). Each shim is installed into the `.trunk/tools` directory.
 
-You can run your tools by referring to the path `<path to your workspace>/.trunk/tools/<shim name>` but this is unwieldy. We highly recommend using [direnv](https://direnv.net/) in your repository and adding the following line to your `.envrc` -
+You can run your tools by referring to the path `<path to your workspace>/.trunk/tools/<shim name>` but this is unwieldy. We highly recommend using [direnv](https://direnv.net/) in your repository and adding the following line to your `.envrc`:
 
 ```
 PATH_add .trunk/tools
