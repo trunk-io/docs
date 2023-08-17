@@ -298,12 +298,12 @@ The `target` field specifies what paths this linter will run on given an input f
 literal such a `.` which will run the linter on the whole repository. It also supports various\
 substitutions:
 
-| Variable                        | Description                                                                                                                                      |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `${file}`                       | The input file.                                                                                                                                  |
-| `${parent}`                     | The folder containing the file.                                                                                                                  |
-| `${parent_with <name>}`         | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, do not run any linter.           |
-| `${root_or_parent_with <name>}` | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, evaluate to the repository root. |
+| Variable                         | Description                                                                                                                                      |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `${file}`                        | The input file.                                                                                                                                  |
+| `${parent}`                      | The folder containing the file.                                                                                                                  |
+| `${parent_with(<name>)}`         | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, do not run any linter.           |
+| `${root_or_parent_with(<name>)}` | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, evaluate to the repository root. |
 
 If `target` is not specified it will default to `${file}`.
 
@@ -400,7 +400,7 @@ We use the same template syntax for `environment` as we do for [`command`](custo
 
 ### Tools
 
-You can use the `tools` section to specify trunk-configured binaries that the linter uses to run. The `tools` key should specify a list of strings referring to tool names. We have two kinds of tool dependencies - they are described in turn below. See the [Tools Configuration](../tools/configuration.md) page for more details on how to set up your tools.                    
+You can use the `tools` section to specify trunk-configured binaries that the linter uses to run. The `tools` key should specify a list of strings referring to tool names. We have two kinds of tool dependencies - they are described in turn below. See the [Tools Configuration](../tools/configuration.md) page for more details on how to set up your tools.
 
 This is the preferred way of defining and versioning a linter, as it also allows repo users to conveniently run the linter binary outside of the `trunk check` context.
 
@@ -487,7 +487,7 @@ In this scenario, `terraform` is an additional tool dependency - `terragrunt` re
 
 #### Downloads
 
-**(NOTE: This method of specifying linters is still supported, but using `tools` like specified [above](custom-linters.md#tools) is recommended going forward)**  
+**(NOTE: This method of specifying linters is still supported, but using `tools` like specified** [**above**](custom-linters.md#tools) **is recommended going forward)**
 
 If your custom linter has a separate release process (i.e. is not committed in your repo), then you can tell `trunk` how to download it like so:
 
