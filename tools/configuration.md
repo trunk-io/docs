@@ -6,9 +6,9 @@ Tools are configured in the `tools` section of [`trunk.yaml`](../reference/trunk
 
 ```yaml
 tools:
-	auto_sync: false # whether shims should be hot-reloaded off config changes.
+  auto_sync: false # whether shims should be hot-reloaded off config changes.
   enabled:
-  	- bazel@6.0.0
+    - bazel@6.0.0
     - mypy@1.4.1
     - ibazel@0.22.0
     - helm@3.9.4
@@ -17,7 +17,7 @@ tools:
    disabled:
    	- gt
    definitions:
-   	- name: gh
+    - name: gh
       download: gh
       known_good_version: 2.27.0
       environment:
