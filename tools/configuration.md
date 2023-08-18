@@ -14,9 +14,9 @@ tools:
     - helm@3.9.4
     - eksctl@0.74.0
     - asciinema@2.1.0
-   disabled:
-   	- gt
-   definitions:
+  disabled:
+    - gt
+  definitions:
     - name: gh
       download: gh
       known_good_version: 2.27.0
