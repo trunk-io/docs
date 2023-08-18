@@ -37,4 +37,4 @@ You can run your tools by referring to the path `<path to your workspace>/.trunk
 PATH_add .trunk/tools
 ```
 
-This way, whenever you're insider your repo at the command line, you can just run shims installed by `trunk tools` directly by name.
+This way, whenever you're inside your repo at the command line, you can just run shims installed by `trunk tools` directly by name.
