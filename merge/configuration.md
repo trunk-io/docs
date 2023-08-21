@@ -13,7 +13,7 @@ For example, assuming a timeout of one hour:
 
 ### Paused / Running
 
-You can pause / resume your MergeQueue. A paused merge queue will not accept any new items, nor merge any items into the target branch.
+You can pause / resume your MergeQueue. A paused merge queue will not accept any new items, nor merge any items into the target branch. 
 
 ### Timeout for Tests to Complete
 Configure how long a PR's test can run before auto-cancelling. The MergeQueue tests every PR in the queue. If a long-running test is detected, MergeQueue will automatically cancel 
@@ -33,7 +33,7 @@ For example, assuming a timeout of 4 hours:
 Configure how many PRs may test in parallel. A larger number may increase throughput, since more PRs are tested in parallel, but at the expense of CI, since more jobs are running in parallel.
 
 {% hint style="info" %}
-If your testing workload contains some flaky tests, a deeper queue (i.e. a higher concurrency) may struggle. We strongly suggest you take a look into our MergeGraph offering to reduce the average depth of your merging solution. Please contact us at [Slack](slack.trunk.io), or via [email](support@trunk.io), and we're happy to help!
+If your testing workload contains some flaky tests, a deeper queue (i.e. a higher concurrency) may struggle. We strongly suggest you take a look into our MergeGraph offering to reduce the average depth of your merging solution. Please contact us at [Slack](https://slack.trunk.io), and we're happy to help!
 {% endhint %}
 
 For example, assuming a concurrency of 3:
