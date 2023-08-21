@@ -1,7 +1,9 @@
 # Configuration
 
 We offer some knobs and dials when configuring a MergeQueue. The following
-configuration can be applied at app.trunk.io, in the Settings > <repoName> page.
+settings can be applied at app.trunk.io, in the Settings > <repoName> page.
+
+![](https://files.readme.io/d2bc2dc-Screen\_Shot\_2022-09-11\_at\_11.08.36\_PM.png)
 
 ## Timeout for Tests to Start
 
