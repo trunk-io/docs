@@ -1,7 +1,7 @@
 # Configuration
 
 We offer some knobs and dials when configuring a MergeQueue. The following
-settings can be applied at app.trunk.io, in the Settings > <repoName> page.
+settings can be applied at app.trunk.io, in the Settings > Repo-Name page.
 
 ### Timeout for Tests to Start
 Configure how long a PR should wait for tests to start before auto-cancelling. The MergeQueue creates a test branch for every PR in the queue. CI should be configured to run tests when that branch is created: see [getting started](getting-started.md) for some examples. However, CI can have transient failures, and tests may not start. Trunk will cancel any PRs that have requested tests to start, but have not yet heard back from CI.
@@ -11,12 +11,16 @@ For example, assuming a timeout of one hour:
 - At 12:10, PR 123 passes all required readiness checks, and a testing branch is created using Alice's CI system.
 - At 1:10, Trunk's MergeQueue has not yet heard back from Alice's CI system about the testing branch. Trunk cancels PR 123.
 
+### Paused / Running
+
+You can pause / resume your MergeQueue. A paused merge queue will not accept any new items, nor merge any items into the target branch.
+
 ### Timeout for Tests to Complete
 Configure how long a PR's test can run before auto-cancelling. The MergeQueue tests every PR in the queue. If a long-running test is detected, MergeQueue will automatically cancel 
 the test.
 
 {% hint style="info" %}
-If you're unsure about what timeout to set, you can use our CI Analytics to analyze the runtime of your CI. 
+If you're unsure about what timeout to set, you can use our [CI Analytics](https://trunk.io/products/ci-analytics) to analyze the runtime of your CI. 
 {% endhint %}
 
 For example, assuming a timeout of 4 hours:
