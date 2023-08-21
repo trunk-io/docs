@@ -57,7 +57,7 @@ Merge monitors [GitHub's branch protection rules](https://docs.github.com/en/rep
 
 ![](https://files.readme.io/a2ccbf1-Screen\_Shot\_2022-09-11\_at\_11.15.15\_PM.png)
 
-Most repository maintainers will want to use the GitHub branch protection settings to limit who can merge pull requests. By restricting who can merge to admins and the Github Trunk App, you can prevent contributors from circumventing Merge and merging code directly.\
+Most repository maintainers will want to use the GitHub branch protection settings to limit who can merge pull requests. By restricting who can merge to admins and the Github Trunk App, you can prevent contributors from circumventing Merge and merging code directly.
 Merge does account for admins needing to merge pull requests directly, effectively skipping Merge entirely. If a pull request is submitted without using Trunk Merge, the service will restart tests on all pull requests with the updated target branch.
 
 ## Pausing your queue
