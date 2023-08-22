@@ -21,7 +21,7 @@ TODO: add an image.
 ```bash
 trunk login
 trunk merge cancel <pr-number>
-```.
+```
 
 ## PR States
 

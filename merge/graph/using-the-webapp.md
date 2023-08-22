@@ -1,6 +1,6 @@
 # Using the WebApp
 
-Our web app offers detailed information about the MergeGraph. The following sections help explain what's going on at app.trunk.io.
+Our [web app](app.trunk.io) offers detailed information about pull requests, the state of the merge graph, and more.
 
 ## Queue
 

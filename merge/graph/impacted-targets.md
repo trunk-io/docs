@@ -4,9 +4,9 @@ Impacted targets are metadata about a pull request that defines the logical chan
 
 ## Generating Impacted Targets
 
-The repo using the MergeGraph is required to generate impacted targets for every pull request. Some build systems (e.g. Bazel, Buck, Gradle, Turborepo, ...) define targets, which can be uploaded to the MergeGraph. Alternatively, a glob-based pattern approach could be used, where files map to a particular pattern (e.g. files in `src/backend` upload the `backend` target.) These impacted targets should be generated and uploaded to Trunk for every PR.
+The repo using the MergeGraph is required to generate impacted targets for every pull request. Some build systems (e.g. Bazel, Buck, Gradle, Turborepo, ...) define targets, which can be uploaded to the MergeGraph. Alternatively, a glob-based pattern approach could be used, where filepaths map to a targert (e.g. files in `src/backend` upload the `backend` target.)
 
-We offer currently offer some out of the box CI solutions for uploading impacted targets based on the flavor of your repo: see the examples below. If none of the solutions work, please let us know at our [Slack](https://slack.trunk.io); we are happy to help build out something for your use case. Alternatively, we are accepting contributions to our [open-sourced repository](https://github.com/trunk-io/merge-action).
+We offer out of the box CI solutions for uploading impacted targets based on the flavor of your repo (see below). If none of the solutions work, please let us know at our [Slack](https://slack.trunk.io); we are happy to help build out something for your use case. Alternatively, we are accepting contributions to our [open-sourced repository](https://github.com/trunk-io/merge-action).
 
 ### Custom Impacted Targets
 
@@ -15,10 +15,10 @@ Impacted Targets should be computed for every PR. The list of impacted targets s
 Diagram here: add the diagram for the merge commits.
 
 {% hint style="info" %}
-Our [reference implementation](https://github.com/trunk-io/merge-action/blob/main/src/scripts/compute_impacted_targets.sh) may be useful. 
+Our [reference implementation](https://github.com/trunk-io/merge-action/blob/main/src/scripts/compute_impacted_targets.sh) may be useful in guiding your implementation.
 {% endhint %}
 
-After they are computed, upload them to our services. Our API can be found at https://api.trunk.io:443/v1/setImpactedTargets. You can POST with the following headers / body:
+After they are computed, upload them to our services. Our HTTP POST endpoint can be found at `https://api.trunk.io:443/v1/setImpactedTargets`. We expect the following headers / body:
 ```
 HEADERS:
 	Content-Type: application/json,
@@ -41,7 +41,7 @@ impactedTargets: ["a", "b", "c"]
 
 ### Impacted Targets Generation: Bazel + GitHub Actions
 
-1. Grab your repository's API token from app.trunk.io, in the settings > repo-name page. 
+1. Grab your repository's API token from [app.trunk.io](app.trunk.io), in the settings > repo-name page. 
 2. Store the repository's API token as a GitHub action secret.
-3. Use the `trunk-io/merge-action` action, as defined here: https://github.com/trunk-io/merge-action#usage.
+3. Use the `trunk-io/merge-action` action, as defined [here](https://github.com/trunk-io/merge-action#usage).
 
