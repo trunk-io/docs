@@ -31,9 +31,9 @@ A PR's lifecycle in the MergeGraph goes through the following states:
 | --------------- | ----------- |
 | Not Ready       | The PR was submitted to Trunk Merge, but the PR isn't eligible for merging yet. Impacted targets may not be uploaded, or readiness checks may not have passed.       |
 | Pending         | The MergeGraph created a node for the PR. Testing will begin if the graph has capacity. |
-| Testing         | The PR is testing. Tests are defined in `trunk.yaml.` | 
+| Testing         | The PR is testing. Required tests are defined in `trunk.yaml.` |
 | Tests Passed    | The PR successfully passed tests. It may have to wait for upstream PRs to complete tests before merging. | 
-| Pending Failure | The PR failed tests. The cause of failures is still indeterminate - it may be due to an upstream PR, or due to this PR. It will wait until the root cause of tests have been determined. | 
+| Pending Failure | The PR failed tests. The cause of failures is still indeterminate - it may be due to an upstream PR, or due to the current PR. It will wait until the root cause of tests has been determined. |
 | Merged          | The PR successfully merged into the target branch. It will be removed from the graph. | 
-| Failed          | The PR is the root cause of tests failure. It will be removed from the graph. | 
-| Cancelled       | The PR was cancelled, e.g. requested by a user. It will be removed from the graph. | 
+| Failed          | The PR caused a testing failure. It will be removed from the graph. |
+| Cancelled       | The PR was cancelled, e.g. `/trunk cancel`. It will be removed from the graph. |
