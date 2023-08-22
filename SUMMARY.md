@@ -28,7 +28,6 @@
   * [Integration for Slack](merge/integration-for-slack.md)
   * [Reference](merge/reference.md)
 * [Merge Graph (beta)](merge/graph/README.md)
-  * [Getting Started](merge/graph/getting-started.md)
   * [Impacted Targets](merge/graph/impacted-targets.md)
   * [Using the WebApp](merge/graph/using-the-webapp.md)
   * [Reference](merge/graph/reference.md)
