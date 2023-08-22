@@ -30,14 +30,6 @@ Similar to submitting new pull requests, a user can remove an existing pull requ
 
 A pull request can be removed from the queue by commenting `/trunk cancel`
 
-## Parallelism
-
-To keep pull request throughput high, Merge can test multiple pull requests simultaneously. This is done by creating a branch for a pull request from the `HEAD` of the target branch along with the changes from the pull request and any that are ahead of it. This branch is the predicted state of the repository if the pull requests ahead of this one pass all the required checks.
-
-To configure how many pull requests are tested in parallel, navigate to Settings > Repositories > Repo-Name and update the value.
-
-![](https://files.readme.io/d2bc2dc-Screen\_Shot\_2022-09-11\_at\_11.08.36\_PM.png)
-
 ## Required Status Checks
 
 Merge uses [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) to determine whether a pull request can be merged. Whenever a pull request passes branch protection rules, Merge will wait for the required status checks to be posted to the test branch. You can configure these checks by adding them to the `trunk.yaml` configuration file in your repository. For example:
@@ -65,7 +57,7 @@ Merge monitors [GitHub's branch protection rules](https://docs.github.com/en/rep
 
 ![](https://files.readme.io/a2ccbf1-Screen\_Shot\_2022-09-11\_at\_11.15.15\_PM.png)
 
-Most repository maintainers will want to use the GitHub branch protection settings to limit who can merge pull requests. By restricting who can merge to admins and the Github Trunk App, you can prevent contributors from circumventing Merge and merging code directly.\
+Most repository maintainers will want to use the GitHub branch protection settings to limit who can merge pull requests. By restricting who can merge to admins and the Github Trunk App, you can prevent contributors from circumventing Merge and merging code directly.
 Merge does account for admins needing to merge pull requests directly, effectively skipping Merge entirely. If a pull request is submitted without using Trunk Merge, the service will restart tests on all pull requests with the updated target branch.
 
 ## Pausing your queue
