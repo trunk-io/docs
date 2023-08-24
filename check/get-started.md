@@ -1,5 +1,5 @@
 ---
-description: Set up our native GitHub integration
+description: Set up our native GitHub integrations to start automating your code quality.
 ---
 
 # Get Started
