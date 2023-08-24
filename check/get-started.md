@@ -1,31 +1,41 @@
+---
+description: Set up our native GitHub integration
+---
+
 # Get Started
 
-### Step 1: Install Trunk
+## Connect your Trunk organization to GitHub
 
-To use `trunk` locally, run:
+{% @supademo/embed demoId="HXyBmoBn0_OX9Xite2fqd" url="https://app.supademo.com/demo/HXyBmoBn0_OX9Xite2fqd" %}
 
-```bash
-curl https://get.trunk.io -fsSL | bash
-```
+## Set Up Trunk Check
 
-For other installation options (`npm`, `brew`, direct download, etc) and details on exactly what we install or how to uninstall, see the [Install Trunk](../cli/install-trunk.md) doc.
+{% @supademo/embed demoId="pRr_eDzh-klIQdK_yW3se" url="https://app.supademo.com/demo/pRr_eDzh-klIQdK_yW3se" %}
 
-### Step 2: Initialize `trunk`
+## Use it!
 
-From the root of a git repo, run:
+### Ensure that PRs are free of issues
 
-```bash
-trunk init
-```
+Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?check\_run\_id=15730277425) in our plugins repository!
 
-This will bring you into a flow to start getting results from [Trunk Check](./). For more details, see [here](../cli/init-in-a-git-repo.md).
+<div data-full-width="true">
 
-### Step 3: Run `trunk check` against a sampling of files in your repo
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Trunk Check identifying a security issue in a GitHub Composite Action</p></figcaption></figure>
 
-Normally when you run `trunk check` we will only scan changed files, so in a repo without any changes `trunk check` is going come back empty. To get a sense of the issues `trunk` can detect in your repo we suggest you run:
+</div>
 
-```bash
-trunk check --sample 5
-```
 
-For more information on the sample flag see [here](command-line.md#sample)
+
+### Explore issues in your repository
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Check showing all the issues present in trunk-demo1/sass</p></figcaption></figure>
+
+### Get Slack notifications about new issues in your repository
+
+Not only do our daily scans allow you to browse and triage the issues that exist in your repository, but they can also notify you when new security issues are discovered in packages that you already depend on.
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 173252.png" alt=""><figcaption><p>Slack notification showing newly discovered issues with rustls-webpki in trunk-io/trunk</p></figcaption></figure>
+
+### Learn more
+
+[Read the documentation about our GitHub integration to learn more.](github-integration.md)

@@ -10,6 +10,7 @@
   * [Windows Beta](cli/windows-beta.md)
 * [Check](check/README.md)
   * [Get Started](check/get-started.md)
+  * [Install the CLI](check/get-started-1.md)
   * [Continuous Integration](check/continuous-integration.md)
   * [Command Line](check/command-line.md)
   * [Configuration](check/configuration.md)
