@@ -6,6 +6,8 @@ description: Automate your code quality enforcement with just a few clicks.
 
 ## Connect your Trunk organization to GitHub
 
+Sign up at [app.trunk.io](https://app.trunk.io), create a Trunk organization, and connect it to your repositories.
+
 {% @supademo/embed demoId="HXyBmoBn0_OX9Xite2fqd" url="https://app.supademo.com/demo/HXyBmoBn0_OX9Xite2fqd" %}
 
 ## Set Up Trunk Check
