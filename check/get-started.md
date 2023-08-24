@@ -1,5 +1,5 @@
 ---
-description: Set up our native GitHub integrations to start automating your code quality.
+description: Automate your code quality management with just a few clicks.
 ---
 
 # Get Started
