@@ -40,7 +40,11 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 Not only do our daily scans allow you to browse and triage the issues that exist in your repository, but they can also notify you when new security issues are discovered in packages that you already depend on.
 
+<div data-full-width="true">
+
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-23 173252.png" alt=""><figcaption><p>Slack notification showing newly discovered issues with rustls-webpki in trunk-io/trunk</p></figcaption></figure>
+
+</div>
 
 ### Learn more
 
