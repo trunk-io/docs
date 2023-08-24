@@ -12,6 +12,10 @@ description: Set up our native GitHub integration
 
 {% @supademo/embed demoId="pRr_eDzh-klIQdK_yW3se" url="https://app.supademo.com/demo/pRr_eDzh-klIQdK_yW3se" %}
 
+## (optional) Configure Slack Notifications
+
+{% @supademo/embed demoId="cllpdjqhy1jf1051a1nff1a3y" url="https://app.supademo.com/demo/cllpdjqhy1jf1051a1nff1a3y" %}
+
 ## Use it!
 
 ### Ensure that PRs are free of issues
