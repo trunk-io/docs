@@ -1,5 +1,5 @@
 ---
-description: Automate your code quality management with just a few clicks.
+description: Automate your code quality enforcement with just a few clicks.
 ---
 
 # Get Started
