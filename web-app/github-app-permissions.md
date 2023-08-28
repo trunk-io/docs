@@ -1,6 +1,10 @@
-# GitHub App Permissions
+---
+description: >-
+  Learn more about which permissions the Trunk GitHub app requests and why Trunk
+  needs them.
+---
 
-The Trunk GitHub App requests permissions to access the repositories you choose to connect to Trunk. We're committed to your privacy and security, so we will only request the permissions necessary to enable Trunk to function.
+# GitHub App Permissions
 
 ## Actions (Read and write)
 

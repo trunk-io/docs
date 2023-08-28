@@ -26,7 +26,7 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 <div data-full-width="true">
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Trunk Check identifying a security issue in a GitHub Composite Action</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Trunk Check identifying a security issue in one of Trunk's own repositories</p></figcaption></figure>
 
 </div>
 
@@ -46,6 +46,8 @@ Not only do our daily scans allow you to browse and triage the issues that exist
 
 </div>
 
-### Learn more
+## Learn more
 
 [Read the documentation about our GitHub integration to learn more.](github-integration.md)
+
+If you don't host your source code on GitHub, then we recommend you [set up Trunk locally](get-started-cli.md).

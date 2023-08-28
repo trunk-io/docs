@@ -4,7 +4,7 @@
 
 ## Holding the Line
 
-Linters usually operate only on source code and have no awareness of your commit history, which makes introducing a linter into an existing codebase a nightmarish exercise. Sure, this new linter may be flagging all sorts of potential existing bugs in your code, but you've got features to ship and you know your code works as is, so clearly those potential bugs aren't showstoppers. Trunk's ability to [hold-the-line](./#hold-the-line) suppresses pre-existing issues, which means only new issues are flagged. We achieve this by checking both your mainline and in-progress code and comparing the results and source code to determine which issues you actually care about.
+Linters usually operate only on source code and have no awareness of your commit history, which makes introducing a linter into an existing codebase a nightmarish exercise. Sure, this new linter may be flagging all sorts of potential existing bugs in your code, but you've got features to ship and you know your code works as is, so clearly those potential bugs aren't showstoppers. Trunk's ability to [hold-the-line](../#hold-the-line) suppresses pre-existing issues, which means only new issues are flagged. We achieve this by checking both your mainline and in-progress code and comparing the results and source code to determine which issues you actually care about.
 
 ## Caching and Reproducibility
 
@@ -19,4 +19,4 @@ Over the course of a `trunk check` run, changes made to the filesystem outside o
 
 ## Why does trunk only work in a git repo?
 
-`trunk` uses git to detect your changes so we only check the code you've changed. Additionally we use it to accurately detect errors _caused_ by your changes, even if the errors aren't on lines you changed. You'll read more about [hold-the-line](./#hold-the-line) later in the docs.
+`trunk` uses git to detect your changes so we only check the code you've changed. Additionally we use it to accurately detect errors _caused_ by your changes, even if the errors aren't on lines you changed. You'll read more about [hold-the-line](../#hold-the-line) later in the docs.

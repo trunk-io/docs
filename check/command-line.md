@@ -85,6 +85,6 @@ When you enable a packaged or downloaded linter in your `trunk.yaml` and don't s
 
 | Options & Flags | Explanation                                                                                                                                                              |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| --root          | Explicitly set the root of the repository to run against                                                                                                                 |
-| --upstream      | Specify the upstream branch used to calculate new vs existing issued.                                                                                                    |
-| --trigger       | Supports running trunk check from inside a git hook. Options are manual (default), git-push, git-commit. Controls whether the check returns early and its interactivity. |
+| `--root`        | Explicitly set the root of the repository to run against                                                                                                                 |
+| `--upstream`    | Specify the upstream branch used to calculate new vs existing issued.                                                                                                    |
+| `--trigger`     | Supports running trunk check from inside a git hook. Options are manual (default), git-push, git-commit. Controls whether the check returns early and its interactivity. |

@@ -1,3 +1,7 @@
+---
+description: Learn more about the Trunk CLI
+---
+
 # CLI
 
 ### Getting Started

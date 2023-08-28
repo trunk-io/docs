@@ -1,6 +1,15 @@
+---
+description: >-
+  Trunk Check integrates with GitHub to automatically identify linter issues,
+  unformatted files, and vulnerabilities in your repositories without ever
+  sending your code to Trunk.
+---
+
 # GitHub Integration
 
-Trunk Check integrates with GitHub to automatically identify linter issues, unformatted files, and vulnerabilities in your repositories without ever sending your code to Trunk.
+{% hint style="info" %}
+If you don't use GitHub, we recommend you check out the [Continuous Integration](continuous-integration.md) guide.
+{% endhint %}
 
 ## How it works
 
@@ -24,7 +33,7 @@ To find Check issues in your repositories and pull requests, we dispatch GitHub 
 >
 > Since we use workflow runs in `.trunk` to analyze any repository in your organization and record Check findings, you should think carefully about who has permissions to view workflow runs in your `.trunk` repository. For most organizations, simply making your `.trunk` repository private will be sufficient.
 
-If you want to version the linter configuration for a given repo or enable linters that require more manual configuration, you can always [create and commit your Trunk configuration in said repository](get-started-1.md).
+If you want to version the linter configuration for a given repo or enable linters that require more manual configuration, you can always [create and commit your Trunk configuration in said repository](get-started-cli.md).
 
 ## Checking pull requests
 
@@ -51,7 +60,7 @@ This allows you to build confidence in the code health of your repositories:
 
 If you don't want Trunk Check to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io).
 
-## Hooking into Trunk invocations
+## (optional) Custom setup logic
 
 If you need to do some setup before `trunk check` runs in `your-org/your-repo`, you can [define a GitHub composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) in `.trunk/setup-ci/action.yaml` in `your-repo`. This can be important if, for example, a linter needs some generated code to be present before it can run:
 
