@@ -32,5 +32,5 @@ If for any reason you don't see your pipeline runs in the Trunk app after 3 minu
 
 ## Troubleshooting
 
-The Trunk Plugin for Jenkins will also log errors to the Jenkins System Log. You can find these by navigating to **Manage Jenkins** > **System Log**. If you need additional help debugging, please contact our community slack at [slack.trunk.io](https://slack.trunk.io) or support at [support@trunk.io](mailto:support@trunk.io)
+The Trunk Plugin for Jenkins will also log errors to the Jenkins System Log. You can find these by navigating to **Manage Jenkins** > **System Log**. If you need additional help debugging, please contact our community slack at [slack.trunk.io](https://slack.trunk.io) or support at [support@trunk.io](mailto:support@trunk.io).
 

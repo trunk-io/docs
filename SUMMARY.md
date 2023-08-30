@@ -36,6 +36,7 @@
 * [CI Analytics](ci-analytics/README.md)
   * [GitHub Actions](ci-analytics/github-actions.md)
   * [Jenkins](ci-analytics/jenkins.md)
+  * [API](ci-analytics/api.md)
 * [CI Debugger](ci-debugger/README.md)
   * [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)
   * [GitLab Quickstart](ci-debugger/gitlab-quickstart.md)
