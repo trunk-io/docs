@@ -37,6 +37,7 @@
   * [GitHub Actions](ci-analytics/github-actions.md)
   * [Jenkins](ci-analytics/jenkins.md)
   * [API](ci-analytics/api.md)
+  * [Pull Request Metrics](ci-analytics/pull-request-metrics.md)
 * [CI Debugger](ci-debugger/README.md)
   * [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)
   * [GitLab Quickstart](ci-debugger/gitlab-quickstart.md)
