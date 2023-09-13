@@ -52,8 +52,6 @@ In case your ansible setup is not contained within a single folder you would lis
 
 ### Clang-format
 
-We currently only support versions 12.0.0, 12.0.1, and 13.0.0 (`clang-format@13.0.0` in `trunk.yaml`)
-
 By default trunk uses clang-format to additionally format `.proto` files. However, for this to work, you need to have enabled `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format`:
 
 ```yaml
@@ -75,7 +73,7 @@ Language: Proto
 
 ### Clang-tidy
 
-We currently only support versions 12.0.0, 12.0.1, and 13.0.0 (`clang-tidy@13.0.0` in `trunk.yaml`), and we only support using `clang-tidy` from Bazel and CMake projects.
+We only support using `clang-tidy` from Bazel and CMake projects.
 
 In order to only see issues in your own code, not from library header files your code includes, add this to your `.clang-tidy` file:
 
@@ -94,6 +92,8 @@ If a file you're linting does not compile, clang-tidy may fail to process it. In
 By default `trunk` will query bazel for compile commands used to run clang-tidy. This requires no configuration.
 
 Trunk will build needed compilation pre-requisites before invoking clang-tidy on each file (e.g. generated protobuf headers).
+
+You can generate a local compilation database by running `trunk generate-compile-commands`.
 
 **Finding the bazel binary**
 
