@@ -11,7 +11,7 @@ This setup guide will walk you through the initial setup for Trunk Merge.
 5.  Enter the name of the target branch and the number of pull requests that can be tested in parallel.
 
     <figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
-6.  Merge uses [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) to determine whether a pull request can be merged. Configure these checks by adding them to the `trunk.yaml` configuration file in your repository:
+6.  Merge uses [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) to determine whether a pull request can be merged. Configure these checks by adding them to the `.trunk/trunk.yaml` configuration file in your repository:
 
     ```yaml
     version: 0.1
