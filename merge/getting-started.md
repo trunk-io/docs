@@ -74,3 +74,9 @@ $ trunk merge {pr-number}
 ```
 {% endtab %}
 {% endtabs %}
+
+In order for the pull request to be properly tested and merged, if there is any kind of branch protection on your repo:
+
+1. Existing branch protection rules must be changed in order to **not** protect branches in the form of `trunk-temp/*` and `trunk-merge/*` . If either of those branches are considered protected in any way according to GitHub (e.g., if there is a `*/*` branch protection rule), then Merge will not be able to run tests properly due to GitHub permission errors.
+
+If there are any questions or help is needed, reach out on our [community slack](https://slack.trunk.io/)!
