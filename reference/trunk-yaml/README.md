@@ -191,13 +191,56 @@ definitions:
 
 If you wanted to flip the value of `disable_upstream` to `false`, you could, in your own `trunk.yaml`, specify:
 
-```yaml
-definitions:
-  ...
+<pre class="language-yaml"><code class="lang-yaml"><strong>definitions:
+</strong>  ...
   - name: clang-tidy
     disable_upstream: false
   ...
+</code></pre>
+
+Some linters have multiple commands, such as [trivy](https://github.com/trunk-io/plugins/blob/main/linters/trivy/plugin.yaml), which can run in different ways. Similarly, some linters are configured to run differently on different platforms or at different versions. When overriding a command definition, overrides are applied on the tuple \[name, version, platforms]. For example, if you wanted to disable batching when running [ktlint](https://github.com/trunk-io/plugins/blob/main/linters/ktlint/plugin.yaml) on Windows, you could consider its default configuration:
+
+```yaml
+definitions:
+  ...
+  - name: ktlint
+    ...
+    commands:
+      - name: format
+        platforms: [windows]
+        run: java -jar ${linter}/ktlint.exe -F "${target}"
+        output: rewrite
+        cache_results: true
+        formatter: true
+        in_place: true
+        batch: true
+        success_codes: [0, 1]
+      - name: format
+        run: ktlint -F "${target}"
+        output: rewrite
+        cache_results: true
+        formatter: true
+        in_place: true
+        batch: true
+        success_codes: [0, 1]
+  ...
 ```
+
+and override it as such:
+
+```yaml
+definitions:
+  ...
+  - name: ktlint
+    ...
+    commands:
+      - name: format
+        platforms: [windows]
+        batch: false
+  ...
+```
+
+When executing linters, Trunk will execute the first matching command based on its compatible platforms and linter version. Note when overriding that new commands that don't match an existing tuple are prepended to the resulting commands list.
 
 Alternatively, consider the default `node` runtime:
 
