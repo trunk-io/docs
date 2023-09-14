@@ -31,10 +31,22 @@ trunk tools list
 
 `Trunk` installs your enabled tools into the `.trunk/tools` directory. Each tool exposes as list of **shims** (these may or may not be identically named to the tool - most typically a tool has one shim matching the name of the tool). Each shim is installed into the `.trunk/tools` directory.
 
-You can run your tools by referring to the path `<path to your workspace>/.trunk/tools/<shim name>` but this is unwieldy. We highly recommend using [direnv](https://direnv.net/) in your repository and adding the following line to your `.envrc`:
+You can run your tools by referring to the path `<path to your workspace>/.trunk/tools/<shim name>` but this is unwieldy. We highly recommend using our shell hooks to manage your PATH. You can do so by adding to the config in your repo:
 
+.trunk/trunk.yaml
 ```
-PATH_add .trunk/tools
+cli:
+  shell_hooks:
+    enforce: true
 ```
+You will need to run a trunk command (like check or fmt) and it will update your shell RC file to load our hooks. 
 
-This way, whenever you're inside your repo at the command line, you can just run shims installed by `trunk tools` directly by name.
+After reloading your shell, whenever you're inside your repo at the command line, you can just run shims installed by `trunk tools` directly by name.
+
+N.B. There is a known incompatibility with direnv. If you use direnv in your project, make sure that the direnv hooks are included AFTER the trunk hooks in your rc file.
+
+Example:
+```
+test -f $HOME/.cache/trunk/shell-hooks/zsh.rc && source $HOME/.cache/trunk/shell-hooks/zsh.rc;
+eval "$(direnv hook zsh)" # This needs to be second
+```
