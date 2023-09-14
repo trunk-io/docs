@@ -37,6 +37,7 @@ You can run your tools by referring to the path `<path to your workspace>/.trunk
 
 .trunk/user.yaml  (Only for current user)
 ```
+version: 0.1
 cli:
   shell_hooks:
     enforce: true
