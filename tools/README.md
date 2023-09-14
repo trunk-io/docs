@@ -33,7 +33,8 @@ trunk tools list
 
 You can run your tools by referring to the path `<path to your workspace>/.trunk/tools/<shim name>` but this is unwieldy. We highly recommend using our shell hooks to manage your PATH. You can do so by adding to the config in your repo:
 
-.trunk/trunk.yaml
+.trunk/trunk.yaml (For every user in repo)
+.trunk/user.yaml  (Only for current user)
 ```
 cli:
   shell_hooks:
