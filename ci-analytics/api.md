@@ -24,12 +24,6 @@ To try out the API, you can use our collection in [Postman here](https://god.gw.
 
 ## Endpoints
 
-### Track Events
-
-<mark style="background-color:green;">POST</mark> [`https://api.trunk.io/v1/metrics/trackEvents`](https://api.trunk.io/v1/metrics/trackEvents)
-
-
-
 {% swagger path="/trackEvent" summary="Track Events" method="post" baseUrl="https://api.trunk.io/v1/metrics" fullWidth="true" %}
 {% swagger-description %}
 The track events endpoint uploads event data about a CI run. Each event contains a start and end timestamp, metrics, tags, and an optional parent association ID.
