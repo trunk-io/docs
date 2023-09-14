@@ -38,11 +38,19 @@ Trunk API Token
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="repo" type="Object" required="true" %}
-The repository in whicih the CI Event ran
+The repository in which the CI Event ran. See 
+
+[repo](api.md#repo)
+
+ schema.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="events" type="Array" required="true" %}
-An array of event objects
+An array of event objects. See 
+
+[event](api.md#event)
+
+ schema.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="x-source" type="String" required="false" %}
