@@ -20,7 +20,6 @@ lint:
           success_codes: [0, 1]
           run: ${workspace}/bin/foo --file ${target}
           read_output_from: stdout
-          run_linter_from: workspace
   enabled:
     # ...
     - foo@SYSTEM
@@ -343,8 +342,6 @@ The output format that `trunk` expects from a linter is determined by its [`type
 | `stderr`           | Standard error.                                                                   |
 | `tmp_file`         | If `${tmpfile}` was specified in `command`, the path of the created `${tmpfile}`. |
 
-> Caution: This is currently only supported for SARIF linters.
-
 **Exit codes**
 
 Linters often use different exit codes to categorize the outcome. For instance, [`markdownlint`](https://github.com/igorshubovych/markdownlint-cli#exit-codes) uses `0` to indicate that no issues were found, `1` to indicate that the tool ran successfully but issues were found, and `2`, `3`, and `4` for tool execution failures.
@@ -358,18 +355,11 @@ Linters often use different exit codes to categorize the outcome. For instance, 
 
 `markdownlint`, for example, has `success_codes: [0, 1]` in its configuration.
 
-#### Environment
-
 **Working directory**
 
-`run_linter_from` allows specifying the directory the linter should run from.
+`run_from` determines what directory a linter command is run from.
 
-| `run_linter_from`     | Description                                                                |
-| --------------------- | -------------------------------------------------------------------------- |
-| `workspace` (default) | Root of the workspace                                                      |
-| `parent_directory`    | Parent of the target file; e.g. would be `foo/bar` for `foo/bar/hello.txt` |
-| `root_file`           | Nearest parent directory containing a file matching `run_from_root_target` |
-| `root_directory`      | Nearest parent directory matching `run_from_root_target`                   |
+<table data-header-hidden><thead><tr><th width="415"></th><th></th></tr></thead><tbody><tr><td><code>run_from</code></td><td>Description</td></tr><tr><td><code>&#x3C;path></code> (<code>.</code> by default)</td><td>Explicit path to run from</td></tr><tr><td><code>${parent}</code></td><td>Parent of the target file; e.g. would be <code>foo/bar</code> for <code>foo/bar/hello.txt</code></td></tr><tr><td><code>${root_or_parent_with(&#x3C;file>)}</code></td><td>Nearest parent directory containing the specified file</td></tr><tr><td><code>${root_or_parent_with_dir(&#x3C;dir>)}</code></td><td>Nearest parent directory containing the specified directory</td></tr><tr><td><code>${root_or_parent_with_regex(&#x3C;regex>)}</code></td><td>Nearest parent directory containing a file or directory matching specified regex</td></tr><tr><td><code>${target_directory}</code></td><td>Run the linter from the same directory as the target file, and change the target to be <code>.</code></td></tr><tr><td><code>${compile_command}</code></td><td>Run from the directory where <code>compile_commands.json</code> is located</td></tr></tbody></table>
 
 **Environment variables**
 
