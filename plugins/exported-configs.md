@@ -1,7 +1,6 @@
 # Exported Configs
 
-Plugin repositories can also export their own linter config files in order to keep configuration synced across an organization. Simply add an `exported_configs` section to a `plugin.yaml`, with paths\
-to all of the config files you want to export, relative to the repository root. For example:
+Plugin repositories can also export their own linter config files in order to keep configuration synced across an organization. Simply add an `exported_configs` section to a `plugin.yaml`, with paths to all of the config files you want to export, relative to the repository root. For example:
 
 ```yaml
 lint:
@@ -20,6 +19,8 @@ Plugin-exported configs are sourced in lockstep with the plugin itself, so you w
 the `ref` field in order to use the latest configs.
 
 Note that if you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to manually create a symlink to the plugin's config. You can do this by running `ln -s .trunk/plugins/<plugin-id>/<path-to-config> <name-of-config>`.
+
+For an example of a plugin repo with config files, see our own [configs](https://github.com/trunk-io/configs) repo.
 
 ### Importing Configs
 

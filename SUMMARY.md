@@ -8,6 +8,7 @@
   * [Compatibility](cli/compatibility.md)
   * [GitHub Codespaces](cli/github-codespaces.md)
   * [Windows Beta](cli/windows-beta.md)
+  * [Upgrade](cli/upgrade.md)
 * [Check](check/README.md)
   * [Get Started](check/get-started.md)
   * [Install the CLI](check/get-started-cli.md)
