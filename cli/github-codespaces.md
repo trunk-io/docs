@@ -16,10 +16,10 @@ You can install the trunk launcher in your codespace by including the following 
 
 The feature is defined [here](https://www.github.com/trunk-io/devcontainer-feature).
 
-To have the launcher binary install the CLI tool and associated linters, you can add `trunk install` to `onCreateCommand` or `updateContentCommand` in `devcontainer.json`:
+To have the launcher binary install the CLI tool and associated linters, you can add `trunk install` to `updateContentCommand` in `devcontainer.json`:
 
 ```json
-"onCreateCommand": "trunk install",
+"updateContentCommand": "trunk install",
 ```
 
 From the [GitHub documentation](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds):
