@@ -215,12 +215,3 @@ lint:
     - name: prettier
       max_file_size: 2097152 # Bytes
 ```
-
-### Hold the line mode
-
-Trunk supports two values here: `line` and `word`. When using `line` mode, any modified line will result in all issues on that line showing up as `new` issues. When using `word` mode, Trunk will then run further analysis on modified sections of files to try to find more issues that should be `existing` rather than `new`.
-
-```yaml
-lint:
-  hold_the_line_mode: word
-```
