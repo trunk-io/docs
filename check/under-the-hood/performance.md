@@ -8,19 +8,19 @@ Caching is currently enabled for about half the linters/formatters. Since Trunk 
 
 If you pass `--verbose` flag when running check you can see which results were pulled from cache.&#x20;
 
-<figure><img src="../.gitbook/assets/SCR-20230811-mtvw.png" alt=""><figcaption><p>trunk check --verbose output</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/SCR-20230811-mtvw.png" alt=""><figcaption><p>trunk check --verbose output</p></figcaption></figure>
 
 ## CPU Utilization
 
-By default `check` will run concurrent jobs using up to half the available cores on your machine. This default is intended to balance system utilization and check responsiveness. If `check` detects that it is running in a continuous integration environment or you pass the [`--ci`](command-line.md) flag, then it will instead use all cores on the machine. This behavior can be overwritten by manually calling `check` with the [`--jobs`](command-line.md#options) argument.&#x20;
+By default `check` will run concurrent jobs using up to half the available cores on your machine. This default is intended to balance system utilization and check responsiveness. If `check` detects that it is running in a continuous integration environment or you pass the [`--ci`](../command-line.md) flag, then it will instead use all cores on the machine. This behavior can be overwritten by manually calling `check` with the [`--jobs`](../command-line.md#options) argument.&#x20;
 
 ## Memory Utilization
 
 `check` does not current support a mechanism to throttle back jobs based on the memory consumption of concurrently runs jobs. In order to throttle memory utilization you can lower the \
-[`--jobs`](command-line.md#options) count to indirectly reduct system load.
+[`--jobs`](../command-line.md#options) count to indirectly reduct system load.
 
 ## Daemon
 
 `trunk check` runs a daemon which monitors relevant file changes and triggers jobs to precompute in the background while you work. The daemon is used both to support realtime background checking in supported extensions (e.g. VS Code) and to precompute check results for faster commits/pushes. Some native linters are more compute/memory intensive and `check` supports disabling background linting of those tools. \
 \
-By default linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](custom-linters.md#run\_when) configuration for a tool. \
+By default linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](../custom-linters.md#run\_when) configuration for a tool. \

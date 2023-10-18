@@ -99,8 +99,9 @@ lint:
 
 Custom linters are slightly different; see [those docs](custom-linters.md) to learn more.
 
-> Note:You can also ask trunk to detect new linters and upgrade existing linters to their latest respective\
-> versions by running `trunk upgrade check`.
+{% hint style="info" %}
+You can also ask trunk to detect new linters and upgrade existing linters to their latest respective versions by running `trunk upgrade check`.
+{% endhint %}
 
 ### Disable Linters
 
@@ -151,7 +152,11 @@ Every entry in `ignore` defines both a set of linters and a set of paths to igno
 
 <table><thead><tr><th width="101">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (i.e. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>paths</td><td>List of <a href="../reference/glob-path-pattern.md">glob paths</a>, relative to the root of the repo, to ignore. If a path begins with a <code>!</code> then it represents an inverse ignore. This means that any file matching that glob will not be ignored, even if matched by other globs.</td></tr></tbody></table>
 
-> Note:`trunk` is `git`-aware, which means it ignores `gitignore`d files by default.
+{% hint style="info" %}
+`trunk` is `git`-aware, which means it ignores `gitignore`d files by default.
+{% endhint %}
+
+### Disable Lin
 
 ### Blocking Thresholds
 
