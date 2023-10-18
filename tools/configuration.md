@@ -30,7 +30,7 @@ Like with actions and linters, we have a (versioned) `enabled` section and a `di
 
 `auto_sync` controls whether or not `trunk` automatically installs your tools for you when your config changes. This defaults to `true`. Note that the daemon must be running with the monitor in order for this to function properly.
 
-### Tool definitions.
+### Tool definitions
 
 Each tool definition shares a set of attributes -
 

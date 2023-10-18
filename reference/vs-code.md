@@ -46,7 +46,7 @@ To check it in to your repository, all you have to do is run
 trunk config share
 ```
 
-which will commit `.trunk/trunk.yaml`, the Trunk configuration file.
+or click on the notification to "Share trunk config", which will commit `.trunk/trunk.yaml`, the Trunk configuration file.
 
 ### Learn more
 

@@ -1,5 +1,7 @@
-**Tools enable you to run your linter binaries on the command line independent on `trunk check` and test and troubleshoot your integration more easily**
+# Running linters with tools
 
-## Configuring linters
+Tools enable you to run your linter binaries on the command line independent of `trunk check` and test and troubleshoot your integration more easily
+
+### Configuring linters
 
 See [Check Configuration for Tools](../check/custom-linters.md#tools) for more information on how to use tools to define and run linters.
