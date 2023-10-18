@@ -41,11 +41,27 @@ Trunk Check can automatically detect new Check issues on your pull requests and 
 
 When running on a pull request, Trunk Check will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same [hold-the-line technology](./#hold-the-line) that our VSCode extension and CLI use.
 
-> 📘 Skipping Trunk Check
->
-> You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Check as "skipped". This will allow the PR to pass a GitHub required status check on `Trunk Check`.
->
-> This can be helpful if Check is flagging known issues in a given PR which you don't want to [ignore](ignoring-issues.md), which if you're doing a large refactor, can come in very handy.
+<details>
+
+<summary>Fixing issues in pull requests</summary>
+
+To confirm that you've fixed issues identified by Trunk Check before pushing your pull request, just run `trunk check`.
+
+If Trunk continues to identify new Check issues on your PR, first try merging the latest changes from your base branch. When Trunk runs on a PR, it runs on a commit that merges your PR into its base branch, just like GitHub workflows.
+
+If this continues to fail, then run `git checkout refs/pull/<PR number>/merge && trunk check`. This is a reference to the merge commit GitHub creates.
+
+</details>
+
+<details>
+
+<summary>Skipping Trunk Check</summary>
+
+You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Check as "skipped". Trunk Check will still run on your PR and report issues, but this will allow the PR to pass a GitHub required status check on `Trunk Check`.
+
+This can be helpful if Check is flagging known issues in a given PR which you don't want to [ignore](ignoring-issues.md), which if you're doing a large refactor, can come in very handy.
+
+</details>
 
 If you don't want Trunk Check to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io).
 
