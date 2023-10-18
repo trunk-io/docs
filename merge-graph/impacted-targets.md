@@ -42,7 +42,7 @@ BODY: {
       }
 ```
 
-`impactedTargets` allows specifying either an array of strings representing the impacted targets from the PR or the string "ALL".  Specifying "ALL" is the equivalent of saying that everything that comes into the graph after this PR should be based off of this one, which is useful when your PR contains changes that affect the whole repo (such as editing `trunk.yaml` or a GitHub workflow).
+`impactedTargets` allows specifying either an array of strings representing the impacted targets from the PR or the string "ALL" (note that this is explicitly not in an array and is just the string "ALL").  Specifying "ALL" is the equivalent of saying that everything that comes into the graph after this PR should be based off of this one, which is useful when your PR contains changes that affect the whole repo (such as editing `trunk.yaml` or a GitHub workflow).
 
 ### Impacted Targets Generation: Bazel + GitHub Actions
 
