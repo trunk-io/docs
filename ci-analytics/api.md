@@ -110,7 +110,7 @@ Sequence object properties:
 ```bash
 curl \
     -i \
-    -X POST https://api.trunk-staging.io:443/v1/metrics/trackEvents \
+    -X POST https://api.trunk.io/v1/metrics/trackEvents \
     -H "Content-Type: application/json" \
 -H "x-source: curl-sample" \
     -H "x-api-token: {REDACTED}" \
