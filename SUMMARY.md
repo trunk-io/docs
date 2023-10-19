@@ -67,6 +67,7 @@
     * [⚙ Schema](https://static.trunk.io/pub/trunk-yaml-schema.json)
   * [User YAML](reference/user-yaml.md)
   * [VS Code](reference/vs-code.md)
+  * [Neovim Plugin](reference/neovim-plugin.md)
   * [Usage Data](reference/usage-data.md)
   * [Components](reference/components.md)
   * [Glob Path Pattern](reference/glob-path-pattern.md)
