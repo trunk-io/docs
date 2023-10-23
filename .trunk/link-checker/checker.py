@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
+import argparse
 import os
 import re
-import requests
+from enum import Enum
 from pathlib import Path
 from urllib.parse import urlparse
 
-import argparse
-from enum import Enum
+import requests
 
 
 class Result(Enum):
@@ -69,7 +69,7 @@ def validate_link(path, url):
         from_root_path = filename
 
         if filename == "." or filename == "./":
-            return check_fragment(path.parent.joinpath("README.md"), fragment)
+            return check_fragment(path.parent.joinpath("readme.md"), fragment)
         if os.path.exists(from_file_path):
             return check_fragment(from_file_path, fragment)
         if os.path.exists(from_root_path):
