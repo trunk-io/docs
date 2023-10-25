@@ -17,7 +17,7 @@ Impacted Targets should be computed for every PR. The list of impacted targets s
 <figure><img src="../.gitbook/assets/02 Branch-1 kopiera.png" alt=""><figcaption><p>From <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">https://www.atlassian.com/git/tutorials/using-branches/git-merge</a>. In this diagram, we want to compare the merge commit and the main tip.</p></figcaption></figure>
 
 {% hint style="info" %}
-Our [reference implementation](https://github.com/trunk-io/merge-action/blob/main/src/scripts/compute\_impacted\_targets.sh) may be useful in guiding your implementation.
+Our [reference implementation](https://github.com/trunk-io/merge-action/blob/main/src/scripts/compute_impacted_targets.sh) may be useful in guiding your implementation.
 {% endhint %}
 
 After they are computed, upload them to our services. Our HTTP POST endpoint can be found at `https://api.trunk.io:443/v1/setImpactedTargets`. We expect the following headers/body:
@@ -46,6 +46,6 @@ BODY: {
 
 ### Impacted Targets Generation: Bazel + GitHub Actions
 
-1. Grab your repository's API token from [app.trunk.io](../merge/graph/app.trunk.io), in the settings > repo-name page.
+1. Grab your repository's API token from [app.trunk.io](https://app.trunk.io), in the settings > repo-name page.
 2. Store the repository's API token as a GitHub action secret.
 3. Use the `trunk-io/merge-action` action, as defined [here](https://github.com/trunk-io/merge-action#usage).

@@ -39,7 +39,7 @@ If you want to version the linter configuration for a given repo or enable linte
 
 Trunk Check can automatically detect new Check issues on your pull requests and flag them so that you can prevent pull requests from introducing any new issues in your repository.
 
-When running on a pull request, Trunk Check will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same [hold-the-line technology](./#hold-the-line) that our VSCode extension and CLI use.
+When running on a pull request, Trunk Check will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same hold-the-line technology that our VSCode extension and CLI use.
 
 <details>
 
