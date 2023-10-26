@@ -33,7 +33,7 @@ lint:
     - name: markdown-link-check
       commands:
         - name: lint
-          run: markdown-link-check -q "${target}" -c "${workspace}/.markdown-link-check.json"            
+          run: markdown-link-check -q "${target}" -c "${workspace}/.markdown-link-check.json"
 runtimes:
   enabled:
     - node@18.12.1
@@ -41,7 +41,7 @@ runtimes:
 actions:
   disabled:
     - trunk-announce
-    - trunk-check-pre-push
-    - trunk-fmt-pre-commit
   enabled:
     - trunk-upgrade-available
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
