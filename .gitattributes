@@ -9,7 +9,9 @@
 
 # Video
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+
 # Fonts
 *.woff2 filter=lfs diff=lfs merge=lfs -text
+
 # Misc
 *.pdf filter=lfs diff=lfs merge=lfs -text
