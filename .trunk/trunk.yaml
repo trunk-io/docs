@@ -1,43 +1,39 @@
 version: 0.1
 cli:
-  version: 1.13.0
+  version: 1.17.1
 plugins:
   sources:
     - id: trunk
-      ref: v1.1.0
+      ref: v1.2.6
       uri: https://github.com/trunk-io/plugins
 lint:
   disabled:
     - markdownlint
   enabled:
-    - prettier@3.0.1
-    - ruff@0.0.282
-    - black@23.7.0
-    - checkov@2.3.356
+    - markdown-link-check@3.11.2
+    - bandit@1.7.5
+    - isort@5.12.0
+    - osv-scanner@1.4.2
+    - taplo@0.8.1
+    - prettier@3.0.3
+    - ruff@0.1.2
+    - black@23.9.1
+    - checkov@2.5.9
     - git-diff-check
-    - oxipng@8.0.0
+    - oxipng@9.0.0
     - svgo@3.0.2
-    - trivy@0.44.0
-    - trufflehog@3.46.3
+    - trivy@0.46.0
+    - trufflehog@3.60.4
     - yamllint@1.32.0
-    - link-checker
   ignore:
     - linters: [prettier]
       paths:
         - "**/*.md"
   definitions:
-    - name: link-checker
-      runtime: python
-      extra_packages: [requests]
+    - name: markdown-link-check
       commands:
         - name: lint
-          files: [markdown]
-          output: regex
-          parse_regex: "(?P<path>.*?):(?P<line>\\d+): (?P<message>.*) \\((?P<code>\\w+)\\)"
-          run: python3 ${workspace}/.trunk/link-checker/checker.py ${target}
-          batch: false
-          success_codes: [0, 2]
-      suggest_if: never
+          run: markdown-link-check -q "${target}" -c "${workspace}/.markdown-link-check.json"
 runtimes:
   enabled:
     - node@18.12.1
@@ -45,7 +41,7 @@ runtimes:
 actions:
   disabled:
     - trunk-announce
-    - trunk-check-pre-push
-    - trunk-fmt-pre-commit
   enabled:
     - trunk-upgrade-available
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
