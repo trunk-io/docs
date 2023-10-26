@@ -35,3 +35,4 @@ redirects:
   docs/trunk-app-for-slack: reference/integration-for-slack.md
   reference/reference-trunk-yaml: reference/trunk-yaml.md
   docs/tools: tools/README.md
+  docs/shell-hooks: tools/README.md#running-tools
