@@ -14,18 +14,6 @@ plugins:
 
 lint:
   definitions:
-    - name: link-checker
-      runtime: python
-      extra_packages: [requests]
-      commands:
-        - name: lint
-          files: [markdown]
-          output: regex
-          parse_regex: "(?P<path>.*?):(?P<line>\\d+): (?P<message>.*) \\((?P<code>\\w+)\\)"
-          run: python3 ${workspace}/.trunk/link-checker/checker.py ${target}
-          batch: false
-          success_codes: [0, 2]
-      suggest_if: never
     - name: markdown-link-check
       commands:
         - name: lint
@@ -35,7 +23,6 @@ lint:
     # More inherited enabled linters and other config here:
     #   https://github.com/trunk-io/configs/blob/main/plugin.yaml
     - markdown-link-check@3.11.2
-    - link-checker
 
   disabled:
     - markdownlint
