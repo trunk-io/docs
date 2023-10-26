@@ -20,8 +20,6 @@ You can find your API token in the [Trunk App](https://app.trunk.io).
 
 {% @supademo/embed demoId="BILCaBxa05Hkol0Ck4Z-y" url="https://app.supademo.com/demo/BILCaBxa05Hkol0Ck4Z-y" %}
 
-<!-- removing until fixed @vlad - To try out the API, you can use our collection in [Postman here](https://god.gw.postman.com/run-collection/). -->
-
 ## Endpoints
 
 {% swagger path="/trackEvent" summary="Track Events" method="post" baseUrl="https://api.trunk.io/v1/metrics" fullWidth="true" %}
