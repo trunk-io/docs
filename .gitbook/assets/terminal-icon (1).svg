@@ -1,10 +1,3 @@
-<svg
-    width="500px"
-    height="500px"
-    viewBox="0 0 24 24"
-    fill="black"
-    xmlns="http://www.w3.org/2000/svg"
->
-  <path d="M20 4H4c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm0 14H4V8h16v10zm-2-1h-6v-2h6v2zM7.5 17l-1.41-1.41L8.67 13l-2.59-2.59L7.5 9l4 4-4 4z">
-  </path>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:58526373ec26ebe46abe04f08f654a9c989fba2d4ca8be54d0606aa2b17a22c3
+size 317

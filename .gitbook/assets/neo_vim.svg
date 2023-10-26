@@ -1,9 +1,3 @@
-<svg width="404" height="251" viewBox="0 0 404 251" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="404" height="251" fill="#68E6B8"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M151.896 90.8248L177.989 64.4814V186.968L151.896 160.929V90.8248Z" fill="#031811"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M252.713 91.0729L226.264 64.4946L226.8 186.966L252.892 160.928L252.713 91.0718V91.0729Z" fill="#031811"/>
-<g style="mix-blend-mode:multiply">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M177.971 64.502L245.807 168.017L226.824 187L158.952 83.7133L177.971 64.502Z" fill="#0D4C35"/>
-</g>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M177.995 112.516L177.959 116.594L157.014 85.6718L158.954 83.6963L177.995 112.516Z" fill="black" fill-opacity="0.13"/>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:75fe1f0f126dc5d070edac219f4f52fb2be8775ed805b5fa8aa5cdd10bcb203e
+size 659
