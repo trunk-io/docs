@@ -46,6 +46,6 @@ BODY: {
 
 ### Impacted Targets Generation: Bazel + GitHub Actions
 
-1. Grab your repository's API token from [app.trunk.io](../merge/graph/app.trunk.io), in the settings > repo-name page.
+1. Grab your repository's API token from [app.trunk.io](https://app.trunk.io), in the settings > repo-name page.
 2. Store the repository's API token as a GitHub action secret.
 3. Use the `trunk-io/merge-action` action, as defined [here](https://github.com/trunk-io/merge-action#usage).

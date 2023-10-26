@@ -1,6 +1,6 @@
 # Configuration
 
-The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of [`trunk.yaml`](../reference/trunk-yaml/#cli). Here's an example of what a fully-featured `lint` section looks like:
+The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of [`trunk.yaml`](../reference/trunk-yaml/README.md#cli). Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -130,7 +130,7 @@ lint:
 
 #### Runtime versioning
 
-By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml.md#runtimes).
+By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml/README.md#runtimes).
 
 ### Ignoring files
 
