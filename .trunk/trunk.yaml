@@ -26,10 +26,15 @@ lint:
           batch: false
           success_codes: [0, 2]
       suggest_if: never
+    - name: markdown-link-check
+      commands:
+        - name: lint
+          run: markdown-link-check -q "${target}" -c "${workspace}/.markdown-link-check.json"
 
   enabled:
     # More inherited enabled linters and other config here:
     #   https://github.com/trunk-io/configs/blob/main/plugin.yaml
+    - markdown-link-check@3.11.2
     - link-checker
 
   disabled:
