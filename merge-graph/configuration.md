@@ -2,6 +2,17 @@
 description: >-
   Information on all the different ways Merge can be configured to fit your
   needs.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: false
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Configuration
