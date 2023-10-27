@@ -6,35 +6,35 @@
 
 We currently support the following linters:
 
-| Language                           | Linters                                                                                      |
-| ---------------------------------- | -------------------------------------------------------------------------------------------- |
-| All                                | `codespell`, `cspell`, `gitleaks`, `git-diff-check`                                          |
-| Ansible                            | `ansible-lint`                                                                               |
-| Bash                               | `shellcheck`, `shfmt`                                                                        |
-| Bazel, Starlark                    | `buildifier`                                                                                 |
-| C, C++, Protobuf                   | `clang-format`, `clang-tidy`, `include-what-you-use`                                         |
-| Cloudformation                     | `cfnlint`                                                                                    |
-| CSS, SCSS                          | `stylelint`                                                                                  |
-| Cue                                | `cue-fmt`                                                                                    |
-| Docker                             | `hadolint`                                                                                   |
-| Dotenv                             | `dotenv-linter`                                                                              |
-| GitHub                             | `actionlint`                                                                                 |
-| Go                                 | `gofmt`, `gokart`, `golangci-lint`, `semgrep`, `goimports`                                   |
-| HAML                               | `haml-lint`                                                                                  |
-| Java                               | `semgrep`                                                                                    |
-| JavaScript, TypeScript, YAML, JSON | `eslint`, `prettier`, `semgrep`                                                              |
-| Kotlin                             | `detekt`, `detekt-explicit`, `detekt-gradle`, `ktlint`                                       |
-| Markdown                           | `markdownlint`                                                                               |
-| Protobuf                           | `buf-breaking`, `buf-lint`                                                                   |
-| Python                             | `autopep8`, `bandit`, `black`, `flake8`, `isort`, `mypy`, `pylint`, `ruff`,`semgrep`, `yapf` |
-| Ruby                               | `brakeman`, `rubocop`, `rufo`, `semgrep`, `standardrb`                                       |
-| Rust                               | `clippy`, `rustfmt`                                                                          |
-| Scala                              | `scalafmt`                                                                                   |
-| SQL                                | `sql-formatter`, `sqlfluff`                                                                  |
-| SVG                                | `svgo`                                                                                       |
-| Terraform                          | `terraform` (`validate` and `fmt`), `tflint`                                                 |
-| TOML                               | `taplo`                                                                                      |
-| YAML                               | `prettier`, `semgrep`, `yamllint`                                                            |
+| Language                                                              | Linters                                                                                                                                                    |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| All                                                                   | `codespell`, `cspell`, [`gitleaks`](supported-linters.md#gitleaks), `git-diff-check`                                                                       |
+| Ansible                                                               | [`ansible-lint`](supported-linters.md#ansible-lint)                                                                                                        |
+| Bash                                                                  | `shellcheck`, `shfmt`                                                                                                                                      |
+| Bazel, Starlark                                                       | `buildifier`                                                                                                                                               |
+| C, C++, Protobuf                                                      | [`clang-format`](supported-linters.md#clang-format), [`clang-tidy`](supported-linters.md#clang-tidy), `include-what-you-use`                               |
+| Cloudformation                                                        | `cfnlint`                                                                                                                                                  |
+| CSS, SCSS                                                             | `stylelint`                                                                                                                                                |
+| Cue                                                                   | `cue-fmt`                                                                                                                                                  |
+| Docker                                                                | `hadolint`                                                                                                                                                 |
+| Dotenv                                                                | `dotenv-linter`                                                                                                                                            |
+| GitHub                                                                | `actionlint`                                                                                                                                               |
+| Go                                                                    | `gofmt`, `gokart`, [`golangci-lint`](supported-linters.md#golangci-lint), `semgrep`, `goimports`                                                           |
+| HAML                                                                  | `haml-lint`                                                                                                                                                |
+| Java                                                                  | `semgrep`                                                                                                                                                  |
+| JavaScript, TypeScript, YAML, JSON                                    | [`eslint`](supported-linters.md#eslint), [`prettier`](supported-linters.md#prettier), `semgrep`                                                            |
+| Kotlin                                                                | [`detekt`](supported-linters.md#detekt), `detekt-explicit`, `detekt-gradle`, `ktlint`                                                                      |
+| Markdown                                                              | [`markdownlint`](supported-linters.md#markdownlint)                                                                                                        |
+| Protobuf                                                              | `buf-breaking`, `buf-lint`                                                                                                                                 |
+| [Python](supported-linters.md#python-linters-flake8-pylint-black-etc) | `autopep8`, `bandit`, `black`, [`flake8`](supported-linters.md#flake8), `isort`, `mypy`, [`pylint`](supported-linters.md#pylint), `ruff`,`semgrep`, `yapf` |
+| Ruby                                                                  | `brakeman`, `rubocop`, `rufo`, `semgrep`, `standardrb`                                                                                                     |
+| Rust                                                                  | [`clippy`](supported-linters.md#clippy), [`rustfmt`](supported-linters.md#rustfmt)                                                                         |
+| Scala                                                                 | `scalafmt`                                                                                                                                                 |
+| SQL                                                                   | `sql-formatter`, [`sqlfluff`](supported-linters.md#sqlfluff)                                                                                               |
+| SVG                                                                   | `svgo`                                                                                                                                                     |
+| Terraform                                                             | [`terraform`](supported-linters.md#terraform) (`validate` and `fmt`), `tflint`                                                                             |
+| TOML                                                                  | `taplo`                                                                                                                                                    |
+| YAML                                                                  | `prettier`, `semgrep`, `yamllint`                                                                                                                          |
 
 ### Linter-specific Configuration
 
