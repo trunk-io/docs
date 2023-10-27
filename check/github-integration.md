@@ -33,7 +33,7 @@ To find Check issues in your repositories and pull requests, we dispatch GitHub 
 >
 > Since we use workflow runs in `.trunk` to analyze any repository in your organization and record Check findings, you should think carefully about who has permissions to view workflow runs in your `.trunk` repository. For most organizations, simply making your `.trunk` repository private will be sufficient.
 
-If you want to version the linter configuration for a given repo or enable linters that require more manual configuration, you can always [create and commit your Trunk configuration in said repository](get-started-cli.md).
+If you want to version the linter configuration for a given repo or enable linters that require more manual configuration, you can always [create and commit your Trunk configuration in said repository](broken-reference).
 
 ## Checking pull requests
 

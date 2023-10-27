@@ -2,7 +2,9 @@
 description: Automate your code quality enforcement with just a few clicks.
 ---
 
-# Get Started
+# Automating Check
+
+Now that you have `trunk check` running on your local computer, your next step is to run trunk automatically in the cloud and share notifications with your whole team. Start by connecting your trunk organization to GitHub.
 
 ## Connect your Trunk organization to GitHub
 
@@ -50,4 +52,4 @@ Not only do our daily scans allow you to browse and triage the issues that exist
 
 [Read the documentation about our GitHub integration to learn more.](github-integration.md)
 
-If you don't host your source code on GitHub, then we recommend you [set up Trunk locally](get-started-cli.md).
+If you don't host your source code on GitHub, then we recommend you [set up Trunk locally](broken-reference).

@@ -36,8 +36,6 @@ We currently support the following linters:
 | TOML                               | `taplo`                                                                                      |
 | YAML                               | `prettier`, `semgrep`, `yamllint`                                                            |
 
-
-
 ### Linter-specific Configuration
 
 Most linters provide some mechanism to tweak their configuration, e.g. `.eslintrc` or `Cargo.toml`. `trunk` is aware of all the ways individual tools are configured and supports them. This means that all the linters you've already configured will continue to work exactly the same, just now supercharged by `trunk`.
@@ -153,7 +151,7 @@ direct_configs: ["lib/detekt.yaml"]
 
 ### Eslint
 
-Most eslint users use a number of plugins, custom parsers, etc. Trunk has the ability to turn sandboxing and caching on or off for each linter, and we've turned it off for eslint so it can use your repo's installed packages for eslint plugins and other required eslint packages. Trunk does control the eslint version itself, but otherwise eslint looks for all plugins, configs, etc based on the path of source file its linting. This all means you do need to have `npm/yarn install`d in your repo as a prerequisite before running eslint via trunk.
+Most eslint users use a number of plugins, custom parsers, etc. Trunk has the ability to turn sandboxing and caching on or off for each linter, and we've turned it off for eslint so it can use your repo's installed packages for eslint plugins and other required eslint packages. Trunk does control the eslint version itself, but otherwise eslint looks for all plugins, configs, etc based on the path of source file its linting. **This all means you do need to have `npm/yarn install`d in your repo as a prerequisite before running eslint via trunk**.
 
 We recommend you disable all prettier rules in your eslint config and let trunk run prettier automatically on your files. It's much nicer to just autoformat a file than to see a lint error for every missing space.
 

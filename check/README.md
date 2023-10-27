@@ -14,37 +14,77 @@ layout:
 
 # Check
 
-Trunk Check runs [80+ tools](https://github.com/trunk-io/plugins) on your repositories, which allow you to automatically
+Trunk Check runs [80+ tools](https://github.com/trunk-io/plugins) on your repositories, locally and in the cloud, which allow you to automatically
 
-* prevent anti-patterns and bugs in application code,
-* prevent misconfiguration of infrastructure code,
-* enforce code formatting and style,
-* flag secrets in version control, and
-* detect and prevent vulnerable dependencies.
+* Keep bugs and security vulnerabilities out of your code base
+* Enforce code formatting and style
+* Flag secrets
+* and much more
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><h3>Scan your repository</h3></td><td></td><td></td><td><a href="../get-started.md">get-started.md</a></td><td><a href="../.gitbook/assets/github-logo (5).svg">github-logo (5).svg</a></td></tr><tr><td><h3>Or try it out locally</h3></td><td><h2></h2></td><td></td><td><a href="../cli/">cli</a></td><td><a href="../.gitbook/assets/terminal-icon (2).svg">terminal-icon (2).svg</a></td></tr></tbody></table>
+The Trunk **Check** command line tool runs locally on your developer machine, right where your code is. Later you can automatically scan your repo using Trunk Check Cloud.
 
-## Features
+Check will automatically keep tools up to date, suggest standard tools for your project type (eg: `clang-format` for C++, `eslint` for JS/TS), and pin versions in the `trunk.yaml` file to ensure trunk check is always working and reproducible.
 
-Trunk Check is designed to work the way you expect it to work.
+## Install the CLI
 
-* Continuous integration - we run on every pull request opened in your repository to ensure that no pull request introduces new issues (GitHub users benefit from a native integration)
-* Reproducibility - `trunk.yaml` pins the CLI and linter versions to ensure that `trunk check` at a given commit is always reproducible
-* Automatic downloads - Check installs every linter you use, as well as their dependencies, so you don't have to install a Node toolchain just to fix a typo on your website
-* New issues only - we only warn about issues that your branch would introduce into the default branch, so that existing issues don't prevent you from landing code
-* Standard tools - Check runs the same standard tools that everyone uses - e.g. clang-format for C++, eslint for JS/TS - so that you can benefit from the world's shared knowledge
-* Recommendations - we identify and suggest tools that you should be using, to maximize the amount of your codebase with linter coverage, as well as best-practice configurations
-* Extensibility - we make it easy for you to define your own linters and contribute them back to the community, since all our linter integrations are [open-source](https://github.com/trunk-io/plugins)
-* pre-commit & pre-push hooks - we ensure that checks pass when you commit or push
-* Issue explorer - you can upload issues to Trunk, so that you can explore and triage the issues that exist in your repository
+{% tabs %}
+{% tab title="bash" %}
+```bash
+curl https://get.trunk.io -fsSL | bash
+```
+{% endtab %}
 
-<div data-full-width="true">
+{% tab title="bash (no prompts)" %}
+```bash
+curl https://get.trunk.io -fsSL | bash -s -- -y
+```
+{% endtab %}
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Trunk Check identifies a security issue in one of Trunk's own repositories</p></figcaption></figure>
+{% tab title="brew" %}
+```bash
+brew install trunk-io
+```
+{% endtab %}
 
-</div>
+{% tab title="npm" %}
+```bash
+npm install -D @trunkio/launcher
+```
+{% endtab %}
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Check shows all issues present in <a href="https://github.com/trunk-demo1/sass">trunk-demo1/sass</a> at <code>1523bff</code></p></figcaption></figure>
+{% tab title="pnpm" %}
+```bash
+pnpm add -D @trunkio/launcher
+```
+{% endtab %}
 
-###
+{% tab title="yarn" %}
+<pre class="language-bash"><code class="lang-bash"><strong>yarn add -D @trunkio/launcher
+</strong></code></pre>
+{% endtab %}
+{% endtabs %}
+
+## Initialize `trunk`
+
+From the root of a git repo, run:
+
+```bash
+trunk init
+```
+
+This will scan your repository and create a `.trunk/trunk.yaml` which enables all the linters, formatters, and security analyzers that [Trunk Check](./) recommends. For more details, see [here](../cli/init-in-a-git-repo.md).
+
+{% hint style="info" %}
+Security-conscious users may want to also record the signature of the CLI, which the  [Trunk Launcher](../reference/components.md#trunk-launcher) will use to verify the CLI's provenance:
+
+```
+trunk init --lock
+```
+{% endhint %}
+
+## Install the VSCode Extension
+
+If you run VSCode you can also [install the Trunk VSCode extension](vscode:extension/Trunk.io). Read more about it [here](https://marketplace.visualstudio.com/items?itemName=Trunk.io).
+
+<figure><img src="../.gitbook/assets/VSCode (1).svg" alt=""><figcaption><p>Trunk VSCode Extension</p></figcaption></figure>
 

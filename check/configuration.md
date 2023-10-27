@@ -1,6 +1,6 @@
 # Configuration
 
-The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of [`trunk.yaml`](../reference/trunk-yaml/README.md#cli). Here's an example of what a fully-featured `lint` section looks like:
+The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section the of [`trunk.yaml`](../reference/trunk-yaml/#cli)file stored the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -63,7 +63,9 @@ When sampling, `trunk` may run multiple linters on a single file, and may not ru
 
 Most linters offer some form of configuration. Trunk uses the native configuration setup of all the tools it runs. No need to learn a new config language or hunt for specific ways to tune a linter inside trunk. Whether it's `clang-tidy`, `eslint`, or any other linter, all the documentation you'll find online about it is still applicable. We're proud to stand on the shoulders of giants and believe that the open source communities building these tools know best how they should work. Our goal is simply to make it as easy as possible for you to adopt these tools.
 
-Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo.
+To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [Supported Linters](supported-linters.md) list for linter specific tips. To configure **how** Trunk runs a linter, read on.
+
+#### Moving linter configs
 
 If you'd like, trunk also supports migrating any linter configurations from the root of your repository into a `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run. Note that if you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.
 
@@ -115,7 +117,7 @@ lint:
     - tflint
 ```
 
-#### Installing additional packages
+### Installing additional packages
 
 We support installing additional packages along with your linter. For example, Pylint supports adding plugins which are installable as pip packages. For example, if you want to run the plugin `pylint-django` as part of your setup, you need to tell trunk to install the package:
 
@@ -130,7 +132,7 @@ lint:
 
 #### Runtime versioning
 
-By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml/README.md#runtimes).
+By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml/#runtimes).
 
 ### Ignoring files
 

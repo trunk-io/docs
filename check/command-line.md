@@ -73,13 +73,13 @@ trunk check --sample=5
 
 ### Discover new tools and available upgrades
 
-`trunk upgrade` will upgrade the Trunk CLI, along with all plugins and linters in your trunk.yaml. We highly recommend running on the latest validated versions of tools as updates will frequently include important security fixes and additional valuable checks. Trunk only auto-suggests linter upgrades to versions that we support, so you may see a slight lag time when a new linter version is released.
+`trunk upgrade` will upgrade the Trunk CLI, along with all plugins and linters in your trunk.yaml. We highly recommend running on the latest validated versions of tools as updates will frequently include important security fixes and additional valuable checks. Trunk only auto-suggests linter upgrades to versions that we have tested and support, so you may see a slight lag time when a new linter version is released.
 
 Upgrade will also recommend new tools that have become applicable since the last time your repository was scanned. This can be a result of using new technologies in your repository or trunk itself increasing support for more tools. If you don't like a particular recommendation you can run `trunk check disable {tool-name}` to teach trunk not to recommend it.
 
 #### Pinned System Versions
 
-When you enable a packaged or downloaded linter in your `trunk.yaml` and don't specify a version, trunk will attempt to use the version of that tool installed on your system. Trunk will not automatically suggest upgrades for this tool. If you wish to upgrade to the latest version, you will first have to specify a base version in your `trunk.yaml`.
+When you enable a packaged or downloaded linter in your `trunk.yaml` and don't specify a version, trunk will attempt to use the version of that tool installed on your system. Trunk will not automatically suggest upgrades for this tool. If you wish to upgrade to the latest version, you will first have to specify a base version in your `trunk.yaml`. See [Configuration](configuration.md) for more information about `trunk.yaml`.
 
 ### Advanced Features
 
@@ -90,3 +90,4 @@ When you enable a packaged or downloaded linter in your `trunk.yaml` and don't s
 | `--trigger`          | Supports running trunk check from inside a git hook. Options are manual (default), git-push, git-commit. Controls whether the check returns early and its interactivity. |
 | `--output=format`    | Output results in specified format: `text` (default) or `json`                                                                                                           |
 | `--output-file=FILE` | Write json results to specified file                                                                                                                                     |
+
