@@ -30,6 +30,7 @@
   * [Integration for Slack](merge/integration-for-slack.md)
   * [Reference](merge/reference.md)
 * [Merge Graph](merge-graph/README.md)
+  * [Configuration](merge-graph/configuration.md)
   * [Impacted Targets](merge-graph/impacted-targets.md)
   * [Using the WebApp](merge-graph/using-the-webapp.md)
   * [Reference](merge-graph/reference.md)
