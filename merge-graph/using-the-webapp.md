@@ -12,7 +12,7 @@ The web app can be found at [app.trunk.io](https://app.trunk.io).&#x20;
 
 The queue tab provides an overview of the work done by the Merge Graph. Merged, testing, and pending PRs should all appear here. Clicking on a row will show the history of that item: click "view more history" to get a better understanding of the item.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>The "view more history" link navigates you to the details page. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>The "view more history" link navigates you to the details page. </p></figcaption></figure>
 
 In addition to showing information about the work done by Merge Graph, this page also contains other helpful features.
 
@@ -46,7 +46,7 @@ A PR details page will display a complete history of a PR - state transitions, a
 
 The current Merge Graph. Each node in the graph is a pull request, and each edge indicates that the pull request is testing with the item above. All edges point towards the target branch; as items merge, the graph restructures.
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Failures
 

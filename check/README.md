@@ -1,5 +1,9 @@
 ---
+coverY: 0
 layout:
+  cover:
+    visible: true
+    size: hero
   title:
     visible: true
   description:
@@ -82,9 +86,6 @@ trunk init --lock
 ```
 {% endhint %}
 
-## Install the VSCode Extension
+## <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> Install the VSCode Extension
 
-If you run VSCode you can also [install the Trunk VSCode extension](vscode:extension/Trunk.io). Read more about it [here](https://marketplace.visualstudio.com/items?itemName=Trunk.io).
-
-<figure><img src="../.gitbook/assets/VSCode (1).svg" alt=""><figcaption><p>Trunk VSCode Extension</p></figcaption></figure>
-
+If you run VSCode you can also install the [trunk VSCode extension](vscode:extension/Trunk.io). Read more about it [here](https://marketplace.visualstudio.com/items?itemName=Trunk.io).
