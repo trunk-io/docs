@@ -1,6 +1,6 @@
-# Overview
+# Plugins
 
-A plugins repository provides users the ability to expand the core capabilities of trunk check and trunk actions. A plugin repo contains a set of custom linter and action definitions.
+Plugins repositories allow users to expand the core capabilities of the Trunk CLI and to share configuration between different repositories.
 
 #### Importing a plugin repository
 
@@ -11,17 +11,18 @@ plugins:
   sources:
     - id: trunk
       uri: https://github.com/trunk-io/plugins
-      ref: v0.0.15
-      import_to_global: true
+      ref: v1.2.6
 ```
 
-<table><thead><tr><th width="174">field</th><th>description</th></tr></thead><tbody><tr><td>id</td><td>unique identifier for this repository</td></tr><tr><td>uri</td><td>address used to clone the target repository</td></tr><tr><td>ref</td><td>commit id or tag to checkout</td></tr><tr><td>local</td><td>path to local (on-disk) repository</td></tr><tr><td>import_to_global (default: true)</td><td>import content into the global namespace. If set to false actions and linters defined in the plugin must be referenced by {plugin_id}.{name}</td></tr></tbody></table>
+<table><thead><tr><th width="174">field</th><th>description</th></tr></thead><tbody><tr><td>id</td><td>unique identifier for this repository</td></tr><tr><td>uri</td><td>address used to clone the target repository</td></tr><tr><td>ref</td><td>commit id or tag to checkout</td></tr><tr><td>local</td><td>path to local (on-disk) repository. Takes precedence over uri/ref if defined</td></tr><tr><td>import_to_global (default: true)</td><td>import content into the global namespace. If set to false actions and linters defined in the plugin must be referenced by {plugin_id}.{name}</td></tr></tbody></table>
 
-#### Custom linters and actions
+#### Plugin capabilities
 
-The root of a plugin repository can have any number of `plugin.yaml` files where linters and actions are defined. The `plugin.yaml` files look a lot like a standard `trunk.yaml` file with the addition of a special field `required_trunk_version` at the root level `plugin.yaml`, which indicates the minimum trunk version required to use that repo. All configuration is then merged into one composite plugin configuration.
+Any configuration used in `trunk.yaml` can also be used in a plugin repository, with [some exceptions](./#excluded-fields). A plugin repository must have one root level `plugin.yaml` and can have any number of other `plugin.yaml` files in other subdirectories. These configuration files are then merged into one composite plugin configuration.
 
-Beyond the `required_trunk_version` the definition of an action or linter is no different in a plugin repository.
+The most common use for a plugin repository is to define custom linters, actions, or tools. But they can also be used to define a common set of shared tools across an organization. For more info, see [organization configs](external-repositories.md).
+
+The root `plugin.yaml` file may also have a `required_trunk_version` field which governs compatibility when [upgrading](../cli/upgrade.md) between CLI versions.
 
 #### Add a plugin to your `trunk.yaml` file
 
@@ -34,7 +35,7 @@ trunk plugins add https://github.com/trunk-io/plugins --id=trunk
 To add a plugin from GitHub at a specific version:
 
 ```
-trunk plugins add https://github.com/trunk-io/plugins v0.0.16 --id=trunk
+trunk plugins add https://github.com/trunk-io/plugins v1.2.6 --id=trunk
 ```
 
 To add a plugin from a local repository:
@@ -42,25 +43,6 @@ To add a plugin from a local repository:
 ```
 trunk plugins add /home/user/self/hello-world --id=hello-world
 ```
-
-#### Contributing to a published plugin repository
-
-Let's quickly walk through how to modify/add to an existing remote repository. In this case we'll make an edit to the trunk-io/plugins repository.
-
-1. Clone the plugins repository to your local disk - `git clone git@github.com:trunk-io/plugins.git`
-2. Make sure the `local` field in your `trunk.yaml` file points to your local instance. If a plugin source includes a `local` field, it will supercede the remote uri/ref values.
-
-```yaml
-plugins:
-  sources:
-    - id: trunk
-      uri: https://github.com/trunk-io/plugins
-      ref: v0.0.15
-      local: .
-```
-
-3. Edit the entries in the local version of the plugin repository.
-4. Push your changes to the remote version of the plugin repo.
 
 #### Plugins scope
 
@@ -91,13 +73,12 @@ plugins:
   sources:
     - id: trunk
       uri: https://github.com/trunk-io/plugins
-      ref: v0.0.15
+      ref: v1.2.6
     - id: my-plugins
       local: ../my-plugins
 ```
 
-When a user runs `trunk` in the sourcing repository, they will already have ruff enabled, along with\
-any overrides and definitions enumerated in the `my-plugins` repository.
+When a user runs `trunk` in the sourcing repository, they will already have `ruff` enabled, along with the `trufflehog` override from the `my-plugins` repository.
 
 Note that private GitHub plugin repositories are not currently supported.
 

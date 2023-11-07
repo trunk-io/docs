@@ -1,4 +1,4 @@
-# Exported Configs
+# Exporting Linter Configs
 
 Plugin repositories can also export their own linter config files in order to keep configuration synced across an organization. Simply add an `exported_configs` section to a `plugin.yaml`, with paths to all of the config files you want to export, relative to the repository root. For example:
 
@@ -10,10 +10,7 @@ lint:
         - .trunk/configs/.shellcheckrc
 ```
 
-These config files will be available for linters that enumerate them in `affects_cache`\
-or `direct_configs` to reference. These files are automatically symlinked into the repository root during linter\
-execution. The set of applicable config files can be viewed in the details yaml file listed when\
-running `trunk check --verbose`.
+These config files will be available for linters that enumerate them in `affects_cache`or `direct_configs` to reference. These files are automatically symlinked into the repository root during linter execution. The set of applicable config files can be viewed in the details yaml file listed when running `trunk check --verbose`.
 
 Plugin-exported configs are sourced in lockstep with the plugin itself, so you will need to update\
 the `ref` field in order to use the latest configs.

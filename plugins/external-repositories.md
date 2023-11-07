@@ -1,6 +1,10 @@
-# External Repositories
+# Creating Organization Configs
 
-To create and share your own Trunk superpowers, you can publish a plugins repo: a Git repository which contains linter definitions that can be merged into your `.trunk/trunk.yaml`.
+To standardize Trunk configuration across an organization, you can create and publish a public plugins repository. This repo can define new linter definitions, specify enabled linters and actions, and even [export linter configs](exported-configs.md).
+
+Once you've created your plugin repository, you can source it in other repositories to adopt shared configuration across your organization. For an example of how we do this in our own org, check out our [configs repo](https://github.com/trunk-io/configs).
+
+Note that in order to keep linters and tools up to date in your plugin configs repo, you'll need to run `trunk upgrade --apply-to=plugin.yaml` to apply [upgrades](../cli/upgrade.md#plugin-repos-and-user.yaml). After making a public GitHub release with your plugin changes, other dependent repos will pick up these changes automatically when running `trunk upgrade`.
 
 ### Get started
 
@@ -17,7 +21,7 @@ git init
 And then create a linter that can find TODOs in your codebase using `grep` and `sed`:
 
 ```bash
-cat >trunk.yaml <<EOF
+cat >plugin.yaml <<EOF
 version: 0.1
 lint:
   definitions:
@@ -37,7 +41,7 @@ Now we can turn this linter on in a repository where we have `trunk` set up:
 
 ```bash
 trunk plugins add my-first-plugin "${PLUGIN_PATH}"
-trunk check enable my-first-plugin.todo-finder@SYSTEM
+trunk check enable todo-finder
 ```
 
 And now, to demonstrate how this works, let's `trunk check` some files where we know we have TODOs:
@@ -56,7 +60,7 @@ which will show you something like this:
 
 ### Organizing your code
 
-In the example we gave above, we put the linter's source code in `trunk.yaml`, which is fine for an example, but not really great for anything more than that. We can take the `sed` command from the plugin we created earlier and push that into the shell script:
+In the example we gave above, we put the linter's source code in `plugin.yaml`, which is fine for an example, but not really great for anything more than that. We can take the `sed` command from the plugin we created earlier and push that into the shell script:
 
 ```bash
 #!/bin/bash
@@ -119,5 +123,5 @@ git push origin main v0.0.0
 Now that it's available on the Internet, everyone else can just use your plugin by running:
 
 ```bash
-trunk plugins add their-first-plugin ${repo_url} v0.0.0
+trunk plugins add --id=their-first-plugin ${repo_url} v0.0.0
 ```
