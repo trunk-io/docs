@@ -35,3 +35,7 @@ trunk config hide
 # Turn single-player mode off.
 trunk config share
 ```
+
+## Only enabling detected tools
+
+`trunk init` supports the flags `--only-detected-formatters` and `--only-detected-linters`. Each of these flags limits `trunk init` to only enable tools that we detect you are already using.
