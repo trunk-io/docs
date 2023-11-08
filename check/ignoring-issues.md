@@ -56,9 +56,9 @@ struct FooBar {
 
 Notice that a `trunk-ignore` directive applies not to the next line, but the next non-`trunk-ignore` line (this only works for _preceding_ directives, not _trailing_ directives), and that you can use a single directive for suppressing multiple checks.
 
-#### Ignoring all issues in a file
+#### Ignoring all issues/formatting in a file
 
-You can also ignore all issues in a file:
+You can also ignore all issues or formatting in a file:
 
 ```cpp
 // trunk-ignore-all(clang-tidy)
