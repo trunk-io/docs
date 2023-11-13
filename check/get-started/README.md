@@ -2,7 +2,7 @@
 description: Automate your code quality enforcement with just a few clicks.
 ---
 
-# Automating Check
+# GitHub Integration
 
 Now that you have `trunk check` running on your local computer, your next step is to run trunk automatically in the cloud and share notifications with your whole team. Start by connecting your trunk organization to GitHub.
 
@@ -28,7 +28,7 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 <div data-full-width="true">
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Trunk Check identifying a security issue in one of Trunk's own repositories</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Trunk Check identifying a security issue in one of Trunk's own repositories</p></figcaption></figure>
 
 </div>
 
@@ -36,7 +36,7 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 ### Explore issues in your repository
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Check showing all the issues present in trunk-demo1/sass</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Check showing all the issues present in trunk-demo1/sass</p></figcaption></figure>
 
 ### Get Slack notifications about new issues in your repository
 
@@ -44,7 +44,7 @@ Not only do our daily scans allow you to browse and triage the issues that exist
 
 <div data-full-width="true">
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 173252.png" alt=""><figcaption><p>Slack notification showing newly discovered issues with rustls-webpki in trunk-io/trunk</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-08-23 173252.png" alt=""><figcaption><p>Slack notification showing newly discovered issues with rustls-webpki in trunk-io/trunk</p></figcaption></figure>
 
 </div>
 
