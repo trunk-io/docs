@@ -21,6 +21,7 @@
   * [Supported Linters](check/supported-linters.md)
   * [Ignoring Issues](check/ignoring-issues.md)
   * [Debugging](check/debugging.md)
+  * [FAQ](check/faq.md)
   * [Under the Hood](check/under-the-hood.md)
     * [Performance](check/performance.md)
 * [Merge](merge/README.md)
