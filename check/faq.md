@@ -28,13 +28,13 @@ If you aren’t seeing any issues the likely cause is that your local repo is cl
 trunk check --samples=5 
 ```
 
-to look at the last five changes or&#x20;
+to look at a sampling of each linter's issues for 5 random files
 
 ```sh
 trunk check --all
 ```
 
-&#x20;to scan all files, whether changed or not. [More on CLI options](https://docs.trunk.io/check/command-line).
+&#x20;to scan all files, whether they've changed or not. [More on CLI options](https://docs.trunk.io/check/command-line).
 
 ## There are too many issues showing up
 

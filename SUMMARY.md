@@ -46,7 +46,6 @@
   * [Jenkins Quickstart](ci-debugger/jenkins-quickstart.md)
   * [Buildkite Quickstart](ci-debugger/buildkite-quickstart.md)
   * [Command Line Example](ci-debugger/commandline.md)
-  * [FAQ](ci-debugger/faq.md)
 * [Actions](actions/README.md)
   * [Configuration](actions/configuration.md)
   * [Git Hooks](actions/git-hooks.md)
