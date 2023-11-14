@@ -54,4 +54,60 @@ When your linters aren’t working the way you expect, first check their configu
 
 You can also try running `trunk check --verbose` to see what’s going on under the hood. If that still doesn’t work then please reach out to us on [our community Slack](https://trunkcommunity.slack.com/ssb/redirect) with the output of `trunk check --verbose`.
 
-\
+## What is the difference between a Linter and a Formatter?
+
+A **linter** is a tool that looks for potential code errors such as security vulnerabilities, code spell, anti-patterns, and other things that might be a problem at runtime. _Linters generally report warnings and errors but do not modify code_.  A **formatter** is a tool that reformats code to fit a particular style (indentation, sorting imports, semicolons, etc). _Formatters always modify code._ In general, even though your setup may use many different linters we recommend using only _one formatter per filetype_.&#x20;
+
+Some tools like ESLint can serve as both a linter and formatter for Javascript code. If Prettier is also enabled then code could be reformatted twice, creating conflicts.  In this case we recommend using ESLint just for linting and use Prettier for code formatting. [Further advice for ESLint with prettier](https://docs.trunk.io/check/supported-linters#eslint).&#x20;
+
+Ruff and Black are another example of a linter/formatter pair that can collide with each other if not configured properly. If you enable Ruff but don’t already have a ruff config, Trunk Check will generate a `ruff.toml` file for you automatically. This [ruff.toml](https://github.com/trunk-io/plugins/blob/main/linters/ruff/ruff.toml) is _formatter friendly_, meaning that it will silence formatting related warnings and allow Black to take care of them more quickly and easily. This is another example of tuning your linters with linter configs.&#x20;
+
+## What is Hold-the-line (HTL)?
+
+**Hold The Line** (HTL) is the principle that Trunk Check will _only run on new changes_ in your codebase, rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.&#x20;
+
+HTL works even within files! Check only processes changed lines in a file, not the entire file.  More [on how Hold the Line works](https://docs.trunk.io/check/under-the-hood).
+
+If you specifically want to work on older files you can do that by running Check directly on that file
+
+```
+trunk check foo.file
+```
+
+or
+
+```
+trunk check --all
+```
+
+to run on all files. [More on CLI options](https://docs.trunk.io/check/command-line#options).
+
+## What does it mean when Trunk Check wants to format an image in my repo?
+
+Sometimes Trunk Check says there is some `Incorrect formatting` in your images. Check usually enables a program called [Oxipng](https://github.com/shssoichiro/oxipng) which can _optimize_ images to make them smaller (without losing any data). The error message just means that Oxipng wants to optimize those images. You can do that with `trunk fmt` or `trunk fmt filename.png`. You can also disable Oxipng with `trunk check disable oxipng`.
+
+## Why does Trunk take up so much disk space
+
+Trunk Check uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime you can safely clear your cache with&#x20;
+
+```
+trunk cache clean --all
+```
+
+then run `trunk install` again in your repos.
+
+## How to transition to running more linters with Trunk
+
+‘Trunk supports over 90 different linters, and we are always adding more! Some linters are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.&#x20;
+
+To see a list of currently available linters run&#x20;
+
+```
+trunk check list
+```
+
+## Upgrading Trunk
+
+Trunk automatically keeps your tools up to date. To check for recent updates you can run `trunk upgrade` to get the latest tools and fixes. You can read more about how this works [here](https://docs.trunk.io/cli/upgrade).&#x20;
+
+When upgrading from Trunk CLI versions 1.14.2 or older, you will have to rerun `trunk upgrade`in order to get all available fixes.
