@@ -1,10 +1,14 @@
+---
+description: How to add Trunk Merge to your repository and start subm
+---
+
 # Getting Started
 
-Now that you have `trunk check` running on your local computer, your next step is to run trunk automatically in the cloud and share notifications with your whole team. Start by connecting your trunk organization to GitHub.
+This guide will walk you through running Trunk Merge in your GitHub repository.
 
 ## Connect your Trunk organization to GitHub
 
-Sign up at [app.trunk.io](https://app.trunk.io), create a Trunk organization, and connect it to your GitHub repositories.
+Sign up at [app.trunk.io](https://app.trunk.io), create a Trunk organization, and connect it to your GitHub repositories. If your repository is already connected to your Trunk organization, this step can be skipped.
 
 {% embed url="https://app.supademo.com/edit/clooqw5kf2dfapeudipknagml" %}
 Connect your Trunk organization to GitHub
@@ -16,7 +20,7 @@ Connect your Trunk organization to GitHub
 
 
     <figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption><p>Set the target branch and maximum concurrency for Trunk Merge</p></figcaption></figure>
-2.  Tell Trunk Merge how to determine whether a pull request can be merged, by specifying the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) it should check, in`.trunk/trunk.yaml` in your repository:
+2.  Tell Trunk Merge how to determine whether a pull request can be merged by specifying the name of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) it should require to passs in `.trunk/trunk.yaml` in your repository.
 
     ```yaml
     version: 0.1
@@ -28,7 +32,7 @@ Connect your Trunk organization to GitHub
         - Unit tests & test coverage
         # Add more required statuses here
     ```
-3.  Set up the required checks, by configuring your CI provider to run the required jobs whenever a branch is pushed to your GitHub repository with the special prefix `trunk-merge/`.\
+3.  Ensure the checks and jobs in `merge.required_statuses` from `.trunk/trunk.yaml` specified in step 2 run whenever Trunk Merge tests a PR. Trunk Merge creates branches with the prefix `trunk-merge/` in order to tests PRs, so this means configuring your CI provider to run them whenever a branch with that prefix is pushed to.\
     \
     For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:\
 
@@ -37,6 +41,7 @@ Connect your Trunk organization to GitHub
     name: Run Required Checks
     run-name: PR Checks for ${{ github.ref_name }}
 
+    # Trigger jobs whenever Trunk Merge tests a PR using a `trunk-merge/` branch
     on:
       push:
         branches:
@@ -45,15 +50,15 @@ Connect your Trunk organization to GitHub
     jobs:
       trunk_check:
         runs-on: ubuntu-latest
+        # "Trunk Check" is specified in merge.required_status above
         name: Trunk Check
         steps:
           - name: Checkout
             uses: actions/checkout@v3
 
-        # Add more steps here...
-
       unit_tests:
         runs-on: ubuntu-latest
+        # "Unit tests & test coverage" is specified in merge.required_status above
         name: Unit tests & test coverage
         steps:
           - name: Checkout
@@ -61,6 +66,14 @@ Connect your Trunk organization to GitHub
 
         # Add more steps here..    
     ```
+
+## Adjust GitHub Branch Protection Rules
+
+In order for Trunk Merge to function properly:
+
+1. The Trunk GitHub App must be allowed to merge PRs if merging into your branch is restricted
+2. Branches following the pattern `trunk-merge/*` and `trunk-temp/*` must not be protected by GitHub. The app does not run with admin permissions, so it cannot interact with protected branches
+3. Squash merges must be allowed into your repository, as Trunk Merge squash merges PRs
 
 ## Use Trunk Merge
 
