@@ -111,3 +111,33 @@ trunk check list
 Trunk automatically keeps your tools up to date. To check for recent updates you can run `trunk upgrade` to get the latest tools and fixes. You can read more about how this works [here](https://docs.trunk.io/cli/upgrade).&#x20;
 
 When upgrading from Trunk CLI versions 1.14.2 or older, you will have to rerun `trunk upgrade`in order to get all available fixes.
+
+## Runtime & Download Versioning
+
+Some of the tools that Trunk installs use direct downloads and others use runtime installs. For example, most Javascript tools run using the NodeJS runtime. Runtimes themselves are provided through Trunk as versioned direct downloads.
+
+You can use a different version of a runtime by changing its version in the enabled section of your `.trunk/trunk.yaml` file in the `runtimes` section.
+
+```
+runtimes:
+  enabled:
+    - node@18.12.1
+    - python@3.10.8
+```
+
+If you want to pin the version of a runtime that a particular tool uses, you can do that with an `!` after the version number in your `trunk.yaml`.
+
+```
+lint:
+  enabled:
+    - pylint@2.17.5!
+```
+
+[More on pinning versions](https://docs.trunk.io/cli/upgrade#pinning-versions)
+
+However, some versions are not supported in Trunk check by default. If you need to specify an unsupported version, for example to use a particular python version that has been deprecated, you would need to override the `downloads` section as necessary. Check out the definition for [python downloads here](https://github.com/trunk-io/plugins/blob/main/runtimes/python/plugin.yaml).  In general we advise against using unsupported runtimes.
+
+[More on how runtimes work](https://docs.trunk.io/runtimes)
+
+\
+\
