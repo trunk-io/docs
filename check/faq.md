@@ -139,5 +139,39 @@ However, some versions are not supported in Trunk check by default. If you need 
 
 [More on how runtimes work](https://docs.trunk.io/runtimes)
 
-\
-\
+## How do I Make a Linter Work with a Different Filetype?
+
+Every linter defines a set of file types that it wants to work with in a section of the YAML called `files`. To change this you need to override the files section of that linter’s definition. [More linter application file types](https://docs.trunk.io/check/custom-linters#applicable-filetypes).&#x20;
+
+Suppose you are using the **foo-linter** which normally runs on `foo` files. The config might look like this:
+
+```yaml
+lint:
+  files:
+    - name: foo
+      extensions: [foo]
+  definitions:
+    - name: foo-linter
+      files: [foo]
+      commands:
+        - name: lint
+   output: pass_fail
+          run: echo “foo”
+          success_codes: [0, 1]
+```
+
+To add support for `bar` files add this to your `trunk.yaml` file. The first part defines the `bar` file type, and the second says that `foo-linter` uses both `foo` and `bar` files.
+
+```yaml
+lint:
+  files:
+    - name: bar
+      extensions: [bar]
+...
+      
+  definitions:
+    - name: foo-linter
+        files:
+          - foo
+          - bar
+```
