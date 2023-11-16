@@ -155,7 +155,7 @@ lint:
       files: [foo]
       commands:
         - name: lint
-   output: pass_fail
+          output: pass_fail
           run: echo “foo”
           success_codes: [0, 1]
 ```
