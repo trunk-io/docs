@@ -18,7 +18,13 @@ Checking the checkbox in Trunk Merge's GitHub comment or commenting `/trunk merg
 
 ### Stacked PR Support
 
-You can `/trunk merge` any PRs in a stack, in any order, and they will wait to proceed until their parent PR has merged.
+When stacking PRs in GitHub, GitHub will automatically change the base branch of a PR when the one it is stacked on merges (for example, when the first PR in the stack `main <- PR 1`, `PR 1 <- PR 2` merges, `PR 1 <- PR 2` becomes `main <- PR 2`). This means you can `/trunk merge` any PRs in a stack, in any order, and they will wait for their parent PR to merge before entering the merge queue.
+
+{% hint style="warning" %}
+Due to Trunk Merge merging PRs as squash commits, it's possible for merge conflicts to arise in PRs in the stack as the stack gets merged. The commit merged to the target branch is different from the one the PR is stacked on, so later PRs can conflict with the target branch. This can be resolved locally by rebasing onto `main` after merging.
+
+Here's a one liner for rebasing PR 2 on top of main if PR 2 was originally stacked on top of PR 1: `git rebase --onto main $(git merge-base pr1 pr2) pr2`
+{% endhint %}
 
 ## Cancelling Pull Requests
 
@@ -57,8 +63,7 @@ Merge monitors [GitHub's branch protection rules](https://docs.github.com/en/rep
 
 ![](https://files.readme.io/a2ccbf1-Screen\_Shot\_2022-09-11\_at\_11.15.15\_PM.png)
 
-Most repository maintainers will want to use the GitHub branch protection settings to limit who can merge pull requests. By restricting who can merge to admins and the Github Trunk App, you can prevent contributors from circumventing Merge and merging code directly.
-Merge does account for admins needing to merge pull requests directly, effectively skipping Merge entirely. If a pull request is submitted without using Trunk Merge, the service will restart tests on all pull requests with the updated target branch.
+Most repository maintainers will want to use the GitHub branch protection settings to limit who can merge pull requests. By restricting who can merge to admins and the Github Trunk App, you can prevent contributors from circumventing Merge and merging code directly. Merge does account for admins needing to merge pull requests directly, effectively skipping Merge entirely. If a pull request is submitted without using Trunk Merge, the service will restart tests on all pull requests with the updated target branch.
 
 ## Pausing your queue
 
