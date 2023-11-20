@@ -1,8 +1,8 @@
 root: ./
 
-​structure:
+structure:
   readme: welcome.md
-  summary: summary.md​
+  summary: summary.md
 
 redirects:
   docs: welcome.md
