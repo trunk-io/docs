@@ -1,7 +1,3 @@
-# Table of contents
-
-* Start Guide
-
 * [Welcome to Trunk](welcome.md)
 * [Get Started](get-started.md)
 * [CLI](cli/readme.md)
