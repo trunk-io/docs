@@ -23,5 +23,3 @@ Use all our tools by logging in to [trunk.io](https://app.trunk.io/). Also, use 
 * [Trunk CLI](cli/)
 * [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
 * [GitHub Action](https://github.com/marketplace/actions/trunk-check)
-
-***

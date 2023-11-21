@@ -1,5 +1,3 @@
-# Table of contents
-
 * [Welcome to Trunk](welcome.md)
 * [Get Started](get-started.md)
 * [CLI](cli/readme.md)
@@ -76,6 +74,9 @@
   * [Single Sign-On (SAML)](adminstration/single-sign-on-saml.md)
   * [Community](adminstration/community.md)
   * [Contact Support](adminstration/support.md)
-* [Community Slack](https://slack.trunk.io)
+
+## Links
+* [Open App](https://app.trunk.io)
+* [Slack Community](https://slack.trunk.io)
+* [Changelog](https://trunk.io/changelog)
 * [Feature Requests](https://features.trunk.io)
-* [Changelog](https://changelog.trunk.io/changelog)
