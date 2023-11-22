@@ -1,3 +1,5 @@
+# Table of contents
+
 * [Welcome to Trunk](welcome.md)
 * [Get Started](get-started.md)
 * [CLI](cli/readme.md)
@@ -76,6 +78,7 @@
   * [Contact Support](adminstration/support.md)
 
 ## Links
+
 * [Open App](https://app.trunk.io)
 * [Slack Community](https://slack.trunk.io)
 * [Changelog](https://trunk.io/changelog)
