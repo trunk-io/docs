@@ -28,7 +28,7 @@ This will bring you into a flow to start getting results from [Trunk Check](chec
 trunk login
 ```
 
-To use [Trunk Merge](merge/) and certain other Trunk features, you'll need an account on [trunk.io](https://app.trunk.io), but [Trunk Check](check/) and [Trunk Actions](actions/) can be used entirely locally without depending on hosted services or having a Trunk account.
+To use [Trunk Merge](merge-graph/merge/) and certain other Trunk features, you'll need an account on [trunk.io](https://app.trunk.io), but [Trunk Check](check/) and [Trunk Actions](actions/) can be used entirely locally without depending on hosted services or having a Trunk account.
 
 ### Help & Feedback
 

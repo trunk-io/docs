@@ -1,7 +1,3 @@
----
-description: How to add Trunk Merge to your repository and start subm
----
-
 # Getting Started
 
 This guide will walk you through running Trunk Merge in your GitHub repository.
@@ -19,7 +15,7 @@ Connect your Trunk organization to GitHub
 1.  Specify the branch that pull requests will be merged into (usually `main` or `master`) and the number of pull requests Trunk Merge is allowed to concurrently run tests for.\
 
 
-    <figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption><p>Set the target branch and maximum concurrency for Trunk Merge</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption><p>Set the target branch and maximum concurrency for Trunk Merge</p></figcaption></figure>
 2.  Tell Trunk Merge how to determine whether a pull request can be merged by specifying the name of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) it should require to passs in `.trunk/trunk.yaml` in your repository.
 
     ```yaml
@@ -83,7 +79,7 @@ Now that you're done with setup, take it for a spin! You can submit a pull reque
 {% tab title="GitHub Pull Request View" %}
 Comment `/trunk merge` on a pull request
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Trunk CLI" %}

@@ -1,14 +1,28 @@
 # Impacted Targets
 
-## What are Impacted Targets?&#x20;
+{% hint style="info" %}
+Impacted Targets are only needed when running in `Parallel` mode. They are not needed when running in `Single` mode.
+{% endhint %}
 
-Impacted targets are metadata about a pull request that defines the logical changes made by a pull request. They're a list of strings: for example, PR 123 which changes to the user service may have the following list of impacted targets: `[backend, user-service, integration-tests]`. Anytime two PRs have an overlap in the list of impacted target strings, Trunk Merge will ensure those PRs pass tests when based off of one another.
+## What are Impacted Targets?
+
+Impacted targets are metadata about a pull request that defines the logical changes made by said pull request. They're a list of strings: for example, PR 123 which has changes to the user service may have the following list of impacted targets: `[backend, user-service, integration-tests]`. Anytime two PRs have an overlap in the list of impacted target strings, Trunk Merge will dynamically create a Merge Queue for just those PRs to ensure those PRs pass tests when based off of one another.
+
+## Why Are Impacted Targets Needed for Parallel Mode?
+
+Impacted targets are the only way that Trunk Merge knows which parts of the codebase are related and which sets of PRs can be merged in parallel or must be done together.  See  [Single / Parallel mode](configuration.md#single-parallel-mode).
 
 ## Generating Impacted Targets
 
-The repo using the Merge Graph is required to generate impacted targets for every pull request. Some build systems (e.g. Bazel, Buck, Gradle, Turborepo, ...) define targets, which can be uploaded to the Merge Graph. Alternatively, a glob-based pattern approach could be used, where filepaths map to a target (e.g. files in `src/backend` upload the `backend` target.)
+The repo using the Merge in `Parallel` Mode is required to generate impacted targets for every pull request. Some build systems (e.g. Bazel, Buck, Gradle, Turborepo, ...) define targets, which can be uploaded to the Merge automatically. Alternatively, a glob-based pattern approach could be used, where filepaths map to a target (e.g. files in `src/backend` upload the `backend` target.)
 
 We offer out of the box CI solutions for uploading impacted targets based on the flavor of your repo (see below). If none of the solutions work, please let us know at our [Slack](https://slack.trunk.io); we are happy to help build out something for your use case. Alternatively, we are accepting contributions to our [open-sourced repository](https://github.com/trunk-io/merge-action).
+
+### Impacted Targets Generation: Bazel + GitHub Actions
+
+1. Grab your repository's API token from [app.trunk.io](https://app.trunk.io), in the settings > repo-name page.
+2. Store the repository's API token as a GitHub action secret.
+3. Use the `trunk-io/merge-action` action, as defined [here](https://github.com/trunk-io/merge-action#usage).
 
 ### Custom Impacted Targets
 
@@ -42,10 +56,4 @@ BODY: {
       }
 ```
 
-`impactedTargets` allows specifying either an array of strings representing the impacted targets from the PR or the string "ALL" (note that this is explicitly not in an array and is just the string "ALL").  Specifying "ALL" is the equivalent of saying that everything that comes into the graph after this PR should be based off of this one, which is useful when your PR contains changes that affect the whole repo (such as editing `trunk.yaml` or a GitHub workflow).
-
-### Impacted Targets Generation: Bazel + GitHub Actions
-
-1. Grab your repository's API token from [app.trunk.io](https://app.trunk.io), in the settings > repo-name page.
-2. Store the repository's API token as a GitHub action secret.
-3. Use the `trunk-io/merge-action` action, as defined [here](https://github.com/trunk-io/merge-action#usage).
+`impactedTargets` allows specifying either an array of strings representing the impacted targets from the PR or the string "ALL" (note that this is explicitly not in an array and is just the string "ALL"). Specifying "ALL" is the equivalent of saying that everything that comes into the graph after this PR should be based off of this one, which is useful when your PR contains changes that affect the whole repo (such as editing `trunk.yaml` or a GitHub workflow).
