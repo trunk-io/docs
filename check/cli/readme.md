@@ -24,9 +24,10 @@ Also check out the other ways to use Trunk:
 
 The Trunk CLI can be used for:
 
-* [Trunk Merge](../../merge-graph/merge/): a merge queue to make merging code in github safer and easier
-* [Trunk Check](../): a pluginable superlinter with a builtin language server and pre-existing issue detection
-* [Trunk Actions](../actions/): workflow automation for software engineers
+* [Trunk Check](../): a pluggable superlinter with a builtin language server and pre-existing issue detection
+* [Trunk Tools:](../tools/) hermetic runtime and CLI tool manager
+* [Trunk Actions](../actions/): local workflow automation and githooks manager
+* [Trunk Merge](../../merge-graph/): a merge queue to make merging code in github safer and easier
 
 [Trunk Check](../) and [Trunk Actions](../actions/) can be used entirely locally without depending on hosted services or even having a Trunk account
 

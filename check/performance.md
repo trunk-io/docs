@@ -12,12 +12,12 @@ If you pass `--verbose` flag when running check you can see which results were p
 
 ## CPU Utilization
 
-By default `check` will run concurrent jobs using up to half the available cores on your machine. This default is intended to balance system utilization and check responsiveness. If `check` detects that it is running in a continuous integration environment or you pass the [`--ci`](cli/command-line.md) flag, then it will instead use all cores on the machine. This behavior can be overwritten by manually calling `check` with the [`--jobs`](cli/command-line.md#options) argument.&#x20;
+By default `check` will run concurrent jobs using up to half the available cores on your machine. This default is intended to balance system utilization and check responsiveness. If `check` detects that it is running in a continuous integration environment or you pass the [`--ci`](cli/usage.md) flag, then it will instead use all cores on the machine. This behavior can be overwritten by manually calling `check` with the [`--jobs`](cli/usage.md#options) argument.&#x20;
 
 ## Memory Utilization
 
 `check` does not current support a mechanism to throttle back jobs based on the memory consumption of concurrently runs jobs. In order to throttle memory utilization you can lower the \
-[`--jobs`](cli/command-line.md#options) count to indirectly reduct system load.
+[`--jobs`](cli/usage.md#options) count to indirectly reduct system load.
 
 ## Daemon
 

@@ -12,7 +12,7 @@ Sign up at [app.trunk.io](https://app.trunk.io/), create a Trunk organization, a
 
 Select the repository you would like to use and click **Get Started.**
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Set Up Trunk Merge
 
@@ -21,7 +21,7 @@ Select the repository you would like to use and click **Get Started.**
    2. The number of Pull Requests that Merge can test at the same time
    3. The [mode](configuration.md#single-parallel-mode) that Trunk Merge Queues will start in
 
-<figure><img src="../.gitbook/assets/image (23).png" alt="" width="414"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt="" width="414"><figcaption></figcaption></figure>
 
 2. Tell Trunk Merge how to determine whether a pull request can be merged by specifying the name of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) that must pass in the `.trunk/trunk.yaml` in your repository.
 

@@ -10,7 +10,7 @@ Now trigger Trunk Merge to process this PR using either a comment on the PR or t
 {% tab title="GitHub Pull Request View" %}
 Comment `/trunk merge` on a pull request
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Trunk CLI" %}

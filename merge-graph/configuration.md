@@ -59,7 +59,7 @@ Merge can be swapped between `Single` and `Parallel` mode at any time. If there 
 
 Switching modes can be done from the `Merge Queue Mode` section of the `Settings > Repositories > repo name > Merge` panel
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Timeout for Tests to Complete
 

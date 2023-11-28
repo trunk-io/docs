@@ -23,7 +23,7 @@ We offer similar commands for cancellation.
 * Posting a GitHub comment `/trunk cancel` on a pull request.
 * Cancellation from the WebApp:&#x20;
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Using the `trunk` CLI:
 

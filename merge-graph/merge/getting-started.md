@@ -79,7 +79,7 @@ Now that you're done with setup, take it for a spin! You can submit a pull reque
 {% tab title="GitHub Pull Request View" %}
 Comment `/trunk merge` on a pull request
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Trunk CLI" %}
