@@ -77,13 +77,13 @@
   * [Jenkins Quickstart](ci-debugger/jenkins-quickstart.md)
   * [Buildkite Quickstart](ci-debugger/buildkite-quickstart.md)
   * [Command Line Example](ci-debugger/commandline.md)
-* [Administration](administration/README.md)
-  * [Billing](adminstration/billing.md)
-  * [Single Sign-On (SAML)](adminstration/single-sign-on-saml.md)
-  * [Community](adminstration/community.md)
-  * [Contact Support](adminstration/support.md)
-  * [Integration for Slack](adminstration/integration-for-slack.md)
-  * [GitHub App Permissions](adminstration/github-app-permissions.md)
+* Administration
+  * [Billing](administration/billing.md)
+  * [Single Sign-On (SAML)](administration/single-sign-on-saml.md)
+  * [Community](administration/community.md)
+  * [Contact Support](administration/support.md)
+  * [Integration for Slack](administration/integration-for-slack.md)
+  * [GitHub App Permissions](administration/github-app-permissions.md)
   * [Manage Members & Organizations](administration/manage-members-and-organizations.md)
 
 ## Links
