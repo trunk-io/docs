@@ -1,3 +1,5 @@
+# Table of contents
+
 * [Welcome](welcome.md)
 * [Check](check/readme.md)
   * [Overview](check/readme.md)
@@ -77,7 +79,7 @@
   * [Jenkins Quickstart](ci-debugger/jenkins-quickstart.md)
   * [Buildkite Quickstart](ci-debugger/buildkite-quickstart.md)
   * [Command Line Example](ci-debugger/commandline.md)
-* Administration
+* [Administration](administration/README.md)
   * [Billing](administration/billing.md)
   * [Single Sign-On (SAML)](administration/single-sign-on-saml.md)
   * [Community](administration/community.md)
