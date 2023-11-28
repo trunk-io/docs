@@ -20,7 +20,7 @@ Run all applicable formatters as configured in `trunk.yaml`. `trunk fmt` is shor
 
 ## Options
 
-<table><thead><tr><th width="238">options</th><th></th></tr></thead><tbody><tr><td><code>--all</code></td><td>Run on all the files in the repository. Useful if trying to assess a new linter in the system, or to find and fix pre-existing issues</td></tr><tr><td><code>--fix</code></td><td>Auto-apply all suggested fixes</td></tr><tr><td><code>--no-fix</code></td><td>Surface, but do not prompt for autofixes</td></tr><tr><td><code>--filter</code></td><td>List of comma-separated linters to run. Specify <code>--filter=-linter</code> to disable a linter.</td></tr><tr><td><code>--sample=N</code></td><td>Run check on a <a href="usage.md#sample">sampling</a> of all files in the repo</td></tr><tr><td><code>--ci</code></td><td>Run in <a href="../continuous-integration.md">Continuous Integration mode</a></td></tr><tr><td><code>--no-progress</code></td><td>Do not show progress while running</td></tr><tr><td><code>--ci-progress</code></td><td>Only show progress every 30s while running (useful for CI jobs). Implied by <code>--ci</code>.</td></tr><tr><td><code>--jobs</code></td><td>number of concurrent jobs (does not affect background linting)</td></tr><tr><td><code>--help</code></td><td>Output help information</td></tr></tbody></table>
+<table><thead><tr><th width="238">options</th><th></th></tr></thead><tbody><tr><td><code>--all</code></td><td>Run on all the files in the repository. Useful if trying to assess a new linter in the system, or to find and fix pre-existing issues</td></tr><tr><td><code>--fix</code></td><td>Auto-apply all suggested fixes</td></tr><tr><td><code>--no-fix</code></td><td>Surface, but do not prompt for autofixes</td></tr><tr><td><code>--filter</code></td><td>List of comma-separated linters to run. Specify <code>--filter=-linter</code> to disable a linter.</td></tr><tr><td><code>--sample=N</code></td><td>Run check on a <a href="command-line.md#sample">sampling</a> of all files in the repo</td></tr><tr><td><code>--ci</code></td><td>Run in <a href="../continuous-integration.md">Continuous Integration mode</a></td></tr><tr><td><code>--no-progress</code></td><td>Do not show progress while running</td></tr><tr><td><code>--ci-progress</code></td><td>Only show progress every 30s while running (useful for CI jobs). Implied by <code>--ci</code>.</td></tr><tr><td><code>--jobs</code></td><td>number of concurrent jobs (does not affect background linting)</td></tr><tr><td><code>--help</code></td><td>Output help information</td></tr></tbody></table>
 
 ### Recipes
 
@@ -71,7 +71,31 @@ Alternatively, to run every linter at most 5 times against its supported files:
 trunk check --sample=5
 ```
 
+### Manage the linters
+
+List all of the available linters
+
+```sh
+$ trunk check list
+```
+
+Enable a single linter
+
+```sh
+$ trunk check enable <linter name>
+```
+
+Disable a single linter
+
+```sh
+$ trunk check disable <linter name>
+```
+
 ### Discover new tools and available upgrades
+
+```sh
+trunk upgrade
+```
 
 `trunk upgrade` will upgrade the Trunk CLI, along with all plugins and linters in your trunk.yaml. We highly recommend running on the latest validated versions of tools as updates will frequently include important security fixes and additional valuable checks. Trunk only auto-suggests linter upgrades to versions that we have tested and support, so you may see a slight lag time when a new linter version is released.
 

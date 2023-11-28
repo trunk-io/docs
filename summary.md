@@ -19,7 +19,7 @@
   * [CLI](check/cli/readme.md)
     * [Install Trunk](check/cli/install-trunk.md)
     * [Init in a git repo](check/cli/init-in-a-git-repo.md)
-    * [Usage](check/cli/usage.md)
+    * [Usage](check/cli/command-line.md)
     * [Compatibility](check/cli/compatibility.md)
     * [GitHub Codespaces](check/cli/github-codespaces.md)
     * [Windows Beta](check/cli/windows-beta.md)
