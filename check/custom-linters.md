@@ -283,6 +283,7 @@ Note that some of the fields in this command template contain `${}` tokens: thes
 | `${linter}`       | Path to the directory the linter was downloaded to                            |
 | `${runtime}`      | Path to the directory the runtime (e.g. `node`) was downloaded to             |
 | `${upstream-ref}` | Upstream git commit that is being used to calculate new/existing/fixed issues |
+| `${plugin}`       | Path to the root of the plugin's repository                                   |
 
 #### Input
 
