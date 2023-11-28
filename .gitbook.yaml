@@ -38,5 +38,6 @@ redirects:
   docs/vscode: check/reference/vs-code.md
   docs/what-is-trunk: readme.md
   docs/windows-beta: check/cli/windows-beta.md
+  merge-graph: merge/readme.md
   reference/reference-trunk-yaml: check/reference/trunk-yaml.md
   reference/trunk-yaml: check/reference/trunk-yaml.md
