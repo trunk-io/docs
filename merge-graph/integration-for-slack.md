@@ -8,25 +8,23 @@ After you have Merge set up and running in your repository you can set up Slack 
 
 ### Merge Queue Specific Notifications
 
-After you have Merge set up and running in your repository, you can set up your integration with Slack in Settings > Repositories.
+After you have Merge set up and running in your repository, you can set up your integration with Slack in Settings > Repositories > the specific repository with the Merge Queue.
 
-![](https://files.readme.io/9fd48c3-Screen\_Shot\_2022-09-13\_at\_2.19.48\_PM.png)
+<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 Click "**Connect**" to install the Trunk Slack application and receive Merge notifications in a specific channel. Once you have authorized the app to post to a channel, you will be redirected to your settings page.
 
 ### User Specific Notifications
 
-To have notifications for **PRs you authored** regardless of what Merge Queue they're going through sent **as a DM to you**, you go to `Settings > Repos > your-repo`
+To have notifications for **PRs you authored** regardless of what Merge Queue they're going through sent **as a DM to you**, you go to `Settings > Account > Connect`
 
-Note: For user specific notifications you must have your GitHub account connected to your Slack account. The button to do this is in the `Settings > Account > Link GitHub Account` section.
+Note: For user specific notifications you **must** have your GitHub account connected to your Slack account. The button to do this is in the `Settings > Account > Link GitHub Account` section.
 
 <figure><img src="../.gitbook/assets/image-6.png" alt=""><figcaption></figcaption></figure>
 
 ## Configuring Your Integration with Slack
 
 After you have connected to a Slack channel, you can select which notifications you would like to receive. By default, all Merge notifications are enabled.
-
-![](https://files.readme.io/8171abe-Screen\_Shot\_2022-09-13\_at\_2.47.00\_PM.png)
 
 | Notification                                     | Description                                                                                                                                                                                                                                              |
 | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

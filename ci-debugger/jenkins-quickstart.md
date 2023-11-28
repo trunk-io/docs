@@ -14,17 +14,17 @@ You will need to have ports open for:
 
 ### Create a trunk organization
 
-To use the CI Debugger, you must first create a trunk organization. See this [document](../web-app/) for detailed instructions.
+To use the CI Debugger, you must first create a trunk organization. See this [document](broken-reference) for detailed instructions.
 
 ### Create a breakpoint in the trunk app
 
-{% @supademo/embed demoId="PEuiLCcC1etLxXgcOf-cu" url="https://app.supademo.com/demo/PEuiLCcC1etLxXgcOf-cu" %}
+{% @supademo/embed demoid="PEuiLCcC1etLxXgcOf-cu" url="https://app.supademo.com/demo/PEuiLCcC1etLxXgcOf-cu" %}
 
 ### Setup your Organization API Token
 
 In order for the CI Debugger to communicate with the trunk web app, it needs to be able to authenticate from the GitHub Action instance to the trunk web application.
 
-{% @supademo/embed demoId="LPJsDyJYAsyvUabvkphHK" url="https://app.supademo.com/demo/LPJsDyJYAsyvUabvkphHK" %}
+{% @supademo/embed demoid="LPJsDyJYAsyvUabvkphHK" url="https://app.supademo.com/demo/LPJsDyJYAsyvUabvkphHK" %}
 
 ### Setup Your Jenkins Workflow
 

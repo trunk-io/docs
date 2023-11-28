@@ -387,7 +387,7 @@ We use the same template syntax for `environment` as we do for [`command`](custo
 
 ### Tools
 
-You can use the `tools` section to specify trunk-configured binaries that the linter uses to run. The `tools` key should specify a list of strings referring to tool names. We have two kinds of tool dependencies - they are described in turn below. See the [Tools Configuration](../tools/configuration.md) page for more details on how to set up your tools.
+You can use the `tools` section to specify trunk-configured binaries that the linter uses to run. The `tools` key should specify a list of strings referring to tool names. We have two kinds of tool dependencies - they are described in turn below. See the [Tools Configuration](tools/configuration.md) page for more details on how to set up your tools.
 
 This is the preferred way of defining and versioning a linter, as it also allows repo users to conveniently run the linter binary outside of the `trunk check` context.
 

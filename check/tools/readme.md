@@ -25,7 +25,7 @@ trunk tools list
 
 
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
 
 #### Running Tools
 

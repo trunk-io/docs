@@ -1,4 +1,4 @@
-# Trunk YAML
+# Trunk YAML (.trunk/trunk.yaml)
 
 `trunk` is controlled by the `.trunk/trunk.yaml` file in your repository.
 
@@ -149,7 +149,7 @@ runtimes:
 
 ## `lint`
 
-See the [check configuration](../../check/configuration.md) and [custom linter](../../check/custom-linters.md) documentation.
+See the [check configuration](../../configuration.md) and [custom linter](../../custom-linters.md) documentation.
 
 ### Disable upgrade notifications
 

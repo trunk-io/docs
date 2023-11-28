@@ -57,9 +57,9 @@ For example, the above 3 PRs would look like this in the Merge Queue in `Single`
 
 Merge can be swapped between `Single` and `Parallel` mode at any time. If there are no PRs in the merge queue when switching, the switch will be immediate. If there are PRs in the queue, then Merge will go into the `Switching Modes` state, where it'll wait for all currently testing PRs to merge before switching modes. During this time, PRs will not be able to enter the queue.
 
-Switching modes can be done from the `Enable Graph Mode` section of the `Settings > Repositories > repo name > Merge` panel
+Switching modes can be done from the `Merge Queue Mode` section of the `Settings > Repositories > repo name > Merge` panel
 
-<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 ### Timeout for Tests to Complete
 

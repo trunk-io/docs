@@ -8,15 +8,20 @@ description: How to set up Trunk Merge for your project
 
 Sign up at [app.trunk.io](https://app.trunk.io/), create a Trunk organization, and connect it to your GitHub repositories. If your repository is already connected to your Trunk organization, this step can be skipped.
 
+
+
 Select the repository you would like to use and click **Get Started.**
 
 <figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Set Up Trunk Merge
 
-1. Go to the Merge tab. You will see the Set Up Trunk Merge Graph page.
+1. Go to the Merge tab. You will see the "Set Up Trunk Merge" page. From there, you can specify:
+   1. The name of the branch that Trunk Merge should help manage merging PRs into
+   2. The number of Pull Requests that Merge can test at the same time
+   3. The [mode](configuration.md#single-parallel-mode) that Trunk Merge Queues will start in
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-06 at 2.35.34 PM.png" alt="" width="322"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23).png" alt="" width="414"><figcaption></figcaption></figure>
 
 2. Tell Trunk Merge how to determine whether a pull request can be merged by specifying the name of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) that must pass in the `.trunk/trunk.yaml` in your repository.
 
