@@ -248,3 +248,5 @@ trunk check
 ```
 
 Note: if you have no modified any files, `trunk check` will not check anything. See the [CLI usage docs](cli/usage.md) for more info on basic `trunk` usage.
+
+[slack]: https://slack.trunk.io
