@@ -26,9 +26,9 @@ Check is typically used as both a local tool ([CLI](cli/readme.md), [VS Code Ext
 
 ## I run a large eng org, why should I use Check?
 
-When you modify a file, Trunk Check has a feature called Hold The Line which only flags the *new* issues. It does this by being git-aware, and in fact only functions in git repos.
+When you modify a file, Trunk Check has a feature called Hold The Line which only flags the *new* issues. It does this by being git-aware, and by using some sophisticated heuristics (to handle the case where you change one line of code of new issues pop up somewhere else because of it).
 
-This feature is critical for eng orgs because it allows you to start leveling up your codebase without making devs fix every preexisting issue in every file that touch, which would dramatically slow down development and cause a lot of frustration.
+This feature is critical for eng orgs because it allows you to start leveling up your codebase without making devs fix every preexisting issue in every file they touch, which would dramatically slow down development and cause a lot of frustration. Without this feature, it's both impractical to turn on new rules in existing code-checking tools, but it's also impractical to add new tools to your code-checking arsenal. With it, adding a new tool is as easy as `trunk check enable {linter}`, and you can start being better going forward and tackle your tech debt incrementally, on your own terms.
 
 ## Supported Linters, Formatters, and Security Tools
 
