@@ -15,7 +15,7 @@ Check is typically used as both a local tool ([CLI](cli/readme.md), [VS Code Ext
 ## Standout Features
 
 - does everything from formatting, to linting, to security checking, to optimizing images
-- config-as-code (`.trunk/trunk.yaml``)
+- config-as-code (`.trunk/trunk.yaml`)
 - caching
 - pre-existing issue detection
 - a daemon & language server
