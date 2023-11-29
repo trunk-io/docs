@@ -8,17 +8,43 @@ description: Learn more about the Trunk CLI
 
 To use `trunk` locally, install via:
 
+{% tabs %}
+{% tab title="bash" %}
 ```bash
 curl https://get.trunk.io -fsSL | bash
 ```
+{% endtab %}
 
-For other installation options (`npm`, `brew`, direct download, etc) and details on exactly what we install or how to uninstall, see the [Install Trunk](install-trunk.md) doc.
+{% tab title="bash (no prompts)" %}
+```bash
+curl https://get.trunk.io -fsSL | bash -s -- -y
+```
+{% endtab %}
 
-Also check out the other ways to use Trunk:
+{% tab title="brew" %}
+```bash
+brew install trunk-io
+```
+{% endtab %}
 
-* [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)
-* [GitHub Action](https://github.com/marketplace/actions/trunk-check)
-* [Web App (app.trunk.io)](https://app.trunk.io)
+{% tab title="npm" %}
+```bash
+npm install -D @trunkio/launcher
+```
+{% endtab %}
+
+{% tab title="pnpm" %}
+```bash
+pnpm add -D @trunkio/launcher
+```
+{% endtab %}
+
+{% tab title="yarn" %}
+```bash
+yarn add -D @trunkio/launcher
+```
+{% endtab %}
+{% endtabs %}
 
 ### What can it do?
 
