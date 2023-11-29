@@ -4,7 +4,9 @@ description: Learn how to enable and write your own actions.
 
 # Actions
 
-**You can think of Trunk Actions as** [**IFTTT**](https://ifttt.com/) **for your repository. An action is a command that is run in reaction to a specified** [**trigger**](./#triggers)**.**
+**You can think of Trunk Actions as IFTTT for your repository. An action is a command that is run when a specified** [**trigger**](./#triggers) **occurs.**
+
+The most common Trunk Actions are provided out of the box with trunk, and are triggered to invisibly autoformat (`trunk fmt`) your commits every time you `git commit`, and run `trunk check` when you `git push`.
 
 #### Triggers
 
@@ -16,7 +18,7 @@ description: Learn how to enable and write your own actions.
 
 #### Discovering Actions
 
-The trunk [plugins](https://github.com/trunk-io/plugins) repo ships with a collection of actions that can help supercharge your repository and provide examples for how to write your own actions. To see a list of actions that you can enable in your own repo run:
+The trunk [plugins](https://github.com/trunk-io/plugins) repo ships with a collection of actions that can help supercharge your repository and provide examples of how to write your own actions. To see a list of actions that you can enable in your repo run:
 
 ```bash
 trunk actions list
