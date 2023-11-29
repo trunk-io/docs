@@ -235,14 +235,6 @@ trunk init
 
 This will scan your repository and create a `.trunk/trunk.yaml` which enables all the linters, formatters, and security analyzers that [Trunk Check](./) recommends. For more details, see [here](cli/init-in-a-git-repo.md).
 
-{% hint style="info" %}
-Security-conscious users may want to also record the signature of the CLI, which the [Trunk Launcher](reference/components.md#trunk-launcher) will use to verify the CLI's provenance:
-
-```
-trunk init --lock
-```
-{% endhint %}
-
 ## Install the VSCode Extension
 
 If you run VSCode you can also install the [trunk VSCode extension](vscode:extension/Trunk.io). Read more about it [here](https://marketplace.visualstudio.com/items?itemName=Trunk.io).
