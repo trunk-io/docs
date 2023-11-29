@@ -27,4 +27,4 @@ To give a concrete example, we track the client version and operating systems of
 
 ## Can I disable usage data?
 
-Yes. You can disable usage telemetry by setting the environment variable TRUNK\_MIXPANEL to "off."
+Yes. You can disable usage telemetry by setting the environment variables `TRUNK_MIXPANEL` and `TRUNK_SEGMENT` to "off."
