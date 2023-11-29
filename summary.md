@@ -15,7 +15,7 @@
   * [Debugging](check/debugging.md)
   * [FAQ](check/faq.md)
   * [Under the Hood](check/under-the-hood.md)
-    * [Performance](check/performance.md)
+    * [Performance](check/under-the-hood/performance.md)
   * [CLI](check/cli/readme.md)
     * [Overview](check/cli/readme.md)
     * [Install Trunk](check/cli/install-trunk.md)
