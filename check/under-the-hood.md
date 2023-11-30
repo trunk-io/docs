@@ -33,12 +33,12 @@ Over the course of a `trunk check` run, changes made to the filesystem outside o
 
 ## CPU Utilization
 
-By default `check` will run concurrent jobs using up to half the available cores on your machine. This default is intended to balance system utilization and check responsiveness. If `check` detects that it is running in a continuous integration environment or you pass the [`--ci`](usage/usage.md) flag, then it will instead use all cores on the machine. This behavior can be overwritten by manually calling `check` with the [`--jobs`](usage/usage.md#options) argument.
+By default `check` will run concurrent jobs using up to half the available cores on your machine. This default is intended to balance system utilization and check responsiveness. If `check` detects that it is running in a continuous integration environment or you pass the [`--ci`](usage/) flag, then it will instead use all cores on the machine. This behavior can be overwritten by manually calling `check` with the [`--jobs`](usage/#options) argument.
 
 ## Memory Utilization
 
 `check` does not current support a mechanism to throttle back jobs based on the memory consumption of concurrently runs jobs. In order to throttle memory utilization you can lower the\
-[`--jobs`](usage/usage.md#options) count to indirectly reduct system load.
+[`--jobs`](usage/#options) count to indirectly reduct system load.
 
 ## Daemon
 
