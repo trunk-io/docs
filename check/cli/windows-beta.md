@@ -1,4 +1,4 @@
-# Windows Beta
+# Windows Support (beta)
 
 > 📘 Trunk Check is available for beta on Windows!
 >
@@ -26,13 +26,7 @@ Set-ExecutionPolicy Bypass -Scope CurrentUser
 
 You can then execute trunk as `.\trunk.ps1`.
 
-To use the Trunk **VSCode Extension**, merge the following into `.vscode/settings.json`:
-
-```Text
-{
-  "trunk.enableWindows": true
-}
-```
+### Compatibility
 
 Trunk only supports Windows with the following versions and above:
 
