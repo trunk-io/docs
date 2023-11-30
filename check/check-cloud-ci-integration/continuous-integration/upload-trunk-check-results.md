@@ -1,7 +1,7 @@
 # Upload Trunk Check Results
 
 {% hint style="info" %}
-If you use GitHub, we recommend you follow the [GitHub Integration](get-started/github-integration.md) guide.
+If you use GitHub, we recommend you follow the [GitHub Integration](../get-started/github-integration.md) guide.
 {% endhint %}
 
 Trunk Check has the ability to post its results to app.trunk.io. This will enable you to view your repository's Check history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix. The upload feature of Trunk Check will upload all of the issues found by Trunk to the Trunk services. In order to get an accurate picture of the state of your repository, you'll want to upload all of the Trunk Check issues for your whole repository.

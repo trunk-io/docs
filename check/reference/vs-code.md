@@ -50,7 +50,7 @@ or click on the notification to "Share trunk config", which will commit `.trunk/
 
 ### Learn more
 
-Check out how to [install the CLI](../cli/install-trunk.md), [set it up in CI](../get-started/github-integration.md), [ignore issues](../ignoring-issues.md), and set up [Custom Linters](../custom-linters.md).
+Check out how to [install the CLI](../cli/install-trunk.md), [set it up in CI](../check-cloud-ci-integration/get-started/github-integration.md), [ignore issues](../usage/ignoring-issues.md), and set up [Custom Linters](../configuration/custom-linters/).
 
 ![linter code docs](https://static.trunk.io/assets/vscode\_doc\_links.png)
 

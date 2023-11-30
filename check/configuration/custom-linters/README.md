@@ -4,7 +4,7 @@ The beautiful thing about `trunk` is that you can leverage our caching and hold-
 
 Trunk currently supports the following types of additional/proprietary linters:
 
-<table data-header-hidden><thead><tr><th width="173.33333333333331"></th><th width="131" align="center"></th><th></th></tr></thead><tbody><tr><td>Linter Type</td><td align="center">Autofix<br>support</td><td>Description</td></tr><tr><td><a href="custom-linters.md#sarif"><code>sarif</code></a></td><td align="center">✓</td><td>Produces diagnostics as <a href="https://docs.oasis-open.org/sarif/sarif/v2.0/sarif-v2.0.html">Static Analysis Results Interchange Format</a> JSON.</td></tr><tr><td><a href="custom-linters.md#lsp-json"><code>lsp_json</code></a></td><td align="center"></td><td>Produces diagnostics as <a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a> JSON.</td></tr><tr><td><a href="custom-linters.md#pass-fail-linters"><code>pass_fail</code></a></td><td align="center"></td><td>Writes a single file-level diagnostic to <code>stdout</code>.</td></tr><tr><td><a href="custom-linters.md#regex"><code>regex</code></a></td><td align="center"></td><td>Produces diagnostics using a custom regex format.</td></tr><tr><td><a href="custom-linters.md#arcanist"><code>arcanist</code></a></td><td align="center">✓</td><td>Produces diagnostics as Arcanist JSON.</td></tr><tr><td><a href="custom-linters.md#formatters"><code>rewrite</code></a></td><td align="center">✓</td><td>Writes the formatted version of a file to <code>stdout</code>.</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="173.33333333333331"></th><th width="131" align="center"></th><th></th></tr></thead><tbody><tr><td>Linter Type</td><td align="center">Autofix<br>support</td><td>Description</td></tr><tr><td><a href="./#sarif"><code>sarif</code></a></td><td align="center">✓</td><td>Produces diagnostics as <a href="https://docs.oasis-open.org/sarif/sarif/v2.0/sarif-v2.0.html">Static Analysis Results Interchange Format</a> JSON.</td></tr><tr><td><a href="./#lsp-json"><code>lsp_json</code></a></td><td align="center"></td><td>Produces diagnostics as <a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a> JSON.</td></tr><tr><td><a href="./#pass-fail-linters"><code>pass_fail</code></a></td><td align="center"></td><td>Writes a single file-level diagnostic to <code>stdout</code>.</td></tr><tr><td><a href="./#regex"><code>regex</code></a></td><td align="center"></td><td>Produces diagnostics using a custom regex format.</td></tr><tr><td><a href="./#arcanist"><code>arcanist</code></a></td><td align="center">✓</td><td>Produces diagnostics as Arcanist JSON.</td></tr><tr><td><a href="./#formatters"><code>rewrite</code></a></td><td align="center">✓</td><td>Writes the formatted version of a file to <code>stdout</code>.</td></tr></tbody></table>
 
 If your linter produces a different output type, you can also write a [parser](custom-parsers.md) to transform the linter's output into something trunk can understand.
 
@@ -32,7 +32,7 @@ Every custom linter must specify a name, the types of files it will run on, at l
 > Info: Entries in `enabled` must specify both a linter name and a version. If you commit your linter into\
 > your repository, you should simply use `@SYSTEM`, which will run the linter with your shell's\
 > `PATH`. If you have a versioned release pipeline for your linter, though, you'll want to define your\
-> custom linter using a [`download`](custom-linters.md#downloads) and specify the download version to use.
+> custom linter using a [`download`](./#downloads) and specify the download version to use.
 
 ### Execution Model
 
@@ -41,7 +41,7 @@ Running `trunk check` tells `trunk` to do the following:
 * compute the set of modified files (by comparing the current working tree and `upstream-ref`,\
   usually your `main` or `master` branch)
 * compute the set of lint actions to run based on the modified files
-  * each enabled linter is invoked once per applicable modified file ([details](custom-linters.md)); for\
+  * each enabled linter is invoked once per applicable modified file ([details](./)); for\
     example, if `pylint` and `flake8` are enabled, they will both be run on every modified `python`\
     file but not on any modified `markdown` files
   * every lint action also will have a corresponding _upstream_ lint action, i.e. the linter will\
@@ -331,7 +331,7 @@ lint:
 
 #### Output
 
-The output format that `trunk` expects from a linter is determined by its [`type`](custom-linters.md#linter-types).
+The output format that `trunk` expects from a linter is determined by its [`type`](./#linter-types).
 
 **`stdout`, `stderr` or `tmp_file`**
 
@@ -384,11 +384,11 @@ lint:
 
 Most `environment` entries are maps with `name` and `value` keys; these become `name=value` environment variables. For `PATH`, we allow specifying `list`, in which case we concatenate the entries with `:`.
 
-We use the same template syntax for `environment` as we do for [`command`](custom-linters.md#command).
+We use the same template syntax for `environment` as we do for [`command`](./#command).
 
 ### Tools
 
-You can use the `tools` section to specify trunk-configured binaries that the linter uses to run. The `tools` key should specify a list of strings referring to tool names. We have two kinds of tool dependencies - they are described in turn below. See the [Tools Configuration](tools/configuration.md) page for more details on how to set up your tools.
+You can use the `tools` section to specify trunk-configured binaries that the linter uses to run. The `tools` key should specify a list of strings referring to tool names. We have two kinds of tool dependencies - they are described in turn below. See the [Tools Configuration](../../tools/configuration.md) page for more details on how to set up your tools.
 
 This is the preferred way of defining and versioning a linter, as it also allows repo users to conveniently run the linter binary outside of the `trunk check` context.
 
@@ -475,7 +475,7 @@ In this scenario, `terraform` is an additional tool dependency - `terragrunt` re
 
 #### Downloads
 
-**(NOTE: This method of specifying linters is still supported, but using `tools` like specified** [**above**](custom-linters.md#tools) **is recommended going forward)**
+**(NOTE: This method of specifying linters is still supported, but using `tools` like specified** [**above**](./#tools) **is recommended going forward)**
 
 If your custom linter has a separate release process (i.e. is not committed in your repo), then you can tell `trunk` how to download it like so:
 

@@ -70,7 +70,7 @@ Check out our open source [`plugins`](https://github.com/trunk-io/plugins/blob/m
 
 ### Ansible-lint
 
-Ansible-lint must be configured with a trigger. See the [trigger rules](configuration.md#trigger-rules) documentation for more information.
+Ansible-lint must be configured with a trigger. See the [trigger rules](./#trigger-rules) documentation for more information.
 
 In case your ansible setup is not contained within a single folder you would list all files and directories belonging to your ansible setup.
 

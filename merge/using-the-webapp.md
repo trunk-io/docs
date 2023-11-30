@@ -6,13 +6,13 @@ description: >-
 
 # Using the Trunk Merge UI
 
-The web app can be found at [app.trunk.io](https://app.trunk.io).&#x20;
+The web app can be found at [app.trunk.io](https://app.trunk.io).
 
 ## Queue Overview
 
 The queue tab provides an overview of the work done by Merge. Merged, testing, and pending PRs should all appear here. Clicking on a row will show the history of that item: click "view more history" to get a better understanding of the item.
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>The "view more history" link navigates you to the details page. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>The "view more history" link navigates you to the details page.</p></figcaption></figure>
 
 ### Pull Request Details
 
@@ -38,7 +38,7 @@ The PR Details panel has a dropdown menu (labeled "**..."**) with actions. From 
 
 The "Remove from queue" action will remove the PR from the merge queue. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it:
 
-1. ## PR Details
+1. ### PR Details
 
 A PR details page will display a complete history of a PR - state transitions, associated test runs, a visual of what's currently in the Merge Queue, etc. The same dropdown menu described above (labeled "...") is on this page as well.
 

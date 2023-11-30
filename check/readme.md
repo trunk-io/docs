@@ -10,7 +10,7 @@ Trunk Check runs [100+ code-checking tools](https://github.com/trunk-io/plugins)
 * Flag secrets
 * and much more
 
-Check is typically used as a local tool ([CLI](cli/), [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)) and a [CI tool](continuous-integration.md) / [GitHub bot](get-started/github-integration.md).
+Check is typically used as a local tool ([CLI](cli/), [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)) and a [CI tool](check-cloud-ci-integration/continuous-integration/) / [GitHub bot](check-cloud-ci-integration/get-started/github-integration.md).
 
 ## Standout Features
 
@@ -154,4 +154,4 @@ If you run VSCode you can also install the [trunk VSCode extension](vscode:exten
 trunk check
 ```
 
-Note: if you have not modified any files, `trunk check` will not check anything. See the [CLI usage docs](cli/usage.md) for more info on basic `trunk` usage.
+Note: if you have not modified any files, `trunk check` will not check anything. See the [CLI usage docs](usage/usage.md) for more info on basic `trunk` usage.

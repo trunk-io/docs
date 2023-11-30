@@ -4,4 +4,4 @@ Tools enable you to run your linter binaries on the command line independent of 
 
 ### Configuring linters
 
-See [Check Configuration for Tools](../custom-linters.md#tools) for more information on how to use tools to define and run linters.
+See [Check Configuration for Tools](../configuration/custom-linters/#tools) for more information on how to use tools to define and run linters.

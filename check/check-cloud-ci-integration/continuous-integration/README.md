@@ -1,4 +1,7 @@
 ---
+description: >-
+  How to integrate Trunk Check into CI for non-GitHub providers, or for GitHub
+  without using the Trunk GitHub App
 layout:
   title:
     visible: true
@@ -12,10 +15,10 @@ layout:
     visible: true
 ---
 
-# Continuous Integration
+# Non-GitHub Integration
 
 {% hint style="info" %}
-If you use GitHub, we recommend you follow the [GitHub Integration](get-started/github-integration.md) guide.
+If you use GitHub, we recommend you follow the [GitHub Integration](../get-started/github-integration.md) guide.
 {% endhint %}
 
 {% tabs %}
@@ -52,7 +55,7 @@ To get a `TRUNK_TOKEN`, you'll need to:
 
 * sign up at [app.trunk.io](https://app.trunk.io),
 * create a Trunk organization,
-* [connect your Trunk organization to GitHub](get-started/), and
+* [connect your Trunk organization to GitHub](../get-started/), and
 * download your token from your organization settings.
 
 ## Caching and Persistence

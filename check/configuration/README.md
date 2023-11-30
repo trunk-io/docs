@@ -1,6 +1,6 @@
 # Configuration
 
-The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section the of [`trunk.yaml`](reference/trunk-yaml/#cli)file stored the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
+The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section the of [`trunk.yaml`](../reference/trunk-yaml/#cli)file stored the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -69,7 +69,7 @@ To configure **what** a linter does, you will continue to use the linter's own c
 
 If you'd like, trunk also supports migrating any linter configurations from the root of your repository into a `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run. Note that if you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.
 
-If you find that you want to tweak how trunk runs a given linter, you may want to consult the documentation on [overriding defaults](reference/trunk-yaml/#overriding-defaults) and [the various linter settings](custom-linters.md); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
+If you find that you want to tweak how trunk runs a given linter, you may want to consult the documentation on [overriding defaults](../reference/trunk-yaml/#overriding-defaults) and [the various linter settings](custom-linters/); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
 
 ```yaml
 lint:
@@ -99,7 +99,7 @@ lint:
     - hadolint@2.6.0
 ```
 
-Custom linters are slightly different; see [those docs](custom-linters.md) to learn more.
+Custom linters are slightly different; see [those docs](custom-linters/) to learn more.
 
 {% hint style="info" %}
 You can also ask trunk to detect new linters and upgrade existing linters to their latest respective versions by running `trunk upgrade check`.
@@ -132,7 +132,7 @@ lint:
 
 #### Runtime versioning
 
-By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](reference/trunk-yaml/#runtimes).
+By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml/#runtimes).
 
 ### Ignoring files
 
@@ -152,7 +152,7 @@ lint:
 
 Every entry in `ignore` defines both a set of linters and a set of paths to ignore.
 
-<table><thead><tr><th width="101">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (i.e. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>paths</td><td>List of <a href="reference/glob-path-pattern.md">glob paths</a>, relative to the root of the repo, to ignore. If a path begins with a <code>!</code> then it represents an inverse ignore. This means that any file matching that glob will not be ignored, even if matched by other globs.</td></tr></tbody></table>
+<table><thead><tr><th width="101">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (i.e. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>paths</td><td>List of <a href="../reference/glob-path-pattern.md">glob paths</a>, relative to the root of the repo, to ignore. If a path begins with a <code>!</code> then it represents an inverse ignore. This means that any file matching that glob will not be ignored, even if matched by other globs.</td></tr></tbody></table>
 
 {% hint style="info" %}
 `trunk` is `git`-aware, which means it ignores `gitignore'd` files by default.
@@ -160,7 +160,7 @@ Every entry in `ignore` defines both a set of linters and a set of paths to igno
 
 ### Blocking Thresholds
 
-All [issue severities](./#issue-severity) are considered blocking by default. In cases where you might want to slowly try out a new linter, we provide a mechanism to set specific thresholds for each linter.
+All [issue severities](../#issue-severity) are considered blocking by default. In cases where you might want to slowly try out a new linter, we provide a mechanism to set specific thresholds for each linter.
 
 ```yaml
 lint:
