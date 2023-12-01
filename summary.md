@@ -47,7 +47,7 @@
     * [User YAML (.trunk/user.yaml)](check/reference/user-yaml.md)
     * [VS Code](check/reference/vs-code.md)
     * [Neovim Plugin](check/reference/neovim-plugin.md)
-    * [Usage Data](check/reference/usage-data.md)
+    * [Telemetry](check/reference/usage-data.md)
     * [Components](check/reference/components.md)
     * [Glob Path Pattern](check/reference/glob-path-pattern.md)
   * [Under the Hood](check/under-the-hood.md)

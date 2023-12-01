@@ -42,22 +42,6 @@ If your default branch is named something else (e.g. `master`), you should `fetc
 {% endtab %}
 {% endtabs %}
 
-### Inline Annotations
-
-If you host your source code on GitHub, you can also post inline annotations to GitHub.
-
-```
- TRUNK_TOKEN=...
- trunk check --ci --trunk-annotate --github-commit=$(git rev-parse HEAD)
-```
-
-To get a `TRUNK_TOKEN`, you'll need to:
-
-* sign up at [app.trunk.io](https://app.trunk.io),
-* create a Trunk organization,
-* [connect your Trunk organization to GitHub](../get-started/), and
-* download your token from your organization settings.
-
 ## Caching and Persistence
 
 * Trunk caches the version of trunk itself, linters, formatters, and lint results, in `~/.cache/trunk`
