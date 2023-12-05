@@ -31,10 +31,36 @@ trunk tools list
 
 `Trunk` installs your enabled tools into the `.trunk/tools` directory. Each tool exposes as list of **shims** (these may or may not be identically named to the tool - most typically a tool has one shim matching the name of the tool). Each shim is installed into the `.trunk/tools` directory.
 
-You can run your tools by referring to the path `<path to your workspace>/.trunk/tools/<shim name>` but this is unwieldy. We highly recommend using [direnv](https://direnv.net/) in your repository and adding the following line to your `.envrc`:
+You can run your tools by referring to the path `<path to your workspace>/.trunk/tools/<shim name>` but this is unwieldy. We highly recommend using our shell hooks to manage your PATH.
 
-```
-PATH_add .trunk/tools
-```
+Starting with version 1.18.0, you can do so by running `trunk shellhooks install`, which will install the trunk hooks to the config file of your $SHELL. You can also run `trunk shellhooks install <shell_name>` to install a specific shell hook.
 
-This way, whenever you're inside your repo at the command line, you can just run shims installed by `trunk tools` directly by name.
+Supported shells:
+* bash
+* zsh
+* tcsh
+* fish
+* elvish
+
+For organization that want to require the use of the hooks, they can add to the config file:
+
+.trunk/trunk.yaml
+```
+version: 0.1
+cli:
+  shell_hooks:
+    enforce: true
+```
+On the next trunk command (like check or fmt), it will update your shell RC file to load our hooks.
+
+After reloading your shell, whenever you're inside your repo at the command line, you can just run shims installed by `trunk tools` directly by name.
+
+N.B. There is a known incompatibility with direnv when using PATH_ADD. To use our hooks, remove PATH_ADD from your .envrc and add them to your trunk config as such:
+```
+version: 0.1
+cli:
+  shell_hooks:
+    path_add:
+      - "${workspace}/tools"
+```
+Paths can either be absolute, or relative to the workspace using the special `${workspace}` variable
