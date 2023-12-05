@@ -1,20 +1,52 @@
 # Merge
 
-**Trunk Merge** is a merge queue that manages all the important git merges in your repository, ensuring your main branch is always working.
+**Trunk Merge** is a particularly sophisticated merge queue. It's a GitHub bot and a web app that devs use to merge pull requests. If you have a big team, use trunk-based-development, or if you have a monorepo, you should use a merge queue. See below for why.
 
 ## What is a Merge Queue
 
-When multiple PRs are merged simultaneously, it's possible for each PR to be correct by itself, but the PRs conflict when all merged together. This is called a [logical merge conflict](https://trunk.io/blog/what-is-a-logical-merge-conflict). A **merge queue** handles this problem by adding additional tests, including all of the pull requests you want to merge. Trunk Merge is a powerful merge queue that ensures your repository can adhere to the _“Not Rocket Science Rule Of Software Engineering”_: automatically maintain a repository of code that always passes all the tests on your main branch\*\*.\*\*
+Merge queues are a best practice for trunk-based development in repos with 10-1000 active engineers.
 
-Trunk Merge has two modes, **Single** mode and **Parallel** mode. In Single mode, Trunk Merge acts like a queue: first in, first out. All PRs are tested and merged in the order they arrived. In Parallel mode, Trunk Merge can run PRs in parallel, so if one PR fails, the rest of the PRs can still be merged (subject to certain constraints). In this mode, Trunk Merge acts more like a graph than a queue.
+#### The problem they solve
 
-## Bazel Integration&#x20;
+Merge queues make sure your `main` branch is never broken ('broken', meaning: a service is not functioning correctly, your app segfaults, there are compilation errors, a unit test is failing, or anything else is going wrong).
 
-Trunk Merge has [first-class support](https://github.com/trunk-io/merge-action) for Bazel with GitHub Actions. Trunk Merge will automatically form a graph of PRs that mirrors the Bazel dependency graph relationship between the code changed in each PR. Testing enqueued PRs via Trunk Merge tests against _only_ other enqueued PRs with overlapping bazel dependencies. Read more about how to hook this up in the[ Impacted Targets docs](impacted-targets.md).
+\
+There are two common ways `main` branches "break":
 
-## How It Works
+1. A PR was branched off of on an old commit of `main`, and when merged into `main` it no longer functions with the latest state of the repo.
+2. Two (or more) PRs that were recently merged worked independently, but the combination of their changes breaks something.
 
-Trunk Merge adds an additional test CI run (which you specify) before merging pull requests into your main branch. For example, a typical developer workflow for authoring a feature and merging the code to a repository might look like this:
+Either way, the more pull request velocity you have in a repo, the more often issues arise. These issues are called [logical merge conflict](https://trunk.io/blog/what-is-a-logical-merge-conflict)s. A merge queue handles this problem by testing PRs queued to be merged _in combination, based on the latest `main`,_ and only if the extra combination testing passes do they merge.
+
+#### History
+
+For the last 5-10yrs merge queues have been extremely popular in silicon valley big tech companies who trend towards trunk-based development and either large repos or monorepos. But, until recently, if you wanted one, you had to build your own. Now there's Trunk Merge.
+
+### Single mode vs. Parallel mode
+
+Trunk Merge has two modes, **Single** mode and **Parallel** mode. Single mode is a great way to start, and parallel mode is a great way to scale a repo to 10s or 100s of active developers.
+
+#### Single Mode
+
+In Single mode, Trunk Merge acts like a queue: first in, first out. All PRs are tested and merged in the order they arrived. It will still test many combinations of enqueued PRs at once against each other (and exactly how many is a configuration option), but fundamentally regardless of whether two PRs are completely unrelated or not, it will test them against eachother. This is a simple and effective way to start using Trunk Merge.
+
+#### Parallel mode
+
+In Parallel mode, Trunk knows which PRs are related and which are unrelated, and is able to function effectively as having many merge queues in the same repo, queueing only related PRs on top of one another. Trunk knows the relationship between PRs by you sending it to us, we call this [impacted-targets.md](impacted-targets.md "mention") and it can be information pulled from build systems like Bazel, Nx, or Turborepo, or it can be defined by a set of glob file matching patterns.
+
+## Build system integration
+
+Trunk Merge in [#parallel-mode](./#parallel-mode "mention") uses information from build systems to optimize merging code. This can be set for _any_ build system, but we currently have first-class support for...
+
+### Bazel Integration
+
+Trunk Merge has [first-class support](https://github.com/trunk-io/merge-action) for Bazel with GitHub Actions. Trunk Merge will automatically form a graph of PRs in parallel mode that mirrors the Bazel dependency graph relationship between the code changed in each PR. Testing enqueued PRs via Trunk Merge tests against _only_ other enqueued PRs with overlapping bazel dependencies. Read more about how to hook this up in the[ Impacted Targets docs](impacted-targets.md).
+
+## How Trunk Merge Works
+
+Trunk Merge creates temporary test branches with the combination of enqueued PRs to run an additional test CI run (which you specify), and only if that test run passes does it merge pull requests into your main branch.&#x20;
+
+A typical developer workflow _without using **Trunk Merge**_  might look like this:
 
 1. Create a feature branch from the main branch
 2. Author a Change
@@ -23,7 +55,7 @@ Trunk Merge adds an additional test CI run (which you specify) before merging pu
 5. Code Review
 6. When tests & code review pass, the author merges their PR
 
-In a repository with many contributors, **the state of the main branch will have advanced significantly after step 1**. Because of this, the results of the tests run in step 4 are out of date. Merge solves for this by adding another test pass to ensure no broken code lands on your main branch. A developer workflow with Merge integrated might look like this:
+In a repository with many contributors, **the state of the main branch will have advanced significantly after step 1**. Because of this, the results of the tests run in step 4 are out of date. Merge solves this by adding another test pass to ensure no broken code lands on your main branch. A developer workflow with Merge integrated might look like this:
 
 1. Create a feature branch from the main branch
 2. Author a Change
