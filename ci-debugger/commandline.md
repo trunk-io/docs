@@ -20,7 +20,7 @@ You will need to have ports open for:
 
 ### Create a trunk organization
 
-To use the CI Debugger, you must first create a trunk organization. See this [document](../web-app/) for detailed instructions.
+To use the CI Debugger, you must first create a trunk organization. See this [document](broken-reference) for detailed instructions.
 
 ### Create a breakpoint in the trunk app
 

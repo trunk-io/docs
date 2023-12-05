@@ -20,8 +20,6 @@ You can find your API token in the [Trunk App](https://app.trunk.io).
 
 {% @supademo/embed demoId="BILCaBxa05Hkol0Ck4Z-y" url="https://app.supademo.com/demo/BILCaBxa05Hkol0Ck4Z-y" %}
 
-To try out the API, you can use our collection in [Postman here](https://god.gw.postman.com/run-collection/).
-
 ## Endpoints
 
 {% swagger path="/trackEvent" summary="Track Events" method="post" baseUrl="https://api.trunk.io/v1/metrics" fullWidth="true" %}
@@ -38,19 +36,11 @@ Trunk API Token
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="repo" type="Object" required="true" %}
-The repository in which the CI Event ran. See 
-
-[repo](api.md#repo)
-
- schema.
+The repository in which the CI Event ran. See [repo](api.md#repo) schema.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="events" type="Array" required="true" %}
-An array of event objects. See 
-
-[event](api.md#event)
-
- schema.
+An array of event objects. See [event](api.md#event) schema.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="x-source" type="String" required="false" %}
@@ -110,7 +100,7 @@ A sequence describes the CI pipeline, job, workflow, etc. Events are grouped und
 
 Sequence object properties:
 
-<table data-full-width="true"><thead><tr><th width="134.49999999999997">Property</th><th width="619">Description</th><th width="111" data-type="select">Required</th><th data-type="select">Type</th></tr></thead><tbody><tr><td><code>platform</code></td><td>The string name of the CI platform.</td><td></td><td></td></tr><tr><td><code>kind</code></td><td>The type of the sequence (i.e., <code>job</code>, <code>workflow</code>, <code>pipeline</code>).</td><td></td><td></td></tr><tr><td><code>key</code></td><td>An identifier for this <code>sequence</code>.</td><td></td><td></td></tr><tr><td><code>name</code></td><td>The name of this <code>sequence</code></td><td></td><td></td></tr><tr><td><code>payload</code></td><td>The tags for this sequence. See <a href="api.md#payload">payload</a> schema. (note: metrics are not supported for a <code>sequence</code>)</td><td></td><td></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th width="135.49999999999997">Property</th><th width="201">Description</th><th width="111" data-type="select">Required</th><th width="99" data-type="select">Type</th><th>Examples</th></tr></thead><tbody><tr><td><code>platform</code></td><td>The string name of the CI platform. Must be <code>snake_case</code>.</td><td></td><td></td><td><code>jenkins</code>, <code>trunk_merge</code>.</td></tr><tr><td><code>kind</code></td><td>The type of the sequence.</td><td></td><td></td><td><code>job</code>, <code>workflow</code></td></tr><tr><td><code>key</code></td><td>An identifier for this <code>sequence</code>. Must be unique within the <code>repo</code> and &#x3C; 128 characters.</td><td></td><td></td><td><code>my-global-uuid</code></td></tr><tr><td><code>name</code></td><td>The name of this <code>sequence</code>. These will appear as top-level entries in your CI Analytics dashboards.</td><td></td><td></td><td><code>Integration Tests [linux]</code>.</td></tr><tr><td><code>payload</code></td><td>The tags for this sequence. See <a href="api.md#payload">payload</a> schema. (note: metrics are not supported for a <code>sequence</code>)</td><td></td><td></td><td><p><code>{</code> </p><p>  <code>metrics: [],</code> </p><p>  <code>tags: []</code></p><p><code>}</code></p></td></tr></tbody></table>
 
 #### Example Request
 
@@ -118,7 +108,7 @@ Sequence object properties:
 ```bash
 curl \
     -i \
-    -X POST https://api.trunk-staging.io:443/v1/metrics/trackEvents \
+    -X POST https://api.trunk.io/v1/metrics/trackEvents \
     -H "Content-Type: application/json" \
 -H "x-source: curl-sample" \
     -H "x-api-token: {REDACTED}" \
