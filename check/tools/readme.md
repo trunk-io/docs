@@ -33,7 +33,14 @@ trunk tools list
 
 You can run your tools by referring to the path `<path to your workspace>/.trunk/tools/<shim name>` but this is unwieldy. We highly recommend using our shell hooks to manage your PATH.
 
-Starting with version 1.18.0, you can do so by running `trunk shellhooks install`, which will install the trunk hooks to the config file of your $SHELL
+Starting with version 1.18.0, you can do so by running `trunk shellhooks install`, which will install the trunk hooks to the config file of your $SHELL. You can also run `trunk shellhooks install <shell_name>` to install a specific shell hook.
+
+Supported shells:
+* bash
+* zsh
+* tcsh
+* fish
+* elvish
 
 For organization that want to require the use of the hooks, they can add to the config file:
 
