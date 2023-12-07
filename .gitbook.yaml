@@ -5,9 +5,12 @@ structure:
   summary: summary.md
 
 redirects:
+  adminstration: administration/readme.md
+  check/performance: check/under-the-hood.md
   cli/windows-beta: check/cli/windows-beta.md
   docs: welcome.md
   docs/actions-config: check/actions/config.md
+  docs/actions-git-hooks: check/actions/git-hooks.md
   docs/actions: check/actions/readme.md
   docs/check-cli: check/command-line.md
   docs/check-config: check/config.md
@@ -19,9 +22,11 @@ redirects:
   docs/check: check/readme.md
   docs/check/github-integration: check/github-integration.md
   docs/ci-debugger: ci-debugger/readme.md
+  docs/ci: check/check-cloud-ci-integration/readme.md
   docs/cli: check/cli/readme.md
   docs/get-started: welcome.md
   docs/getting-started: welcome.md
+  docs/github-app-permissions: administration/github-app-permissions.md
   docs/github-codespaces: check/cli/github-codespaces.md
   docs/ignoring-issues: check/ignoring-issues.md
   docs/initialize-trunk-in-a-git-repo: check/cli/init-in-a-git-repo.md
@@ -38,6 +43,10 @@ redirects:
   docs/vscode: check/reference/vs-code.md
   docs/what-is-trunk: readme.md
   docs/windows-beta: check/cli/windows-beta.md
+  get-started: welcome.md
   merge-graph: merge/readme.md
+  merge-graph/configuration: merge/configuration.md
+  merge-graph/set-up-trunk-merge: merge/readme.md
+  merge/getting-started: merge/readme.md
   reference/reference-trunk-yaml: check/reference/trunk-yaml.md
   reference/trunk-yaml: check/reference/trunk-yaml.md
