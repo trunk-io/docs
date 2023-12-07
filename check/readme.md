@@ -1,16 +1,39 @@
 # Check
 
-## What is Check?
+## What is Trunk Check?
 
-Trunk Check runs [100+ code-checking tools](https://github.com/trunk-io/plugins) on your repositories, locally and in CI, which allow you to automatically...
+**Trunk Check** runs 100+ idiomatic code-checking tools for every language and technology, locally ([CLI](cli/), [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)), on CI ([CI](check-cloud-ci-integration/), [GitHub Bot](check-cloud-ci-integration/get-started/)), and in our [web app](https://app.trunk.io). You're probably already running a few of these tools (eslint, prettier, etc), but Trunk Check adds valuable features to let you integrate with CI and PRs, run them faster, upgrade them easier, integrate them with CI and PRs, version them better, and much more.
 
-* Keep bugs and security vulnerabilities out of your codebase
-* Enforce code formatting and style
-* Optimize images
-* Flag secrets
-* and much more
+Check handles:
 
-Check is typically used as a local tool ([CLI](cli/), [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)) and a [CI tool](check-cloud-ci-integration/continuous-integration/) / [GitHub bot](check-cloud-ci-integration/get-started/github-integration.md).
+* Autoformatting code, config files, IaC, and more
+* Linting
+* Static Analysis
+* Optimizing images
+* Flagging leaked secrets
+* Flagging open-source dependencies with vulnerabilities
+
+## What problems does Trunk Check solve?
+
+#### If I turn on a new rule or code-checking tool, how do I handle the zillion existing issues in my repo?
+
+'Hold the line' is a Trunk Check feature that works for _all_ tools Trunk Check runs. It detects which issues are preexisting or not, in a sophisticated way (we correctly handle the cases in which you modify one line of code and it causes new issues downstream of that). By default, we only call _new_ issues "blocking issues" for the purposes of gating PRs and running `trunk check` locally.
+
+This is the #1 feature driving why large companies purchase Trunk Check licenses. If you turn on a new linting rule without this, it may counter-intuitively _increase_ your tech debt. This typically happens because you force every modified file to be clean of errors in pull requests. In real life, this means devs optimize for touching as few files as possible to avoid cleaning up all the issues they didn't affect. Things like renaming a class or function across many files will never be done, because a simple find+replace turns into an effort of fixing a hundred lint issues just to merge it. Plus, fixing unrelated issues to your changes is just a poor separation of responsibilities for pull requests.
+
+#### There are more tools I could run, but they're not on the package manager my repo uses
+
+In the world of code checking, more is more! Let's say you have a mostly javascript/typescript repo, so your package manager ecosystem is npm. You have other technologies in the repo though, maybe some bash scripts, dockerfiles, kube config, ci yaml, and all of those technologies have great checking tools that you could be running, but some are golang, some are direct downloads, some are python, and they aren't available on npm. You don't want to bring a bunch of new package managers into your repo for these 1-off tools. That's where Trunk Check comes in. You version these tools in `.trunk/trunk.yaml`, and trunk can fetch them and run them from all the package managers or direct downloads you _don't_ use in your repo.
+
+#### Static analysis is slow
+
+Trunk Check has a daemon that checks code as you modify files in your repo, runs linting in batches, and caches off the results for many linters. Since it's git-aware, it knows what you've changed, and by adding batched execution and caching, you end up with a much faster and smoother way to run these tools.
+
+#### PRs often fail our "Lint" CI job and need one or more extra iterations to fix it
+
+PR iterations kill productivity. Every time a dev updates a PR, even trivially, they have to context switch, break out of flow, reviewers also context switch to look at it, and that's not to mention the CI time to run a new suite of jobs.
+
+`trunk check` shows the _same_ results locally and [on CI](check-cloud-ci-integration/). It can optionally also function as a[git-hooks.md](actions/git-hooks.md "mention") manager to reject `git push`es unless they're passing `trunk check`.
 
 ## Standout Features
 
@@ -25,7 +48,7 @@ Check is typically used as a local tool ([CLI](cli/), [VS Code Extension](https:
 
 ## I run a large eng org. Why should I use Check?
 
-When you modify a file, Trunk Check has a feature called Hold The Line which only flags the _new_ issues. It does this by being git-aware and by using some sophisticated heuristics (to handle the case where you change one line of code and new issues pop up somewhere else because of it).
+When you modify a file, Trunk Check has a feature called Hold The Line, which only flags the _new_ issues. It does this by being git-aware and using sophisticated heuristics (to handle the case where you change one line of code and new issues pop up somewhere else because of it).
 
 This feature is critical for eng orgs because it allows you to start leveling up your codebase without making devs fix every preexisting issue in every file they touch, which would dramatically slow down development and cause a lot of frustration. Without this feature, it's impractical to turn on new rules in existing code-checking tools, but it's also impractical to add new tools to your code-checking arsenal. With it, adding a new tool is as easy as `trunk check enable {linter}`, and you can start being better going forward and tackle your tech debt incrementally, on your own terms.
 
