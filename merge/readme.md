@@ -18,7 +18,7 @@ There are two common ways `main` branches "break":
 
 Either way, the more pull request velocity you have in a repo, the more often issues arise. These issues are called [logical merge conflict](https://trunk.io/blog/what-is-a-logical-merge-conflict)s. A merge queue handles this problem by testing PRs queued to be merged _in combination, based on the latest `main`,_ and only if the extra combination testing passes do they merge.
 
-### Single mode vs. Parallel mode
+## Single mode vs. Parallel mode
 
 Trunk Merge has two modes, single and parallel. Single mode is a great way to start, and parallel mode is a great way to scale a repo to 10s or 100s of active developers.
 
