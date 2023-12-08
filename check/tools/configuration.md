@@ -122,7 +122,7 @@ The version of the primary package (in this case, `mypy`) is specified in the `t
 
 Runtime-based tools are a special case that are not explicitly defined. Rather, each runtime object exposes a set of `shims` (just like `tool` definitions).
 
-If the runtime is enabled and listed in `tools.runtimes`, then shims exposed by that runtime are automatically installed in the `.trunk/tools` directory alongside those of other tools. Thus you can run `python`, `pip`, etc as `trunk`-managed tools.
+If the runtime is enabled and listed in `tools.runtimes`, then shims exposed by that runtime are automatically installed in the `.trunk/tools` directory alongside those of other tools (`trunk tools enable <runtime_tool>` does that for you). Thus you can run `python`, `pip`, etc as `trunk`-managed tools.
 
 Example:
 ```yaml
