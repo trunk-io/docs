@@ -120,6 +120,15 @@ The version of the primary package (in this case, `mypy`) is specified in the `t
 
 #### Runtime-based tools
 
-Runtime-based tools are a special case that are not explicitly defined. Rather, each runtime object exposes a set of `shims` (just like `tool` definitions) that are automatically installed in the `shims` directory for enabled runtimes. Thus you can run `python`, `pip`, etc as `trunk`-managed tools.
+Runtime-based tools are a special case that are not explicitly defined. Rather, each runtime object exposes a set of `shims` (just like `tool` definitions).
 
-If this is disruptive to your workflow, you may disable runtime shims in the `tools.disabled` section by referring to the name of the runtime `(go, node, python,...)`. Runtimes cannot be enabled or versioned via the `tools.enabled` section, however.
+If the runtime is enabled and listed in `tools.runtimes`, then shims exposed by that runtime are automatically installed in the `.trunk/tools` directory alongside those of other tools. Thus you can run `python`, `pip`, etc as `trunk`-managed tools.
+
+Example:
+```yaml
+tools:
+  runtimes:
+    - python
+```
+
+If this is disruptive to your workflow, simply remove the runtime's name `(go, node, python,...)` from `tools.runtimes` section or run `trunk tools disable <runtime_name>` which will handle it for you. Runtimes cannot be enabled or versioned via the `tools.enabled` section, however, and runtimes must be enabled in the `runtimes` section to be available to have their shims installed.
