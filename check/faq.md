@@ -175,3 +175,7 @@ lint:
           - foo
           - bar
 ```
+
+## After uninstalling the VSCode extension, I still see the .trunk folder in my repo. How do I remove it?
+
+You can run `trunk deinit` to completely remove trunk from your repo.
