@@ -6,7 +6,7 @@ If you're only looking to ignore issues in a single file, read on. If you want t
 
 Sometimes we want to deliberately tell a linter that, yes, I know what I'm doing, and yes, in any other situation I should _not_ do this, but in this specific case it's fine. Maybe there's a dummy private key you're using for a test stack, or fixing the lint issue will actually make your code less readable: whatever it is, you now need to figure out how to suppress a given lint issue.
 
-`trunk` provides a simple, standardized mechanism to do this, saving you from having to look up the linter-specific syntax for doing so:
+Trunk provides a simple, standardized mechanism to do this, saving you from having to look up the linter-specific syntax for doing so:
 
 ```cpp
 struct FooBar {
@@ -15,7 +15,7 @@ struct FooBar {
 };
 ```
 
-This tells `trunk` that the `clang-tidy` linter found a `modernize-use-nullptr` issue on the highlighted line and that `trunk` should suppress this linter issue.
+This tells Trunk that the `clang-tidy` linter found a `modernize-use-nullptr` issue on the highlighted line and that Trunk should suppress this linter issue.
 
 Comments may be omitted:
 
@@ -26,7 +26,7 @@ struct FooBar {
 };
 ```
 
-You can also omit the name of the check to simply tell `trunk` that all issues from a given linter on a specific line should be suppressed:
+You can also omit the name of the check to simply tell Trunk that all issues from a given linter on a specific line should be suppressed:
 
 ```cpp
 struct FooBar {

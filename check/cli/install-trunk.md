@@ -69,7 +69,7 @@ You can delete those two paths to uninstall.
 
 #### From a repo
 
-To cleanly remove trunk from a particular repo, run:
+To cleanly remove Trunk from a particular repo, run:
 
 ```bash
 trunk deinit
@@ -81,7 +81,7 @@ To uninstall the Trunk VS Code extension, do so as you would any extension ([doc
 
 ## Binary download (not recommended)
 
-You can directly download the trunk binary. \*\*We don't recommend this mode of operation because your ability to version the tool through `trunk.yaml` will not function when launching `trunk` directly from a downloaded binary. Regardless you can bypass the launcher support by downloading the prebuilt binaries here:
+You can directly download the `trunk` binary. _We don't recommend this mode of operation because your ability to version the tool through_ `trunk.yaml` _will not function when launching_ `trunk` _directly from a downloaded binary._ Regardless you can bypass the launcher support by downloading the prebuilt binaries here:
 
 <table><thead><tr><th width="178">variable</th><th>options</th></tr></thead><tbody><tr><td>version</td><td>the semver of the binary you want to download</td></tr><tr><td>platform</td><td>'darwin', 'linux'</td></tr></tbody></table>
 

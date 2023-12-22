@@ -1,10 +1,14 @@
-# Plugins
+---
+description: >-
+  Plugins repositories allow users to expand the core capabilities of the Trunk
+  CLI and to share configuration between different repositories.
+---
 
-Plugins repositories allow users to expand the core capabilities of the Trunk CLI and to share configuration between different repositories.
+# Plugins
 
 #### Importing a plugin repository
 
-By default trunk imports the trunk-io/plugins repository. To import a repo add it to the `plugins` list. Each repo requires a URI and ref.
+By default trunk imports the trunk-io/plugins repository. To import a repo add it to the `plugins.sources` list. Each repo requires a URI and ref.
 
 ```yaml
 plugins:
@@ -14,7 +18,7 @@ plugins:
       ref: v1.2.6
 ```
 
-<table><thead><tr><th width="174">field</th><th>description</th></tr></thead><tbody><tr><td>id</td><td>unique identifier for this repository</td></tr><tr><td>uri</td><td>address used to clone the target repository</td></tr><tr><td>ref</td><td>commit id or tag to checkout</td></tr><tr><td>local</td><td>path to local (on-disk) repository. Takes precedence over uri/ref if defined</td></tr><tr><td>import_to_global (default: true)</td><td>import content into the global namespace. If set to false actions and linters defined in the plugin must be referenced by {plugin_id}.{name}</td></tr></tbody></table>
+<table><thead><tr><th width="174">Field</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td>unique identifier for this repository</td></tr><tr><td><code>uri</code></td><td>address used to clone the target repository</td></tr><tr><td><code>ref</code></td><td>commit id or tag to checkout</td></tr><tr><td><code>local</code></td><td>path to local (on-disk) repository. Takes precedence over uri/ref if defined</td></tr><tr><td><code>import_to_global</code> (default: <code>true</code>)</td><td>import content into the global namespace. If set to false actions and linters defined in the plugin must be referenced by <code>&#x3C;plugin_id>.&#x3C;name></code></td></tr></tbody></table>
 
 #### Plugin capabilities
 

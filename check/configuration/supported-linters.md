@@ -7,7 +7,7 @@
 Enable the following tools via:
 
 ```
-trunk check enable {linter}
+trunk check enable <linter>
 ```
 
 | Technology      | Linters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -18,7 +18,7 @@ trunk check enable {linter}
 | Bash            | [shellcheck](https://github.com/koalaman/shellcheck#readme), [shfmt](https://github.com/mvdan/sh#readme)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Bazel, Starlark | [buildifier](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | C, C++          | [clang-format](https://clang.llvm.org/docs/ClangFormat.html), [clang-tidy](https://clang.llvm.org/extra/clang-tidy/), [include-what-you-use](https://github.com/include-what-you-use/include-what-you-use#readme), [pragma-once](https://github.com/trunk-io/plugins/blob/main/linters/pragma-once/README.md)                                                                                                                                                                                                                                                                                        |
-| C#              | \[dotnet-format]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| C#              | [dotnet-format](https://github.com/dotnet/format#readme)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | CircleCI Config | [circleci](https://github.com/CircleCI-Public/circleci-cli#readme)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | Cloudformation  | [cfnlint](https://github.com/aws-cloudformation/cfn-lint#readme), [checkov](https://github.com/bridgecrewio/checkov#readme)                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | CSS, SCSS       | [stylelint](https://github.com/stylelint/stylelint#readme), [prettier](https://github.com/prettier/prettier#readme)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -64,7 +64,7 @@ trunk check enable {linter}
 
 ### Linter-specific Configuration
 
-Most linters provide some mechanism to tweak their configuration, e.g. `.eslintrc` or `Cargo.toml`. `trunk` is aware of all the ways individual tools are configured and supports them. This means that all the linters you've already configured will continue to work exactly the same, just now supercharged by `trunk`.
+Most linters provide some mechanism to tweak their configuration, e.g. `.eslintrc` or `Cargo.toml`. Trunk is aware of all the ways individual tools are configured and supports them. This means that all the linters you've already configured will continue to work exactly the same, just now supercharged by Trunk Check.
 
 Check out our open source [`plugins`](https://github.com/trunk-io/plugins/blob/main/linters/isort/.isort.cfg) repo for our always up to date collection of sane linter configurations.
 
@@ -76,7 +76,7 @@ In case your ansible setup is not contained within a single folder you would lis
 
 ### Clang-format
 
-By default trunk uses clang-format to additionally format `.proto` files. However, for this to work, you need to have enabled `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format`:
+By default trunk uses Clang-format to additionally format `.proto` files. However, for this to work, you need to have enabled `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format`:
 
 ```yaml
 ---
@@ -97,7 +97,7 @@ Language: Proto
 
 ### Clang-tidy
 
-We only support using `clang-tidy` from Bazel and CMake projects.
+We only support using clang-tidy from Bazel and CMake projects.
 
 In order to only see issues in your own code, not from library header files your code includes, add this to your `.clang-tidy` file:
 
@@ -113,9 +113,9 @@ If a file you're linting does not compile, clang-tidy may fail to process it. In
 
 #### Using Bazel
 
-By default `trunk` will query bazel for compile commands used to run clang-tidy. This requires no configuration.
+By default Trunk will query bazel for compile commands used to run `clang-tidy`. This requires no configuration.
 
-Trunk will build needed compilation pre-requisites before invoking clang-tidy on each file (e.g. generated protobuf headers).
+Trunk will build needed compilation pre-requisites before invoking `clang-tidy` on each file (e.g. generated protobuf headers).
 
 You can generate a local compilation database by running `trunk generate-compile-commands`.
 
@@ -126,7 +126,7 @@ Trunk will search for the bazel binary in two ways.
 1. Paths relative to the workspace root.
 2. Binaries in any of the directories in the PATH environment variable.
 
-First trunk will search all workspace root relative paths and then all system directories. If you override anything in lint.bazel.paths then we only search the paths you specify. By default the configuration is as follows.
+First trunk will search all workspace root relative paths and then all system directories. If you override anything in `lint.bazel.paths` then we only search the paths you specify. By default the configuration is as follows.
 
 ```yaml
 lint:
@@ -142,9 +142,9 @@ lint:
 
 #### Using `compile_commands.json` generated by CMake
 
-Trunk supports using the `compile_commands.json` file generated by CMake. If you run `cmake` from a directory called `build` in the root of your project then trunk will find the compile commands automatically. If you run it in some other directory then you will have to symlink the `compile_commands.json` in that directory to the root of your repo for trunk to find them. Note that trunk does not currently support CMake out of tree builds.
+Trunk supports using the `compile_commands.json` file generated by CMake. If you run `cmake` from a directory called `build` in the root of your project then Trunk will find the compile commands automatically. If you run it in some other directory then you will have to symlink the `compile_commands.json` in that directory to the root of your repo for trunk to find them. Note that Trunk does not currently support CMake out of tree builds.
 
-#### Another tool claims I have clang-tidy issues, but not trunk. What gives?
+#### Another tool claims I have clang-tidy issues, but not Trunk. What gives?
 
 Trunk runs clang-tidy with a compile commands database so that we can guarantee clang-tidy produces the correct diagnostics about your code. Other tools, such as `clangd`, may use best-effort heuristics to guess a compile command for a given clang-tidy input file (for example, see [this discussion](https://github.com/clangd/clangd/issues/519)) and consequently produce incorrect clang-tidy findings because they guessed the compile command wrong.
 
@@ -177,9 +177,9 @@ direct_configs: ["lib/detekt.yaml"]
 
 ### Eslint
 
-Most eslint users use a number of plugins, custom parsers, etc. Trunk has the ability to turn sandboxing and caching on or off for each linter, and we've turned it off for eslint so it can use your repo's installed packages for eslint plugins and other required eslint packages. Trunk does control the eslint version itself, but otherwise eslint looks for all plugins, configs, etc based on the path of source file its linting. **This all means you do need to have `npm/yarn install`d in your repo as a prerequisite before running eslint via trunk**.
+Most eslint users use a number of plugins, custom parsers, etc. Trunk has the ability to turn sandboxing and caching on or off for each linter, and we've turned it off for eslint so it can use your repo's installed packages for eslint plugins and other required eslint packages. Trunk does control the eslint version itself, but otherwise eslint looks for all plugins, configs, etc based on the path of source file its linting. **This all means you do need to have `npm/yarn install`'d in your repo as a prerequisite before running eslint via trunk**.
 
-We recommend you disable all prettier rules in your eslint config and let trunk run prettier automatically on your files. It's much nicer to just autoformat a file than to see a lint error for every missing space.
+We recommend you disable all prettier rules in your eslint config and let Trunk run prettier automatically on your files. It's much nicer to just autoformat a file than to see a lint error for every missing space.
 
 You can easily do this by adding the `eslint-config-prettier` package and in your eslint config's `extends` section adding `prettier` as the last element. For example, your `extends` list might look like:
 
@@ -199,15 +199,15 @@ extends:
 
 ### Python linters (flake8, pylint, black, etc)
 
-Trunk uses hermetic runtime versions, which you can override if needed. If you're using a newer version of Python that our default (3.10.3 at the time of writing) you can override it in `trunk.yaml` via:
+Trunk uses hermetic runtime versions, which you can override if needed. If you're using a newer version of Python that our default (3.10.8 at the time of writing) you can override it in `trunk.yaml` via:
 
 ```yaml
 runtimes:
   enabled:
-    - python@3.10.3
+    - python@3.10.8
 ```
 
-As always, you can view the defaults and configuration of everything trunk runs via `trunk print-config`.
+As always, you can view the defaults and configuration of everything Trunk runs via `trunk print-config`. Note that Python runtime versions specifically are [allowlisted to a limited set](../faq.md#runtime-and-download-versioning).
 
 ### Flake8
 
@@ -246,12 +246,12 @@ Again, this is not recommended. Just use Gitleaks v8 or later with go 1.18 or la
 
 ### Golangci-lint
 
-Make sure your go version in `go.mod` matches Trunk's go runtime version. At the time you writing, Trunk's default go runtime version is 1.18.3. You can find out what it is via `trunk print-config`, and look for the `runtime` section, and you can override the default version in your `trunk.yaml` via:
+Make sure your go version in `go.mod` matches Trunk's go runtime version. At the time you writing, Trunk's default go runtime version is 1.21.0. You can find out what it is via `trunk print-config`, and look for the `runtime` section, and you can override the default version in your `trunk.yaml` via:
 
 ```yaml
 runtimes:
   enabled:
-    - go@1.18.3
+    - go@1.21.0
 ```
 
 ### Pylint
@@ -285,7 +285,14 @@ edition = "2021"
 
 ### Sqlfluff
 
-`sqlfluff` is only configured as a linter because its formatting capabilities are very subpar compared to `sql-formatter`.
+Sqlfluff is only configured as a linter by default because its formatting capabilities are limited. To turn sqlfluff formatting on, enable its subcommand:
+
+```yaml
+lint:
+  enabled:
+    - sqlfluff@<version>:
+        commands: [lint, fix]
+```
 
 ### Terraform
 
@@ -293,13 +300,9 @@ We currently support `terraform validate` and `terraform fmt`, but only `fmt` is
 
 ```yaml
 lint:
-  linters:
-    - name: terraform
-      commands:
-        - name: validate
-          enabled: true
   enabled:
-    - ...
+    - terraform@<version>:
+        commands: [validate, fmt]
 ```
 
 Note: you must run `terraform init` before running `trunk check` with `terraform validate` enabled (both locally, or on CI).

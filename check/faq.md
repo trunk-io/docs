@@ -66,9 +66,9 @@ Ruff and Black are another example of a linter/formatter pair that can collide w
 
 **Hold The Line** (HTL) is the principle that Trunk Check will _only run on new changes_ in your codebase, rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.&#x20;
 
-HTL works even within files! Check only processes changed lines in a file, not the entire file.  More [on how Hold the Line works](https://docs.trunk.io/check/under-the-hood).
+HTL works even within files! Check only processes changed lines in a file, not the entire file. More [on how Hold the Line works](https://docs.trunk.io/check/under-the-hood).
 
-If you specifically want to work on older files you can do that by running Check directly on that file
+If you specifically want to work on older files you can do that by running `trunk check` directly on that file
 
 ```
 trunk check foo.file
@@ -98,7 +98,7 @@ then run `trunk install` again in your repos.
 
 ## How to transition to running more linters with Trunk
 
-‘Trunk supports over 90 different linters, and we are always adding more! Some linters are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.&#x20;
+Trunk supports over 90 different linters, and we are always adding more! Some linters are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.&#x20;
 
 To see a list of currently available linters run&#x20;
 
@@ -178,4 +178,4 @@ lint:
 
 ## After uninstalling the VSCode extension, I still see the .trunk folder in my repo. How do I remove it?
 
-You can run `trunk deinit` to completely remove trunk from your repo.
+You can run `trunk deinit` to completely remove Trunk from your repo. Make sure to also reload VSCode for the uninstall to complete.

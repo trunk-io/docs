@@ -5,8 +5,8 @@
 The main Trunk Check commands when running `trunk` from the command line are:
 
 ```bash
-$ trunk check       # runs the universal linter on all applicable files
-$ trunk fmt         # runs all the enabled formatters and auto-applies changes
+trunk check       # runs the universal linter on all applicable files
+trunk fmt         # runs all the enabled formatters and auto-applies changes
 ```
 
 You can always find this list using `trunk check --help`.
@@ -82,19 +82,19 @@ trunk check --sample=5
 List all of the available linters
 
 ```sh
-$ trunk check list
+trunk check list
 ```
 
 Enable a single linter
 
 ```sh
-$ trunk check enable <linter name>
+trunk check enable <linter name>
 ```
 
 Disable a single linter
 
 ```sh
-$ trunk check disable <linter name>
+trunk check disable <linter name>
 ```
 
 ### Discover new tools and available upgrades
@@ -105,13 +105,13 @@ trunk upgrade
 
 `trunk upgrade` will upgrade the Trunk CLI, along with all plugins and linters in your trunk.yaml. We highly recommend running on the latest validated versions of tools as updates will frequently include important security fixes and additional valuable checks. Trunk only auto-suggests linter upgrades to versions that we have tested and support, so you may see a slight lag time when a new linter version is released.
 
-Upgrade will also recommend new tools that have become applicable since the last time your repository was scanned. This can be a result of using new technologies in your repository or trunk itself increasing support for more tools. If you don't like a particular recommendation you can run `trunk check disable {tool-name}` to teach trunk not to recommend it.
+Upgrade will also recommend new tools that have become applicable since the last time your repository was scanned. This can be a result of using new technologies in your repository or trunk itself adding support for more tools. If you don't like a particular recommendation you can run `trunk check disable <linter>` to teach trunk not to recommend it.
 
 #### Pinned System Versions
 
-When you enable a packaged or downloaded linter in your `trunk.yaml` and don't specify a version, trunk will attempt to use the version of that tool installed on your system. Trunk will not automatically suggest upgrades for this tool. If you wish to upgrade to the latest version, you will first have to specify a base version in your `trunk.yaml`. See [Configuration](../configuration/) for more information about `trunk.yaml`.
+When you enable a packaged or downloaded linter in your `trunk.yaml` and don't specify a version, Trunk will attempt to use the version of that tool installed on your system. Trunk will not automatically suggest upgrades for this tool. If you wish to upgrade to the latest version, you will first have to specify a base version in your `trunk.yaml`. See [Configuration](../configuration/) for more information about `trunk.yaml`.
 
-### Advanced Features
+### Advanced Trunk Check Features
 
 | Options & Flags      | Explanation                                                                                                                                                              |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

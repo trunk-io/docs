@@ -40,7 +40,7 @@ EOF
 Now we can turn this linter on in a repository where we have `trunk` set up:
 
 ```bash
-trunk plugins add my-first-plugin "${PLUGIN_PATH}"
+trunk plugins add my-first-plugin <plugin-path>
 trunk check enable todo-finder
 ```
 
@@ -116,12 +116,12 @@ To share your plugin with the world, all you have to do is tag a release and pus
 git add .
 git commit "Create a TODO finder"
 git tag -a v0.0.0 --message "Initial TODO finder release"
-git remote add origin ${repo_url}
+git remote add origin <repo-url>
 git push origin main v0.0.0
 ```
 
 Now that it's available on the Internet, everyone else can just use your plugin by running:
 
 ```bash
-trunk plugins add --id=their-first-plugin ${repo_url} v0.0.0
+trunk plugins add --id=their-first-plugin <repo-url> v0.0.0
 ```

@@ -1,6 +1,6 @@
 # Glob Path Pattern
 
-Path patterns in trunk configuration are always relative to the repo root. Every pattern may contain one or more path segments. Each path segment is separated by a `/`. A single `*` is treated as a segment level wildcard. It will match any substring in the segment (including the empty string) and excluding the directory separator `/`. The `*` wildcard may appear multiple times in a single path segment. A double `**` is even broader; it will match zero or more complete path segments and must appear exclusively in it's own segment (i.e. `**/foo` is legal syntax whereas `foo**/bar` is not).
+Path patterns in Trunk configuration are always relative to the repo root. Every pattern may contain one or more path segments. Each path segment is separated by a `/`. A single `*` is treated as a segment level wildcard. It will match any substring in the segment (including the empty string) and excluding the directory separator `/`. The `*` wildcard may appear multiple times in a single path segment. A double `**` is even broader; it will match zero or more complete path segments and must appear exclusively in it's own segment (i.e. `**/foo` is legal syntax whereas `foo**/bar` is not).
 
 ```none
 /hello_world

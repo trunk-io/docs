@@ -1,12 +1,12 @@
 # GitHub Codespaces
 
-We provide support for `trunk` in GitHub Codespaces.
+We provide support for running `trunk` in GitHub Codespaces.
 
 [Github Codespaces](https://github.com/features/codespaces) are fully configured virtual containers for developing your GitHub repositories.
 
 ## Installing the Trunk Feature
 
-You can install the trunk launcher in your codespace by including the following line in your `devcontainer.json` file under `features`:
+You can install the Trunk Launcher in your codespace by including the following line in your `devcontainer.json` file under `features`:
 
 ```json
     "features": {
@@ -28,13 +28,13 @@ From the [GitHub documentation](https://docs.github.com/en/codespaces/prebuildin
 >
 > onCreateCommand is run only once, when the prebuild is created, whereas updateContentCommand is run at > creation of the prebuild and at subsequent updates to it. Incremental builds should be included in updateContentCommand since they represent the source of your project and need to be included for every prebuild update.
 
-Note: You should only add `trunk install` if you have a trunk-configured repository.
+Note: You should only add `trunk install` if you have a Trunk-configured repository.
 
-You can then [configure pre-builds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds) to run from GitHub workflows, ensuring the trunk CLI and needed linters are available and ready to go when you need to boot up your codespace.
+You can then [configure pre-builds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds) to run from GitHub workflows, ensuring the `trunk` CLI and needed linters are available and ready to go when you need to boot up your codespace.
 
 ## Installing the Trunk Extension
 
-If you are using the trunk feature, we will automatically install the trunk extension on your behalf. Note: We highly recommend turning off auto-save in your VSCode settings in your codespace (or to a longer timeout). Saving files triggers the extension to re-lint, which can quickly overload the extension for anything but the fastest linters. The auto-save setting is detailed [here](https://code.visualstudio.com/docs/editor/codebasics#\_save-auto-save).
+If you are using the Trunk feature, we will automatically install the Trunk extension on your behalf. Note: We highly recommend turning off auto-save in your VSCode settings in your codespace (or to a longer timeout). Saving files triggers the extension to re-lint, which can quickly overload the extension for anything but the fastest linters. The auto-save setting is detailed [here](https://code.visualstudio.com/docs/editor/codebasics#\_save-auto-save).
 
 Otherwise, You can add `trunk` to your list of extensions in `devcontainer.json` -
 
@@ -46,4 +46,4 @@ Otherwise, You can add `trunk` to your list of extensions in `devcontainer.json`
     },
 ```
 
-Then you're all set to use `trunk` in your Codespace!
+Then you're all set to run `trunk` in your Codespace!

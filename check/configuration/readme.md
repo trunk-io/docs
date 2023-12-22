@@ -1,6 +1,6 @@
 # Configuration
 
-The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section the of [`trunk.yaml`](../reference/trunk-yaml/#cli)file stored the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
+The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml/#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -53,23 +53,23 @@ lint:
 
 ### Test your config changes
 
-Normally when you run `trunk check` or `trunk fmt` it runs only on files you've changed. We've made it easy to test how a linter will behave in your repo. As you're tuning your linter configuration simply run check with the `--sample` flag. When sampling trunk will find applicable files for the linters you've enabled and show you how the linter will behave against of sampling of inputs.
+Normally when you run `trunk check` or `trunk fmt` it runs only on files you've changed. We've made it easy to test how a linter will behave in your repo. As you're tuning your linter configuration simply run check with the `--sample` flag. When sampling, Trunk will find applicable files for the linters you've enabled and show you how the linter will behave against a sampling of inputs.
 
 <table><thead><tr><th width="260">Sample</th><th>Command</th></tr></thead><tbody><tr><td>all linters on 5 files</td><td><code>trunk check --sample 5</code></td></tr><tr><td>a specific linter with 7 files</td><td><code>trunk check --sample=7 --filter=clippy</code></td></tr><tr><td>all linters on a specific file</td><td><code>trunk check foo.file</code></td></tr></tbody></table>
 
-When sampling, `trunk` may run multiple linters on a single file, and may not run each linter on the full number of requested samples (if not enough applicable files can be found).
+In sampling mode, Trunk may run multiple linters on a single file, and may not run each linter on the full number of requested samples (if not enough applicable files can be found).
 
 ### Tuning your linters
 
 Most linters offer some form of configuration. Trunk uses the native configuration setup of all the tools it runs. No need to learn a new config language or hunt for specific ways to tune a linter inside trunk. Whether it's `clang-tidy`, `eslint`, or any other linter, all the documentation you'll find online about it is still applicable. We're proud to stand on the shoulders of giants and believe that the open source communities building these tools know best how they should work. Our goal is simply to make it as easy as possible for you to adopt these tools.
 
-To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [Supported Linters](supported-linters.md) list for linter specific tips. To configure **how** Trunk runs a linter, read on.
+To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [Supported Linters](supported-linters.md) list for linter-specific tips. To configure **how** Trunk runs a linter, read on.
 
 #### Moving linter configs
 
-If you'd like, trunk also supports migrating any linter configurations from the root of your repository into a `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run. Note that if you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.
+If you'd like, Trunk also supports migrating any linter configurations from the root of your repository into a `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run. Note that if you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.
 
-If you find that you want to tweak how trunk runs a given linter, you may want to consult the documentation on [overriding defaults](../reference/trunk-yaml/#overriding-defaults) and [the various linter settings](custom-linters/); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
+If you find that you want to tweak how Trunk runs a given linter, you may want to consult the documentation on [overriding defaults](../reference/trunk-yaml/#overriding-defaults) and [the various linter settings](custom-linters/); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
 
 ```yaml
 lint:
@@ -79,13 +79,13 @@ lint:
       disable_upstream: true
 ```
 
-Disabling hold-the-line for a linter will require that all issues found by said linter be fixed before changes to that file can be landed.
+Disabling [hold-the-line](../under-the-hood.md#hold-the-line) for a linter will require that all issues found by said linter be fixed before changes to that file can be landed.
 
 Disabling the upstream for a linter will elide the execution of the linter on the upstream.
 
 ### Enable Linters
 
-Trunk only runs linters listed in the `enabled` section; linters which are defined in `linters` but are not listed in `enabled` are not run.
+Trunk only runs linters listed in the `enabled` section; linters which are defined in `lint.definitions` but are not listed in `enabled` are not run.
 
 When enabling a linter, you must specify a version for the linter:
 
@@ -102,7 +102,7 @@ lint:
 Custom linters are slightly different; see [those docs](custom-linters/) to learn more.
 
 {% hint style="info" %}
-You can also ask trunk to detect new linters and upgrade existing linters to their latest respective versions by running `trunk upgrade check`.
+You can also ask Trunk to detect new linters and upgrade existing linters to their latest respective versions by running [`trunk upgrade check`](../cli/upgrade.md).
 {% endhint %}
 
 ### Disable Linters
@@ -119,7 +119,7 @@ lint:
 
 ### Installing additional packages
 
-We support installing additional packages along with your linter. For example, Pylint supports adding plugins which are installable as pip packages. For example, if you want to run the plugin `pylint-django` as part of your setup, you need to tell trunk to install the package:
+We support installing additional packages along with your linter. For example, Pylint supports adding plugins which are installable as pip packages. For example, if you want to run the plugin `pylint-django` as part of your setup, you need to tell Trunk to install the package:
 
 ```yaml
 lint:
@@ -132,7 +132,7 @@ lint:
 
 #### Runtime versioning
 
-By default trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml/#runtimes).
+By default Trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml/#runtimes).
 
 ### Ignoring files
 
@@ -155,7 +155,7 @@ Every entry in `ignore` defines both a set of linters and a set of paths to igno
 <table><thead><tr><th width="101">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (i.e. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>paths</td><td>List of <a href="../reference/glob-path-pattern.md">glob paths</a>, relative to the root of the repo, to ignore. If a path begins with a <code>!</code> then it represents an inverse ignore. This means that any file matching that glob will not be ignored, even if matched by other globs.</td></tr></tbody></table>
 
 {% hint style="info" %}
-`trunk` is `git`-aware, which means it ignores `gitignore'd` files by default.
+Trunk is `git`-aware, which means it ignores `gitignore'd` files by default.
 {% endhint %}
 
 ### Blocking Thresholds
@@ -175,7 +175,7 @@ Every entry in `threshold` defines a set of linters and the severity threshold t
 
 ### Trigger rules
 
-Some linters do not operate on individual files. Instead you must lint your entire repo at once. The way this is handled in trunk is to set up a trigger rule.
+Some linters do not operate on individual files. Instead you must lint your entire repo at once. The way this is handled in trunk is to set up a trigger rule. Most linters will not require the use of a trigger rule.
 
 Trigger rules work on 3 principles:
 
@@ -199,13 +199,13 @@ lint:
         - ansible # A directory
 ```
 
-Triggered linters will also be run when executing trunk check with --everything so long as a file exists that matches one of the listed paths.
+Triggered linters will also be run when executing trunk check with `--all` so long as a file exists that matches one of the listed paths.
 
-You may use "." as a target to run on the entire repo instead of an isolated directory.
+You may use `.` as a target to run on the entire repo instead of an isolated directory.
 
 ### File Size
 
-By default, trunk only lints files up to 4 MiB in size. To override this globally, specify a `default_max_file_size` in `lint`:
+By default, Trunk only lints files up to 4 MiB in size. To override this globally, specify a `default_max_file_size` in `lint`:
 
 ```yaml
 lint:

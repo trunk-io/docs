@@ -4,21 +4,21 @@ Sometimes you need to get under-the-hood to diagnose why a linter is failing on 
 
 ### Analyzing Linter Failures
 
-When a linter fails, `trunk` will generate a linter failure report that contains all the information needed to understand what went wrong and why. `prettier`, for example, will fail on improperly formatted HTML; let's see what that looks like:
+When a linter fails, Trunk will generate a linter failure report that contains all the information needed to understand what went wrong and why. `prettier`, for example, will fail on improperly formatted HTML; let's see what that looks like:
 
 ```shell
 trunk/hello_world.html:0:0
  0:0  failure  prettier error (details: .trunk/out/lYa9w.yaml)  prettier
 ```
 
-This tells us that `prettier` failed when `trunk` ran it on `trunk/hello_world.html` and that we can find a full report of the invocation in `.trunk/out/lYa9w.yaml`. This report will include:
+This tells us that `prettier` failed when Trunk ran it on `trunk/hello_world.html` and that we can find a full report of the invocation in `.trunk/out/lYa9w.yaml`. This report will include:
 
 1. the command that was run,
 2. the environment (e.g. `cwd`, environment variables),
 3. the invocation's `stdout`, `stderr`, and exit code, and
 4. repro instructions.
 
-All of this combined is generally sufficient to fix either the file or tool to get useful results out of the linter.
+All of this combined is generally sufficient to fix either the file or the tool to get useful results out of the linter.
 
 ```yaml
 title: "prettier error"

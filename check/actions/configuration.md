@@ -72,7 +72,7 @@ triggers:
 
 The `schedule` entry should be in the Duration format specified [here](https://pkg.go.dev/time#ParseDuration). The action will be run once per `duration`.
 
-This is a short-hand for specifying schedule as an object. You can also write -
+This is a short-hand for specifying schedule as an object. You can also write:
 
 ```yaml
 id: my-action
@@ -83,7 +83,7 @@ triggers:
 
 The action may occasionally run more often than the specified duration depending on the Trunk daemon's lifetime.
 
-If you wish to stagger the execution of an action from others on a similar schedule, you may use the `delay` field -
+If you wish to stagger the execution of an action from others on a similar schedule, you may use the `delay` field:
 
 ```yaml
 id: my-action
@@ -96,7 +96,7 @@ triggers:
 You may also use cron syntax:
 
 ```yaml
-id: my-action
+nid: my-action
  triggers:
     # run every 2 hours
     - schedule: "0 0 */2 * * ?"
@@ -105,7 +105,7 @@ id: my-action
 or equivalently:
 
 ```yaml
-id: my-action
+ id: my-action
  triggers:
     # run every 2 hours
     - schedule:
@@ -126,12 +126,12 @@ triggers:
 
 In this case `my-action` will execute if either `foo.txt` is edited (or created), or if a file inside `bar` is edited or created.
 
-Note: We only provide file triggers for files inside of your workspace.
+> Note: We only provide file triggers for files inside of your workspace.
 
 #### Git hooks
 
-You can also configure trunk to manage your git hooks. More detail is provided on this in our [git hooks reference](git-hooks.md).
+You can also configure Trunk to manage your git hooks. More detail is provided on this in our [git hooks reference](git-hooks.md).
 
 ### Interactivity
 
-Actions can read from `stdin` if they are marked as interactive (define `interactive: true` on the action). Note - this feature is only available for git hooks and manually run actions - since file-triggered and scheduled actions run in the background, you cannot interact with their execution.
+Actions can read from `stdin` if they are marked as interactive (define `interactive: true` on the action). Note: this feature is only available for git hooks and manually run actions - since file-triggered and scheduled actions run in the background, you cannot interact with their execution.

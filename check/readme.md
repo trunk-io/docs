@@ -17,11 +17,11 @@ Check handles:
 
 #### If I turn on a new rule or code-checking tool, how do I handle the zillion existing issues in my repo?
 
-'Hold the line' is a Trunk Check feature that works for _all_ tools Trunk Check runs. It detects which issues are preexisting or not, in a sophisticated way (we correctly handle the cases in which you modify one line of code and it causes new issues downstream of that). By default, we only call _new_ issues "blocking issues" for the purposes of gating PRs and running `trunk check` locally.
+'[Hold the line](under-the-hood.md#hold-the-line)' is a Trunk Check feature that works for _all_ tools Trunk Check runs. It detects which issues are preexisting or not, in a sophisticated way (we correctly handle the cases in which you modify one line of code and it causes new issues downstream of that). By default, we only call _new_ issues "blocking issues" for the purposes of gating PRs and running `trunk check` locally.
 
-This is the #1 feature driving why large companies purchase Trunk Check licenses. If you turn on a new linting rule without this, it may counter-intuitively _increase_ your tech debt. This typically happens because you force every modified file to be clean of errors in pull requests. In real life, this means devs optimize for touching as few files as possible to avoid cleaning up all the issues they didn't affect. Things like renaming a class or function across many files will never be done, because a simple find+replace turns into an effort of fixing a hundred lint issues just to merge it. Plus, fixing unrelated issues to your changes is just a poor separation of responsibilities for pull requests.
+This is the #1 feature driving why large companies purchase Trunk Check licenses. Without this, turning on a new linting rule may counter-intuitively _increase_ your tech debt. This typically happens because you force every modified file to be clean of errors in pull requests. In real life, this means devs optimize for touching as few files as possible to avoid cleaning up all the issues they didn't affect. Things like renaming a class or function across many files will never be done, because a simple find+replace turns into an effort of fixing a hundred lint issues just to merge it. Plus, fixing unrelated issues to your changes is just a poor separation of responsibilities for pull requests.
 
-#### There are more tools I could run, but they're not on the package manager my repo uses
+#### There are more tools I could run, but they're not in the package manager my repo uses
 
 In the world of code checking, more is more! Let's say you have a mostly javascript/typescript repo, so your package manager ecosystem is npm. You have other technologies in the repo though, maybe some bash scripts, dockerfiles, kube config, ci yaml, and all of those technologies have great checking tools that you could be running, but some are golang, some are direct downloads, some are python, and they aren't available on npm. You don't want to bring a bunch of new package managers into your repo for these 1-off tools. That's where Trunk Check comes in. You version these tools in `.trunk/trunk.yaml`, and trunk can fetch them and run them from all the package managers or direct downloads you _don't_ use in your repo.
 
@@ -50,16 +50,16 @@ PR iterations kill productivity. Every time a dev updates a PR, even trivially, 
 
 When you modify a file, Trunk Check has a feature called Hold The Line, which only flags the _new_ issues. It does this by being git-aware and using sophisticated heuristics (to handle the case where you change one line of code and new issues pop up somewhere else because of it).
 
-This feature is critical for eng orgs because it allows you to start leveling up your codebase without making devs fix every preexisting issue in every file they touch, which would dramatically slow down development and cause a lot of frustration. Without this feature, it's impractical to turn on new rules in existing code-checking tools, but it's also impractical to add new tools to your code-checking arsenal. With it, adding a new tool is as easy as `trunk check enable {linter}`, and you can start being better going forward and tackle your tech debt incrementally, on your own terms.
+This feature is critical for eng orgs because it allows you to start leveling up your codebase without making devs fix every preexisting issue in every file they touch, which would dramatically slow down development and cause a lot of frustration. Without this feature, it's impractical to turn on new rules in existing code-checking tools, but it's also impractical to add new tools to your code-checking arsenal. With it, adding a new tool is as easy as `trunk check enable <linter>`, and you can start being better going forward and tackle your tech debt incrementally, on your own terms.
 
 ## Supported Linters, Formatters, and Security Tools
 
-We integrate new linters every release. Stop by on [Slack](https://slack.trunk.io) and let us know what you'd like next! All tool integrations are open-source [here](https://github.com/trunk-io/plugins)
+We integrate new linters every release. Stop by on [Slack](https://slack.trunk.io) and let us know what you'd like next! All tool integrations are open-source [here](https://github.com/trunk-io/plugins).
 
 Enable the following tools:
 
 ```bash
-trunk check enable {linter}
+trunk check enable <linter>
 ```
 
 | Technology      | Linters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -109,7 +109,7 @@ trunk check enable {linter}
 
 ## How it works
 
-Trunk downloads everything it needs to run on demand and caches it in `~/.cache/trunk`. We run linters in parallel, in the background, and function as a [language server](https://microsoft.github.io/language-server-protocol) to show results inline in VSCode via the \[Trunk VSCode Extension]\[vscode].
+Trunk downloads everything it needs to run on demand and caches it in `~/.cache/trunk`. We run linters in parallel, in the background, and function as a [language server](https://microsoft.github.io/language-server-protocol) to show results inline in VSCode via the [Trunk VSCode Extension](./#install-the-vscode-extension).
 
 ## Install the CLI
 

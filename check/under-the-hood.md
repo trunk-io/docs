@@ -29,7 +29,7 @@ Over the course of a `trunk check` run, changes made to the filesystem outside o
 
 ## Why does trunk only work in a git repo?
 
-`trunk` uses git to detect your changes so we only check the code you've changed. Additionally we use it to accurately detect errors _caused_ by your changes, even if the errors aren't on lines you changed. You'll read more about [hold-the-line](./#hold-the-line) later in the docs.
+Trunk uses git to detect your changes so we only check the code you've changed. Additionally we use it to accurately detect errors _caused_ by your changes, even if the errors aren't on lines you changed. Read more about [hold-the-line](under-the-hood.md#hold-the-line).
 
 ## CPU Utilization
 
@@ -44,4 +44,4 @@ By default `check` will run concurrent jobs using up to half the available cores
 
 `trunk check` runs a daemon which monitors relevant file changes and triggers jobs to precompute in the background while you work. The daemon is used both to support realtime background checking in supported extensions (e.g. VS Code) and to precompute check results for faster commits/pushes. Some native linters are more compute/memory intensive and `check` supports disabling background linting of those tools.\
 \
-By default linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](configuration/custom-linters/#run\_when) configuration for a tool. \\
+By default linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](configuration/custom-linters/#run\_when) configuration for a tool.&#x20;

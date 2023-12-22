@@ -1,6 +1,6 @@
 # Init in a git repo
 
-Initializing `trunk` in a git repo is as simple as running:
+Initializing Trunk in a git repo is as simple as running:
 
 ```bash
 trunk init
@@ -18,7 +18,7 @@ trunk init --lock
 
 ## Tweak the Configuration
 
-`trunk` is completely controlled through the `trunk.yaml` file. If for example you are not using the `check` tool you can safely remove the `lint` section from the file.
+Trunk is completely controlled through the `trunk.yaml` file. If for example you are not using the `check` tool you can safely remove the `lint` section from the file.
 
 ## Single-player Mode
 

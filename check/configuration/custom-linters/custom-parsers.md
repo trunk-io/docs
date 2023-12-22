@@ -1,6 +1,6 @@
 # Custom Parsers
 
-If you have a command or utility that you want to run pretty much as-is, but trunk doesn't natively understand how to parse it, you can inject your own custom parser to translate its output into a format that `trunk` does understand!
+If you have a command or utility that you want to run pretty much as-is, but trunk doesn't natively understand how to parse it, you can inject your own custom parser to translate its output into a format that Trunk does understand!
 
 For example, let's say that we want to use `grep` as a linter, but we want to add more context to the matches. We could define a custom linter like so:
 
@@ -30,7 +30,7 @@ The execution model that `trunk` follows for a parser is that it will:
   * assert that the exit code of the parser is 0, and then
 * use `output` to determine how it should parse the parser's `stdout`.
 
-Note that you can also set `parser.runtime` to [`node`](custom-parsers.md#node) or [`python`](custom-parsers.md#python) so that you can write your parser in Javascript or Python instead, if you so prefer!
+Note that you can also set `parser.runtime` to [`node`](custom-parsers.md#node) or [`python`](custom-parsers.md#python) so that you can write your parser in Javascript or Python instead, if you so prefer! You can find plenty examples of python parsers in our [plugins repo](https://github.com/trunk-io/plugins).
 
 ### Node
 

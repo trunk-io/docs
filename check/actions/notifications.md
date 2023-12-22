@@ -1,6 +1,10 @@
-# Notifications
+---
+description: >-
+  Trunk Actions can also produce notifications to display in your terminal or in
+  the VSCode extension!
+---
 
-One of the useful things you can do with actions is produce notifications.
+# Notifications
 
 ### Defining actions that produce notifications
 
@@ -74,4 +78,4 @@ If there are no upgrades available, `trunk upgrade --notify` will produce:
 notifications_to_delete: [trunk-upgrade-available]
 ```
 
-So in this scenario, the `trunk-upgrade-available` action runs in the background periodically and produces a notification. The user takes action by running `trunk upgrade`. Since `trunk upgrade` modifies `.trunk/trunk.yaml`, this will again trigger the `trunk-upgrade-available` action (due to the file trigger). Since there is nothing else to upgrade, `trunk upgrade --notify` will produce output telling trunk to delete its notification. Now, the user is no longer shown a notification about available upgrades!
+So in this scenario, the `trunk-upgrade-available` action runs in the background periodically and produces a notification. The user takes action by running `trunk upgrade`. Since `trunk upgrade` modifies `.trunk/trunk.yaml`, this will again trigger the `trunk-upgrade-available` action (due to the file trigger). Since there is nothing else to upgrade, `trunk upgrade --notify` will produce output telling Trunk to delete its notification. Now, the user is no longer shown a notification about available upgrades!

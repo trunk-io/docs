@@ -44,7 +44,7 @@ If your default branch is named something else (e.g. `master`), you should `fetc
 
 ## Caching and Persistence
 
-* Trunk caches the version of trunk itself, linters, formatters, and lint results, in `~/.cache/trunk`
+* Trunk caches the version of `trunk` itself, linters, formatters, and lint results, in `~/.cache/trunk`
 * If your build machines are persistent, make sure this directory is not wiped out between CI jobs for best performance. If Trunk has to re-download every linter for every job because this directory is wiped out, it will be very slow.
 * If your build machines are ephemeral, there are a few options for caching:
   * CI systems have support for caching between CI jobs on ephemeral runners:

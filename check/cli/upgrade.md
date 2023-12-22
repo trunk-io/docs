@@ -4,7 +4,7 @@ Run `trunk upgrade` to update the Trunk CLI and all of your plugins linters, too
 
 ### Upgrade Scopes
 
-Upgrades can be filtered to different scopes by appending and combining positional arguments to `trunk upgrade`:
+Upgrades can be filtered to different scopes by adding them to `trunk upgrade <scopes>`:
 
 `cli`
 
