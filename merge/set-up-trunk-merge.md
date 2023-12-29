@@ -33,7 +33,7 @@ cli:
 merge: 
   required_statuses:
     - Trunk Check 
-    - Unit tests and test coverage
+    - Unit tests & test coverage
     # Add more required statuses here
 ```
 
