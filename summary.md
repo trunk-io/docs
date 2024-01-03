@@ -60,6 +60,7 @@
   * [Impacted Targets](merge/impacted-targets.md)
   * [Using the Trunk Merge UI](merge/using-the-webapp.md)
   * [Integration for Slack](merge/integration-for-slack.md)
+  * [Merge + Bazel](merge/merge-+-bazel.md)
   * [Common Problems](merge/common-problems.md)
   * [Reference](merge/reference.md)
   * [Legacy Merge](merge/legacy/readme.md)

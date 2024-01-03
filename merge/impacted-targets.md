@@ -6,7 +6,7 @@ Impacted targets are metadata about a pull request that defines the logical chan
 
 ## Generating Impacted Targets
 
-The repo using the Merge Graph is required to generate impacted targets for every pull request. Some build systems (e.g. Bazel, Buck, Gradle, Turborepo, ...) define targets, which can be uploaded to the Merge Graph. Alternatively, a glob-based pattern approach could be used, where filepaths map to a target (e.g. files in `src/backend` upload the `backend` target.)
+The repo using the Merge Queue is required to generate impacted targets for every pull request. Some build systems (e.g. [Bazel](merge-+-bazel.md), Buck, Gradle, Turborepo, ...) define targets, which can be uploaded to the Merge Queue. Alternatively, a glob-based pattern approach could be used, where filepaths map to a target (e.g. files in `src/backend` upload the `backend` target.)
 
 We offer out of the box CI solutions for uploading impacted targets based on the flavor of your repo (see below). If none of the solutions work, please let us know at our [Slack](https://slack.trunk.io); we are happy to help build out something for your use case. Alternatively, we are accepting contributions to our [open-sourced repository](https://github.com/trunk-io/merge-action).
 
@@ -46,6 +46,4 @@ BODY: {
 
 ### Impacted Targets Generation: Bazel + GitHub Actions
 
-1. Grab your organization's API token from [app.trunk.io](https://app.trunk.io), in the Settings > Organization > Organization API Token.
-2. Store the organization's API token as a GitHub action secret.
-3. Use the `trunk-io/merge-action` action, as defined [here](https://github.com/trunk-io/merge-action#usage).
+For Bazel specific instructions, see [the Bazel guide](merge-+-bazel.md).

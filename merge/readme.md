@@ -1,6 +1,6 @@
 # Merge
 
-**Trunk Merge** is a sophisticated merge queue. It's a GitHub bot and a web app that devs use to merge pull requests. If you have a big team, use trunk-based-development, or if you have a monorepo, you should use a merge queue. See below for why.
+**Trunk Merge** is a sophisticated merge queue. It's a GitHub bot and a web app that devs use to merge pull requests. If you have a big team, use trunk-based-development, or if you have a monorepo, you should use a merge queue.
 
 Trunk Merge can use any CI provider as long as you use GitHub for your repo hosting.
 
@@ -18,7 +18,7 @@ There are two common ways `main` branches "break":
 
 Either way, the more pull request velocity you have in a repo, the more often issues arise. These issues are called [logical merge conflict](https://trunk.io/blog/what-is-a-logical-merge-conflict)s. A merge queue handles this problem by testing PRs queued to be merged _in combination, based on the latest `main`,_ and only if the extra combination testing passes do they merge.
 
-## Single mode vs. Parallel mode
+## Single mode vs. Parallel mode <a href="#single-mode-vs-parallel-mode" id="single-mode-vs-parallel-mode"></a>
 
 Trunk Merge has two modes, single and parallel. Single mode is a great way to start, and parallel mode is a great way to scale a repo to 10s or 100s of active developers.
 

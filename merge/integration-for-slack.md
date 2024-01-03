@@ -4,13 +4,13 @@ Trunk Merge integrates with Slack to push relevant information to your team so y
 
 ## Setup Integration with Slack
 
-After you have Merge set up and running in your repository you can set up Slack notifications. There are two ways to configure where notifications are delivered: per queue and per user.  You can have all notifications from a specific Merge Queue send to a Slack channel.  You can also have notifications for PRs authored by you, regardless of which queue they are going through, sent as a DM to you.
+After you have Merge set up and running in your repository you can set up Slack notifications. There are two ways to configure where notifications are delivered: per queue and per user. You can have all notifications from a specific Merge Queue send to a Slack channel. You can also have notifications for PRs authored by you, regardless of which queue they are going through, sent as a DM to you.
 
 ### Merge Queue Specific Notifications
 
 After you have Merge set up and running in your repository, you can set up your integration with Slack in Settings > Repositories > the specific repository with the Merge Queue.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/enable-parallel-mode" alt=""><figcaption></figcaption></figure>
 
 Click "**Connect**" to install the Trunk Slack application and receive Merge notifications in a specific channel. Once you have authorized the app to post to a channel, you will be redirected to your settings page.
 
@@ -33,4 +33,3 @@ After you have connected to a Slack channel, you can select which notifications 
 | Pull request is canceled                         | Receive a notification when a pull request is canceled.                                                                                                                                                                                                  |
 | Pull request fails                               | Receive a notification when a pull request fails tests or otherwise fails to merge into the target branch.                                                                                                                                               |
 | Pull request is merged without using Trunk Merge | Receive a notification when a user merges directly to the target branch without submitting to Trunk Merge. This will cause any in-progress pull requests to be restarted, and typically should only be done in emergencies by designated administrators. |
-
