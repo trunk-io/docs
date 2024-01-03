@@ -18,7 +18,7 @@ Next [enable Parallel Mode](configuration.md) in the Trunk Merge UI.
 
 ### Set Up the Trunk Merge + Bazel Github Action
 
-Trunk provides a GitHub action (workflow) that leverages Bazel to take care of generating the required[ impacted targets](impacted-targets.md) and uploading them to Merge, taking care of the heavy work for using Parallel mode.
+Trunk provides a [GitHub action](https://github.com/trunk-io/merge-action) (workflow) that leverages Bazel to take care of generating the required[ impacted targets](impacted-targets.md) and uploading them to Merge, taking care of the heavy work for using Parallel mode.
 
 Find your Trunk organization's API token from [app.trunk.io](https://app.trunk.io) under **Settings** > **Manage Organization** > **Organization API Token**. &#x20;
 
@@ -28,7 +28,7 @@ Store the organization's API token as a GitHub action secret in your GitHub repo
 
 <figure><img src="../.gitbook/assets/github-actions-secrets" alt=""><figcaption></figcaption></figure>
 
-Now add the `trunk-io/merge-action` action in a new workflow in your repo under `.github/workflows` (eg: `.github/workflows/uploaded_impacted_targets.yaml` )&#x20;
+Now add the [`trunk-io/merge-action`](https://github.com/trunk-io/merge-action) action in a new workflow in your repo under `.github/workflows` (eg: `.github/workflows/uploaded_impacted_targets.yaml` )&#x20;
 
 ```yaml
 name: Upload Impacted Targets
