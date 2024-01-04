@@ -6,7 +6,7 @@ description: >-
 
 # Tools
 
-#### Command Line
+### Command Line
 
 | trunk tools \<command>           | Description                                                                    |
 | -------------------------------- | ------------------------------------------------------------------------------ |
@@ -15,7 +15,7 @@ description: >-
 | `enable` `<tool-name>[@version]` | enable the provided tool, optionally at a specified version                    |
 | `disable` `<tool-name>`          | disable the provided tool                                                      |
 
-#### Discovering Tools
+### Discovering Tools
 
 The Trunk [plugins repo](https://github.com/trunk-io/plugins) ships with a collection of tools that can help supercharge your repository and provide examples for how to write your own. To see a list of tools that you can enable in your own repo run:
 
@@ -25,7 +25,7 @@ trunk tools list
 
 <figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
 
-#### Running Tools
+### Running Tools
 
 Trunk installs your enabled tools into the `.trunk/tools` directory. Each tool exposes a list of **shims** (these may or may not be identically named to the tool - most typically a tool has one shim matching the name of the tool). Each shim is installed into the `.trunk/tools` directory.
 
@@ -66,3 +66,7 @@ cli:
 ```
 
 Paths can either be absolute, or relative to the workspace using the special `${workspace}` variable
+
+### Troubleshooting Linters
+
+Tools enable you to run your linter binaries on the command line independent of `trunk check` and test and troubleshoot your integrations more easily. Read about [custom linters and hermetic installs](../configuration/custom-linters/#hermetic-installs) for more info.

@@ -23,7 +23,9 @@ lint:
     - name: prettier
       runtime: node
       package: prettier
-      command: [prettier, -w, "${target}"]
+      commands:
+        - run: prettier -w ${target}
+          ...
 ```
 
 Since `prettier` uses the `node` runtime, let's also look at that definition; specifically, the `runtime_environment` and `linter_environment`:

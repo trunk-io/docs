@@ -6,7 +6,7 @@ description: >-
 
 # Plugins
 
-#### Importing a plugin repository
+### Importing a plugin repository
 
 By default trunk imports the trunk-io/plugins repository. To import a repo add it to the `plugins.sources` list. Each repo requires a URI and ref.
 
@@ -20,7 +20,7 @@ plugins:
 
 <table><thead><tr><th width="174">Field</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td>unique identifier for this repository</td></tr><tr><td><code>uri</code></td><td>address used to clone the target repository</td></tr><tr><td><code>ref</code></td><td>commit id or tag to checkout</td></tr><tr><td><code>local</code></td><td>path to local (on-disk) repository. Takes precedence over uri/ref if defined</td></tr><tr><td><code>import_to_global</code> (default: <code>true</code>)</td><td>import content into the global namespace. If set to false actions and linters defined in the plugin must be referenced by <code>&#x3C;plugin_id>.&#x3C;name></code></td></tr></tbody></table>
 
-#### Plugin capabilities
+### Plugin capabilities
 
 Any configuration used in `trunk.yaml` can also be used in a plugin repository, with [some exceptions](./#excluded-fields). A plugin repository must have one root level `plugin.yaml` and can have any number of other `plugin.yaml` files in other subdirectories. These configuration files are then merged into one composite plugin configuration.
 
@@ -48,7 +48,7 @@ To add a plugin from a local repository:
 trunk plugins add /home/user/self/hello-world --id=hello-world
 ```
 
-#### Plugins scope
+### Plugins scope
 
 Plugins are merged serially, in the order that they are sourced, and can override almost any Trunk\
 configuration. This allows organizations to provide a set of overrides and definitions in one\
@@ -86,7 +86,7 @@ When a user runs `trunk` in the sourcing repository, they will already have `ruf
 
 Note that private GitHub plugin repositories are not currently supported.
 
-#### Excluded fields
+### Excluded fields
 
 Plugin `sources`, as well as the `cli` `version`, are not merged from plugin repositories to ensure\
 that config merging occurs in a predictable, stable fashion.

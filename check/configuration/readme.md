@@ -63,7 +63,7 @@ In sampling mode, Trunk may run multiple linters on a single file, and may not r
 
 Most linters offer some form of configuration. Trunk uses the native configuration setup of all the tools it runs. No need to learn a new config language or hunt for specific ways to tune a linter inside trunk. Whether it's `clang-tidy`, `eslint`, or any other linter, all the documentation you'll find online about it is still applicable. We're proud to stand on the shoulders of giants and believe that the open source communities building these tools know best how they should work. Our goal is simply to make it as easy as possible for you to adopt these tools.
 
-To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [Supported Linters](supported-linters.md) list for linter-specific tips. To configure **how** Trunk runs a linter, read on.
+To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [docs](configuring-existing-linters.md) on linter-specific tips. To configure **how** Trunk runs a linter, read on.
 
 #### Moving linter configs
 
