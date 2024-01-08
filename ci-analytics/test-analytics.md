@@ -6,7 +6,7 @@ description: >-
 
 # Test Analytics
 
-Test Analytics is available by invites only. Please [**contact**](https://trunk.io/about) us if you would like to try the product early.
+Test Analytics is available by invite-only. Please [**contact**](https://trunk.io/about) us if you would like to try the product early.
 
 ### Configuring the Analytics Uploader Action
 
