@@ -77,6 +77,7 @@
   * [Jenkins](ci-analytics/jenkins.md)
   * [API Reference](ci-analytics/api.md)
   * [Pull Request Metrics](ci-analytics/pull-request-metrics.md)
+  * [Test Analytics](ci-analytics/test-analytics.md)
 * [CI Debugger (beta)](ci-debugger/readme.md)
   * [Overview](ci-debugger/readme.md)
   * [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)
