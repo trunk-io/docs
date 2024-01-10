@@ -79,6 +79,7 @@
   * [Pull Request Metrics](ci-analytics/pull-request-metrics.md)
 * [Flaky Tests](flaky-tests/README.md)
   * [GitHub Actions Quickstart](flaky-tests/github-actions-quickstart.md)
+  * [Other CI Providers Quickstart](flaky-tests/other-ci-providers-quickstart.md)
   * [Generating JUnit Reports](flaky-tests/generating-junit-reports.md)
 * [CI Debugger (beta)](ci-debugger/readme.md)
   * [Overview](ci-debugger/readme.md)
