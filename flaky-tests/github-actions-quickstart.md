@@ -1,22 +1,16 @@
----
-description: >-
-  NOTE: At the moment we only support test analytics for test runners which can
-  produce reports in Junit XML format.
----
-
-# Test Analytics
-
-Test Analytics is available by invite-only. Please [**contact**](https://trunk.io/about) us if you would like to try the product early.
+# GitHub Actions Quickstart
 
 ### Configuring the Analytics Uploader Action
 
-The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploader)uploads test reports to Trunk Analytics from your Github workflows. Here are the steps for setting it up:
+The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploader)uploads test reports to Trunk Analytics from your GitHub workflows. Here are the steps for setting it up:
 
-1. Make sure you have a GitHub workflow producing test reports in [**Junit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format.
-2. Modify your Github workflow to add the [Trunk Analytics Uploader Action](https://github.com/trunk-io/analytics-uploader) as a step after your tests complete. Point the uploader to the locations on disk where your test runner outputs Junit XML files:
+1. Create a GitHub workflow that runs the tests you want to monitor and produces a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format. Be careful that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.
+2. Modify your GitHub workflow to add the [Trunk Analytics Uploader Action](https://github.com/trunk-io/analytics-uploader) as the step after your tests run. Point the uploader to the locations on disk where your test runner outputs Junit XML files:
 
 ```yaml
       - name: Upload results
+        # Run this step even if the test step ahead fails
+        if: "!cancelled()"
         uses: trunk-io/analytics-uploader@main
         with:
           # Path to your test results.
@@ -37,30 +31,43 @@ The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploa
 ### Sample GitHub Actions workflow file:
 
 ```yaml
-name: Upload Test Results to Trunk
-on: 
-  workflow_dispatch:
+name: Upload Test Results
+on:
+  workflow_dispatch: {}
+  schedule:
+    # run every hour on the hour
+    - cron: 0 * * * *
+
+permissions: read-all
 
 jobs:
-  upload-test-results:
+  test:
+    name: Run Tests
     runs-on: ubuntu-latest
-    name: Run tests and upload results
-    timeout-minutes: 60
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Run tests
-        # Execute your tests and write XML report to some location. 
-        run: mkdir -p target/path && touch target/path/junit_report.xml
+      - name: Setup node
+        uses: actions/setup-node@v4
 
-      - name: Upload results
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Jest Tests
+        run: npm test
+
+      - name: Upload Jest Test Results
         uses: trunk-io/analytics-uploader@main
+        # Upload the results even if the tests fail
+        if: "!cancelled()"
         with:
-          junit-paths: target/path/**/*_test.xml
-          org-slug: my-trunk-org
+          junit-paths: junit.xml
+          org-slug: matt
           token: ${{ secrets.TRUNK_API_TOKEN }}
+        # don't fail this job if the upload fails
         continue-on-error: true
+
 ```
 
 &#x20;\
