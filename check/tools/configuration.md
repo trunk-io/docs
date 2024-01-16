@@ -114,6 +114,16 @@ tools:
 
 The version of the primary package (in this case, `mypy`) is specified in the `tools.enabled`. So to enable the `mypy` tool at `1.4.0`, list it as `- mypy@1.4.0`.
 
+If you don't want to include additional packages in the tool definition, you can instead make them explicit in the enabled section of your `.trunk/trunk.yaml` as you would for [linters](../configuration/#installing-additional-packages), for example:
+
+```yaml
+tools:
+  enabled:
+    - mypy@1.4.0:
+        packages:
+          - types-six@1.16.21
+```
+
 ### Runtime-based tools
 
 Runtime-based tools are a special case that are not explicitly defined. Rather, each runtime object exposes a set of `shims` (just like `tool` definitions).
