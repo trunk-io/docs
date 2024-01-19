@@ -2,7 +2,7 @@
 
 ## What is Trunk Check?
 
-**Trunk Check** runs 100+ idiomatic code-checking tools for every language and technology, locally ([CLI](cli/), [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)), on CI ([CI](check-cloud-ci-integration/), [GitHub Bot](check-cloud-ci-integration/get-started/)), and in our [web app](https://app.trunk.io). You're probably already running a few of these tools (eslint, prettier, etc), but Trunk Check adds valuable features to let you integrate with CI and PRs, run them faster, upgrade them easier, integrate them with CI and PRs, version them better, and much more.
+**Trunk Check** runs 100+ idiomatic code-checking tools for every language and technology, locally ([CLI](cli/), [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=trunk.io)), on CI ([CI](check-cloud-ci-integration/), [GitHub Bot](check-cloud-ci-integration/get-started/)), and in our [web app](https://app.trunk.io). You're probably already running a few of these tools (ESLint, Prettier, etc), but Trunk Check adds valuable features to let you integrate with CI and PRs, run them faster, upgrade them easier, integrate them with CI and PRs, version them better, and much more.
 
 Check handles:
 

@@ -28,7 +28,7 @@ lint:
           ...
 ```
 
-Since `prettier` uses the `node` runtime, let's also look at that definition; specifically, the `runtime_environment` and `linter_environment`:
+Since Prettier uses the `node` runtime, let's also look at that definition; specifically, the `runtime_environment` and `linter_environment`:
 
 ```yaml
 runtimes:

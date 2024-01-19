@@ -12,7 +12,7 @@ If your ansible setup is not contained within a single folder you would list all
 
 ### Clang-format
 
-By default trunk uses Clang-format to additionally format `.proto` files. However, for this to work, you need to have enabled `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format`:
+By default, Trunk uses Clang-format to additionally format `.proto` files. However, for this to work, you need to have enabled `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format`:
 
 ```yaml
 ---
@@ -111,13 +111,13 @@ To use `./gradlew detekt` to invoke Detekt, you can add `detekt-gradle@SYSTEM` t
 direct_configs: ["lib/detekt.yaml"]
 ```
 
-### Eslint
+### ESLint
 
-Most eslint users use a number of plugins, custom parsers, etc. Trunk has the ability to turn sandboxing and caching on or off for each linter, and we've turned it off for eslint so it can use your repo's installed packages for eslint plugins and other required eslint packages. Trunk does control the eslint version itself, but otherwise eslint looks for all plugins, configs, etc based on the path of source file its linting. **This all means you do need to have `npm/yarn install`'d in your repo as a prerequisite before running eslint via trunk**.
+Most ESLint users use a number of plugins, custom parsers, etc. Trunk has the ability to turn sandboxing and caching on or off for each linter, and we've turned it off for ESLint so it can use your repo's installed packages for ESLint plugins and other required ESLint packages. Trunk does control the ESLint version itself, but otherwise ESLint looks for all plugins, configs, etc. based on the path of source file its linting. **This all means you do need to have `npm/yarn install`'d in your repo as a prerequisite before running ESLint via trunk**.
 
-We recommend you disable all prettier rules in your eslint config and let Trunk run prettier automatically on your files. It's much nicer to just autoformat a file than to see a lint error for every missing space.
+We recommend you disable all Prettier rules in your ESLint config and let Trunk run Prettier automatically on your files. It's much nicer to just autoformat a file than to see a lint error for every missing space.
 
-You can easily do this by adding the `eslint-config-prettier` package and in your eslint config's `extends` section adding `prettier` as the last element. For example, your `extends` list might look like:
+You can easily do this by adding the `eslint-config-prettier` package and in your ESLint config's `extends` section adding `prettier` as the last element. For example, your `extends` list might look like:
 
 ```yaml
 extends:
@@ -130,7 +130,7 @@ extends:
   - plugin:node/recommended
   - plugin:mocha/recommended
   - plugin:react/recommended
-  - prettier # this actually turns OFF all prettier rules running via eslint
+  - prettier # this actually turns OFF all Prettier rules running via ESLint
 ```
 
 ### Python linters (flake8, pylint, black, etc)
@@ -160,7 +160,7 @@ flake8-bugbear is probably the most popular flake8 plugin, we recommend it!
 
 ### Prettier
 
-By default trunk uses prettier to autoformat many languages/config formats, including markdown. To line wrap within markdown, you need to set the following in your [prettier config](https://prettier.io/docs/en/configuration.html) (`.prettierrc.yaml`, etc):
+By default, Trunk uses Prettier to autoformat many languages/config formats, including markdown. To line wrap within markdown, you need to set the following in your [Prettier config](https://prettier.io/docs/en/configuration.html) (`.prettierrc.yaml`, etc):
 
 ```yaml
 proseWrap: always
