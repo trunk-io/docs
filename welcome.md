@@ -1,9 +1,10 @@
 ---
+description: Trunk is a devex toolkit to check, test, merge, and monitor your code.
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
