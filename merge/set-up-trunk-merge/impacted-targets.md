@@ -14,7 +14,7 @@ We offer out of the box CI solutions for uploading impacted targets based on the
 
 Impacted Targets should be computed for every PR. The list of impacted targets should be computed by comparing two different SHAs: the **head of the target branch**, and the **merge commit of the pr**.
 
-<figure><img src="../.gitbook/assets/02 Branch-1 kopiera.png" alt=""><figcaption><p>From <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">https://www.atlassian.com/git/tutorials/using-branches/git-merge</a>. In this diagram, we want to compare the merge commit and the main tip.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/02 Branch-1 kopiera.png" alt=""><figcaption><p>From <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">https://www.atlassian.com/git/tutorials/using-branches/git-merge</a>. In this diagram, we want to compare the merge commit and the main tip.</p></figcaption></figure>
 
 {% hint style="info" %}
 Our [reference implementation](https://github.com/trunk-io/merge-action/blob/main/src/scripts/compute\_impacted\_targets.sh) may be useful in guiding your implementation.

@@ -1,21 +1,4 @@
----
-description: >-
-  Information on all the different ways Merge can be configured to fit your
-  needs.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
-# Configuration
+# Advanced Settings
 
 We offer some knobs and dials when configuring Merge. All of the following settings are specific to individual Merge Queues, and can be applied can be applied at [app.trunk.io](https://app.trunk.io) in the `Settings > Repositories > Repo-Name` page.
 
@@ -27,41 +10,7 @@ You can change the state of your Merge Queue, which will affect behavior around 
 
 There is an additional state, `Switching Modes`, that functions exactly like `Draining`. The Merge Queue enters this state when you switch the mode of the queue while PRs are still testing.
 
-## Single / Parallel Mode <a href="#single-parallel-mode" id="single-parallel-mode"></a>
-
-Merge can support two different modes - `Single` and `Parallel` mode. The mode affects how PRs are enqueued when they enter the queue and what is required for a PR to begin testing.
-
-#### Parallel Mode
-
-In this mode, Trunk Merge will dynamically create new merge queues for PRs that affect different parts of your code base. To support this, you will be required to provide a list of impacted targets that result from code changes in the PR (see [impacted-targets.md](impacted-targets.md "mention") for more details as well as how to generate the list of impacted targets). Trunk Merge will then examine the provided list of impacted targets for all PRs in the existing merge queues and only make your PR depend in the other PRs it actually affects.
-
-For example, the following PRs:
-
-* PR 1 with impacted target list `[src/protos/]`
-* PR 2 with impacted target list `[src/user_service/, src/protos/]`
-* PR 3 with impacted target list `[docs/]`
-
-would be split into two different queues in `Parallel` mode
-
-<figure><img src="../.gitbook/assets/image (19).png" alt="" width="332"><figcaption></figcaption></figure>
-
-#### Single Mode
-
-In this mode, PRs will always be queued directly behind one another in a first-in first-out fashion, regardless of what parts of code your PR actually affects. Uploading impacted targets is not required in this mode.
-
-For example, the above 3 PRs would look like this in the Merge Queue in `Single` mode
-
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
-
-#### Switching Modes
-
-Merge can be swapped between `Single` and `Parallel` mode at any time. If there are no PRs in the merge queue when switching, the switch will be immediate. If there are PRs in the queue, then Merge will go into the `Switching Modes` state, where it'll wait for all currently testing PRs to merge before switching modes. During this time, PRs will not be able to enter the queue.
-
-Switching modes can be done from the `Merge Queue Mode` section of the `Settings > Repositories > repo name > Merge` panel
-
-<figure><img src="../.gitbook/assets/enable-parallel-mode" alt=""><figcaption><p>enabling parallel mode</p></figcaption></figure>
-
-### Timeout for Tests to Complete
+## Timeout for Tests to Complete
 
 Configure how long a PR's test can run before auto-cancelling while testing in the Merge Queue. If a long-running test is detected, Merge will automatically cancel the test.
 
@@ -75,7 +24,7 @@ For example, assuming a timeout of 4 hours:
 * At 3:05, PR 456 starts testing using Bob's CI system.
 * At 7:05, Trunk cancels PR 456, since PR 456 is still testing.
 
-### Concurrency
+## Concurrency
 
 Configure how many PRs may test in parallel. A larger number may increase throughput, since more PRs are tested in parallel, but at the expense of CI, since more jobs are running in parallel. When the queue is at capacity, PRs will still be submitted to it, but they will not begin testing until a PR leaves the queue.
 
@@ -89,3 +38,15 @@ For example, assuming a concurrency of 3:
 * At 12:05, Bob submits PR 888 to the MergeQueue, and it starts testing.
 * At 12:10, Charlie submits PR 777 to the MergeQueue, and it starts testing.
 * At 12:15, Alice submits PR 1001 to the MergeQueue. Tests do not start, because the MergeQueue is at its concurrency limit.
+
+## Branch Protection
+
+Trunk Merge, since it will eventually merge your PR on GitHub, is still **bound by any protection rules set in GitHub** that affect the branch Trunk Merge will merge into or that affect your Trunk Merge branch. For example, if a PR requires at least one review to merge, then Trunk Merge would display `'not mergable GitHub yet'` until that PR has a review.
+
+If you have trouble with merge queueing PRs, check if there is any kind of additional branch protection set up on your repo. Existing branch protection rules must be changed in order to **not** protect branches in the form of `trunk-temp/*` and `trunk-merge/*` . If either of those branches are considered protected in any way according to GitHub (e.g., if there is a `*/*` branch protection rule), then Merge will not be able to run tests properly due to GitHub permission errors.
+
+If there are any questions or help is needed, reach out on our  questions or help is needed, reach out on our [community slack](https://slack.trunk.io/)!
+
+
+
+###

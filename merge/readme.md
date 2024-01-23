@@ -28,7 +28,7 @@ In Single mode, Trunk Merge acts like a queue: first in, first out. All PRs are 
 
 #### Parallel mode
 
-In Parallel mode, Trunk knows which PRs are related and which are unrelated and can function effectively as having many merge queues in the same repo, queueing only related PRs on top of one another. Trunk knows the relationship between PRs by you sending it to us, we call this [impacted-targets.md](impacted-targets.md "mention") and it can be information pulled from build systems like Bazel, Nx, or Turborepo, or it can be defined by a set of glob file matching patterns.
+In Parallel mode, Trunk knows which PRs are related and which are unrelated and can function effectively as having many merge queues in the same repo, queueing only related PRs on top of one another. Trunk knows the relationship between PRs by you sending it to us, we call this [impacted-targets.md](set-up-trunk-merge/impacted-targets.md "mention") and it can be information pulled from build systems like Bazel, Nx, or Turborepo, or it can be defined by a set of glob file matching patterns.
 
 ## Build system integration
 
@@ -36,4 +36,8 @@ Trunk Merge in [#parallel-mode](./#parallel-mode "mention") uses information fro
 
 ### Bazel Integration
 
-Trunk Merge has [first-class support](https://github.com/trunk-io/merge-action) for Bazel with GitHub Actions. Trunk Merge will automatically form a graph of PRs in parallel mode that mirrors the Bazel dependency graph relationship between the code changed in each PR. Testing enqueued PRs via Trunk Merge tests against _only_ other enqueued PRs with overlapping bazel dependencies. Read more about how to hook this up in the[ Impacted Targets docs](impacted-targets.md).
+Trunk Merge has [first-class support](https://github.com/trunk-io/merge-action) for Bazel with GitHub Actions. Trunk Merge will automatically form a graph of PRs in parallel mode that mirrors the Bazel dependency graph relationship between the code changed in each PR. Testing enqueued PRs via Trunk Merge tests against _only_ other enqueued PRs with overlapping bazel dependencies. Read more about how to hook this up in the[ Impacted Targets docs](set-up-trunk-merge/impacted-targets.md).
+
+## Getting Started
+
+Setup Trunk Merge with your repo [now](set-up-trunk-merge/).

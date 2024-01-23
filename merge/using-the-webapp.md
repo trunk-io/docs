@@ -4,7 +4,7 @@ description: >-
   merge queue, and more.
 ---
 
-# Using the Trunk Merge UI
+# Using the Merge UI
 
 The web app can be found at [app.trunk.io](https://app.trunk.io).
 
@@ -32,7 +32,7 @@ The PR Details panel has a dropdown menu (labeled "**..."**) with actions. From 
 
 1. Remove a PR from the queue. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it
 2. Re-queue a PR if it is currently not in the queue
-3. Download any impacted targets that have been [uploaded](impacted-targets.md#generating-impacted-targets) for the PR (uploading impacted targets is only required for [Parallel](configuration.md#parallel-mode) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
+3. Download any impacted targets that have been [uploaded](set-up-trunk-merge/impacted-targets.md#generating-impacted-targets) for the PR (uploading impacted targets is only required for [Parallel](set-up-trunk-merge/configuration.md#parallel-mode) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -52,7 +52,7 @@ A tabulated view of all the items that have failed in the Merge Queue, e.g. due 
 
 ## Manually Restarting Failed PRs
 
-Trunk Merge will automatically restart failed PRs when in can under certain conditions (see [PR states](testing-pull-requests.md#pr-states)).  Since the restart is usually from a failed PR being removed form the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ using the **Restart tests** option of the PR dropdown (labeled "...")
+Trunk Merge will automatically restart failed PRs when in can under certain conditions (see PR states).  Since the restart is usually from a failed PR being removed form the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ using the **Restart tests** option of the PR dropdown (labeled "...")
 
 <figure><img src="../.gitbook/assets/pr-restart-menu.png" alt=""><figcaption><p>PR actions menu</p></figcaption></figure>
 
