@@ -10,21 +10,23 @@ Sign up at [app.trunk.io](https://app.trunk.io/), create a Trunk organization, a
 
 Select the repository you would like to use and click **Get Started.**
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Set Up Trunk Merge
 
 Go to the Merge tab. You will see the "Set Up Trunk Merge" page. From there, you can specify:
 
 1. The name of the branch that Trunk Merge should help manage merging PRs into.
-2. The [number](advanced-settings.md#concurrency) of Pull Requests that Merge can test at the same time.
+2. The [number](set-up-trunk-merge/advanced-settings.md#concurrency) of Pull Requests that Merge can test at the same time.
 3. The [mode](configuration.md#single-parallel-mode) that Trunk Merge Queues will start in.
 
-<figure><img src="../../.gitbook/assets/image.png" alt="" width="414"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt="" width="414"><figcaption></figcaption></figure>
 
 ### Define Status Conditions
 
 Trunk needs to know which _status checks_ must pass to indicate that a pull request can be merged. This can be specified either as a [GitHub branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging) on the merge branch or in the `merge.required_statuses` section of your `.trunk/trunk.yaml`.
+
+To specify using the `.trunk/trunk.yaml` file set the `merge.required_statuses` to the name(s) of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) that must pass:
 
 To specify using the `.trunk/trunk.yaml` file set the `merge.required_statuses` to the name(s) of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) that must pass:
 
@@ -38,6 +40,14 @@ merge:
     - Unit tests & test coverage
     # Add more required statuses here
 ```
+
+To use GitHub branch protection instead follow GitHub's instructions for [requiring status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
+
+{% hint style="info" %}
+Required statuses defined in the `.trunk/trunk.yaml` file take precedence over the GitHub statuses. If neither is defined the merge process will fail.
+{% endhint %}
+
+### Configure Merge Requirements
 
 To use GitHub branch protection instead follow GitHub's instructions for [requiring status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
 
@@ -93,7 +103,7 @@ Now trigger Trunk Merge to process this PR using either a comment on the PR  in 
 {% tab title="GitHub Pull Request View" %}
 Comment `/trunk merge` on a pull request
 
-<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Trunk CLI" %}
@@ -106,11 +116,11 @@ $ trunk merge {pr-number}
 {% endtab %}
 {% endtabs %}
 
-If you have any problems with merge queueing PRs, take a look at the [branch protection](advanced-settings.md#branch-protection) docs.
+If you have any problems with merge queueing PRs, take a look at the [branch protection](set-up-trunk-merge/advanced-settings.md#branch-protection) docs.
 
 ### Pull Request Processing
 
-Once a PR is submitted to the Merge queue it goes it will start as _Not Ready_ until all of the required conditions to submit it are met. Once ready the Merge Queue will pick it up and run the tests. Once the tests pass the PR may still need to wait for upstream PRs. Once any upstream PRs are complete the PR will be merged and then removed from the Merge Queue. If a PR fails or is canceled then it will go to the failed or canceled state. Read more about [PR States](../reference.md#pr-states).
+Once a PR is submitted to the Merge queue it goes it will start as _Not Ready_ until all of the required conditions to submit it are met. Once ready the Merge Queue will pick it up and run the tests. Once the tests pass the PR may still need to wait for upstream PRs. Once any upstream PRs are complete the PR will be merged and then removed from the Merge Queue. If a PR fails or is canceled then it will go to the failed or canceled state. Read more about [PR States](reference.md#pr-states).
 
 ## Success!
 
@@ -118,4 +128,4 @@ Now Trunk Merge is setup with your repo. Whenever a PR is pushed to your merge b
 
 ### Next Steps
 
-You can configure [parallel mode](configuration.md) for potential performance gains, read how to [cancel pull requests](../reference.md#submitting-and-cancelling-pull-requests), and setup a [Slack Integration](integration-for-slack.md).  If you are using Bazel you may want to [further customize](merge-+-bazel.md) it for parallel mode.
+You can configure [parallel mode](configuration.md) for potential performance gains, read how to [cancel pull requests](reference.md#submitting-and-cancelling-pull-requests), and setup a [Slack Integration](set-up-trunk-merge/integration-for-slack.md).  If you are using Bazel you may want to [further customize](set-up-trunk-merge/merge-+-bazel.md) it for parallel mode.

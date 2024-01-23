@@ -40,4 +40,4 @@ Trunk Merge has [first-class support](https://github.com/trunk-io/merge-action) 
 
 ## Getting Started
 
-Setup Trunk Merge with your repo [now](set-up-trunk-merge/).
+Setup Trunk Merge with your repo [now](set-up-trunk-merge.md).
