@@ -53,6 +53,7 @@
     * [Components](check/reference/components.md)
     * [Glob Path Pattern](check/reference/glob-path-pattern.md)
   * [Under the Hood](check/under-the-hood.md)
+  * [Clang Tidy Setup](check/clang-tidy-setup.md)
   * [FAQ](check/faq.md)
 * [Merge](merge/readme.md)
   * [Overview](merge/readme.md)
