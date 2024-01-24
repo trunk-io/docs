@@ -22,13 +22,14 @@ Go to the Merge tab. You will see the "Set Up Trunk Merge" page. From there, you
 
 <figure><img src="../.gitbook/assets/image.png" alt="" width="414"><figcaption></figcaption></figure>
 
-### Define Status Conditions
+### Define Required Status Checks For Testing
 
-Trunk needs to know which _status checks_ must pass to indicate that a pull request can be merged. This can be specified either as a [GitHub branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging) on the merge branch or in the `merge.required_statuses` section of your `.trunk/trunk.yaml`.
+Trunk needs to know which _status checks_ must pass while testing pull requests in the queue before it can merge a PR into your branch. Merge can pick up this list of required statuses in one of two ways:
 
-To specify using the `.trunk/trunk.yaml` file set the `merge.required_statuses` to the name(s) of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) that must pass:
+1. from the list of "Require status checks to pass before merging" specified in the [GitHub branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging) rule for your merge branch (which is particularly useful if you want Merge to track the same status checks that must pass before GitHub can merge a PR), or
+2. from the `merge.required_statuses` section of your `.trunk/trunk.yaml` (if you want the list of status checks that must pass before Merge can merge a PR to be different from the required status checks that must pass as a part of GitHub branch protection).
 
-To specify using the `.trunk/trunk.yaml` file set the `merge.required_statuses` to the name(s) of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) that must pass:
+To specify using the `.trunk/trunk.yaml` file, set the `merge.required_statuses` to the name(s) of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) that must pass:
 
 ```yaml
 version: 0.1 
@@ -44,20 +45,12 @@ merge:
 To use GitHub branch protection instead follow GitHub's instructions for [requiring status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
 
 {% hint style="info" %}
-Required statuses defined in the `.trunk/trunk.yaml` file take precedence over the GitHub statuses. If neither is defined the merge process will fail.
+Required statuses defined in the `.trunk/trunk.yaml` file take precedence over the GitHub required status checks from branch protection, as Trunk Merge will only pull the list of required statuses from one or the other - it will not combine them. If neither is defined the merge process will fail.
 {% endhint %}
 
-### Configure Merge Requirements
+### Configure a Push Triggered Workflow For Required Status Checks
 
-To use GitHub branch protection instead follow GitHub's instructions for [requiring status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
-
-{% hint style="info" %}
-Required statuses defined in the `.trunk/trunk.yaml` file take precedence over the GitHub statuses. If neither is defined the merge process will fail.
-{% endhint %}
-
-### Configure a Push Triggered Workflow
-
-Trunk Merge creates branches with the prefix `trunk-merge/` in order to test PRs, so this means configuring your CI provider to run then whenever a branch with that prefix is pushed to.
+Trunk Merge creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
 
 For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:
 
@@ -120,7 +113,7 @@ If you have any problems with merge queueing PRs, take a look at the [branch pro
 
 ### Pull Request Processing
 
-Once a PR is submitted to the Merge queue it goes it will start as _Not Ready_ until all of the required conditions to submit it are met. Once ready the Merge Queue will pick it up and run the tests. Once the tests pass the PR may still need to wait for upstream PRs. Once any upstream PRs are complete the PR will be merged and then removed from the Merge Queue. If a PR fails or is canceled then it will go to the failed or canceled state. Read more about [PR States](reference.md#pr-states).
+Once a PR is submitted to the Merge queue, it will start as _Not Ready_ until all of the required conditions to submit it are met. Once ready, the Merge Queue will pick it up and run the tests. Once the tests pass, the PR may still need to wait for upstream PRs in the queue to finish their testing. Once the remaining upstream PRs are complete, the PR will be merged and then removed from the Merge Queue. If a PR fails or is canceled then it will go to the failed or canceled state. Read more about [PR States](reference.md#pr-states).
 
 ## Success!
 

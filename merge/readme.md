@@ -24,11 +24,11 @@ Trunk Merge has two modes, single and parallel. Single mode is a great way to st
 
 #### Single Mode
 
-In Single mode, Trunk Merge acts like a queue: first in, first out. All PRs are tested and merged in the order they arrived. It will still test many combinations of enqueued PRs at once against each other (and exactly how many is a configuration option), but fundamentally, regardless of whether two PRs are completely unrelated, it will test them against each other. This is a simple and effective way to start using Trunk Merge.
+In Single mode, Trunk Merge acts like a typical queue: first in, first out. All PRs are tested and merged in the order they arrived. It will still test many combinations of enqueued PRs at once against each other (and exactly how many is a configuration option), but fundamentally, regardless of whether two PRs are completely unrelated, it will test them against each other. This is a simple and effective way to start using Trunk Merge.
 
 #### Parallel mode
 
-In Parallel mode, Trunk knows which PRs are related and which are unrelated and can function effectively as having many merge queues in the same repo, queueing only related PRs on top of one another. Trunk knows the relationship between PRs by you sending it to us, we call this [impacted-targets.md](set-up-trunk-merge/impacted-targets.md "mention") and it can be information pulled from build systems like Bazel, Nx, or Turborepo, or it can be defined by a set of glob file matching patterns.
+In Parallel mode, Trunk knows which PRs are related and which are unrelated and can function effectively as having many merge queues in the same repo, queueing only related PRs on top of one another. Trunk knows the relationship between PRs by you sending it to us; we call this [impacted-targets.md](set-up-trunk-merge/impacted-targets.md "mention") and it can be information pulled from build systems like Bazel, Nx, or Turborepo, or it can be defined by a set of glob file matching patterns.
 
 ## Build system integration
 

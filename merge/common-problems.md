@@ -4,7 +4,7 @@ description: Troubleshooting and FAQ
 
 # Common Problems
 
-## My PR is testing in my Merge Queue but no tests results are showing?
+## My PR is testing in my Merge Queue but it doesn't look like my required status checks are being triggered?
 
 Solution: Most likely you did not set up the required status checks to trigger for `trunk-merge/` branches. It is also possible that your CI provider just randomly never started testing on the Trunk Merge branch, even after setting the required status checks to trigger. To assist with this, you can [configure a testing timeout](configuration.md#timeout-for-tests-to-complete).
 
