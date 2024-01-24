@@ -17,3 +17,9 @@ Once CI Analytics is enabled in the repository, Trunk will collect the previous 
 ## Backfilling More Data
 
 If you would like to import more than the last 30 days of GitHub actions data for your repository, please reach out in our community slack at [slack.trunk.io](https://slack.trunk.io), or email us at [support@trunk.io](mailto:support@trunk.io).
+
+### Disabling CI Analytics
+
+You can disable CI analytics on each repo from the **Settings** -> **\<repo name>** -> **CI Analytics** settings panel.
+
+<figure><img src="../../.gitbook/assets/CI Analytics Settings screenshot" alt="screenshot of CI Analytics Settings."><figcaption></figcaption></figure>
