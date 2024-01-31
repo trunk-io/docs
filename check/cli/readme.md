@@ -53,13 +53,13 @@ The Trunk CLI can be used for:
 * [Trunk Check](../): a pluggable superlinter with a builtin language server and pre-existing issue detection
 * [Trunk Tools:](../tools/) hermetic runtime and CLI tool manager
 * [Trunk Actions](../actions/): local workflow automation and githooks manager
-* [Trunk Merge](../../merge-graph/): a merge queue to make merging code in github safer and easier
+* [Trunk Merge](../../merge/): a merge queue to make merging code in github safer and easier
 
 [Trunk Check](../) and [Trunk Actions](../actions/) can be used entirely locally without depending on hosted services or even having a Trunk account
 
 ### Initialize Trunk in your repo
 
-Whether you aim to use [Trunk Check](../), [Trunk Merge](../../merge-graph/merge/), [Trunk Actions](../actions/), or all of the above, the first step is to initialize Trunk in your git repo:
+Whether you aim to use [Trunk Check](../), [Trunk Merge](../../merge/), [Trunk Actions](../actions/), or all of the above, the first step is to initialize Trunk in your git repo:
 
 ```bash
 trunk init
@@ -69,8 +69,8 @@ Note: for an extra layer of security you can optionally run `trunk init --lock` 
 
 `init` scans the files in your repo and generates a `.trunk/trunk.yaml` configuration file tailored to your repo (it may also generate linter-specific config files, such as `.shellcheckrc`). The scan will identify all the particular languages and technologies you use and automatically configure the correct set of linters / formatters to run.
 
-If you only want to use [Trunk Merge](../../merge-graph/merge/), you can safely ignore the linter setup, or even strip enabled linters from `.trunk/trunk.yaml`. You will additionally need to login to use [Trunk Merge](../../merge-graph/merge/) via `trunk login`.
+If you only want to use [Trunk Merge](../../merge/), you can safely ignore the linter setup, or even strip enabled linters from `.trunk/trunk.yaml`. You will additionally need to login to use [Trunk Merge](../../merge/) via `trunk login`.
 
 ### Next Steps
 
-Check out the docs for [Trunk Merge](../../merge-graph/merge/), [Trunk Check](../), and [Trunk Actions](../actions/).
+Check out the docs for [Trunk Merge](../../merge/), [Trunk Check](../), and [Trunk Actions](../actions/).
