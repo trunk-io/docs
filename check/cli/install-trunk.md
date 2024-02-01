@@ -89,3 +89,7 @@ You can directly download the `trunk` binary. _We don't recommend this mode of o
 # for example https://trunk.io/releases/1.0.0/trunk-1.0.0-linux-x86_64.tar.gz
 https://trunk.io/releases/${version}/trunk-${version}-${platform}-x86_64.tar.gz
 ```
+
+## Pre-installing tools
+
+Trunk hermetically manages all the tools that it runs. To do this, it will download and install them into its cache folder only when they are needed. If you would like to ensure that all tools are installed ahead of time, then you can use the `trunk install` command. This may be useful if you want to prepare to work offline or if you would like to include the tools in a docker image. On Linux and macOS you may find the cache folder at `$HOME/.cache/trunk`.
