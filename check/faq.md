@@ -24,7 +24,9 @@ See more about our [supported linters here](https://docs.trunk.io/check/supporte
 
 </details>
 
-## Why aren't issues showing up anymore?&#x20;
+<details>
+
+<summary>Why aren't issues showing up anymore?</summary>
 
 If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Check only processes new changes to your codebase (read about [hold-the-line](https://docs.trunk.io/check/under-the-hood)).  To scan older changes try running:
 
@@ -39,6 +41,8 @@ trunk check --all
 ```
 
 &#x20;to scan all files, whether they've changed or not. [More on CLI options](https://docs.trunk.io/check/command-line).
+
+</details>
 
 ## There are too many issues showing up
 
