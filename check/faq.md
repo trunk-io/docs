@@ -60,7 +60,7 @@ A final possible reason for excess issues is that one of your linters is misconf
 </details>
 
 <details>
-<summary>My linters are failing or not running as expected
+<summary>My linters are failing or not running as expected</summary>
 
 When your linters aren’t working the way you expect, first check their configuration. Trunk’s [list of supported linters](https://docs.trunk.io/check/supported-linters#linter-specific-configuration) provides some specific tips for certain linters. You can see the full default configuration of every linter in [Trunk’s public plugin repo](https://github.com/trunk-io/plugins/tree/main).
 
