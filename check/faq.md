@@ -4,9 +4,11 @@ description: Frequently Asked Questions
 
 # FAQ
 
-## What linters should I be using?
+<details>
 
-The best set of linters depends on your particular needs and which tech stack you are using (C/C++, Javascript, Rust, Python, etc). By default Trunk Check will detect your project type and select a recommended set of linters for that type, ESLint for a Javascript project or `clang-tidy` for C++ projects. There are plenty more linters you can use, however. You can see all possible (built in) linters with&#x20;
+<summary>What linters should I be using?</summary>
+
+The best set of linters depends on your particular needs and which tech stack you are using (C/C++, Javascript, Rust, Python, etc). By default Trunk Check will detect your project type and select a recommended set of linters for that type, ESLint for a Javascript project or `clang-tidy` for C++ projects. There are plenty more linters you can use, however. You can see all possible (built in) linters with
 
 ```sh
 trunk check list
@@ -18,7 +20,9 @@ trunk check list
 trunk check enable cool_new_linter
 ```
 
-See more about our [supported linters here](https://docs.trunk.io/check/supported-linters).&#x20;
+See more about our [supported linters here](https://docs.trunk.io/check/supported-linters).
+
+</details>
 
 ## Why aren't issues showing up anymore?&#x20;
 
