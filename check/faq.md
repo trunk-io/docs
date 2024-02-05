@@ -45,6 +45,7 @@ trunk check --all
 </details>
 
 <details>
+
 <summary> There are too many issues showing up </summary>
 
 One reason for seeing too many issues is that you may have multiple linters configured which are all printing output. Try running just one linter at a time with the `--filter=some_linter` option.
@@ -60,7 +61,8 @@ A final possible reason for excess issues is that one of your linters is misconf
 </details>
 
 <details>
-<summary>My linters are failing or not running as expected
+
+<summary>My linters are failing or not running as expected</summary>
 
 When your linters aren’t working the way you expect, first check their configuration. Trunk’s [list of supported linters](https://docs.trunk.io/check/supported-linters#linter-specific-configuration) provides some specific tips for certain linters. You can see the full default configuration of every linter in [Trunk’s public plugin repo](https://github.com/trunk-io/plugins/tree/main).
 
@@ -68,6 +70,7 @@ You can also try running `trunk check --verbose` to see what’s going on under 
 </details>
 
 <details>
+
 <summary>What is the difference between a Linter and a Formatter?</summary>
 
 A **linter** is a tool that looks for potential code errors such as security vulnerabilities, code spell, anti-patterns, and other things that might be a problem at runtime. _Linters generally report warnings and errors but do not modify code_.  A **formatter** is a tool that reformats code to fit a particular style (indentation, sorting imports, semicolons, etc). _Formatters always modify code._ In general, even though your setup may use many different linters we recommend using only _one formatter per filetype_.&#x20;
@@ -78,6 +81,7 @@ Ruff and Black are another example of a linter/formatter pair that can collide w
 </details>
 
 <details>
+
 <summary>What is Hold-the-line (HTL)?</summary>
 
 **Hold The Line** (HTL) is the principle that Trunk Check will _only run on new changes_ in your codebase, rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.&#x20;
@@ -100,12 +104,14 @@ to run on all files. [More on CLI options](https://docs.trunk.io/check/command-l
 </details>
 
 <details>
+
 <summary>What does it mean when Trunk Check wants to format an image in my repo?</summary>
 
 Sometimes Trunk Check says there is some `Incorrect formatting` in your images. Check usually enables a program called [Oxipng](https://github.com/shssoichiro/oxipng) which can _optimize_ images to make them smaller (without losing any data). The error message just means that Oxipng wants to optimize those images. You can do that with `trunk fmt` or `trunk fmt filename.png`. You can also disable Oxipng with `trunk check disable oxipng`.
 </details>
 
 <details>
+
 <summary>Why does Trunk take up so much disk space</summary>
 
 Trunk Check uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime you can safely clear your cache with&#x20;
@@ -118,6 +124,7 @@ then run `trunk install` again in your repos.
 </details>
 
 <details>
+
 <summary>## How to transition to running more linters with Trunk</summary>
 
 Trunk supports over 90 different linters, and we are always adding more! Some linters are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.&#x20;
@@ -130,6 +137,7 @@ trunk check list
 </details>
 
 <details>
+
 <summary>Upgrading Trunk</summary>
 
 Trunk automatically keeps your tools up to date. To check for recent updates you can run `trunk upgrade` to get the latest tools and fixes. You can read more about how this works [here](https://docs.trunk.io/cli/upgrade).&#x20;
@@ -138,6 +146,7 @@ When upgrading from Trunk CLI versions 1.14.2 or older, you will have to rerun `
 </details>
 
 <details>
+
 <summary>Runtime & Download Versioning</summary>
 
 Some of the tools that Trunk installs use direct downloads and others use runtime installs. For example, most Javascript tools run using the NodeJS runtime. Runtimes themselves are provided through Trunk as versioned direct downloads.
@@ -204,7 +213,7 @@ lint:
           - bar
 ```
 
-</details.
+</details>
 
 <details>
 <summary>After uninstalling the VSCode extension, I still see the .trunk folder in my repo. How do I remove it?</summary>
