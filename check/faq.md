@@ -141,9 +141,9 @@ then run `trunk install` again in your repos.
 
 <details>
 
-<summary>How can I expand the number of linters I use with Trunk?</summary>
+<summary>How can I expand the number of tools I use with Trunk?</summary>
 
-Trunk supports over 100 different linters, and we are always adding more! Some linters are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.
+Trunk supports over 100 different linters, checkers, and other tools;  and we are always adding more! Some tools are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.
 
 To see a list of currently available linters run
 
