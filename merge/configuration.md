@@ -1,7 +1,5 @@
 ---
-description: >-
-  Information on all the different ways Merge can be configured to fit your
-  needs.
+description: Merge can be configured in single or parallel mode depending on your needs.
 layout:
   title:
     visible: true

@@ -1,3 +1,7 @@
+---
+description: Reference info for the older legacy Trunk Merge.
+---
+
 # Reference
 
 ## Submitting Pull Requests

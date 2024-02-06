@@ -1,3 +1,7 @@
+---
+description: Getting started with the older legacy Trunk Merge
+---
+
 # Getting Started
 
 This guide will walk you through running Trunk Merge in your GitHub repository.
@@ -12,8 +16,7 @@ Connect your Trunk organization to GitHub
 
 ## Set Up Trunk Merge
 
-1.  Specify the branch that pull requests will be merged into (usually `main` or `master`) and the number of pull requests Trunk Merge is allowed to concurrently run tests for.\
-
+1.  Specify the branch that pull requests will be merged into (usually `main` or `master`) and the number of pull requests Trunk Merge is allowed to concurrently run tests for.\\
 
     <figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption><p>Set the target branch and maximum concurrency for Trunk Merge</p></figcaption></figure>
 2.  Tell Trunk Merge how to determine whether a pull request can be merged by specifying the name of the [GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) it should require to passs in `.trunk/trunk.yaml` in your repository.
@@ -30,8 +33,7 @@ Connect your Trunk organization to GitHub
     ```
 3.  Ensure the checks and jobs in `merge.required_statuses` from `.trunk/trunk.yaml` specified in step 2 run whenever Trunk Merge tests a PR. Trunk Merge creates branches with the prefix `trunk-merge/` in order to tests PRs, so this means configuring your CI provider to run them whenever a branch with that prefix is pushed to.\
     \
-    For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:\
-
+    For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:\\
 
     ```yaml
     name: Run Required Checks

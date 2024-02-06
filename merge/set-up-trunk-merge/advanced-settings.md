@@ -1,3 +1,9 @@
+---
+description: >-
+  Explanation of settings for states, timeouts, concurrency, and branch
+  protection.
+---
+
 # Advanced Settings
 
 We offer some knobs and dials when configuring Merge. All of the following settings are specific to individual Merge Queues, and can be applied can be applied at [app.trunk.io](https://app.trunk.io) in the `Settings > Repositories > Repo-Name` page.

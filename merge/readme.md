@@ -1,3 +1,9 @@
+---
+description: >-
+  Overview of Trunk Merge, a parallel merge queue to speed up developer
+  workflows.
+---
+
 # Merge
 
 **Trunk Merge** is a sophisticated merge queue. It's a GitHub bot and a web app that devs use to merge pull requests. If you have a big team, use trunk-based-development, or if you have a monorepo, you should use a merge queue.
