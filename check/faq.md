@@ -127,7 +127,7 @@ Sometimes Trunk Check says there is some `Incorrect formatting` in your images. 
 
 <details>
 
-<summary>Why does Trunk take up so much disk space</summary>
+<summary>Why does Trunk take up so much disk space?</summary>
 
 Trunk Check uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime you can safely clear your cache with
 
@@ -141,9 +141,9 @@ then run `trunk install` again in your repos.
 
 <details>
 
-<summary>How to transition to running more linters with Trunk</summary>
+<summary>How can I expand the number of linters I use with Trunk?</summary>
 
-Trunk supports over 90 different linters, and we are always adding more! Some linters are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.
+Trunk supports over 100 different linters, and we are always adding more! Some linters are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.
 
 To see a list of currently available linters run
 
