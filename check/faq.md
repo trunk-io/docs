@@ -234,3 +234,22 @@ lint:
 ```
 
 </details>
+
+<details>
+
+<summary>How can I disable trunk on commit for just me,  but keep it on for the rest of my team?</summary>
+
+If you prefer to never run Trunk on commit and push you can disable it just for you.  Edit or create the `.trunk/user.yaml` file and change the `actions.disabled` section to look like this:
+
+```yaml
+version: 0.1
+actions:
+  disabled:
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+  
+```
+
+This will disable the checks for just the current user. The `.trunk/user.yaml` file is specifically gitignored but will be loaded locally if present.
+
+</details>
