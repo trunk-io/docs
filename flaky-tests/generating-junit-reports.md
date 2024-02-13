@@ -48,9 +48,6 @@ $ PLAYWRIGHT_JUNIT_OUTPUT_NAME=test-results.xml npx playwright test --reporter=j
 
 This will output a `test-results.xml` file in the working directory. To further configure the reporter, consult the [Playwright documentation](https://playwright.dev/docs/test-reporters#junit-reporter).
 
-## GTest
-TODO
-
 ## pytest
 
 Run your tests as follows:
@@ -92,3 +89,13 @@ $ cargo test -q -- -Z unstable-options --format json --report-time | cargo2junit
 ```
 
 This will by output a `junit_report.xml` file in the working directory. To further configure the reporter, consult the detailed [documentation on GitHub](https://github.com/johnterickson/cargo2junit).
+
+## CTest
+
+Run the tests as follows (CMake >= v3.21):
+
+```bash
+$ ctest --output-junit junit_report.xml
+```
+
+This will output a `junit_report.xml` file in the working directory. To further configure the reporter, consult the [CMake documentation](https://cmake.org/cmake/help/v3.21/manual/ctest.1.html).
