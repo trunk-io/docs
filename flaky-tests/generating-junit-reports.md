@@ -6,13 +6,13 @@ description: How to generate JUnit Reports for common test runners
 
 ## Jest
 
-1. Install [`jest-junit`](https://github.com/jest-community/jest-junit)
+1. Install [`jest-junit`](https://github.com/jest-community/jest-junit).
 
 ```bash
 $ npm install jest-junit --save-dev
 ```
 
-2. Update your Jest config to use the `jest-junit` reporter
+2. Update your Jest config to use the `jest-junit` reporter.
 
 ```json
 {
@@ -21,3 +21,61 @@ $ npm install jest-junit --save-dev
 ```
 
 With this configuration, Jest runs will by default output a `junit.xml` file in the working directory. To further configure the reporter, consult the detailed [documentation on GitHub](https://github.com/jest-community/jest-junit?tab=readme-ov-file#jest-junit).
+
+## Mocha
+
+1. Install [`mocha-junit-reporter`](https://www.npmjs.com/package/mocha-junit-reporter).
+
+```bash
+$ npm install mocha-junit-reporter --save-dev
+```
+
+2. Run your tests.
+
+```bash
+$ mocha test --reporter mocha-junit-reporter
+```
+
+This will output a results file at `./test-results.xml`. To further configure the reporter, consult the detailed [documentation on GitHub](https://github.com/michaelleeallen/mocha-junit-reporter?tab=readme-ov-file#usage).
+
+## Playwright
+
+Run the tests as follows:
+
+```bash
+$ PLAYWRIGHT_JUNIT_OUTPUT_NAME=test-results.xml npx playwright test --reporter=junit
+```
+
+This will output a results file at `./test-results.xml`. To further configure the reporter, consult the [Playwright documentation](https://playwright.dev/docs/test-reporters#junit-reporter).
+
+## CTest
+TODO
+
+## pytest
+
+Run your tests as follows:
+
+```bash
+$ pytest --junitxml=target/path/junit_report.xml
+```
+
+This will output a results file at `target/path/junit_report.xml`. To further configure the reporter, consult the [pytest documentation](https://docs.pytest.org/en/7.2.x/how-to/output.html#creating-junitxml-format-files).
+
+## RSpec
+
+1. Install [`rspec_junit_formatter`](https://rubygems.org/gems/rspec_junit_formatter/versions/0.2.3).
+
+```bash
+$ gem install rspec_junit_formatter
+```
+
+2. Run your tests.
+
+```bash
+$ rspec --format RspecJunitFormatter --out junit_report.xml
+```
+
+This will by output a `junit_report.xml` file in the working directory. To further configure the reporter, consult the detailed [documentation on GitHub](https://github.com/sj26/rspec_junit_formatter?tab=readme-ov-file#usage).
+
+## Cargo
+TODO
