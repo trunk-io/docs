@@ -95,4 +95,4 @@ If you run VSCode you can also install the [trunk VSCode extension](vscode:exten
 trunk check
 ```
 
-Note: if you have not modified any files, `trunk check` will not check anything. See the [CLI usage docs](usage.md) for more info on basic `trunk` usage.
+Note: if you have not modified any files, `trunk check` will not check anything. See the [Getting Started guide](usage.md) for more info on basic `trunk` usage.
