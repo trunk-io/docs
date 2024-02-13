@@ -36,7 +36,7 @@ $ npm install mocha-junit-reporter --save-dev
 $ mocha test --reporter mocha-junit-reporter
 ```
 
-This will output a results file at `./test-results.xml`. To further configure the reporter, consult the detailed [documentation on GitHub](https://github.com/michaelleeallen/mocha-junit-reporter?tab=readme-ov-file#usage).
+This will output a `test-results.xml` file in the working directory. To further configure the reporter, consult the detailed [documentation on GitHub](https://github.com/michaelleeallen/mocha-junit-reporter?tab=readme-ov-file#usage).
 
 ## Playwright
 
@@ -46,7 +46,7 @@ Run the tests as follows:
 $ PLAYWRIGHT_JUNIT_OUTPUT_NAME=test-results.xml npx playwright test --reporter=junit
 ```
 
-This will output a results file at `./test-results.xml`. To further configure the reporter, consult the [Playwright documentation](https://playwright.dev/docs/test-reporters#junit-reporter).
+This will output a `test-results.xml` file in the working directory. To further configure the reporter, consult the [Playwright documentation](https://playwright.dev/docs/test-reporters#junit-reporter).
 
 ## CTest
 TODO
@@ -56,10 +56,10 @@ TODO
 Run your tests as follows:
 
 ```bash
-$ pytest --junitxml=target/path/junit_report.xml
+$ pytest --junitxml=junit_report.xml
 ```
 
-This will output a results file at `target/path/junit_report.xml`. To further configure the reporter, consult the [pytest documentation](https://docs.pytest.org/en/7.2.x/how-to/output.html#creating-junitxml-format-files).
+This will output a `junit_report.xml` file in the working directory. To further configure the reporter, consult the [pytest documentation](https://docs.pytest.org/en/7.2.x/how-to/output.html#creating-junitxml-format-files).
 
 ## RSpec
 
