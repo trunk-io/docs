@@ -99,3 +99,9 @@ $ ctest --output-junit junit_report.xml
 ```
 
 This will output a `junit_report.xml` file in the working directory. To further configure the reporter, consult the [CMake documentation](https://cmake.org/cmake/help/v3.21/manual/ctest.1.html).
+
+## GTest
+
+Run the tests with the following flag: `--gtest_output xml`
+
+This will output a `test_detail.xml` file in the working directory. To further configure the reporter, consult the [GoogleTest documentation](https://google.github.io/googletest/advanced.html#generating-an-xml-report).
