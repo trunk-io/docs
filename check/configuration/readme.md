@@ -236,7 +236,7 @@ lint:
       run_timeout: 5m
 ```
 
-
+> Note:  You can specify timeouts using the `s`, `m`, or `h` suffixes to indicate seconds, minutes, or hours.
 
 
 
