@@ -59,7 +59,7 @@ If this continues to fail, then run `git checkout refs/pull/<PR number>/merge &&
 
 You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Check as "skipped". Trunk Check will still run on your PR and report issues, but this will allow the PR to pass a GitHub required status check on `Trunk Check`.
 
-This can be helpful if Check is flagging known issues in a given PR which you don't want to [ignore](../../usage/ignoring-issues.md), which if you're doing a large refactor, can come in very handy.
+This can be helpful if Check is flagging known issues in a given PR which you don't want to [ignore](../../configuration/ignoring-issues.md), which if you're doing a large refactor, can come in very handy.
 
 </details>
 

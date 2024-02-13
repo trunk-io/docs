@@ -14,4 +14,4 @@ Trunk will run on macOS version 10.15 or later.
 
 ## Backward Compatibility
 
-We generally strive to maintain backward compatibility between the [Trunk Launcher](../reference/components.md#trunk-launcher) and the Trunk binary, but you may need to occasionally upgrade the launcher to support the newest version of Trunk.
+We generally strive to maintain backward compatibility between the [Trunk Launcher](../../reference/components.md#trunk-launcher) and the Trunk binary, but you may need to occasionally upgrade the launcher to support the newest version of Trunk.

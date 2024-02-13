@@ -46,4 +46,4 @@ lint:
 
 ### Plugin Repos and user.yaml
 
-By default, upgrades are only applied to your repo's `.trunk/trunk.yaml`. If you're using a [plugin](../plugins/) repo that enables linters/tools, or if you would like upgrades to be applied to your [`.trunk/user.yaml`](../reference/user-yaml.md) file, you can run `trunk upgrade --apply-to <path>` to see upgrades applied there.
+By default, upgrades are only applied to your repo's `.trunk/trunk.yaml`. If you're using a [plugin](../plugins/) repo that enables linters/tools, or if you would like upgrades to be applied to your [`.trunk/user.yaml`](../../reference/user-yaml.md) file, you can run `trunk upgrade --apply-to <path>` to see upgrades applied there.

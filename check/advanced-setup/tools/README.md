@@ -23,7 +23,7 @@ The Trunk [plugins repo](https://github.com/trunk-io/plugins) ships with a colle
 trunk tools list
 ```
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
 
 ### Running Tools
 
@@ -69,4 +69,4 @@ Paths can either be absolute, or relative to the workspace using the special `${
 
 ### Troubleshooting Linters
 
-Tools enable you to run your linter binaries on the command line independent of `trunk check` and test and troubleshoot your integrations more easily. Read about [custom linters and hermetic installs](../configuration/custom-linters/#hermetic-installs) for more info.
+Tools enable you to run your linter binaries on the command line independent of `trunk check` and test and troubleshoot your integrations more easily. Read about [custom linters and hermetic installs](../../configuration/custom-linters/#hermetic-installs) for more info.

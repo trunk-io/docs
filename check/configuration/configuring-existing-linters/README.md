@@ -1,4 +1,4 @@
-# Configuring Existing Linters
+# Configuring Standard Linters
 
 Most linters provide some mechanism to tweak their configuration, e.g. `.eslintrc` or `Cargo.toml`. Trunk is aware of all the ways individual tools are configured and supports them. This means that all the linters you've already configured will continue to work exactly the same, just now supercharged by Trunk Check.
 
@@ -6,7 +6,7 @@ Check out our open source [configs](https://github.com/trunk-io/configs/tree/mai
 
 ### Ansible-lint
 
-Ansible-lint must be configured with a trigger. See the [trigger rules](./#trigger-rules) documentation for more information.
+Ansible-lint must be configured with a trigger. See the [trigger rules](../#trigger-rules) documentation for more information.
 
 If your ansible setup is not contained within a single folder you would list all files and directories belonging to your ansible setup.
 
@@ -143,7 +143,7 @@ runtimes:
     - python@3.10.8
 ```
 
-As always, you can view the defaults and configuration of everything Trunk runs via `trunk print-config`. Note that Python runtime versions specifically are [allowlisted to a limited set](../faq.md#runtime-and-download-versioning).
+As always, you can view the defaults and configuration of everything Trunk runs via `trunk print-config`. Note that Python runtime versions specifically are [allowlisted to a limited set](../../faq.md#runtime-and-download-versioning).
 
 ### Flake8
 

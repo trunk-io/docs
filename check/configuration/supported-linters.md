@@ -1,10 +1,14 @@
-# Supported Linters
+---
+description: List of linters supported out of the box by Trunk Check
+---
+
+# Supported Standard Linters
 
 > 📘 Our linter integrations are open-source!
 >
 > You can find them at [`trunk-io/plugins`](https://github.com/trunk-io/plugins).
 
-Enable the following tools via:
+Enable any of the following tools with:
 
 ```
 trunk check enable <linter>
@@ -64,4 +68,4 @@ trunk check enable <linter>
 
 ### Linter-specific Configuration
 
-Some linters require a bit more modification to properly set up. See [Configuring Existing Linters](../configuration/configuring-existing-linters.md) for more info.
+Some linters require a bit more modification to properly set up. See [Configuring Existing Linters](configuring-existing-linters/) for more info.

@@ -1,6 +1,10 @@
+---
+description: Installing the Visual Studio Code extension
+---
+
 # VS Code
 
-Trunk is also available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=trunk.io) that you can use to streamline your linting and formatting experiences.
+Trunk Check is available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=trunk.io) that you can use to streamline your linting and formatting experience.
 
 ### Get Started
 
@@ -36,7 +40,7 @@ Trunk also shows Trunk Check Issues in a panel in the File Explorer, but you can
 
 #### Single-player Mode
 
-In single-player mode, Trunk creates a [configuration file](trunk-yaml/) and hides it from Git, so that you can test out Trunk on your own and get familiar with how it works, without committing this file.
+In single-player mode, Trunk creates a [configuration file](../reference/trunk-yaml/) and hides it from Git, so that you can test out Trunk on your own and get familiar with how it works, without committing this file.
 
 Users normally check this file in to your repository so that you can run Trunk reproducibly: it pins the version of trunk, as well as that of every runtime and linter that you've enabled, allowing your team to guarantee that everyone and your CI runners are always running the exact same checks on your code.
 
@@ -50,7 +54,7 @@ or click on the notification to "Share trunk config", which will commit `.trunk/
 
 ### Learn more
 
-Check out how to [install the CLI](../cli/install-trunk.md), [set it up in CI](../check-cloud-ci-integration/get-started/github-integration.md), [ignore issues](../usage/ignoring-issues.md), and set up [Custom Linters](../configuration/custom-linters/).
+Check out how to [install the CLI](../advanced-setup/cli/install-trunk.md), [set it up in CI](../check-cloud-ci-integration/get-started/github-integration.md), [ignore issues](../configuration/ignoring-issues.md), and set up [Custom Linters](../configuration/custom-linters/).
 
 ![linter code docs](https://static.trunk.io/assets/vscode\_doc\_links.png)
 

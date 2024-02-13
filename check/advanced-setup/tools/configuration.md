@@ -4,7 +4,7 @@ description: Let's look at how to configure Trunk Tools.
 
 # Configuration
 
-Tools are configured in the `tools` section of [`trunk.yaml`](../reference/trunk-yaml/). As with other settings, you can override these values in your [User YAML](../reference/user-yaml.md).
+Tools are configured in the `tools` section of [`trunk.yaml`](../../reference/trunk-yaml/). As with other settings, you can override these values in your [User YAML](../../reference/user-yaml.md).
 
 ```yaml
 tools:
@@ -114,7 +114,7 @@ tools:
 
 The version of the primary package (in this case, `mypy`) is specified in the `tools.enabled`. So to enable the `mypy` tool at `1.4.0`, list it as `- mypy@1.4.0`.
 
-If you don't want to include additional packages in the tool definition, you can instead make them explicit in the enabled section of your `.trunk/trunk.yaml` as you would for [linters](../configuration/#installing-additional-packages), for example:
+If you don't want to include additional packages in the tool definition, you can instead make them explicit in the enabled section of your `.trunk/trunk.yaml` as you would for [linters](../../configuration/#installing-additional-packages), for example:
 
 ```yaml
 tools:

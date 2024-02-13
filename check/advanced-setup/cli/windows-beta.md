@@ -38,15 +38,15 @@ You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17
 
 Thank you for being a beta tester of Trunk Check on Windows! We are actively working to improve the experience. If you have any feedback or questions, please reach out to us directly on [Slack](https://slack.trunk.io/).
 
-If you want to override a repo-wide setting just for your Windows machine, you can modify your [`.trunk/user.yaml`](../reference/user-yaml.md).
+If you want to override a repo-wide setting just for your Windows machine, you can modify your [`.trunk/user.yaml`](../../reference/user-yaml.md).
 
 ### Supported Features
 
 We intend to bring full feature support to Windows for Trunk. Currently, the following features are supported:
 
-* [Trunk Check](../)
+* [Trunk Check](../../)
 * Non-interactive [Trunk Actions](../actions/) and [git-hooks](../actions/git-hooks.md)
-* [VSCode](../reference/vs-code.md)
+* [VSCode](../../ide-integration/vs-code.md)
 
 ### Unsupported Linters (as of Plugins v1.2.0)
 

@@ -1,6 +1,10 @@
-# Configuration
+---
+description: Overview of Trunk Check Linter configuration
+---
 
-The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml/#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
+# Linters
+
+Trunk Check supports over [100 different linters](supported-linters.md) and formatters out of the box. The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml/#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -61,9 +65,9 @@ In sampling mode, Trunk may run multiple linters on a single file, and may not r
 
 ### Tuning your linters
 
-Most linters offer some form of configuration. Trunk uses the native configuration setup of all the tools it runs. No need to learn a new config language or hunt for specific ways to tune a linter inside trunk. Whether it's `clang-tidy`, `eslint`, or any other linter, all the documentation you'll find online about it is still applicable. We're proud to stand on the shoulders of giants and believe that the open source communities building these tools know best how they should work. Our goal is simply to make it as easy as possible for you to adopt these tools.
+Most linters offer some form of configuration. **Trunk uses the native configuration setup of all the tools it runs**. No need to learn a new config language or hunt for specific ways to tune a linter inside trunk. Whether it's `clang-tidy`, `eslint`, or any other linter, all the documentation you'll find online about it is still applicable. We're proud to stand on the shoulders of giants and believe that the open source communities building these tools know best how they should work. Our goal is simply to make it as easy as possible for you to adopt these tools.
 
-To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [docs](configuring-existing-linters.md) on linter-specific tips. To configure **how** Trunk runs a linter, read on.
+To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [docs](configuring-existing-linters/) on linter-specific tips. To configure **how** Trunk runs a linter, read on.
 
 #### Moving linter configs
 
@@ -79,7 +83,7 @@ lint:
       disable_upstream: true
 ```
 
-Disabling [hold-the-line](../under-the-hood.md#hold-the-line) for a linter will require that all issues found by said linter be fixed before changes to that file can be landed.
+Disabling [hold-the-line](../reference/under-the-hood.md#hold-the-line) for a linter will require that all issues found by said linter be fixed before changes to that file can be landed.
 
 Disabling the upstream for a linter will elide the execution of the linter on the upstream.
 
@@ -102,7 +106,7 @@ lint:
 Custom linters are slightly different; see [those docs](custom-linters/) to learn more.
 
 {% hint style="info" %}
-You can also ask Trunk to detect new linters and upgrade existing linters to their latest respective versions by running [`trunk upgrade check`](../cli/upgrade.md).
+You can also ask Trunk to detect new linters and upgrade existing linters to their latest respective versions by running [`trunk upgrade check`](../advanced-setup/cli/upgrade.md).
 {% endhint %}
 
 ### Disable Linters
@@ -136,7 +140,7 @@ By default Trunk will install hermetic versions of runtimes required by the lint
 
 ### Ignoring files
 
-Some files are never meant to be checked, such as generated code. To ignore them, use the `ignore` key:
+Some files are never meant to be checked, such as generated code. To ignore them, use the `ignore` key to your `.trunk/trunk.yaml` file:
 
 ```yaml
 lint:
@@ -236,7 +240,7 @@ lint:
       run_timeout: 5m
 ```
 
-> Note:  You can specify timeouts using the `s`, `m`, or `h` suffixes to indicate seconds, minutes, or hours.
+
 
 
 

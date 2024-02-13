@@ -1,5 +1,7 @@
 # Install Trunk
 
+
+
 The below commands install the Trunk Launcher, a bash script that downloads the appropriate Trunk CLI version and runs it. The launcher invisibly runs the Trunk CLI version specified in a project's `.trunk/trunk.yaml` file. The actual Trunk CLI is a single binary that is cached locally in `~/.cache/trunk` and is updated automatically.
 
 Run one of the following commands to install the Trunk Launcher, or add it as a dev dependency to your project if you use `npm`, `pnpm`, or `yarn`. You can also commit the Trunk launcher directly into your repo (see below).
@@ -62,7 +64,7 @@ This makes it much easier for you to share Trunk with your colleagues!
 
 Trunk has a very minimal installation, and therefore, there's not much to uninstall. The two system paths we use are:
 
-* `/usr/local/bin/trunk`: the [Trunk Launcher](../reference/components.md#trunk-launcher)
+* `/usr/local/bin/trunk`: the [Trunk Launcher](../../reference/components.md#trunk-launcher)
 * `~/.cache/trunk`: cached versions of the trunk cli, linters, formatters, etc.
 
 You can delete those two paths to uninstall.

@@ -1,6 +1,6 @@
 # Custom Linters
 
-Trunk Check's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](../../under-the-hood.md#hold-the-line) solution with your own custom linters. Let's walk through the steps of setting up your own linter. For a full walkthrough, see our [blog](https://trunk.io/blog/integrating-your-own-custom-tools-with-trunk-check).
+Trunk Check's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](../../reference/under-the-hood.md#hold-the-line) solution with your own custom linters. Let's walk through the steps of setting up your own linter. For a full walkthrough, see our [blog](https://trunk.io/blog/integrating-your-own-custom-tools-with-trunk-check).
 
 ### Execution Model
 
@@ -216,7 +216,7 @@ We use the same template syntax for `environment` as we do for [`command`](./#co
 
 ### Hermetic Installs
 
-You can use the `tools` section to specify trunk-configured binaries that the linter uses to run. The `tools` key should specify a list of tool names. We have two kinds of tool dependencies - they are described in turn below. See the [Tools Configuration](../../tools/configuration.md) page for more details on how to set up your tools.
+You can use the `tools` section to specify trunk-configured binaries that the linter uses to run. The `tools` key should specify a list of tool names. We have two kinds of tool dependencies - they are described in turn below. See the [Tools Configuration](../../advanced-setup/tools/configuration.md) page for more details on how to set up your tools.
 
 Using tools is the preferred way of defining and versioning a linter, as it also allows repo users to conveniently run the linter binary outside of the `trunk check` context.
 

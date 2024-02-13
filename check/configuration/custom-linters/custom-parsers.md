@@ -1,3 +1,7 @@
+---
+description: Existing tools can be run as-is using a custom parser.
+---
+
 # Custom Parsers
 
 If you have a command or utility that you want to run pretty much as-is, but trunk doesn't natively understand how to parse it, you can inject your own custom parser to translate its output into a format that Trunk does understand!
