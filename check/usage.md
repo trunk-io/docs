@@ -54,7 +54,7 @@ trunk init
 
 This will scan your repository and create a `.trunk/trunk.yaml` that enables all the linters, formatters, and security analyzers that [Trunk Check](./) recommends. For more details, see [here](advanced-setup/cli/init-in-a-git-repo.md).
 
-### Basic Usage
+## Basic Usage
 
 The main commands when running `trunk` from the command line are:
 
@@ -138,19 +138,11 @@ The comment should contain the name of the linter you want to ignore the followi
 
 ## Upgrading
 
-`trunk upgrade` will upgrade the Trunk CLI, along with all plugins and linters in your trunk.yaml. We highly recommend running on the latest validated versions of tools as updates will frequently include important security fixes and additional valuable checks. Trunk only auto-suggests linter upgrades to versions that we have tested and support, so you may see a slight lag time when a new linter version is released.
+`trunk upgrade` will upgrade the Trunk CLI, along with all plugins and linters in your `trunk.yaml`. We highly recommend running on the latest validated versions of tools as updates will frequently include important security fixes and additional valuable checks. Trunk only auto-suggests linter upgrades to versions that we have tested and support, so you may see a slight lag time when a new linter version is released.
 
 ```sh
 trunk upgrade
 ```
 
 `trunk upgrade` will also recommend new tools that have become applicable since the last time your repository was scanned. This can be a result of using new technologies in your repository or trunk itself adding support for more tools. If you don't like a particular recommendation you can run `trunk check disable <linter>` to teach trunk not to recommend it.
-
-| Options & Flags      | Explanation                                                                                                                                                              |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--root`             | Explicitly set the root of the repository to run against                                                                                                                 |
-| `--upstream`         | Specify the upstream branch used to calculate changed files as well as new vs existing issues.                                                                           |
-| `--trigger`          | Supports running trunk check from inside a git hook. Options are manual (default), git-push, git-commit. Controls whether the check returns early and its interactivity. |
-| `--output=format`    | Output results in specified format: `text` (default) or `json`                                                                                                           |
-| `--output-file=FILE` | Write json results to specified file                                                                                                                                     |
 
