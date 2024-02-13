@@ -225,7 +225,7 @@ lint:
 
 ### Timeout
 
-Each linter can have a timeout specified. If its execution takes longer than this amount of time, Trunk Check will terminate the process and return an error to the user.
+Each linter has a default timeout of 10 minutes. If its execution takes longer than this amount of time, Trunk Check will terminate the process and return an error to the user.
 
 To override the timeout for a specific linter, specify a `run_timeout` in its definition:
 
