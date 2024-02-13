@@ -48,7 +48,7 @@ $ PLAYWRIGHT_JUNIT_OUTPUT_NAME=test-results.xml npx playwright test --reporter=j
 
 This will output a `test-results.xml` file in the working directory. To further configure the reporter, consult the [Playwright documentation](https://playwright.dev/docs/test-reporters#junit-reporter).
 
-## CTest
+## GTest
 TODO
 
 ## pytest
@@ -78,4 +78,17 @@ $ rspec --format RspecJunitFormatter --out junit_report.xml
 This will by output a `junit_report.xml` file in the working directory. To further configure the reporter, consult the detailed [documentation on GitHub](https://github.com/sj26/rspec_junit_formatter?tab=readme-ov-file#usage).
 
 ## Cargo
-TODO
+
+1. Install [`cargo2junit`](https://crates.io/crates/cargo2junit).
+
+```bash
+$ cargo install cargo2junit
+```
+
+2. Run your tests.
+
+```bash
+$ cargo test -q -- -Z unstable-options --format json --report-time | cargo2junit > junit_report.xml
+```
+
+This will by output a `junit_report.xml` file in the working directory. To further configure the reporter, consult the detailed [documentation on GitHub](https://github.com/johnterickson/cargo2junit).
