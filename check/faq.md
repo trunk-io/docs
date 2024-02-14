@@ -273,7 +273,7 @@ lint:
       run_timeout: 5m
 ```
 
-Timeouts can be specified using `s` for seconds, `m` for minutes, or `h` for hours, allowing you to tailor the behavior to your project's needs.
+Timeouts can be specified using `s` for seconds, `m` for minutes, or `h` for hours, allowing you to tailor the behavior to your project's needs. More on [linter timeouts](configuration/#timeout).
 
 #### Ignoring Files
 
