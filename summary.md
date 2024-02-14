@@ -5,7 +5,7 @@
   * [Overview](check/readme.md)
   * [Getting Started](check/usage.md)
   * [CI Setup](check/check-cloud-ci-integration/readme.md)
-    * [CI Overview](check/check-cloud-ci-integration/readme.md)
+    * [Overview](check/check-cloud-ci-integration/readme.md)
     * [GitHub Integration](check/check-cloud-ci-integration/get-started/readme.md)
       * [How It Works](check/check-cloud-ci-integration/get-started/github-integration.md)
     * [Non-GitHub Integration](check/check-cloud-ci-integration/continuous-integration/readme.md)
