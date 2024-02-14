@@ -1,5 +1,5 @@
 ---
-description: Overview of Trunk Check Linter configuration
+description: Overview of Trunk Check's supported linters and configuration
 ---
 
 # Linters

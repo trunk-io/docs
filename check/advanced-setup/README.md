@@ -1,3 +1,7 @@
+---
+description: Custom configuration and advanced Trunk Check features
+---
+
 # Advanced Setup
 
 The Trunk command line tool can not only manage linters and beautifiers, but also any command line tool, runtimes, and workflow automation actions. You can also share configuration and custom linters between repos with Plugins.

@@ -1,3 +1,7 @@
+---
+description: Reusing linter configs across projects.
+---
+
 # Exporting Linter Configs
 
 Plugin repositories can also export their own linter config files in order to keep configuration synced across an organization. Simply add an `exported_configs` section to a `plugin.yaml`, with paths to all of the config files you want to export, relative to the repository root. For example:

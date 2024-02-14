@@ -1,3 +1,7 @@
+---
+description: Manually upload Trunk Check results for CI use.
+---
+
 # Upload Trunk Check Results
 
 {% hint style="info" %}

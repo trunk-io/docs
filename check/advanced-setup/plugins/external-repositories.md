@@ -1,3 +1,7 @@
+---
+description: Sharing configuration between codebases using public config repos
+---
+
 # Creating Organization Configs
 
 To standardize Trunk configuration across an organization, you can create and publish a public plugins repository. This repo can define new linter definitions, specify enabled linters and actions, and even [export linter configs](exported-configs.md).

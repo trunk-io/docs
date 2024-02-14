@@ -1,3 +1,7 @@
+---
+description: How to install the Trunk CLI to check your code in less than 60 seconds.
+---
+
 # Getting Started
 
 The `trunk` command line tool runs locally on your developer machine, right where your code is. Later, you can automatically scan your repo using the [Trunk Check webapp](check-cloud-ci-integration/). Trunk Check will automatically keep tools up to date, suggest standard tools for your project type (eg: `clang-format` for C++, `eslint` for JS/TS), and pin versions in `trunk.yaml` to ensure Trunk Check is reproducible.

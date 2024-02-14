@@ -1,3 +1,7 @@
+---
+description: Using Trunk Check on Windows
+---
+
 # Windows Support (beta)
 
 > 📘 Trunk Check is available for beta on Windows!

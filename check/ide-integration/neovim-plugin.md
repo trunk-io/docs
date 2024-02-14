@@ -1,3 +1,7 @@
+---
+description: Installing the Neovim plugin
+---
+
 # Neovim Plugin
 
 > 📘 The Trunk Check Neovim Plugin is available for beta!

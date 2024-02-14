@@ -1,3 +1,7 @@
+---
+description: Detailed install instructions for the Trunk CLI
+---
+
 # Install Trunk
 
 

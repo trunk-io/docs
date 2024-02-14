@@ -1,3 +1,7 @@
+---
+description: 'Meta-linter for over 100 code checking tools: CLI, IDE, and on the web.'
+---
+
 # Check
 
 ## What is Trunk Check?

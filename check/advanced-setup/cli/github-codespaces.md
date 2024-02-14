@@ -1,3 +1,7 @@
+---
+description: Using Trunk Check with GitHub Codespaces
+---
+
 # GitHub Codespaces
 
 We provide support for running `trunk` in GitHub Codespaces.
