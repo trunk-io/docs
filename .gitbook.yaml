@@ -11,7 +11,7 @@ redirects:
   docs: welcome.md
   docs/actions-config: check/actions/config.md
   docs/actions-git-hooks: check/actions/git-hooks.md
-  docs/actions: check/actions/readme.md
+  docs/actions: check/advanced-setup/actions/readme.md
   docs/check-cli: check/command-line.md
   docs/check-config: check/config.md
   docs/check-custom-linters: check/custom-linters.md
