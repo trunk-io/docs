@@ -253,3 +253,44 @@ actions:
 This will disable the checks for just the current user. The `.trunk/user.yaml` file is specifically gitignored but will be loaded locally if present.
 
 </details>
+
+<details>
+
+<summary>What should I do if a linter process seems to take longer than expected during a Trunk check?</summary>
+
+There are two main strategies to address this issue: **configuring timeouts** and **ignoring certain files**.&#x20;
+
+#### Timeout Configuration
+
+Each linter integrated with Trunk Check has a default timeout of 10 minutes to prevent processes from running indefinitely. If a linter exceeds this timeframe, Trunk Check will automatically terminate the process and notify you of the timeout.
+
+To adjust the timeout duration for a specific linter, you can modify its `run_timeout` setting in your configuration. For example:
+
+```
+lint:
+    definitions:
+    - name: clang-tidy
+      run_timeout: 5m
+```
+
+Timeouts can be specified using `s` for seconds, `m` for minutes, or `h` for hours, allowing you to tailor the behavior to your project's needs.
+
+#### Ignoring Files
+
+Certain files, particularly those that are auto-generated, may not require linting and can significantly extend the duration of checks. To exclude these from being checked, use the `ignore` key in your configuration:
+
+```
+lint:
+  ignore:
+    - linters: [ALL]
+      paths:
+        # Ignore generated files
+        - src/generated/**
+        # Except for files ending in .foo
+        - !src/generated/**/*.foo # Test data
+        - test/test_data
+```
+
+This approach lets you specify which linters to ignore for particular paths, optimizing the check process and focusing on relevant files. [More details on ignoring files](configuration/ignoring-issues.md#ignoring-all-issues-formatting-in-a-file).
+
+</details>
