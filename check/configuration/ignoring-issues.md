@@ -60,7 +60,7 @@ struct FooBar {
 
 Notice that a `trunk-ignore` directive applies not to the next line, but the next non-`trunk-ignore` line (this only works for _preceding_ directives, not _trailing_ directives), and that you can use a single directive for suppressing multiple checks.
 
-### Ignoring all issues/formatting in a file
+#### Ignoring all issues/formatting in a file
 
 You can also ignore all issues or formatting in a file:
 
@@ -76,7 +76,7 @@ struct FooBar {
 `trunk-ignore-all` is not required to be the first line of a file, because we recognize that other constructs (shebangs, front matter, docstrings) may need to take precedence.
 {% endhint %}
 
-### Ignoring all issues in a code block
+#### Ignoring all issues in a code block
 
 Alternatively, you can ignore all matching issues in a code block:
 
