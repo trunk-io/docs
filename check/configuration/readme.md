@@ -244,7 +244,7 @@ lint:
       run_timeout: 5m
 ```
 
-
+The `run_timeout` value can be specified in seconds (`s`), minutes (`m`), or hours (`h`).
 
 
 
