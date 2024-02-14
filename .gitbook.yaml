@@ -7,11 +7,13 @@ structure:
 redirects:
   adminstration: administration/readme.md
   check/performance: check/under-the-hood.md
+  check/under-the-hood: check/reference/under-the-hood.md
+  check/tools/configuration: check/advanced-setup/tools/configuration.md
   cli/windows-beta: check/cli/windows-beta.md
   docs: welcome.md
   docs/actions-config: check/actions/config.md
   docs/actions-git-hooks: check/actions/git-hooks.md
-  docs/actions: check/advanced-setup/actions/readme.md
+  docs/actions: check/advanced-setup/actions/README.md
   docs/check-cli: check/command-line.md
   docs/check-config: check/config.md
   docs/check-custom-linters: check/custom-linters.md
