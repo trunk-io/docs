@@ -34,6 +34,7 @@ redirects:
   docs/initialize-trunk-in-a-git-repo: check/cli/init-in-a-git-repo.md
   docs/install: check/usage.md
   docs/merge-get-started: merge/set-up-trunk-merge.md
+  docs/merge-getting-started: merge/set-up-trunk-merge.md
   docs/merge: merge/readme.md
   docs/overview: check/cli/readme.md
   docs/plugins: plugins/readme.md
