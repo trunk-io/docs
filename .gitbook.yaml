@@ -33,7 +33,7 @@ redirects:
   docs/ignoring-issues: check/ignoring-issues.md
   docs/initialize-trunk-in-a-git-repo: check/cli/init-in-a-git-repo.md
   docs/install: check/usage.md
-  docs/merge-get-started: merge/get-started.md
+  docs/merge-get-started: merge/set-up-trunk-merge.md
   docs/merge: merge/readme.md
   docs/overview: check/cli/readme.md
   docs/plugins: plugins/readme.md
@@ -47,8 +47,9 @@ redirects:
   docs/windows-beta: check/cli/windows-beta.md
   get-started: welcome.md
   merge-graph: merge/readme.md
+  merge-graph/merge: merge/legacy/readme.md
   merge-graph/configuration: merge/configuration.md
   merge-graph/set-up-trunk-merge: merge/readme.md
-  merge/getting-started: merge/readme.md
+  merge/getting-started: merge/set-up-trunk-merge.md
   reference/reference-trunk-yaml: check/reference/trunk-yaml.md
   reference/trunk-yaml: check/reference/trunk-yaml.md
