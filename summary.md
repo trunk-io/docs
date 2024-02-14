@@ -16,7 +16,7 @@
     * [Configuring Standard Linters](check/configuration/configuring-existing-linters/README.md)
       * [Clang Tidy Setup](check/configuration/configuring-existing-linters/clang-tidy-setup.md)
     * [Hold the Line](check/configuration/hold-the-line.md)
-    * [Ignoring Issues](check/configuration/ignoring-issues.md)
+    * [Ignoring Issues and Files](check/configuration/ignoring-issues.md)
     * [Skipping Checks (CI)](check/configuration/skipping-checks.md)
     * [Sharing Linters](check/configuration/sharing-linters.md)
     * [Custom Linters](check/configuration/custom-linters/readme.md)

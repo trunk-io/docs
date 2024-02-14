@@ -138,9 +138,11 @@ lint:
 
 By default Trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml/#runtimes).
 
-### Ignoring files
+### Ignoring Issues and Files
 
-Some files are never meant to be checked, such as generated code. To ignore them, use the `ignore` key to your `.trunk/trunk.yaml` file:
+By default Check will ignore issues in files which are listed in the `.gitignore` file.&#x20;
+
+If you want to ignore groups of files, such as generated code, you can do that with the [`lint.ignore`](./#ignoring-files) section of your `.trunk/trunk.yaml` file. ex:
 
 ```yaml
 lint:
@@ -149,18 +151,20 @@ lint:
       paths:
         # Ignore generated files
         - src/generated/**
-        # Except for files ending in .foo
-        - !src/generated/**/*.foo # Test data
-        - test/test_data
 ```
 
-Every entry in `ignore` defines both a set of linters and a set of paths to ignore.
+You can also ignore particular issues _within a file_ using special comments like this:
 
-<table><thead><tr><th width="101">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (i.e. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>paths</td><td>List of <a href="../reference/glob-path-pattern.md">glob paths</a>, relative to the root of the repo, to ignore. If a path begins with a <code>!</code> then it represents an inverse ignore. This means that any file matching that glob will not be ignored, even if matched by other globs.</td></tr></tbody></table>
+```cpp
+struct FooBar {
+  // trunk-ignore(clang-tidy/modernize-use-nullptr): load-bearing NULL, see ISSUE-832
+  void *ptr = NULL;
+};
+```
 
-{% hint style="info" %}
-Trunk is `git`-aware, which means it ignores `gitignore'd` files by default.
-{% endhint %}
+This tells Trunk that the `clang-tidy` linter found a `modernize-use-nullptr` issue on the highlighted line and that Trunk should suppress this linter issue.
+
+For full details please see the [Ignoring Issues and Files](ignoring-issues.md) page.
 
 ### Blocking Thresholds
 

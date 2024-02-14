@@ -1,12 +1,12 @@
 ---
-description: How to tell a Trunk Check linter to ignore certain issues.
+description: >-
+  How to tell a Trunk Check linter to ignore certain issues or entire groups of
+  files.
 ---
 
-# Ignoring Issues
+# Ignoring Issues and Files
 
-{% hint style="info" %}
-If you're only looking to ignore issues in a single file, read on. If you want to ignore issues across multiple files, you probably want the docs for [`lint.ignore`](./#ignoring-files) in `.trunk/trunk.yaml` (note that Check also ignores issues in `gitignore`-d files)&#x20;
-{% endhint %}
+## Ignoring parts of a file
 
 Sometimes we want to deliberately tell a linter that, yes, I know what I'm doing, and yes, in any other situation I should _not_ do this, but in this specific case it's fine. Maybe there's a dummy private key you're using for a test stack, or fixing the lint issue will actually make your code less readable: whatever it is, you now need to figure out how to suppress a given lint issue.
 
@@ -102,6 +102,30 @@ The syntax of a trunk-ignore directive is as follows:
 <optional-rule-id>  ::= "/" <rule-id>
 <optional-comment>  ::= ": " <comment>
 ```
+
+## Ignoring Multiple Files
+
+Some files are never meant to be checked, such as generated code. To ignore them, use the `ignore` key to your `.trunk/trunk.yaml` file:
+
+```yaml
+lint:
+  ignore:
+    - linters: [ALL]
+      paths:
+        # Ignore generated files
+        - src/generated/**
+        # Except for files ending in .foo
+        - !src/generated/**/*.foo # Test data
+        - test/test_data
+```
+
+Every entry in `ignore` defines both a set of linters and a set of paths to ignore.
+
+<table><thead><tr><th width="101">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (i.e. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>paths</td><td>List of <a href="../reference/glob-path-pattern.md">glob paths</a>, relative to the root of the repo, to ignore. If a path begins with a <code>!</code> then it represents an inverse ignore. This means that any file matching that glob will not be ignored, even if matched by other globs.</td></tr></tbody></table>
+
+{% hint style="info" %}
+Trunk is `git`-aware, which means it ignores `gitignore'd` files by default.
+{% endhint %}
 
 ### Known Issues
 
