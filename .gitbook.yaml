@@ -32,7 +32,7 @@ redirects:
   docs/github-codespaces: check/cli/github-codespaces.md
   docs/ignoring-issues: check/ignoring-issues.md
   docs/initialize-trunk-in-a-git-repo: check/cli/init-in-a-git-repo.md
-  docs/install: check/cli/install-trunk.md
+  docs/install: check/usage.md
   docs/merge-get-started: merge/get-started.md
   docs/merge: merge/readme.md
   docs/overview: check/cli/readme.md
@@ -42,7 +42,7 @@ redirects:
   docs/tools: check/tools/readme.md
   docs/trunk-app-for-slack: check/reference/integration-for-slack.md
   docs/upload-check-results: web-app/upload-trunk-check-results.md
-  docs/vscode: check/reference/vs-code.md
+  docs/vscode: check/ide-integration/vs-code.md
   docs/what-is-trunk: readme.md
   docs/windows-beta: check/cli/windows-beta.md
   get-started: welcome.md
