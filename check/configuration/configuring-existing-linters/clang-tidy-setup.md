@@ -36,4 +36,4 @@ Trunk Check currently works only with the CMake and Bazel build systems. If ther
 
 Trunk Check also supports [Clang Format](https://docs.trunk.io/check/configuration/configuring-existing-linters#clang-format), a code formatter & beautifier for C/C++ code.&#x20;
 
-[Other linters](https://docs.trunk.io/check/usage/supported-linters) supported by Trunk Check.
+[Other linters](../supported-linters.md) supported by Trunk Check.
