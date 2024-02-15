@@ -8,7 +8,7 @@
     * [Overview](check/check-cloud-ci-integration/readme.md)
     * [GitHub Integration](check/check-cloud-ci-integration/get-started/readme.md)
       * [How It Works](check/check-cloud-ci-integration/get-started/github-integration.md)
-    * [Non-GitHub Integration](check/check-cloud-ci-integration/continuous-integration/readme.md)
+    * [GitLab and other CI Integration](check/check-cloud-ci-integration/continuous-integration/readme.md)
       * [Upload Trunk Check Results](check/check-cloud-ci-integration/continuous-integration/upload-trunk-check-results.md)
   * [Linters](check/configuration/readme.md)
     * [Overview](check/configuration/readme.md)
