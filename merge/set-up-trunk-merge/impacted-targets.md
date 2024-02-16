@@ -31,7 +31,8 @@ After they are computed, upload them to our services. Our HTTP POST endpoint can
 ```ssml
 HEADERS:
 	Content-Type: application/json,
-	x-api-token: <organization API token>
+	x-api-token: <organization API token>, <!-- only for non forked PRs -->
+	x-forked-workflow-run-id: ${{github.run_id}}, <!-- only for forked PRs -->
 
 BODY: {
 	repo: {
@@ -50,6 +51,14 @@ BODY: {
 
 `impactedTargets` allows specifying either an array of strings representing the impacted targets from the PR or the string "ALL" (note that this is explicitly not in an array and is just the string "ALL"). Specifying "ALL" is the equivalent of saying that everything that comes into the graph after this PR should be based off of this one, which is useful when your PR contains changes that affect the whole repo (such as editing `trunk.yaml` or a GitHub workflow).
 
+### Impacted Targets for Forked PRs
+
+The HTTP POST must contain the `x-api-token` to prove that it is a valid request from a workflow your org controls. _Workflows which come from forked PRs most likely will not have access to the Trunk org token_ required for the HTTP POST above. In this case you should provide the **run ID** of the workflow as the  `x-forked-workflow-run-id` header in place of the `x-api-token`. This ID can be  obtained from [the GitHub context](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context) as `${{ github.run_id }}`. Trunk Merge will verify that the ID belongs to a currently running workflow originating from a forked PR with a SHA that matches the one provided in the request and allow it through.
+
+{% hint style="info" %}
+We do not recommend using an event trigger like `pull_request_target.` This would allow workflows from forked PRs to get secrets, which is a security risk and would open your repo to attackers making forks, adding malicious code, and then running it against your repo to exfiltrate information. (see[ Keeping your GitHub Actions and workflows secure](https://securitylab.github.com/research/github-actions-preventing-pwn-requests/)).
+{% endhint %}
+
 ### Impacted Targets Generation: Bazel + GitHub Actions
 
-For Bazel specific instructions, see [the Bazel guide](merge-+-bazel.md).
+For Bazel specific instructions, see [the Bazel guide](merge-+-bazel.md).&#x20;
