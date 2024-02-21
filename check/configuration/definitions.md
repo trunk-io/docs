@@ -56,13 +56,18 @@ Individual linters are defined in the `lint.definitions` section. See Linter Def
 * compile_command_roots
 * hold_the_line_mode
 
-# Individual Linter Definitions
 
+## Lint Config
+
+## Linter Command Definition
+
+## Linter Definition
 `name` is the name of the linter. This property will be used to refer to the linter in other parts of the config, for example, in the list of enabled linters.
+
 
 `type` is the type of output the linter produces.
 
-`command`
+`command`, string, command to run: ex: `[$workspace/tools/linters/clang-format, --assume-filename=${path}]`
 
 `success_codes` is the list of success codes that indicates linter generated data and should be processed. Some linters return 0 for nothing to lint and 1 when there are issues.
 
@@ -76,8 +81,11 @@ __If you have one of these config files, you're definitely using this linter__
 
 `good_without_config`: boolean, indicates whether this linter is recommended without the user tuning its configuration. Prefer `suggest_if`.
 
-`files` is a list of file types listed in the `lint.files` section that this 
+
+`files` is a list of file types listed in the `lint.files` section that this
 linter applies to.
+
+`files` File configs for this command. If absent, will use the whole linter's file_configs. Note: this defines the entire list of file configs for this command, rather than appending to those of the entire lint command.
 
 
 `include_lfs`: boolean, exclude this filetype if it is tracked using LFS.
@@ -92,7 +100,6 @@ linter applies to.
 
 
 `environment`: a list of runtime variables used when running the linter
-
 
 `is_recommended`: boolean, indicating whether init should try to enable this linter. Prefer `suggest_if`
 
@@ -119,37 +126,56 @@ linter applies to.
 
 `run_from_root_target`: string, Walk up to find this file to detect the run from directory. Prefer `run_from` at the command level.
 
-`bool hold_the_line`, optional boolean, whether hold-the-line will be done for this linter or not.
+`hold_the_line`, optional boolean, whether hold-the-line will be done for this linter or not.
 
-ReadOutputFrom read_output_from = 35;
-// Tell parser where to expect output from for reading (stdout, stderr, tmp file)
-
-
-// ex. [tflint, --init]
-repeated string prepare_command = 36;
+`read_output_from`,  Tell the parser where to expect output from for reading (stdout, stderr, tmp file)
 
 
+`prepare_command`, ex. `[tflint, --init]`
 
+`version` 
 
+`known_good_version`, The version init inits with. If not present it will query the version from its runtime or use the default version from the download.
 
+`version_command`,  Version check commands
 
+`enabled`, optional boolean, Whether this linter is enabled
 
+`batch`, optional boolean, Combine multiple files into the same execution.
 
+`run_when`, Should this linter be run only in CI? (or locally, vscode, monitor)
 
+`in_place`, optional boolean, Applies to formatters - does the formatter rewrite the file as opposed to reading its contents from stdin and outputting formatted contents to stdout?
 
+`run_timeout`, duration string, describes how long a linter can run before timing out.
 
+`disabled`, optional boolean, Whether linter is actively disabled (will not be recommended) and will not run (overrides enabled).
 
+`commands`, commands exposed by this linter
 
+`deprecated`, string, Deprecated information (set when linter is deprecated)
 
+`known_bad_versions`, string list, Versions of a linter that are known to be broken or not work with trunk. We will fallback to a known_good_version if init or upgrade chooses something in this set.
 
+`plugin_url`, string, a plugin url for reporting issues.
 
+`query_compile_commands`, optional boolean
 
+`idempotent`, optional boolean, Indicates whether or not a linter is idempotent w.r.t. config + source code inputs.  e.g. semgrep fetches rules from the internet, so it's not idempotent . If set, causes cache_ttl to default to 24h
 
+`cache_ttl`, duration string, How long cached results are kept before they expire
 
+`target`: optional string, what target does this run on
 
+`suggest_if`, How to determine if this linter should be auto-enabled/recommended.
 
+`supported_platforms`, Platform constraint. If incompatible, renders a notice.
 
+`tools`, string list
 
+`main_tool`, string, The linter's main tool. This should be the tool that provides the binary for the linter. It will generally be the same as the linter's name, but may differ if the linter is a wrapper. The main tool is used to determine the linter's version.
+
+`path_format`, Whether to use the platform-specific paths or generic "/". Default native.
 
 
 
