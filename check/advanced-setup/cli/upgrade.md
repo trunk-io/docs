@@ -28,7 +28,7 @@ Upgrade any [tools](../tools/) that you have enabled. Tools will be upgraded to 
 
 `runtimes`
 
-Upgrade any [runtimes](../runtimes/) that you have enabled. Runtimes will be upgraded to their recommended version for running linters, as specified by Trunk.
+Upgrade any [runtimes](../runtimes.md) that you have enabled. Runtimes will be upgraded to their recommended version for running linters, as specified by Trunk.
 
 ### Automatic Upgrades
 
