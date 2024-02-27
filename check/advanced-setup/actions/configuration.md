@@ -56,7 +56,18 @@ For the `python` and `node` runtimes, we additionally provide the ability to ins
 
 ### Triggers
 
-You may run an action manually by running `trunk run <action_id> <args>` or `trunk actions run <action_id> <args>`. However, you can also provide a set of triggers so that actions run in response to some event. They are documented below.
+You can run actions manually, or you can also provide a set of triggers so that actions run in response to some event. They are documented below.
+
+#### Manual runs
+
+You may run an action manually by running `trunk run <action_id> <args>` or `trunk actions run <action_id> <args>`.
+
+For manually triggered runs, we support the `${@}` and `${pwd}` variables for template resolution in the `run` declaration. `${@}` will be replaced with the arguments passed to the action, and `${pwd}` will be replaced with the directory the action is triggered from.
+
+```yaml
+id: my-action
+run: echo "The action was run from ${pwd} with arguments ${@}"
+```
 
 #### Time-based triggers
 
@@ -125,6 +136,17 @@ triggers:
 ```
 
 In this case `my-action` will execute if either `foo.txt` is edited (or created), or if a file inside `bar` is edited or created.
+
+In case you need to know which file triggered the action, you can use the `${target}` variable in the `run` command.
+
+```yaml
+id: my-action
+triggers:
+  - files: [foo.txt, bar/**]
+run: echo "The file ${target} was edited"
+```
+
+If you do a bulk file modification, the `${target}` template may resolve to a space-separated list of files that were simultaneously edited.
 
 > Note: We only provide file triggers for files inside of your workspace.
 
