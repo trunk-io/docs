@@ -282,3 +282,7 @@ linter applies to.
 
 `max_concurrency`: int, The maximum concurrency this linter will run in a given thread pool.
 
+
+
+
+(For even more details, you can refer to [the JSON schema for `trunk.yaml`]&#40;https://static.trunk.io/pub/trunk-yaml-schema.json&#41;.)

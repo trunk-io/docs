@@ -6,7 +6,7 @@ description: How to diagnose problems when a linter fails.
 
 Sometimes you need to get under-the-hood to diagnose why a linter is failing on a particular file or to more easily reproduce an issue you are seeing with a tool.
 
-### Analyzing Linter Failures
+## Analyzing Linter Failures
 
 When a linter fails, Trunk will generate a linter failure report that contains all the information needed to understand what went wrong and why. `prettier`, for example, will fail on improperly formatted HTML; let's see what that looks like:
 
@@ -51,7 +51,7 @@ report:
       [error]   6 |  </body>
 ```
 
-### Debugging Linter Failures in CI
+## Debugging Linter Failures in CI
 
 If linter failures occur while Trunk Check is running in CI, you'll see something like this:
 
@@ -73,7 +73,7 @@ You'll then see your check run summary. Click "\<your repo name>/pull\_request" 
 
 You'll then see a list of the failures that occurred, as well as all of the linter failure reports in collapsibles. You can then follow the instructions in [Analyzing Linter Failures](https://docs.trunk.io/check/debugging#analyzing-linter-failures) to resolve the problem.
 
-### Actions
+## Actions
 
 When `trunk check` is run, a dynamic set of check actions are generated and executed in parallel. An engineer developing custom integrations may find it helpful to examine in detail exactly what `trunk check` does and sees when it runs a given tool. The output of the `check` run will include an `ACTIONS` section with a execution report for each action that was run as well as cache hit information.
 
