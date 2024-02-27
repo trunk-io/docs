@@ -30,7 +30,7 @@ Running `trunk check` tells `trunk` to do the following:
 ## Applicable filetypes
 
 To determine which linters to run on which files (i.e. compute the set of lint actions), Trunk 
-requires that every linter define the set of filetypes it applies to in `files` section.
+requires that every linter define the set of filetypes it applies to in the `lint.files` section of the `./trunk/trunk.yaml` file.
 
 We have a number of pre-defined filetypes (e.g. `c++-header`, `gemspec`, `rust`; see our 
 [plugins repo](https://github.com/trunk-io/plugins/blob/main/linters/plugin.yaml) for an 

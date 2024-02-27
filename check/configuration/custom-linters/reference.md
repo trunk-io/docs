@@ -1,30 +1,27 @@
-# Lint Config Definition
+# Lint Config Definitions
 
 
-Lint configuration is done in the `lint` section of the trunk.yaml file.
+Lint configuration is done in the `lint` section of the trunk.yaml file. There are three parts:
 
-there are three parts:
+* Lint Config
+* Linter Definition
+* Linter Command Definition.
 
-* LintConfig
-* LinterDefinition
-* LinterCommandDefinition.
+The top part represents the configuration of overall linting. Inside that
+is the definition of individual linters. And inside *that* is the definition of the particular
+command used to invoke the actual binary executable of the underlying tool.
 
-the top part represents the configuration of linting over all. inside that
-is the definition of individual linters. inside that is the definition of the particular
-command used to invoke the actual binary executable of the underlying linter tool.
-
-The final config used at runtime is created by importing yaml files from the plugins
+The final config used at runtime is created by importing `.yaml` files from the plugins
 repo for each linter, merging them into a tree structure, then overriding values
-from your repo's trunk.yaml file to yield the final structure.
+from your repo's `trunk.yaml` file to yield the final configuration.
 
-This overriding process follows the rules of YAML files **link to yaml docs**
+This overriding process follows the rules of [YAML files](https://en.wikipedia.org/wiki/YAML)
 
 **example of single linter definition**
 **example of trunk.yaml importing linter def and overriding a value**
 
 
-
-## files
+## Defining File Types
 
 Every linter must define the set of filetypes it applies to in the `lint.files` section.
 
@@ -51,7 +48,15 @@ lint:
 
 ## Lint Config
 
-`files`: Categories of files (languages, headers vs source, etc)
+The Lint represent the configuration of all linters. This is where you can 
+* define the linters (`linters`),
+* list linters to enable and disable (`enabled` and `disabled`)
+* define file categories (`files`)
+* list required `runtimes`, `downloads`, `environments` ,
+* and additional cross-linter settings
+
+
+`files`: Categories of files (languages, headers vs source, etc). See [defining file types](./reference.md#defining-file-types)
 
 `runtimes`: Node, python, cargo, etc.
 
@@ -77,7 +82,7 @@ lint:
 
 `downloads`: runtime and linter downloads
 
-`enviornments`: environment configuration
+`environments`: environment configuration
 
 `triggers`: ??
 
@@ -96,10 +101,14 @@ lint:
 `hold_the_line_mode`: which algorithm to use for hold the line
 
 
-
 ## Linter Definition
-`name` is the name of the linter. This property will be used to refer to the linter in other parts of the config, for example, in the list of enabled linters.
 
+The linter definition is under `lint.definitions` **(or `lint.linters`?)**.  The following
+properties define the settings of a *particular linter*, not for all linters. For
+global linter settings, see [Lint Config](reference.md#lint-config)
+
+
+`name` is the name of the linter. This property will be used to refer to the linter in other parts of the config, for example, in the list of enabled linters.
 
 `type` is the type of output the linter produces.
 
@@ -109,20 +118,16 @@ lint:
 
 `error_codes` is the list of error codes this linter will return when it hit an internal failure and couldn't generate results.
 
-`direct_configs`
-__If you have one of these config files, you're definitely using this linter__
-
+`direct_configs` __If you have one of these config files, you're definitely using this linter__
 
 `affects_cache`: the list of files that affect the cache results of this linter
 
 `good_without_config`: boolean, indicates whether this linter is recommended without the user tuning its configuration. Prefer `suggest_if`.
 
-
 `files` is a list of file types listed in the `lint.files` section that this
-linter applies to.
+linter applies to. 
 
 `files` File configs for this command. If absent, will use the whole linter's file_configs. Note: this defines the entire list of file configs for this command, rather than appending to those of the entire lint command.
-
 
 `include_lfs`: boolean, exclude this filetype if it is tracked using LFS.
 
@@ -134,7 +139,6 @@ linter applies to.
 
 `symlinks`: a list of symlinks to be created when using sandboxing.
 
-
 `environment`: a list of runtime variables used when running the linter
 
 `is_recommended`: boolean, indicating whether init should try to enable this linter. Prefer `suggest_if`
@@ -145,7 +149,6 @@ linter applies to.
 
 `formatter`: boolean. Indicates whether this is a formatter and should be included in `trunk fmt`
 
-
 `allow_empty_files`: boolean. Indicates to skip linting empty files for this linter.
 
 `runtime`: RuntimeType, Which runtime, if any, to require to be setup for this linter.
@@ -154,11 +157,9 @@ linter applies to.
 
 `extra_packages`: list of strings, Extra packages to install, versions are optional
 
-
 `download`: string, download url. You must provide either runtime + packages or download, not both. Using runtimes is preferred.
 
 `issue_url_format`: string, a format string that accepts issue codes for links to issues docs.
-
 
 `run_from_root_target`: string, Walk up to find this file to detect the run from directory. Prefer `run_from` at the command level.
 
@@ -166,10 +167,9 @@ linter applies to.
 
 `read_output_from`,  Tell the parser where to expect output from for reading (stdout, stderr, tmp file)
 
-
 `prepare_command`, ex. `[tflint, --init]`
 
-`version` 
+`version`, **???** 
 
 `known_good_version`, The version init inits with. If not present it will query the version from its runtime or use the default version from the download.
 
@@ -217,6 +217,10 @@ linter applies to.
 
 ## Linter Command Definition
 
+The linter command definitions are defined in `lint.linter.commands`. A single linter can have multiple
+commands if it is used in different ways.
+
+
 `name` : a unique name for this commmand (some tools expose multiple commands, format, lint, analyze, etc.). This will default to trunk verb if not specified.
 
 `output`: which C++ linter class to use to parse this linter output
@@ -236,7 +240,6 @@ linter applies to.
 `no_issues_codes`: List of codes that trunk will just assume there were no issues without parsing the output.
 
 `read_output_from`: Tell parser where to expect output from for reading (stdout, stderr, tmp file)
-
 
 `run_from`: Whether to set current working directory to WORKSPACE root, or the target files folder when run
 
@@ -283,6 +286,8 @@ linter applies to.
 `max_concurrency`: int, The maximum concurrency this linter will run in a given thread pool.
 
 
+## JSON `trunk.yaml` Schema
+
+For even more details, you can refer to [the JSON schema for `trunk.yaml`](https://static.trunk.io/pub/trunk-yaml-schema.json)
 
 
-(For even more details, you can refer to [the JSON schema for `trunk.yaml`]&#40;https://static.trunk.io/pub/trunk-yaml-schema.json&#41;.)
