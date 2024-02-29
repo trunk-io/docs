@@ -13,6 +13,8 @@
   * [Linters](check/configuration/README.md)
     * [Overview](check/configuration/README.md)
     * [Supported Linters](check/configuration/supported/README.md)
+    * [Configuring Linters](check/configuration/configuring-existing-linters/README.md)
+      * [Clang Tidy Setup](check/configuration/configuring-existing-linters/clang-tidy-setup.md)
     * [Hold the Line](check/configuration/hold-the-line.md)
     * [Ignoring Issues and Files](check/configuration/ignoring-issues.md)
     * [Skipping Checks (CI)](check/configuration/skipping-checks.md)
