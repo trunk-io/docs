@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,10 +24,20 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: v20.x 
+          node-version: v20.x
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
       - name: npm install
-        run: npm ci
+        run: echo "we are modifying files"
+      - name: Git Prep
+        run: |
+          git config --local user.email "docsbot@trunk.io"
+          git config --local user.name "docsbot[bot]"
+          git diff
+
+#          git diff-index HEAD
+#          git diff-index --quiet HEAD || git commit -am "docs(footer): ensure footer exists on all docs pages"
+#      - name: Git Push
+#        run: "git push origin $(git branch --show-current) || true"
