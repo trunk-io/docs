@@ -13,6 +13,7 @@
   * [Linters](check/configuration/README.md)
     * [Overview](check/configuration/README.md)
     * [Supported Linters](check/configuration/supported/README.md)
+      * [actionlint](check/configuration/supported/actionlint.md)
     * [Hold the Line](check/configuration/hold-the-line.md)
     * [Ignoring Issues and Files](check/configuration/ignoring-issues.md)
     * [Skipping Checks (CI)](check/configuration/skipping-checks.md)
