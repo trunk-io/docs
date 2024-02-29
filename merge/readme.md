@@ -1,6 +1,6 @@
 ---
 description: >-
-  Overview of Trunk Merge, a parallel merge queue to speed up developer
+  An overview of Trunk Merge, a parallel merge queue to speed up developer
   workflows.
 ---
 
@@ -46,4 +46,4 @@ Trunk Merge has [first-class support](https://github.com/trunk-io/merge-action) 
 
 ## Getting Started
 
-Setup Trunk Merge with your repo [now](set-up-trunk-merge.md).
+Setup Trunk Merge with your repo [now](set-up-trunk-merge/).
