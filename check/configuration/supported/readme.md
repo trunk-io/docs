@@ -5,8 +5,9 @@ List of linters supported out of the box by Trunk Check
 
 Enable any of the following tools with:
 
+```
 trunk check enable linter
-
+```
 | Technology | Linters |
 |------------|---------|
 | C++ | [clang-tidy](./clang-tidy.md)|
