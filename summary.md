@@ -15,7 +15,7 @@
     * [old Supported Linters](check/configuration/supported/README.md)
     * [Configuring Linters](check/configuration/configuring-existing-linters/README.md)
       * [Clang Tidy Setup](check/configuration/configuring-existing-linters/clang-tidy-setup.md)
-    * [Linters two](check/configuration/supported/readme.md)
+    * [Supported Linters](check/configuration/supported/readme.md)
       * [Actionlint](check/configuration/supported/actionlint.md)
       * [Flake8](check/configuration/supported/flake8.md)
     * [Hold the Line](check/configuration/hold-the-line.md)
