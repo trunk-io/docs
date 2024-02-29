@@ -1,5 +1,5 @@
 ---
-description: Flake8: The Python Linter for Code Quality and Style
+description: Flake8 The Python Linter for Code Quality and Style
 ---
 
 # Flake8
