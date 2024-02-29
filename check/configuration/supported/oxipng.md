@@ -1,5 +1,5 @@
 ---
-description: Oxipng: A Multithreaded PNG Optimizer
+description: Oxipng- A Multithreaded PNG Optimizer
 ---
 
 # Oxipng

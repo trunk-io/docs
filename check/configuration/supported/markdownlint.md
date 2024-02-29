@@ -1,5 +1,5 @@
 ---
-description: Markdownlint: Quick Install Guiode
+description: Markdownlint- Quick Install Guiode
 ---
 
 # Markdownlint

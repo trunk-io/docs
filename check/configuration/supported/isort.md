@@ -1,5 +1,5 @@
 ---
-description: Isort: A Python Utility for Sorting Imports
+description: Isort- A Python Utility for Sorting Imports
 ---
 
 # Isort

@@ -1,5 +1,5 @@
 ---
-description: SVGO: A Tool for Optimizing SVG Files
+description: SVGO- A Tool for Optimizing SVG Files
 ---
 
 # SVGO

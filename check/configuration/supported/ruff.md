@@ -1,5 +1,5 @@
 ---
-description: Ruff: an extremely fast Python linter witten in Rust
+description: Ruff- an extremely fast Python linter witten in Rust
 ---
 
 # Ruff

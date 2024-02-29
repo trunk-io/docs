@@ -1,5 +1,5 @@
 ---
-description: Trufflehog: Enhance Your Code's Security
+description: Trufflehog- Enhance Your Code's Security
 ---
 
 # Trufflehog

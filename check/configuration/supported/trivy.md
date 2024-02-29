@@ -1,5 +1,5 @@
 ---
-description: Trivy: Vulnerability and Misconfiguration Scanning
+description: Trivy- Vulnerability and Misconfiguration Scanning
 ---
 
 # Trivy

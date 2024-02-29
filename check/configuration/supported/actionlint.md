@@ -1,5 +1,5 @@
 ---
-description: Actionlint: A Linter for Github Actions
+description: Actionlint- A Linter for Github Actions
 ---
 
 # Actionlint

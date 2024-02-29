@@ -1,5 +1,5 @@
 ---
-description: Gitleaks: Secure Your Codebase Against Leaks
+description: Gitleaks- Secure Your Codebase Against Leaks
 ---
 
 # Gitleaks 

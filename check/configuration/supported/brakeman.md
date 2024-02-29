@@ -1,5 +1,5 @@
 ---
-description: Brakeman: A security scanner for Ruby on Rails applications
+description: Brakeman- A security scanner for Ruby on Rails applications
 ---
 
 # Brakeman

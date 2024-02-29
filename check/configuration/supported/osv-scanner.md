@@ -1,5 +1,5 @@
 ---
-description: OSV-Scanner: Install and Configuration Guide
+description: OSV-Scanner- Install and Configuration Guide
 ---
 
 # OSV-Scanner

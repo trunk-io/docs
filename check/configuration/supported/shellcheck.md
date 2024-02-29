@@ -1,5 +1,5 @@
 ---
-description: ShellCheck: Script Analysis Tool for Shell Scripts
+description: ShellCheck- Script Analysis Tool for Shell Scripts
 ---
 
 # ShellCheck

@@ -1,5 +1,5 @@
 ---
-description: Bandit: A Security Linter for Python 
+description: Bandit- A Security Linter for Python 
 ---
 
 # Bandit
