@@ -6,7 +6,7 @@ description: Different ways to share linters between projects.
 
 ## Single Repo
 
-Linters are automatically shared with all developers for a repository using the [`.trunk/trunk.yaml` file](../reference/trunk-yaml/).  This file is committed to the repo so whenever anyone else checks out the code they will get the same configuration, and therefore the same linters. See the [Trunk YAML guide](../reference/trunk-yaml/) for more details.
+Linters are automatically shared with all developers for a repository using the [`.trunk/trunk.yaml` file](../reference/trunk-yaml.md).  This file is committed to the repo so whenever anyone else checks out the code they will get the same configuration, and therefore the same linters. See the [Trunk YAML guide](../reference/trunk-yaml.md) for more details.
 
 ## Per User Config
 

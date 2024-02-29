@@ -8,11 +8,11 @@ Leveraging [parallel mode](../#single-mode-vs.-parallel-mode) for Trunk Merge is
 
 ### Setup Trunk Merge
 
-Connect your GitHub repository with Trunk and set up Trunk Merge with [the standard instructions.](../set-up-trunk-merge.md)
+Connect your GitHub repository with Trunk and set up Trunk Merge with [the standard instructions.](./)
 
 ### Turn on Parallel Mode
 
-Next [enable Parallel Mode](../configuration.md) in the Trunk Merge UI.
+Next [enable Parallel Mode](configuration.md) in the Trunk Merge UI.
 
 <figure><img src="../../.gitbook/assets/enable-parallel-mode" alt="screenshot of Trunk Merge configuration screen"><figcaption><p>Enabling Parallel Mode</p></figcaption></figure>
 

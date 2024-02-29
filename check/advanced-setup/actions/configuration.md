@@ -4,7 +4,7 @@ description: enabling and writing your own actions
 
 # Configuration
 
-Actions are defined and enabled in the `actions` section of [`trunk.yaml`](../../reference/trunk-yaml/).
+Actions are defined and enabled in the `actions` section of [`trunk.yaml`](https://github.com/trunk-io/gitbook/blob/main/check/reference/trunk-yaml/README.md).
 
 Here is an example of the actions section of `trunk.yaml`. If you are curious what your resolved configuration for actions looks like, run `trunk config print`.
 
@@ -50,7 +50,7 @@ The command will implicitly run relative to your workspace, but you can also spe
 
 We sandbox action executions and allow you to control the runtime. You can do this by specifying a `runtime` and `packages_file`.
 
-You can specify one of our built-in runtimes (`node`, `python`, ...) or a system runtime that you define. See the [runtimes documentation](../../reference/trunk-yaml/#runtimes) for more information.
+You can specify one of our built-in runtimes (`node`, `python`, ...) or a system runtime that you define. See the [runtimes documentation](https://github.com/trunk-io/gitbook/blob/main/check/reference/trunk-yaml/README.md#runtimes) for more information.
 
 For the `python` and `node` runtimes, we additionally provide the ability to install a requirements file like `requirements.txt` or `package.json`.
 
