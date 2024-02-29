@@ -28,7 +28,7 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 <div data-full-width="true">
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Trunk Check identifying a security issue in one of Trunk's own repositories</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption><p>Trunk Check identifying a security issue in one of Trunk's own repositories</p></figcaption></figure>
 
 </div>
 

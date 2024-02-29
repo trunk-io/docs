@@ -4,7 +4,7 @@ description: Overview of Trunk Check's supported linters and configuration
 
 # Linters
 
-Trunk Check supports over [100 different linters](supported-linters.md) and formatters out of the box. The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml/#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
+Trunk Check supports over [100 different linters](supported-linters.md) and formatters out of the box. The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml.md#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -73,7 +73,7 @@ To configure **what** a linter does, you will continue to use the linter's own c
 
 If you'd like, Trunk also supports migrating any linter configurations from the root of your repository into a `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run. Note that if you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.
 
-If you find that you want to tweak how Trunk runs a given linter, you may want to consult the documentation on [overriding defaults](../reference/trunk-yaml/#overriding-defaults) and [the various linter settings](custom-linters/); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
+If you find that you want to tweak how Trunk runs a given linter, you may want to consult the documentation on [overriding defaults](../reference/trunk-yaml.md#overriding-defaults) and [the various linter settings](custom-linters/); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
 
 ```yaml
 lint:
@@ -136,13 +136,13 @@ lint:
 
 #### Runtime versioning
 
-By default Trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml/#runtimes).
+By default Trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml.md#runtimes).
 
 ### Ignoring Issues and Files
 
 By default Check will ignore issues in files which are listed in the `.gitignore` file.&#x20;
 
-If you want to ignore groups of files, such as generated code, you can do that with the [`lint.ignore`](./#ignoring-files) section of your `.trunk/trunk.yaml` file. ex:
+If you want to ignore groups of files, such as generated code, you can do that with the [`lint.ignore`](https://github.com/trunk-io/gitbook/blob/main/check/configuration/README.md#ignoring-files) section of your `.trunk/trunk.yaml` file. ex:
 
 ```yaml
 lint:

@@ -1,6 +1,6 @@
 ---
 description: >-
-  An overview of Trunk Merge, a parallel merge queue to speed up developer
+  Overview of Trunk Merge, a parallel merge queue to speed up developer
   workflows.
 ---
 
