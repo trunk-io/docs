@@ -118,6 +118,8 @@ global linter settings, see [Lint Config](reference.md#lint-config)
 
 `error_codes` is the list of error codes this linter will return when it hit an internal failure and couldn't generate results.
 
+## `direct_configs`
+
 `direct_configs` __If you have one of these config files, you're definitely using this linter__
 
 `affects_cache`: the list of files that affect the cache results of this linter
@@ -203,9 +205,21 @@ linter applies to.
 
 `target`: optional string, what target does this run on
 
-`suggest_if`, How to determine if this linter should be auto-enabled/recommended.
 
-`supported_platforms`, Platform constraint. If incompatible, renders a notice.
+## `suggest_if`
+
+How to determine if this linter should be auto-enabled/recommended. Possible 
+values are `never`, `config_present`, and `files_present`.
+
+* `config_present` will auto-enable a linter if Trunk sees any [`direct_config`](#direct_configs) for it .
+* `files_present` will auto-enable a linter if Trunk sees any file type that it operates on.
+* `never` will never auto-enable this linter.
+
+Trunk curates the values of `suggest_if` for all linters in the plugins repo.
+
+## `supported_platforms`
+
+Platform constraint. If incompatible, renders a notice.
 
 `tools`, string list
 
