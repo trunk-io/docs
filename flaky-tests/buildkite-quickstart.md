@@ -1,9 +1,9 @@
 # Buildkite Quickstart
 
-You can use the analytics uploader binary to upload test your test results.
+You can use the analytics test uploader binary to upload test your test results.
 
 {% hint style="info" %}
-The trunk analytics uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io).
+The trunk analytics test uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io).
 {% endhint %}
 
 1. Create a Buildkite workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produces a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format.
@@ -15,7 +15,7 @@ For the best results, you'll need to validate that your test invocation doesn't 
 ```
 
 steps:
-  - label: "Installing Trunk"
+  - label: "Installing Trunk Analytics Uploader"
     commands:
       - "curl -fsSL --retry 3 https://trunk.io/releases/analytics-cli/latest -o ./trunk-analytics-uploader"
       - "chmod +x ./trunk-analytics-uploader"
@@ -44,6 +44,4 @@ The `--junit-paths` argument accepts the xml file locations as both a list of gl
 
 ***
 
-The uploader action uploads the following environment variables from Buildkite:
-
-**Buildkite**: `BUILDKITE_BRANCH`, `BUILDKITE_BUILD_ID`, `BUILDKITE_BUILD_NUMBER`, `BUILDKITE_BUILD_URL`, `BUILDKITE_COMMIT`, `BUILDKITE_JOB_ID`, `BUILDKITE_LABEL`, `BUILDKITE_ORGANIZATION_SLUG`, `BUILDKITE_PIPELINE_ID`, `BUILDKITE_PIPELINE_SLUG`, `BUILDKITE_PROJECT_SLUG`, `BUILDKITE_PULL_REQUEST`, `BUILDKITE_PULL_REQUEST_BASE_BRANCH`, `BUILDKITE_PULL_REQUEST_REPO`, `BUILDKITE_REBUILT_FROM_BUILD_ID`, `BUILDKITE_REBUILT_FROM_BUILD_NUMBER`, `BUILDKITE_REPO`, `BUILDKITE_RETRY_COUNT`, `BUILDKITE_TAG`.
+If you're interested in understanding the specifics of this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
