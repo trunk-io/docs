@@ -6,11 +6,11 @@ You can use the analytics uploader binary to upload test your test results.
 The trunk analytics uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io).
 {% endhint %}
 
-1. Create a CI job that runs the tests you want to monitor. In order for us to use the results, these tests **must** produces a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format.
+1. Create a Buildkite workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produces a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format.
 {% hint style="info" %}
 For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
-2. Store your trunk token in a [secret](https://buildkite.com/docs/pipelines/secrets) name `TRUNK_TOKEN`
+2. Store your trunk token in a [secret](https://buildkite.com/docs/pipelines/secrets) named `TRUNK_TOKEN`.
 3. Update your Buildkite workflow to download and run the test uploader binary after you've executed your tests:
 ```
 
