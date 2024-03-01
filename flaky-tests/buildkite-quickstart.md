@@ -10,37 +10,29 @@ The trunk analytics test uploader currently only supports Linux x64. If you have
 {% hint style="info" %}
 For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
-2. Store your trunk token in a [secret](https://buildkite.com/docs/pipelines/secrets) named `TRUNK_TOKEN`.
-3. Update your Buildkite workflow to download and run the test uploader binary after you've executed your tests:
-```
+3. Find your organization slug. First you'll need to navigate to [app.trunk.io](http://app.trunk.io). Once logged in, you will be automatically redirected to a URL similar to [https://app.trunk.io/**my-org-slug**/repo-owner/repo-name/ci-analytics](https://app.trunk.io/my-org-slug/repo-owner/repo-name/ci-analytics). 
+3. Store your trunk token in a [secret](https://buildkite.com/docs/pipelines/secrets) named `TRUNK_TOKEN`. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View."
+5. Update your Buildkite workflow to download and run the test uploader binary after you've run your tests:
 
+```
 steps:
-  - label: "Installing Trunk Analytics Uploader"
+  - label: "Run tests"
+    command: echo "hello world"
+    key: tests
+  - label: "Upload test results"
     commands:
       - "curl -fsSL --retry 3 https://trunk.io/releases/analytics-cli/latest -o ./trunk-analytics-uploader"
       - "chmod +x ./trunk-analytics-uploader"
-    key: download
-
-  - label: "Run tests"
-    command: <YOUR TESTS HERE>
-    key: tests
-    depends_on: download_uploader
-
-  - label: "Upload test results"
-    command: "./trunk-analytics-uploader upload --junit-paths <JUNIT PATHS> --org-url-slug <ORG SLUG> --token $$TRUNK_TOKEN"
+      - "./trunk-analytics-uploader upload --junit-paths *.xml --org-url-slug trunk --token $$TRUNK_TOKEN"
     key: upload
     depends_on:
        - tests
-       - download_uploader
 ```
 
 {% hint style="info" %}
 The `trunk-analytics-uploader` binary should be run from the repository root. If you need to run the binary from another location, you must provide the path to the repo root using the `--repo-root`argument.
 The `--junit-paths` argument accepts the xml file locations as both a list of globs or absolute paths.
 {% endhint %}
-
-3. To find your organization slug, you can open [app.trunk.io](http://app.trunk.io). Once logged in, you should be automatically redirected to a URL like [https://app.trunk.io/**my-org-slug**/repo-owner/repo-name/ci-analytics](https://app.trunk.io/my-org-slug/repo-owner/repo-name/ci-analytics).
-4. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View."
 
 ***
 
