@@ -1,6 +1,8 @@
 # Buildkite Quickstart
 
-You can use the analytics test uploader binary to upload test your test results.
+### Getting Started
+
+You can use the analytics test uploader within your Buildkite workflows to upload test your test results.
 
 {% hint style="info" %}
 The trunk analytics test uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io).
@@ -13,6 +15,8 @@ For the best results, you'll need to validate that your test invocation doesn't 
 3. Find your organization slug. First you'll need to navigate to [app.trunk.io](http://app.trunk.io). Once logged in, you will be automatically redirected to a URL similar to [https://app.trunk.io/**my-org-slug**/repo-owner/repo-name/ci-analytics](https://app.trunk.io/my-org-slug/repo-owner/repo-name/ci-analytics). 
 3. Store your trunk token in a [secret](https://buildkite.com/docs/pipelines/secrets) named `TRUNK_TOKEN`. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View."
 5. Update your Buildkite workflow to download and run the test uploader binary after you've run your tests:
+
+### Sample Buildkite workflow steps:
 
 ```
 steps:
@@ -36,4 +40,4 @@ The `--junit-paths` argument accepts the xml file locations as both a list of gl
 
 ***
 
-If you're interested in understanding the specifics of this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
+If you're interested in better understanding this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).

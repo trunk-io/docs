@@ -71,4 +71,4 @@ jobs:
 ```
 
 &#x20;\
-If you're interested in understanding the specifics of this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
+If you're interested in better understanding this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
