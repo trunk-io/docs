@@ -4,7 +4,7 @@ description: ESLint
 
 # ESLint
 
-ESLint is a linter for JavaScript.
+ESLint is a linter for Javascript, JSON and Typescript.
 
 You can enable the ESLint plugin with
 

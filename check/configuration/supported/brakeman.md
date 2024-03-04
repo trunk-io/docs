@@ -4,7 +4,7 @@ description: Brakeman- A security scanner for Ruby on Rails applications
 
 # Brakeman
 
-Brakeman is a linter for Security.
+Brakeman is a linter for Ruby.
 
 You can enable the Brakeman plugin with
 

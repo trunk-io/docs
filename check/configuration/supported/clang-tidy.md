@@ -4,7 +4,7 @@ description: clang-tidy
 
 # clang-tidy
 
-clang-tidy is a linter for C++.
+clang-tidy is a linter for Protobuf and C, C++.
 
 You can enable the clang-tidy plugin with
 

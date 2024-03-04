@@ -1,10 +1,10 @@
 ---
-description: golangcI-lint
+description: golangci-lint
 ---
 
 # golangci-lint
 
-golangci-lint is a linter for infra.
+golangci-lint is a linter for Go.
 
 You can enable the golangci-lint plugin with
 

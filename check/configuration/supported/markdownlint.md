@@ -4,7 +4,7 @@ description: Markdownlint- Quick Install Guiode
 
 # Markdownlint
 
-Markdownlint is a linter for markdown.
+Markdownlint is a linter for Markdown.
 
 You can enable the Markdownlint plugin with
 

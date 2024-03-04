@@ -4,7 +4,7 @@ description: SVGO- A Tool for Optimizing SVG Files
 
 # SVGO
 
-SVGO is a linter for nodejs.
+SVGO is a linter for SVG.
 
 You can enable the SVGO plugin with
 

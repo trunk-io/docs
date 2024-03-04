@@ -4,7 +4,7 @@ description: Checkov
 
 # Checkov
 
-Checkov is a linter for Security.
+Checkov is a linter for Cloudformation, Security and Terraform.
 
 You can enable the Checkov plugin with
 

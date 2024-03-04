@@ -4,7 +4,7 @@ description: Clippy
 
 # Clippy
 
-Clippy is a linter for rust.
+Clippy is a linter for Rust.
 
 You can enable the Clippy plugin with
 

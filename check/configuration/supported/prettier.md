@@ -4,7 +4,7 @@ description: Prettier - Code Formatter
 
 # Prettier
 
-Prettier is a formatter for JavaScript.
+Prettier is a formatter for CSS, SCSS, Javascript, JSON, Markdown, Typescript, GraphQL and YAML.
 
 You can enable the Prettier plugin with
 

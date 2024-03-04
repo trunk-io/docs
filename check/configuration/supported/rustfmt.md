@@ -4,7 +4,7 @@ description: rustfmt
 
 # rustfmt
 
-rustfmt is a formatter for rust.
+rustfmt is a formatter for Rust.
 
 You can enable the rustfmt plugin with
 

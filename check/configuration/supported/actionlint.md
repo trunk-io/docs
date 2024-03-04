@@ -4,7 +4,7 @@ description: Actionlint- A Linter for Github Actions
 
 # Actionlint
 
-Actionlint is a linter for infra.
+Actionlint is a linter for GitHub.
 
 You can enable the Actionlint plugin with
 

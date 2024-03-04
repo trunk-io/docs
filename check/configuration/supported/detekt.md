@@ -4,7 +4,7 @@ description: Detekt
 
 # Detekt
 
-Detekt is a linter for Java.
+Detekt is a linter for Kotlin.
 
 You can enable the Detekt plugin with
 

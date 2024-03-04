@@ -4,7 +4,7 @@ description: Oxipng- A Multithreaded PNG Optimizer
 
 # Oxipng
 
-Oxipng is a formatter for assets.
+Oxipng is a formatter for PNG.
 
 You can enable the Oxipng plugin with
 

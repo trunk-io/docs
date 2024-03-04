@@ -4,7 +4,7 @@ description: SQLFluff
 
 # SQLFluff
 
-SQLFluff is a linter for infra.
+SQLFluff is a linter for SQL.
 
 You can enable the SQLFluff plugin with
 

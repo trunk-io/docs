@@ -4,7 +4,7 @@ description: Yamllint
 
 # Yamllint
 
-Yamllint is a linter for yaml.
+Yamllint is a linter for YAML.
 
 You can enable the Yamllint plugin with
 

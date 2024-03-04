@@ -4,7 +4,7 @@ description: Terraform CLI
 
 # Terraform
 
-Terraform is a formatter for infra.
+Terraform is a formatter for Terraform.
 
 You can enable the Terraform plugin with
 

@@ -4,7 +4,7 @@ description: ShellCheck- Script Analysis Tool for Shell Scripts
 
 # ShellCheck
 
-ShellCheck is a linter for shell.
+ShellCheck is a linter for Bash.
 
 You can enable the ShellCheck plugin with
 

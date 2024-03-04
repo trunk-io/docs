@@ -4,7 +4,7 @@ description: Ansible-Lint
 
 # Ansible-lint
 
-Ansible-lint is a linter for infra.
+Ansible-lint is a linter for Ansible.
 
 You can enable the Ansible-lint plugin with
 
