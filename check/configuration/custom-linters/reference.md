@@ -3,9 +3,9 @@
 
 Lint configuration is done in the `lint` section of the trunk.yaml file. There are three parts:
 
-* Lint Config
-* Linter Definition
-* Linter Command Definition.
+* [Lint Config](#lint-config)
+* [Linter Definition](#lint-config)
+* [Linter Command Definition](#linter-command-definition).
 
 The top part represents the configuration of overall linting. Inside that
 is the definition of individual linters. And inside *that* is the definition of the particular
@@ -102,7 +102,7 @@ The `lint` section represents the configuration of all linters. This is where yo
 
 ## Linter Definition
 
-The linter definition is under `lint.definitions`.  The following
+The definition of a particular linter is put under `lint.definitions`.  The following
 properties define the settings of a *particular linter*, not for all linters. For
 global linter settings, see [Lint Config](reference.md#lint-config)
 
@@ -121,15 +121,19 @@ global linter settings, see [Lint Config](reference.md#lint-config)
 
 __If you have one of these config files, you're definitely using this linter__
 
+### `affects_cache`
+
 `affects_cache`: the list of files that affect the cache results of this linter.
 
-`good_without_config`: optional boolean. Indicates whether this linter is recommended without the user tuning its configuration. Prefer `suggest_if`.
+### `good_without_config`
 
-### files
-`files` is a list of file types listed in the `lint.files` section that this linter applies to. 
+`good_without_config`: *optional boolean*. Indicates whether this linter is recommended without 
+the user tuning its configuration. Prefer `suggest_if`.
 
 ### `files`
-`files` File configs for this command. If absent, will use the whole linter's `file_configs`. Note: this defines the entire list of file configs for this command, rather than appending to those of the entire lint command.
+
+`files` is a list of file types listed in the `lint.files` section that this linter applies to. 
+
 
 ### `include_lfs`
 
@@ -141,73 +145,142 @@ __If you have one of these config files, you're definitely using this linter__
 
 [//]: # (`disable_upstream` :boolean, indicates whether or not we support comparing against the upstream version of this file.  **should we expose this?**)
 
+### `symlinks`
+
 `symlinks`: a list of symlinks to be created when using sandboxing.
 
-`environment`: a list of runtime variables used when running the linter
+### `environment`
 
-`is_recommended`: boolean, indicating whether init should try to enable this linter. Prefer [`suggest_if`](#suggest_if)
+`environment`: a list of runtime variables used when running the linter.
 
-`run_linter_from`: indicates whether to set current working directory to WORKSPACE root, or the target files folder when run. Prefer `run_from` at the command level.
+### `is_recommended`
+
+`is_recommended`: *boolean*. Indicating whether `trunk init` should try to enable this linter. 
+Prefer [`suggest_if`](#suggest_if)
+
+### `run_linter_from`
+
+`run_linter_from`: indicates whether to set current working directory to WORKSPACE root, or the 
+target files folder when run. Prefer `run_from` at the command level.
 
 `include_scanner_type`: which include scanner to use, if any.
 
 ### `formatter`
+
 `formatter`: boolean. Indicates whether this is a formatter and should be included in `trunk fmt`
+
+### `allow_empty_files`
 
 `allow_empty_files`: boolean. Indicates to skip linting empty files for this linter.
 
+### `runtime`
+
 `runtime`: RuntimeType, Which runtime, if any, to require to be setup for this linter.
+
+### `package`
 
 `package`: string, What primary package to install, if using a package manager runtime
 
+### `extra_packages`
+
 `extra_packages`: list of strings, Extra packages to install, versions are optional
 
-`download`: string, download url. You must provide either runtime + packages or download, not both. Using runtimes is preferred.
+### `download`
+
+`download`: *string*. The download url. You must provide either runtime + packages or download, not both. Using runtimes is preferred. [See Runtimes](../../advanced-setup/runtimes.md)
 
 `issue_url_format`: string, a format string that accepts issue codes for links to issues docs.
 
-`run_from_root_target`: string, Walk up to find this file to detect the run from directory. Prefer `run_from` at the command level.
+### `run_from_root_target`
 
-`hold_the_line`, optional boolean, whether hold-the-line will be done for this linter or not.
+`run_from_root_target`: *string*. Walk up to find this file to detect the run from directory. 
+Prefer `run_from` at the command level.
 
-`read_output_from`,  Tell the parser where to expect output from for reading (stdout, stderr, tmp file)
+### `hold_the_line`
+
+`hold_the_line`: *optional boolean*. Whether hold-the-line will be done for this linter or not.
+
+### `read_output_from`
+
+`read_output_from`,  Tell the parser where to expect output from for reading (stdout, stderr, 
+tmp file). [See Output Sources](output-types.md#output-sources)
+
+### `prepare_command`
 
 `prepare_command`, ex. `[tflint, --init]`
 
 [//]: # (`version`, **???** )
 
-`known_good_version`, The version init inits with. If not present it will query the version from its runtime or use the default version from the download.
+### `known_good_version`
 
-`version_command`,  Version check commands
+`known_good_version`: The version `trunk init` inits with. If not present Trunk will query the 
+version from its runtime or use the default version from the download.
 
-`enabled`, optional boolean, Whether this linter is enabled
+### `version_command`
 
-`batch`, optional boolean, Combine multiple files into the same execution.
+`version_command`:  Version check commands
+
+### `enabled`
+
+`enabled`: *optional boolean*. Whether this linter is enabled.
+
+### `batch`
+
+`batch`: *optional boolean*. Combine multiple files into the same execution.
+
+### `run_when`
 
 `run_when`, Should this linter be run only in CI? (or locally, vscode, monitor)
 
-`in_place`, optional boolean, Applies to formatters - does the formatter rewrite the file as opposed to reading its contents from stdin and outputting formatted contents to stdout?
+### `in_place`
 
-`run_timeout`, duration string, describes how long a linter can run before timing out.
+`in_place`: *optional boolean*. Applies to formatters - does the formatter rewrite the file as 
+opposed to reading its contents from STDIN and outputting formatted contents to STDOUT?
 
-`disabled`, optional boolean, Whether linter is actively disabled (will not be recommended) and will not run (overrides enabled).
+### `run_timeout`
 
-`commands`, commands exposed by this linter
+`run_timeout`: *duration string*. Describes how long a linter can run before timing out. 
+[See timeouts](../readme.md#timeout)
 
-`deprecated`, string, Deprecated information (set when linter is deprecated)
+### `disabled`
 
-`known_bad_versions`, string list, Versions of a linter that are known to be broken or not work with trunk. We will fallback to a known_good_version if init or upgrade chooses something in this set.
+`disabled`: *optional boolean*: Whether linter is actively disabled (and will not be recommended)
+and will not run (overrides enabled).
 
-`plugin_url`, string, a plugin url for reporting issues.
+### `commands`
+`commands`: Commands exposed by this linter. [See Linter Command Definition](#linter-command-definition)
 
-`query_compile_commands`, optional boolean
+### `deprecated`
 
-`idempotent`, optional boolean, Indicates whether or not a linter is idempotent w.r.t. config + source code inputs.  e.g. semgrep fetches rules from the internet, so it's not idempotent . If set, causes cache_ttl to default to 24h
+`deprecated`: *string*. Deprecated information (set when linter is deprecated)
+
+### `known_bad_versions`
+
+`known_bad_versions`: *string list*. Versions of a linter that are known to be broken 
+and should not be run with Trunk. We will fall back to a `known_good_version` 
+if init or upgrade chooses something in this set.
+
+### `plugin_url`
+
+`plugin_url`: *string*, a plugin url for reporting issues.
+
+### `query_compile_commands`
+
+`query_compile_commands`, *optional boolean*
+
+### `idempotent`
+
+`idempotent`: *optional boolean*. Indicates whether a linter is idempotent w.r.t. config + 
+source code inputs.  e.g. semgrep fetches rules from the internet, so it's not idempotent . If 
+set, causes cache_ttl to default to 24h
+
+### `cache_ttl`
 
 `cache_ttl`, duration string, How long cached results are kept before they expire
 
-`target`: optional string, what target does this run on
+### `target`
 
+`target`: optional string, what target does this run on
 
 ### `suggest_if`
 
@@ -218,15 +291,23 @@ values are `never`, `config_present`, and `files_present`.
 * `files_present` will auto-enable a linter if Trunk sees any file type that it operates on.
 * `never` will never auto-enable this linter.
 
-Trunk curates the values of `suggest_if` for all linters in the plugins repo.
+Trunk curates the values of `suggest_if` for all linters in the [plugins](https://github.com/trunk-io/plugins) repo.
 
 ### `supported_platforms`
 
 Platform constraint. If incompatible, renders a notice.
 
+### `tools`
+
 `tools`, string list
 
-`main_tool`, string, The linter's main tool. This should be the tool that provides the binary for the linter. It will generally be the same as the linter's name, but may differ if the linter is a wrapper. The main tool is used to determine the linter's version.
+### `main_tool`
+
+`main_tool`, *string*. The linter's main tool. This should be the tool that provides the binary 
+for the linter. It will generally be the same as the linter's name, but may differ if the linter 
+is a wrapper. The main tool is used to determine the linter's version.
+
+### `path_format`
 
 `path_format`, Whether to use the platform-specific paths or generic "/". Default native.
 
@@ -235,12 +316,15 @@ Platform constraint. If incompatible, renders a notice.
 ## Linter Command Definition
 
 The linter command definitions are defined in `lint.linter.commands`. A single linter can have 
-multiple commands if it is used in different ways.
+multiple commands if it is used in different ways.  
 
+*Note:*. If you define the executable to run here (the command definition), then you should *not*
+define it also in the linter definition. Defining it here as a command is preferred.
 
-[//]: # (**action: if here and in linter def, remove from linter def**)
+### `name`
 
-`name` : a unique name for this command (some tools expose multiple commands, format, lint, analyze, etc.).
+`name`: *string*. A unique name for this command (some tools expose multiple commands, format, 
+lint, analyze, etc.).
 
 ### `output`
 
@@ -256,9 +340,9 @@ multiple commands if it is used in different ways.
 
 [//]: # (TODO: link to examples in main docs)
 
-### `files`:
+### `files`
 
-`files`:  File types that this linter operates on. 
+`files` File configs for this command. If absent, will use the whole linter's `file_configs`. Note: this defines the entire list of file configs for this command, rather than appending to those of the entire lint command.
 
 [//]: # (TODO: link to example)
 
