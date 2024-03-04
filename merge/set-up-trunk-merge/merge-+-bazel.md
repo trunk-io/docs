@@ -58,5 +58,5 @@ jobs:
 
 If your Bazel setup is not in the root of your repo then you can add `bazel-workspace-path: your_workspace_path` just below the `trunk-token`. Commit the new workflow back to your repo. to make it active.&#x20;
 
-Now you can [submit a new pull request and test it](broken-reference). **Success!**
+Now you can [submit a new pull request and test it](../reference.md#submitting-and-cancelling-pull-requests). **Success!**
 

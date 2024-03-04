@@ -71,21 +71,4 @@ jobs:
 ```
 
 &#x20;\
-The uploader action uploads the following data from your workflow:
-
-1. All files matching provided glob patterns (absolute or relative to the repository root).
-2. Repository info: url, head branch, head commit sha, head commmit time.
-3. Github Action environment variables:
-   * `GITHUB\_BASE\_REF`
-   * `GITHUB\_ACTIONS`
-   * `GITHUB\_ACTOR`
-   * `GITHUB\_HEAD\_REF`
-   * `GITHUB\_REPOSITORY`
-   * `GITHUB\_REF`
-   * `GITHUB\_RUN\_ID`
-   * `GITHUB\_SERVER\_URL`
-   * `GITHUB\_RUN\_NUMBER`
-   * `GITHUB\_WORKFLOW`
-   * `GITHUB\_EVENT\_NAME`
-   * `GITHUB\_RUN\_ATTEMPT`
-   * `GITHUB\_SHA`
+If you're interested in better understanding this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
