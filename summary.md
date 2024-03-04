@@ -19,7 +19,7 @@
     * [Ignoring Issues and Files](check/configuration/ignoring-issues.md)
     * [Skipping Checks (CI)](check/configuration/skipping-checks.md)
     * [Sharing Linters](check/configuration/sharing-linters.md)
-    * [Custom Linters](check/configuration/custom-linters/readme.md)
+    * [Integrating Linters](check/configuration/custom-linters/readme.md)
       * [Commands](check/configuration/custom-linters/commands.md)
       * [Output Types](check/configuration/custom-linters/output-types.md)
       * [Dependencies](check/configuration/custom-linters/dependencies.md)
