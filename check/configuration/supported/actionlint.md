@@ -15,7 +15,7 @@ trunk check enable actionlint
 # Settings
 
 Actionlint uses the same config files as the 
-upstream [Actionlint]() project, so you can continue to use any
+upstream [Actionlint](https://github.com/rhysd/actionlint) project, so you can continue to use any
 existing configuration files (ex: `.github/actionlint.yaml`, `.github/actionlint.yml`).
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/actionlint) if your project does not already have one,

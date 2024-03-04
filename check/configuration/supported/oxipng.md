@@ -15,7 +15,7 @@ trunk check enable oxipng
 # Settings
 
 Oxipng uses the same config files as the 
-upstream [Oxipng]() project, so you can continue to use any
+upstream [Oxipng](https://github.com/shssoichiro/oxipng) project, so you can continue to use any
 existing configuration files (ex: ${direct_configs}).
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/oxipng) if your project does not already have one,

@@ -15,7 +15,7 @@ trunk check enable checkov
 # Settings
 
 Checkov uses the same config files as the 
-upstream [Checkov]() project, so you can continue to use any
+upstream [Checkov](https://github.com/bridgecrewio/checkov) project, so you can continue to use any
 existing configuration files (ex: `.checkov.yml`, `.checkov.yaml`).
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/checkov) if your project does not already have one,

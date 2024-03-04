@@ -15,7 +15,7 @@ trunk check enable brakeman
 # Settings
 
 Brakeman uses the same config files as the 
-upstream [Brakeman]() project, so you can continue to use any
+upstream [Brakeman](https://github.com/presidentbeef/brakeman) project, so you can continue to use any
 existing configuration files (ex: `brakeman.ignore`).
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/brakeman) if your project does not already have one,

@@ -15,7 +15,7 @@ trunk check enable ruff
 # Settings
 
 Ruff uses the same config files as the 
-upstream [Ruff]() project, so you can continue to use any
+upstream [Ruff](https://github.com/astral-sh/ruff) project, so you can continue to use any
 existing configuration files (ex: `ruff.toml`).
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/ruff) if your project does not already have one,

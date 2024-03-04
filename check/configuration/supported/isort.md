@@ -15,7 +15,7 @@ trunk check enable isort
 # Settings
 
 Isort uses the same config files as the 
-upstream [Isort]() project, so you can continue to use any
+upstream [Isort](https://pycqa.github.io/isort/) project, so you can continue to use any
 existing configuration files (ex: `.isort.cfg`).
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/isort) if your project does not already have one,
