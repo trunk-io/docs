@@ -4,7 +4,7 @@ description: enabling and writing your own actions
 
 # Configuration
 
-Actions are defined and enabled in the `actions` section of [`trunk.yaml`](../../reference/trunk-yaml/).
+Actions are defined and enabled in the `actions` section of [`trunk.yaml`](https://github.com/trunk-io/gitbook/blob/main/check/reference/trunk-yaml/README.md).
 
 Here is an example of the actions section of `trunk.yaml`. If you are curious what your resolved configuration for actions looks like, run `trunk config print`.
 
@@ -50,13 +50,24 @@ The command will implicitly run relative to your workspace, but you can also spe
 
 We sandbox action executions and allow you to control the runtime. You can do this by specifying a `runtime` and `packages_file`.
 
-You can specify one of our built-in runtimes (`node`, `python`, ...) or a system runtime that you define. See the [runtimes documentation](../../reference/trunk-yaml/#runtimes) for more information.
+You can specify one of our built-in runtimes (`node`, `python`, ...) or a system runtime that you define. See the [runtimes documentation](https://github.com/trunk-io/gitbook/blob/main/check/reference/trunk-yaml/README.md#runtimes) for more information.
 
 For the `python` and `node` runtimes, we additionally provide the ability to install a requirements file like `requirements.txt` or `package.json`.
 
 ### Triggers
 
-You may run an action manually by running `trunk run <action_id> <args>` or `trunk actions run <action_id> <args>`. However, you can also provide a set of triggers so that actions run in response to some event. They are documented below.
+You can run actions manually, or you can also provide a set of triggers so that actions run in response to some event. They are documented below.
+
+#### Manual runs
+
+You may run an action manually by running `trunk run <action_id> <args>` or `trunk actions run <action_id> <args>`.
+
+For manually triggered runs, we support the `${@}` and `${pwd}` variables for template resolution in the `run` declaration. `${@}` will be replaced with the arguments passed to the action, and `${pwd}` will be replaced with the directory the action is triggered from.
+
+```yaml
+id: my-action
+run: echo "The action was run from ${pwd} with arguments ${@}"
+```
 
 #### Time-based triggers
 
@@ -125,6 +136,17 @@ triggers:
 ```
 
 In this case `my-action` will execute if either `foo.txt` is edited (or created), or if a file inside `bar` is edited or created.
+
+In case you need to know which file triggered the action, you can use the `${target}` variable in the `run` command.
+
+```yaml
+id: my-action
+triggers:
+  - files: [foo.txt, bar/**]
+run: echo "The file ${target} was edited"
+```
+
+If you do a bulk file modification, the `${target}` template may resolve to a space-separated list of files that were simultaneously edited.
 
 > Note: We only provide file triggers for files inside of your workspace.
 

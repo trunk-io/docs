@@ -41,7 +41,7 @@ The top of the view shows a chart of aggregate statistics for the filtered data 
 \
 If you click on one of the data buckets or points on the graph, you can Zoom into that period of data or view the underlying runs.&#x20;
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Tags**: Aggregation at the job level for GitHub workflows will implicitly shard against the 'runs-on' field of the GitHub workflow. For example, if a job was running on`ubuntu-latest` and later switched to a different runner set - a unique row will be created for each distinct runs-on match. \

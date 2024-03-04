@@ -6,7 +6,7 @@ description: Troubleshooting and FAQ
 
 ## My PR is testing in my Merge Queue but it doesn't look like my required status checks are being triggered?
 
-Solution: Most likely you did not set up the required status checks to trigger for `trunk-merge/` branches. It is also possible that your CI provider just randomly never started testing on the Trunk Merge branch, even after setting the required status checks to trigger. To assist with this, you can [configure a testing timeout](configuration.md#timeout-for-tests-to-complete).
+Solution: Most likely you did not set up the required status checks to trigger for `trunk-merge/` branches. It is also possible that your CI provider just randomly never started testing on the Trunk Merge branch, even after setting the required status checks to trigger. To assist with this, you can [configure a testing timeout](set-up-trunk-merge/configuration.md#timeout-for-tests-to-complete).
 
 ## My PR appears to be ready but isn't entering the Merge Queue?
 
@@ -32,5 +32,9 @@ By default, both [dependabot](https://docs.github.com/en/code-security/dependabo
 
 1. Both dependabot and renovate can be configured to not automatically rebase, while renovate can specifically be configured to only rebase if there's a merge conflict ([dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#rebase-strategy), [renovate](https://docs.renovatebot.com/configuration-options/#rebasewhen))
 2. Their PRs can be manually merged, and anything currently in the merge queue will restart with those merged changes
+
+## I have an emergency PR that needs to merge right now. How can I do that?
+
+To merge a PR in the event of an emergency, you can just merge the PR directly though GitHub as you normally would. The merge queue will restart everything it is currently testing to account for the new head of the merge branch.
 
 We currently have other features planned to help with this, so stay tuned!

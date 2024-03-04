@@ -76,7 +76,7 @@ trunk actions history <action-name>
 
 Which will print out the last 10 executions including timestamps of the specified action \\
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>trunk actions history for git-lfs action</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption><p>trunk actions history for git-lfs action</p></figcaption></figure>
 
 ### Uninstalling
 
