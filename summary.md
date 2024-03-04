@@ -12,7 +12,7 @@
       * [Upload Trunk Check Results](check/check-cloud-ci-integration/continuous-integration/upload-trunk-check-results.md)
   * [Linters](check/configuration/README.md)
     * [Overview](check/configuration/README.md)
-    * [Supported Linters](check/configuration/supported/README.md)
+    * [Supported Linters](check/configuration/supported/readme.md)
       * [Actionlint](check/configuration/supported/actionlint.md)
       * [Ansible-lint](check/configuration/supported/ansible-lint.md)
       * [Bandit](check/configuration/supported/bandit.md)
