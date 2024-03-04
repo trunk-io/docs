@@ -68,7 +68,7 @@ The `lint` section represents the configuration of all linters. This is where yo
 
 `ignore`: files to be [ignored by linters](../ignoring-issues.md#ignoring-multiple-files)
 
-`threshold`: where you specify the blocking behavior of linters. The [threshold](../readme.md#blocking-thresholds) for whether an error from a linter should block commits or not.
+`threshold`: where you specify the blocking behavior of linters. The [threshold](../#blocking-thresholds) for whether an error from a linter should block commits or not.
 
 [//]: # (`landing_mode`: landing mode configuration)
 
