@@ -50,9 +50,12 @@ The `lint` section represents the configuration of all linters. This is where yo
 * list required `runtimes`, `downloads`, `environments` ,
 * and additional cross-linter settings
 
+### `files`
 
 `files`: Definitions of filetypes. See [defining file types](./reference.md#defining-file-types)
 
+### `runtimes
+`
 `runtimes`: Node, python, cargo, etc. Used to define or override a runtime environment for package management. 
 
 [//]: # (`linters`: maps a linter name to it's corresponding linter definition)
@@ -243,37 +246,90 @@ multiple commands if it is used in different ways.
 
 `output`: which type of output this linter produces. [See Output Types](output-types.md).
 
+### `prepare_run`
+
 `prepare_run`: an extra command to run before running a linter.
 
-`run`: The command to run a linter. **link to examples in main docs**
+### `run`
 
-`files`:  File types that this linter operates on. **link to example**
+`run`: The command to run a linter. 
 
-`run_when`: Should this command be run only in CI? One of cli,lsp,monitor,ci
+[//]: # (TODO: link to examples in main docs)
 
-`sucess_codes:` List of exit codes that indicates linter ran successfully. **unrelated to whether or not there were issues reported by the linter**
+### `files`:
 
-`error_codes` List of exit codes this linter will return when it hit an internal failure and couldn't generate results.  **you need either success codes or error codes but not both**
+`files`:  File types that this linter operates on. 
 
-`no_issues_codes`: List of exit codes that Trunk will just assume there were no issues without parsing the output.
+[//]: # (TODO: link to example)
 
-`read_output_from`: Tell parser where to expect output from for reading **check values** (stdout, stderr, tmp_file) **link to output docs**
+### `run_when`
 
-`run_from`: What current working directory to run the linter from. **link to section with more examples**.
+`run_when`: Should this command be run only in CI? One of `cli`, `lsp`, `monitor`, or `ci`.
 
-`batch`: optional boolean, Combine multiple files into the same execution.
+### `success_codes`
 
-`in_place`: optional boolean, Applies to formatters - does the formatter rewrite the file as opposed to reading its contents from stdin and outputting formatted contents to stdout?
+`sucess_codes:` List of exit codes that indicates linter ran successfully. **Unrelated to 
+whether or not there were issues reported by the linter**
 
-`sandbox_type`: How to create the sandbox if it needs to be created
+### `error_codes`
 
-`allow_empty_files`: optional boolean. Skip linting empty files for this linter. Will assume there are no linters if the file is empty.
+`error_codes`: List of exit codes this linter will return when it hit an internal failure and 
+couldn't generate results.  **A linter should set either success codes or error codes, but not both.**
 
-`std_in`: optional boolean, Should the command be fed the file on standard input?
+### `no_issues_codes`
 
-`cache_results`: optional boolean, Whether or not support caching for this linter. **explain how trunk does caching in another page**
+`no_issues_codes`: List of exit codes that Trunk will use to assume there were no issues without 
+parsing the output.
 
-`disable_upstream`: optional boolean,  Whether or not we support comparing against the upstream version of this file.  **link to a deeper explanation for when you set this to false**
+### `read_output_from`
+
+`read_output_from`: Tell parser where to expect output from for reading.
+[See Output Sources](output-types.md#output-sources)
+
+[//]: # (TODO: **check values** &#40;stdout, stderr, tmp_file&#41; )
+
+[//]: # (TODO: **link to output docs**)
+
+### `run_from`
+
+`run_from`: What current working directory to run the linter from. 
+
+[//]: # (TODO: **link to section with more  examples**.)
+
+### `batch`
+
+`batch`: *optional boolean*. Combine multiple files into the same execution.
+
+### `in_place`
+
+`in_place`: *optional boolean*. Applies to formatters - does the formatter rewrite the file as 
+opposed to reading its contents from STDIN and outputting formatted contents to STDOUT?
+
+### `sandbox_type`
+
+`sandbox_type`: How to create the sandbox if it needs to be created.
+
+### `allow_empty_files`
+
+`allow_empty_files`: *optional boolean*. Skip linting empty files for this linter. Trunk will 
+assume there are no linters if the file is empty.
+
+### `std_in`
+
+`std_in`: *optional boolean*. Should the command be fed the file on standard input?
+
+### `cache_results`
+
+`cache_results`: *optional boolean*. Indicates if this linter wants to cache results. 
+
+[//]: # (TODO: **explain how trunk does caching in another page**)
+
+### `disable_upstream`
+
+`disable_upstream`: *optional boolean*,  Whether this linter supports comparing against the 
+upstream version of this file.  
+
+[//]: # (TODO: **link to a deeper explanation for when you set this to false**)
 
 ### `enabled`
 
@@ -282,7 +338,8 @@ Allows some commands of a linter to be run by default without others.
 
 ### `formatter`
 
-`formatter`: *optional boolean*. Whether this command is a formatter and should be included in `trunk fmt`.
+`formatter`: *optional boolean*. Whether this command is a formatter and should be included in 
+`trunk fmt`.
 
 ### `parser`
 
@@ -300,25 +357,29 @@ Not needed if linter is already output SARIF. [See Output Types](./output-types.
 
 ### `idempotent`
 
-`idempotent`: *optional boolean*. Indicates whether or not a linter is idempotent w.r.t. config 
+`idempotent`: *optional boolean*. Indicates whether a linter is idempotent with config 
 and source code inputs. For example, `semgrep` fetches rules from the internet, so it is not 
 idempotent.  If set, it causes `cache_ttl` to default to `24h`. This affects how long linter 
 outputs are cached.
 
 ### `cache_ttl`
 
-`cache_ttl`: *string*. How long cached results are kept before they expire. **link to deeper 
-explanation** Only applies if `idempotent: false`
+`cache_ttl`: *string*. How long cached results are kept before they expire.  Only applies if `idempotent: false`
+
+[//]: # (TODO: link to deeper explanation** )
 
 ### `version`
 
-`version`: *optional string*, Version constraint.  **link to deeper explanation of version 
-constraints with example**
+`version`: *optional string*, Version constraint.  
+
+[//]: # (TODO: link to deeper explanation of version constraints with example)
 
 ### `target`
 
 `target`, *optional string*, What target does this run on. By default, the target is the modified 
-source code file. Some linters operate on a whole repo or directory. **link to deeper docs**.
+source code file. Some linters operate on a whole repo or directory. 
+
+[//]: # (TODO: link to deeper docs.)
 
 ### `is_security`
 
@@ -327,11 +388,13 @@ not. Allows this linter to be run with `--scope==security`. [See Command Line Op
 
 ### `platforms`
 
-`platforms`:  Platform constraint. mac vs win etc. **link to deeper explanation**
+`platforms`:  Platform constraint. mac vs win etc. 
+
+[//]: # (TODO: link to deeper explanation)
 
 ### `fix_prompt`
 
-`fix_prompt`, optional string, e.g. Incorrect formatting || Unoptimized image. This string is 
+`fix_prompt`, optional string, e.g. 'Incorrect formatting' or 'Unoptimized image'. This string is 
 used when prompting the user to use the linter interactively.
 
 
