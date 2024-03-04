@@ -12,7 +12,7 @@ The web app can be found at [app.trunk.io](https://app.trunk.io).
 
 The queue tab provides an overview of the work done by Merge. Merged, testing, and pending PRs should all appear here. Clicking on a row will show the history of that item: click "view more history" to get a better understanding of the item.
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>The "view more history" link navigates you to the details page.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>The "view more history" link navigates you to the details page.</p></figcaption></figure>
 
 ### Pull Request Details
 
@@ -32,7 +32,7 @@ The PR Details panel has a dropdown menu (labeled "**..."**) with actions. From 
 
 1. Remove a PR from the queue. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it
 2. Re-queue a PR if it is currently not in the queue
-3. Download any impacted targets that have been [uploaded](set-up-trunk-merge/impacted-targets.md#generating-impacted-targets) for the PR (uploading impacted targets is only required for [Parallel](configuration.md#parallel-mode) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
+3. Download any impacted targets that have been [uploaded](set-up-trunk-merge/impacted-targets.md#generating-impacted-targets) for the PR (uploading impacted targets is only required for [Parallel](set-up-trunk-merge/configuration.md#parallel-mode) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -48,7 +48,7 @@ A PR details page will display a complete history of a PR - state transitions, a
 
 A tabulated view of all the items that have failed in the Merge Queue, e.g. due to testing.
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 ## Manually Restarting Failed PRs
 

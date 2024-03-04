@@ -23,7 +23,7 @@ The Trunk [plugins repo](https://github.com/trunk-io/plugins) ships with a colle
 trunk tools list
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
 
 ### Running Tools
 
