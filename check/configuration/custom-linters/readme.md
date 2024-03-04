@@ -5,8 +5,8 @@ description: Linter Integration overview
 # Linter Integration
 
 Trunk Check's linter integrations are fully configurable. This means that you can easily tune 
-existing linters or leverage our caching and [hold-the-line](../../reference/under-the-hood.
-md#hold-the-line) solution with your own custom linters. Every part of a linter config is set 
+existing linters or leverage our caching and [hold-the-line](../../reference/under-the-hood.md#hold-the-line) 
+solution with your own custom linters. Every part of a linter config is set 
 through YAML properties that can be adjusted or overridden.
 
 See also:
