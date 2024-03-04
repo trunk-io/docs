@@ -144,7 +144,7 @@ installed on your system, consult the [runtimes documentation](../reference/trun
 
 By default, Check will ignore issues in files which are listed in the `.gitignore` file.
 
-If you want to ignore groups of files, such as generated code, you can do that with 
+If you want to ignore groups of files, such as generated code, you can do that with
 the [`lint.ignore`](./ignoring-issues.md) section of your `.trunk/trunk.yaml` file. ex:
 
 ```yaml
