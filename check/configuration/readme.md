@@ -136,13 +136,14 @@ lint:
 
 #### Runtime versioning
 
-By default Trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml.md#runtimes).
+By default, Trunk will install hermetic versions of runtimes required by the linters you have chosen. If you need to peg to a specific runtime version or you want to use the version installed on your system, consult the [runtimes documentation](../reference/trunk-yaml.md#runtimes).
 
 ### Ignoring Issues and Files
 
-By default Check will ignore issues in files which are listed in the `.gitignore` file.&#x20;
+By default, Check will ignore issues in files which are listed in the `.gitignore` file.&#x20;
 
-If you want to ignore groups of files, such as generated code, you can do that with the [`lint.ignore`](https://github.com/trunk-io/gitbook/blob/main/check/configuration/README.md#ignoring-files) section of your `.trunk/trunk.yaml` file. ex:
+If you want to ignore groups of files, such as generated code, you can do that with 
+the [`lint.ignore`](https://docs.trunk.io/check/configuration/ignoring-issues) section of your `.trunk/trunk.yaml` file. ex:
 
 ```yaml
 lint:
