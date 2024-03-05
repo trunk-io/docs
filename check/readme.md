@@ -74,7 +74,7 @@ This feature is critical for eng orgs because it allows you to start leveling up
 
 ## Supported Linters, Formatters, and Security Tools
 
-We support over 100 different linters and formatters, and we're adding new integrations every release. Check out our full list of [Supported Linters](configuration/supported-linters.md). Stop by on [Slack](https://slack.trunk.io) and let us know what you'd like next! All tool integrations are open-source [here](https://github.com/trunk-io/plugins).Enable the following tools:
+We support over 100 different linters and formatters, and we're adding new integrations every release. Check out our full list of [Supported Linters](./configuration/supported/readme.md). Stop by on [Slack](https://slack.trunk.io) and let us know what you'd like next! All tool integrations are open-source [here](https://github.com/trunk-io/plugins).Enable the following tools:
 
 ```bash
 trunk check enable <linter>
