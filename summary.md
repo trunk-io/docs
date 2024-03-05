@@ -89,7 +89,7 @@
   * [Overview](merge/README.md)
   * [Setup](merge/set-up-trunk-merge/README.md)
     * [Quick Start](merge/set-up-trunk-merge/README.md)
-    * [Parallel Mode](merge/set-up-trunk-merge/configuration.md)
+    * [Queue Mode](merge/set-up-trunk-merge/configuration.md)
     * [Impacted Targets](merge/set-up-trunk-merge/impacted-targets.md)
     * [Advanced Settings](merge/set-up-trunk-merge/advanced-settings.md)
     * [Parallel Mode with Bazel](merge/set-up-trunk-merge/merge-+-bazel.md)
