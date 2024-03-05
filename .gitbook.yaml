@@ -21,7 +21,7 @@ redirects:
   docs/check-debugging: check/debugging.md
   docs/check-get-started: check/get-started.md
   docs/check-github-integration: check/github-integration.md
-  docs/check/supported-linters: check/configuration/supported/readme.md
+  docs/check-supported-linters: check/configuration/supported/readme.md
   docs/check: check/readme.md
   docs/check/github-integration: check/github-integration.md
   docs/ci-debugger: ci-debugger/readme.md
