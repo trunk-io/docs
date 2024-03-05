@@ -31,7 +31,7 @@ and enable a new linter with
 trunk check enable cool_new_linter
 ```
 
-See more about our [supported linters here](https://docs.trunk.io/check/supported-linters).
+See more about our [supported linters here](configuration/supported/readme.md).
 
 </details>
 
