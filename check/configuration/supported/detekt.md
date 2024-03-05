@@ -1,10 +1,8 @@
 ---
-description: Detekt
+description: Static code analysis for Kotlin
 ---
 
-# Detekt
-
-Detekt is a linter for Kotlin.
+**Detekt** is a linter for Kotlin.
 
 You can enable the Detekt plugin with
 

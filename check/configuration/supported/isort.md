@@ -1,10 +1,8 @@
 ---
-description: Isort- A Python Utility for Sorting Imports
+description: Isort is a Python utility for sorting imports alphabetically and automatically separating them into sections and by type. 
 ---
 
-# Isort
-
-Isort is a formatter for Python.
+**Isort** is a formatter for Python.
 
 You can enable the Isort plugin with
 

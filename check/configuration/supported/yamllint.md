@@ -1,10 +1,8 @@
 ---
-description: Yamllint
+description: Yamllint is a linter that checks for formatting discrepancies, key-value pair issues, and syntax errors, ensuring your YAML files are syntactically correct. 
 ---
 
-# Yamllint
-
-Yamllint is a linter for YAML.
+**Yamllint** is a linter for YAML.
 
 You can enable the Yamllint plugin with
 

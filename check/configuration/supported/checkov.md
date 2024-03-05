@@ -1,10 +1,8 @@
 ---
-description: Checkov
+description: Checkov is a static code analysis tool for scanning infrastructure as code. It identifies misconfigurations in IaC files that could lead to security breaches.
 ---
 
-# Checkov
-
-Checkov is a linter for Cloudformation, Security and Terraform.
+**Checkov** is a linter for Cloudformation, Security and Terraform.
 
 You can enable the Checkov plugin with
 

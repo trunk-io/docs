@@ -1,10 +1,8 @@
 ---
-description: ShellCheck- Script Analysis Tool for Shell Scripts
+description: ShellCheck is a static analysis tool designed to identify and report syntax errors and potential issues in shell scripts
 ---
 
-# ShellCheck
-
-ShellCheck is a linter for Bash.
+**ShellCheck** is a linter for Bash.
 
 You can enable the ShellCheck plugin with
 

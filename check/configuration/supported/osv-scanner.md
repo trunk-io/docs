@@ -1,10 +1,8 @@
 ---
-description: OSV-Scanner- Install and Configuration Guide
+description: OSV-Scanner is an open-source tool created by Google to detect vulnerabilities in projects by scanning dependencies against the OSV database.
 ---
 
-# OSV-Scanner
-
-OSV-Scanner is a linter for Security.
+**OSV-Scanner** is a linter for Security.
 
 You can enable the OSV-Scanner plugin with
 

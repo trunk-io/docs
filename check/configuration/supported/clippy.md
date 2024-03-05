@@ -1,10 +1,8 @@
 ---
-description: Clippy
+description: A collection of lints to catch common mistakes and improve your Rust code.
 ---
 
-# Clippy
-
-Clippy is a linter for Rust.
+**Clippy** is a linter for Rust.
 
 You can enable the Clippy plugin with
 

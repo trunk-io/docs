@@ -1,10 +1,8 @@
 ---
-description: Black - Code Formatter
+description: Discover Black, the Python code formatter.  Learn how to integrate it with Trunk Check for seamless coding style enforcement.
 ---
 
-# Black
-
-Black is a formatter for Python.
+**Black** is a formatter for Python.
 
 You can enable the Black plugin with
 

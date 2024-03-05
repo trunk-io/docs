@@ -1,10 +1,8 @@
 ---
-description: Ruff- an extremely fast Python linter witten in Rust
+description: Discover Ruff, a speedy Python linter for large codebases. Integrates with CI/IDEs and supports .py, .pyi, and Jupyter Notebooks.
 ---
 
-# Ruff
-
-Ruff is a linter for Python.
+**Ruff** is a linter for Python.
 
 You can enable the Ruff plugin with
 

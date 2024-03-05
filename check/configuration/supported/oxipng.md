@@ -1,10 +1,8 @@
 ---
-description: Oxipng- A Multithreaded PNG Optimizer
+description: Oxipng is an open-source, CLI utility designed for optimizing PNG files. It applies lossless compression techniques to reduce file size.
 ---
 
-# Oxipng
-
-Oxipng is a formatter for PNG.
+**Oxipng** is a formatter for PNG.
 
 You can enable the Oxipng plugin with
 

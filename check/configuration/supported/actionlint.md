@@ -1,10 +1,8 @@
 ---
-description: Actionlint- A Linter for Github Actions
+description: Explore our guide on Actionlint, the linter for Github Actions. Learn about its features, installation, and configuration.
 ---
 
-# Actionlint
-
-Actionlint is a linter for GitHub.
+**Actionlint** is a linter for GitHub.
 
 You can enable the Actionlint plugin with
 

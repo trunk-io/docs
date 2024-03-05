@@ -1,10 +1,8 @@
 ---
-description: Terraform CLI
+description: The command line interface to Terraform is the terraform command, which accepts a variety of subcommands such as terraform validate or terraform fmt
 ---
 
-# Terraform
-
-Terraform is a formatter for Terraform.
+**Terraform** is a formatter for Terraform.
 
 You can enable the Terraform plugin with
 

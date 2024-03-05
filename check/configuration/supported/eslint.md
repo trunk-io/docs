@@ -1,10 +1,8 @@
 ---
-description: ESLint
+description: ESLint statically analyzes your code to quickly find problems.
 ---
 
-# ESLint
-
-ESLint is a linter for Javascript, JSON and Typescript.
+**ESLint** is a linter for Javascript, JSON and Typescript.
 
 You can enable the ESLint plugin with
 

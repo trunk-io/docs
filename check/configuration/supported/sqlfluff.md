@@ -1,10 +1,10 @@
 ---
-description: SQLFluff
+description: SQLFluff is a dialect-flexible and configurable SQL linter.
+
+
 ---
 
-# SQLFluff
-
-SQLFluff is a linter for SQL.
+**SQLFluff** is a linter for SQL.
 
 You can enable the SQLFluff plugin with
 

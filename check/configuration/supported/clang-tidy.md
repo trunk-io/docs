@@ -1,10 +1,10 @@
 ---
-description: clang-tidy
+description: A clang-based C++ linter tool to provide an extensible framework for diagnosing and fixing programming errors that can be deduced via static analysis.
+
+
 ---
 
-# clang-tidy
-
-clang-tidy is a linter for Protobuf and C, C++.
+**clang-tidy** is a linter for Protobuf and C, C++.
 
 You can enable the clang-tidy plugin with
 

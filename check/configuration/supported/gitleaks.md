@@ -1,12 +1,10 @@
 ---
-description: Gitleaks- Secure Your Codebase Against Leaks
+description: Explore Gitleaks, an open-source tool for identifying secrets in codebases. Learn about its file type support and integration with Trunk.
 ---
 
-# Gitleaks 
+**Gitleaks** is a linter for All.
 
-Gitleaks  is a linter for All.
-
-You can enable the Gitleaks  plugin with
+You can enable the Gitleaks plugin with
 
 ```shell
 trunk check enable gitleaks
@@ -14,8 +12,8 @@ trunk check enable gitleaks
 
 # Settings
 
-Gitleaks  uses the same config files as the 
-upstream [Gitleaks ](https://gitleaks.io/) project, so you can continue to use any
+Gitleaks uses the same config files as the 
+upstream [Gitleaks](https://gitleaks.io/) project, so you can continue to use any
 existing configuration files (ex: `.gitleaks.config`, `.gitleaks.toml`, `.gitleaksignore`).
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks) if your project does not already have one,
