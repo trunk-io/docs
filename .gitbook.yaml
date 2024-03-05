@@ -9,6 +9,7 @@ redirects:
   check/performance: check/under-the-hood.md
   check/under-the-hood: check/reference/under-the-hood.md
   check/tools/configuration: check/advanced-setup/tools/configuration.md
+  check/supported-linters: check/configuration/supported/
   cli/windows-beta: check/advanced-setup/cli/windows-beta.md
   docs: welcome.md
   docs/actions-config: check/actions/config.md
@@ -20,7 +21,6 @@ redirects:
   docs/check-debugging: check/debugging.md
   docs/check-get-started: check/get-started.md
   docs/check-github-integration: check/github-integration.md
-  docs/check-supported-linters: check/configuration/supported/
   docs/check/supported-linters: check/configuration/supported/
   docs/check: check/readme.md
   docs/check/github-integration: check/github-integration.md
