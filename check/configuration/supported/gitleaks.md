@@ -4,7 +4,7 @@ description: Gitleaks- Secure Your Codebase Against Leaks
 
 # Gitleaks 
 
-Gitleaks  is a linter for Security.
+Gitleaks  is a linter for All.
 
 You can enable the Gitleaks  plugin with
 

@@ -4,7 +4,7 @@ description: Clang Format
 
 # ClangFormat
 
-ClangFormat is a formatter for C.
+ClangFormat is a formatter for Protobuf and C, C++.
 
 You can enable the ClangFormat plugin with
 
