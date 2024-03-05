@@ -3,9 +3,9 @@
 
 Lint configuration is done in the `lint` section of the trunk.yaml file. There are three parts:
 
-* [Lint Config](#lint-config)
-* [Linter Definition](#lint-config)
-* [Linter Command Definition](#linter-command-definition).
+* [Lint Config](./reference.md#lint-config)
+* [Linter Definition](./reference.md#linter-definition)
+* [Linter Command Definition](./reference.md#linter-command-definition).
 
 The top part represents the configuration of overall linting. Inside that
 is the definition of individual linters. And inside *that* is the definition of the particular
