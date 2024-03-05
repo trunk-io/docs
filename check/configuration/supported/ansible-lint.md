@@ -1,10 +1,8 @@
 ---
-description: Ansible-Lint
+description: Checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you
 ---
 
-# Ansible-lint
-
-Ansible-lint is a linter for Ansible.
+**Ansible-lint** is a linter for Ansible.
 
 You can enable the Ansible-lint plugin with
 

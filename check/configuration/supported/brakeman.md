@@ -1,10 +1,8 @@
 ---
-description: Brakeman- A security scanner for Ruby on Rails applications
+description: Brakeman is a static analysis tool designed for Ruby on Rails applications. It statically analyzes Rails application code to find security issues.
 ---
 
-# Brakeman
-
-Brakeman is a linter for Ruby.
+**Brakeman** is a linter for Ruby.
 
 You can enable the Brakeman plugin with
 

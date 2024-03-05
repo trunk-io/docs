@@ -1,10 +1,8 @@
 ---
-description: Trufflehog- Enhance Your Code's Security
+description: Discover Trufflehog with our detailed guide. Learn installation, configuration, usage, and how to integrate it with other linters for optimal code security.
 ---
 
-# Trufflehog
-
-Trufflehog is a linter for Security.
+**Trufflehog** is a linter for Security.
 
 You can enable the Trufflehog plugin with
 

@@ -1,10 +1,8 @@
 ---
-description: rustfmt
+description: A tool for formatting Rust code according to style guidelines.
 ---
 
-# rustfmt
-
-rustfmt is a formatter for Rust.
+**rustfmt** is a formatter for Rust.
 
 You can enable the rustfmt plugin with
 

@@ -1,10 +1,8 @@
 ---
-description: SVGO- A Tool for Optimizing SVG Files
+description: SVGO, or Scalable Vector Graphics Optimizer, is a tool designed to optimize SVG files, making them smaller and more efficient without compromising on quality.
 ---
 
-# SVGO
-
-SVGO is a linter for SVG.
+**SVGO** is a linter for SVG.
 
 You can enable the SVGO plugin with
 

@@ -1,10 +1,10 @@
 ---
-description: Clang Format
+description: Clang Format is a set of tools to format code that is processed by the Clang compiler suite.
+
+
 ---
 
-# ClangFormat
-
-ClangFormat is a formatter for Protobuf and C, C++.
+**ClangFormat** is a formatter for Protobuf and C, C++.
 
 You can enable the ClangFormat plugin with
 

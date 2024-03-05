@@ -1,10 +1,8 @@
 ---
-description: Trivy- Vulnerability and Misconfiguration Scanning
+description: Explore our guide on Trivy, the comprehensive vulnerability scanner. Learn about its features, installation, and configuration.
 ---
 
-# Trivy
-
-Trivy is a linter for Security.
+**Trivy** is a linter for Security.
 
 You can enable the Trivy plugin with
 

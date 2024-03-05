@@ -25,7 +25,7 @@
       * [Detekt](check/configuration/supported/detekt.md)
       * [ESLint](check/configuration/supported/eslint.md)
       * [Flake8](check/configuration/supported/flake8.md)
-      * [Gitleaks ](check/configuration/supported/gitleaks.md)
+      * [Gitleaks](check/configuration/supported/gitleaks.md)
       * [golangci-lint](check/configuration/supported/golangci-lint.md)
       * [Isort](check/configuration/supported/isort.md)
       * [Markdownlint](check/configuration/supported/markdownlint.md)

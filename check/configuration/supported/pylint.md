@@ -1,10 +1,8 @@
 ---
-description: Pylint
+description: Learn about Pylint, the versatile Python linter for error detection, code smell elimination, and PEP 8 enforcement.
 ---
 
-# Pylint
-
-Pylint is a linter for Python.
+**Pylint** is a linter for Python.
 
 You can enable the Pylint plugin with
 

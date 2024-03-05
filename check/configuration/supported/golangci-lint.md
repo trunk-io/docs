@@ -1,10 +1,8 @@
 ---
-description: golangci-lint
+description: Fast Go linters runner. It runs linters in parallel, uses caching, supports yaml config, has integrations with all major IDE and has dozens of linters included.
 ---
 
-# golangci-lint
-
-golangci-lint is a linter for Go.
+**golangci-lint** is a linter for Go.
 
 You can enable the golangci-lint plugin with
 

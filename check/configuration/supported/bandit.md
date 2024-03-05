@@ -1,10 +1,8 @@
 ---
-description: Bandit- A Security Linter for Python 
+description: Bandit is a security linter for Python codebases. Bandit flags problems like hard-coded passwords, injection vulnerabilities, and the use of insecure libraries.
 ---
 
-# Bandit
-
-Bandit is a linter for Python.
+**Bandit** is a linter for Python.
 
 You can enable the Bandit plugin with
 

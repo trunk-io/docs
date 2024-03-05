@@ -1,10 +1,8 @@
 ---
-description: Markdownlint- Quick Install Guiode
+description: Markdownlint is a tool designed to enforce consistency for Markdown files. It can include checks for headings, lists, line length, and syntax preferences. 
 ---
 
-# Markdownlint
-
-Markdownlint is a linter for Markdown.
+**Markdownlint** is a linter for Markdown.
 
 You can enable the Markdownlint plugin with
 
