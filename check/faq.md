@@ -31,7 +31,7 @@ and enable a new linter with
 trunk check enable cool_new_linter
 ```
 
-See more about our [supported linters here](configuration/supported/readme.md).
+See more about our [supported linters here](configuration/supported/).
 
 </details>
 
@@ -143,7 +143,7 @@ then run `trunk install` again in your repos.
 
 <summary>How can I expand the number of tools I use with Trunk?</summary>
 
-Trunk supports over 100 different linters, checkers, and other tools;  and we are always adding more! Some tools are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.
+Trunk supports over 100 different linters, checkers, and other tools; and we are always adding more! Some tools are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.
 
 To see a list of currently available linters run
 
@@ -237,9 +237,9 @@ lint:
 
 <details>
 
-<summary>How can I disable trunk on commit for just me,  but keep it on for the rest of my team?</summary>
+<summary>How can I disable trunk on commit for just me, but keep it on for the rest of my team?</summary>
 
-If you prefer to never run Trunk on commit and push you can disable it just for you.  Edit or create the `.trunk/user.yaml` file and change the `actions.disabled` section to look like this:
+If you prefer to never run Trunk on commit and push you can disable it just for you. Edit or create the `.trunk/user.yaml` file and change the `actions.disabled` section to look like this:
 
 ```yaml
 version: 0.1
@@ -258,9 +258,9 @@ This will disable the checks for just the current user. The `.trunk/user.yaml` f
 
 <summary>What should I do if a linter process seems to take longer than expected during a Trunk check?</summary>
 
-There are two main strategies to address this issue: **configuring timeouts** and **ignoring certain files**.&#x20;
+There are two main strategies to address this issue: **configuring timeouts** and **ignoring certain files**.
 
-#### Timeout Configuration
+**Timeout Configuration**
 
 Each linter integrated with Trunk Check has a default timeout of 10 minutes to prevent processes from running indefinitely. If a linter exceeds this timeframe, Trunk Check will automatically terminate the process and notify you of the timeout.
 
@@ -275,7 +275,7 @@ lint:
 
 Timeouts can be specified using `s` for seconds, `m` for minutes, or `h` for hours, allowing you to tailor the behavior to your project's needs. More on [linter timeouts](configuration/#timeout).
 
-#### Ignoring Files
+**Ignoring Files**
 
 Certain files, particularly those that are auto-generated, may not require linting and can significantly extend the duration of checks. To exclude these from being checked, use the `ignore` key in your configuration:
 
