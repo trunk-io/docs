@@ -12,12 +12,14 @@ trunk check enable trivy
 
 # Settings
 
-Trivy uses the same config files as the 
+Trivy uses the same config files as the
 upstream [Trivy](https://github.com/aquasecurity/trivy) project, so you can continue to use any
 existing configuration files (ex: `trivy-secret.yaml`).
+    
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/trivy) if your project does not already have one,
 which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
 
 
 Trivy has the following subcommands:

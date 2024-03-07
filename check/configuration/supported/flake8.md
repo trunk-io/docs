@@ -12,12 +12,14 @@ trunk check enable flake8
 
 # Settings
 
-Flake8 uses the same config files as the 
+Flake8 uses the same config files as the
 upstream [Flake8](https://flake8.pycqa.org/en/latest/) project, so you can continue to use any
 existing configuration files (ex: `.flake8`).
+    
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/flake8) if your project does not already have one,
 which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
 
 
 Flake8 has a plugin architecture where if you install a plugin, it gets used. You can enable Flake8 plugins via:
