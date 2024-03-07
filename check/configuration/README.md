@@ -4,7 +4,7 @@ description: Overview of Trunk Check's supported linters and configuration
 
 # Linters
 
-Trunk Check supports over [100 different linters](broken-reference) and formatters out of the box. The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml.md#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
+Trunk Check supports over [100 different linters](supported/) and formatters out of the box. The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml.md#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
