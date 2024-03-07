@@ -1,8 +1,8 @@
 ---
-description: rome is a linter for Javascript and TypeScript
+description: rome is a linter for JavaScript and TypeScript
 ---
 
-**rome** is a linter for Javascript and TypeScript.
+**rome** is a linter for JavaScript and TypeScript.
 
 You can enable the rome plugin with
 

@@ -2,7 +2,7 @@
 description: Explore  Prettier, the powerful code formatter. Learn how to install, configure, and effectively use Prettier to enhance your coding workflow.
 ---
 
-**Prettier** is a formatter for CSS, SCSS, Javascript, JSON, Markdown, TypeScript, GraphQL and YAML.
+**Prettier** is a formatter for CSS, SCSS, JavaScript, JSON, Markdown, TypeScript, GraphQL and YAML.
 
 You can enable the Prettier plugin with
 

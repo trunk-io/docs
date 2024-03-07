@@ -39,8 +39,7 @@ trunk check enable <linter>
 | HAML | [haml-lint](./haml-lint.md)|
 | HTML Templates | [djlint](./djlint.md)|
 | Java | [google-java-format](./google-java-format.md), [pmd](./pmd.md), [semgrep](./semgrep.md)|
-| Javascript | [deno](./deno.md), [eslint](./eslint.md), [prettier](./prettier.md), [rome](./rome.md), [semgrep](./semgrep.md)|
-| javascript | [biome](./biome.md)|
+| JavaScript | [biome](./biome.md), [deno](./deno.md), [eslint](./eslint.md), [prettier](./prettier.md), [rome](./rome.md), [semgrep](./semgrep.md)|
 | JSON | [deno](./deno.md), [eslint](./eslint.md), [prettier](./prettier.md), [semgrep](./semgrep.md)|
 | json | [biome](./biome.md)|
 | jsx | [biome](./biome.md)|

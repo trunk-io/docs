@@ -1,8 +1,8 @@
 ---
-description: tfsec is a linter for Terraform
+description: tfsec is a linter for Security and Terraform
 ---
 
-**tfsec** is a linter for Terraform.
+**tfsec** is a linter for Security and Terraform.
 
 You can enable the tfsec plugin with
 
