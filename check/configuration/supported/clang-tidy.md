@@ -14,12 +14,14 @@ trunk check enable clang-tidy
 
 # Settings
 
-clang-tidy uses the same config files as the 
+clang-tidy uses the same config files as the
 upstream [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) project, so you can continue to use any
 existing configuration files (ex: `.clang-tidy`).
+    
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/clang-tidy) if your project does not already have one,
 which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
 We only support using clang-tidy from Bazel and CMake projects.
 
 In order to only see issues in your own code, not from library header files your code includes, add this to your `.clang-tidy` file:

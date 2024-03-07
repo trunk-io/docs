@@ -27,7 +27,7 @@
       * [Flake8](check/configuration/supported/flake8.md)
       * [Gitleaks](check/configuration/supported/gitleaks.md)
       * [golangci-lint](check/configuration/supported/golangci-lint.md)
-      * [Isort](check/configuration/supported/isort.md)
+      * [isort](check/configuration/supported/isort.md)
       * [Markdownlint](check/configuration/supported/markdownlint.md)
       * [OSV-Scanner](check/configuration/supported/osv-scanner.md)
       * [Oxipng](check/configuration/supported/oxipng.md)
