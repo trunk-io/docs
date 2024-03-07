@@ -1,8 +1,8 @@
 ---
-description: deno is a linter for Javascript, JSON, Typescript and Markdown
+description: deno is a linter for Javascript, JSON, TypeScript and Markdown
 ---
 
-**deno** is a linter for Javascript, JSON, Typescript and Markdown.
+**deno** is a linter for Javascript, JSON, TypeScript and Markdown.
 
 You can enable the deno plugin with
 

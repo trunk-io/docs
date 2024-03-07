@@ -1,8 +1,8 @@
 ---
-description: biome is a linter for javascript, typescript, jsx and json
+description: biome is a linter for javascript, TypeScript, jsx and json
 ---
 
-**biome** is a linter for javascript, typescript, jsx and json.
+**biome** is a linter for javascript, TypeScript, jsx and json.
 
 You can enable the biome plugin with
 

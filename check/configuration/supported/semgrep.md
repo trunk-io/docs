@@ -1,8 +1,8 @@
 ---
-description: semgrep is a linter for Go, Java, Javascript, JSON, Python, Ruby, Typescript and YAML
+description: semgrep is a linter for Go, Java, Javascript, JSON, Python, Ruby, TypeScript and YAML
 ---
 
-**semgrep** is a linter for Go, Java, Javascript, JSON, Python, Ruby, Typescript and YAML.
+**semgrep** is a linter for Go, Java, Javascript, JSON, Python, Ruby, TypeScript and YAML.
 
 You can enable the semgrep plugin with
 

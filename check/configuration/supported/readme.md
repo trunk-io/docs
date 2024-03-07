@@ -70,6 +70,5 @@ trunk check enable <linter>
 | Terrascan | [terrascan](./terrascan.md)|
 | Textproto | [txtpbfmt](./txtpbfmt.md)|
 | TOML | [taplo](./taplo.md)|
-| Typescript | [deno](./deno.md), [eslint](./eslint.md), [prettier](./prettier.md), [rome](./rome.md), [semgrep](./semgrep.md)|
-| typescript | [biome](./biome.md)|
+| TypeScript | [biome](./biome.md), [deno](./deno.md), [eslint](./eslint.md), [prettier](./prettier.md), [rome](./rome.md), [semgrep](./semgrep.md)|
 | YAML | [prettier](./prettier.md), [semgrep](./semgrep.md), [yamllint](./yamllint.md)|
