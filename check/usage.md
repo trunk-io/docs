@@ -56,7 +56,7 @@ From the root of a git repo, run:
 trunk init
 ```
 
-This will scan your repository and create a `.trunk/trunk.yaml` that enables all the linters, formatters, and security analyzers that [Trunk Check](https://github.com/trunk-io/gitbook/blob/main/check/README.md) recommends. For more details, see [here](advanced-setup/cli/init-in-a-git-repo.md).
+This will scan your repository and create a `.trunk/trunk.yaml` that enables all the linters, formatters, and security analyzers that are recommended for your project based on the source code types (\*`.c`, \*.`py`, \*.`js`, etc.) as well as existing tool configuration files (ex: `.eslintrc`, `.clang-format`, `.flake8`).  You can enable additional linters with the `trunk check enable <toolname>` command.  For more details, see [here](advanced-setup/cli/init-in-a-git-repo.md).
 
 ## Basic Usage
 
