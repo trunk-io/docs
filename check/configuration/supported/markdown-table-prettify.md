@@ -1,8 +1,8 @@
 ---
-description: markdown-table-prettify is a linter for markdown
+description: markdown-table-prettify is a linter for Markdown
 ---
 
-**markdown-table-prettify** is a linter for markdown.
+**markdown-table-prettify** is a linter for Markdown.
 
 You can enable the markdown-table-prettify plugin with
 

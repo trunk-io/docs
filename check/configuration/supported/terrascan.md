@@ -1,8 +1,8 @@
 ---
-description: terrascan is a linter for Terraform
+description: terrascan is a linter for Terrascan, Security and Terraform
 ---
 
-**terrascan** is a linter for Terraform.
+**terrascan** is a linter for Terrascan, Security and Terraform.
 
 You can enable the terrascan plugin with
 
