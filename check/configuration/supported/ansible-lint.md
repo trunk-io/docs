@@ -37,10 +37,6 @@ which you can see in our [open source plugins repo]().
 
 If your ansible setup is not contained within a single folder you would list all files and directories belonging to your ansible setup.
 
-
-
-
-
 ## Links
 
 * [Ansible-lint site](https://github.com/ansible/ansible-lint)
