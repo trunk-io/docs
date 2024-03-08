@@ -10,12 +10,12 @@ When a high-priority change must be merged quickly but still validated by the Me
 
 When submitting a PR to Merge you can set the priority to one of the text labels below or a number between 0 - 255. &#x20;
 
-|        |     |                                                                                           |
-| ------ | --- | ----------------------------------------------------------------------------------------- |
-| urgent | 0   | highest priority. Urgent items will interrupt running jobs and begin testing immediately. |
-| high   | 10  |                                                                                           |
-| medium | 100 | default priority                                                                          |
-| low    | 200 |                                                                                           |
+| label  | number | note                                                                                      |
+| ------ | ------ | ----------------------------------------------------------------------------------------- |
+| urgent | 0      | highest priority. Urgent items will interrupt running jobs and begin testing immediately. |
+| high   | 10     |                                                                                           |
+| medium | 100    | default priority                                                                          |
+| low    | 200    |                                                                                           |
 
 The priority is set when the PR is submitted to Merge:
 
