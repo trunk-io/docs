@@ -16,9 +16,9 @@ layout:
 
 # buildifier
 
-**buildifier** is a linter for Bazel, Starlark.
+[**buildifier**](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md) is a linter for Bazel, Starlark.
 
-You can enable the buildifier plugin with
+You can enable the buildifier linter with:
 
 ```shell
 trunk check enable buildifier
@@ -26,11 +26,17 @@ trunk check enable buildifier
 
 ## Settings
 
-
 **buildifier** uses the same config files as the
 upstream [buildifier](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md) project, so you can continue to use any
-existing configuration files (ex: `.buildifier.json`, `.buildifier-tables.json`).
-    
+existing configuration files (ex: `.buildifier.json`, `.buildifier-tables.json`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/buildifier) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [buildifier site](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md)
+* buildifier Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buildifier)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

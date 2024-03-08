@@ -16,9 +16,9 @@ layout:
 
 # markdown-link-check
 
-**markdown-link-check** is a linter for Markdown.
+[**markdown-link-check**](https://github.com/tcort/markdown-link-check#readme) is a linter for Markdown.
 
-You can enable the markdown-link-check plugin with
+You can enable the markdown-link-check linter with:
 
 ```shell
 trunk check enable markdown-link-check
@@ -29,4 +29,12 @@ trunk check enable markdown-link-check
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/markdown-link-check) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [markdown-link-check site](https://github.com/tcort/markdown-link-check#readme)
+* markdown-link-check Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/markdown-link-check)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

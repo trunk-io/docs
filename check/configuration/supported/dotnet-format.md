@@ -16,9 +16,9 @@ layout:
 
 # dotnet-format
 
-**dotnet-format** is a linter for C#.
+[**dotnet-format**](https://github.com/dotnet/format#readme) is a linter for C#.
 
-You can enable the dotnet-format plugin with
+You can enable the dotnet-format linter with:
 
 ```shell
 trunk check enable dotnet-format
@@ -29,4 +29,12 @@ trunk check enable dotnet-format
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/dotnet-format) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [dotnet-format site](https://github.com/dotnet/format#readme)
+* dotnet-format Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotnet-format)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

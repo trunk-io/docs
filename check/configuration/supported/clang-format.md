@@ -18,9 +18,9 @@ layout:
 
 # ClangFormat
 
-**ClangFormat** is a formatter for Protobuf and C, C++.
+[**ClangFormat**](https://clang.llvm.org/docs/ClangFormat.html) is a formatter for Protobuf and C, C++.
 
-You can enable the ClangFormat plugin with
+You can enable the ClangFormat formatter with:
 
 ```shell
 trunk check enable clang-format
@@ -28,14 +28,12 @@ trunk check enable clang-format
 
 ## Settings
 
-
 **ClangFormat** uses the same config files as the
 upstream [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html) project, so you can continue to use any
-existing configuration files (ex: `.clang-format`).
-    
+existing configuration files (ex: `.clang-format`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/clang-format) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
 
 By default, Trunk uses Clang-format to additionally format `.proto` files. However, for this to work, you need to have told `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format file`:
 
@@ -54,3 +52,10 @@ DerivePointerAlignment: false
 ---
 Language: Proto
 ```
+
+
+## Links
+
+* [ClangFormat site](https://clang.llvm.org/docs/ClangFormat.html)
+* ClangFormat Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-format)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

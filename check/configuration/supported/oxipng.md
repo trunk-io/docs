@@ -16,9 +16,9 @@ layout:
 
 # Oxipng
 
-**Oxipng** is a formatter for PNG.
+[**Oxipng**](https://github.com/shssoichiro/oxipng) is a formatter for PNG.
 
-You can enable the Oxipng plugin with
+You can enable the Oxipng formatter with:
 
 ```shell
 trunk check enable oxipng
@@ -29,4 +29,12 @@ trunk check enable oxipng
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/oxipng) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [Oxipng site](https://github.com/shssoichiro/oxipng)
+* Oxipng Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/oxipng)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

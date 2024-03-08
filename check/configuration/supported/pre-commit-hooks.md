@@ -16,9 +16,9 @@ layout:
 
 # pre-commit-hooks
 
-**pre-commit-hooks** is a linter for All.
+[**pre-commit-hooks**](https://pre-commit.com/hooks.html) is a linter for All.
 
-You can enable the pre-commit-hooks plugin with
+You can enable the pre-commit-hooks linter with:
 
 ```shell
 trunk check enable pre-commit-hooks
@@ -29,4 +29,12 @@ trunk check enable pre-commit-hooks
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [pre-commit-hooks site](https://pre-commit.com/hooks.html)
+* pre-commit-hooks Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

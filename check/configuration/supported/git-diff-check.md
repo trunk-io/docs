@@ -16,9 +16,9 @@ layout:
 
 # git-diff-check
 
-**git-diff-check** is a linter for All.
+[**git-diff-check**](https://git-scm.com/docs/git-diff) is a linter for All.
 
-You can enable the git-diff-check plugin with
+You can enable the git-diff-check linter with:
 
 ```shell
 trunk check enable git-diff-check
@@ -29,4 +29,12 @@ trunk check enable git-diff-check
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/git-diff-check) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [git-diff-check site](https://git-scm.com/docs/git-diff)
+* git-diff-check Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/git-diff-check)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

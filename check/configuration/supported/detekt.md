@@ -16,9 +16,9 @@ layout:
 
 # Detekt
 
-**Detekt** is a linter for Kotlin.
+[**Detekt**](https://github.com/detekt/detekt) is a linter for Kotlin.
 
-You can enable the Detekt plugin with
+You can enable the Detekt linter with:
 
 ```shell
 trunk check enable detekt
@@ -26,14 +26,12 @@ trunk check enable detekt
 
 ## Settings
 
-
 **Detekt** uses the same config files as the
 upstream [Detekt](https://github.com/detekt/detekt) project, so you can continue to use any
-existing configuration files (ex: `.detekt.yaml`).
-    
+existing configuration files (ex: `.detekt.yaml`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/detekt) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
 
 Detekt is usually invoked through gradle, which allows specifying additional configuration in `build.gradle`. We do not yet automatically parse your Gradle scripts to infer your `detekt` configuration; instead, what we do is this:
 
@@ -53,3 +51,10 @@ direct_configs: ["lib/detekt.yaml"]
 ```
 
 
+
+
+## Links
+
+* [Detekt site](https://github.com/detekt/detekt)
+* Detekt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/detekt)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -16,9 +16,9 @@ layout:
 
 # dustilock
 
-**dustilock** is a linter for Security.
+[**dustilock**](https://github.com/Checkmarx/dustilock) is a linter for Security.
 
-You can enable the dustilock plugin with
+You can enable the dustilock linter with:
 
 ```shell
 trunk check enable dustilock
@@ -29,4 +29,12 @@ trunk check enable dustilock
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/dustilock) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [dustilock site](https://github.com/Checkmarx/dustilock)
+* dustilock Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dustilock)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -16,9 +16,9 @@ layout:
 
 # pragma-once
 
-**pragma-once** is a linter for C, C++.
+[**pragma-once**](https://github.com/trunk-io/plugins/blob/main/linters/pragma-once/README.md) is a linter for C, C++.
 
-You can enable the pragma-once plugin with
+You can enable the pragma-once linter with:
 
 ```shell
 trunk check enable pragma-once
@@ -29,4 +29,12 @@ trunk check enable pragma-once
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pragma-once) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [pragma-once site](https://github.com/trunk-io/plugins/blob/main/linters/pragma-once/README.md)
+* pragma-once Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pragma-once)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

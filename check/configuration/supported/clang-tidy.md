@@ -18,9 +18,9 @@ layout:
 
 # clang-tidy
 
-**clang-tidy** is a linter for Protobuf and C, C++.
+[**clang-tidy**](https://clang.llvm.org/extra/clang-tidy/) is a linter for Protobuf and C, C++.
 
-You can enable the clang-tidy plugin with
+You can enable the clang-tidy linter with:
 
 ```shell
 trunk check enable clang-tidy
@@ -28,14 +28,12 @@ trunk check enable clang-tidy
 
 ## Settings
 
-
 **clang-tidy** uses the same config files as the
 upstream [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) project, so you can continue to use any
-existing configuration files (ex: `.clang-tidy`).
-    
+existing configuration files (ex: `.clang-tidy`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/clang-tidy) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
 
 We only support using clang-tidy from Bazel and CMake projects.
 
@@ -87,3 +85,10 @@ Trunk runs `clang-tidy` with a compile commands database so that we can guarante
 
 
 
+
+
+## Links
+
+* [clang-tidy site](https://clang.llvm.org/extra/clang-tidy/)
+* clang-tidy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-tidy)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -16,9 +16,9 @@ layout:
 
 # Black
 
-**Black** is a formatter for Python.
+[**Black**](https://pypi.org/project/black/) is a formatter for Python.
 
-You can enable the Black plugin with
+You can enable the Black formatter with:
 
 ```shell
 trunk check enable black
@@ -29,4 +29,12 @@ trunk check enable black
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/black) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [Black site](https://pypi.org/project/black/)
+* Black Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/black)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

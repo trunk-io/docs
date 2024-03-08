@@ -16,9 +16,9 @@ layout:
 
 # cfnlint
 
-**cfnlint** is a linter for Cloudformation.
+[**cfnlint**](https://github.com/aws-cloudformation/cfn-lint#readme) is a linter for Cloudformation.
 
-You can enable the cfnlint plugin with
+You can enable the cfnlint linter with:
 
 ```shell
 trunk check enable cfnlint
@@ -29,4 +29,12 @@ trunk check enable cfnlint
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/cfnlint) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [cfnlint site](https://github.com/aws-cloudformation/cfn-lint#readme)
+* cfnlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cfnlint)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

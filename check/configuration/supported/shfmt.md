@@ -16,9 +16,9 @@ layout:
 
 # shfmt
 
-**shfmt** is a linter for Bash.
+[**shfmt**](https://github.com/mvdan/sh#readme) is a linter for Bash.
 
-You can enable the shfmt plugin with
+You can enable the shfmt linter with:
 
 ```shell
 trunk check enable shfmt
@@ -29,4 +29,12 @@ trunk check enable shfmt
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/shfmt) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [shfmt site](https://github.com/mvdan/sh#readme)
+* shfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shfmt)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

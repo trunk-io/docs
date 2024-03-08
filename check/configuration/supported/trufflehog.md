@@ -16,9 +16,9 @@ layout:
 
 # Trufflehog
 
-**Trufflehog** is a linter for Security.
+[**Trufflehog**](https://github.com/trufflesecurity/trufflehog) is a linter for Security.
 
-You can enable the Trufflehog plugin with
+You can enable the Trufflehog linter with:
 
 ```shell
 trunk check enable trufflehog
@@ -29,4 +29,12 @@ trunk check enable trufflehog
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [Trufflehog site](https://github.com/trufflesecurity/trufflehog)
+* Trufflehog Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

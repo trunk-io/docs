@@ -16,9 +16,9 @@ layout:
 
 # ktlint
 
-**ktlint** is a linter for Kotlin.
+[**ktlint**](https://github.com/pinterest/ktlint#readme) is a linter for Kotlin.
 
-You can enable the ktlint plugin with
+You can enable the ktlint linter with:
 
 ```shell
 trunk check enable ktlint
@@ -29,4 +29,12 @@ trunk check enable ktlint
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/ktlint) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [ktlint site](https://github.com/pinterest/ktlint#readme)
+* ktlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ktlint)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

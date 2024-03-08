@@ -16,9 +16,9 @@ layout:
 
 # autopep8
 
-**autopep8** is a linter for Python.
+[**autopep8**](https://github.com/hhatto/autopep8#readme) is a linter for Python.
 
-You can enable the autopep8 plugin with
+You can enable the autopep8 linter with:
 
 ```shell
 trunk check enable autopep8
@@ -26,11 +26,17 @@ trunk check enable autopep8
 
 ## Settings
 
-
 **autopep8** uses the same config files as the
 upstream [autopep8](https://github.com/hhatto/autopep8#readme) project, so you can continue to use any
-existing configuration files (ex: `.pep8`).
-    
+existing configuration files (ex: `.pep8`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/autopep8) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [autopep8 site](https://github.com/hhatto/autopep8#readme)
+* autopep8 Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/autopep8)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

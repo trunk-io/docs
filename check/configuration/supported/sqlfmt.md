@@ -16,9 +16,9 @@ layout:
 
 # sqlfmt
 
-**sqlfmt** is a linter for SQL.
+[**sqlfmt**](https://github.com/tconbeer/sqlfmt#readme) is a linter for SQL.
 
-You can enable the sqlfmt plugin with
+You can enable the sqlfmt linter with:
 
 ```shell
 trunk check enable sqlfmt
@@ -29,4 +29,12 @@ trunk check enable sqlfmt
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/sqlfmt) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+which you can see in our [open source plugins repo]().
+
+
+
+## Links
+
+* [sqlfmt site](https://github.com/tconbeer/sqlfmt#readme)
+* sqlfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfmt)
+* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
