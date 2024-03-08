@@ -26,14 +26,15 @@ trunk check enable scalafmt
 
 ## Auto Enabling
 
-scalafmt will be auto-enabled if any of its config files are present: *`.scalafmt.conf`*
+scalafmt will be auto-enabled if a `.scalafmt.conf` config file is present.
 
 ## Settings
 
 scalafmt supports the following config files:
 * `.scalafmt.conf`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

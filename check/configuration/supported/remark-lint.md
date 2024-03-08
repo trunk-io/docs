@@ -26,7 +26,7 @@ trunk check enable remark-lint
 
 ## Auto Enabling
 
-remark-lint will be auto-enabled if any of its config files are present: *`.remarkrc`, `.remarkrc.json`, `.remarkrc.cjs`*
+remark-lint will be auto-enabled if any of its config files are present: *`.remarkrc`, `.remarkrc.json`, `.remarkrc.cjs`*.
 
 ## Settings
 
@@ -39,7 +39,8 @@ remark-lint supports the following config files:
 * `.remarkrc.yaml`
 * `.remarkrc.yml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.remarkrc.yaml` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.remarkrc.yaml` if your project does not already have one.
 
 
 

@@ -26,7 +26,7 @@ trunk check enable mypy
 
 ## Auto Enabling
 
-mypy will be auto-enabled if any of its config files are present: *`mypy.ini`, `.mypy.ini`*
+mypy will be auto-enabled if any of its config files are present: *`mypy.ini`, `.mypy.ini`*.
 
 ## Settings
 
@@ -34,7 +34,8 @@ mypy supports the following config files:
 * `mypy.ini`
 * `.mypy.ini`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

@@ -26,14 +26,15 @@ trunk check enable autopep8
 
 ## Auto Enabling
 
-autopep8 will be auto-enabled if any of its config files are present: *`.pep8`*
+autopep8 will be auto-enabled if a `.pep8` config file is present.
 
 ## Settings
 
 autopep8 supports the following config files:
 * `.pep8`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

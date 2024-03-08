@@ -28,8 +28,6 @@ trunk check enable kube-linter
 
 kube-linter will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

@@ -26,7 +26,7 @@ trunk check enable graphql-schema-linter
 
 ## Auto Enabling
 
-graphql-schema-linter will be auto-enabled if any of its config files are present: *`.graphql-schema-linter.config.js`, `.graphql-schema-linterrc`*
+graphql-schema-linter will be auto-enabled if any of its config files are present: *`.graphql-schema-linter.config.js`, `.graphql-schema-linterrc`*.
 
 ## Settings
 
@@ -34,7 +34,8 @@ graphql-schema-linter supports the following config files:
 * `.graphql-schema-linter.config.js`
 * `.graphql-schema-linterrc`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

@@ -26,14 +26,15 @@ trunk check enable haml-lint
 
 ## Auto Enabling
 
-haml-lint will be auto-enabled if any of the following filetypes are present: *haml*
+haml-lint will be auto-enabled if any *Haml* files are present.
 
 ## Settings
 
 haml-lint supports the following config files:
 * `.haml-lint.yml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

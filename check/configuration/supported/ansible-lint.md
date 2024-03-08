@@ -33,7 +33,10 @@ Ansible-lint will never be auto-enabled. It must be enabled manually.
 Ansible-lint supports the following config files:
 * `.ansible-lint`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 **Ansible-lint** must be configured with a trigger. See the [trigger rules](../#trigger-rules) documentation for more information.
 

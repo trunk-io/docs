@@ -26,9 +26,7 @@ trunk check enable cfnlint
 
 ## Auto Enabling
 
-cfnlint will be auto-enabled if any of the following filetypes are present: *cloudformation*
-
-## Settings
+cfnlint will be auto-enabled if any *Cloudformation* files are present.
 
 
 

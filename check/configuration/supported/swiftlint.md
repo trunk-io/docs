@@ -26,7 +26,7 @@ trunk check enable swiftlint
 
 ## Auto Enabling
 
-swiftlint will be auto-enabled if any of its config files are present: *`.swiftlint.yml`, `.swiftlint.yaml`, `.swiftlint`*
+swiftlint will be auto-enabled if any of its config files are present: *`.swiftlint.yml`, `.swiftlint.yaml`, `.swiftlint`*.
 
 ## Settings
 
@@ -35,7 +35,8 @@ swiftlint supports the following config files:
 * `.swiftlint.yaml`
 * `.swiftlint`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

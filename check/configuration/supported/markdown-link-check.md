@@ -28,8 +28,6 @@ trunk check enable markdown-link-check
 
 markdown-link-check will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

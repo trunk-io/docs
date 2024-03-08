@@ -26,7 +26,7 @@ trunk check enable semgrep
 
 ## Auto Enabling
 
-semgrep will be auto-enabled if any of its config files are present: *`.semgrep.yaml`, `.semgrep.yml`*
+semgrep will be auto-enabled if any of its config files are present: *`.semgrep.yaml`, `.semgrep.yml`*.
 
 ## Settings
 
@@ -34,7 +34,8 @@ semgrep supports the following config files:
 * `.semgrep.yaml`
 * `.semgrep.yml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

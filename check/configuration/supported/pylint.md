@@ -26,7 +26,7 @@ trunk check enable pylint
 
 ## Auto Enabling
 
-Pylint will be auto-enabled if any of its config files are present: *`pylintrc`, `.pylintrc`*
+Pylint will be auto-enabled if any of its config files are present: *`pylintrc`, `.pylintrc`*.
 
 ## Settings
 
@@ -34,7 +34,10 @@ Pylint supports the following config files:
 * `pylintrc`
 * `.pylintrc`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 You may specify additional pylint plugins in your `.pylintrc`, using the line `load-plugins=...`
 

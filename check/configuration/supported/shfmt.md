@@ -26,9 +26,7 @@ trunk check enable shfmt
 
 ## Auto Enabling
 
-shfmt will be auto-enabled if any of the following filetypes are present: *shell*
-
-## Settings
+shfmt will be auto-enabled if any *Shell* files are present.
 
 
 

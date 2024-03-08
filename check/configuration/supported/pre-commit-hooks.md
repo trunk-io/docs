@@ -28,8 +28,6 @@ trunk check enable pre-commit-hooks
 
 pre-commit-hooks will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

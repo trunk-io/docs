@@ -26,7 +26,7 @@ trunk check enable prettier
 
 ## Auto Enabling
 
-Prettier will be auto-enabled if any of the following filetypes are present: *typescript, yaml, css, sass, html, markdown, json, javascript, graphql, prettier_supported_configs*
+Prettier will be auto-enabled if any *Typescript, Yaml, Css, Sass, Html, Markdown, Json, Javascript, Graphql or Prettier_supported_configs* files are present.
 
 ## Settings
 
@@ -45,7 +45,10 @@ Prettier supports the following config files:
 * `.prettierrc.toml`
 * `.prettierignore`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 
 

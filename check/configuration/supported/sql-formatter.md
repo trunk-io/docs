@@ -28,8 +28,6 @@ trunk check enable sql-formatter
 
 sql-formatter will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

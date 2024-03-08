@@ -26,14 +26,15 @@ trunk check enable gokart
 
 ## Auto Enabling
 
-gokart will be auto-enabled if any of its config files are present: *`analyzers.yml`*
+gokart will be auto-enabled if a `analyzers.yml` config file is present.
 
 ## Settings
 
 gokart supports the following config files:
 * `analyzers.yml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `analyzers.yml` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `analyzers.yml` if your project does not already have one.
 
 
 

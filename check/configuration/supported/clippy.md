@@ -26,7 +26,7 @@ trunk check enable clippy
 
 ## Auto Enabling
 
-Clippy will be auto-enabled if any of the following filetypes are present: *rust*
+Clippy will be auto-enabled if any *Rust* files are present.
 
 ## Settings
 
@@ -34,7 +34,10 @@ Clippy supports the following config files:
 * `clippy.toml`
 * `.clippy.toml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 Clippy is distributed with rust itself, so specify your rust version for your clippy version (for example `clippy@1.61.0`).
 

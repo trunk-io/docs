@@ -26,7 +26,7 @@ trunk check enable stylua
 
 ## Auto Enabling
 
-stylua will be auto-enabled if any of its config files are present: *`stylua.toml`, `.stylua.toml`*
+stylua will be auto-enabled if any of its config files are present: *`stylua.toml`, `.stylua.toml`*.
 
 ## Settings
 
@@ -34,7 +34,8 @@ stylua supports the following config files:
 * `stylua.toml`
 * `.stylua.toml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `stylua.toml` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `stylua.toml` if your project does not already have one.
 
 
 

@@ -26,7 +26,7 @@ trunk check enable yapf
 
 ## Auto Enabling
 
-yapf will be auto-enabled if any of its config files are present: *`.style.yapf`, `.yapfignore`*
+yapf will be auto-enabled if any of its config files are present: *`.style.yapf`, `.yapfignore`*.
 
 ## Settings
 
@@ -34,7 +34,8 @@ yapf supports the following config files:
 * `.style.yapf`
 * `.yapfignore`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

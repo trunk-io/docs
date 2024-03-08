@@ -26,7 +26,7 @@ trunk check enable renovate
 
 ## Auto Enabling
 
-renovate will be auto-enabled if any of its config files are present: *`renovate.json`, `renovate.json5`, `.github/renovate.json`*
+renovate will be auto-enabled if any of its config files are present: *`renovate.json`, `renovate.json5`, `.github/renovate.json`*.
 
 ## Settings
 
@@ -41,7 +41,8 @@ renovate supports the following config files:
 * `.renovaterc.json`
 * `.renovaterc.json5`
 
- Unlike with most tools under `trunk check`, these files cannot be moved.
+Unlike with most tools under `trunk check`, these files cannot be moved.
+
 
 
 

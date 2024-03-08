@@ -28,8 +28,6 @@ trunk check enable dotnet-format
 
 dotnet-format will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

@@ -26,7 +26,7 @@ trunk check enable stringslint
 
 ## Auto Enabling
 
-stringslint will be auto-enabled if any of its config files are present: *`.stringslint.yml`, `.stringslint.yaml`, `.stringslint`*
+stringslint will be auto-enabled if any of its config files are present: *`.stringslint.yml`, `.stringslint.yaml`, `.stringslint`*.
 
 ## Settings
 
@@ -35,7 +35,8 @@ stringslint supports the following config files:
 * `.stringslint.yaml`
 * `.stringslint`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

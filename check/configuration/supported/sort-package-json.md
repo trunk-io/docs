@@ -28,8 +28,6 @@ trunk check enable sort-package-json
 
 sort-package-json will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

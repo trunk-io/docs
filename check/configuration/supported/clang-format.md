@@ -28,14 +28,17 @@ trunk check enable clang-format
 
 ## Auto Enabling
 
-ClangFormat will be auto-enabled if any of its config files are present: *`.clang-format`*
+ClangFormat will be auto-enabled if a `.clang-format` config file is present.
 
 ## Settings
 
 ClangFormat supports the following config files:
 * `.clang-format`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 By default, Trunk uses Clang-format to additionally format `.proto` files. However, for this to work, you need to have told `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format file`:
 

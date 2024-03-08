@@ -37,7 +37,8 @@ tfsec supports the following config files:
 * `.tfsec/config.yml`
 * `.tfsec/config.yaml`
 
- Unlike with most tools under `trunk check`, these files cannot be moved.
+Unlike with most tools under `trunk check`, these files cannot be moved.
+
 
 
 

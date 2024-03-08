@@ -26,14 +26,17 @@ trunk check enable trivy
 
 ## Auto Enabling
 
-Trivy will be auto-enabled if any of the following filetypes are present: *lockfile, ALL, docker, yaml, terraform*
+Trivy will be auto-enabled if any *Lockfile, ALL, Docker, Yaml or Terraform* files are present.
 
 ## Settings
 
 Trivy supports the following config files:
 * `trivy-secret.yaml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 
 

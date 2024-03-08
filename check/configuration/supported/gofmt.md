@@ -26,9 +26,7 @@ trunk check enable gofmt
 
 ## Auto Enabling
 
-gofmt will be auto-enabled if any of the following filetypes are present: *go*
-
-## Settings
+gofmt will be auto-enabled if any *Go* files are present.
 
 
 

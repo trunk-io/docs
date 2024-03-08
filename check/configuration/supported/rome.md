@@ -33,7 +33,8 @@ rome will never be auto-enabled. It must be enabled manually.
 rome supports the following config files:
 * `rome.json`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

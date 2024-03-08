@@ -28,9 +28,9 @@ trunk check enable terraform
 
 Terraform will never be auto-enabled. It must be enabled manually.
 
-## Settings
 
 
+## Usage Notes
 
 We currently support `terraform validate` and `terraform fmt`, but only `fmt` is enabled by default when you add `terraform` to your enabled list in `trunk.yaml`. To enable `validate`, add this to your `trunk.yaml`:
 

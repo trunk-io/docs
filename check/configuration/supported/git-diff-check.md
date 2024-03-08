@@ -26,9 +26,7 @@ trunk check enable git-diff-check
 
 ## Auto Enabling
 
-git-diff-check will be auto-enabled if any of the following filetypes are present: *ALL*
-
-## Settings
+git-diff-check will be auto-enabled if any *ALL* files are present.
 
 
 

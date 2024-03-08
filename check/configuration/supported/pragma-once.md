@@ -28,8 +28,6 @@ trunk check enable pragma-once
 
 pragma-once will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

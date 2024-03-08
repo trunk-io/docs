@@ -26,14 +26,15 @@ trunk check enable psscriptanalyzer
 
 ## Auto Enabling
 
-psscriptanalyzer will be auto-enabled if any of its config files are present: *`PSScriptAnalyzerSettings.psd1`*
+psscriptanalyzer will be auto-enabled if a `PSScriptAnalyzerSettings.psd1` config file is present.
 
 ## Settings
 
 psscriptanalyzer supports the following config files:
 * `PSScriptAnalyzerSettings.psd1`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

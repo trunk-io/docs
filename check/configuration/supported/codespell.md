@@ -26,14 +26,15 @@ trunk check enable codespell
 
 ## Auto Enabling
 
-codespell will be auto-enabled if any of its config files are present: *`.codespellrc`*
+codespell will be auto-enabled if a `.codespellrc` config file is present.
 
 ## Settings
 
 codespell supports the following config files:
 * `.codespellrc`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

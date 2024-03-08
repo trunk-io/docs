@@ -28,8 +28,6 @@ trunk check enable pmd
 
 pmd will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

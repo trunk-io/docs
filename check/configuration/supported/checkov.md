@@ -26,7 +26,7 @@ trunk check enable checkov
 
 ## Auto Enabling
 
-Checkov will be auto-enabled if any of the following filetypes are present: *terraform, cloudformation, docker, yaml, json*
+Checkov will be auto-enabled if any *Terraform, Cloudformation, Docker, Yaml or Json* files are present.
 
 ## Settings
 
@@ -34,7 +34,8 @@ Checkov supports the following config files:
 * `.checkov.yml`
 * `.checkov.yaml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

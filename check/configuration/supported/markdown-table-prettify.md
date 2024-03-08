@@ -28,8 +28,6 @@ trunk check enable markdown-table-prettify
 
 markdown-table-prettify will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

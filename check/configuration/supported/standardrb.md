@@ -26,14 +26,15 @@ trunk check enable standardrb
 
 ## Auto Enabling
 
-standardrb will be auto-enabled if any of its config files are present: *`.standard.yml`*
+standardrb will be auto-enabled if a `.standard.yml` config file is present.
 
 ## Settings
 
 standardrb supports the following config files:
 * `.standard.yml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

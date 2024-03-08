@@ -26,14 +26,15 @@ trunk check enable bandit
 
 ## Auto Enabling
 
-Bandit will be auto-enabled if any of the following filetypes are present: *python*
+Bandit will be auto-enabled if any *Python* files are present.
 
 ## Settings
 
 Bandit supports the following config files:
 * `.bandit`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

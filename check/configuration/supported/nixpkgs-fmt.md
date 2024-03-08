@@ -26,9 +26,7 @@ trunk check enable nixpkgs-fmt
 
 ## Auto Enabling
 
-nixpkgs-fmt will be auto-enabled if any of the following filetypes are present: *nix*
-
-## Settings
+nixpkgs-fmt will be auto-enabled if any *Nix* files are present.
 
 
 

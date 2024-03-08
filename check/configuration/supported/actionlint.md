@@ -26,7 +26,7 @@ trunk check enable actionlint
 
 ## Auto Enabling
 
-Actionlint will be auto-enabled if any of the following filetypes are present: *github-workflow*
+Actionlint will be auto-enabled if any *Github-workflow* files are present.
 
 ## Settings
 
@@ -34,8 +34,7 @@ Actionlint supports the following config files:
 * `.github/actionlint.yaml`
 * `.github/actionlint.yml`
 
- Unlike with most tools under `trunk check`, these files cannot be moved.
-
+Unlike with most tools under `trunk check`, these files cannot be moved.
 
 
 

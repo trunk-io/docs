@@ -26,7 +26,7 @@ trunk check enable golangci-lint
 
 ## Auto Enabling
 
-golangci-lint will be auto-enabled if any of the following filetypes are present: *go*
+golangci-lint will be auto-enabled if any *Go* files are present.
 
 ## Settings
 
@@ -36,7 +36,10 @@ golangci-lint supports the following config files:
 * `.golangci.yaml`
 * `.golangci.yml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 Make sure your go version in `go.mod` matches Trunk's go runtime version. At the time of this writing, Trunk's default go runtime version is `1.21.0`. You can find out what it is via `trunk print-config`, and look for the `runtime` section, and you can override the default version in your `trunk.yaml` via:
 

@@ -26,9 +26,7 @@ trunk check enable cue-fmt
 
 ## Auto Enabling
 
-cue-fmt will be auto-enabled if any of the following filetypes are present: *cue*
-
-## Settings
+cue-fmt will be auto-enabled if any *Cue* files are present.
 
 
 

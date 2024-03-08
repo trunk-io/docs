@@ -26,9 +26,7 @@ trunk check enable black
 
 ## Auto Enabling
 
-Black will be auto-enabled if any of the following filetypes are present: *python, jupyter, python-interface*
-
-## Settings
+Black will be auto-enabled if any *Python, Jupyter or Python-interface* files are present.
 
 
 

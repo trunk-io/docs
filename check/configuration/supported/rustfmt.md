@@ -26,7 +26,7 @@ trunk check enable rustfmt
 
 ## Auto Enabling
 
-rustfmt will be auto-enabled if any of the following filetypes are present: *rust*
+rustfmt will be auto-enabled if any *Rust* files are present.
 
 ## Settings
 
@@ -34,7 +34,10 @@ rustfmt supports the following config files:
 * `rustfmt.toml`
 * `.rustfmt.toml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.rustfmt.toml` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.rustfmt.toml` if your project does not already have one.
+
+## Usage Notes
 
 We currently use the version of `rustfmt` packaged with rust, so for `rustfmt` version, specify your Rust version (for example `rustfmt@1.61.0`).
 

@@ -26,14 +26,17 @@ trunk check enable flake8
 
 ## Auto Enabling
 
-Flake8 will be auto-enabled if any of its config files are present: *`.flake8`*
+Flake8 will be auto-enabled if a `.flake8` config file is present.
 
 ## Settings
 
 Flake8 supports the following config files:
 * `.flake8`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.flake8` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.flake8` if your project does not already have one.
+
+## Usage Notes
 
 
 

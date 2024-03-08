@@ -26,9 +26,7 @@ trunk check enable trufflehog
 
 ## Auto Enabling
 
-Trufflehog will be auto-enabled if any of the following filetypes are present: *ALL*
-
-## Settings
+Trufflehog will be auto-enabled if any *ALL* files are present.
 
 
 

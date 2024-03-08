@@ -26,7 +26,7 @@ trunk check enable yamllint
 
 ## Auto Enabling
 
-Yamllint will be auto-enabled if any of the following filetypes are present: *yaml*
+Yamllint will be auto-enabled if any *Yaml* files are present.
 
 ## Settings
 
@@ -35,7 +35,8 @@ Yamllint supports the following config files:
 * `.yamllint.yaml`
 * `.yamllint.yml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.yamllint.yaml` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.yamllint.yaml` if your project does not already have one.
 
 
 

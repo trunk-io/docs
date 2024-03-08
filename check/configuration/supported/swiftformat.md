@@ -26,14 +26,15 @@ trunk check enable swiftformat
 
 ## Auto Enabling
 
-swiftformat will be auto-enabled if any of its config files are present: *`.swiftformat`*
+swiftformat will be auto-enabled if a `.swiftformat` config file is present.
 
 ## Settings
 
 swiftformat supports the following config files:
 * `.swiftformat`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

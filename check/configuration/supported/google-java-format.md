@@ -28,8 +28,6 @@ trunk check enable google-java-format
 
 google-java-format will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

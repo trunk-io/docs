@@ -26,9 +26,7 @@ trunk check enable txtpbfmt
 
 ## Auto Enabling
 
-txtpbfmt will be auto-enabled if any of the following filetypes are present: *textproto*
-
-## Settings
+txtpbfmt will be auto-enabled if any *Textproto* files are present.
 
 
 

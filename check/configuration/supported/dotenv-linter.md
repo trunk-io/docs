@@ -26,9 +26,7 @@ trunk check enable dotenv-linter
 
 ## Auto Enabling
 
-dotenv-linter will be auto-enabled if any of the following filetypes are present: *dotenv*
-
-## Settings
+dotenv-linter will be auto-enabled if any *Dotenv* files are present.
 
 
 

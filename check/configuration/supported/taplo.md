@@ -26,7 +26,7 @@ trunk check enable taplo
 
 ## Auto Enabling
 
-taplo will be auto-enabled if any of the following filetypes are present: *toml*
+taplo will be auto-enabled if any *Toml* files are present.
 
 ## Settings
 
@@ -34,7 +34,8 @@ taplo supports the following config files:
 * `.taplo.toml`
 * `taplo.toml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

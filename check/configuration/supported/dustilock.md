@@ -28,8 +28,6 @@ trunk check enable dustilock
 
 dustilock will never be auto-enabled. It must be enabled manually.
 
-## Settings
-
 
 
 

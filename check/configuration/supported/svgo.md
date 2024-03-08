@@ -26,7 +26,7 @@ trunk check enable svgo
 
 ## Auto Enabling
 
-SVGO will be auto-enabled if any of the following filetypes are present: *svg*
+SVGO will be auto-enabled if any *Svg* files are present.
 
 ## Settings
 
@@ -35,7 +35,8 @@ SVGO supports the following config files:
 * `svgo.config.mjs`
 * `svgo.config.cjs`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `svgo.config.js` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `svgo.config.js` if your project does not already have one.
 
 
 

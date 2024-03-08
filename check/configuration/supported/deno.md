@@ -26,7 +26,7 @@ trunk check enable deno
 
 ## Auto Enabling
 
-deno will be auto-enabled if any of its config files are present: *`deno.json`, `deno.jsonc`*
+deno will be auto-enabled if any of its config files are present: *`deno.json`, `deno.jsonc`*.
 
 ## Settings
 
@@ -34,7 +34,8 @@ deno supports the following config files:
 * `deno.json`
 * `deno.jsonc`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

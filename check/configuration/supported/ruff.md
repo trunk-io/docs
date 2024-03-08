@@ -26,14 +26,15 @@ trunk check enable ruff
 
 ## Auto Enabling
 
-Ruff will be auto-enabled if any of the following filetypes are present: *python*
+Ruff will be auto-enabled if any *Python* files are present.
 
 ## Settings
 
 Ruff supports the following config files:
 * `ruff.toml`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `ruff.toml` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `ruff.toml` if your project does not already have one.
 
 
 

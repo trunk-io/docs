@@ -26,7 +26,7 @@ trunk check enable shellcheck
 
 ## Auto Enabling
 
-ShellCheck will be auto-enabled if any of the following filetypes are present: *shell*
+ShellCheck will be auto-enabled if any *Shell* files are present.
 
 ## Settings
 
@@ -34,7 +34,8 @@ ShellCheck supports the following config files:
 * `.shellcheckrc`
 * `shellcheckrc`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.shellcheckrc` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.shellcheckrc` if your project does not already have one.
 
 
 

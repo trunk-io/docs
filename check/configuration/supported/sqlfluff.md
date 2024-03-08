@@ -28,14 +28,17 @@ trunk check enable sqlfluff
 
 ## Auto Enabling
 
-SQLFluff will be auto-enabled if any of its config files are present: *`.sqlfluff`*
+SQLFluff will be auto-enabled if a `.sqlfluff` config file is present.
 
 ## Settings
 
 SQLFluff supports the following config files:
 * `.sqlfluff`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.sqlfluff` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.sqlfluff` if your project does not already have one.
+
+## Usage Notes
 
 Sqlfluff is only configured as a linter by default because its formatting capabilities are limited. To turn sqlfluff formatting on, enable its subcommand:
 

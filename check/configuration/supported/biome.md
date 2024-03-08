@@ -26,7 +26,7 @@ trunk check enable biome
 
 ## Auto Enabling
 
-biome will be auto-enabled if any of its config files are present: *`biome.json`, `rome.json`*
+biome will be auto-enabled if any of its config files are present: *`biome.json`, `rome.json`*.
 
 ## Settings
 
@@ -34,7 +34,8 @@ biome supports the following config files:
 * `biome.json`
 * `rome.json`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

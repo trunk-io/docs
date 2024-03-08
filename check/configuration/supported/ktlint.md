@@ -26,9 +26,7 @@ trunk check enable ktlint
 
 ## Auto Enabling
 
-ktlint will be auto-enabled if any of the following filetypes are present: *kotlin*
-
-## Settings
+ktlint will be auto-enabled if any *Kotlin* files are present.
 
 
 

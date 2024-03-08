@@ -28,14 +28,17 @@ trunk check enable clang-tidy
 
 ## Auto Enabling
 
-clang-tidy will be auto-enabled if any of its config files are present: *`.clang-tidy`*
+clang-tidy will be auto-enabled if a `.clang-tidy` config file is present.
 
 ## Settings
 
 clang-tidy supports the following config files:
 * `.clang-tidy`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.clang-tidy` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.clang-tidy` if your project does not already have one.
+
+## Usage Notes
 
 We only support using clang-tidy from Bazel and CMake projects.
 

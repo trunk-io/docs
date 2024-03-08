@@ -26,7 +26,7 @@ trunk check enable stylelint
 
 ## Auto Enabling
 
-stylelint will be auto-enabled if any of its config files are present: *`stylelint.config.js`, `.stylelintrc.js`, `stylelint.config.mjs`*
+stylelint will be auto-enabled if any of its config files are present: *`stylelint.config.js`, `.stylelintrc.js`, `stylelint.config.mjs`*.
 
 ## Settings
 
@@ -42,7 +42,8 @@ stylelint supports the following config files:
 * `.stylelintrc.yaml`
 * `.stylelintrc`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 
 

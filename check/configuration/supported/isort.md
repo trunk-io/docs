@@ -26,14 +26,15 @@ trunk check enable isort
 
 ## Auto Enabling
 
-isort will be auto-enabled if any of the following filetypes are present: *python*
+isort will be auto-enabled if any *Python* files are present.
 
 ## Settings
 
 isort supports the following config files:
 * `.isort.cfg`
 
- You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.isort.cfg` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.isort.cfg` if your project does not already have one.
 
 
 
