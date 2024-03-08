@@ -1,6 +1,19 @@
 ---
 description: rome is a linter for JavaScript and TypeScript
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# rome
 
 **rome** is a linter for JavaScript and TypeScript.
 
@@ -10,7 +23,8 @@ You can enable the rome plugin with
 trunk check enable rome
 ```
 
-# Settings
+## Settings
+
 
 rome uses the same config files as the
 upstream [rome](https://github.com/rome/tools#readme) project, so you can continue to use any

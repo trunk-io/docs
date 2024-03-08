@@ -1,6 +1,19 @@
 ---
 description: deno is a linter for JavaScript, JSON, TypeScript and Markdown
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# deno
 
 **deno** is a linter for JavaScript, JSON, TypeScript and Markdown.
 
@@ -10,7 +23,8 @@ You can enable the deno plugin with
 trunk check enable deno
 ```
 
-# Settings
+## Settings
+
 
 deno uses the same config files as the
 upstream [deno](https://deno.land/manual) project, so you can continue to use any

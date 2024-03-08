@@ -1,6 +1,19 @@
 ---
 description: cmake-format is a linter for C, C++
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# cmake-format
 
 **cmake-format** is a linter for C, C++.
 
@@ -10,7 +23,8 @@ You can enable the cmake-format plugin with
 trunk check enable cmake-format
 ```
 
-# Settings
+## Settings
+
 
 cmake-format uses the same config files as the
 upstream [cmake-format](https://github.com/cheshirekow/cmake_format) project, so you can continue to use any

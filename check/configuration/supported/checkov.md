@@ -1,6 +1,19 @@
 ---
 description: Checkov is a static code analysis tool for scanning infrastructure as code. It identifies misconfigurations in IaC files that could lead to security breaches.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Checkov
 
 **Checkov** is a linter for Cloudformation, Security, Terraform and Docker.
 
@@ -10,7 +23,8 @@ You can enable the Checkov plugin with
 trunk check enable checkov
 ```
 
-# Settings
+## Settings
+
 
 Checkov uses the same config files as the
 upstream [Checkov](https://github.com/bridgecrewio/checkov) project, so you can continue to use any

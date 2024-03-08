@@ -1,6 +1,19 @@
 ---
 description: terragrunt is a linter for Terragrunt
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# terragrunt
 
 **terragrunt** is a linter for Terragrunt.
 
@@ -10,7 +23,8 @@ You can enable the terragrunt plugin with
 trunk check enable terragrunt
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/terragrunt) if your project does not already have one,

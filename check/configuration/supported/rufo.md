@@ -1,6 +1,19 @@
 ---
 description: rufo is a linter for Ruby
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# rufo
 
 **rufo** is a linter for Ruby.
 
@@ -10,7 +23,8 @@ You can enable the rufo plugin with
 trunk check enable rufo
 ```
 
-# Settings
+## Settings
+
 
 rufo uses the same config files as the
 upstream [rufo](https://github.com/ruby-formatter/rufo#readme) project, so you can continue to use any

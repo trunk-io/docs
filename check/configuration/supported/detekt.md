@@ -1,6 +1,19 @@
 ---
 description: Static code analysis for Kotlin
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Detekt
 
 **Detekt** is a linter for Kotlin.
 
@@ -10,7 +23,8 @@ You can enable the Detekt plugin with
 trunk check enable detekt
 ```
 
-# Settings
+## Settings
+
 
 Detekt uses the same config files as the
 upstream [Detekt](https://github.com/detekt/detekt) project, so you can continue to use any

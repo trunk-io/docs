@@ -1,6 +1,19 @@
 ---
 description: isort is a Python utility for sorting imports alphabetically and automatically separating them into sections and by type. 
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# isort
 
 **isort** is a formatter for Python.
 
@@ -10,7 +23,8 @@ You can enable the isort plugin with
 trunk check enable isort
 ```
 
-# Settings
+## Settings
+
 
 isort uses the same config files as the
 upstream [isort](https://pycqa.github.io/isort/) project, so you can continue to use any

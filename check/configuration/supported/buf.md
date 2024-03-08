@@ -1,6 +1,19 @@
 ---
 description: buf is a linter for Protobuf
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# buf
 
 **buf** is a linter for Protobuf.
 
@@ -10,7 +23,8 @@ You can enable the buf plugin with
 trunk check enable buf
 ```
 
-# Settings
+## Settings
+
 
 buf uses the same config files as the
 upstream [buf](https://github.com/bufbuild/buf#readme) project, so you can continue to use any

@@ -1,6 +1,19 @@
 ---
 description: Explore our guide on Actionlint, the linter for Github Actions. Learn about its features, installation, and configuration.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Actionlint
 
 **Actionlint** is a linter for GitHub.
 
@@ -10,7 +23,8 @@ You can enable the Actionlint plugin with
 trunk check enable actionlint
 ```
 
-# Settings
+## Settings
+
 
 Actionlint uses the same config files as the
 upstream [Actionlint](https://github.com/rhysd/actionlint) project, so you can continue to use any

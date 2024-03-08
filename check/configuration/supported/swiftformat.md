@@ -1,6 +1,19 @@
 ---
 description: swiftformat is a linter for Swift
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# swiftformat
 
 **swiftformat** is a linter for Swift.
 
@@ -10,7 +23,8 @@ You can enable the swiftformat plugin with
 trunk check enable swiftformat
 ```
 
-# Settings
+## Settings
+
 
 swiftformat uses the same config files as the
 upstream [swiftformat](https://github.com/nicklockwood/SwiftFormat#readme) project, so you can continue to use any

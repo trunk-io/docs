@@ -1,6 +1,19 @@
 ---
 description: pyright is a linter for Python
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# pyright
 
 **pyright** is a linter for Python.
 
@@ -10,7 +23,8 @@ You can enable the pyright plugin with
 trunk check enable pyright
 ```
 
-# Settings
+## Settings
+
 
 pyright uses the same config files as the
 upstream [pyright](https://github.com/microsoft/pyright) project, so you can continue to use any

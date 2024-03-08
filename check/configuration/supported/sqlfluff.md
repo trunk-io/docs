@@ -2,7 +2,20 @@
 description: SQLFluff is a dialect-flexible and configurable SQL linter.
 
 
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# SQLFluff
 
 **SQLFluff** is a linter for SQL.
 
@@ -12,7 +25,8 @@ You can enable the SQLFluff plugin with
 trunk check enable sqlfluff
 ```
 
-# Settings
+## Settings
+
 
 SQLFluff uses the same config files as the
 upstream [SQLFluff](https://github.com/sqlfluff/sqlfluff) project, so you can continue to use any

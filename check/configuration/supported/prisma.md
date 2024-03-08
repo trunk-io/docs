@@ -1,6 +1,19 @@
 ---
 description: prisma is a linter for Prisma
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# prisma
 
 **prisma** is a linter for Prisma.
 
@@ -10,7 +23,8 @@ You can enable the prisma plugin with
 trunk check enable prisma
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/prisma) if your project does not already have one,

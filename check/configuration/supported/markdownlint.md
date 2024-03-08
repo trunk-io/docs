@@ -1,6 +1,19 @@
 ---
 description: Markdownlint is a tool designed to enforce consistency for Markdown files. It can include checks for headings, lists, line length, and syntax preferences. 
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Markdownlint
 
 **Markdownlint** is a linter for Markdown.
 
@@ -10,7 +23,8 @@ You can enable the Markdownlint plugin with
 trunk check enable markdownlint
 ```
 
-# Settings
+## Settings
+
 
 Markdownlint uses the same config files as the
 upstream [Markdownlint](https://github.com/DavidAnson/markdownlint) project, so you can continue to use any

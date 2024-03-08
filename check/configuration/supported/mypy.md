@@ -1,6 +1,19 @@
 ---
 description: mypy is a linter for Python
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# mypy
 
 **mypy** is a linter for Python.
 
@@ -10,7 +23,8 @@ You can enable the mypy plugin with
 trunk check enable mypy
 ```
 
-# Settings
+## Settings
+
 
 mypy uses the same config files as the
 upstream [mypy](https://github.com/python/mypy#readme) project, so you can continue to use any

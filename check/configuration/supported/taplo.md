@@ -1,6 +1,19 @@
 ---
 description: taplo is a linter for TOML
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# taplo
 
 **taplo** is a linter for TOML.
 
@@ -10,7 +23,8 @@ You can enable the taplo plugin with
 trunk check enable taplo
 ```
 
-# Settings
+## Settings
+
 
 taplo uses the same config files as the
 upstream [taplo](https://github.com/tamasfe/taplo#readme) project, so you can continue to use any

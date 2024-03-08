@@ -1,6 +1,19 @@
 ---
 description: SVGO, or Scalable Vector Graphics Optimizer, is a tool designed to optimize SVG files, making them smaller and more efficient without compromising on quality.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# SVGO
 
 **SVGO** is a linter for SVG.
 
@@ -10,7 +23,8 @@ You can enable the SVGO plugin with
 trunk check enable svgo
 ```
 
-# Settings
+## Settings
+
 
 SVGO uses the same config files as the
 upstream [SVGO](https://github.com/svg/svgo) project, so you can continue to use any

@@ -1,6 +1,19 @@
 ---
 description: stylelint is a linter for CSS, SCSS
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# stylelint
 
 **stylelint** is a linter for CSS, SCSS.
 
@@ -10,7 +23,8 @@ You can enable the stylelint plugin with
 trunk check enable stylelint
 ```
 
-# Settings
+## Settings
+
 
 stylelint uses the same config files as the
 upstream [stylelint](https://github.com/stylelint/stylelint#readme) project, so you can continue to use any

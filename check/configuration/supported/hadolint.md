@@ -1,6 +1,19 @@
 ---
 description: hadolint is a linter for Docker
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# hadolint
 
 **hadolint** is a linter for Docker.
 
@@ -10,7 +23,8 @@ You can enable the hadolint plugin with
 trunk check enable hadolint
 ```
 
-# Settings
+## Settings
+
 
 hadolint uses the same config files as the
 upstream [hadolint](https://github.com/hadolint/hadolint#readme) project, so you can continue to use any

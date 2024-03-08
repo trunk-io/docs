@@ -1,6 +1,19 @@
 ---
 description: yapf is a linter for Python
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# yapf
 
 **yapf** is a linter for Python.
 
@@ -10,7 +23,8 @@ You can enable the yapf plugin with
 trunk check enable yapf
 ```
 
-# Settings
+## Settings
+
 
 yapf uses the same config files as the
 upstream [yapf](https://github.com/google/yapf#readme) project, so you can continue to use any

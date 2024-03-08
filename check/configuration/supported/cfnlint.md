@@ -1,6 +1,19 @@
 ---
 description: cfnlint is a linter for Cloudformation
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# cfnlint
 
 **cfnlint** is a linter for Cloudformation.
 
@@ -10,7 +23,8 @@ You can enable the cfnlint plugin with
 trunk check enable cfnlint
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/cfnlint) if your project does not already have one,

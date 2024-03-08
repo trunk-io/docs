@@ -1,6 +1,19 @@
 ---
 description: stringslint is a linter for Swift
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# stringslint
 
 **stringslint** is a linter for Swift.
 
@@ -10,7 +23,8 @@ You can enable the stringslint plugin with
 trunk check enable stringslint
 ```
 
-# Settings
+## Settings
+
 
 stringslint uses the same config files as the
 upstream [stringslint](https://github.com/dral3x/StringsLint#readme) project, so you can continue to use any

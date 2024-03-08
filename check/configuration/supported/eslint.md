@@ -1,6 +1,19 @@
 ---
 description: ESLint statically analyzes your code to quickly find problems.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# ESLint
 
 **ESLint** is a linter for JavaScript, JSON and TypeScript.
 
@@ -10,7 +23,8 @@ You can enable the ESLint plugin with
 trunk check enable eslint
 ```
 
-# Settings
+## Settings
+
 
 ESLint uses the same config files as the
 upstream [ESLint](https://eslint.org/) project, so you can continue to use any

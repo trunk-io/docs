@@ -1,6 +1,19 @@
 ---
 description: psscriptanalyzer is a linter for PowerShell
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# psscriptanalyzer
 
 **psscriptanalyzer** is a linter for PowerShell.
 
@@ -10,7 +23,8 @@ You can enable the psscriptanalyzer plugin with
 trunk check enable psscriptanalyzer
 ```
 
-# Settings
+## Settings
+
 
 psscriptanalyzer uses the same config files as the
 upstream [psscriptanalyzer](https://github.com/PowerShell/PSScriptAnalyzer) project, so you can continue to use any

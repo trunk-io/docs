@@ -1,6 +1,19 @@
 ---
 description: scalafmt is a linter for Scala
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# scalafmt
 
 **scalafmt** is a linter for Scala.
 
@@ -10,7 +23,8 @@ You can enable the scalafmt plugin with
 trunk check enable scalafmt
 ```
 
-# Settings
+## Settings
+
 
 scalafmt uses the same config files as the
 upstream [scalafmt](https://github.com/scalameta/scalafmt#readme) project, so you can continue to use any

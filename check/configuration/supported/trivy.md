@@ -1,6 +1,19 @@
 ---
 description: Explore our guide on Trivy, the comprehensive vulnerability scanner. Learn about its features, installation, and configuration.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Trivy
 
 **Trivy** is a linter for Security.
 
@@ -10,7 +23,8 @@ You can enable the Trivy plugin with
 trunk check enable trivy
 ```
 
-# Settings
+## Settings
+
 
 Trivy uses the same config files as the
 upstream [Trivy](https://github.com/aquasecurity/trivy) project, so you can continue to use any

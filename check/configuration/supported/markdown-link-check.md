@@ -1,6 +1,19 @@
 ---
 description: markdown-link-check is a linter for Markdown
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# markdown-link-check
 
 **markdown-link-check** is a linter for Markdown.
 
@@ -10,7 +23,8 @@ You can enable the markdown-link-check plugin with
 trunk check enable markdown-link-check
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/markdown-link-check) if your project does not already have one,

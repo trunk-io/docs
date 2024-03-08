@@ -1,6 +1,19 @@
 ---
 description: Discover Ruff, a speedy Python linter for large codebases. Integrates with CI/IDEs and supports .py, .pyi, and Jupyter Notebooks.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Ruff
 
 **Ruff** is a linter for Python.
 
@@ -10,7 +23,8 @@ You can enable the Ruff plugin with
 trunk check enable ruff
 ```
 
-# Settings
+## Settings
+
 
 Ruff uses the same config files as the
 upstream [Ruff](https://github.com/astral-sh/ruff) project, so you can continue to use any

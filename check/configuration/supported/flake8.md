@@ -1,6 +1,19 @@
 ---
 description: Uncover Flake8, a versatile Python linter for code style and error checking. Flake 8 checks against PEP 8 and more, with plugin support for broader analysis.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Flake8
 
 **Flake8** is a linter for Python.
 
@@ -10,7 +23,8 @@ You can enable the Flake8 plugin with
 trunk check enable flake8
 ```
 
-# Settings
+## Settings
+
 
 Flake8 uses the same config files as the
 upstream [Flake8](https://flake8.pycqa.org/en/latest/) project, so you can continue to use any

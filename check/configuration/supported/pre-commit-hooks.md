@@ -1,6 +1,19 @@
 ---
 description: pre-commit-hooks is a linter for All
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# pre-commit-hooks
 
 **pre-commit-hooks** is a linter for All.
 
@@ -10,7 +23,8 @@ You can enable the pre-commit-hooks plugin with
 trunk check enable pre-commit-hooks
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks) if your project does not already have one,

@@ -1,6 +1,19 @@
 ---
 description: buildifier is a linter for Bazel, Starlark
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# buildifier
 
 **buildifier** is a linter for Bazel, Starlark.
 
@@ -10,7 +23,8 @@ You can enable the buildifier plugin with
 trunk check enable buildifier
 ```
 
-# Settings
+## Settings
+
 
 buildifier uses the same config files as the
 upstream [buildifier](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md) project, so you can continue to use any

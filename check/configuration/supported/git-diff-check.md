@@ -1,6 +1,19 @@
 ---
 description: git-diff-check is a linter for All
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# git-diff-check
 
 **git-diff-check** is a linter for All.
 
@@ -10,7 +23,8 @@ You can enable the git-diff-check plugin with
 trunk check enable git-diff-check
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/git-diff-check) if your project does not already have one,

@@ -1,6 +1,19 @@
 ---
 description: tfsec is a linter for Security and Terraform
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# tfsec
 
 **tfsec** is a linter for Security and Terraform.
 
@@ -10,7 +23,8 @@ You can enable the tfsec plugin with
 trunk check enable tfsec
 ```
 
-# Settings
+## Settings
+
 
 tfsec uses the same config files as the
 upstream [tfsec](https://github.com/aquasecurity/tfsec) project, so you can continue to use any

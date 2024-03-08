@@ -1,6 +1,19 @@
 ---
 description: tflint is a linter for Terraform
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# tflint
 
 **tflint** is a linter for Terraform.
 
@@ -10,7 +23,8 @@ You can enable the tflint plugin with
 trunk check enable tflint
 ```
 
-# Settings
+## Settings
+
 
 tflint uses the same config files as the
 upstream [tflint](https://github.com/terraform-linters/tflint#readme) project, so you can continue to use any

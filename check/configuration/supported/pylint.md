@@ -1,6 +1,19 @@
 ---
 description: Learn about Pylint, the versatile Python linter for error detection, code smell elimination, and PEP 8 enforcement.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Pylint
 
 **Pylint** is a linter for Python.
 
@@ -10,7 +23,8 @@ You can enable the Pylint plugin with
 trunk check enable pylint
 ```
 
-# Settings
+## Settings
+
 
 Pylint uses the same config files as the
 upstream [Pylint](https://pypi.org/project/pylint/) project, so you can continue to use any

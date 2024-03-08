@@ -1,6 +1,19 @@
 ---
 description: semgrep is a linter for Go, Java, JavaScript, JSON, Python, Ruby, TypeScript and YAML
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# semgrep
 
 **semgrep** is a linter for Go, Java, JavaScript, JSON, Python, Ruby, TypeScript and YAML.
 
@@ -10,7 +23,8 @@ You can enable the semgrep plugin with
 trunk check enable semgrep
 ```
 
-# Settings
+## Settings
+
 
 semgrep uses the same config files as the
 upstream [semgrep](https://github.com/returntocorp/semgrep#readme) project, so you can continue to use any

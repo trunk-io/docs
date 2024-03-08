@@ -1,6 +1,19 @@
 ---
 description: perlcritic is a linter for Perl
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# perlcritic
 
 **perlcritic** is a linter for Perl.
 
@@ -10,7 +23,8 @@ You can enable the perlcritic plugin with
 trunk check enable perlcritic
 ```
 
-# Settings
+## Settings
+
 
 perlcritic uses the same config files as the
 upstream [perlcritic](https://metacpan.org/pod/Perl::Critic) project, so you can continue to use any

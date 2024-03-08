@@ -1,6 +1,19 @@
 ---
 description: Yamllint is a linter that checks for formatting discrepancies, key-value pair issues, and syntax errors, ensuring your YAML files are syntactically correct. 
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Yamllint
 
 **Yamllint** is a linter for YAML.
 
@@ -10,7 +23,8 @@ You can enable the Yamllint plugin with
 trunk check enable yamllint
 ```
 
-# Settings
+## Settings
+
 
 Yamllint uses the same config files as the
 upstream [Yamllint](https://github.com/adrienverge/yamllint) project, so you can continue to use any

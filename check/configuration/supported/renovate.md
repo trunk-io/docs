@@ -1,6 +1,19 @@
 ---
 description: renovate is a linter for Renovate
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# renovate
 
 **renovate** is a linter for Renovate.
 
@@ -10,7 +23,8 @@ You can enable the renovate plugin with
 trunk check enable renovate
 ```
 
-# Settings
+## Settings
+
 
 renovate uses the same config files as the
 upstream [renovate](https://github.com/renovatebot/renovate#readme) project, so you can continue to use any

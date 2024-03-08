@@ -1,6 +1,19 @@
 ---
 description: swiftlint is a linter for Swift
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# swiftlint
 
 **swiftlint** is a linter for Swift.
 
@@ -10,7 +23,8 @@ You can enable the swiftlint plugin with
 trunk check enable swiftlint
 ```
 
-# Settings
+## Settings
+
 
 swiftlint uses the same config files as the
 upstream [swiftlint](https://github.com/realm/SwiftLint#readme) project, so you can continue to use any

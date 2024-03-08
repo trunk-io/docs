@@ -1,6 +1,19 @@
 ---
 description: Explore  Prettier, the powerful code formatter. Learn how to install, configure, and effectively use Prettier to enhance your coding workflow.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Prettier
 
 **Prettier** is a formatter for CSS, SCSS, JavaScript, JSON, Markdown, TypeScript, GraphQL and YAML.
 
@@ -10,7 +23,8 @@ You can enable the Prettier plugin with
 trunk check enable prettier
 ```
 
-# Settings
+## Settings
+
 
 Prettier uses the same config files as the
 upstream [Prettier](https://prettier.io/) project, so you can continue to use any

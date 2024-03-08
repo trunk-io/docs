@@ -2,7 +2,20 @@
 description: A clang-based C++ linter tool to provide an extensible framework for diagnosing and fixing programming errors that can be deduced via static analysis.
 
 
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# clang-tidy
 
 **clang-tidy** is a linter for Protobuf and C, C++.
 
@@ -12,7 +25,8 @@ You can enable the clang-tidy plugin with
 trunk check enable clang-tidy
 ```
 
-# Settings
+## Settings
+
 
 clang-tidy uses the same config files as the
 upstream [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) project, so you can continue to use any

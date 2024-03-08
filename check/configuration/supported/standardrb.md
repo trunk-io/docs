@@ -1,6 +1,19 @@
 ---
 description: standardrb is a linter for Ruby
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# standardrb
 
 **standardrb** is a linter for Ruby.
 
@@ -10,7 +23,8 @@ You can enable the standardrb plugin with
 trunk check enable standardrb
 ```
 
-# Settings
+## Settings
+
 
 standardrb uses the same config files as the
 upstream [standardrb](https://github.com/testdouble/standard#readme) project, so you can continue to use any

@@ -1,6 +1,19 @@
 ---
 description: gokart is a linter for Go
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# gokart
 
 **gokart** is a linter for Go.
 
@@ -10,7 +23,8 @@ You can enable the gokart plugin with
 trunk check enable gokart
 ```
 
-# Settings
+## Settings
+
 
 gokart uses the same config files as the
 upstream [gokart](https://github.com/praetorian-inc/gokart) project, so you can continue to use any

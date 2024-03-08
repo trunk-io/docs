@@ -1,6 +1,19 @@
 ---
 description: remark-lint is a linter for Markdown
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# remark-lint
 
 **remark-lint** is a linter for Markdown.
 
@@ -10,7 +23,8 @@ You can enable the remark-lint plugin with
 trunk check enable remark-lint
 ```
 
-# Settings
+## Settings
+
 
 remark-lint uses the same config files as the
 upstream [remark-lint](https://github.com/remarkjs/remark-lint#readme) project, so you can continue to use any

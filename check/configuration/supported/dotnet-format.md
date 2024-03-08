@@ -1,6 +1,19 @@
 ---
 description: dotnet-format is a linter for C#
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# dotnet-format
 
 **dotnet-format** is a linter for C#.
 
@@ -10,7 +23,8 @@ You can enable the dotnet-format plugin with
 trunk check enable dotnet-format
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/dotnet-format) if your project does not already have one,

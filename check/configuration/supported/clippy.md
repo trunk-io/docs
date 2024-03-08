@@ -1,6 +1,19 @@
 ---
 description: A collection of lints to catch common mistakes and improve your Rust code.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Clippy
 
 **Clippy** is a linter for Rust.
 
@@ -10,7 +23,8 @@ You can enable the Clippy plugin with
 trunk check enable clippy
 ```
 
-# Settings
+## Settings
+
 
 Clippy uses the same config files as the
 upstream [Clippy](https://doc.rust-lang.org/clippy/) project, so you can continue to use any

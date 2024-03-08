@@ -1,6 +1,19 @@
 ---
 description: perltidy is a linter for Perl
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# perltidy
 
 **perltidy** is a linter for Perl.
 
@@ -10,7 +23,8 @@ You can enable the perltidy plugin with
 trunk check enable perltidy
 ```
 
-# Settings
+## Settings
+
 
 perltidy uses the same config files as the
 upstream [perltidy](https://metacpan.org/dist/Perl-Tidy/view/bin/perltidy) project, so you can continue to use any

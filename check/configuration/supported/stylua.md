@@ -1,6 +1,19 @@
 ---
 description: stylua is a linter for Lua
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# stylua
 
 **stylua** is a linter for Lua.
 
@@ -10,7 +23,8 @@ You can enable the stylua plugin with
 trunk check enable stylua
 ```
 
-# Settings
+## Settings
+
 
 stylua uses the same config files as the
 upstream [stylua](https://github.com/JohnnyMorganz/StyLua/tree/main) project, so you can continue to use any

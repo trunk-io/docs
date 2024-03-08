@@ -1,6 +1,19 @@
 ---
 description: ShellCheck is a static analysis tool designed to identify and report syntax errors and potential issues in shell scripts
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# ShellCheck
 
 **ShellCheck** is a linter for Bash.
 
@@ -10,7 +23,8 @@ You can enable the ShellCheck plugin with
 trunk check enable shellcheck
 ```
 
-# Settings
+## Settings
+
 
 ShellCheck uses the same config files as the
 upstream [ShellCheck](https://www.shellcheck.net/) project, so you can continue to use any

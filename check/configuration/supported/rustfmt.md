@@ -1,6 +1,19 @@
 ---
 description: A tool for formatting Rust code according to style guidelines.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# rustfmt
 
 **rustfmt** is a formatter for Rust.
 
@@ -10,7 +23,8 @@ You can enable the rustfmt plugin with
 trunk check enable rustfmt
 ```
 
-# Settings
+## Settings
+
 
 rustfmt uses the same config files as the
 upstream [rustfmt](https://github.com/rust-lang/rustfmt) project, so you can continue to use any

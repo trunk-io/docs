@@ -1,6 +1,19 @@
 ---
 description: cspell is a linter for All
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# cspell
 
 **cspell** is a linter for All.
 
@@ -10,7 +23,8 @@ You can enable the cspell plugin with
 trunk check enable cspell
 ```
 
-# Settings
+## Settings
+
 
 cspell uses the same config files as the
 upstream [cspell](https://github.com/streetsidesoftware/cspell#readme) project, so you can continue to use any

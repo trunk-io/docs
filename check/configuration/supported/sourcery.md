@@ -1,6 +1,19 @@
 ---
 description: sourcery is a linter for Python
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# sourcery
 
 **sourcery** is a linter for Python.
 
@@ -10,7 +23,8 @@ You can enable the sourcery plugin with
 trunk check enable sourcery
 ```
 
-# Settings
+## Settings
+
 
 sourcery uses the same config files as the
 upstream [sourcery](https://sourcery.ai/) project, so you can continue to use any

@@ -1,6 +1,19 @@
 ---
 description: Discover Black, the Python code formatter.  Learn how to integrate it with Trunk Check for seamless coding style enforcement.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Black
 
 **Black** is a formatter for Python.
 
@@ -10,7 +23,8 @@ You can enable the Black plugin with
 trunk check enable black
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/black) if your project does not already have one,

@@ -1,6 +1,19 @@
 ---
 description: haml-lint is a linter for HAML
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# haml-lint
 
 **haml-lint** is a linter for HAML.
 
@@ -10,7 +23,8 @@ You can enable the haml-lint plugin with
 trunk check enable haml-lint
 ```
 
-# Settings
+## Settings
+
 
 haml-lint uses the same config files as the
 upstream [haml-lint](https://github.com/sds/haml-lint#readme) project, so you can continue to use any

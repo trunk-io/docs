@@ -1,6 +1,19 @@
 ---
 description: sqlfmt is a linter for SQL
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# sqlfmt
 
 **sqlfmt** is a linter for SQL.
 
@@ -10,7 +23,8 @@ You can enable the sqlfmt plugin with
 trunk check enable sqlfmt
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/sqlfmt) if your project does not already have one,

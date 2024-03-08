@@ -1,6 +1,19 @@
 ---
 description: rubocop is a linter for Ruby
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# rubocop
 
 **rubocop** is a linter for Ruby.
 
@@ -10,7 +23,8 @@ You can enable the rubocop plugin with
 trunk check enable rubocop
 ```
 
-# Settings
+## Settings
+
 
 rubocop uses the same config files as the
 upstream [rubocop](https://github.com/rubocop/rubocop#readme) project, so you can continue to use any

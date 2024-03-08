@@ -1,6 +1,19 @@
 ---
 description: Checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# Ansible-lint
 
 **Ansible-lint** is a linter for Ansible.
 
@@ -10,7 +23,8 @@ You can enable the Ansible-lint plugin with
 trunk check enable ansible-lint
 ```
 
-# Settings
+## Settings
+
 
 Ansible-lint uses the same config files as the
 upstream [Ansible-lint](https://github.com/ansible/ansible-lint) project, so you can continue to use any

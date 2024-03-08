@@ -1,6 +1,19 @@
 ---
 description: pmd is a linter for Apex and Java
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# pmd
 
 **pmd** is a linter for Apex and Java.
 
@@ -10,7 +23,8 @@ You can enable the pmd plugin with
 trunk check enable pmd
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pmd) if your project does not already have one,

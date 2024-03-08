@@ -1,6 +1,19 @@
 ---
 description: codespell is a linter for All
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# codespell
 
 **codespell** is a linter for All.
 
@@ -10,7 +23,8 @@ You can enable the codespell plugin with
 trunk check enable codespell
 ```
 
-# Settings
+## Settings
+
 
 codespell uses the same config files as the
 upstream [codespell](https://github.com/codespell-project/codespell#readme) project, so you can continue to use any

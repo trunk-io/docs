@@ -2,7 +2,20 @@
 description: Clang Format is a set of tools to format code that is processed by the Clang compiler suite.
 
 
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# ClangFormat
 
 **ClangFormat** is a formatter for Protobuf and C, C++.
 
@@ -12,7 +25,8 @@ You can enable the ClangFormat plugin with
 trunk check enable clang-format
 ```
 
-# Settings
+## Settings
+
 
 ClangFormat uses the same config files as the
 upstream [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html) project, so you can continue to use any

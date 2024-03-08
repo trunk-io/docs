@@ -1,6 +1,19 @@
 ---
 description: google-java-format is a linter for Java
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
+
+# google-java-format
 
 **google-java-format** is a linter for Java.
 
@@ -10,7 +23,8 @@ You can enable the google-java-format plugin with
 trunk check enable google-java-format
 ```
 
-# Settings
+## Settings
+
 
 
 Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/google-java-format) if your project does not already have one,
