@@ -1,7 +1,5 @@
 ---
-description: >-
-  Optional PR priorities to control the order PRs are tested and merged in the
-  Merge queue.
+description: Control the order PRs are tested and merged in the Merge Queue
 ---
 
 # PR Prioritization
@@ -49,7 +47,7 @@ Numbers can be used the in the same way as the text labels. ex: `/trunk merge -p
 
 PRs with a higher priority will always begin testing before any other PR that isn't currently being tested, ensuring that prioritized PRs move into the queue as soon as they can. A PR without a priority will use the default `medium` (100) priority. If there is already a PR in the queue with the exact same priority then the new one will be behind it.&#x20;
 
-When prioritizing a PR, Merge will explictly **not interrupt** any currently tested PR, as it is usually not a good idea to restart PRs even if you want another PR to be sooner. Because of this, if a PR is submitted with a priority and there is still room in the queue to begin testing PRs, it will being testing as normal without interrupting other PRs.
+When prioritizing a PR, Merge will explicitly **not interrupt** any currently testing PR, as it is usually costly to restart testing on PRs even if you want another PR to be sooner. Because of this, if a PR is submitted with a priority and there is still room in the queue to begin testing PRs, it will being testing as normal without interrupting other PRs.
 
 **There is one exception to this rule.** Sometimes, when there is a PR urgent enough to get in that it is worth the cost of restarting a currently testing PR, you can move the new PR to the front using the `"urgent"` priority. This is the only time Merge will reschedule a PR that is already in testing.
 
