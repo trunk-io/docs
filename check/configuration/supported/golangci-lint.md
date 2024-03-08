@@ -1,5 +1,6 @@
 ---
 description: Fast Go linters runner. It runs linters in parallel, uses caching, supports yaml config, has integrations with all major IDE and has dozens of linters included.
+title: Trunk | How to run golangci-lint
 layout:
   title:
     visible: true

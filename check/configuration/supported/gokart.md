@@ -1,5 +1,6 @@
 ---
 description: gokart is a linter for Go
+title: Trunk | How to run gokart
 layout:
   title:
     visible: true

@@ -1,5 +1,6 @@
 ---
 description: mypy is a linter for Python
+title: Trunk | How to run mypy
 layout:
   title:
     visible: true

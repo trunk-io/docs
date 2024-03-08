@@ -1,5 +1,6 @@
 ---
 description: remark-lint is a linter for Markdown
+title: Trunk | How to run remark-lint
 layout:
   title:
     visible: true

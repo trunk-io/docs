@@ -1,5 +1,6 @@
 ---
 description: Explore our guide on Trivy, the comprehensive vulnerability scanner. Learn about its features, installation, and configuration.
+title: Trunk | How to run Trivy
 layout:
   title:
     visible: true

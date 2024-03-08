@@ -1,5 +1,6 @@
 ---
 description: isort is a Python utility for sorting imports alphabetically and automatically separating them into sections and by type. 
+title: Trunk | How to run isort
 layout:
   title:
     visible: true

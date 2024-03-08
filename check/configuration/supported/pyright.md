@@ -1,5 +1,6 @@
 ---
 description: pyright is a linter for Python
+title: Trunk | How to run pyright
 layout:
   title:
     visible: true

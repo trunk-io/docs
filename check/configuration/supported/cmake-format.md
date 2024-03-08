@@ -1,5 +1,6 @@
 ---
 description: cmake-format is a linter for C, C++
+title: Trunk | How to run cmake-format
 layout:
   title:
     visible: true

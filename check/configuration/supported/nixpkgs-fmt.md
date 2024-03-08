@@ -1,5 +1,6 @@
 ---
 description: nixpkgs-fmt is a linter for Nix
+title: Trunk | How to run nixpkgs-fmt
 layout:
   title:
     visible: true

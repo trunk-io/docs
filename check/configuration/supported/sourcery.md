@@ -1,5 +1,6 @@
 ---
 description: sourcery is a linter for Python
+title: Trunk | How to run sourcery
 layout:
   title:
     visible: true

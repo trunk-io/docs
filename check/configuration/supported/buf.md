@@ -1,5 +1,6 @@
 ---
 description: buf is a linter for Protobuf
+title: Trunk | How to run buf
 layout:
   title:
     visible: true

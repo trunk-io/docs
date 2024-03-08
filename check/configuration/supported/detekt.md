@@ -1,5 +1,6 @@
 ---
 description: Static code analysis for Kotlin
+title: Trunk | How to run Detekt
 layout:
   title:
     visible: true

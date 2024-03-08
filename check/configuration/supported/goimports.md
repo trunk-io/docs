@@ -1,5 +1,6 @@
 ---
 description: goimports is a linter for Go
+title: Trunk | How to run goimports
 layout:
   title:
     visible: true

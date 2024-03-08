@@ -1,5 +1,6 @@
 ---
 description: pmd is a linter for Apex and Java
+title: Trunk | How to run pmd
 layout:
   title:
     visible: true

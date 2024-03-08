@@ -1,5 +1,6 @@
 ---
 description: google-java-format is a linter for Java
+title: Trunk | How to run google-java-format
 layout:
   title:
     visible: true

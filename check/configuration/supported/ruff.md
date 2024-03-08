@@ -1,5 +1,6 @@
 ---
 description: Discover Ruff, a speedy Python linter for large codebases. Integrates with CI/IDEs and supports .py, .pyi, and Jupyter Notebooks.
+title: Trunk | How to run Ruff
 layout:
   title:
     visible: true

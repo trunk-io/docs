@@ -1,5 +1,6 @@
 ---
 description: Bandit is a security linter for Python codebases. Bandit flags problems like hard-coded passwords, injection vulnerabilities, and the use of insecure libraries.
+title: Trunk | How to run Bandit
 layout:
   title:
     visible: true

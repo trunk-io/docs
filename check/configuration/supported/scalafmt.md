@@ -1,5 +1,6 @@
 ---
 description: scalafmt is a linter for Scala
+title: Trunk | How to run scalafmt
 layout:
   title:
     visible: true

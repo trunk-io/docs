@@ -1,5 +1,6 @@
 ---
 description: ESLint statically analyzes your code to quickly find problems.
+title: Trunk | How to run ESLint
 layout:
   title:
     visible: true

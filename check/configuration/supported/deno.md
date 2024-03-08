@@ -1,5 +1,6 @@
 ---
 description: deno is a linter for JavaScript, JSON, TypeScript and Markdown
+title: Trunk | How to run deno
 layout:
   title:
     visible: true

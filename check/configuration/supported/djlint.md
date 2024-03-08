@@ -1,5 +1,6 @@
 ---
 description: djlint is a linter for HTML Templates
+title: Trunk | How to run djlint
 layout:
   title:
     visible: true

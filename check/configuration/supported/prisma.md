@@ -1,5 +1,6 @@
 ---
 description: prisma is a linter for Prisma
+title: Trunk | How to run prisma
 layout:
   title:
     visible: true

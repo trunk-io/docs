@@ -1,5 +1,6 @@
 ---
 description: markdown-link-check is a linter for Markdown
+title: Trunk | How to run markdown-link-check
 layout:
   title:
     visible: true

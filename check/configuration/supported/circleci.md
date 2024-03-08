@@ -1,5 +1,6 @@
 ---
 description: circleci is a linter for CircleCI Config
+title: Trunk | How to run circleci
 layout:
   title:
     visible: true

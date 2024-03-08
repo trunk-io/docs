@@ -1,5 +1,6 @@
 ---
 description: sort-package-json is a linter for package.json
+title: Trunk | How to run sort-package-json
 layout:
   title:
     visible: true

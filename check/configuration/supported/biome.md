@@ -1,5 +1,6 @@
 ---
 description: biome is a linter for JavaScript, TypeScript, jsx and json
+title: Trunk | How to run biome
 layout:
   title:
     visible: true

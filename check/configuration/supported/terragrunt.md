@@ -1,5 +1,6 @@
 ---
 description: terragrunt is a linter for Terragrunt
+title: Trunk | How to run terragrunt
 layout:
   title:
     visible: true

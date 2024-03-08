@@ -1,5 +1,6 @@
 ---
 description: Markdownlint is a tool designed to enforce consistency for Markdown files. It can include checks for headings, lists, line length, and syntax preferences. 
+title: Trunk | How to run Markdownlint
 layout:
   title:
     visible: true

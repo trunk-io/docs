@@ -1,5 +1,6 @@
 ---
 description: rubocop is a linter for Ruby
+title: Trunk | How to run rubocop
 layout:
   title:
     visible: true

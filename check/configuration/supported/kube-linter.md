@@ -1,5 +1,6 @@
 ---
 description: kube-linter is a linter for Kubernetes
+title: Trunk | How to run kube-linter
 layout:
   title:
     visible: true

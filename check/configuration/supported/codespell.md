@@ -1,5 +1,6 @@
 ---
 description: codespell is a linter for All
+title: Trunk | How to run codespell
 layout:
   title:
     visible: true

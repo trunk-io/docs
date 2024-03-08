@@ -1,5 +1,6 @@
 ---
 description: stylelint is a linter for CSS, SCSS
+title: Trunk | How to run stylelint
 layout:
   title:
     visible: true

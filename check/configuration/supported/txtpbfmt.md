@@ -1,5 +1,6 @@
 ---
 description: txtpbfmt is a linter for Textproto
+title: Trunk | How to run txtpbfmt
 layout:
   title:
     visible: true

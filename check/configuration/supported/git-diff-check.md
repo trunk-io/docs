@@ -1,5 +1,6 @@
 ---
 description: git-diff-check is a linter for All
+title: Trunk | How to run git-diff-check
 layout:
   title:
     visible: true

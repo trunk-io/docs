@@ -1,5 +1,6 @@
 ---
 description: autopep8 is a linter for Python
+title: Trunk | How to run autopep8
 layout:
   title:
     visible: true

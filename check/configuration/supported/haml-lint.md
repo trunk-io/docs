@@ -1,5 +1,6 @@
 ---
 description: haml-lint is a linter for HAML
+title: Trunk | How to run haml-lint
 layout:
   title:
     visible: true

@@ -1,5 +1,6 @@
 ---
 description: pragma-once is a linter for C, C++
+title: Trunk | How to run pragma-once
 layout:
   title:
     visible: true

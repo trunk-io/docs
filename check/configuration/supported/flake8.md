@@ -1,5 +1,6 @@
 ---
 description: Uncover Flake8, a versatile Python linter for code style and error checking. Flake 8 checks against PEP 8 and more, with plugin support for broader analysis.
+title: Trunk | How to run Flake8
 layout:
   title:
     visible: true

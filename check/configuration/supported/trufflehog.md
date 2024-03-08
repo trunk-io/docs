@@ -1,5 +1,6 @@
 ---
 description: Discover Trufflehog with our detailed guide. Learn installation, configuration, usage, and how to integrate it with other linters for optimal code security.
+title: Trunk | How to run Trufflehog
 layout:
   title:
     visible: true

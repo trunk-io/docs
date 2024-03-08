@@ -1,5 +1,6 @@
 ---
 description: cspell is a linter for All
+title: Trunk | How to run cspell
 layout:
   title:
     visible: true

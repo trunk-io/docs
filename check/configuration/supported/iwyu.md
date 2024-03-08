@@ -1,5 +1,6 @@
 ---
 description: iwyu is a linter for C, C++
+title: Trunk | How to run iwyu
 layout:
   title:
     visible: true

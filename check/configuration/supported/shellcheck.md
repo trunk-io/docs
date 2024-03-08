@@ -1,5 +1,6 @@
 ---
 description: ShellCheck is a static analysis tool designed to identify and report syntax errors and potential issues in shell scripts
+title: Trunk | How to run ShellCheck
 layout:
   title:
     visible: true

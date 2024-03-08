@@ -1,5 +1,6 @@
 ---
 description: A collection of lints to catch common mistakes and improve your Rust code.
+title: Trunk | How to run Clippy
 layout:
   title:
     visible: true

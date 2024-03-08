@@ -1,5 +1,6 @@
 ---
 description: The command line interface to Terraform is the terraform command, which accepts a variety of subcommands such as terraform validate or terraform fmt
+title: Trunk | How to run Terraform
 layout:
   title:
     visible: true

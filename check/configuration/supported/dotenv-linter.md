@@ -1,5 +1,6 @@
 ---
 description: dotenv-linter is a linter for Dotenv
+title: Trunk | How to run dotenv-linter
 layout:
   title:
     visible: true

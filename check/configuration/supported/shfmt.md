@@ -1,5 +1,6 @@
 ---
 description: shfmt is a linter for Bash
+title: Trunk | How to run shfmt
 layout:
   title:
     visible: true

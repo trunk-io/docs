@@ -1,5 +1,6 @@
 ---
 description: terrascan is a linter for Terrascan, Security and Terraform
+title: Trunk | How to run terrascan
 layout:
   title:
     visible: true

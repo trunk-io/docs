@@ -1,5 +1,6 @@
 ---
 description: renovate is a linter for Renovate
+title: Trunk | How to run renovate
 layout:
   title:
     visible: true

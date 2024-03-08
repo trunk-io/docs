@@ -1,5 +1,6 @@
 ---
 description: yapf is a linter for Python
+title: Trunk | How to run yapf
 layout:
   title:
     visible: true

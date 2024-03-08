@@ -1,5 +1,6 @@
 ---
 description: Brakeman is a static analysis tool designed for Ruby on Rails applications. It statically analyzes Rails application code to find security issues.
+title: Trunk | How to run Brakeman
 layout:
   title:
     visible: true

@@ -1,5 +1,6 @@
 ---
 description: Oxipng is an open-source, CLI utility designed for optimizing PNG files. It applies lossless compression techniques to reduce file size.
+title: Trunk | How to run Oxipng
 layout:
   title:
     visible: true

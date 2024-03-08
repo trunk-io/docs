@@ -1,5 +1,6 @@
 ---
 description: stylua is a linter for Lua
+title: Trunk | How to run stylua
 layout:
   title:
     visible: true

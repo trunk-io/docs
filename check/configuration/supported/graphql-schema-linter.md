@@ -1,5 +1,6 @@
 ---
 description: graphql-schema-linter is a linter for GraphQL
+title: Trunk | How to run graphql-schema-linter
 layout:
   title:
     visible: true

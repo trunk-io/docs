@@ -1,5 +1,6 @@
 ---
 description: hadolint is a linter for Docker
+title: Trunk | How to run hadolint
 layout:
   title:
     visible: true

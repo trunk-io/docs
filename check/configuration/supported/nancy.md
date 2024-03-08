@@ -1,5 +1,6 @@
 ---
 description: nancy is a linter for Security
+title: Trunk | How to run nancy
 layout:
   title:
     visible: true

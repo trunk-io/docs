@@ -1,5 +1,6 @@
 ---
 description: perlcritic is a linter for Perl
+title: Trunk | How to run perlcritic
 layout:
   title:
     visible: true

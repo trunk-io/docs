@@ -1,5 +1,6 @@
 ---
 description: taplo is a linter for TOML
+title: Trunk | How to run taplo
 layout:
   title:
     visible: true

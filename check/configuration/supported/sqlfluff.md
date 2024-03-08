@@ -2,6 +2,7 @@
 description: SQLFluff is a dialect-flexible and configurable SQL linter.
 
 
+title: Trunk | How to run SQLFluff
 layout:
   title:
     visible: true

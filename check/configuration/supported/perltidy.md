@@ -1,5 +1,6 @@
 ---
 description: perltidy is a linter for Perl
+title: Trunk | How to run perltidy
 layout:
   title:
     visible: true

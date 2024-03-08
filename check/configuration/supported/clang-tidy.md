@@ -2,6 +2,7 @@
 description: A clang-based C++ linter tool to provide an extensible framework for diagnosing and fixing programming errors that can be deduced via static analysis.
 
 
+title: Trunk | How to run clang-tidy
 layout:
   title:
     visible: true

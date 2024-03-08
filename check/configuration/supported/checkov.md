@@ -1,5 +1,6 @@
 ---
 description: Checkov is a static code analysis tool for scanning infrastructure as code. It identifies misconfigurations in IaC files that could lead to security breaches.
+title: Trunk | How to run Checkov
 layout:
   title:
     visible: true

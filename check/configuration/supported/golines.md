@@ -1,5 +1,6 @@
 ---
 description: golines is a linter for Go
+title: Trunk | How to run golines
 layout:
   title:
     visible: true

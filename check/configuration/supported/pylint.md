@@ -1,5 +1,6 @@
 ---
 description: Learn about Pylint, the versatile Python linter for error detection, code smell elimination, and PEP 8 enforcement.
+title: Trunk | How to run Pylint
 layout:
   title:
     visible: true

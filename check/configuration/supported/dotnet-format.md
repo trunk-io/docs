@@ -1,5 +1,6 @@
 ---
 description: dotnet-format is a linter for C#
+title: Trunk | How to run dotnet-format
 layout:
   title:
     visible: true

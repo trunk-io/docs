@@ -1,5 +1,6 @@
 ---
 description: Explore  Prettier, the powerful code formatter. Learn how to install, configure, and effectively use Prettier to enhance your coding workflow.
+title: Trunk | How to run Prettier
 layout:
   title:
     visible: true

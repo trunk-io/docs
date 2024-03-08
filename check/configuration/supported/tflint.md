@@ -1,5 +1,6 @@
 ---
 description: tflint is a linter for Terraform
+title: Trunk | How to run tflint
 layout:
   title:
     visible: true

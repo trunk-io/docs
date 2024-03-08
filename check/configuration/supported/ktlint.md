@@ -1,5 +1,6 @@
 ---
 description: ktlint is a linter for Kotlin
+title: Trunk | How to run ktlint
 layout:
   title:
     visible: true

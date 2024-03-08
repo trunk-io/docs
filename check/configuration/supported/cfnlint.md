@@ -1,5 +1,6 @@
 ---
 description: cfnlint is a linter for Cloudformation
+title: Trunk | How to run cfnlint
 layout:
   title:
     visible: true

@@ -1,5 +1,6 @@
 ---
 description: rome is a linter for JavaScript and TypeScript
+title: Trunk | How to run rome
 layout:
   title:
     visible: true

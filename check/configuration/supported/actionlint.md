@@ -1,5 +1,6 @@
 ---
 description: Explore our guide on Actionlint, the linter for Github Actions. Learn about its features, installation, and configuration.
+title: Trunk | How to run Actionlint
 layout:
   title:
     visible: true

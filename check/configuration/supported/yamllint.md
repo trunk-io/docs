@@ -1,5 +1,6 @@
 ---
 description: Yamllint is a linter that checks for formatting discrepancies, key-value pair issues, and syntax errors, ensuring your YAML files are syntactically correct. 
+title: Trunk | How to run Yamllint
 layout:
   title:
     visible: true

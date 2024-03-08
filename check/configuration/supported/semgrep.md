@@ -1,5 +1,6 @@
 ---
 description: semgrep is a linter for Go, Java, JavaScript, JSON, Python, Ruby, TypeScript and YAML
+title: Trunk | How to run semgrep
 layout:
   title:
     visible: true

@@ -1,5 +1,6 @@
 ---
 description: tfsec is a linter for Security and Terraform
+title: Trunk | How to run tfsec
 layout:
   title:
     visible: true

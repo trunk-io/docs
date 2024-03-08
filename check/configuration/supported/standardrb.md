@@ -1,5 +1,6 @@
 ---
 description: standardrb is a linter for Ruby
+title: Trunk | How to run standardrb
 layout:
   title:
     visible: true

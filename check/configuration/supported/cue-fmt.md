@@ -1,5 +1,6 @@
 ---
 description: cue-fmt is a linter for Cue
+title: Trunk | How to run cue-fmt
 layout:
   title:
     visible: true

@@ -1,5 +1,6 @@
 ---
 description: sqlfmt is a linter for SQL
+title: Trunk | How to run sqlfmt
 layout:
   title:
     visible: true

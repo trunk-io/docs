@@ -2,6 +2,7 @@
 description: Clang Format is a set of tools to format code that is processed by the Clang compiler suite.
 
 
+title: Trunk | How to run ClangFormat
 layout:
   title:
     visible: true

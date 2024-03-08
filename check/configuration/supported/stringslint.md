@@ -1,5 +1,6 @@
 ---
 description: stringslint is a linter for Swift
+title: Trunk | How to run stringslint
 layout:
   title:
     visible: true

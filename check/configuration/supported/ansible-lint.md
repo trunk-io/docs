@@ -1,5 +1,6 @@
 ---
 description: Checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you
+title: Trunk | How to run Ansible-lint
 layout:
   title:
     visible: true

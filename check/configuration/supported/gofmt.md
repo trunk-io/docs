@@ -1,5 +1,6 @@
 ---
 description: gofmt is a linter for Go
+title: Trunk | How to run gofmt
 layout:
   title:
     visible: true

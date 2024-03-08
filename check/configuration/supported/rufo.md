@@ -1,5 +1,6 @@
 ---
 description: rufo is a linter for Ruby
+title: Trunk | How to run rufo
 layout:
   title:
     visible: true

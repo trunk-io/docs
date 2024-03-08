@@ -1,5 +1,6 @@
 ---
 description: gofumpt is a linter for Go
+title: Trunk | How to run gofumpt
 layout:
   title:
     visible: true

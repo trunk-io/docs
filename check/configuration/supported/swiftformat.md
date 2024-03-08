@@ -1,5 +1,6 @@
 ---
 description: swiftformat is a linter for Swift
+title: Trunk | How to run swiftformat
 layout:
   title:
     visible: true

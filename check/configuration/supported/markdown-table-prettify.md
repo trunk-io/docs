@@ -1,5 +1,6 @@
 ---
 description: markdown-table-prettify is a linter for Markdown
+title: Trunk | How to run markdown-table-prettify
 layout:
   title:
     visible: true

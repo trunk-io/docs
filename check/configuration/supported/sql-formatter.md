@@ -1,5 +1,6 @@
 ---
 description: sql-formatter is a linter for SQL
+title: Trunk | How to run sql-formatter
 layout:
   title:
     visible: true

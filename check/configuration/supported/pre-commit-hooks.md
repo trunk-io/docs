@@ -1,5 +1,6 @@
 ---
 description: pre-commit-hooks is a linter for All
+title: Trunk | How to run pre-commit-hooks
 layout:
   title:
     visible: true

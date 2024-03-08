@@ -1,5 +1,6 @@
 ---
 description: psscriptanalyzer is a linter for PowerShell
+title: Trunk | How to run psscriptanalyzer
 layout:
   title:
     visible: true

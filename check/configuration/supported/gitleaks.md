@@ -1,5 +1,6 @@
 ---
 description: Explore Gitleaks, an open-source tool for identifying secrets in codebases. Learn about its file type support and integration with Trunk.
+title: Trunk | How to run Gitleaks
 layout:
   title:
     visible: true

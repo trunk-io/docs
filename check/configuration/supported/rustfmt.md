@@ -1,5 +1,6 @@
 ---
 description: A tool for formatting Rust code according to style guidelines.
+title: Trunk | How to run rustfmt
 layout:
   title:
     visible: true

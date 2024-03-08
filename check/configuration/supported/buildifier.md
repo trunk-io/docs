@@ -1,5 +1,6 @@
 ---
 description: buildifier is a linter for Bazel, Starlark
+title: Trunk | How to run buildifier
 layout:
   title:
     visible: true
