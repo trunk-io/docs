@@ -26,7 +26,7 @@ trunk check enable stylelint
 ## Settings
 
 
-stylelint uses the same config files as the
+**stylelint** uses the same config files as the
 upstream [stylelint](https://github.com/stylelint/stylelint#readme) project, so you can continue to use any
 existing configuration files (ex: `stylelint.config.js`, `.stylelintrc.js`, `stylelint.config.mjs`).
     

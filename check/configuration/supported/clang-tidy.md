@@ -28,7 +28,7 @@ trunk check enable clang-tidy
 ## Settings
 
 
-clang-tidy uses the same config files as the
+**clang-tidy** uses the same config files as the
 upstream [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) project, so you can continue to use any
 existing configuration files (ex: `.clang-tidy`).
     

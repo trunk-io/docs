@@ -26,7 +26,7 @@ trunk check enable clippy
 ## Settings
 
 
-Clippy uses the same config files as the
+**Clippy** uses the same config files as the
 upstream [Clippy](https://doc.rust-lang.org/clippy/) project, so you can continue to use any
 existing configuration files (ex: `clippy.toml`, `.clippy.toml`).
     

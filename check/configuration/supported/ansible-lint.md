@@ -26,7 +26,7 @@ trunk check enable ansible-lint
 ## Settings
 
 
-Ansible-lint uses the same config files as the
+**Ansible-lint** uses the same config files as the
 upstream [Ansible-lint](https://github.com/ansible/ansible-lint) project, so you can continue to use any
 existing configuration files (ex: `.ansible-lint`).
     

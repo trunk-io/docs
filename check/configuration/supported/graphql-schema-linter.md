@@ -26,7 +26,7 @@ trunk check enable graphql-schema-linter
 ## Settings
 
 
-graphql-schema-linter uses the same config files as the
+**graphql-schema-linter** uses the same config files as the
 upstream [graphql-schema-linter](https://github.com/cjoudrey/graphql-schema-linter#readme) project, so you can continue to use any
 existing configuration files (ex: `.graphql-schema-linter.config.js`, `.graphql-schema-linterrc`).
     

@@ -26,7 +26,7 @@ trunk check enable shellcheck
 ## Settings
 
 
-ShellCheck uses the same config files as the
+**ShellCheck** uses the same config files as the
 upstream [ShellCheck](https://www.shellcheck.net/) project, so you can continue to use any
 existing configuration files (ex: `.shellcheckrc`, `shellcheckrc`).
     

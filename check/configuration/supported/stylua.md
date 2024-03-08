@@ -26,7 +26,7 @@ trunk check enable stylua
 ## Settings
 
 
-stylua uses the same config files as the
+**stylua** uses the same config files as the
 upstream [stylua](https://github.com/JohnnyMorganz/StyLua/tree/main) project, so you can continue to use any
 existing configuration files (ex: `stylua.toml`, `.stylua.toml`).
     

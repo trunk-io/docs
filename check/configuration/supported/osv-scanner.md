@@ -26,7 +26,7 @@ trunk check enable osv-scanner
 ## Settings
 
 
-OSV-Scanner uses the same config files as the
+**OSV-Scanner** uses the same config files as the
 upstream [OSV-Scanner](https://github.com/google/osv-scanner) project, so you can continue to use any
 existing configuration files (ex: `osv-scanner.toml`).
     

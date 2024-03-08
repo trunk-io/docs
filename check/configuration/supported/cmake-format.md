@@ -26,7 +26,7 @@ trunk check enable cmake-format
 ## Settings
 
 
-cmake-format uses the same config files as the
+**cmake-format** uses the same config files as the
 upstream [cmake-format](https://github.com/cheshirekow/cmake_format) project, so you can continue to use any
 existing configuration files (ex: `.cmake-format.json`, `.cmake-format.py`, `.cmake-format.yaml`).
     

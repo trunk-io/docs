@@ -26,7 +26,7 @@ trunk check enable detekt
 ## Settings
 
 
-Detekt uses the same config files as the
+**Detekt** uses the same config files as the
 upstream [Detekt](https://github.com/detekt/detekt) project, so you can continue to use any
 existing configuration files (ex: `.detekt.yaml`).
     

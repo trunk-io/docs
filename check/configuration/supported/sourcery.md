@@ -26,7 +26,7 @@ trunk check enable sourcery
 ## Settings
 
 
-sourcery uses the same config files as the
+**sourcery** uses the same config files as the
 upstream [sourcery](https://sourcery.ai/) project, so you can continue to use any
 existing configuration files (ex: `.sourcery.yaml`, `sourcery.yaml`).
     

@@ -26,7 +26,7 @@ trunk check enable checkov
 ## Settings
 
 
-Checkov uses the same config files as the
+**Checkov** uses the same config files as the
 upstream [Checkov](https://github.com/bridgecrewio/checkov) project, so you can continue to use any
 existing configuration files (ex: `.checkov.yml`, `.checkov.yaml`).
     

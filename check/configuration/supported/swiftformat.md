@@ -26,7 +26,7 @@ trunk check enable swiftformat
 ## Settings
 
 
-swiftformat uses the same config files as the
+**swiftformat** uses the same config files as the
 upstream [swiftformat](https://github.com/nicklockwood/SwiftFormat#readme) project, so you can continue to use any
 existing configuration files (ex: `.swiftformat`).
     

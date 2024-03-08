@@ -26,7 +26,7 @@ trunk check enable rubocop
 ## Settings
 
 
-rubocop uses the same config files as the
+**rubocop** uses the same config files as the
 upstream [rubocop](https://github.com/rubocop/rubocop#readme) project, so you can continue to use any
 existing configuration files (ex: `.rubocop.yml`).
     

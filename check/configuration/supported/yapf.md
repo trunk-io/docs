@@ -26,7 +26,7 @@ trunk check enable yapf
 ## Settings
 
 
-yapf uses the same config files as the
+**yapf** uses the same config files as the
 upstream [yapf](https://github.com/google/yapf#readme) project, so you can continue to use any
 existing configuration files (ex: `.style.yapf`, `.yapfignore`).
     

@@ -26,7 +26,7 @@ trunk check enable buildifier
 ## Settings
 
 
-buildifier uses the same config files as the
+**buildifier** uses the same config files as the
 upstream [buildifier](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md) project, so you can continue to use any
 existing configuration files (ex: `.buildifier.json`, `.buildifier-tables.json`).
     

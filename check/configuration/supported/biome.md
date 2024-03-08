@@ -26,7 +26,7 @@ trunk check enable biome
 ## Settings
 
 
-biome uses the same config files as the
+**biome** uses the same config files as the
 upstream [biome](https://biomejs.dev/) project, so you can continue to use any
 existing configuration files (ex: `biome.json`, `rome.json`).
     

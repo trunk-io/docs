@@ -26,7 +26,7 @@ trunk check enable svgo
 ## Settings
 
 
-SVGO uses the same config files as the
+**SVGO** uses the same config files as the
 upstream [SVGO](https://github.com/svg/svgo) project, so you can continue to use any
 existing configuration files (ex: `svgo.config.js`, `svgo.config.mjs`, `svgo.config.cjs`).
     

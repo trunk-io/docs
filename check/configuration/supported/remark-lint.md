@@ -26,7 +26,7 @@ trunk check enable remark-lint
 ## Settings
 
 
-remark-lint uses the same config files as the
+**remark-lint** uses the same config files as the
 upstream [remark-lint](https://github.com/remarkjs/remark-lint#readme) project, so you can continue to use any
 existing configuration files (ex: `.remarkrc`, `.remarkrc.json`, `.remarkrc.cjs`).
     

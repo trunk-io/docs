@@ -26,7 +26,7 @@ trunk check enable haml-lint
 ## Settings
 
 
-haml-lint uses the same config files as the
+**haml-lint** uses the same config files as the
 upstream [haml-lint](https://github.com/sds/haml-lint#readme) project, so you can continue to use any
 existing configuration files (ex: `.haml-lint.yml`).
     

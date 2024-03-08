@@ -26,7 +26,7 @@ trunk check enable gokart
 ## Settings
 
 
-gokart uses the same config files as the
+**gokart** uses the same config files as the
 upstream [gokart](https://github.com/praetorian-inc/gokart) project, so you can continue to use any
 existing configuration files (ex: `analyzers.yml`).
     

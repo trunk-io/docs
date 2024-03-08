@@ -26,7 +26,7 @@ trunk check enable yamllint
 ## Settings
 
 
-Yamllint uses the same config files as the
+**Yamllint** uses the same config files as the
 upstream [Yamllint](https://github.com/adrienverge/yamllint) project, so you can continue to use any
 existing configuration files (ex: `.yamllint`, `.yamllint.yaml`, `.yamllint.yml`).
     

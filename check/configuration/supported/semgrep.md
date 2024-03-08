@@ -26,7 +26,7 @@ trunk check enable semgrep
 ## Settings
 
 
-semgrep uses the same config files as the
+**semgrep** uses the same config files as the
 upstream [semgrep](https://github.com/returntocorp/semgrep#readme) project, so you can continue to use any
 existing configuration files (ex: `.semgrep.yaml`, `.semgrep.yml`).
     

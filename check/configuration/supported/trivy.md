@@ -26,7 +26,7 @@ trunk check enable trivy
 ## Settings
 
 
-Trivy uses the same config files as the
+**Trivy** uses the same config files as the
 upstream [Trivy](https://github.com/aquasecurity/trivy) project, so you can continue to use any
 existing configuration files (ex: `trivy-secret.yaml`).
     

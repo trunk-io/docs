@@ -26,7 +26,7 @@ trunk check enable golangci-lint
 ## Settings
 
 
-golangci-lint uses the same config files as the
+**golangci-lint** uses the same config files as the
 upstream [golangci-lint](https://github.com/golangci/golangci-lint) project, so you can continue to use any
 existing configuration files (ex: `.golangci.json`, `.golangci.toml`, `.golangci.yaml`).
     

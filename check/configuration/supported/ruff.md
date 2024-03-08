@@ -26,7 +26,7 @@ trunk check enable ruff
 ## Settings
 
 
-Ruff uses the same config files as the
+**Ruff** uses the same config files as the
 upstream [Ruff](https://github.com/astral-sh/ruff) project, so you can continue to use any
 existing configuration files (ex: `ruff.toml`).
     

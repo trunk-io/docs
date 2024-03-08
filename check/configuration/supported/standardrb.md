@@ -26,7 +26,7 @@ trunk check enable standardrb
 ## Settings
 
 
-standardrb uses the same config files as the
+**standardrb** uses the same config files as the
 upstream [standardrb](https://github.com/testdouble/standard#readme) project, so you can continue to use any
 existing configuration files (ex: `.standard.yml`).
     

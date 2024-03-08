@@ -26,7 +26,7 @@ trunk check enable cspell
 ## Settings
 
 
-cspell uses the same config files as the
+**cspell** uses the same config files as the
 upstream [cspell](https://github.com/streetsidesoftware/cspell#readme) project, so you can continue to use any
 existing configuration files (ex: `.cspell.json`, `cspell.json`, `.cSpell.json`).
     

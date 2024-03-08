@@ -26,7 +26,7 @@ trunk check enable brakeman
 ## Settings
 
 
-Brakeman uses the same config files as the
+**Brakeman** uses the same config files as the
 upstream [Brakeman](https://github.com/presidentbeef/brakeman) project, so you can continue to use any
 existing configuration files (ex: `brakeman.ignore`).
     

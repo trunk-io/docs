@@ -28,7 +28,7 @@ trunk check enable sqlfluff
 ## Settings
 
 
-SQLFluff uses the same config files as the
+**SQLFluff** uses the same config files as the
 upstream [SQLFluff](https://github.com/sqlfluff/sqlfluff) project, so you can continue to use any
 existing configuration files (ex: `.sqlfluff`).
     

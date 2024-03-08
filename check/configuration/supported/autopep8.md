@@ -26,7 +26,7 @@ trunk check enable autopep8
 ## Settings
 
 
-autopep8 uses the same config files as the
+**autopep8** uses the same config files as the
 upstream [autopep8](https://github.com/hhatto/autopep8#readme) project, so you can continue to use any
 existing configuration files (ex: `.pep8`).
     

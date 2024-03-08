@@ -26,7 +26,7 @@ trunk check enable codespell
 ## Settings
 
 
-codespell uses the same config files as the
+**codespell** uses the same config files as the
 upstream [codespell](https://github.com/codespell-project/codespell#readme) project, so you can continue to use any
 existing configuration files (ex: `.codespellrc`).
     

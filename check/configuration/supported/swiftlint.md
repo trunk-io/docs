@@ -26,7 +26,7 @@ trunk check enable swiftlint
 ## Settings
 
 
-swiftlint uses the same config files as the
+**swiftlint** uses the same config files as the
 upstream [swiftlint](https://github.com/realm/SwiftLint#readme) project, so you can continue to use any
 existing configuration files (ex: `.swiftlint.yml`, `.swiftlint.yaml`, `.swiftlint`).
     

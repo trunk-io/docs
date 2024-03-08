@@ -26,7 +26,7 @@ trunk check enable isort
 ## Settings
 
 
-isort uses the same config files as the
+**isort** uses the same config files as the
 upstream [isort](https://pycqa.github.io/isort/) project, so you can continue to use any
 existing configuration files (ex: `.isort.cfg`).
     

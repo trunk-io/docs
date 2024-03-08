@@ -26,7 +26,7 @@ trunk check enable djlint
 ## Settings
 
 
-djlint uses the same config files as the
+**djlint** uses the same config files as the
 upstream [djlint](https://github.com/Riverside-Healthcare/djlint#readme) project, so you can continue to use any
 existing configuration files (ex: `.djlintrc`).
     

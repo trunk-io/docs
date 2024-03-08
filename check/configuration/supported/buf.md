@@ -26,7 +26,7 @@ trunk check enable buf
 ## Settings
 
 
-buf uses the same config files as the
+**buf** uses the same config files as the
 upstream [buf](https://github.com/bufbuild/buf#readme) project, so you can continue to use any
 existing configuration files (ex: `buf.yaml`).
     

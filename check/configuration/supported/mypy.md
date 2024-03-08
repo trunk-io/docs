@@ -26,7 +26,7 @@ trunk check enable mypy
 ## Settings
 
 
-mypy uses the same config files as the
+**mypy** uses the same config files as the
 upstream [mypy](https://github.com/python/mypy#readme) project, so you can continue to use any
 existing configuration files (ex: `mypy.ini`, `.mypy.ini`).
     

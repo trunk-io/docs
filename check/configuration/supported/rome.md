@@ -26,7 +26,7 @@ trunk check enable rome
 ## Settings
 
 
-rome uses the same config files as the
+**rome** uses the same config files as the
 upstream [rome](https://github.com/rome/tools#readme) project, so you can continue to use any
 existing configuration files (ex: `rome.json`).
     

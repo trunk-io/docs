@@ -26,7 +26,7 @@ trunk check enable stringslint
 ## Settings
 
 
-stringslint uses the same config files as the
+**stringslint** uses the same config files as the
 upstream [stringslint](https://github.com/dral3x/StringsLint#readme) project, so you can continue to use any
 existing configuration files (ex: `.stringslint.yml`, `.stringslint.yaml`, `.stringslint`).
     

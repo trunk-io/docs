@@ -26,7 +26,7 @@ trunk check enable hadolint
 ## Settings
 
 
-hadolint uses the same config files as the
+**hadolint** uses the same config files as the
 upstream [hadolint](https://github.com/hadolint/hadolint#readme) project, so you can continue to use any
 existing configuration files (ex: `.hadolint.yaml`, `.hadolint.yml`).
     

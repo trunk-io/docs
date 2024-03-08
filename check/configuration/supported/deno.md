@@ -26,7 +26,7 @@ trunk check enable deno
 ## Settings
 
 
-deno uses the same config files as the
+**deno** uses the same config files as the
 upstream [deno](https://deno.land/manual) project, so you can continue to use any
 existing configuration files (ex: `deno.json`, `deno.jsonc`).
     

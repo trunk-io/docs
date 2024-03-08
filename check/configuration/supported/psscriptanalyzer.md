@@ -26,7 +26,7 @@ trunk check enable psscriptanalyzer
 ## Settings
 
 
-psscriptanalyzer uses the same config files as the
+**psscriptanalyzer** uses the same config files as the
 upstream [psscriptanalyzer](https://github.com/PowerShell/PSScriptAnalyzer) project, so you can continue to use any
 existing configuration files (ex: `PSScriptAnalyzerSettings.psd1`).
     

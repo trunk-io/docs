@@ -26,7 +26,7 @@ trunk check enable perltidy
 ## Settings
 
 
-perltidy uses the same config files as the
+**perltidy** uses the same config files as the
 upstream [perltidy](https://metacpan.org/dist/Perl-Tidy/view/bin/perltidy) project, so you can continue to use any
 existing configuration files (ex: `.perltidyrc`).
     

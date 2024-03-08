@@ -26,7 +26,7 @@ trunk check enable gitleaks
 ## Settings
 
 
-Gitleaks uses the same config files as the
+**Gitleaks** uses the same config files as the
 upstream [Gitleaks](https://gitleaks.io/) project, so you can continue to use any
 existing configuration files (ex: `.gitleaks.config`, `.gitleaks.toml`, `.gitleaksignore`).
     

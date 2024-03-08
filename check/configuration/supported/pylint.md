@@ -26,7 +26,7 @@ trunk check enable pylint
 ## Settings
 
 
-Pylint uses the same config files as the
+**Pylint** uses the same config files as the
 upstream [Pylint](https://pypi.org/project/pylint/) project, so you can continue to use any
 existing configuration files (ex: `pylintrc`, `.pylintrc`).
     

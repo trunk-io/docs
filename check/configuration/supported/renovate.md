@@ -26,7 +26,7 @@ trunk check enable renovate
 ## Settings
 
 
-renovate uses the same config files as the
+**renovate** uses the same config files as the
 upstream [renovate](https://github.com/renovatebot/renovate#readme) project, so you can continue to use any
 existing configuration files (ex: `renovate.json`, `renovate.json5`, `.github/renovate.json`).
     

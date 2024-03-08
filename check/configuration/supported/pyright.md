@@ -26,7 +26,7 @@ trunk check enable pyright
 ## Settings
 
 
-pyright uses the same config files as the
+**pyright** uses the same config files as the
 upstream [pyright](https://github.com/microsoft/pyright) project, so you can continue to use any
 existing configuration files (ex: `pyrightconfig.json`).
     

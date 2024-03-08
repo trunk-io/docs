@@ -26,7 +26,7 @@ trunk check enable prettier
 ## Settings
 
 
-Prettier uses the same config files as the
+**Prettier** uses the same config files as the
 upstream [Prettier](https://prettier.io/) project, so you can continue to use any
 existing configuration files (ex: `.prettierrc`, `.prettierrc.json`, `.prettierrc.yml`).
     

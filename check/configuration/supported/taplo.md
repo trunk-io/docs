@@ -26,7 +26,7 @@ trunk check enable taplo
 ## Settings
 
 
-taplo uses the same config files as the
+**taplo** uses the same config files as the
 upstream [taplo](https://github.com/tamasfe/taplo#readme) project, so you can continue to use any
 existing configuration files (ex: `.taplo.toml`, `taplo.toml`).
     

@@ -26,7 +26,7 @@ trunk check enable rustfmt
 ## Settings
 
 
-rustfmt uses the same config files as the
+**rustfmt** uses the same config files as the
 upstream [rustfmt](https://github.com/rust-lang/rustfmt) project, so you can continue to use any
 existing configuration files (ex: `rustfmt.toml`, `.rustfmt.toml`).
     

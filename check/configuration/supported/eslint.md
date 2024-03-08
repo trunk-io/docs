@@ -26,7 +26,7 @@ trunk check enable eslint
 ## Settings
 
 
-ESLint uses the same config files as the
+**ESLint** uses the same config files as the
 upstream [ESLint](https://eslint.org/) project, so you can continue to use any
 existing configuration files (ex: `.eslintrc`, `.eslintrc.cjs`, `.eslintrc.js`).
     

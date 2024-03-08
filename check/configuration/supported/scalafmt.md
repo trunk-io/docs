@@ -26,7 +26,7 @@ trunk check enable scalafmt
 ## Settings
 
 
-scalafmt uses the same config files as the
+**scalafmt** uses the same config files as the
 upstream [scalafmt](https://github.com/scalameta/scalafmt#readme) project, so you can continue to use any
 existing configuration files (ex: `.scalafmt.conf`).
     

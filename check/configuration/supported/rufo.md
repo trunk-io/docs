@@ -26,7 +26,7 @@ trunk check enable rufo
 ## Settings
 
 
-rufo uses the same config files as the
+**rufo** uses the same config files as the
 upstream [rufo](https://github.com/ruby-formatter/rufo#readme) project, so you can continue to use any
 existing configuration files (ex: `.rufo`).
     

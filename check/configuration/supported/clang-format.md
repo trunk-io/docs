@@ -28,7 +28,7 @@ trunk check enable clang-format
 ## Settings
 
 
-ClangFormat uses the same config files as the
+**ClangFormat** uses the same config files as the
 upstream [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html) project, so you can continue to use any
 existing configuration files (ex: `.clang-format`).
     

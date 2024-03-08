@@ -26,7 +26,7 @@ trunk check enable flake8
 ## Settings
 
 
-Flake8 uses the same config files as the
+**Flake8** uses the same config files as the
 upstream [Flake8](https://flake8.pycqa.org/en/latest/) project, so you can continue to use any
 existing configuration files (ex: `.flake8`).
     
