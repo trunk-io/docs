@@ -24,19 +24,22 @@ You can enable the mypy linter with:
 trunk check enable mypy
 ```
 
+## Auto Enabling
+
+mypy will be auto-enabled if any of its config files are present: *`mypy.ini`, `.mypy.ini`*
+
 ## Settings
 
-**mypy** uses the same config files as the
-upstream [mypy](https://github.com/python/mypy#readme) project, so you can continue to use any
-existing configuration files (ex: `mypy.ini`, `.mypy.ini`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+mypy supports the following config files:
+* `mypy.ini`
+* `.mypy.ini`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/mypy) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [mypy site](https://github.com/python/mypy#readme)
-* mypy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/mypy)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [mypy site](https://github.com/python/mypy#readme)
+- mypy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/mypy)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

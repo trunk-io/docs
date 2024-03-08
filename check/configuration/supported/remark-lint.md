@@ -24,19 +24,27 @@ You can enable the remark-lint linter with:
 trunk check enable remark-lint
 ```
 
+## Auto Enabling
+
+remark-lint will be auto-enabled if any of its config files are present: *`.remarkrc`, `.remarkrc.json`, `.remarkrc.cjs`*
+
 ## Settings
 
-**remark-lint** uses the same config files as the
-upstream [remark-lint](https://github.com/remarkjs/remark-lint#readme) project, so you can continue to use any
-existing configuration files (ex: `.remarkrc`, `.remarkrc.json`, `.remarkrc.cjs`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+remark-lint supports the following config files:
+* `.remarkrc`
+* `.remarkrc.json`
+* `.remarkrc.cjs`
+* `.remarkrc.mjs`
+* `.remarkrc.js`
+* `.remarkrc.yaml`
+* `.remarkrc.yml`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/remark-lint) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.remarkrc.yaml` if your project does not already have one.
 
 
 
 ## Links
 
-* [remark-lint site](https://github.com/remarkjs/remark-lint#readme)
-* remark-lint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/remark-lint)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [remark-lint site](https://github.com/remarkjs/remark-lint#readme)
+- remark-lint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/remark-lint)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

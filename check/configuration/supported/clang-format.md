@@ -26,14 +26,16 @@ You can enable the ClangFormat formatter with:
 trunk check enable clang-format
 ```
 
+## Auto Enabling
+
+ClangFormat will be auto-enabled if any of its config files are present: *`.clang-format`*
+
 ## Settings
 
-**ClangFormat** uses the same config files as the
-upstream [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html) project, so you can continue to use any
-existing configuration files (ex: `.clang-format`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+ClangFormat supports the following config files:
+* `.clang-format`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/clang-format) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 By default, Trunk uses Clang-format to additionally format `.proto` files. However, for this to work, you need to have told `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format file`:
 
@@ -56,6 +58,6 @@ Language: Proto
 
 ## Links
 
-* [ClangFormat site](https://clang.llvm.org/docs/ClangFormat.html)
-* ClangFormat Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-format)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [ClangFormat site](https://clang.llvm.org/docs/ClangFormat.html)
+- ClangFormat Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-format)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

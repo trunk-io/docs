@@ -24,19 +24,21 @@ You can enable the tflint linter with:
 trunk check enable tflint
 ```
 
+## Auto Enabling
+
+tflint will be auto-enabled if any of the following filetypes are present: *terraform*
+
 ## Settings
 
-**tflint** uses the same config files as the
-upstream [tflint](https://github.com/terraform-linters/tflint#readme) project, so you can continue to use any
-existing configuration files (ex: `.tflint.hcl`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+tflint supports the following config files:
+* `.tflint.hcl`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/tflint) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [tflint site](https://github.com/terraform-linters/tflint#readme)
-* tflint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tflint)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [tflint site](https://github.com/terraform-linters/tflint#readme)
+- tflint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tflint)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

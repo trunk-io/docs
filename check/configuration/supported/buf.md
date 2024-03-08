@@ -24,19 +24,21 @@ You can enable the buf linter with:
 trunk check enable buf
 ```
 
+## Auto Enabling
+
+buf will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
-**buf** uses the same config files as the
-upstream [buf](https://github.com/bufbuild/buf#readme) project, so you can continue to use any
-existing configuration files (ex: `buf.yaml`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+buf supports the following config files:
+* `buf.yaml`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/buf) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [buf site](https://github.com/bufbuild/buf#readme)
-* buf Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buf)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [buf site](https://github.com/bufbuild/buf#readme)
+- buf Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buf)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

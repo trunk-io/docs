@@ -24,19 +24,21 @@ You can enable the rufo linter with:
 trunk check enable rufo
 ```
 
+## Auto Enabling
+
+rufo will be auto-enabled if any of its config files are present: *`.rufo`*
+
 ## Settings
 
-**rufo** uses the same config files as the
-upstream [rufo](https://github.com/ruby-formatter/rufo#readme) project, so you can continue to use any
-existing configuration files (ex: `.rufo`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+rufo supports the following config files:
+* `.rufo`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/rufo) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [rufo site](https://github.com/ruby-formatter/rufo#readme)
-* rufo Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rufo)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [rufo site](https://github.com/ruby-formatter/rufo#readme)
+- rufo Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rufo)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

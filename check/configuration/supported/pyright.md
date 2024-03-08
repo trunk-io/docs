@@ -24,19 +24,21 @@ You can enable the pyright linter with:
 trunk check enable pyright
 ```
 
+## Auto Enabling
+
+pyright will be auto-enabled if any of its config files are present: *`pyrightconfig.json`*
+
 ## Settings
 
-**pyright** uses the same config files as the
-upstream [pyright](https://github.com/microsoft/pyright) project, so you can continue to use any
-existing configuration files (ex: `pyrightconfig.json`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+pyright supports the following config files:
+* `pyrightconfig.json`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pyright) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [pyright site](https://github.com/microsoft/pyright)
-* pyright Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pyright)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [pyright site](https://github.com/microsoft/pyright)
+- pyright Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pyright)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

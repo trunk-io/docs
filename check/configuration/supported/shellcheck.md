@@ -24,19 +24,22 @@ You can enable the ShellCheck linter with:
 trunk check enable shellcheck
 ```
 
+## Auto Enabling
+
+ShellCheck will be auto-enabled if any of the following filetypes are present: *shell*
+
 ## Settings
 
-**ShellCheck** uses the same config files as the
-upstream [ShellCheck](https://www.shellcheck.net/) project, so you can continue to use any
-existing configuration files (ex: `.shellcheckrc`, `shellcheckrc`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+ShellCheck supports the following config files:
+* `.shellcheckrc`
+* `shellcheckrc`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/shellcheck) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.shellcheckrc` if your project does not already have one.
 
 
 
 ## Links
 
-* [ShellCheck site](https://www.shellcheck.net/)
-* ShellCheck Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shellcheck)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [ShellCheck site](https://www.shellcheck.net/)
+- ShellCheck Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shellcheck)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

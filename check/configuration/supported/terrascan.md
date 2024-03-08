@@ -24,17 +24,18 @@ You can enable the terrascan linter with:
 trunk check enable terrascan
 ```
 
+## Auto Enabling
+
+terrascan will be auto-enabled if any of the following filetypes are present: *terraform, docker*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/terrascan) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [terrascan site](https://github.com/tenable/terrascan#readme)
-* terrascan Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terrascan)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [terrascan site](https://github.com/tenable/terrascan#readme)
+- terrascan Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terrascan)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

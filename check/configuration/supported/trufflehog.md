@@ -24,17 +24,18 @@ You can enable the Trufflehog linter with:
 trunk check enable trufflehog
 ```
 
+## Auto Enabling
+
+Trufflehog will be auto-enabled if any of the following filetypes are present: *ALL*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [Trufflehog site](https://github.com/trufflesecurity/trufflehog)
-* Trufflehog Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Trufflehog site](https://github.com/trufflesecurity/trufflehog)
+- Trufflehog Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

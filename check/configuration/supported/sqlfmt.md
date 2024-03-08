@@ -24,17 +24,18 @@ You can enable the sqlfmt linter with:
 trunk check enable sqlfmt
 ```
 
+## Auto Enabling
+
+sqlfmt will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/sqlfmt) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [sqlfmt site](https://github.com/tconbeer/sqlfmt#readme)
-* sqlfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfmt)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [sqlfmt site](https://github.com/tconbeer/sqlfmt#readme)
+- sqlfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfmt)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

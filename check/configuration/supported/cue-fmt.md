@@ -24,17 +24,18 @@ You can enable the cue-fmt linter with:
 trunk check enable cue-fmt
 ```
 
+## Auto Enabling
+
+cue-fmt will be auto-enabled if any of the following filetypes are present: *cue*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/cue-fmt) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [cue-fmt site](https://cuelang.org)
-* cue-fmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cue-fmt)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [cue-fmt site](https://cuelang.org)
+- cue-fmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cue-fmt)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

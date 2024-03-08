@@ -24,14 +24,22 @@ You can enable the Markdownlint linter with:
 trunk check enable markdownlint
 ```
 
+## Auto Enabling
+
+Markdownlint will be auto-enabled if any of the following filetypes are present: *markdown*
+
 ## Settings
 
-**Markdownlint** uses the same config files as the
-upstream [Markdownlint](https://github.com/DavidAnson/markdownlint) project, so you can continue to use any
-existing configuration files (ex: `.markdownlint.json`, `.markdownlint.yaml`, `.markdownlint.yml`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+Markdownlint supports the following config files:
+* `.markdownlint.json`
+* `.markdownlint.yaml`
+* `.markdownlint.yml`
+* `.markdownlintrc`
+* `.markdownlint-cli2.json`
+* `.markdownlint-cli2.yaml`
+* `.markdownlint-cli2.jsonc`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/markdownlint) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.markdownlint.yaml` if your project does not already have one.
 
 Older versions of `markdownlint` had a bug where it printed plaintext output even when run with `--json`. We rely on JSON output so we can parse and ingest the results from markdownlint. The package we use for markdownlint is actually [markdownlint-cli ](https://www.npmjs.com/package/markdownlint-cli) `>= 0.29.0` is verified to work.
 
@@ -41,6 +49,6 @@ Older versions of `markdownlint` had a bug where it printed plaintext output eve
 
 ## Links
 
-* [Markdownlint site](https://github.com/DavidAnson/markdownlint)
-* Markdownlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/markdownlint)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Markdownlint site](https://github.com/DavidAnson/markdownlint)
+- Markdownlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/markdownlint)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

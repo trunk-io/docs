@@ -24,19 +24,21 @@ You can enable the psscriptanalyzer linter with:
 trunk check enable psscriptanalyzer
 ```
 
+## Auto Enabling
+
+psscriptanalyzer will be auto-enabled if any of its config files are present: *`PSScriptAnalyzerSettings.psd1`*
+
 ## Settings
 
-**psscriptanalyzer** uses the same config files as the
-upstream [psscriptanalyzer](https://github.com/PowerShell/PSScriptAnalyzer) project, so you can continue to use any
-existing configuration files (ex: `PSScriptAnalyzerSettings.psd1`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+psscriptanalyzer supports the following config files:
+* `PSScriptAnalyzerSettings.psd1`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/psscriptanalyzer) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [psscriptanalyzer site](https://github.com/PowerShell/PSScriptAnalyzer)
-* psscriptanalyzer Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/psscriptanalyzer)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [psscriptanalyzer site](https://github.com/PowerShell/PSScriptAnalyzer)
+- psscriptanalyzer Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/psscriptanalyzer)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

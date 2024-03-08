@@ -24,19 +24,21 @@ You can enable the Brakeman linter with:
 trunk check enable brakeman
 ```
 
+## Auto Enabling
+
+Brakeman will be auto-enabled if any of the following filetypes are present: *ruby*
+
 ## Settings
 
-**Brakeman** uses the same config files as the
-upstream [Brakeman](https://github.com/presidentbeef/brakeman) project, so you can continue to use any
-existing configuration files (ex: `brakeman.ignore`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+Brakeman supports the following config files:
+* `brakeman.ignore`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/brakeman) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [Brakeman site](https://github.com/presidentbeef/brakeman)
-* Brakeman Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/brakeman)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Brakeman site](https://github.com/presidentbeef/brakeman)
+- Brakeman Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/brakeman)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

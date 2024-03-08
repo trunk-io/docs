@@ -24,17 +24,18 @@ You can enable the git-diff-check linter with:
 trunk check enable git-diff-check
 ```
 
+## Auto Enabling
+
+git-diff-check will be auto-enabled if any of the following filetypes are present: *ALL*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/git-diff-check) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [git-diff-check site](https://git-scm.com/docs/git-diff)
-* git-diff-check Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/git-diff-check)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [git-diff-check site](https://git-scm.com/docs/git-diff)
+- git-diff-check Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/git-diff-check)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

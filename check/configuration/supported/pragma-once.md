@@ -24,17 +24,18 @@ You can enable the pragma-once linter with:
 trunk check enable pragma-once
 ```
 
+## Auto Enabling
+
+pragma-once will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pragma-once) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [pragma-once site](https://github.com/trunk-io/plugins/blob/main/linters/pragma-once/README.md)
-* pragma-once Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pragma-once)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [pragma-once site](https://github.com/trunk-io/plugins/blob/main/linters/pragma-once/README.md)
+- pragma-once Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pragma-once)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

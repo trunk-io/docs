@@ -24,19 +24,21 @@ You can enable the gokart linter with:
 trunk check enable gokart
 ```
 
+## Auto Enabling
+
+gokart will be auto-enabled if any of its config files are present: *`analyzers.yml`*
+
 ## Settings
 
-**gokart** uses the same config files as the
-upstream [gokart](https://github.com/praetorian-inc/gokart) project, so you can continue to use any
-existing configuration files (ex: `analyzers.yml`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+gokart supports the following config files:
+* `analyzers.yml`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/gokart) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `analyzers.yml` if your project does not already have one.
 
 
 
 ## Links
 
-* [gokart site](https://github.com/praetorian-inc/gokart)
-* gokart Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gokart)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [gokart site](https://github.com/praetorian-inc/gokart)
+- gokart Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gokart)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

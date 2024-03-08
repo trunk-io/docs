@@ -24,19 +24,23 @@ You can enable the swiftlint linter with:
 trunk check enable swiftlint
 ```
 
+## Auto Enabling
+
+swiftlint will be auto-enabled if any of its config files are present: *`.swiftlint.yml`, `.swiftlint.yaml`, `.swiftlint`*
+
 ## Settings
 
-**swiftlint** uses the same config files as the
-upstream [swiftlint](https://github.com/realm/SwiftLint#readme) project, so you can continue to use any
-existing configuration files (ex: `.swiftlint.yml`, `.swiftlint.yaml`, `.swiftlint`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+swiftlint supports the following config files:
+* `.swiftlint.yml`
+* `.swiftlint.yaml`
+* `.swiftlint`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/swiftlint) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [swiftlint site](https://github.com/realm/SwiftLint#readme)
-* swiftlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftlint)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [swiftlint site](https://github.com/realm/SwiftLint#readme)
+- swiftlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftlint)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

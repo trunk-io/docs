@@ -24,14 +24,16 @@ You can enable the Detekt linter with:
 trunk check enable detekt
 ```
 
+## Auto Enabling
+
+Detekt will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
-**Detekt** uses the same config files as the
-upstream [Detekt](https://github.com/detekt/detekt) project, so you can continue to use any
-existing configuration files (ex: `.detekt.yaml`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+Detekt supports the following config files:
+* `.detekt.yaml`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/detekt) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 Detekt is usually invoked through gradle, which allows specifying additional configuration in `build.gradle`. We do not yet automatically parse your Gradle scripts to infer your `detekt` configuration; instead, what we do is this:
 
@@ -55,6 +57,6 @@ direct_configs: ["lib/detekt.yaml"]
 
 ## Links
 
-* [Detekt site](https://github.com/detekt/detekt)
-* Detekt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/detekt)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Detekt site](https://github.com/detekt/detekt)
+- Detekt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/detekt)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -24,17 +24,18 @@ You can enable the golines linter with:
 trunk check enable golines
 ```
 
+## Auto Enabling
+
+golines will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/golines) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [golines site](https://pkg.go.dev/github.com/segmentio/golines)
-* golines Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/golines)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [golines site](https://pkg.go.dev/github.com/segmentio/golines)
+- golines Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/golines)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

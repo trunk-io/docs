@@ -24,19 +24,23 @@ You can enable the Yamllint linter with:
 trunk check enable yamllint
 ```
 
+## Auto Enabling
+
+Yamllint will be auto-enabled if any of the following filetypes are present: *yaml*
+
 ## Settings
 
-**Yamllint** uses the same config files as the
-upstream [Yamllint](https://github.com/adrienverge/yamllint) project, so you can continue to use any
-existing configuration files (ex: `.yamllint`, `.yamllint.yaml`, `.yamllint.yml`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+Yamllint supports the following config files:
+* `.yamllint`
+* `.yamllint.yaml`
+* `.yamllint.yml`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/yamllint) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.yamllint.yaml` if your project does not already have one.
 
 
 
 ## Links
 
-* [Yamllint site](https://github.com/adrienverge/yamllint)
-* Yamllint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/yamllint)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Yamllint site](https://github.com/adrienverge/yamllint)
+- Yamllint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/yamllint)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -24,19 +24,21 @@ You can enable the codespell linter with:
 trunk check enable codespell
 ```
 
+## Auto Enabling
+
+codespell will be auto-enabled if any of its config files are present: *`.codespellrc`*
+
 ## Settings
 
-**codespell** uses the same config files as the
-upstream [codespell](https://github.com/codespell-project/codespell#readme) project, so you can continue to use any
-existing configuration files (ex: `.codespellrc`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+codespell supports the following config files:
+* `.codespellrc`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/codespell) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [codespell site](https://github.com/codespell-project/codespell#readme)
-* codespell Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/codespell)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [codespell site](https://github.com/codespell-project/codespell#readme)
+- codespell Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/codespell)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

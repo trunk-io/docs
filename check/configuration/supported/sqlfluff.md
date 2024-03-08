@@ -26,14 +26,16 @@ You can enable the SQLFluff linter with:
 trunk check enable sqlfluff
 ```
 
+## Auto Enabling
+
+SQLFluff will be auto-enabled if any of its config files are present: *`.sqlfluff`*
+
 ## Settings
 
-**SQLFluff** uses the same config files as the
-upstream [SQLFluff](https://github.com/sqlfluff/sqlfluff) project, so you can continue to use any
-existing configuration files (ex: `.sqlfluff`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+SQLFluff supports the following config files:
+* `.sqlfluff`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/sqlfluff) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.sqlfluff` if your project does not already have one.
 
 Sqlfluff is only configured as a linter by default because its formatting capabilities are limited. To turn sqlfluff formatting on, enable its subcommand:
 
@@ -49,6 +51,6 @@ lint:
 
 ## Links
 
-* [SQLFluff site](https://github.com/sqlfluff/sqlfluff)
-* SQLFluff Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfluff)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [SQLFluff site](https://github.com/sqlfluff/sqlfluff)
+- SQLFluff Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfluff)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

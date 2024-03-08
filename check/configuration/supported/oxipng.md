@@ -24,17 +24,18 @@ You can enable the Oxipng formatter with:
 trunk check enable oxipng
 ```
 
+## Auto Enabling
+
+Oxipng will be auto-enabled if any of the following filetypes are present: *png*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/oxipng) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [Oxipng site](https://github.com/shssoichiro/oxipng)
-* Oxipng Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/oxipng)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Oxipng site](https://github.com/shssoichiro/oxipng)
+- Oxipng Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/oxipng)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

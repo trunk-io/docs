@@ -24,17 +24,18 @@ You can enable the nixpkgs-fmt linter with:
 trunk check enable nixpkgs-fmt
 ```
 
+## Auto Enabling
+
+nixpkgs-fmt will be auto-enabled if any of the following filetypes are present: *nix*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [nixpkgs-fmt site](https://github.com/nix-community/nixpkgs-fmt)
-* nixpkgs-fmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [nixpkgs-fmt site](https://github.com/nix-community/nixpkgs-fmt)
+- nixpkgs-fmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -24,14 +24,18 @@ You can enable the Gitleaks linter with:
 trunk check enable gitleaks
 ```
 
+## Auto Enabling
+
+Gitleaks will be auto-enabled if any of its config files are present: *`.gitleaks.config`, `.gitleaks.toml`, `.gitleaksignore`*
+
 ## Settings
 
-**Gitleaks** uses the same config files as the
-upstream [Gitleaks](https://gitleaks.io/) project, so you can continue to use any
-existing configuration files (ex: `.gitleaks.config`, `.gitleaks.toml`, `.gitleaksignore`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+Gitleaks supports the following config files:
+* `.gitleaks.config`
+* `.gitleaks.toml`
+* `.gitleaksignore`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 Gitleaks v7 only works with Go 1.16, not Go 1.18 while Gitleaks v8 works with 1.18. We recommend using v8, but if you specifically need to use v7 you can override the go runtime version like so:
 
@@ -46,6 +50,6 @@ Again, this is not recommended. Just use Gitleaks v8 or later with go 1.18 or la
 
 ## Links
 
-* [Gitleaks site](https://gitleaks.io/)
-* Gitleaks Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Gitleaks site](https://gitleaks.io/)
+- Gitleaks Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

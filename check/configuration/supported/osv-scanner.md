@@ -24,19 +24,21 @@ You can enable the OSV-Scanner linter with:
 trunk check enable osv-scanner
 ```
 
+## Auto Enabling
+
+OSV-Scanner will be auto-enabled if any of the following filetypes are present: *lockfile*
+
 ## Settings
 
-**OSV-Scanner** uses the same config files as the
-upstream [OSV-Scanner](https://github.com/google/osv-scanner) project, so you can continue to use any
-existing configuration files (ex: `osv-scanner.toml`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+OSV-Scanner supports the following config files:
+* `osv-scanner.toml`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/osv-scanner) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [OSV-Scanner site](https://github.com/google/osv-scanner)
-* OSV-Scanner Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/osv-scanner)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [OSV-Scanner site](https://github.com/google/osv-scanner)
+- OSV-Scanner Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/osv-scanner)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

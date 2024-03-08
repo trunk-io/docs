@@ -24,17 +24,18 @@ You can enable the Black formatter with:
 trunk check enable black
 ```
 
+## Auto Enabling
+
+Black will be auto-enabled if any of the following filetypes are present: *python, jupyter, python-interface*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/black) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [Black site](https://pypi.org/project/black/)
-* Black Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/black)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Black site](https://pypi.org/project/black/)
+- Black Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/black)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

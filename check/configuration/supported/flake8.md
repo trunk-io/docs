@@ -24,14 +24,16 @@ You can enable the Flake8 linter with:
 trunk check enable flake8
 ```
 
+## Auto Enabling
+
+Flake8 will be auto-enabled if any of its config files are present: *`.flake8`*
+
 ## Settings
 
-**Flake8** uses the same config files as the
-upstream [Flake8](https://flake8.pycqa.org/en/latest/) project, so you can continue to use any
-existing configuration files (ex: `.flake8`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+Flake8 supports the following config files:
+* `.flake8`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/flake8) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.flake8` if your project does not already have one.
 
 
 
@@ -68,6 +70,6 @@ enabled:
 
 ## Links
 
-* [Flake8 site](https://flake8.pycqa.org/en/latest/)
-* Flake8 Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/flake8)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Flake8 site](https://flake8.pycqa.org/en/latest/)
+- Flake8 Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/flake8)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

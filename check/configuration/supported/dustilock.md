@@ -24,17 +24,18 @@ You can enable the dustilock linter with:
 trunk check enable dustilock
 ```
 
+## Auto Enabling
+
+dustilock will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/dustilock) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [dustilock site](https://github.com/Checkmarx/dustilock)
-* dustilock Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dustilock)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [dustilock site](https://github.com/Checkmarx/dustilock)
+- dustilock Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dustilock)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

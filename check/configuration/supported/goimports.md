@@ -24,17 +24,18 @@ You can enable the goimports linter with:
 trunk check enable goimports
 ```
 
+## Auto Enabling
+
+goimports will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/goimports) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [goimports site](https://pkg.go.dev/golang.org/x/tools/cmd/goimports)
-* goimports Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/goimports)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [goimports site](https://pkg.go.dev/golang.org/x/tools/cmd/goimports)
+- goimports Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/goimports)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

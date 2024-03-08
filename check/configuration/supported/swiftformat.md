@@ -24,19 +24,21 @@ You can enable the swiftformat linter with:
 trunk check enable swiftformat
 ```
 
+## Auto Enabling
+
+swiftformat will be auto-enabled if any of its config files are present: *`.swiftformat`*
+
 ## Settings
 
-**swiftformat** uses the same config files as the
-upstream [swiftformat](https://github.com/nicklockwood/SwiftFormat#readme) project, so you can continue to use any
-existing configuration files (ex: `.swiftformat`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+swiftformat supports the following config files:
+* `.swiftformat`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/swiftformat) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [swiftformat site](https://github.com/nicklockwood/SwiftFormat#readme)
-* swiftformat Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftformat)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [swiftformat site](https://github.com/nicklockwood/SwiftFormat#readme)
+- swiftformat Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftformat)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

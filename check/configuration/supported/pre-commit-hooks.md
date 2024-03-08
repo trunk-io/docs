@@ -24,17 +24,18 @@ You can enable the pre-commit-hooks linter with:
 trunk check enable pre-commit-hooks
 ```
 
+## Auto Enabling
+
+pre-commit-hooks will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [pre-commit-hooks site](https://pre-commit.com/hooks.html)
-* pre-commit-hooks Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [pre-commit-hooks site](https://pre-commit.com/hooks.html)
+- pre-commit-hooks Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

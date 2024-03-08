@@ -24,19 +24,22 @@ You can enable the deno linter with:
 trunk check enable deno
 ```
 
+## Auto Enabling
+
+deno will be auto-enabled if any of its config files are present: *`deno.json`, `deno.jsonc`*
+
 ## Settings
 
-**deno** uses the same config files as the
-upstream [deno](https://deno.land/manual) project, so you can continue to use any
-existing configuration files (ex: `deno.json`, `deno.jsonc`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+deno supports the following config files:
+* `deno.json`
+* `deno.jsonc`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/deno) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [deno site](https://deno.land/manual)
-* deno Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/deno)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [deno site](https://deno.land/manual)
+- deno Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/deno)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

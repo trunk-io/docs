@@ -24,17 +24,18 @@ You can enable the dotnet-format linter with:
 trunk check enable dotnet-format
 ```
 
+## Auto Enabling
+
+dotnet-format will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/dotnet-format) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [dotnet-format site](https://github.com/dotnet/format#readme)
-* dotnet-format Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotnet-format)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [dotnet-format site](https://github.com/dotnet/format#readme)
+- dotnet-format Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotnet-format)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

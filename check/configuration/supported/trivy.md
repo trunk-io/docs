@@ -24,14 +24,16 @@ You can enable the Trivy linter with:
 trunk check enable trivy
 ```
 
+## Auto Enabling
+
+Trivy will be auto-enabled if any of the following filetypes are present: *lockfile, ALL, docker, yaml, terraform*
+
 ## Settings
 
-**Trivy** uses the same config files as the
-upstream [Trivy](https://github.com/aquasecurity/trivy) project, so you can continue to use any
-existing configuration files (ex: `trivy-secret.yaml`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+Trivy supports the following config files:
+* `trivy-secret.yaml`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/trivy) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
@@ -61,6 +63,6 @@ lint:
 
 ## Links
 
-* [Trivy site](https://github.com/aquasecurity/trivy)
-* Trivy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trivy)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Trivy site](https://github.com/aquasecurity/trivy)
+- Trivy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trivy)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -24,19 +24,21 @@ You can enable the rome linter with:
 trunk check enable rome
 ```
 
+## Auto Enabling
+
+rome will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
-**rome** uses the same config files as the
-upstream [rome](https://github.com/rome/tools#readme) project, so you can continue to use any
-existing configuration files (ex: `rome.json`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+rome supports the following config files:
+* `rome.json`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/rome) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 
 
 
 ## Links
 
-* [rome site](https://github.com/rome/tools#readme)
-* rome Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rome)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [rome site](https://github.com/rome/tools#readme)
+- rome Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rome)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

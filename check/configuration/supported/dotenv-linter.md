@@ -24,17 +24,18 @@ You can enable the dotenv-linter linter with:
 trunk check enable dotenv-linter
 ```
 
+## Auto Enabling
+
+dotenv-linter will be auto-enabled if any of the following filetypes are present: *dotenv*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/dotenv-linter) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [dotenv-linter site](https://github.com/dotenv-linter/dotenv-linter#readme)
-* dotenv-linter Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotenv-linter)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [dotenv-linter site](https://github.com/dotenv-linter/dotenv-linter#readme)
+- dotenv-linter Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotenv-linter)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

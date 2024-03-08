@@ -24,17 +24,18 @@ You can enable the sort-package-json linter with:
 trunk check enable sort-package-json
 ```
 
+## Auto Enabling
+
+sort-package-json will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/sort-package-json) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [sort-package-json site](https://github.com/keithamus/sort-package-json#readme)
-* sort-package-json Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sort-package-json)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [sort-package-json site](https://github.com/keithamus/sort-package-json#readme)
+- sort-package-json Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sort-package-json)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

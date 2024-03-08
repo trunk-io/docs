@@ -24,19 +24,21 @@ You can enable the djlint linter with:
 trunk check enable djlint
 ```
 
+## Auto Enabling
+
+djlint will be auto-enabled if any of its config files are present: *`.djlintrc`*
+
 ## Settings
 
-**djlint** uses the same config files as the
-upstream [djlint](https://github.com/Riverside-Healthcare/djlint#readme) project, so you can continue to use any
-existing configuration files (ex: `.djlintrc`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+djlint supports the following config files:
+* `.djlintrc`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/djlint) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `.djlintrc` if your project does not already have one.
 
 
 
 ## Links
 
-* [djlint site](https://github.com/Riverside-Healthcare/djlint#readme)
-* djlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/djlint)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [djlint site](https://github.com/Riverside-Healthcare/djlint#readme)
+- djlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/djlint)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

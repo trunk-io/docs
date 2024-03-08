@@ -24,17 +24,18 @@ You can enable the gofmt linter with:
 trunk check enable gofmt
 ```
 
+## Auto Enabling
+
+gofmt will be auto-enabled if any of the following filetypes are present: *go*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/gofmt) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [gofmt site](https://pkg.go.dev/cmd/gofmt)
-* gofmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [gofmt site](https://pkg.go.dev/cmd/gofmt)
+- gofmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

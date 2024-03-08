@@ -24,17 +24,18 @@ You can enable the ktlint linter with:
 trunk check enable ktlint
 ```
 
+## Auto Enabling
+
+ktlint will be auto-enabled if any of the following filetypes are present: *kotlin*
+
 ## Settings
 
 
-
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/ktlint) if your project does not already have one,
-which you can see in our [open source plugins repo]().
 
 
 
 ## Links
 
-* [ktlint site](https://github.com/pinterest/ktlint#readme)
-* ktlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ktlint)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [ktlint site](https://github.com/pinterest/ktlint#readme)
+- ktlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ktlint)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

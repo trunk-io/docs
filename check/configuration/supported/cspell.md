@@ -24,19 +24,31 @@ You can enable the cspell linter with:
 trunk check enable cspell
 ```
 
+## Auto Enabling
+
+cspell will never be auto-enabled. It must be enabled manually.
+
 ## Settings
 
-**cspell** uses the same config files as the
-upstream [cspell](https://github.com/streetsidesoftware/cspell#readme) project, so you can continue to use any
-existing configuration files (ex: `.cspell.json`, `cspell.json`, `.cSpell.json`).You can move these files to `.trunk/configs` and `trunk check` will still find them. [See Moving Linter Configs ](..#moving-linter-configs) for more info.
+cspell supports the following config files:
+* `.cspell.json`
+* `cspell.json`
+* `.cSpell.json`
+* `cSpell.json`
+* `cspell.config.js`
+* `cspell.config.cjs`
+* `cspell.config.json`
+* `cspell.config.yaml`
+* `cspell.config.yml`
+* `cspell.yaml`
+* `cspell.yml`
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/cspell) if your project does not already have one,
-which you can see in our [open source plugins repo]().
+ You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.Trunk check provides a default `cspell.yaml` if your project does not already have one.
 
 
 
 ## Links
 
-* [cspell site](https://github.com/streetsidesoftware/cspell#readme)
-* cspell Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cspell)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [cspell site](https://github.com/streetsidesoftware/cspell#readme)
+- cspell Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cspell)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
