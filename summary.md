@@ -170,6 +170,7 @@
     * [Using the Webapp](merge/legacy/using-the-webapp.md)
     * [Integration for Slack](merge/legacy/integration-for-slack.md)
     * [Reference](merge/legacy/reference.md)
+  * [PR Prioritization](merge/pr-prioritization.md)
 * [CI Analytics](ci-analytics/README.md)
   * [Overview](ci-analytics/README.md)
   * [Setup](ci-analytics/setup/README.md)
