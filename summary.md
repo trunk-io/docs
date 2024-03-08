@@ -161,6 +161,7 @@
     * [Parallel Mode with Bazel](merge/set-up-trunk-merge/merge-+-bazel.md)
     * [Integration for Slack](merge/set-up-trunk-merge/integration-for-slack.md)
   * [Using the Merge UI](merge/using-the-webapp.md)
+  * [PR Prioritization](merge/pr-prioritization.md)
   * [Command Line](merge/command-line.md)
   * [Common Problems](merge/common-problems.md)
   * [Reference](merge/reference.md)
