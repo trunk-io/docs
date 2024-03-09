@@ -1,24 +1,54 @@
 ---
 description: Explore  Prettier, the powerful code formatter. Learn how to install, configure, and effectively use Prettier to enhance your coding workflow.
+title: Trunk | How to run Prettier
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**Prettier** is a formatter for CSS, SCSS, JavaScript, JSON, Markdown, TypeScript, GraphQL and YAML.
+# Prettier
 
-You can enable the Prettier plugin with
+[**Prettier**](https://prettier.io/) is a formatter for CSS, SCSS, JavaScript, JSON, Markdown, TypeScript, GraphQL and YAML.
+
+You can enable the Prettier formatter with:
 
 ```shell
 trunk check enable prettier
 ```
 
-# Settings
+## Auto Enabling
 
-Prettier uses the same config files as the
-upstream [Prettier](https://prettier.io/) project, so you can continue to use any
-existing configuration files (ex: `.prettierrc`, `.prettierrc.json`, `.prettierrc.yml`).
-    
+Prettier will be auto-enabled if any *Typescript, Yaml, Css, Sass, Html, Markdown, Json, Javascript, Graphql or Prettier_supported_configs* files are present.
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/prettier) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+## Settings
+
+Prettier supports the following config files:
+* `.prettierrc`
+* `.prettierrc.json`
+* `.prettierrc.yml`
+* `.prettierrc.yaml`
+* `.prettierrc.json5`
+* `.prettierrc.js`
+* `.prettierrc.cjs`
+* `.prettierrc.mjs`
+* `prettier.config.js`
+* `prettier.config.cjs`
+* `prettier.config.mjs`
+* `.prettierrc.toml`
+* `.prettierignore`
+
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 
 
@@ -31,3 +61,10 @@ You may also want to configure `printWidth` to your liking.
 
 
 
+
+
+## Links
+
+- [Prettier site](https://prettier.io/)
+- Prettier Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/prettier)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

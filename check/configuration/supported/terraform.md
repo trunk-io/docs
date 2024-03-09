@@ -1,20 +1,36 @@
 ---
 description: The command line interface to Terraform is the terraform command, which accepts a variety of subcommands such as terraform validate or terraform fmt
+title: Trunk | How to run Terraform
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**Terraform** is a formatter for Terraform.
+# Terraform
 
-You can enable the Terraform plugin with
+[**Terraform**](https://developer.hashicorp.com/terraform/cli/commands) is a formatter for Terraform.
+
+You can enable the Terraform formatter with:
 
 ```shell
 trunk check enable terraform
 ```
 
-# Settings
+## Auto Enabling
+
+Terraform will never be auto-enabled. It must be enabled manually.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/terraform) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+## Usage Notes
 
 We currently support `terraform validate` and `terraform fmt`, but only `fmt` is enabled by default when you add `terraform` to your enabled list in `trunk.yaml`. To enable `validate`, add this to your `trunk.yaml`:
 
@@ -28,3 +44,10 @@ Note: you must run `terraform init` before running `trunk check` with `terraform
 
 
 
+
+
+## Links
+
+- [Terraform site](https://developer.hashicorp.com/terraform/cli/commands)
+- Terraform Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terraform)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

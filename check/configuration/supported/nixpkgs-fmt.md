@@ -1,17 +1,39 @@
 ---
 description: nixpkgs-fmt is a linter for Nix
+title: Trunk | How to run nixpkgs-fmt
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**nixpkgs-fmt** is a linter for Nix.
+# nixpkgs-fmt
 
-You can enable the nixpkgs-fmt plugin with
+[**nixpkgs-fmt**](https://github.com/nix-community/nixpkgs-fmt) is a linter for Nix.
+
+You can enable the nixpkgs-fmt linter with:
 
 ```shell
 trunk check enable nixpkgs-fmt
 ```
 
-# Settings
+## Auto Enabling
+
+nixpkgs-fmt will be auto-enabled if any *Nix* files are present.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+
+
+## Links
+
+- [nixpkgs-fmt site](https://github.com/nix-community/nixpkgs-fmt)
+- nixpkgs-fmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -1,17 +1,39 @@
 ---
 description: Oxipng is an open-source, CLI utility designed for optimizing PNG files. It applies lossless compression techniques to reduce file size.
+title: Trunk | How to run Oxipng
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**Oxipng** is a formatter for PNG.
+# Oxipng
 
-You can enable the Oxipng plugin with
+[**Oxipng**](https://github.com/shssoichiro/oxipng) is a formatter for PNG.
+
+You can enable the Oxipng formatter with:
 
 ```shell
 trunk check enable oxipng
 ```
 
-# Settings
+## Auto Enabling
+
+Oxipng will be auto-enabled if any *Png* files are present.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/oxipng) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+
+
+## Links
+
+- [Oxipng site](https://github.com/shssoichiro/oxipng)
+- Oxipng Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/oxipng)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

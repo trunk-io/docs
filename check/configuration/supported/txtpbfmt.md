@@ -1,17 +1,39 @@
 ---
 description: txtpbfmt is a linter for Textproto
+title: Trunk | How to run txtpbfmt
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**txtpbfmt** is a linter for Textproto.
+# txtpbfmt
 
-You can enable the txtpbfmt plugin with
+[**txtpbfmt**](https://github.com/protocolbuffers/txtpbfmt/) is a linter for Textproto.
+
+You can enable the txtpbfmt linter with:
 
 ```shell
 trunk check enable txtpbfmt
 ```
 
-# Settings
+## Auto Enabling
+
+txtpbfmt will be auto-enabled if any *Textproto* files are present.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/txtpbfmt) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+
+
+## Links
+
+- [txtpbfmt site](https://github.com/protocolbuffers/txtpbfmt/)
+- txtpbfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/txtpbfmt)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

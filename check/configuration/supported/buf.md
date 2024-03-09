@@ -1,21 +1,45 @@
 ---
 description: buf is a linter for Protobuf
+title: Trunk | How to run buf
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**buf** is a linter for Protobuf.
+# buf
 
-You can enable the buf plugin with
+[**buf**](https://github.com/bufbuild/buf#readme) is a linter for Protobuf.
+
+You can enable the buf linter with:
 
 ```shell
 trunk check enable buf
 ```
 
-# Settings
+## Auto Enabling
 
-buf uses the same config files as the
-upstream [buf](https://github.com/bufbuild/buf#readme) project, so you can continue to use any
-existing configuration files (ex: `buf.yaml`).
-    
+buf will never be auto-enabled. It must be enabled manually.
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/buf) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+## Settings
+
+buf supports the following config files:
+* `buf.yaml`
+
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+
+
+## Links
+
+- [buf site](https://github.com/bufbuild/buf#readme)
+- buf Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buf)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -1,17 +1,39 @@
 ---
 description: shfmt is a linter for Bash
+title: Trunk | How to run shfmt
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**shfmt** is a linter for Bash.
+# shfmt
 
-You can enable the shfmt plugin with
+[**shfmt**](https://github.com/mvdan/sh#readme) is a linter for Bash.
+
+You can enable the shfmt linter with:
 
 ```shell
 trunk check enable shfmt
 ```
 
-# Settings
+## Auto Enabling
+
+shfmt will be auto-enabled if any *Shell* files are present.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/shfmt) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+
+
+## Links
+
+- [shfmt site](https://github.com/mvdan/sh#readme)
+- shfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shfmt)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

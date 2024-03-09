@@ -1,24 +1,42 @@
 ---
 description: Uncover Flake8, a versatile Python linter for code style and error checking. Flake 8 checks against PEP 8 and more, with plugin support for broader analysis.
+title: Trunk | How to run Flake8
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**Flake8** is a linter for Python.
+# Flake8
 
-You can enable the Flake8 plugin with
+[**Flake8**](https://flake8.pycqa.org/en/latest/) is a linter for Python.
+
+You can enable the Flake8 linter with:
 
 ```shell
 trunk check enable flake8
 ```
 
-# Settings
+## Auto Enabling
 
-Flake8 uses the same config files as the
-upstream [Flake8](https://flake8.pycqa.org/en/latest/) project, so you can continue to use any
-existing configuration files (ex: `.flake8`).
-    
+Flake8 will be auto-enabled if a `.flake8` config file is present.
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/flake8) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+## Settings
+
+Flake8 supports the following config files:
+* `.flake8`
+
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk check provides a default `.flake8` if your project does not already have one.
+
+## Usage Notes
 
 
 
@@ -51,3 +69,10 @@ enabled:
 ```
 
 
+
+
+## Links
+
+- [Flake8 site](https://flake8.pycqa.org/en/latest/)
+- Flake8 Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/flake8)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

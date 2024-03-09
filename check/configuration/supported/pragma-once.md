@@ -1,17 +1,39 @@
 ---
 description: pragma-once is a linter for C, C++
+title: Trunk | How to run pragma-once
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**pragma-once** is a linter for C, C++.
+# pragma-once
 
-You can enable the pragma-once plugin with
+[**pragma-once**](https://github.com/trunk-io/plugins/blob/main/linters/pragma-once/README.md) is a linter for C, C++.
+
+You can enable the pragma-once linter with:
 
 ```shell
 trunk check enable pragma-once
 ```
 
-# Settings
+## Auto Enabling
+
+pragma-once will never be auto-enabled. It must be enabled manually.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pragma-once) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+
+
+## Links
+
+- [pragma-once site](https://github.com/trunk-io/plugins/blob/main/linters/pragma-once/README.md)
+- pragma-once Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pragma-once)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

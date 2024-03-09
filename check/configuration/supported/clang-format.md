@@ -2,25 +2,43 @@
 description: Clang Format is a set of tools to format code that is processed by the Clang compiler suite.
 
 
+title: Trunk | How to run ClangFormat
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**ClangFormat** is a formatter for Protobuf and C, C++.
+# ClangFormat
 
-You can enable the ClangFormat plugin with
+[**ClangFormat**](https://clang.llvm.org/docs/ClangFormat.html) is a formatter for Protobuf and C, C++.
+
+You can enable the ClangFormat formatter with:
 
 ```shell
 trunk check enable clang-format
 ```
 
-# Settings
+## Auto Enabling
 
-ClangFormat uses the same config files as the
-upstream [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html) project, so you can continue to use any
-existing configuration files (ex: `.clang-format`).
-    
+ClangFormat will be auto-enabled if a `.clang-format` config file is present.
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/clang-format) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+## Settings
+
+ClangFormat supports the following config files:
+* `.clang-format`
+
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 By default, Trunk uses Clang-format to additionally format `.proto` files. However, for this to work, you need to have told `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format file`:
 
@@ -39,3 +57,10 @@ DerivePointerAlignment: false
 ---
 Language: Proto
 ```
+
+
+## Links
+
+- [ClangFormat site](https://clang.llvm.org/docs/ClangFormat.html)
+- ClangFormat Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-format)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

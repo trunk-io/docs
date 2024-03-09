@@ -1,17 +1,39 @@
 ---
 description: Discover Trufflehog with our detailed guide. Learn installation, configuration, usage, and how to integrate it with other linters for optimal code security.
+title: Trunk | How to run Trufflehog
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**Trufflehog** is a linter for Security.
+# Trufflehog
 
-You can enable the Trufflehog plugin with
+[**Trufflehog**](https://github.com/trufflesecurity/trufflehog) is a linter for Security.
+
+You can enable the Trufflehog linter with:
 
 ```shell
 trunk check enable trufflehog
 ```
 
-# Settings
+## Auto Enabling
+
+Trufflehog will be auto-enabled if any *ALL* files are present.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+
+
+## Links
+
+- [Trufflehog site](https://github.com/trufflesecurity/trufflehog)
+- Trufflehog Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

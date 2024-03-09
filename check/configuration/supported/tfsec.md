@@ -1,21 +1,49 @@
 ---
 description: tfsec is a linter for Security and Terraform
+title: Trunk | How to run tfsec
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**tfsec** is a linter for Security and Terraform.
+# tfsec
 
-You can enable the tfsec plugin with
+[**tfsec**](https://github.com/aquasecurity/tfsec) is a linter for Security and Terraform.
+
+You can enable the tfsec linter with:
 
 ```shell
 trunk check enable tfsec
 ```
 
-# Settings
+## Auto Enabling
 
-tfsec uses the same config files as the
-upstream [tfsec](https://github.com/aquasecurity/tfsec) project, so you can continue to use any
-existing configuration files (ex: `tfsec.yml`, `tfsec.yaml`, `.tfsec/config.json`).
-    
+tfsec will never be auto-enabled. It must be enabled manually.
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/tfsec) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+## Settings
+
+tfsec supports the following config files:
+* `tfsec.yml`
+* `tfsec.yaml`
+* `.tfsec/config.json`
+* `.tfsec/config.yml`
+* `.tfsec/config.yaml`
+
+Unlike with most tools under `trunk check`, these files cannot be moved.
+
+
+
+
+## Links
+
+- [tfsec site](https://github.com/aquasecurity/tfsec)
+- tfsec Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tfsec)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

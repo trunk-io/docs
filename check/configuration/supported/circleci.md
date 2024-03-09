@@ -1,17 +1,39 @@
 ---
 description: circleci is a linter for CircleCI Config
+title: Trunk | How to run circleci
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**circleci** is a linter for CircleCI Config.
+# circleci
 
-You can enable the circleci plugin with
+[**circleci**](https://github.com/CircleCI-Public/circleci-cli#readme) is a linter for CircleCI Config.
+
+You can enable the circleci linter with:
 
 ```shell
 trunk check enable circleci
 ```
 
-# Settings
+## Auto Enabling
+
+circleci will never be auto-enabled. It must be enabled manually.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/circleci) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+
+
+## Links
+
+- [circleci site](https://github.com/CircleCI-Public/circleci-cli#readme)
+- circleci Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/circleci)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

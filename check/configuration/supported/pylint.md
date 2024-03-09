@@ -1,24 +1,43 @@
 ---
 description: Learn about Pylint, the versatile Python linter for error detection, code smell elimination, and PEP 8 enforcement.
+title: Trunk | How to run Pylint
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**Pylint** is a linter for Python.
+# Pylint
 
-You can enable the Pylint plugin with
+[**Pylint**](https://pypi.org/project/pylint/) is a linter for Python.
+
+You can enable the Pylint linter with:
 
 ```shell
 trunk check enable pylint
 ```
 
-# Settings
+## Auto Enabling
 
-Pylint uses the same config files as the
-upstream [Pylint](https://pypi.org/project/pylint/) project, so you can continue to use any
-existing configuration files (ex: `pylintrc`, `.pylintrc`).
-    
+Pylint will be auto-enabled if any of its config files are present: *`pylintrc`, `.pylintrc`*.
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/pylint) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+## Settings
+
+Pylint supports the following config files:
+* `pylintrc`
+* `.pylintrc`
+
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
 
 You may specify additional pylint plugins in your `.pylintrc`, using the line `load-plugins=...`
 
@@ -34,3 +53,10 @@ If you want to run the plugin `pylint-django` as part of your setup, you would a
 
 
 
+
+
+## Links
+
+- [Pylint site](https://pypi.org/project/pylint/)
+- Pylint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pylint)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

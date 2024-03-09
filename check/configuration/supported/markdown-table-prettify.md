@@ -1,17 +1,39 @@
 ---
 description: markdown-table-prettify is a linter for Markdown
+title: Trunk | How to run markdown-table-prettify
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-**markdown-table-prettify** is a linter for Markdown.
+# markdown-table-prettify
 
-You can enable the markdown-table-prettify plugin with
+[**markdown-table-prettify**](https://github.com/darkriszty/MarkdownTablePrettify-VSCodeExt#readme) is a linter for Markdown.
+
+You can enable the markdown-table-prettify linter with:
 
 ```shell
 trunk check enable markdown-table-prettify
 ```
 
-# Settings
+## Auto Enabling
+
+markdown-table-prettify will never be auto-enabled. It must be enabled manually.
 
 
-Trunk provides a [default configuration](https://github.com/trunk-io/plugins/tree/main/linters/markdown-table-prettify) if your project does not already have one,
-which you can see in our [open source plugins repo](https://github.com/trunk-io/plugins/tree/main).
+
+
+
+## Links
+
+- [markdown-table-prettify site](https://github.com/darkriszty/MarkdownTablePrettify-VSCodeExt#readme)
+- markdown-table-prettify Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/markdown-table-prettify)
+- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
