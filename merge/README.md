@@ -1,28 +1,26 @@
 ---
-description: >-
-  Overview of Trunk Merge, a parallel merge queue to speed up developer
-  workflows.
+description: Parallel-powered Merge Queue to speed up developer workflows.
 ---
 
 # Merge
 
-**Trunk Merge** is a sophisticated merge queue. It's a GitHub bot and a web app that devs use to merge pull requests. If you have a big team, use trunk-based-development, or if you have a monorepo, you should use a merge queue.
+**Trunk Merge** is a hosted merge queue service. It manages and controls the order in which enqueued pull requests are merged into the `main` branch of your repository. Trunk Merge enables large teams working in a monorepo to reduce merge conflicts and maintain a green, healthy main branch. \
+\
+Trunk Merge works with any CI provider as long as you use GitHub for your repo hosting.
 
-Trunk Merge can use any CI provider as long as you use GitHub for your repo hosting.
+### Why use a merge queue?
 
-## About merge queues
+Merge queues automate PR merges into your repo's `main` branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000+ active engineers.\
+\
+**Why are Merge Queues recommended for large monorepos?**\
+As the number of concurrent, unrelated changes to a repository grows, the likelihook of a [logical merge conflict](https://trunk.io/blog/what-is-a-logical-merge-conflict) increases. A logical merge conflict creates what is often referred to as a "broken main". \
+\
+There are two common ways a `main` branch can become broken:
 
-Merge queues automate PR merges into your repo's main branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000 active engineers.
+1. A PR was branched off of on an old commit of `main`, passed tests when run against that old view of main, but when merged into `main` no longer functions as expected.
+2. Two (or more) PRs made code changes that when tested independently function correctly, but not when combined onto main. e.g. - PR-1 adds a new test that calls function foo() while PR-2 renames the existing function foo() to bar(). In this case both PRs are correct in isolation but they are in conflict once merged onto main.
 
-#### The problem they solve
-
-Merge queues make sure your `main` branch is never broken ('broken', meaning: a service is not functioning correctly, your app segfaults, there are compilation errors, a unit test is failing, or anything else is going wrong).\
-There are two common ways `main` branches "break":
-
-1. A PR was branched off of on an old commit of `main`, and when merged into `main` it no longer functions with the latest state of the repo.
-2. Two (or more) PRs recently merged and worked independently, but combining their changes breaks something.
-
-Either way, the more pull request velocity you have in a repo, the more often issues arise. These issues are called [logical merge conflict](https://trunk.io/blog/what-is-a-logical-merge-conflict)s. A merge queue handles this problem by testing PRs queued to be merged _in combination, based on the latest `main`,_ and only if the extra combination testing passes do they merge.
+Either way, the more pull request velocity you have in a repo, the more often issues like these arise. A merge queue handles these problematic conflicts by testing PRs queued to be merged _in combination, based on the latest `main`,_ and only if the extra combination testing passes do they merge.
 
 ## Single mode vs. Parallel mode <a href="#single-mode-vs-parallel-mode" id="single-mode-vs-parallel-mode"></a>
 
