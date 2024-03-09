@@ -10,7 +10,7 @@ When a high-priority change must be merged quickly but still validated by the Me
 
 When submitting a PR to Merge you can set the priority to one of the text labels below or a number between 0 - 255. &#x20;
 
-<table><thead><tr><th width="151">value</th><th width="109">number</th><th>note</th></tr></thead><tbody><tr><td>urgent</td><td>0</td><td>urgent items will interrupt running jobs and begin testing immediately</td></tr><tr><td>high</td><td>10</td><td></td></tr><tr><td>medium</td><td>100</td><td><mark style="background-color:yellow;">default priority</mark></td></tr><tr><td>low</td><td>200</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="151">label</th><th width="109">number</th><th>note</th></tr></thead><tbody><tr><td>urgent</td><td>0</td><td>urgent items will interrupt running jobs and begin testing immediately</td></tr><tr><td>high</td><td>10</td><td></td></tr><tr><td>medium</td><td>100</td><td>default priority</td></tr><tr><td>low</td><td>200</td><td></td></tr></tbody></table>
 
 The priority is set when the PR is submitted to Merge:
 
