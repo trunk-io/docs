@@ -10,41 +10,32 @@ When a high-priority change must be merged quickly but still validated by the Me
 
 When submitting a PR to Merge you can set the priority to one of the text labels below or a number between 0 - 255. &#x20;
 
-| label  | number | note                                                                                      |
-| ------ | ------ | ----------------------------------------------------------------------------------------- |
-| urgent | 0      | highest priority. Urgent items will interrupt running jobs and begin testing immediately. |
-| high   | 10     |                                                                                           |
-| medium | 100    | default priority                                                                          |
-| low    | 200    |                                                                                           |
+<table><thead><tr><th width="151">value</th><th width="109">number</th><th>note</th></tr></thead><tbody><tr><td>urgent</td><td>0</td><td>urgent items will interrupt running jobs and begin testing immediately</td></tr><tr><td>high</td><td>10</td><td></td></tr><tr><td>medium</td><td>100</td><td><mark style="background-color:yellow;">default priority</mark></td></tr><tr><td>low</td><td>200</td><td></td></tr></tbody></table>
 
 The priority is set when the PR is submitted to Merge:
 
 {% tabs %}
 {% tab title="GitHub comment" %}
-Specify the priority in a GitHub comment using the `--priority` or `-p` options with either labels or numbers
-
 ```
-/trunk merge --priority=high
+/trunk merge --priority=<level>
 ```
 
 or
 
 ```
-/trunk merge -p 10
+/trunk merge -p <level>
 ```
 {% endtab %}
 
 {% tab title="Command Line" %}
-Specify the priority on the command line using the `--priority` or `-p` options with either labels or numbers.
-
-```
-trunk merge <pr-number> --priority=high
+```shell
+trunk merge <pr-number> --priority=<level>
 ```
 
 or
 
 ```
-trunk merge <pr-number> -p 10
+trunk merge <pr-number> -p <level>
 ```
 {% endtab %}
 
