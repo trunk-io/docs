@@ -8,11 +8,7 @@ When a high-priority change must be merged quickly but still validated by the Me
 
 ## Setting Priorities
 
-When submitting a PR to Merge you can set the priority to one of the text labels below or a number between 0 - 255. &#x20;
-
-<table><thead><tr><th width="151">label</th><th width="109">number</th><th>note</th></tr></thead><tbody><tr><td>urgent</td><td>0</td><td>urgent items will interrupt running jobs and begin testing immediately</td></tr><tr><td>high</td><td>10</td><td></td></tr><tr><td>medium</td><td>100</td><td>default priority</td></tr><tr><td>low</td><td>200</td><td></td></tr></tbody></table>
-
-The priority is set when the PR is submitted to Merge:
+You specify a custom priority for a pull request at the time on insertion into the queue:
 
 {% tabs %}
 {% tab title="GitHub comment" %}
@@ -43,6 +39,10 @@ trunk merge <pr-number> -p <level>
 The priority can also be specified from the [Merge Web UI](using-the-webapp.md).
 {% endtab %}
 {% endtabs %}
+
+valid values for the priority level:
+
+<table><thead><tr><th width="151">label</th><th width="109">number</th><th>note</th></tr></thead><tbody><tr><td>urgent</td><td>0</td><td>urgent items will interrupt running jobs and begin testing immediately</td></tr><tr><td>high</td><td>10</td><td></td></tr><tr><td>medium</td><td>100</td><td>default priority</td></tr><tr><td>low</td><td>200</td><td></td></tr></tbody></table>
 
 ## How Priority Affects PR Order
 
