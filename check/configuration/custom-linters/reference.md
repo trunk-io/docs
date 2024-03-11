@@ -158,63 +158,42 @@ __If you have one of these config files, you're definitely using this linter__
 
 ### `affects_cache`
 
-`affects_cache`: the list of files that affect the cache results of this linter.
+`affects_cache`: The list of files that affect the cache results of this linter.
 
 ### `good_without_config`
 
 `good_without_config`: *optional boolean*. Indicates whether this linter is recommended without 
 the user tuning its configuration. Prefer `suggest_if`.
 
-### `files`
-
-`files` is a list of file types listed in the `lint.files` section that this linter applies to. 
-
-
 ### `include_lfs`
 
-`include_lfs`: boolean, exclude this filetype if it is tracked using LFS.
-
-[//]: # (`std_in`: boolean, Should the command be fed the file on standard input?)
-
-[//]: # (`cache_results` : boolean, indicates whether or not to support caching for this linter.)
-
-[//]: # (`disable_upstream` :boolean, indicates whether or not we support comparing against the upstream version of this file.  **should we expose this?**)
-
-### `symlinks`
-
-`symlinks`: a list of symlinks to be created when using sandboxing.
+`include_lfs`: *boolean*. Allow this linter to operate on files tracked 
+using [git LFS](https://git-lfs.com/).
 
 ### `environment`
 
 `environment`: a list of runtime variables used when running the linter.
 
-### `is_recommended`
-
-`is_recommended`: *boolean*. Indicating whether `trunk init` should try to enable this linter. 
-Prefer [`suggest_if`](#suggest_if)
-
-### `run_linter_from`
-
-`run_linter_from`: indicates whether to set current working directory to WORKSPACE root, or the 
-target files folder when run. Prefer `run_from` at the command level.
+### `include_scanner_type`
 
 `include_scanner_type`: which include scanner to use, if any.
 
 ### `formatter`
 
-`formatter`: boolean. Indicates whether this is a formatter and should be included in `trunk fmt`
+`formatter`: *boolean*. Indicates whether this is a formatter and should be included in `trunk fmt`
 
 ### `allow_empty_files`
 
-`allow_empty_files`: boolean. Indicates to skip linting empty files for this linter.
+`allow_empty_files`: *boolean8. Indicates to skip linting empty files for this linter.
 
 ### `runtime`
 
-`runtime`: RuntimeType, Which runtime, if any, to require to be setup for this linter.
+`runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for this linter. Ex: `node`, `ruby`, `python`.
 
 ### `package`
 
-`package`: string, What primary package to install, if using a package manager runtime
+`package`: string, What primary package to install, if using a package manager runtime. The
+enabled version of the runtime for this linter will apply to this package.
 
 ### `extra_packages`
 
@@ -378,6 +357,12 @@ lint, analyze, etc.).
 ### `files`
 
 `files` File configs for this command. If absent, will use the whole linter's `file_configs`. Note: this defines the entire list of file configs for this command, rather than appending to those of the entire lint command.
+
+
+### `files`
+
+`files` is a list of file types listed in the `lint.files` section that this linter applies to.
+
 
 [//]: # (TODO: link to example)
 
