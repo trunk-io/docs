@@ -75,7 +75,8 @@ lint:
 
 ### `disabled`
 
-`disabled`: The list of linters to disable. Linter names can be in the form of `<name>` or `<name>@<version>`,
+`disabled`: The list of linters to disable. Adding a linter here will prevent trunk from suggesting
+it as a new linter each time you upgrade. Linter names can be in the form of `<name>` or `<name>@<version>`,
 the same format as [enabled](#enabled)
 
 ### `ignore`
