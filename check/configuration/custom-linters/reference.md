@@ -136,9 +136,8 @@ lint:
 
 ### `compile_commands_roots`
 
-`compile_commands_roots`: Directories to search for `compile_commands.json`.
-
-[//]: # (`hold_the_line_mode`: which algorithm to use for hold the line)
+`compile_commands_roots`: Directories to search for `compile_commands.json`. The
+default is `build/`.
 
 
 ## Linter Definition
@@ -152,14 +151,6 @@ global linter settings, see [Lint Config](reference.md#lint-config)
 
 `name` Is the name of the linter. This property will be used to refer to the linter in other 
 parts of the config, for example, in the list of enabled linters.
-
-[//]: # (`type` is the type of output the linter produces. **link to output types**)
-
-[//]: # (`command`, string, command to run: ex: `[$workspace/tools/linters/clang-format, --assume-filename=${path}]`)
-
-[//]: # (`success_codes` is the list of success codes that indicates linter generated data and should be processed. Some linters return 0 for nothing to lint and 1 when there are issues.)
-
-[//]: # (`error_codes` is the list of error codes this linter will return when it hit an internal failure and couldn't generate results.)
 
 ### `direct_configs`
 
