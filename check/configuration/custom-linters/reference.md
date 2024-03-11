@@ -104,7 +104,21 @@ the same format as [enabled](#enabled)
 
 ### `comment_formats`
 
-`comment_formats`: definitions of comment formats. Reused in linter definitions.
+`comment_formats`: Definitions of comment formats. Reused in linter definitions. Trunk Check
+already defines many common comment format such as `hash` (`# comment`), `slashes-block`
+(`/* comment */`), and `slashes-inline` (`// comment`). 
+For the full list [see the linters plugin.yaml](https://github.com/trunk-io/plugins/blob/main/linters/plugin.yaml). 
+
+To create a new comment format provide the name and delimiters, like this:
+
+```yaml
+lint:
+  comment_formats:
+    - name: dashes-block
+      leading_delimiter: --[[
+      trailing_delimiter: --]
+```
+
 
 ### `exported_configs`
 
