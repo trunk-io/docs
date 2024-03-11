@@ -24,7 +24,7 @@ lint, analyze, etc.).
 
 `run`: The command to run a linter. This command can use variables provided at
 runtime such as `$plugin}` and `$target}`. [Full list of variables](commands.md#template-variables).
-See [Run](#run) for more details.
+See [Run](../commands#run) for more details.
 
 Examples:
 
