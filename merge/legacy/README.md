@@ -6,6 +6,8 @@ description: Older version of Merge.
 
 {% hint style="info" %}
 This documentation is for the older version of Merge. Use if it you initially set up your Merge config **before November 16, 2023**. If you setup Merge later, then use the [new merge docs](https://github.com/trunk-io/gitbook/blob/main/merge/README.md). If your Merge console has a _**graph**_ tab, then you should use the new merge docs instead.
+
+**To migrate to the new Merge**, all you have to do is **delete and then recreate your queue**. It is recommend that you **pause** your queue and ensure it is empty before doing this so that no PRs get dropped. You can do this by going to settings page in the [Merge UI](../using-the-webapp.md), choosing the repository and clicking the **Delete** button in the **Merge** panel. Also, if you are using the command line tool, be sure to add `service:graph` in your `.trunk/trunk.yaml` inside the `merge` section.
 {% endhint %}
 
 Trunk Merge is a service that enables your repository to adhere to The “Not Rocket Science Rule Of Software Engineering”: **Automatically maintain a repository of code that always passes all the tests.**
