@@ -221,14 +221,14 @@ tmp file). [See Output Sources](output-types.md#output-sources)
 
 ### `prepare_command`
 
-`prepare_command`, ex. `[tflint, --init]`
-
-[//]: # (`version`, **???** )
+`prepare_command`. A command that is run once per session before linting any number
+of files using this linter. ex. `[tflint, --init]`
 
 ### `known_good_version`
 
-`known_good_version`: The version `trunk init` inits with. If not present Trunk will query the 
-version from its runtime or use the default version from the download.
+`known_good_version`: A version to be used when Trunk cannot query the latest
+version. Currently, Trunk can query the latest version for all package managers
+and downloads hosted on GitHub.
 
 ### `version_command`
 
@@ -244,12 +244,8 @@ version from its runtime or use the default version from the download.
 
 ### `run_when`
 
-`run_when`, Should this linter be run only in CI? (or locally, vscode, monitor)
-
-### `in_place`
-
-`in_place`: *optional boolean*. Applies to formatters - does the formatter rewrite the file as 
-opposed to reading its contents from STDIN and outputting formatted contents to STDOUT?
+`run_when`, *optional string*. Indicates when this linter should be run. 
+Possible values are: `cli`, `monitor`, `ci`, `lsp`. 
 
 ### `run_timeout`
 
@@ -286,15 +282,84 @@ if init or upgrade chooses something in this set.
 
 `idempotent`: *optional boolean*. Indicates whether a linter is idempotent w.r.t. config + 
 source code inputs.  e.g. semgrep fetches rules from the internet, so it's not idempotent . If 
-set, causes cache_ttl to default to 24h
+set, will only cache results a duration of `cache_ttl`.
 
 ### `cache_ttl`
 
-`cache_ttl`, duration string, How long cached results are kept before they expire
+`cache_ttl`, *duration string*. If this linter is not [idempotent](#idempotent), this is how long cached results are kept before they expire. Defaults to 24hrs.
 
 ### `target`
 
-`target`: optional string, what target does this run on
+`target`: *optional string*. What target does this linter run on. Defaults to `${file}`.
+
+Examples:
+
+**nancy** uses `.` as the target.
+[full source](https://github.com/trunk-io/plugins/blob/main/linters/nancy/plugin.yaml)
+
+```yaml
+# nancy uses .
+definitions:
+  - name: nancy
+    files: [go-lockfile]
+    download: nancy
+    runtime: go
+    commands:
+      - output: sarif
+        run: sh ${plugin}/linters/nancy/run.sh
+        success_codes: [0, 1, 2]
+        target: .
+        read_output_from: stdout
+        is_security: true
+```
+
+**tflint** uses `${parent}` as the target.
+[full source](https://github.com/trunk-io/plugins/blob/main/linters/tflint/plugin.yaml)
+
+```yaml
+lint:
+  definitions:
+    - name: tflint
+      files: [terraform]
+      commands:
+        - name: lint
+          output: sarif
+          prepare_run: tflint --init
+          run: tflint --format=sarif --force
+          success_codes: [0, 1, 2]
+          read_output_from: stdout
+          # tflint can only run on the current directory unless --recursive is passed
+          target: ${parent}
+          run_from: ${target_directory}
+          version: ">=0.47.0"
+```
+
+**Clippy** uses `${parent_with(Cargo.toml)}` as the target.
+[full source](https://github.com/trunk-io/plugins/blob/main/linters/clippy/plugin.yaml)
+
+```yaml
+version: 0.1
+lint:
+  definitions:
+    # clippy has 3 lint severities: deny, warn, and allow. Unfortunately deny causes rustc to
+    # fail eagerly due to its implementation (https://github.com/rust-lang/rust/pull/87337),
+    # We use --cap-lints to downgrade "deny" severity lints to warn. So rustc will find all
+    # issues instead of hard stopping. There are currently only 70 of them, so we could hardcode
+    # the list to fix their severity levels correctly.
+    - name: clippy
+      files: [rust]
+      download: rust
+      commands:
+        - name: lint
+          # Custom parser type defined in the trunk cli to handle clippy's JSON output.
+          output: clippy
+          target: ${parent_with(Cargo.toml)}
+          run: cargo clippy --message-format json --locked -- --cap-lints=warn --no-deps
+          success_codes: [0, 101, 383]
+          run_from: ${target_directory}
+          disable_upstream: true
+```
+
 
 ### `suggest_if`
 
@@ -406,8 +471,8 @@ parsing the output.
 
 ### `in_place`
 
-`in_place`: *optional boolean*. Applies to formatters - does the formatter rewrite the file as 
-opposed to reading its contents from STDIN and outputting formatted contents to STDOUT?
+`in_place`: *optional boolean*. Indicates that this formatter will
+rewrite the file in place **Only applies to formatters**.
 
 ### `sandbox_type`
 
