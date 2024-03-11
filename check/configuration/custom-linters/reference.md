@@ -278,16 +278,6 @@ if init or upgrade chooses something in this set.
 
 `query_compile_commands`, *optional boolean*
 
-### `idempotent`
-
-`idempotent`: *optional boolean*. Indicates whether a linter is idempotent w.r.t. config + 
-source code inputs.  e.g. semgrep fetches rules from the internet, so it's not idempotent . If 
-set, will only cache results a duration of `cache_ttl`.
-
-### `cache_ttl`
-
-`cache_ttl`, *duration string*. If this linter is not [idempotent](#idempotent), this is how long cached results are kept before they expire. Defaults to 24hrs.
-
 ### `target`
 
 `target`: *optional string*. What target does this linter run on. Defaults to `${file}`.
@@ -465,7 +455,7 @@ lint:
 
 ### `run_when`
 
-`run_when`: Should this command be run only in CI? One of `cli`, `lsp`, `monitor`, or `ci`.
+`run_when`: When this command should be run. One of `cli`, `lsp`, `monitor`, or `ci`.
 
 ### `success_codes`
 
@@ -484,12 +474,9 @@ parsing the output.
 
 ### `read_output_from`
 
-`read_output_from`: Tell parser where to expect output from for reading.
+`read_output_from`: Tell parser where to expect output from for reading. Should
+be one of `stdout`, `stderr`, and `tmp_file`. 
 [See Output Sources](output-types.md#output-sources)
-
-[//]: # (TODO: **check values** &#40;stdout, stderr, tmp_file&#41; )
-
-[//]: # (TODO: **link to output docs**)
 
 ### `run_from`
 
@@ -500,15 +487,13 @@ parsing the output.
 ### `batch`
 
 `batch`: *optional boolean*. Combine multiple files into the same execution.
+If true, the `${target}` template substitution in the `run`
+field may expand into multiple files.
 
 ### `in_place`
 
 `in_place`: *optional boolean*. Indicates that this formatter will
 rewrite the file in place **Only applies to formatters**.
-
-### `sandbox_type`
-
-`sandbox_type`: How to create the sandbox if it needs to be created.
 
 ### `allow_empty_files`
 
@@ -558,14 +543,11 @@ Not needed if linter is already output SARIF. [See Output Types](./output-types.
 
 ### `idempotent`
 
-`idempotent`: *optional boolean*. Indicates whether a linter is idempotent with config 
-and source code inputs. For example, `semgrep` fetches rules from the internet, so it is not 
-idempotent.  If set, it causes `cache_ttl` to default to `24h`. This affects how long linter 
-outputs are cached.
+`idempotent`: *optional boolean*. Indicates whether a linter is idempotent with config and source code inputs. For example, semgrep fetches rules from the internet, so it is not idempotent . If set, will only cache results a duration of `cache_ttl`.
 
 ### `cache_ttl`
 
-`cache_ttl`: *string*. How long cached results are kept before they expire.  Only applies if `idempotent: false`
+`cache_ttl`, *duration string*. If this linter is not [idempotent](#idempotent), this is how long cached results are kept before they expire. Defaults to 24hrs.
 
 [//]: # (TODO: link to deeper explanation** )
 
