@@ -23,8 +23,8 @@ lint, analyze, etc.).
 ### `run`
 
 `run`: The command to run a linter. This command can use variables provided at
-runtime such as `$plugin}` and `$target}`. [Full list of variables](commands.md#template-variables).
-See [Run](../commands#run) for more details.
+runtime such as `$plugin}` and `$target}`. [Full list of variables](README.md#template-variables).
+See [Run](README.md#run) for more details.
 
 Examples:
 
@@ -97,7 +97,7 @@ be one of `stdout`, `stderr`, and `tmp_file`.
 
 ### `run_from`
 
-`run_from`: What current working directory to run the linter from. See [Working Directory](./commands.md#working-directory) for more details. 
+`run_from`: What current working directory to run the linter from. See [Working Directory](README.md#working-directory) for more details. 
 
 
 ### `batch`
@@ -122,7 +122,7 @@ assume there are no linters if the file is empty.
 
 ### `cache_results`
 
-`cache_results`: *optional boolean*. Indicates if this linter wants to cache results. See [Caching](files.md#caching) for more details. 
+`cache_results`: *optional boolean*. Indicates if this linter wants to cache results. See [Caching](../files.md#caching) for more details. 
 
 ### `disable_upstream`
 
@@ -144,11 +144,11 @@ Allows some commands of a linter to be run by default without others.
 ### `parser`
 
 `parser`: The definition of a parser that will transform the output of the linter into SARIF. 
-Not needed if linter is already output SARIF. [See Output Types](./output-types.md)
+Not needed if linter is already output SARIF. [See Output Types](output-types.md)
 
 ### `parse_regex`
 
-`parse_regex`: *string*. A regular expression used to support regex parsing.[See Regex output type](./output-types.md#regex)
+`parse_regex`: *string*. A regular expression used to support regex parsing.[See Regex output type](output-types.md#regex)
 
 ### `maximum_file_size`
 
@@ -171,12 +171,12 @@ Not needed if linter is already output SARIF. [See Output Types](./output-types.
 ### `target`
 
 `target`, *optional string*, What target does this run on. By default, the target is the modified 
-source code file. Some linters operate on a whole repo or directory.  See [Input Target](commands.md#input-target) for more details 
+source code file. Some linters operate on a whole repo or directory.  See [Input Target](README.md#input-target) for more details 
 
 ### `is_security`
 
 `is_security`: *boolean*. Whether findings from this command should be considered "security" or 
-not. Allows this linter to be run with `--scope==security`. [See Command Line Options](../../advanced-setup/cli/cli-options.md)
+not. Allows this linter to be run with `--scope==security`. [See Command Line Options](../../../advanced-setup/cli/cli-options.md)
 
 ### `platforms`
 
@@ -198,6 +198,6 @@ interactively. Example: `optimize`, `autoformat`, or `compress`.
 ### `max_concurrency`
 
 `max_concurrency`: integer, The maximum number of processes that Trunk Check will run 
-concurrently for this linter. [See Limiting Concurrency](./commands.md#limiting-concurrency)
+concurrently for this linter. [See Limiting Concurrency](README.md#limiting-concurrency)
 
 

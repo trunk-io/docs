@@ -31,7 +31,7 @@ using [git LFS](https://git-lfs.com/).
 
 ### `environment`
 
-`environment`: a list of runtime variables used when running the linter. See [Command Environment Variables](commands.md#environment-variables).
+`environment`: a list of runtime variables used when running the linter. See [Command Environment Variables](commands/commands.md#environment-variables).
 
 ### `include_scanner_type`
 
@@ -81,7 +81,7 @@ Prefer `run_from` at the command level.
 ### `read_output_from`
 
 `read_output_from`,  Tell the parser where to expect output from for reading (stdout, stderr,
-tmp file). [See Output Sources](output-types.md#output-sources)
+tmp file). [See Output Sources](commands/output-types.md#output-sources)
 
 ### `prepare_command`
 
@@ -122,7 +122,7 @@ Possible values are: `cli`, `monitor`, `ci`, `lsp`.
 and will not run (overrides enabled).
 
 ### `commands`
-`commands`: Commands exposed by this linter. [See Linter Command Definition](command-definition.md)
+`commands`: Commands exposed by this linter. [See Linter Command Definition](commands/command-definition.md)
 
 ### `deprecated`
 

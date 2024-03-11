@@ -16,7 +16,7 @@ For example: in the following yaml, the **flake8** linter sets `suggest_if` to `
 and sets `direct_configs` to `[.flake8]`. If any `*.flake8` files are found, then trunk check
 will automatically enable flake8.
 
-Flake8 linter definition. [full source](https://github.com/trunk-io/plugins/blob/main/linters/flake8/plugin.yaml)
+**Flake8** linter definition. [full source](https://github.com/trunk-io/plugins/blob/main/linters/flake8/plugin.yaml)
 
 ```yaml
 version: 0.1
@@ -49,7 +49,7 @@ lint:
 
 The **suggest_if** field can be one of the following:
 
-* `config_present` will auto-enable a linter if Trunk sees any [`direct_config`](#direct_configs) for it .
+* `config_present` will auto-enable a linter if Trunk sees any `direct_config` for it .
 * `files_present` will auto-enable a linter if Trunk sees any file type that it operates on.
 * `never` will never auto-enable this linter.
 

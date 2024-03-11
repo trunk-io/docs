@@ -9,7 +9,7 @@ it must have at least one.
 ## run
 
 The `run` property is the command to actually run a linter. This command can
-use [variables](./commands.md#template-variables) provided by the runtime such as `${plugin}` and `${target}`.
+use [variables](#template-variables) provided by the runtime such as `${plugin}` and `${target}`.
 
 For example: this is the `run` field for **black**, one of our Python linters. The
 `run` field is set to `black -q ${target}`.
@@ -150,7 +150,7 @@ lint:
 
 Most `environment` entries are maps with `name` and `value` keys; these become `name=value` environment variables. For `PATH`, we allow specifying `list`, in which case we concatenate the entries with `:`.
 
-We use the same template syntax for `environment` as we do for [`command`](./#command).
+We use the same template syntax for `environment` as we do for [`command`](#commands).
 
 
 
@@ -166,4 +166,4 @@ If the standard output types do not meet your needs, you can also create a
 
 ## Other properties
 
-Other less commonly used properties of commands can be found in the [Command Field Reference](command-definition.md).
+Other less commonly used properties of commands can be found in the [Command Field Reference](definition.md).

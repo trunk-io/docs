@@ -1,6 +1,6 @@
 ## Lint Config
 
-The `lint` section represents the configuration of all linters. This is where you can:
+The `lint` section of `.trunk/trunk.yaml` represents the configuration of all linters. This is where you can:
 
 * define the linters (`linters`),
 * list linters to enable and disable (`enabled` and `disabled`)
@@ -42,7 +42,7 @@ lint:
 
 ### `definitions`
 
-`definitions`: Where you define or override linter settings. See [Linter Definition Config](#lint-config-definitions)
+`definitions`: Where you define or override linter settings. See [Linter Definition Config](linter-definition.md)
 
 ### `enabled`
 
@@ -68,7 +68,8 @@ the same format as [enabled](#enabled)
 
 ### `threshold`
 
-`threshold`: where you specify the blocking behavior of linters. The [threshold](../#blocking-thresholds) for whether an error from a linter should block commits or not.
+`threshold`: where you specify the blocking behavior of linters. The threshold for whether an 
+error from a linter should block commits or not.
 
 
 ### `compile_commands`
