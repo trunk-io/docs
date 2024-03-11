@@ -21,8 +21,17 @@ The output format that Trunk expects from a linter is determined by its [`output
 
 # Output Types
 
-Trunk supports several different generic output types. Most linters will use one of these output types, but if your linter doesn't conform well to any of these specifications, you can also write a [custom parser](custom-parsers.md). In general SARIF should be preferred over other formats because it is the most
-flexible and battle tested.
+Trunk supports several different generic output types. Most linters will use one of these output 
+types, but if your linter doesn't conform well to any of these specifications, you can also 
+write a [custom parser](custom-parsers.md). In general SARIF should be preferred over other 
+formats because it is the most flexible and battle tested.
+
+Trunk currently supports the following linter output types.
+
+<table data-header-hidden><thead><tr><th width="173.33333333333331"></th><th width="131" align="center"></th><th></th></tr></thead><tbody><tr><td>Linter Type</td><td align="center">Autofix<br>support</td><td>Description</td></tr><tr><td><a href="output-types.md#sarif"><code>sarif</code></a></td><td align="center">✓</td><td>Produces diagnostics as <a href="https://docs.oasis-open.org/sarif/sarif/v2.0/sarif-v2.0.html">Static Analysis Results Interchange Format</a> JSON.</td></tr><tr><td><a href="output-types.md#lsp-json"><code>lsp_json</code></a></td><td align="center"></td><td>Produces diagnostics as <a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a> JSON.</td></tr><tr><td><a href="output-types.md#pass-fail-linters"><code>pass_fail</code></a></td><td align="center"></td><td>Writes a single file-level diagnostic to <code>stdout</code>.</td></tr><tr><td><a href="output-types.md#regex"><code>regex</code></a></td><td align="center"></td><td>Produces diagnostics using a custom regex format.</td></tr><tr><td><a href="output-types.md#arcanist"><code>arcanist</code></a></td><td align="center">✓</td><td>Produces diagnostics as Arcanist JSON.</td></tr><tr><td><a href="output-types.md#formatters"><code>rewrite</code></a></td><td align="center">✓</td><td>Writes the formatted version of a file to <code>stdout</code>.</td></tr></tbody></table>
+
+If your linter produces a different output type, you can also write a [parser](custom-parsers.md) to transform the linter's output into something Trunk can understand.
+
 
 ## SARIF
 
