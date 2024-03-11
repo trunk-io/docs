@@ -48,18 +48,18 @@ Every linter defined in `lint.definitions` must specify at least a name, the typ
 will run on, at least [one command](commands.md), and `success_codes` or `error_codes`. A complete linter 
 definition defines the following attributes of the linter.
 
-* **Enabling:** When to auto-enable the linter. Should the linter be enabled when certain
+* [**Enabling:**](common.md) When to auto-enable the linter. Should the linter be enabled when certain
 config files are available? See [Enabling](common.md) for more.
-* **Dependencies:** Where to get the linter and its dependencies from? If the linter uses a runtime like Python or NodeJS, then Trunk also needs to know what versions it needs, and any support packages. See [Dependencies](dependencies.md) for more.
-* **Files:** When to use the linter. This includes which filetypes the linter
+* [**Dependencies:**](dependencies.md) Where to get the linter and its dependencies from? If the linter uses a runtime like Python or NodeJS, then Trunk also needs to know what versions it needs, and any support packages. See [Dependencies](dependencies.md) for more.
+* [**Files:**](files.md) When to use the linter. This includes which filetypes the linter
 uses, which files could potentially affect caching, and if the linter
 is idempotent. See [Files](files.md) for more.
-* **Commands:** Once the final set of files are computed Trunk will invoke one of
+* [**Commands:**](commands.md) Once the final set of files are computed Trunk will invoke one of
 the linter's commands. A command defines the input targets,
 input sources, and the actual binary that is run for the command, and the exit codes to indicate success. See [Commands](commands.md) for more.
-* **Outputs:** Trunk supports commands which produce output in one of [several
+* [**Outputs:**](output-types.md) Trunk supports commands which produce output in one of [several
 standard formats](output-types.md#output-types). 
-* **Custom Parsers:** Linters can also use [custom parsers](custom-parsers.md) if needed. 
+* [**Custom Parsers:**](custom-parsers.md) Linters can also use [custom parsers](custom-parsers.md) if needed. 
 
 
 
