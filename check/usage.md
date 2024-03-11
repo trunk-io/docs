@@ -56,7 +56,7 @@ From the root of a git repo, run:
 trunk init
 ```
 
-This will scan your repository and create a `.trunk/trunk.yaml` that enables all the linters, formatters, and security analyzers that are recommended for your project based on the source code types (\*`.c`, \*.`py`, \*.`js`, etc.) as well as existing tool configuration files (ex: `.eslintrc`, `.clang-format`, `.flake8`).  You can enable additional linters with the `trunk check enable <toolname>` command.  For more details, see [here](advanced-setup/cli/init-in-a-git-repo.md).
+This will scan your repository and create a `.trunk/trunk.yaml` that enables all the linters, formatters, and security analyzers that [Trunk Check](https://github.com/trunk-io/gitbook/blob/main/check/README.md) recommends. For more details, see [here](advanced-setup/cli/init-in-a-git-repo.md).
 
 ## Basic Usage
 
@@ -127,7 +127,7 @@ Once you have Trunk Check configured on your local machine, you can set up the T
 
 By default Trunk Check will _Hold The Line_, meaning it will only run against new changes in your codebase, not old ones. For more see [Hold the Line](configuration/hold-the-line.md).
 
-## Ignoring Issues by Line
+## Ignoring Issues
 
 To tell Trunk Check to ignore a line in your source code with a special comment like this:
 
@@ -139,21 +139,6 @@ struct FooBar {
 ```
 
 The comment should contain the name of the linter you want to ignore the following line, in this case `clang-tidy` For more complex ignore commands, see [Ignoring Issues](configuration/ignoring-issues.md).
-
-## Ignoring Issues by File
-
-Sometimes you may want to ignore entire files or groups of files, such as generated code. To ignore them, use the `ignore` key to your `.trunk/trunk.yaml` file:
-
-```yaml
-lint:
-  ignore:
-    - linters: [ALL]
-      paths:
-        # Ignore generated files
-        - src/generated/**
-```
-
-See [Ignoring Multiple Files](configuration/ignoring-issues.md#ignoring-multiple-files) more information.
 
 ## Upgrading
 
