@@ -63,11 +63,20 @@ lint:
 
 ### `enabled`
 
-`enabled`: list of enabled linters
+`enabled`: The list of linters to enable. Linter names can be in the form of `<name>` or `<name>@<version>`.
+Examples:
+
+```yaml
+lint:
+  enabled:
+    markdownlint
+    markdown-link-checker@1.3.0
+```
 
 ### `disabled`
 
-`disabled`: list of disabled linters
+`disabled`: The list of linters to disable. Linter names can be in the form of `<name>` or `<name>@<version>`,
+the same format as [enabled](#enabled)
 
 ### `ignore`
 
