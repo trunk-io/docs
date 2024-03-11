@@ -13,7 +13,7 @@ layout:
     visible: true
 ---
 
-# Queue Mode
+# Parallel Mode
 
 ## Single / Parallel Mode <a href="#single-parallel-mode" id="single-parallel-mode"></a>
 
@@ -21,7 +21,7 @@ Merge can support two different modes - `Single` and `Parallel` mode. The mode a
 
 #### Parallel Mode
 
-In this mode, Trunk Merge will dynamically create new merge queues for PRs that affect different parts of your code base. To support this, you will be required to provide a list of **impacted targets** that result from code changes in the PR. Trunk simplifies this by offering a [Merge GitHub action (workflow) using Bazel](merge-+-bazel.md#set-up-the-github-action) to automatically generate and upload the necessary list of impacted targets. For guidance on using other build systems and details on identifying impacted targets, please refer to [Impacted Targets](impacted-targets.md). Trunk Merge will then examine the provided list of impacted targets for all PRs in the existing merge queues and only make your PR depend in the other PRs it actually affects.
+In this mode, Trunk Merge will dynamically create new merge queues for PRs that affect different parts of your code base. To support this, you will be required to provide a list of impacted targets that result from code changes in the PR (see [impacted-targets.md](impacted-targets.md "mention") for more details as well as how to generate the list of impacted targets). Trunk Merge will then examine the provided list of impacted targets for all PRs in the existing merge queues and only make your PR depend in the other PRs it actually affects.
 
 For example, the following PRs:
 
