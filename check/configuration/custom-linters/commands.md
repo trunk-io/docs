@@ -10,7 +10,7 @@ it must have at least one.
 
 The `run` property is the command to actually run a linter. This command can
 use variables provided by the runtime such as `${plugin}` and `${target}`.
-See the [variables section](#trunk-variables) for more details.
+See the [variables section](#template-variables) for more details.
 
 
 For example: this is the `run` field for **black**, one of our Python linters. The
@@ -115,7 +115,7 @@ Trunk supports specifying either `success_codes` or `error_codes` for a linter:
 
 <table data-header-hidden><thead><tr><th width="415"></th><th></th></tr></thead><tbody><tr><td><code>run_from</code></td><td>Description</td></tr><tr><td><code>&#x3C;path></code> (<code>.</code> by default)</td><td>Explicit path to run from</td></tr><tr><td><code>${parent}</code></td><td>Parent of the target file; e.g. would be <code>foo/bar</code> for <code>foo/bar/hello.txt</code></td></tr><tr><td><code>${root_or_parent_with(&#x3C;file>)}</code></td><td>Nearest parent directory containing the specified file</td></tr><tr><td><code>${root_or_parent_with_dir(&#x3C;dir>)}</code></td><td>Nearest parent directory containing the specified directory</td></tr><tr><td><code>${root_or_parent_with_regex(&#x3C;regex>)}</code></td><td>Nearest parent directory containing a file or directory matching specified regex</td></tr><tr><td><code>${root_or_parent_with_direct_config}</code></td><td>Nearest parent directory containing a file from <code>direct_configs</code></td></tr><tr><td><code>${root_or_parent_with_any_config}</code></td><td>Nearest parent directory containing a file from <code>affects_cache</code> or <code>direct_configs</code></td></tr><tr><td><code>${target_directory}</code></td><td>Run the linter from the same directory as the target file, and change the target to be <code>.</code></td></tr><tr><td><code>${compile_command}</code></td><td>Run from the directory where <code>compile_commands.json</code> is located</td></tr></tbody></table>
 
-## Trunk Variables
+## Template Variables
 
 Note that some of the fields in this command template contain `${}` tokens: these tokens are why 
 `command` is a template and are replaced at execution time with the value of that variable 
