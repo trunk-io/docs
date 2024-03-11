@@ -102,10 +102,6 @@ the same format as [enabled](#enabled)
 
 `downloads`: Locations to download binary artifacts from. Using [tool definitions](../../advanced-setup/tools/README.md) instead is preferred.
 
-[//]: # (`environments`: environment configuration)
-
-[//]: # (`triggers`: ??)
-
 ### `comment_formats`
 
 `comment_formats`: definitions of comment formats. Reused in linter definitions.
