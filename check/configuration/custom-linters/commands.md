@@ -1,7 +1,7 @@
 # Commands
 
 A command is the fundamental unit of linters. It defines specifically
-*what binary and argument* are used to run the linter. A linter can have multiple
+*what binary and arguments* are used to run the linter. A linter can have multiple
 commands in case it has multiple behaviors (ex: lint and format), but
 it must have at least one.
 
@@ -9,9 +9,7 @@ it must have at least one.
 ## run
 
 The `run` property is the command to actually run a linter. This command can
-use variables provided by the runtime such as `${plugin}` and `${target}`.
-See the [variables section](#template-variables) for more details.
-
+use [variables](./commands.md#template-variables) provided by the runtime such as `${plugin}` and `${target}`.
 
 For example: this is the `run` field for **black**, one of our Python linters. The
 `run` field is set to `black -q ${target}`.
@@ -51,10 +49,10 @@ lint:
 This command template contains all the information Trunk needs to execute `black` in a way 
 where Trunk will be able to understand `blacks`'s output.
 
-## Input
+## Input Target
 
 The `target` field specifies what paths this linter will run on given an input file. It may be a
-literal such a `.` which will run the linter on the whole repository. It also supports various
+string literal such as `.`, which will run the linter on the whole repository. It also supports various
 substitutions:
 
 | Variable                        | Description                                                                                                                                      |

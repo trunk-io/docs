@@ -51,6 +51,12 @@ Trunk Check automatically caches results from previous runs of linters to speed
 up development.  To do this Trunk needs to know which files could potentially affect
 the cache, besides the source code files themselves.
 
+### Enabling caching
+If a linter wishes Trunk to cache the results it should set `cache_results` to true.
+
+
+## Files which affect caching
+
 The `lint.definitions[*].affects_cache` property is a list of files which
 could affect the cache. General these are files which would change the configuration
 of the linter, and therefore invalidate the current cached results. For example,
@@ -70,3 +76,14 @@ lint:
         # In case the user uses https://pypi.org/project/Flake8-pyproject/
         - pyproject.toml
 ```
+
+
+### idempotency
+
+Trunk Check also needs to know if the linter command itself is idempotent, meaning the command will
+return the exact same results given the exact same inputs. Most linters are, however semgrep,
+for example, fetches rules from the internet so the output could be different each time.
+
+Setting the `linter.definitions[*].commands.idempotent` property to true will tell
+trunk to only cache the result for a duration of `cache_ttl`, which is set to 24hrs by default.
+

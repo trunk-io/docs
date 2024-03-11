@@ -23,7 +23,8 @@ lint, analyze, etc.).
 ### `run`
 
 `run`: The command to run a linter. This command can use variables provided at
-runtime such as `$plugin}` and `$target}`. [Full list of variables](./commands.md#template-variables)
+runtime such as `$plugin}` and `$target}`. [Full list of variables](./commands.md#template-variables).
+See [Run](./commands.md#run) for more details.
 
 Examples:
 
@@ -96,9 +97,8 @@ be one of `stdout`, `stderr`, and `tmp_file`.
 
 ### `run_from`
 
-`run_from`: What current working directory to run the linter from. 
+`run_from`: What current working directory to run the linter from. See [Working Directory](./commands.md#working-directory) for more details. 
 
-[//]: # (TODO: **link to section with more  examples**.)
 
 ### `batch`
 
@@ -122,9 +122,7 @@ assume there are no linters if the file is empty.
 
 ### `cache_results`
 
-`cache_results`: *optional boolean*. Indicates if this linter wants to cache results. 
-
-[//]: # (TODO: **explain how trunk does caching in another page**)
+`cache_results`: *optional boolean*. Indicates if this linter wants to cache results. See [Caching](files.md#caching) for more details. 
 
 ### `disable_upstream`
 
@@ -159,13 +157,11 @@ Not needed if linter is already output SARIF. [See Output Types](./output-types.
 
 ### `idempotent`
 
-`idempotent`: *optional boolean*. Indicates whether a linter is idempotent with config and source code inputs. For example, semgrep fetches rules from the internet, so it is not idempotent . If set, will only cache results a duration of `cache_ttl`.
+`idempotent`: *optional boolean*. Indicates whether a linter is idempotent with config and source code inputs. For example, semgrep fetches rules from the internet, so it is not idempotent . If set, will only cache results a duration of `cache_ttl`. See [Output Caching](files.md#idempotency) for more details.
 
 ### `cache_ttl`
 
-`cache_ttl`, *duration string*. If this linter is not [idempotent](#idempotent), this is how long cached results are kept before they expire. Defaults to 24hrs.
-
-[//]: # (TODO: link to deeper explanation** )
+`cache_ttl`, *duration string*. If this linter is not [idempotent](#idempotent), this is how long cached results are kept before they expire. Defaults to 24hrs. See [Output Caching](files.md#idempotency) for more details.
 
 ### `version`
 
@@ -176,9 +172,7 @@ Not needed if linter is already output SARIF. [See Output Types](./output-types.
 ### `target`
 
 `target`, *optional string*, What target does this run on. By default, the target is the modified 
-source code file. Some linters operate on a whole repo or directory. 
-
-[//]: # (TODO: link to deeper docs.)
+source code file. Some linters operate on a whole repo or directory.  See [Input Target](commands.md#input-target) for more details 
 
 ### `is_security`
 
@@ -206,10 +200,5 @@ interactively. Example: `optimize`, `autoformat`, or `compress`.
 
 `max_concurrency`: integer, The maximum number of processes that Trunk Check will run 
 concurrently for this linter. [See Limiting Concurrency](./readme.md#limiting-concurrency)
-
-
-[//]: # (## JSON `trunk.yaml` Schema)
-
-[//]: # (For even more details, you can refer to [the JSON schema for `trunk.yaml`]&#40;https://static.trunk.io/pub/trunk-yaml-schema.json&#41;)
 
 
