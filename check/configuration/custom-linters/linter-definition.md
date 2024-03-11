@@ -2,7 +2,7 @@
 
 The definition of a particular linter is put under `lint.definitions`.  The following
 properties define the settings of a *particular linter*, not for all linters. For
-global linter settings, see [Lint Config](reference.md#lint-config)
+global linter settings, see [Lint Config](lint-config.md)
 
 
 ### `name`
@@ -17,12 +17,12 @@ enable the linter. [See auto enabling](common.md#auto-enabling).
 
 ### `affects_cache`
 
-`affects_cache`: The list of files that affect the cache results of this linter.
+`affects_cache`: The list of files that affect the cache results of this linter. [See Caching](files.md#caching)
 
 ### `good_without_config`
 
 `good_without_config`: *optional boolean*. Indicates whether this linter is recommended without
-the user tuning its configuration. Prefer `suggest_if`.
+the user tuning its configuration. Prefer [`suggest_if`](#suggest_if).
 
 ### `include_lfs`
 
@@ -31,7 +31,7 @@ using [git LFS](https://git-lfs.com/).
 
 ### `environment`
 
-`environment`: a list of runtime variables used when running the linter.
+`environment`: a list of runtime variables used when running the linter. See [Command Environment Variables](commands.md#environment-variables).
 
 ### `include_scanner_type`
 
@@ -48,15 +48,18 @@ using [git LFS](https://git-lfs.com/).
 ### `runtime`
 
 `runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for this linter. Ex: `node`, `ruby`, `python`.
+See [Linter Dependencies](dependencies.md).
 
 ### `package`
 
 `package`: string, What primary package to install, if using a package manager runtime. The
 enabled version of the runtime for this linter will apply to this package.
+See [Linter Dependencies](dependencies.md)
 
 ### `extra_packages`
 
 `extra_packages`: list of strings, Extra packages to install, versions are optional
+See [Linter Dependencies](dependencies.md)
 
 ### `download`
 
@@ -225,7 +228,7 @@ Platform constraint. If incompatible, renders a notice.
 
 ### `tools`
 
-`tools`, string list
+`tools`, *string list*. The list of tools used by this linter. See [Dependencies](dependencies.md)
 
 ### `main_tool`
 

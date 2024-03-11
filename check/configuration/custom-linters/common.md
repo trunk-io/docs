@@ -2,15 +2,15 @@
 
 Simply defining a linter does not enable it. Trunk needs to know when to auto-enable
 the linter for certain projects (ex: all python projects) or if certain files are
-already present (ex: .eslintrc).
+already present (ex: `.eslintrc`).
 
 
-## auto-enabling
+## Auto Enabling
 
 The `direct_configs` property contains a list of config files that the underlying linter uses.
 The `suggest_if` property determines when `trunk check` should suggest this linter. If
-`suggest_if` is set to `config_present`, then trunk will look for config files listed in the `direct_configs` property. If found, the linter will be enabled automatically when the user
-does `trunk init` or `trunk update`.
+`suggest_if` is set to `config_present`, then trunk will search for the listed config files. If 
+found, the linter will be enabled automatically when the user does `trunk init` or `trunk update`.
 
 For example: in the following yaml, the **flake8** linter sets `suggest_if` to `config_preset`
 and sets `direct_configs` to `[.flake8]`. If any `*.flake8` files are found, then trunk check
@@ -56,7 +56,7 @@ The **suggest_if** field can be one of the following:
 Trunk curates the values of `suggest_if` for all linters in the [plugins](https://github.com/trunk-io/plugins) repo.
 
 
-## manually enabling and disabling
+## Manually enabling and disabling
 
 Setting the `lint.definitions[*].enabled` property to true will force the linter to be enabled.
 Setting the `lint.definitions[*].disabled` property to true will force the linter to never

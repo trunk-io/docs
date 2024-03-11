@@ -165,3 +165,7 @@ If the standard output types do not meet your needs, you can also create a
 [custom parser](custom-parsers.md).
 
 
+
+## Other properties
+
+Other less commonly used properties of commands can be found in the [Command Field Reference](command-definition.md).

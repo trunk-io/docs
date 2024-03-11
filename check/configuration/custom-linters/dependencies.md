@@ -1,21 +1,23 @@
-
 # Tool Download and Installation
 
 
-## Hermetic Installs
+Linters use the `tools` section of the `.trunk/trunk.yaml` to specify Trunk configured 
+binaries that the linter uses to run. The `tools` key specifies a list of tool names.
+There are two ways for a linter to depend on a tool:
+[Eponymous Tools](#eponymous-tool-dependencies) and [Additional Tools](#additional-tool-dependencies)
 
-You can use the `tools` section to specify trunk configured binaries that the linter uses to run.
-The `tools` key should specify a list of tool names. We have two kinds of tool dependencies - 
-they are described in turn below. 
-See the [Tools Configuration](../../advanced-setup/tools/configuration.md) page for more details
-on how to set up your tools.
-
-Using tools is the preferred way of defining and versioning a linter, as it also allows repo 
-users to conveniently run the linter binary outside of the `trunk check` context.
 
 ## Eponymous Tool Dependencies
 
-Here is an example of where the tool matches the linter name:
+When the name of the tool matches the name of a linter, it is called an *eponymous tool dependency*. 
+In the example below the `pylint` linter depends on the `pylint` tool, which is defined as the package
+`pylint` running with the `python` runtime. 
+
+Eponymous tools need to be defined separately from the linter but implicitly enabled with the 
+linter's version. You may explicitly enable the eponymous tool if you wish, but note that its 
+version needs to be synced to that of the linter. See 
+the [Tools Configuration](../../advanced-setup/tools/configuration.md) page for more details
+on how to set up Tools.
 
 ```yaml
 tools:
@@ -52,8 +54,6 @@ lint:
         parse_regex: pylint ${semver}
         run: pylint --version
 ```
-
-In this case, the tool name (`pylint`) matches that of the linter, making it an _eponymous tool_. Eponymous tools need to be defined separately from the linter but implicitly enabled with the linter's version. You may explicitly enable the eponymous tool if you wish, but note that its version needs to be synced to that of the linter.
 
 ## Additional Tool Dependencies
 
