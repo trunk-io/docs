@@ -87,9 +87,6 @@ the same format as [enabled](#enabled)
 
 `threshold`: where you specify the blocking behavior of linters. The [threshold](../#blocking-thresholds) for whether an error from a linter should block commits or not.
 
-[//]: # (`landing_mode`: landing mode configuration)
-
-[//]: # (`do_not_recommend_linters`: list of linters to not recommend &#40;actively disabled in repo&#41;)
 
 ### `compile_commands`
 
