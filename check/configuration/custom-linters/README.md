@@ -49,14 +49,14 @@ will run on, at least [one command](commands.md), and `success_codes` or `error_
 definition defines the following attributes of the linter.
 
 * **Enabling** When to auto-enable the linter. Should the linter be enabled when certain
-config files are available? See [common config](common.md) for more.
-* **Dependencies** Where to get the linter and its dependencies from?. If the linter uses a runtime like Python or NodeJS, then Trunk also needs to know what versions it needs, and any support packages. See [dependencies](dependencies.md) for more.
+config files are available? See [Enabling](common.md) for more.
+* **Dependencies** Where to get the linter and its dependencies from? If the linter uses a runtime like Python or NodeJS, then Trunk also needs to know what versions it needs, and any support packages. See [Dependencies](dependencies.md) for more.
 * **Files** When to use the linter. This includes which filetypes the linter
 uses, which files could potentially affect caching, and if the linter
-is idempotent. See [files](files.md) for more.
+is idempotent. See [Files](files.md) for more.
 * **Commands** Once the final set of files are computed Trunk will invoke one of
-the linter's commands. This [command](commands.md) defines the input targets,
-input sources, and the actual binary that is run for the command, and the exit codes to indicate success.
+the linter's commands. A command defines the input targets,
+input sources, and the actual binary that is run for the command, and the exit codes to indicate success. See [Commands](commands.md) for more.
 * **Outputs and parsers** Trunk supports commands which produce output in one of [several
 standard formats](output-types.md#output-types). Linters can
 also use [custom parsers](custom-parsers.md) if needed. 

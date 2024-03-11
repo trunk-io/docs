@@ -1,8 +1,9 @@
 # Commands
 
 A command is the fundamental unit of linters. It defines specifically
-what binary and argument are used to run the linter. A linter can have multiple
-commands in case it has multiple behaviors (ex: lint and format).
+*what binary and argument* are used to run the linter. A linter can have multiple
+commands in case it has multiple behaviors (ex: lint and format), but
+it must have at least one.
 
 
 ## run
@@ -12,22 +13,43 @@ use variables provided by the runtime such as `${plugin}` and `${target}`.
 See the [variables section](#trunk-variables) for more details.
 
 
-For example: this is the `run` field for **detekt**, one of our Kotlin linters:
+For example: this is the `run` field for **black**, one of our Python linters. The
+`run` field is set to `black -q ${target}`.
 
 ```yaml
+version: 0.1
+tools:
+  definitions:
+    - name: black
+      runtime: python
+      package: black[python2,jupyter]
+      shims: [black]
+      known_good_version: 22.3.0
 lint:
   definitions:
-    - name: detekt
-      # ...
+    - name: black
+      files: [python, jupyter, python-interface]
       commands:
-        - output: sarif
-          run:
-            detekt-cli --build-upon-default-config --config .detekt.yaml --input ${target} --report
-            sarif:${tmpfile}
+        - name: format
+          output: rewrite
+          run: black -q ${target}
+          success_codes: [0]
+          batch: true
+          in_place: true
+          allow_empty_files: false
+          cache_results: true
+          formatter: true
+      tools: [black]
+      suggest_if: files_present
+      affects_cache: [pyproject.toml]
+      known_good_version: 22.3.0
+      version_command:
+        parse_regex: black, version (.*)
+        run: black --version
 ```
 
-This command template contains all the information Trunk needs to execute `detekt` in a way 
-where Trunk will be able to understand `detekt`'s output.
+This command template contains all the information Trunk needs to execute `black` in a way 
+where Trunk will be able to understand `blacks`'s output.
 
 ## Input
 
@@ -44,7 +66,7 @@ substitutions:
 
 If `target` is not specified it will default to `${file}`.
 
-This target may be referenced in the `run` field as `${target}`.
+This target may be referenced in the `run` field as `${target}`, as in the example above for **black**, or this simple example.
 
 ```yaml
 lint:
