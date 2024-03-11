@@ -148,8 +148,7 @@ Not needed if linter is already output SARIF. [See Output Types](./output-types.
 
 ### `parse_regex`
 
-`parse_regex`: *string*. A regular expression used to support regex parsing.
-[See Regex output type](./output-types.md#regex)
+`parse_regex`: *string*. A regular expression used to support regex parsing.[See Regex output type](./output-types.md#regex)
 
 ### `maximum_file_size`
 
@@ -157,11 +156,11 @@ Not needed if linter is already output SARIF. [See Output Types](./output-types.
 
 ### `idempotent`
 
-`idempotent`: *optional boolean*. Indicates whether a linter is idempotent with config and source code inputs. For example, semgrep fetches rules from the internet, so it is not idempotent . If set, will only cache results a duration of `cache_ttl`. See [Output Caching](files.md#idempotency) for more details.
+`idempotent`: *optional boolean*. Indicates whether a linter is idempotent with config and source code inputs. For example, semgrep fetches rules from the internet, so it is not idempotent . If set, will only cache results a duration of `cache_ttl`. See [Output Caching](../files.md#idempotency) for more details.
 
 ### `cache_ttl`
 
-`cache_ttl`, *duration string*. If this linter is not [idempotent](#idempotent), this is how long cached results are kept before they expire. Defaults to 24hrs. See [Output Caching](files.md#idempotency) for more details.
+`cache_ttl`, *duration string*. If this linter is not [idempotent](#idempotent), this is how long cached results are kept before they expire. Defaults to 24hrs. See [Output Caching](../files.md#idempotency) for more details.
 
 ### `version`
 
@@ -199,6 +198,6 @@ interactively. Example: `optimize`, `autoformat`, or `compress`.
 ### `max_concurrency`
 
 `max_concurrency`: integer, The maximum number of processes that Trunk Check will run 
-concurrently for this linter. [See Limiting Concurrency](./readme.md#limiting-concurrency)
+concurrently for this linter. [See Limiting Concurrency](./commands.md#limiting-concurrency)
 
 
