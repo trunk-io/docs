@@ -382,9 +382,10 @@ Platform constraint. If incompatible, renders a notice.
 
 ### `main_tool`
 
-`main_tool`, *string*. The linter's main tool. This should be the tool that provides the binary 
-for the linter. It will generally be the same as the linter's name, but may differ if the linter 
-is a wrapper. The main tool is used to determine the linter's version.
+`main_tool`, *string*. If your linter depends on more than a single tool, and
+none of the tools has the same name as the linter, then you will
+need to specify which is the main tool here. It will be used
+to version the tool from the linter's enabled version.
 
 ### `path_format`
 
@@ -415,21 +416,52 @@ lint, analyze, etc.).
 
 ### `run`
 
-`run`: The command to run a linter. 
+`run`: The command to run a linter. This command can use variables provided at
+runtime such as `$plugin}` and `$target}`. [Full list of variables](./commands.md#trunk-variables)
 
-[//]: # (TODO: link to examples in main docs)
+Examples:
 
-### `files`
+Dart format command: 
+[full source](https://github.com/trunk-io/plugins/blob/main/linters/dart/plugin.yaml)
 
-`files` File configs for this command. If absent, will use the whole linter's `file_configs`. Note: this defines the entire list of file configs for this command, rather than appending to those of the entire lint command.
-
+```yaml
+lint:
+  files:
+    - name: dart
+      extensions: [dart]
+  definitions:
+    - name: dart
+      main_tool: dart
+      commands:
+        - name: format
+          output: rewrite
+          run: dart format ${target}
+```
 
 ### `files`
 
 `files` is a list of file types listed in the `lint.files` section that this linter applies to.
 
+Example: **prettier**
+[full source](https://github.com/trunk-io/plugins/blob/main/linters/prettier/plugin.yaml)
 
-[//]: # (TODO: link to example)
+```yaml
+lint:
+  definitions:
+    - name: prettier
+      files:
+        - typescript
+        - yaml
+        - css
+        - sass
+        - html
+        - markdown
+        - json
+        - javascript
+        - graphql
+        - prettier_supported_configs
+```
+
 
 ### `run_when`
 
