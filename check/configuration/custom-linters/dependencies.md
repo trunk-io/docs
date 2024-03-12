@@ -120,3 +120,6 @@ This will now create a hermetic directory in `~/.cache/trunk/linters/fizz-buzz` 
 > Note: Such downloads will use the _hermetic_ version of the specified 
 > runtime that `trunk` installs, not the one
 > you've installed on your machine.
+> 
+
+See [Package-based Tools](../../advanced-setup/tools/configuration.md) for more information.
