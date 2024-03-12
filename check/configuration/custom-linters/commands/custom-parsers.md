@@ -23,7 +23,8 @@ lint:
           read_output_from: stdout
           parser:
             run:
-              "sed -E 's/(.*):([0-9]+):(.*)/\\1:\\2:0: [error] Found todo in \"\\3\" (found-todo)/'"
+              "sed -E 's/(.*):([0-9]+):(.*)/\\1:\\2:0: 
+                 [error] Found todo in \"\\3\" (found-todo)/'"
 ```
 
 The execution model that `trunk` follows for a parser is that it will:
