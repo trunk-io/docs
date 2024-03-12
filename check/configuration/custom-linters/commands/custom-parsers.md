@@ -37,7 +37,7 @@ The execution model that `trunk` follows for a parser is that it will:
 Note that you can also set `parser.runtime` to [`node`](custom-parsers.md#node) or [`python`](custom-parsers.md#python) so that you can write your parser in Javascript or Python instead, if you so prefer! You can find plenty examples of python parsers in our [plugins repo](https://github.com/trunk-io/plugins).
 
 {% tabs %}
-{% tab title="bash" %}
+{% tab title="node" %}
 
 ### Node
 
@@ -48,7 +48,9 @@ lint:
       files: [ALL]
       commands:
         - output: parsable
-          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" # matches the parser run output
+          # parse_regex matches the parser run output
+          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): 
+                        \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
           run: grep --with-filename --line-number --ignore-case todo ${target}
           success_codes: [0, 1]
           read_output_from: stdout
@@ -68,7 +70,8 @@ rl.on('line', function(line){
 
   if (match) {
     let [_, path, line_number, line_contents] = match;
-    console.log(`${path}:${line_number}:0: [error] Found todo in "${line_contents}" (found-todo)`);
+    console.log(`${path}:${line_number}:0: [error]`
+            +` Found todo in "${line_contents}" (found-todo)`);
   }
 ```
 
@@ -86,7 +89,9 @@ lint:
       files: [ALL]
       commands:
         - output: parsable
-          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" # matches the parser run output
+          # parse_regex matches the parser run output
+          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): 
+                        \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
           run: grep --with-filename --line-number --ignore-case todo ${target}
           success_codes: [0, 1]
           read_output_from: stdout
