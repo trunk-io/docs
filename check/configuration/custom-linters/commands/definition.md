@@ -86,30 +86,63 @@ interactively. Example: `optimize`, `autoformat`, or `compress`.
 `in_place`: *optional boolean*. Indicates that this formatter will
 rewrite the file in place **Only applies to formatters**.
 
-### `idempotent`
+## `idempotent`
 
 `idempotent`: *optional boolean*. Indicates whether a linter is idempotent with config and source code inputs. For example, semgrep fetches rules from the internet, so it is not idempotent . If set, will only cache results a duration of `cache_ttl`. See [Output Caching](../files.md#idempotency) for more details.
 
-### `is_security`
+## `is_security`
 
-`is_security`: *boolean*. Whether findings from this command should be considered "security" or
+`is_security`: *optional boolean*. Whether findings from this command should be considered "security" or
 not. Allows this linter to be run with `--scope==security`. [See Command Line Options](../../../advanced-setup/cli/cli-options.md)
 
+## `maximum_file_size`
 
-## the rest
-### `name`
+`maximum_file_size`: *optional number*. The maximum file size in bytes for input files to the linter.
+
+## `max_concurrency`
+
+`max_concurrency`: *optional integer*, The maximum number of processes that Trunk Check will run
+concurrently for this linter. [See Limiting Concurrency](README.md#limiting-concurrency)
+
+## `name`
 
 `name`: *string*. A unique name for this command (some tools expose multiple commands, format, lint, analyze, etc.).
 
-### `output`
+## `no_issues_codes`
+
+`no_issues_codes`: List of exit codes that Trunk will use to assume there were no issues without
+parsing the output.
+
+## `output`
 
 `output`: *string*. which type of output this linter produces. [See Output Types](output-types.md).
 
-### `prepare_run`
+## `parser`
+
+`parser`: The definition of a parser that will transform the output of the linter into SARIF.
+Not needed if linter is already output SARIF. [See Output Types](output-types.md)
+
+## `parse_regex`
+
+`parse_regex`: *string*. A regular expression used to support regex parsing.[See Regex output type](output-types.md#regex)
+
+## `platforms`
+
+`platforms`:  Platform constraint. mac vs win etc.
+
+[//]: # (TODO: link to deeper explanation)
+
+## `prepare_run`
 
 `prepare_run`: an extra command to run before running a linter.
 
-### `run`
+## `read_output_from`
+
+`read_output_from`: Tell parser where to expect output from for reading. Should
+be one of `stdout`, `stderr`, and `tmp_file`.
+[See Output Sources](output-types.md#output-sources)
+
+## `run`
 
 `run`: The command to run a linter. This command can use variables provided at
 runtime such as `$plugin}` and `$target}`. [Full list of variables](README.md#template-variables).
@@ -117,7 +150,7 @@ See [Run](README.md#run) for more details.
 
 Examples:
 
-Dart format command: 
+Dart format command:
 [full source](https://github.com/trunk-io/plugins/blob/main/linters/dart/plugin.yaml)
 
 ```yaml
@@ -134,75 +167,31 @@ lint:
           run: dart format ${target}
 ```
 
-### `run_when`
+## `run_from`
+
+`run_from`: What current working directory to run the linter from. See [Working Directory](README.md#working-directory) for more details.
+
+## `run_when`
 
 `run_when`: When this command should be run. One of `cli`, `lsp`, `monitor`, or `ci`.
 
-### `success_codes`
-
-`sucess_codes:` List of exit codes that indicates linter ran successfully. **Unrelated to 
-whether or not there were issues reported by the linter**
-
-
-### `no_issues_codes`
-
-`no_issues_codes`: List of exit codes that Trunk will use to assume there were no issues without 
-parsing the output.
-
-### `read_output_from`
-
-`read_output_from`: Tell parser where to expect output from for reading. Should
-be one of `stdout`, `stderr`, and `tmp_file`. 
-[See Output Sources](output-types.md#output-sources)
-
-### `run_from`
-
-`run_from`: What current working directory to run the linter from. See [Working Directory](README.md#working-directory) for more details. 
-
-
-
-
-### `std_in`
+## `std_in`
 
 `std_in`: *optional boolean*. Should the command be fed the file on standard input?
 
+## `success_codes`
 
+`success_codes:` List of exit codes that indicates linter ran successfully. **This is unrelated to
+whether or not there were issues reported by the linter**
 
-### `parser`
+## `target`
 
-`parser`: The definition of a parser that will transform the output of the linter into SARIF. 
-Not needed if linter is already output SARIF. [See Output Types](output-types.md)
+`target`, *optional string*, What target does this run on. By default, the target is the modified
+source code file. Some linters operate on a whole repo or directory.  See [Input Target](README.md#input-target) for more details
 
-### `parse_regex`
-
-`parse_regex`: *string*. A regular expression used to support regex parsing.[See Regex output type](output-types.md#regex)
-
-### `maximum_file_size`
-
-`maximum_file_size`: *number*. The maximum file size in bytes for input files to the linter.
-
-
-### `version`
+## `version`
 
 `version`: *optional string*, Version constraint.  
 
 [//]: # (TODO: link to deeper explanation of version constraints with example)
-
-### `target`
-
-`target`, *optional string*, What target does this run on. By default, the target is the modified 
-source code file. Some linters operate on a whole repo or directory.  See [Input Target](README.md#input-target) for more details 
-
-
-### `platforms`
-
-`platforms`:  Platform constraint. mac vs win etc. 
-
-[//]: # (TODO: link to deeper explanation)
-
-### `max_concurrency`
-
-`max_concurrency`: integer, The maximum number of processes that Trunk Check will run 
-concurrently for this linter. [See Limiting Concurrency](README.md#limiting-concurrency)
-
 
