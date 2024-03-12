@@ -114,7 +114,7 @@
     * [Sharing Linters](check/configuration/sharing-linters.md)
     * [Integrating Linters](check/configuration/custom-linters/README.md)
       * [Overview](check/configuration/custom-linters/README.md)
-      * [Enabling](check/configuration/custom-linters/common.md)
+      * [Enabling](check/configuration/custom-linters/enabling.md)
       * [Dependencies](check/configuration/custom-linters/dependencies.md)
       * [Files and Caching](check/configuration/custom-linters/files.md)
       * [Commands](check/configuration/custom-linters/commands/README.md)
