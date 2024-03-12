@@ -2,7 +2,7 @@
 
 
 Linters use the `tools` section of the `.trunk/trunk.yaml` to specify Trunk configured 
-binaries that the linter uses to run. The `tools` key specifies a list of tool names.
+binaries that the linter uses to run. The `linter.definitions.tools` key specifies a list of tool names.
 There are two ways for a linter to depend on a tool:
 [Eponymous Tools](dependencies.md#eponymous-tool-dependencies) and [Additional Tools](dependencies.md#additional-tool-dependencies)
 
@@ -10,13 +10,14 @@ There are two ways for a linter to depend on a tool:
 ## Eponymous Tool Dependencies
 
 When the name of the tool matches the name of a linter, it is called an *eponymous tool dependency*. 
+
 In the example below the `pylint` linter depends on the `pylint` tool, which is defined as the package
 `pylint` running with the `python` runtime. 
 
-Eponymous tools need to be defined separately from the linter but implicitly enabled with the 
+Eponymous tools need to be defined *separately* from the linter but implicitly enabled with the 
 linter's version. You may explicitly enable the eponymous tool if you wish, but note that its 
-version needs to be synced to that of the linter. See 
-the [Tools Configuration](../../advanced-setup/tools/configuration.md) page for more details
+version needs to be synced to that of the linter. 
+See the [Tools Configuration](../../advanced-setup/tools/configuration.md) page for more details
 on how to set up Tools.
 
 ```yaml
@@ -33,9 +34,11 @@ lint:
       files: [python]
       commands:
         - name: lint
-          # Custom parser type defined in the trunk cli to handle pylint's JSON output.
+          # Custom parser type defined in the trunk cli to 
+          # handle pylint's JSON output.
           output: pylint
-          run: pylint --exit-zero --output ${tmpfile} --output-format json ${target}
+          run: pylint --exit-zero --output 
+               ${tmpfile} --output-format json ${target}
           success_codes: [0]
           read_output_from: tmp_file
           batch: true
@@ -114,4 +117,6 @@ lint:
 
 This will now create a hermetic directory in `~/.cache/trunk/linters/fizz-buzz` and `npm install fizz-buzz` there. You can refer to different versions of your package in `trunk.yaml` as normal, via `fizz-buzz@1.2.3`.
 
-> Note: Such downloads will use the _hermetic_ version of the specified runtime that `trunk` installs, not the one >you've installed on your machine.
+> Note: Such downloads will use the _hermetic_ version of the specified 
+> runtime that `trunk` installs, not the one
+> you've installed on your machine.
