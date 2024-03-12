@@ -128,9 +128,43 @@ Not needed if linter is already output SARIF. [See Output Types](output-types.md
 
 ## `platforms`
 
-`platforms`:  Platform constraint. mac vs win etc.
+`platforms`:  A list of platforms this linter supports. (ex: `windows`, `macos`, `linux`). 
+Linters using managed runtimes (node, python, etc.) can generally run cross-platform
+and do not need the `platforms` property set. For tools which *are* platform specific or which
+have different configuration for each platform, this property can be used to distinguish between
+them. 
 
-[//]: # (TODO: link to deeper explanation)
+For example, the `detekt` plugin has different exit codes for Windows than for 
+MacOS and Linux, and has two command definitions with different `success_codes` fields.
+[Full Source](https://github.com/trunk-io/plugins/blob/main/linters/detekt/plugin.yaml)
+
+```yaml
+lint:
+  definitions:
+    - name: detekt
+      files: [kotlin]
+      download: detekt
+      commands:
+        - name: lint
+          platforms: [windows]
+          output: sarif
+          run:
+            detekt-cli --build-upon-default-config --config .detekt.yaml --input ${target,} --report
+            sarif:${tmpfile}
+          success_codes: [0, 1, 2]
+          read_output_from: tmp_file
+          batch: true
+          cache_results: true
+        - name: lint
+          output: sarif
+          run:
+            detekt-cli --build-upon-default-config --config .detekt.yaml --input ${target,} --report
+            sarif:${tmpfile}
+          success_codes: [0, 2]
+          read_output_from: tmp_file
+          batch: true
+          cache_results: true
+```
 
 ## `prepare_run`
 
