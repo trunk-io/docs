@@ -2,9 +2,6 @@
 description: Custom Linters should output one of several output formats.
 ---
 
-
-# Output
-
 # Output Sources
 
 The output format that Trunk expects from a linter is determined by its [`output`](./#output) type.
