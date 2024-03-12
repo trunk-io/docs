@@ -50,7 +50,7 @@ lint:
         - output: parsable
           # parse_regex matches the parser run output
           parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): 
-                        \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
+              \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
           run: grep --with-filename --line-number --ignore-case todo ${target}
           success_codes: [0, 1]
           read_output_from: stdout
@@ -91,7 +91,7 @@ lint:
         - output: parsable
           # parse_regex matches the parser run output
           parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): 
-                        \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
+              \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
           run: grep --with-filename --line-number --ignore-case todo ${target}
           success_codes: [0, 1]
           read_output_from: stdout
