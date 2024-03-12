@@ -4,7 +4,7 @@ description: Custom Linters should output one of several output formats.
 
 # Output Sources
 
-The output format that Trunk expects from a linter is determined by its [`output`](./#output) type.
+The output format that Trunk expects from a linter is determined by its [`output`](output-types.md#output-types) type.
 
 **`stdout`, `stderr` or `tmp_file`**
 
