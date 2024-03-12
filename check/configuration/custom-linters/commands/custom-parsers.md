@@ -15,7 +15,9 @@ lint:
       files: [ALL]
       commands:
         - output: regex
-          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" # matches the parser run output
+          # matches the parser run output
+          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): 
+              \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
           run: grep --with-filename --line-number --ignore-case todo ${target}
           success_codes: [0, 1]
           read_output_from: stdout
@@ -108,7 +110,8 @@ for line in sys.stdin.readlines():
   match = re.match("(.*):([0-9]+):(.*)", line)
   if match:
     path, line_number, line_contents = match.groups()
-    print(f"{path}:{line_number}:0: [error] Found todo in \"{line_contents}\" (found-todo)")
+    print(f"{path}:{line_number}:0: [error] "
+           "Found todo in \"{line_contents}\" (found-todo)")
 
 ```
 
