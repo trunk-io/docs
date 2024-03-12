@@ -124,7 +124,7 @@ Not needed if linter is already output SARIF. [See Output Types](output-types.md
 
 ## `parse_regex`
 
-`parse_regex`: *string*. A regular expression used to support regex parsing.[See Regex output type](output-types.md#regex)
+`parse_regex`: *string*. A regular expression used to support regex parsing. [See Regex output type](output-types.md#regex)
 
 ## `platforms`
 

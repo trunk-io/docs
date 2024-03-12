@@ -1,110 +1,157 @@
-## Linter Definition
+# Linter Definition
 
 The definition of a particular linter is put under `lint.definitions`.  The following
 properties define the settings of a *particular linter*, not for all linters. For
 global linter settings, see [Lint Config](lint-config.md)
 
 
-### `name`
 
-`name` Is the name of the linter. This property will be used to refer to the linter in other
-parts of the config, for example, in the list of enabled linters.
+## `affects_cache`
 
-### `direct_configs`
+`affects_cache`: The list of files that affect the cache results of this linter. [See Caching](files.md#caching)
+
+## `allow_empty_files`
+
+`allow_empty_files`: *optional boolean*. Indicates to skip linting empty files for this linter.
+
+## `batch`
+
+`batch`: *optional boolean*. Combine multiple files into the same execution.
+
+## `commands`
+
+`commands`: The list of commands exposed by this linter. [See Linter Command Definition](commands/command-definition.md)
+
+## `deprecated`
+
+`deprecated`: *string*. Indicates the linter is deprecated and should not be used.
+
+## `direct_configs`
 
 `direct_configs`: *string list*. Indicates config files used to auto
 enable the linter. [See auto enabling](common.md#auto-enabling).
 
-### `affects_cache`
+## `disabled`
 
-`affects_cache`: The list of files that affect the cache results of this linter. [See Caching](files.md#caching)
+`disabled`: *optional boolean*: Whether linter is actively disabled (and will not be recommended)
+and will not run (overrides enabled).
 
-### `good_without_config`
+## `download`
+
+`download`: *string*. The download url. You must provide either runtime + packages or download, not both. Using runtimes is preferred. [See Runtimes](../../advanced-setup/runtimes.md)
+
+## `enabled`
+
+`enabled`: *optional boolean*. Whether this linter is enabled.
+
+## `environment`
+
+`environment`: a list of runtime variables used when running the linter. See [Command Environment Variables](commands/commands.md#environment-variables).
+
+## `extra_packages`
+
+`extra_packages`: list of strings, Extra packages to install, versions are optional
+See [Linter Dependencies](dependencies.md)
+
+## `formatter`
+
+`formatter`: *boolean*. Indicates whether this is a formatter and should be included in `trunk fmt`
+
+## `good_without_config`
 
 `good_without_config`: *optional boolean*. Indicates whether this linter is recommended without
 the user tuning its configuration. Prefer [`suggest_if`](#suggest_if).
 
-### `include_lfs`
+## `hold_the_line`
+
+`hold_the_line`: *optional boolean*. Whether hold-the-line will be done for this linter or not.
+
+## `include_lfs`
 
 `include_lfs`: *boolean*. Allow this linter to operate on files tracked
 using [git LFS](https://git-lfs.com/).
 
-### `environment`
-
-`environment`: a list of runtime variables used when running the linter. See [Command Environment Variables](commands/commands.md#environment-variables).
-
-### `include_scanner_type`
+## `include_scanner_type`
 
 `include_scanner_type`: which include scanner to use, if any.
 
-### `formatter`
+## `issue_url_format`
 
-`formatter`: *boolean*. Indicates whether this is a formatter and should be included in `trunk fmt`
+`issue_url_format`: *string*, a format string that accepts issue codes for links to issues docs.
 
-### `allow_empty_files`
+## `known_good_version`
 
-`allow_empty_files`: *boolean8. Indicates to skip linting empty files for this linter.
+`known_good_version`: *string*. A version to be used when Trunk cannot query the latest
+version. Currently, Trunk can query the latest version for all package managers
+and downloads hosted on GitHub.
 
-### `runtime`
+## `known_bad_versions`
 
-`runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for this linter. Ex: `node`, `ruby`, `python`.
-See [Linter Dependencies](dependencies.md).
+`known_bad_versions`: *string list*. Versions of a linter that are known to be broken
+and should not be run with Trunk. We will fall back to a `known_good_version`
+if init or upgrade chooses something in this set.
 
-### `package`
+## `main_tool`
+
+`main_tool`, *string*. If your linter depends on more than a single tool, and
+none of the tools has the same name as the linter, then you will
+need to specify which is the main tool here. It will be used
+to version the tool from the linter's enabled version.
+
+## `name`
+
+`name` Is the name of the linter. This property will be used to refer to the linter in other
+parts of the config, for example, in the list of enabled linters.
+
+## `package`
 
 `package`: string, What primary package to install, if using a package manager runtime. The
 enabled version of the runtime for this linter will apply to this package.
 See [Linter Dependencies](dependencies.md)
 
-### `extra_packages`
+## `path_format`
 
-`extra_packages`: list of strings, Extra packages to install, versions are optional
-See [Linter Dependencies](dependencies.md)
+`path_format`, Whether to use the platform-specific paths or generic "/". Default native.
 
-### `download`
+## `plugin_url`
 
-`download`: *string*. The download url. You must provide either runtime + packages or download, not both. Using runtimes is preferred. [See Runtimes](../../advanced-setup/runtimes.md)
+`plugin_url`: *string*, a plugin url for reporting issues.
 
-### `issue_url_format`
+## `prepare_command`
 
-`issue_url_format`: *string*, a format string that accepts issue codes for links to issues docs.
+`prepare_command`. A command that is run once per session before linting any number
+of files using this linter. ex. `[tflint, --init]`
+
+## `query_compile_commands`
+
+`query_compile_commands`, *optional boolean*.
+
+
+## the rest
+
+
+
+`### `runtime`
+
+`runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for this linter. Ex: `node`, `ruby`, `python`.
+See [Linter Dependencies](dependencies.md).
 
 ### `run_from_root_target`
 
 `run_from_root_target`: *string*. Walk up to find this file to detect the run from directory.
 Prefer `run_from` at the command level.
 
-### `hold_the_line`
-
-`hold_the_line`: *optional boolean*. Whether hold-the-line will be done for this linter or not.
 
 ### `read_output_from`
 
 `read_output_from`,  Tell the parser where to expect output from for reading (stdout, stderr,
 tmp file). [See Output Sources](commands/output-types.md#output-sources)
 
-### `prepare_command`
-
-`prepare_command`. A command that is run once per session before linting any number
-of files using this linter. ex. `[tflint, --init]`
-
-### `known_good_version`
-
-`known_good_version`: A version to be used when Trunk cannot query the latest
-version. Currently, Trunk can query the latest version for all package managers
-and downloads hosted on GitHub.
 
 ### `version_command`
 
 `version_command`:  Version check commands
 
-### `enabled`
-
-`enabled`: *optional boolean*. Whether this linter is enabled.
-
-### `batch`
-
-`batch`: *optional boolean*. Combine multiple files into the same execution.
 
 ### `run_when`
 
@@ -115,32 +162,6 @@ Possible values are: `cli`, `monitor`, `ci`, `lsp`.
 
 `run_timeout`: *duration string*. Describes how long a linter can run before timing out.
 [See timeouts](../readme.md#timeout)
-
-### `disabled`
-
-`disabled`: *optional boolean*: Whether linter is actively disabled (and will not be recommended)
-and will not run (overrides enabled).
-
-### `commands`
-`commands`: Commands exposed by this linter. [See Linter Command Definition](commands/command-definition.md)
-
-### `deprecated`
-
-`deprecated`: *string*. Deprecated information (set when linter is deprecated)
-
-### `known_bad_versions`
-
-`known_bad_versions`: *string list*. Versions of a linter that are known to be broken
-and should not be run with Trunk. We will fall back to a `known_good_version`
-if init or upgrade chooses something in this set.
-
-### `plugin_url`
-
-`plugin_url`: *string*, a plugin url for reporting issues.
-
-### `query_compile_commands`
-
-`query_compile_commands`, *optional boolean*
 
 ### `target`
 
@@ -230,16 +251,7 @@ Platform constraint. If incompatible, renders a notice.
 
 `tools`, *string list*. The list of tools used by this linter. See [Dependencies](dependencies.md)
 
-### `main_tool`
 
-`main_tool`, *string*. If your linter depends on more than a single tool, and
-none of the tools has the same name as the linter, then you will
-need to specify which is the main tool here. It will be used
-to version the tool from the linter's enabled version.
-
-### `path_format`
-
-`path_format`, Whether to use the platform-specific paths or generic "/". Default native.
 
 
 
