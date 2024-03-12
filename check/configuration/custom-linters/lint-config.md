@@ -2,13 +2,83 @@
 
 The `lint` section of `.trunk/trunk.yaml` represents the configuration of all linters. This is where you can:
 
-* define the linters (`linters`),
-* list linters to enable and disable (`enabled` and `disabled`)
-* define file categories (`files`)
-* list required `runtimes`, `downloads`, `environments` ,
-* and additional cross-linter settings
+* Define the linters (`lint.definitions`),
+* List linters to enable and disable (`lint.enabled` and `lint.disabled`)
+* Define file categories (`lint.files`)
+* List required `runtimes` and `downloads`.
+* And additional cross-linter settings.
 
-### `files`
+## `bazel`
+
+`bazel`: bazel configuration
+
+* `paths` locations to look for Bazel binary. [Example](../configuring-existing-linters/README.md#using-bazel)
+
+## `comment_formats`
+
+`comment_formats`: Definitions of comment formats. Reused in linter definitions. Trunk Check
+already defines many common comment format such as `hash` (`# comment`), `slashes-block`
+(`/* comment */`), and `slashes-inline` (`// comment`).
+For the full list [see the linters plugin.yaml](https://github.com/trunk-io/plugins/blob/main/linters/plugin.yaml).
+
+To create a new comment format provide the name and delimiters, like this:
+
+```yaml
+lint:
+  comment_formats:
+    - name: dashes-block
+      leading_delimiter: --[[
+      trailing_delimiter: --]
+```
+
+## `compile_commands`
+
+`compile_commands`: compile commands for clang-tidy. Must be one of `compile_commands_json` or `bazel`.
+
+## `compile_commands_roots`
+
+`compile_commands_roots`: Directories to search for `compile_commands.json`. The
+default is `build/`.
+
+## `default_max_file_size`
+
+`default_max_file_size`: Default maximum filesize in bytes. Trunk Check will not run linters on any files larger than this. Default value is 4 megabytes.
+
+## `definitions`
+
+`definitions`: Where you define or override linter settings. See [Linter Definition Config](linter-definition.md)
+
+## `disabled`
+
+`disabled`: The list of linters to disable. Adding a linter here will prevent trunk from suggesting
+it as a new linter each time you upgrade. Linter names can be in the form of `<name>` or `<name>@<version>`,
+the same format as [enabled](#enabled)
+
+## `downloads`
+
+`downloads`: Locations to download binary artifacts from. Using [tool definitions](../../advanced-setup/tools/README.md) instead is preferred.
+
+## `enabled`
+
+`enabled`: The list of linters to enable. Linter names can be in the form of `<name>` or `<name>@<version>`.
+Examples:
+
+```yaml
+lint:
+  enabled:
+    markdownlint
+    markdown-link-checker@1.3.0
+```
+
+## `exported_configs`
+
+`exported_configs`: Linter configs to export when another project is [importing this plugin](../sharing-linters.md)
+
+## `extra_compilation_flags`
+
+`extra_compilation_flags`: When running clang-tidy, this list will be appended to the compile command.
+
+## `files`
 
 `files`: Definitions of filetypes
 
@@ -34,93 +104,21 @@ lint:
         - slashes-inline
 ```
 
-### `runtimes`
+## `ignore`
+
+`ignore`: files to be [ignored by linters](../ignoring-issues.md#ignoring-multiple-files)
+
+## `runtimes`
 
 `runtimes`: Node, python, cargo, etc. Used to define or override a runtime environment for package management. [See Runtimes](../../advanced-setup/runtimes.md)
 
 [//]: # (`linters`: maps a linter name to it's corresponding linter definition)
 
-### `definitions`
-
-`definitions`: Where you define or override linter settings. See [Linter Definition Config](linter-definition.md)
-
-### `enabled`
-
-`enabled`: The list of linters to enable. Linter names can be in the form of `<name>` or `<name>@<version>`.
-Examples:
-
-```yaml
-lint:
-  enabled:
-    markdownlint
-    markdown-link-checker@1.3.0
-```
-
-### `disabled`
-
-`disabled`: The list of linters to disable. Adding a linter here will prevent trunk from suggesting
-it as a new linter each time you upgrade. Linter names can be in the form of `<name>` or `<name>@<version>`,
-the same format as [enabled](#enabled)
-
-### `ignore`
-
-`ignore`: files to be [ignored by linters](../ignoring-issues.md#ignoring-multiple-files)
-
-### `threshold`
+## `threshold`
 
 `threshold`: where you specify the blocking behavior of linters. The threshold for whether an 
 error from a linter should block commits or not.
 
 
-### `compile_commands`
-
-`compile_commands`: compile commands for clang-tidy. Must be one of `compile_commands_json` or `bazel`
-
-### `bazel`
-
-`bazel`: bazel configuration
-
-* `paths` locations to look for Bazel binary. [Example](../configuring-existing-linters/README.md#using-bazel)
-
-### `downloads`
-
-`downloads`: Locations to download binary artifacts from. Using [tool definitions](../../advanced-setup/tools/README.md) instead is preferred.
-
-### `comment_formats`
-
-`comment_formats`: Definitions of comment formats. Reused in linter definitions. Trunk Check
-already defines many common comment format such as `hash` (`# comment`), `slashes-block`
-(`/* comment */`), and `slashes-inline` (`// comment`).
-For the full list [see the linters plugin.yaml](https://github.com/trunk-io/plugins/blob/main/linters/plugin.yaml).
-
-To create a new comment format provide the name and delimiters, like this:
-
-```yaml
-lint:
-  comment_formats:
-    - name: dashes-block
-      leading_delimiter: --[[
-      trailing_delimiter: --]
-```
-
-
-### `exported_configs`
-
-`exported_configs`: Linter configs to export when another project is [importing this plugin](../sharing-linters.md)
-
-[//]: # (`shared_configs`: ???)
-
-### `default_max_file_size`
-
-`default_max_file_size`: Default maximum filesize in bytes. Trunk Check will not run linters on any files larger than this. Default value is 4 megabytes.
-
-### `extra_compilation_flags`
-
-`extra_compilation_flags`: When running clang-tidy, this list will be appended to the compile command.
-
-### `compile_commands_roots`
-
-`compile_commands_roots`: Directories to search for `compile_commands.json`. The
-default is `build/`.
 
 
