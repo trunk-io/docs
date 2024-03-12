@@ -126,44 +126,44 @@ of files using this linter. ex. `[tflint, --init]`
 
 `query_compile_commands`, *optional boolean*.
 
+## `read_output_from`
 
-## the rest
+`read_output_from`,  Tell the parser where to expect output from for reading (stdout, stderr,
+tmp file). [See Output Sources](commands/output-types.md#output-sources).
 
+## `runtime`
 
+`runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for 
+this linter. Ex: `node`, `ruby`, `python`. See [Linter Dependencies](dependencies.md).
 
-`### `runtime`
-
-`runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for this linter. Ex: `node`, `ruby`, `python`.
-See [Linter Dependencies](dependencies.md).
-
-### `run_from_root_target`
+## `run_from_root_target`
 
 `run_from_root_target`: *string*. Walk up to find this file to detect the run from directory.
 Prefer `run_from` at the command level.
 
-
-### `read_output_from`
-
-`read_output_from`,  Tell the parser where to expect output from for reading (stdout, stderr,
-tmp file). [See Output Sources](commands/output-types.md#output-sources)
-
-
-### `version_command`
-
-`version_command`:  Version check commands
-
-
-### `run_when`
-
-`run_when`, *optional string*. Indicates when this linter should be run.
-Possible values are: `cli`, `monitor`, `ci`, `lsp`.
-
-### `run_timeout`
+## `run_timeout`
 
 `run_timeout`: *duration string*. Describes how long a linter can run before timing out.
-[See timeouts](../readme.md#timeout)
+[See timeouts](../README.md#timeout)
 
-### `target`
+## `run_when`
+
+`run_when`, *optional string*. Indicates when this linter should be run.
+Possible values are: `cli`, `monitor`, `ci`, `lsp`. 
+See also [command run_when](commands/definition.md#run_when).
+
+## `suggest_if`
+
+How to determine if this linter should be auto-enabled/recommended. Possible
+values are `never`, `config_present`, and `files_present`.
+[See auto-enabling](enabling.md#auto-enabling) for more details.
+
+## `supported_platforms`
+
+Platform constraint. If incompatible, renders a notice. 
+See also [command `platforms`](commands/definition.md#platforms)
+
+## `target`
 
 `target`: *optional string*. What target does this linter run on. Defaults to `${file}`.
 
@@ -235,22 +235,13 @@ lint:
           disable_upstream: true
 ```
 
-
-### `suggest_if`
-
-How to determine if this linter should be auto-enabled/recommended. Possible
-values are `never`, `config_present`, and `files_present`. 
-[See auto-enabling](common.md#auto-enabling) for more details.
-
-
-### `supported_platforms`
-
-Platform constraint. If incompatible, renders a notice.
-
-### `tools`
+## `tools`
 
 `tools`, *string list*. The list of tools used by this linter. See [Dependencies](dependencies.md)
 
+## `version_command`
+
+`version_command`:  Version check commands.
 
 
 
