@@ -36,6 +36,9 @@ The execution model that `trunk` follows for a parser is that it will:
 
 Note that you can also set `parser.runtime` to [`node`](custom-parsers.md#node) or [`python`](custom-parsers.md#python) so that you can write your parser in Javascript or Python instead, if you so prefer! You can find plenty examples of python parsers in our [plugins repo](https://github.com/trunk-io/plugins).
 
+{% tabs %}
+{% tab title="bash" %}
+
 ### Node
 
 ```yaml
@@ -71,6 +74,9 @@ rl.on('line', function(line){
 
 Remember to run `chmod u+x todo-finder-parser.js` so that `trunk` can run it!
 
+{% endtab %}
+
+{% tab title="python" %}
 ### Python
 
 ```yaml
@@ -102,3 +108,5 @@ for line in sys.stdin.readlines():
 ```
 
 Remember to run `chmod u+x todo-finder-parser.py` so that `trunk` can run it!
+{% endtab %}
+{% endtabs %}
