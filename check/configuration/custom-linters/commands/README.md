@@ -1,18 +1,12 @@
 # Commands
 
-A command is the fundamental unit of linters. It defines specifically
-*what binary and arguments* are used to run the linter. A linter can have multiple
-commands in case it has multiple behaviors (ex: lint and format), but
-it must have at least one.
-
+A command is the fundamental unit of linters. It defines specifically _what binary and arguments_ are used to run the linter. A linter can have multiple commands in case it has multiple behaviors (ex: lint and format), but it must have at least one.
 
 ## run
 
-The `run` property is the command to actually run a linter. This command can
-use [variables](#template-variables) provided by the runtime such as `${plugin}` and `${target}`.
+The `run` property is the command to actually run a linter. This command can use [variables](./#template-variables) provided by the runtime such as `${plugin}` and `${target}`.
 
-For example: this is the `run` field for **black**, one of our Python linters. The
-`run` field is set to `black -q ${target}`.
+For example: this is the `run` field for **black**, one of our Python linters. The `run` field is set to `black -q ${target}`.
 
 ```yaml
 version: 0.1
@@ -46,20 +40,17 @@ lint:
         run: black --version
 ```
 
-This command template contains all the information Trunk needs to execute `black` in a way 
-where Trunk will be able to understand `blacks`'s output.
+This command template contains all the information Trunk needs to execute `black` in a way where Trunk will be able to understand `blacks`'s output.
 
 ## Input Target
 
-The `target` field specifies what paths this linter will run on given an input file. It may be a
-string literal such as `.`, which will run the linter on the whole repository. It also supports various
-substitutions:
+The `target` field specifies what paths this linter will run on given an input file. It may be a string literal such as `.`, which will run the linter on the whole repository. It also supports various substitutions:
 
-| Variable                        | Description                                                                                                                                      |
-|---------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `${file}`                       | The input file.                                                                                                                                  |
-| `${parent}`                     | The folder containing the file.                                                                                                                  |
-| `${parent_with(<name>)}`        | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, do not run any linter.           |
+| Variable                         | Description                                                                                                                                      |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `${file}`                        | The input file.                                                                                                                                  |
+| `${parent}`                      | The folder containing the file.                                                                                                                  |
+| `${parent_with(<name>)}`         | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, do not run any linter.           |
 | `${root_or_parent_with(<name>)}` | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, evaluate to the repository root. |
 
 If `target` is not specified it will default to `${file}`.
@@ -111,13 +102,11 @@ Trunk supports specifying either `success_codes` or `error_codes` for a linter:
 
 `run_from` determines what directory a linter command is run from.
 
-<table data-header-hidden><thead><tr><th width="415"></th><th></th></tr></thead><tbody><tr><td><code>run_from</code></td><td>Description</td></tr><tr><td><code>&#x3C;path></code> (<code>.</code> by default)</td><td>Explicit path to run from</td></tr><tr><td><code>${parent}</code></td><td>Parent of the target file; e.g. would be <code>foo/bar</code> for <code>foo/bar/hello.txt</code></td></tr><tr><td><code>${root_or_parent_with(&#x3C;file>)}</code></td><td>Nearest parent directory containing the specified file</td></tr><tr><td><code>${root_or_parent_with_dir(&#x3C;dir>)}</code></td><td>Nearest parent directory containing the specified directory</td></tr><tr><td><code>${root_or_parent_with_regex(&#x3C;regex>)}</code></td><td>Nearest parent directory containing a file or directory matching specified regex</td></tr><tr><td><code>${root_or_parent_with_direct_config}</code></td><td>Nearest parent directory containing a file from <code>direct_configs</code></td></tr><tr><td><code>${root_or_parent_with_any_config}</code></td><td>Nearest parent directory containing a file from <code>affects_cache</code> or <code>direct_configs</code></td></tr><tr><td><code>${target_directory}</code></td><td>Run the linter from the same directory as the target file, and change the target to be <code>.</code></td></tr><tr><td><code>${compile_command}</code></td><td>Run from the directory where <code>compile_commands.json</code> is located</td></tr></tbody></table>
+<table><thead><tr><th width="415">run_from</th><th>Description</th></tr></thead><tbody><tr><td><code>&#x3C;path></code> (<code>.</code> by default)</td><td>Explicit path to run from</td></tr><tr><td><code>${parent}</code></td><td>Parent of the target file; e.g. would be <code>foo/bar</code> for <code>foo/bar/hello.txt</code></td></tr><tr><td><code>${root_or_parent_with(&#x3C;file>)}</code></td><td>Nearest parent directory containing the specified file</td></tr><tr><td><code>${root_or_parent_with_dir(&#x3C;dir>)}</code></td><td>Nearest parent directory containing the specified directory</td></tr><tr><td><code>${root_or_parent_with_regex(&#x3C;regex>)}</code></td><td>Nearest parent directory containing a file or directory matching specified regex</td></tr><tr><td><code>${root_or_parent_with_direct_config}</code></td><td>Nearest parent directory containing a file from <code>direct_configs</code></td></tr><tr><td><code>${root_or_parent_with_any_config}</code></td><td>Nearest parent directory containing a file from <code>affects_cache</code> or <code>direct_configs</code></td></tr><tr><td><code>${target_directory}</code></td><td>Run the linter from the same directory as the target file, and change the target to be <code>.</code></td></tr><tr><td><code>${compile_command}</code></td><td>Run from the directory where <code>compile_commands.json</code> is located</td></tr></tbody></table>
 
 ## Template Variables
 
-Note that some of the fields in this command template contain `${}` tokens: these tokens are why 
-`command` is a template and are replaced at execution time with the value of that variable 
-within the context of the lint action being executed.
+Note that some of the fields in this command template contain `${}` tokens: these tokens are why `command` is a template and are replaced at execution time with the value of that variable within the context of the lint action being executed.
 
 | Variable          | Description                                                                   |
 | ----------------- | ----------------------------------------------------------------------------- |
@@ -150,19 +139,11 @@ lint:
 
 Most `environment` entries are maps with `name` and `value` keys; these become `name=value` environment variables. For `PATH`, we allow specifying `list`, in which case we concatenate the entries with `:`.
 
-We use the same template syntax for `environment` as we do for [`command`](#commands).
-
-
+We use the same template syntax for `environment` as we do for [`command`](./#commands).
 
 ## Output Types and Parsing
 
-The output of a command should be in one of the supported output types like 
-[SARIF](output-types.md#sarif) or
-something that can be parsed with a [regex](output-types.md#regex). See [Output Types](output-types.md) for more details.
-If the standard output types do not meet your needs, you can also create a
-[custom parser](custom-parsers.md).
-
-
+The output of a command should be in one of the supported output types like [SARIF](output-types.md#sarif) or something that can be parsed with a [regex](output-types.md#regex). See [Output Types](output-types.md) for more details. If the standard output types do not meet your needs, you can also create a [custom parser](custom-parsers.md).
 
 ## Other properties
 

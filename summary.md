@@ -124,7 +124,7 @@
         * [Output Types](check/configuration/custom-linters/commands/output-types.md)
         * [Custom Parsers](check/configuration/custom-linters/commands/custom-parsers.md)
         * [Field Reference](check/configuration/custom-linters/commands/definition.md)
-      * [Reference](check/configuration/custom-linters/)
+      * [Reference](check/configuration/custom-linters/reference/README.md)
         * [Lint Config Fields](check/configuration/custom-linters/lint-config.md)
         * [Linter Definition Fields](check/configuration/custom-linters/linter-definition.md)
     * [Debugging](check/configuration/debugging.md)

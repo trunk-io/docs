@@ -1,24 +1,14 @@
-# Tool Download and Installation
+# Dependencies
 
-
-Linters use the `tools` section of the `.trunk/trunk.yaml` to specify Trunk configured 
-binaries that the linter uses to run. The `linter.definitions.tools` key specifies a list of tool names.
-There are two ways for a linter to depend on a tool:
-[Eponymous Tools](dependencies.md#eponymous-tool-dependencies) and [Additional Tools](dependencies.md#additional-tool-dependencies)
-
+Linters use the `tools` section of the `.trunk/trunk.yaml` to specify Trunk configured binaries that the linter uses to run. The `linter.definitions.tools` key specifies a list of tool names. There are two ways for a linter to depend on a tool: [Eponymous Tools](dependencies.md#eponymous-tool-dependencies) and [Additional Tools](dependencies.md#additional-tool-dependencies)
 
 ## Eponymous Tool Dependencies
 
-When the name of the tool matches the name of a linter, it is called an *eponymous tool dependency*. 
+When the name of the tool matches the name of a linter, it is called an _eponymous tool dependency_.
 
-In the example below the `pylint` linter depends on the `pylint` tool, which is defined as the package
-`pylint` running with the `python` runtime. 
+In the example below the `pylint` linter depends on the `pylint` tool, which is defined as the package `pylint` running with the `python` runtime.
 
-Eponymous tools need to be defined *separately* from the linter but implicitly enabled with the 
-linter's version. You may explicitly enable the eponymous tool if you wish, but note that its 
-version needs to be synced to that of the linter. 
-See the [Tools Configuration](../../advanced-setup/tools/configuration.md) page for more details
-on how to set up Tools.
+Eponymous tools need to be defined _separately_ from the linter but implicitly enabled with the linter's version. You may explicitly enable the eponymous tool if you wish, but note that its version needs to be synced to that of the linter. See the [Tools Configuration](../../advanced-setup/tools/configuration.md) page for more details on how to set up Tools.
 
 ```yaml
 tools:
@@ -60,8 +50,7 @@ lint:
 
 ## Additional Tool Dependencies
 
-You can also have a scenario where a linter depends on a tool that is not identically named - an 
-_additional tool dependency_. We give an example below:
+You can also have a scenario where a linter depends on a tool that is not identically named - an _additional tool dependency_. We give an example below:
 
 ```yaml
 tools:
@@ -96,10 +85,7 @@ lint:
         run: terragrunt -version
 ```
 
-In this scenario, `terraform` is an additional tool dependency - `terragrunt` requires it to be 
-in `$PATH`. If the tool is an additional dependency, it must be enabled explicitly and versioned 
-independently of the linter - that is, it must be listed in the `tools.enabled` section.
-
+In this scenario, `terraform` is an additional tool dependency - `terragrunt` requires it to be in `$PATH`. If the tool is an additional dependency, it must be enabled explicitly and versioned independently of the linter - that is, it must be listed in the `tools.enabled` section.
 
 ## Download via package manager
 
@@ -117,9 +103,6 @@ lint:
 
 This will now create a hermetic directory in `~/.cache/trunk/linters/fizz-buzz` and `npm install fizz-buzz` there. You can refer to different versions of your package in `trunk.yaml` as normal, via `fizz-buzz@1.2.3`.
 
-> Note: Such downloads will use the _hermetic_ version of the specified 
-> runtime that `trunk` installs, not the one
-> you've installed on your machine.
-> 
+> Note: Such downloads will use the _hermetic_ version of the specified runtime that `trunk` installs, not the one you've installed on your machine.
 
-See [Package-based Tools](../../advanced-setup/tools/configuration.md) for more information.
+See [Package-based Tools](../../advanced-setup/tools/configuration.md#package-based-tools) for more information.

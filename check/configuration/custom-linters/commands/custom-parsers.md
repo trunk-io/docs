@@ -41,8 +41,7 @@ Note that you can also set `parser.runtime` to [`node`](custom-parsers.md#node) 
 
 {% tabs %}
 {% tab title="node" %}
-
-### Node
+#### Node
 
 ```yaml
 lint:
@@ -79,11 +78,10 @@ rl.on('line', function(line){
 ```
 
 Remember to run `chmod u+x todo-finder-parser.js` so that `trunk` can run it!
-
 {% endtab %}
 
 {% tab title="python" %}
-### Python
+#### Python
 
 ```yaml
 lint:
