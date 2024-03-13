@@ -105,6 +105,10 @@ lint:
 
 `ignore`: files to be [ignored by linters](../ignoring-issues.md#ignoring-multiple-files).
 
+### `reuse_upstream`
+
+`reuse_upstream`:  If enabled, Trunk will cache upstream sandboxes instead of creating a new one each time. Options are `true`, or `false`.
+
 ### `runtimes`
 
 `runtimes`: Node, python, cargo, etc. Used to define or override a runtime environment for package management. [See Runtimes](../../advanced-setup/runtimes.md).
@@ -112,3 +116,7 @@ lint:
 ### `threshold`
 
 `threshold`: where you specify the blocking behavior of linters. The threshold for whether an error from a linter should block commits or not.
+
+### `upstream_mode`
+
+`upstream_mode`: How to generate the upstream sandbox used for generating lint results for revisions not currently checked out. Options are`symlink` (default), `hardlink`, or `copy`. If using `copy`, it can be slow without also enabling `reuse_upstream: true`.
