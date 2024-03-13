@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [buf-format site](https://github.com/bufbuild/buf#readme)
-- buf-format Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buf-format)
+- buf-format Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buf)
 - Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
