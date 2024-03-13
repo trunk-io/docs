@@ -1,3 +1,7 @@
+---
+description: Linter Definition YAML reference guide
+---
+
 # Linter Definition Fields
 
 The definition of a particular linter is put under `lint.definitions`. The following properties define the settings of a _particular linter_, not for all linters. For global linter settings, see [Lint Config](lint-config.md).

@@ -1,3 +1,7 @@
+---
+description: Linter tool and package dependencies
+---
+
 # Dependencies
 
 Linters use the `tools` section of the `.trunk/trunk.yaml` to specify Trunk configured binaries that the linter uses to run. The `linter.definitions.tools` key specifies a list of tool names. There are two ways for a linter to depend on a tool: [Eponymous Tools](dependencies.md#eponymous-tool-dependencies) and [Additional Tools](dependencies.md#additional-tool-dependencies)

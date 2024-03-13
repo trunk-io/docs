@@ -1,10 +1,12 @@
-# files and caching
+---
+description: How to define file types for linters and determine how they are cached.
+---
+
+# Files and Caching
 
 ## Applicable filetypes
 
-To determine which linters to run on which files (i.e. compute the set of lint actions), Trunk 
-requires that every linter define the set of filetypes it applies to in `lint.files`, then reference
-those files from `lint.definitions[*].files`.
+To determine which linters to run on which files (i.e. compute the set of lint actions), Trunk requires that every linter define the set of filetypes it applies to in `lint.files`, then reference those files from `lint.definitions[*].files`.
 
 We have a number of pre-defined filetypes (e.g. `c++-header`, `gemspec`, `rust`; see our [plugins repo](https://github.com/trunk-io/plugins/blob/main/linters/plugin.yaml) for an up-to-date list), but you can also define your own filetypes. Here's how we define the `python` filetype:
 
@@ -42,26 +44,17 @@ lint:
         - pyproject.toml
 ```
 
-
-
-
 ## Caching
 
-Trunk Check automatically caches results from previous runs of linters to speed
-up development.  To do this Trunk needs to know which files could potentially affect
-the cache, besides the source code files themselves.
+Trunk Check automatically caches results from previous runs of linters to speed up development. To do this Trunk needs to know which files could potentially affect the cache, besides the source code files themselves.
 
 ### Enabling caching
-If a linter wishes Trunk to cache the results it should set `cache_results` to true.
 
+If a linter wishes Trunk to cache the results it should set `cache_results` to true.
 
 ## Files which affect caching
 
-The `lint.definitions[*].affects_cache` property is a list of files which
-could affect the cache. General these are files which would change the configuration
-of the linter, and therefore invalidate the current cached results. For example,
-the **flake8** tool tells trunk to invalidate the cache whenever the `setup.cfg`, `tox.ini`,
-or `pyproject.toml` files are changed.
+The `lint.definitions[*].affects_cache` property is a list of files which could affect the cache. General these are files which would change the configuration of the linter, and therefore invalidate the current cached results. For example, the **flake8** tool tells trunk to invalidate the cache whenever the `setup.cfg`, `tox.ini`, or `pyproject.toml` files are changed.
 
 ```yaml
 lint:
@@ -77,13 +70,8 @@ lint:
         - pyproject.toml
 ```
 
-
 ### idempotency
 
-Trunk Check also needs to know if the linter command itself is idempotent, meaning the command will
-return the exact same results given the exact same inputs. Most linters are, however semgrep,
-for example, fetches rules from the internet so the output could be different each time.
+Trunk Check also needs to know if the linter command itself is idempotent, meaning the command will return the exact same results given the exact same inputs. Most linters are, however semgrep, for example, fetches rules from the internet so the output could be different each time.
 
-Setting the `linter.definitions[*].commands.idempotent` property to true will tell
-trunk to only cache the result for a duration of `cache_ttl`, which is set to 24hrs by default.
-
+Setting the `linter.definitions[*].commands.idempotent` property to true will tell trunk to only cache the result for a duration of `cache_ttl`, which is set to 24hrs by default.

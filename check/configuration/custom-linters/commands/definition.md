@@ -1,3 +1,7 @@
+---
+description: Guide to every field in the command section of trunk.yaml
+---
+
 # Field Reference
 
 The linter command definitions are defined in `lint.definitions.commands`. A single linter can have multiple commands if it is used in different ways.

@@ -1,3 +1,7 @@
+---
+description: Lint Config YAML property reference guide
+---
+
 # Lint Config Fields
 
 ### Lint Config
