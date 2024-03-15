@@ -53,7 +53,7 @@ trunk check enable <linter>
 | PNG | [oxipng](./oxipng.md)|
 | PowerShell | [psscriptanalyzer](./psscriptanalyzer.md)|
 | Prisma | [prisma](./prisma.md)|
-| Protobuf | [buf](./buf.md), [clang-format](./clang-format.md), [clang-tidy](./clang-tidy.md)|
+| Protobuf | [buf-breaking](./buf-breaking.md), [buf-format](./buf-format.md), [buf-lint](./buf-lint.md), [clang-format](./clang-format.md), [clang-tidy](./clang-tidy.md)|
 | Python | [autopep8](./autopep8.md), [bandit](./bandit.md), [black](./black.md), [flake8](./flake8.md), [isort](./isort.md), [mypy](./mypy.md), [pylint](./pylint.md), [pyright](./pyright.md), [ruff](./ruff.md), [semgrep](./semgrep.md), [sourcery](./sourcery.md), [yapf](./yapf.md)|
 | Renovate | [renovate](./renovate.md)|
 | Ruby | [brakeman](./brakeman.md), [rubocop](./rubocop.md), [rufo](./rufo.md), [semgrep](./semgrep.md), [standardrb](./standardrb.md)|
