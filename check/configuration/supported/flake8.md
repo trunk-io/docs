@@ -18,11 +18,13 @@ layout:
 
 [**Flake8**](https://flake8.pycqa.org/en/latest/) is a linter for Python.
 
+
 You can enable the Flake8 linter with:
 
 ```shell
 trunk check enable flake8
 ```
+    
 
 ![flake8 example output](./flake8.gif)
 
