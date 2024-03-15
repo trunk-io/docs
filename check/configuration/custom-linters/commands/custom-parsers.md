@@ -15,13 +15,16 @@ lint:
       files: [ALL]
       commands:
         - output: regex
-          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" # matches the parser run output
+          # matches the parser run output
+          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): 
+              \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
           run: grep --with-filename --line-number --ignore-case todo ${target}
           success_codes: [0, 1]
           read_output_from: stdout
           parser:
             run:
-              "sed -E 's/(.*):([0-9]+):(.*)/\\1:\\2:0: [error] Found todo in \"\\3\" (found-todo)/'"
+              "sed -E 's/(.*):([0-9]+):(.*)/\\1:\\2:0: 
+                 [error] Found todo in \"\\3\" (found-todo)/'"
 ```
 
 The execution model that `trunk` follows for a parser is that it will:
@@ -36,7 +39,9 @@ The execution model that `trunk` follows for a parser is that it will:
 
 Note that you can also set `parser.runtime` to [`node`](custom-parsers.md#node) or [`python`](custom-parsers.md#python) so that you can write your parser in Javascript or Python instead, if you so prefer! You can find plenty examples of python parsers in our [plugins repo](https://github.com/trunk-io/plugins).
 
-### Node
+{% tabs %}
+{% tab title="node" %}
+#### Node
 
 ```yaml
 lint:
@@ -45,7 +50,9 @@ lint:
       files: [ALL]
       commands:
         - output: parsable
-          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" # matches the parser run output
+          # parse_regex matches the parser run output
+          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): 
+              \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
           run: grep --with-filename --line-number --ignore-case todo ${target}
           success_codes: [0, 1]
           read_output_from: stdout
@@ -65,13 +72,16 @@ rl.on('line', function(line){
 
   if (match) {
     let [_, path, line_number, line_contents] = match;
-    console.log(`${path}:${line_number}:0: [error] Found todo in "${line_contents}" (found-todo)`);
+    console.log(`${path}:${line_number}:0: [error]`
+            +` Found todo in "${line_contents}" (found-todo)`);
   }
 ```
 
 Remember to run `chmod u+x todo-finder-parser.js` so that `trunk` can run it!
+{% endtab %}
 
-### Python
+{% tab title="python" %}
+#### Python
 
 ```yaml
 lint:
@@ -80,7 +90,9 @@ lint:
       files: [ALL]
       commands:
         - output: parsable
-          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" # matches the parser run output
+          # parse_regex matches the parser run output
+          parse_regex: "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): 
+              \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))" 
           run: grep --with-filename --line-number --ignore-case todo ${target}
           success_codes: [0, 1]
           read_output_from: stdout
@@ -97,8 +109,11 @@ for line in sys.stdin.readlines():
   match = re.match("(.*):([0-9]+):(.*)", line)
   if match:
     path, line_number, line_contents = match.groups()
-    print(f"{path}:{line_number}:0: [error] Found todo in \"{line_contents}\" (found-todo)")
+    print(f"{path}:{line_number}:0: [error] "
+           "Found todo in \"{line_contents}\" (found-todo)")
 
 ```
 
 Remember to run `chmod u+x todo-finder-parser.py` so that `trunk` can run it!
+{% endtab %}
+{% endtabs %}
