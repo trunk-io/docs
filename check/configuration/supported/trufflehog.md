@@ -18,11 +18,25 @@ layout:
 
 [**Trufflehog**](https://github.com/trufflesecurity/trufflehog) is a linter for Security.
 
-You can enable the Trufflehog linter with:
+
+trufflehog is composed of several linter commands.
+    
+`trufflehog` runs trufflehog normally.
+
+You can enable the `trufflehog` linter with:
 
 ```shell
 trunk check enable trufflehog
 ```
+
+`trufflehog-git` also runs trufflehog on the git history.
+
+You can enable the `trufflehog-git` linter with:
+
+```shell
+trunk check enable trufflehog-git
+```
+
 
 ## Auto Enabling
 

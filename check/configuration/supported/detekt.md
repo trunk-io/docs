@@ -18,11 +18,33 @@ layout:
 
 [**Detekt**](https://github.com/detekt/detekt) is a linter for Kotlin.
 
-You can enable the Detekt linter with:
+
+detekt is composed of several linter commands.
+    
+`detekt` runs the linter normally.
+
+You can enable the `detekt` linter with:
 
 ```shell
 trunk check enable detekt
 ```
+
+`detekt-explicit` enables auto-correcting. 
+
+You can enable the `detekt-explicit` linter with:
+
+```shell
+trunk check enable detekt-explicit
+```
+
+`detekt-gradle` runs detekt using Gradle.
+
+You can enable the `detekt-gradle` linter with:
+
+```shell
+trunk check enable detekt-gradle
+```
+
 
 ## Auto Enabling
 
