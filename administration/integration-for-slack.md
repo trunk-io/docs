@@ -1,3 +1,9 @@
+---
+description: >-
+  Trunk Check, Trunk Merge, and other Trunk products can communicate directly
+  with your developer team through Slack.
+---
+
 # Integration for Slack
 
 With the Trunk app for Slack, you can easily get notifications from all of your trunk-enabled products. This includes notifications around security issues detected by `trunk check` and workflow notifications for your pull requests as they queue and land with `trunk merge`. In this guide, we'll cover how to connect Slack with Trunk on the repository and user level, as well as the different ways you can use Trunk in Slack.

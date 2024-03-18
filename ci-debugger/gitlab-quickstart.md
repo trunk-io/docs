@@ -1,3 +1,7 @@
+---
+description: Setup Trunk CI Debugger with GitLab
+---
+
 # GitLab Quickstart
 
 ### Requirements
