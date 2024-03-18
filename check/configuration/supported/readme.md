@@ -1,3 +1,7 @@
+---
+description: Trunk Check supports over 100 linters and formatters
+---
+
 # Supported Linters
 
 > 📘 Our linter integrations are open-source!

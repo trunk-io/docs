@@ -23,7 +23,7 @@ You can enable the autopep8 linter with:
 ```shell
 trunk check enable autopep8
 ```
-
+![autopep8 example output](./autopep8.gif)
 ## Auto Enabling
 
 autopep8 will be auto-enabled if a `.pep8` config file is present.
