@@ -1,3 +1,7 @@
+---
+description: Setup Trunk CI Debugger with GitHub Actions
+---
+
 # GitHub Actions Quickstart
 
 ### Requirements

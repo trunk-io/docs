@@ -1,3 +1,7 @@
+---
+description: Setup Trunk CI Debugger with Jenkins
+---
+
 # Jenkins Quickstart
 
 ### Requirements

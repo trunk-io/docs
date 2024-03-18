@@ -1,3 +1,7 @@
+---
+description: Configure Flaky Tests detection using a GitHub Action
+---
+
 # GitHub Actions Quickstart
 
 ### Configuring the Analytics Uploader Action
@@ -70,5 +74,5 @@ jobs:
 
 ```
 
-&#x20;\
+\
 If you're interested in better understanding this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
