@@ -23,7 +23,7 @@ You can enable the Bandit linter with:
 ```shell
 trunk check enable bandit
 ```
-
+![bandit example output](./bandit.gif)
 ## Auto Enabling
 
 Bandit will be auto-enabled if any *Python* files are present.
