@@ -21,7 +21,7 @@ layout:
 
 detekt is composed of several linter commands.
     
-`detekt` runs the linter normally.
+`detekt` runs detekt with the built-in default config and any overrides in `.detekt.yaml`.
 
 You can enable the `detekt` linter with:
 
@@ -29,7 +29,7 @@ You can enable the `detekt` linter with:
 trunk check enable detekt
 ```
 
-`detekt-explicit` enables auto-correcting. 
+`detekt-explicit` disables the default config and uses `.detekt.yaml` as the source of truth.
 
 You can enable the `detekt-explicit` linter with:
 
@@ -37,7 +37,7 @@ You can enable the `detekt-explicit` linter with:
 trunk check enable detekt-explicit
 ```
 
-`detekt-gradle` runs detekt using Gradle.
+`detekt-gradle` runs detekt using Gradle. Only use if you already are using Gradle for the rest of your build setup.
 
 You can enable the `detekt-gradle` linter with:
 

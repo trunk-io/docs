@@ -37,7 +37,7 @@ You can enable the `buf-lint` linter with:
 trunk check enable buf-lint
 ```
 
-`buf-breaking` only checks for breaking changes.
+`buf-breaking` only checks for breaking proto changes.
 
 You can enable the `buf-breaking` linter with:
 
