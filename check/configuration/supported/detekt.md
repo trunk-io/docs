@@ -18,11 +18,33 @@ layout:
 
 [**Detekt**](https://github.com/detekt/detekt) is a linter for Kotlin.
 
-You can enable the Detekt linter with:
+
+detekt is composed of several linter commands.
+    
+`detekt` runs detekt with the built-in default config and any overrides in `.detekt.yaml`.
+
+You can enable the `detekt` linter with:
 
 ```shell
 trunk check enable detekt
 ```
+
+`detekt-explicit` disables the default config and uses `.detekt.yaml` as the source of truth.
+
+You can enable the `detekt-explicit` linter with:
+
+```shell
+trunk check enable detekt-explicit
+```
+
+`detekt-gradle` runs detekt using Gradle. Only use if you already are using Gradle for the rest of your build setup.
+
+You can enable the `detekt-gradle` linter with:
+
+```shell
+trunk check enable detekt-gradle
+```
+
 
 ## Auto Enabling
 

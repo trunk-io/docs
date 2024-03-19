@@ -18,11 +18,33 @@ layout:
 
 [**buf**](https://github.com/bufbuild/buf#readme) is a linter for Protobuf.
 
-You can enable the buf linter with:
+
+buf is composed of several linter commands.
+    
+`buf-format` only runs the reformatting, not lint checking.
+
+You can enable the `buf-format` linter with:
 
 ```shell
-trunk check enable buf
+trunk check enable buf-format
 ```
+
+`buf-lint` only runs the lint checking, not reformatting.
+
+You can enable the `buf-lint` linter with:
+
+```shell
+trunk check enable buf-lint
+```
+
+`buf-breaking` only checks for breaking proto changes.
+
+You can enable the `buf-breaking` linter with:
+
+```shell
+trunk check enable buf-breaking
+```
+
 
 ## Auto Enabling
 

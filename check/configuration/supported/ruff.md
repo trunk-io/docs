@@ -18,11 +18,25 @@ layout:
 
 [**Ruff**](https://github.com/astral-sh/ruff) is a linter for Python.
 
-You can enable the Ruff linter with:
+
+ruff is composed of several linter commands.
+    
+`ruff` is for formatting general python code.
+
+You can enable the `ruff` linter with:
 
 ```shell
 trunk check enable ruff
 ```
+
+`ruff-nbqa` is for extra support for Jupyter notebooks.
+
+You can enable the `ruff-nbqa` linter with:
+
+```shell
+trunk check enable ruff-nbqa
+```
+
 
 ## Auto Enabling
 
