@@ -23,7 +23,7 @@ You can enable the Gitleaks linter with:
 ```shell
 trunk check enable gitleaks
 ```
-
+![gitleaks example output](./gitleaks.gif)
 ## Auto Enabling
 
 Gitleaks will be auto-enabled if any of its config files are present: *`.gitleaks.config`, `.gitleaks.toml`, `.gitleaksignore`*.

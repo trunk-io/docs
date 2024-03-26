@@ -23,7 +23,7 @@ You can enable the mypy linter with:
 ```shell
 trunk check enable mypy
 ```
-
+![mypy example output](./mypy.gif)
 ## Auto Enabling
 
 mypy will be auto-enabled if any of its config files are present: *`mypy.ini`, `.mypy.ini`*.
