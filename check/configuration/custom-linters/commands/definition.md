@@ -30,7 +30,7 @@ _Note:_. If you define the executable to run here (the command definition), then
 
 ## `error_codes`
 
-`error_codes`: List of exit codes this linter will return when it hit an internal failure and couldn't generate results. **A linter should set either success codes or error codes, but not both.**
+`error_codes`: List of exit codes this linter will return when it hit an internal failure and couldn't generate results. **A linter should set either success codes or error codes, but not both.** See also [`success_codes`](definition.md#success\_codes).
 
 ## `enabled`
 
@@ -85,7 +85,7 @@ lint:
 
 ## `maximum_file_size`
 
-`maximum_file_size`: _optional number_. The maximum file size in bytes for input files to the linter.
+`maximum_file_size`: _optional number_. The maximum file size in bytes for input files to the linter. If not specified, the [lint.default\_max\_file\_size](../lint-config.md#default\_max\_file\_size) will be used.
 
 ## `max_concurrency`
 
@@ -113,7 +113,7 @@ lint:
 
 ## `platforms`
 
-`platforms`: A list of platforms this linter supports. (ex: `windows`, `macos`, `linux`). Linters using managed runtimes (node, python, etc.) can generally run cross-platform and do not need the `platforms` property set. For tools which _are_ platform specific or which have different configuration for each platform, this property can be used to distinguish between them.
+`platforms`: A list of platforms this linter supports. (ex: `windows`, `macos`, `linux`). Linters using managed runtimes (node, python, etc.) can generally run cross-platform and do not need the `platforms` property set. For tools which _are_ platform specific or which have different configuration for each platform, this property can be used to distinguish between them.  When multiple command definitions have the same name, Trunk Check will pick the first one that matches the `platforms` setting.
 
 For example, the `detekt` plugin has different exit codes for Windows than MacOS or Linux, and has two command definitions with different `success_codes` fields. [Full Source](https://github.com/trunk-io/plugins/blob/main/linters/detekt/plugin.yaml).
 
@@ -189,12 +189,114 @@ lint:
 
 ## `success_codes`
 
-`success_codes:` List of exit codes that indicates linter ran successfully. **This is unrelated to whether or not there were issues reported by the linter**
+`success_codes:` List of exit codes that indicates linter ran successfully. **This is unrelated to whether or not there were issues reported by the linter**.
+
+**Note:** a linter should set either success codes or error codes, but not both. See also [`error_codes`](definition.md#error\_codes).
 
 ## `target`
 
-`target`, _optional string_, What target does this run on. By default, the target is the modified source code file. Some linters operate on a whole repo or directory. See [Input Target](./#input-target) for more details
+`target`, _optional string_, What target does this run on. By default, the target is the modified source code file, `${file}`. Some linters operate on a whole repo or directory. See [Input Target](./#input-target) for more details.
+
+Examples:
+
+**nancy** uses `.` as the target. [full source](https://github.com/trunk-io/plugins/blob/main/linters/nancy/plugin.yaml)
+
+```yaml
+# nancy uses .
+definitions:
+  - name: nancy
+    files: [go-lockfile]
+    download: nancy
+    runtime: go
+    commands:
+      - output: sarif
+        run: sh ${plugin}/linters/nancy/run.sh
+        success_codes: [0, 1, 2]
+        target: .
+        read_output_from: stdout
+        is_security: true
+```
+
+**tflint** uses `${parent}` as the target. [full source](https://github.com/trunk-io/plugins/blob/main/linters/tflint/plugin.yaml)
+
+```yaml
+lint:
+  definitions:
+    - name: tflint
+      files: [terraform]
+      commands:
+        - name: lint
+          output: sarif
+          prepare_run: tflint --init
+          run: tflint --format=sarif --force
+          success_codes: [0, 1, 2]
+          read_output_from: stdout
+          # tflint can only run on the current directory unless --recursive is passed
+          target: ${parent}
+          run_from: ${target_directory}
+          version: ">=0.47.0"
+```
+
+**Clippy** uses `${parent_with(Cargo.toml)}` as the target. [full source](https://github.com/trunk-io/plugins/blob/main/linters/clippy/plugin.yaml)
+
+```yaml
+version: 0.1
+lint:
+  definitions:
+    # clippy has 3 lint severities: deny, warn, and allow. Unfortunately deny causes rustc to
+    # fail eagerly due to its implementation (https://github.com/rust-lang/rust/pull/87337),
+    # We use --cap-lints to downgrade "deny" severity lints to warn. So rustc will find all
+    # issues instead of hard stopping. There are currently only 70 of them, so we could hardcode
+    # the list to fix their severity levels correctly.
+    - name: clippy
+      files: [rust]
+      download: rust
+      commands:
+        - name: lint
+          # Custom parser type defined in the trunk cli to handle clippy's JSON output.
+          output: clippy
+          target: ${parent_with(Cargo.toml)}
+          run: cargo clippy --message-format json --locked -- --cap-lints=warn --no-deps
+          success_codes: [0, 101, 383]
+          run_from: ${target_directory}
+          disable_upstream: true
+```
 
 ## `version`
 
-`version`: _optional string_, Version constraint.
+`version`: _optional string_, Version constraint. When a linter has multiple commands with the same name, Trunk Check will select the first command that matches the version constraint. This is useful for when multiple incompatible versions of a tool need to be supported.
+
+Example: the `ruff` linter changed a command line argument from `--format` to `--output-format` in version `v0.1.0`. To handle both versions, the linter defines two commands with different version attributes.  The first is for version `>=0.1.0`. If the first is not matched (because the install version of run is less that 0.1.0) then Trunk Check will move on to the next command until it finds a match.
+
+&#x20;[Full source](https://github.com/trunk-io/plugins/blob/main/linters/ruff/plugin.yaml).
+
+In this&#x20;
+
+```yaml
+lint:
+  definitions:
+    - name: ruff
+      files: [python]
+      commands:
+        - name: lint
+          # As of ruff v0.1.0, --format is replaced with --output-format
+          version: ">=0.1.0"
+          run: ruff check --cache-dir ${cachedir} --output-format json ${target}
+          output: sarif
+          parser:
+            runtime: python
+            run: python3 ${cwd}/ruff_to_sarif.py 0
+          batch: true
+          success_codes: [0, 1]
+        - name: lint
+          run: ruff check --cache-dir ${cachedir} --format json ${target}
+          output: sarif
+          parser:
+            runtime: python
+            run: python3 ${cwd}/ruff_to_sarif.py 1
+          batch: true
+          success_codes: [0, 1]
+
+
+```
+

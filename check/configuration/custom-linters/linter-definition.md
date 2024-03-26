@@ -110,25 +110,13 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 `query_compile_commands`, _optional boolean_.
 
-## `read_output_from`
-
-`read_output_from`, Tell the parser where to expect output from for reading (stdout, stderr, tmp file). [See Output Sources](commands/output-types.md#output-sources).
-
 ## `runtime`
 
 `runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for this linter. Ex: `node`, `ruby`, `python`. See [Linter Dependencies](dependencies.md).
 
-## `run_from_root_target`
-
-`run_from_root_target`: _string_. Walk up to find this file to detect the run from directory. Prefer `run_from` at the command level.
-
 ## `run_timeout`
 
 `run_timeout`: _duration string_. Describes how long a linter can run before timing out. [See timeouts](../#timeout).
-
-## `run_when`
-
-`run_when`, _optional string_. Indicates when this linter should be run. Possible values are: `cli`, `monitor`, `ci`, `lsp`. See also [Command run\_when](commands/definition.md#run\_when).
 
 ## `suggest_if`
 
@@ -137,75 +125,6 @@ How to determine if this linter should be auto-enabled/recommended. Possible val
 ## `supported_platforms`
 
 Platform constraint. If incompatible, renders a notice. See also [Command `platforms`](commands/definition.md#platforms).
-
-## `target`
-
-`target`: _optional string_. What target does this linter run on. Defaults to `${file}`.
-
-Examples:
-
-**nancy** uses `.` as the target. [full source](https://github.com/trunk-io/plugins/blob/main/linters/nancy/plugin.yaml)
-
-```yaml
-# nancy uses .
-definitions:
-  - name: nancy
-    files: [go-lockfile]
-    download: nancy
-    runtime: go
-    commands:
-      - output: sarif
-        run: sh ${plugin}/linters/nancy/run.sh
-        success_codes: [0, 1, 2]
-        target: .
-        read_output_from: stdout
-        is_security: true
-```
-
-**tflint** uses `${parent}` as the target. [full source](https://github.com/trunk-io/plugins/blob/main/linters/tflint/plugin.yaml)
-
-```yaml
-lint:
-  definitions:
-    - name: tflint
-      files: [terraform]
-      commands:
-        - name: lint
-          output: sarif
-          prepare_run: tflint --init
-          run: tflint --format=sarif --force
-          success_codes: [0, 1, 2]
-          read_output_from: stdout
-          # tflint can only run on the current directory unless --recursive is passed
-          target: ${parent}
-          run_from: ${target_directory}
-          version: ">=0.47.0"
-```
-
-**Clippy** uses `${parent_with(Cargo.toml)}` as the target. [full source](https://github.com/trunk-io/plugins/blob/main/linters/clippy/plugin.yaml)
-
-```yaml
-version: 0.1
-lint:
-  definitions:
-    # clippy has 3 lint severities: deny, warn, and allow. Unfortunately deny causes rustc to
-    # fail eagerly due to its implementation (https://github.com/rust-lang/rust/pull/87337),
-    # We use --cap-lints to downgrade "deny" severity lints to warn. So rustc will find all
-    # issues instead of hard stopping. There are currently only 70 of them, so we could hardcode
-    # the list to fix their severity levels correctly.
-    - name: clippy
-      files: [rust]
-      download: rust
-      commands:
-        - name: lint
-          # Custom parser type defined in the trunk cli to handle clippy's JSON output.
-          output: clippy
-          target: ${parent_with(Cargo.toml)}
-          run: cargo clippy --message-format json --locked -- --cap-lints=warn --no-deps
-          success_codes: [0, 101, 383]
-          run_from: ${target_directory}
-          disable_upstream: true
-```
 
 ## `tools`
 

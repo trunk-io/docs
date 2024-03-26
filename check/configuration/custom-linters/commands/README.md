@@ -102,6 +102,8 @@ Trunk supports specifying either `success_codes` or `error_codes` for a linter:
 
 `markdownlint`, for example, has `success_codes: [0, 1]` in its configuration.
 
+**Note:** A linter command should set either success codes or error codes, but not both**.**
+
 ## Working directory
 
 `run_from` determines what directory a linter command is run from.

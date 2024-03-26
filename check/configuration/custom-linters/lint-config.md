@@ -83,9 +83,9 @@ lint:
 
 Every linter must define the set of filetypes it applies to in the `lint.files` section.
 
-New filetypes are defined with the name and extensions properties. They may also include the comments properties to describe what style of comments are used in these files.
+New filetypes are defined with the name and extensions properties. They may also include the comments properties to describe what style of comments are used in these files.&#x20;
 
-This is how the C++ source filetype is defined.
+This is how the C++ source filetype is defined. See also [Files and Caching](files.md#applicable-filetypes).
 
 ```yaml
 lint:
