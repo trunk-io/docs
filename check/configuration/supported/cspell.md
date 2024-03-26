@@ -23,7 +23,7 @@ You can enable the cspell linter with:
 ```shell
 trunk check enable cspell
 ```
-
+![cspell example output](./cspell.gif)
 ## Auto Enabling
 
 cspell will never be auto-enabled. It must be enabled manually.
