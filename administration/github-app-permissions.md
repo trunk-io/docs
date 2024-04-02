@@ -50,6 +50,8 @@ Trunk uses this permission to read and write comments on pull requests.
 
 This permission includes access to search repositories, list collaborators, and access repository metadata.
 
+This permission is required by all GitHub applications that access repository information.
+
 ### Pull requests (Read and write)
 
 This permission includes access to pull requests and merges.
@@ -70,6 +72,10 @@ Organization permissions permit access to organization-related resources.
 
 This permission includes access to view events triggered by an activity in an organization.
 
+Trunk uses this permission to get organization events to keep app install information up to date.
+
 ### **Members (Read-only)**
 
 This permission includes access to organization members and teams.
+
+Trunk uses this permission to subscribe to organization rename events to keep app install information current.
