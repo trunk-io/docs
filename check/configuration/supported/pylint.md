@@ -23,7 +23,7 @@ You can enable the Pylint linter with:
 ```shell
 trunk check enable pylint
 ```
-
+![pylint example output](./pylint.gif)
 ## Auto Enabling
 
 Pylint will be auto-enabled if any of its config files are present: *`pylintrc`, `.pylintrc`*.
