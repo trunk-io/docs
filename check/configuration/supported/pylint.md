@@ -23,7 +23,7 @@ You can enable the Pylint linter with:
 ```shell
 trunk check enable pylint
 ```
-
+![pylint example output](./pylint.gif)
 ## Auto Enabling
 
 Pylint will be auto-enabled if any of its config files are present: *`pylintrc`, `.pylintrc`*.
@@ -49,6 +49,8 @@ If you want to run the plugin `pylint-django` as part of your setup, you would a
       - pylint-django@2.4.4
 
 ```
+
+
 
 
 
