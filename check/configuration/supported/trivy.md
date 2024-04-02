@@ -23,7 +23,7 @@ You can enable the Trivy linter with:
 ```shell
 trunk check enable trivy
 ```
-
+![trivy example output](./trivy.gif)
 ## Auto Enabling
 
 Trivy will be auto-enabled if any *Lockfile, ALL, Docker, Yaml or Terraform* files are present.
