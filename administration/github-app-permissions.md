@@ -46,7 +46,7 @@ Trunk uses this permission to read the `trunk.yaml` configuration file if you’
 
 This permission includes access to issues and related comments, assignees, labels, and milestones.
 
-Trunk uses this permission to read comments on pull requests.
+Trunk uses this permission to read and write comments on pull requests.
 
 ### Metadata (Read-only)
 
