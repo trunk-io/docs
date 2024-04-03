@@ -6,6 +6,8 @@ description: >-
 
 # GitHub App Permissions
 
+The Trunk GitHub App enables functionality for all Trunk tools. It's required for Trunk Merge, where it's used for creating a deleting test branches and merging PRs. For complete documentation of the individual permissions the Trunk GitHub App requires, see the [GitHub developer docs](https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps). Below, find an explanation of every permission the Trunk GitHub App requires and what Trunk uses it for.
+
 ## **Repository permissions**
 
 Repository permissions permit access to repositories and related resources.
@@ -40,11 +42,11 @@ This permission includes access to repository contents, commits, branches, downl
 
 Trunk uses this permission to read the `trunk.yaml` configuration file if you’ve added it to your repository. Trunk also uses write permissions to create, update, and delete the branches created and managed by Merge.
 
-### Issues (Read-only)
+### Issues (Read and write)
 
 This permission includes access to issues and related comments, assignees, labels, and milestones.
 
-Trunk uses this permission to read and write comments on pull requests.
+Trunk uses this permission to read comments on pull requests.
 
 ### Metadata (Read-only)
 
