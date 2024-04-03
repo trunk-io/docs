@@ -6,7 +6,7 @@ description: >-
 
 # GitHub App Permissions
 
-The Trunk GitHub App enables functionality for all Trunk tools. It's required for Trunk Merge, where it's used for creating a deleting test branches and merging PRs. For complete documentation of the individual permissions the Trunk GitHub App requires, see the [GitHub developer docs](https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps). Below, find an explanation of every permission the Trunk GitHub App requires and what Trunk uses it for.
+The Trunk GitHub App enables functionality for all of Trunk's tools. Not every permission is required for every feature of Trunk, and if you have only enabled one of our tools, we will only access the permissions pertaining to that tool. For complete documentation of the individual permissions the Trunk GitHub App requires, see the [GitHub developer docs](https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps). Below, find an explanation of every permission the Trunk GitHub App requires and what Trunk uses it for.
 
 ## **Repository permissions**
 
