@@ -20,7 +20,7 @@ Trunk uses this permission to read the results of workflow and job runs, and to 
 
 This permission includes read-only access to repository settings, teams, and collaborators.
 
-Trunk uses this permission to access a repository’s branch protection rules. Trunk and cannot edit any administration settings on your GitHub organization or repository.
+Trunk uses this permission to access a repository’s branch protection rules. Trunk cannot edit any administration settings on your GitHub organization or repository.
 
 ### Checks (Read and write)
 
@@ -38,7 +38,7 @@ Trunk uses this permission to examine the status of your commits, branches, and 
 
 This permission includes access to repository contents, commits, branches, downloads, releases, and merges.&#x20;
 
-Trunk uses this permission to download the trunk.yaml configuration file if you’ve added it to your repository. Trunk also uses write permissions to create, update, and delete the branches created and managed by Merge.
+Trunk uses this permission to read the `trunk.yaml` configuration file if you’ve added it to your repository. Trunk also uses write permissions to create, update, and delete the branches created and managed by Merge.
 
 ### Issues (Read-only)
 
