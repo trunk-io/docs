@@ -175,6 +175,7 @@
   * [Command Line](merge/command-line.md)
   * [Common Problems](merge/common-problems.md)
   * [Reference](merge/reference.md)
+  * [API](merge/api.md)
   * [Legacy Merge](merge/legacy/README.md)
     * [Getting Started](merge/legacy/getting-started.md)
     * [Configuration](merge/legacy/configuration.md)
