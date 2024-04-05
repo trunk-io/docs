@@ -144,15 +144,16 @@ This operation does not require authentication
 
 ## Submits a Pull Request to the queue
 
-> Code samples
-
+{% tabs %}
+{% tab title="http" %}
 ```http
 POST https://api.trunk.io:433/v1/queuePullRequest HTTP/1.1
 Host: api.trunk.io:433
 Content-Type: application/json
 
 ```
-
+{% endtab %}
+{% tab title="javascript" %}
 ```javascript
 const inputBody = '{
   "repo": {
@@ -183,7 +184,9 @@ fetch('https://api.trunk.io:433/v1/queuePullRequest',
 });
 
 ```
+{% endtab %}
 
+{% tab title="python" %}
 ```python
 import requests
 headers = {
@@ -195,6 +198,8 @@ r = requests.post('https://api.trunk.io:433/v1/queuePullRequest', headers = head
 print(r.json())
 
 ```
+{% endtab %}
+{% endtabs %}
 
 `POST /queuePullRequest`
 
