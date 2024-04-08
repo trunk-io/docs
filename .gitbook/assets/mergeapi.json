@@ -1,0 +1,288 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Trunk Merge API",
+    "version": "0.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://api.trunk.io:433/v1",
+      "description": "Server description"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "repo": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "string",
+            "example": "github.com",
+            "description": "The host of the repository. Currently only supports 'github.com'",
+            "enum": ["github.com"]
+          },
+          "owner": {
+            "type": "string",
+            "example": "trunk-io",
+            "description": "The owner of the repository"
+          },
+          "name": {
+            "type": "string",
+            "example": "trunk",
+            "description": "The name of the repository"
+          }
+        }
+      },
+      "pr": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "number",
+            "example": 1,
+            "description": "The PR number"
+          }
+        }
+      },
+      "prWithSha": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "number",
+            "example": 1,
+            "description": "The PR number"
+          },
+          "sha": {
+            "type": "string",
+            "example": "1234567890abcdef",
+            "description": "The SHA of the PR"
+          }
+        }
+      },
+      "targetBranch": {
+        "type": "string",
+        "example": "main",
+        "description": "The branch the merge queue will be merging PRs into"
+      }
+    }
+  },
+  "paths": {
+    "/submitPullRequest": {
+      "post": {
+        "tags": ["Merge Items"],
+        "summary": "Submit a pull request to be tested and merged",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "$ref": "#/components/schemas/repo"
+                  },
+                  "pr": {
+                    "$ref": "#/components/schemas/pr"
+                  },
+                  "targetBranch": {
+                    "$ref": "#/components/schemas/targetBranch"
+                  },
+                  "priority": {
+                    "oneOf": [
+                      {
+                        "type": "string",
+                        "enum": ["low", "medium", "high", "urgent"],
+                        "default": "medium",
+                        "description": "The priority name to assign to the PR when it begins testing in the queue"
+                      },
+                      {
+                        "type": "number",
+                        "example": 1,
+                        "description": "The priority number (0 - 255, 0 is the highest) to assign to the PR when it begins testing in the queue"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/setImpactedTargets": {
+      "post": {
+        "tags": ["Impacted Targets"],
+        "summary": "Set impacted targets",
+        "description": "Upload impacted targets for the PR and its current SHA. Used specifically when running the queue in Parallel mode",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "$ref": "#/components/schemas/repo"
+                  },
+                  "pr": {
+                    "$ref": "#/components/schemas/prWithSha"
+                  },
+                  "targetBranch": {
+                    "$ref": "#/components/schemas/targetBranch"
+                  },
+                  "impactedTargets": {
+                    "oneOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "example": "services_backend",
+                          "description": "Name of the target impacted by the changes in the pull request"
+                        }
+                      },
+                      {
+                        "type": "string",
+                        "enum": ["IMPACTS_ALL"],
+                        "description": "Special value to indicate that all targets are impacted by the changes in the pull request"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/queuePullRequest": {
+      "post": {
+        "tags": ["Merge Items"],
+        "summary": "Submits a Pull Request to the queue",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "$ref": "#/components/schemas/repo"
+                  },
+                  "pr": {
+                    "$ref": "#/components/schemas/pr"
+                  },
+                  "targetBranch": {
+                    "$ref": "#/components/schemas/targetBranch"
+                  },
+                  "priority": {
+                    "oneOf": [
+                      {
+                        "type": "string",
+                        "enum": ["low", "medium", "high", "urgent"],
+                        "default": "medium",
+                        "description": "The priority name to assign to the PR when it begins testing in the queue"
+                      },
+                      {
+                        "type": "number",
+                        "example": 1,
+                        "description": "The priority number (0 - 255, 0 is the highest) to assign to the PR when it begins testing in the queue"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/restartTestsOnPullRequest": {
+      "post": {
+        "tags": ["Merge Items"],
+        "summary": "Restarts tests on a PR in the queue without moving its position or causing other PRs to be retested",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "$ref": "#/components/schemas/repo"
+                  },
+                  "pr": {
+                    "$ref": "#/components/schemas/pr"
+                  },
+                  "targetBranch": {
+                    "$ref": "#/components/schemas/targetBranch"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/cancelPullRequest": {
+      "post": {
+        "tags": ["Merge Items"],
+        "summary": "Cancel a pull request already in the queue.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "$ref": "#/components/schemas/repo"
+                  },
+                  "pr": {
+                    "$ref": "#/components/schemas/pr"
+                  },
+                  "targetBranch": {
+                    "$ref": "#/components/schemas/targetBranch"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  }
+}
