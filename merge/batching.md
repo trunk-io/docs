@@ -12,13 +12,13 @@ Note that batching only works when Merge is set to single queue mode.
 
 ## Without Batching
 
-Normally, without batching enabled, Merge will test PRs one at a time in order. For example, suppose we have a queue with four PRs called A, B, C, and D:
+Normally, without batching enabled, Merge will test PRs individually in order. For example, suppose we have a queue with four PRs called A, B, C, and D that is set to test fours PRs at a time (in other words, has a [concurrency](https://docs.trunk.io/merge/set-up-trunk-merge/advanced-settings#concurrency) of 4):
 
 **main <- A <- B <- C <- D**
 
-A will be tested first. If it passes it is merged. If it fails it is removed from the queue. Either way B will not be tested until A is resolved. And then C. And then D.
+A, B, C, and D will all begin testing individually. For D to merge, A, B, and C must pass and merge themselves (or be kicked from the queue when they fail).&#x20;
 
-In this scenario it is highly likely that the same tests will be run multiple times, once for each PR. Now consider with batching enabled.
+In this scenario it is highly likely that the same tests will be run multiple times, once for each PR.  Additionally, if A, B, or C fails, it will cause other PRs in the queue to restart.
 
 ## With Batching
 
@@ -36,11 +36,13 @@ Merge will not create a batch until a fourth PR comes in. Since this could be a 
 
 ## Handling Failures
 
-If a batch fails then Merge will move the batch to a separate queue for bisection analysis.  In this queue the batch will be split into two sub-batches and re-tested within the bisection queue. If they pass then they will be moved back to the main queue for re-testing. If the first sub-batch passes but the second does not, then only the first will be moved to the main queue for retesting and the second will be further split in half and re-tested in the bisection queue.  In this way the broken PR will be identified and as many of the good PRs as possible will be moved back to the main queue.
+If a batch fails then Merge will move the batch to a separate queue for bisection analysis.  In this queue the batch will be split into two sub-batches and re-tested within the bisection queue. In the example above, if `main` <- `ABCD` fails, then the resulting bisection will look like `main` <- `AB` <- `CD`. PRs that pass this way will be moved back to the main queue for re-testing. If the first sub-batch passes but the second does not, then only the first will be moved to the main queue for retesting and the second will be further split in half and re-tested in the bisection queue.  In this way the broken PR will be identified and as many of the good PRs as possible will be moved back to the main queue to be re-batched.
 
 ### Optimistic Merging and Pending Failure Depth
 
+{% hint style="info" %}
 The [_Optimistic Merging_](optimistic-merging.md#optimistic-merging) and [_Pending Failure Depth_](optimistic-merging.md#pending-failure-depth) features of Merge work together to make batching much more performant.
+{% endhint %}
 
 The **Pending Failure Depth** makes the queue hold onto failed PRs before kicking them out of the queue. **Optimistic Merging** makes the queue merge a failed PR if the one after it succeeds. These features apply to both batches and individual PRs.
 
