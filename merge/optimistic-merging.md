@@ -28,12 +28,6 @@ Fundamentally **Optimstic Merging is a tradeoff, giving up a small guarantee of 
 Optimistic Merging only works when the [Pending Failure Depth](optimistic-merging.md#pending-failure-depth) is set to **a value greater than zero**. When zero or disabled, Merge will not hold any failed tests in the queue.
 {% endhint %}
 
-### Enabling Optimistic Merging
-
-Optimistic Merging can be turned on in the [Merge UI](using-the-webapp.md):
-
-<figure><img src="../.gitbook/assets/optimistic-merge-ui" alt=""><figcaption></figcaption></figure>
-
 ## Pending Failure Depth
 
 Normally a PR that fails will go into the **pending failure** state and will stay in the queue only if there are other PRs it depends on are also being tested. Once it's dependencies are complete the failed PR will be kicked out of the queue or restarted. _**Pending Failure Depth**_** allows a failed PR to wait in the queue for PRs that come after it** to finish testing before restarting or being kicked out of the queue. The number of PRs that the queue will wait for is the _Pending Failure Depth._  This depth is configurable and reflects the number of **levels** Merge will wait to finish testing.&#x20;
@@ -49,3 +43,10 @@ main <- A (testing)
 If _pending failure depth_ is set to `1` and `A` fails, Merge will wait until both `B` and `C` finish testing before retrying or kicking `A` out of the queue.
 
 Pending Failure Depth works very well with [Optimistic Merging](optimistic-merging.md#optimistic-merging) - it gives a chance for a failed PR to be optimistically merged, as we’ll wait for PRs after it to finish testing. This gives great protection against flaky tests as you can make merge wait to see if it will have a chance to optimistically merge a PR further down the line. This feature can still be used without optimistic merging, but without it, a restart or PR getting kicked from a failure is still inevitable - you just now have additional time to go see why the PR failed and if you should manually restart it or not.
+
+### Enabling&#x20;
+
+**Optimistic Merge** can be turned on in the [Merge UI](using-the-webapp.md):
+
+<figure><img src="../.gitbook/assets/om-pfd-settings.png" alt=""><figcaption></figcaption></figure>
+
