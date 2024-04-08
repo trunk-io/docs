@@ -22,17 +22,17 @@ In this scenario it is highly likely that the same tests will be run multiple ti
 
 ## With Batching
 
-Merge will group PRs together into Batches based on the **batch size**. In the example above, if the **batch size** was set to **4** then all of the PRs would be grouped into a single branch and tested as a whole, resulting in 1/4th the testing work.
+Merge will group PRs together into Batches based on the **Minimum Batch Size**. In the example above, if the **batch size** was set to **4** then all of the PRs would be grouped into a single branch and tested as a whole, resulting in 1/4th the testing work.
 
 **main <- ABCD**
 
-### Batch Size and Batch Timeout
+### Batch Size and Timeouts
 
-The batch size controls how big the batches are.  When batches are enabled Merge will wait until the batch is filled before processing any of the PRs. For example: if the batch size was set to 4 with the PRs A, B, C the queue would look like this
+The Minimum Batch Size controls how big the batches are.  When batches are enabled Merge will wait until the batch is filled before processing any of the PRs. For example: if the batch size was set to 4 with the PRs A, B, C the queue would look like this
 
 **main <- A <- B <- C**&#x20;
 
-Merge will not create a batch until a fourth PR comes in. Since this could be a while, you can set a **batch timeout.** Merge will wait until the **batch timeout** and then process the partially filled batch.
+Merge will not create a batch until a fourth PR comes in. Since this could be a while, you can set a **Maximum Wait Time.** Merge will wait up until the wait time, and then will process the partially filled batch.
 
 ## Handling Failures
 
@@ -66,7 +66,7 @@ Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly im
 
 Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](https://app.trunk.io/).
 
-\*screenshots\*
+<figure><img src="../.gitbook/assets/batching-settings.png" alt=""><figcaption><p>Settings for Maximum Wait Time and Minimum Batch Size</p></figcaption></figure>
 
 
 
