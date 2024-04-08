@@ -11,7 +11,7 @@ Trunk provides HTTP REST APIs for several of our products. The APIs use status c
 ## Available APIs
 
 * [Merge API](merge.md) : for controlling the Trunk Merge Queue
-* [CI Analytics API](api.md): for submitting events to be tracked by the CI Analytics engine.
+* [CI Analytics API](../ci-analytics/setup/api.md): for submitting events to be tracked by the CI Analytics engine.
 
 ## Authentication
 

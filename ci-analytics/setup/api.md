@@ -6,7 +6,7 @@ description: Integrate with Trunk CI Analytics using the API
 
 The Trunk CI Analytics API provides access to instrument any CI or build system. The API is an HTTP REST API, returns JSON from all requests, and uses standard HTTP response codes. &#x20;
 
-All requests must be [authenticated](./#authentication) by providing the `x-api-token` header.
+All requests must be [authenticated](../../apis/#authentication) by providing the `x-api-token` header.
 
 ## Track Events
 
