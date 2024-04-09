@@ -206,6 +206,8 @@
 * [APIs](apis/README.md)
   * [Merge](apis/merge.md)
   * [CI Analytics](ci-analytics/setup/api.md)
+  * [Webhooks](apis/webhooks/README.md)
+    * [Webhook Reference](apis/webhooks/webhook-reference.md)
 * [Administration](administration/README.md)
   * [Billing](administration/billing.md)
   * [Single Sign-On (SAML)](administration/single-sign-on-saml.md)
