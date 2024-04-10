@@ -28,7 +28,7 @@ Merge will group PRs together into Batches based on the **Minimum Batch Size**. 
 
 ### Batch Size and Timeouts
 
-The Minimum Batch Size controls how big the batches are.  When batches are enabled Merge will wait until the batch is filled before processing any of the PRs. For example: if the batch size was set to 4 with the PRs A, B, C the queue would look like this
+The Target Batch Size controls how many PRs merge puts into a single batch.  When batches are enabled Merge will wait until the batch is filled before processing any of the PRs. For example: if the target batch size was set to 4 with the PRs A, B, C the queue would look like this
 
 **main <- A <- B <- C**&#x20;
 
@@ -68,9 +68,7 @@ Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly im
 
 Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](https://app.trunk.io/).
 
-<figure><img src="../.gitbook/assets/batching-settings.png" alt=""><figcaption><p>Settings for Maximum Wait Time and Minimum Batch Size</p></figcaption></figure>
-
-
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 
 
