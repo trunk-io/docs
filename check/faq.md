@@ -8,16 +8,14 @@ layout:
   tableOfContents:
     visible: true
   outline:
-    visible: false
+    visible: true
   pagination:
     visible: true
 ---
 
 # FAQ
 
-<details>
-
-<summary>What linters should I be using?</summary>
+## What linters should I be using?
 
 The best set of linters depends on your particular needs and which tech stack you are using (C/C++, Javascript, Rust, Python, etc). By default Trunk Check will detect your project type and select a recommended set of linters for that type, ESLint for a Javascript project or `clang-tidy` for C++ projects. There are plenty more linters you can use, however. You can see all possible (built in) linters with
 
@@ -33,11 +31,7 @@ trunk check enable cool_new_linter
 
 See more about our [supported linters here](configuration/supported/).
 
-</details>
-
-<details>
-
-<summary>Why aren't issues showing up anymore?</summary>
+## Why aren't issues showing up anymore?
 
 If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Check only processes new changes to your codebase (read about [hold-the-line](https://docs.trunk.io/check/under-the-hood)). To scan older changes try running:
 
@@ -53,11 +47,7 @@ trunk check --all
 
 to scan all files, whether they've changed or not. [More on CLI options](https://docs.trunk.io/check/command-line).
 
-</details>
-
-<details>
-
-<summary>There are too many issues showing up</summary>
+## There are too many issues showing up
 
 One reason for seeing too many issues is that you may have multiple linters configured which are all printing output. Try running just one linter at a time with the `--filter=some_linter` option.
 
@@ -69,21 +59,13 @@ A final possible reason for excess issues is that one of your linters is misconf
 
 [More on the CLI options](https://docs.trunk.io/check/command-line).
 
-</details>
-
-<details>
-
-<summary>My linters are failing or not running as expected</summary>
+## My linters are failing or not running as expected
 
 When your linters aren’t working the way you expect, first check their configuration. Trunk’s [list of supported linters](https://docs.trunk.io/check/supported-linters#linter-specific-configuration) provides some specific tips for certain linters. You can see the full default configuration of every linter in [Trunk’s public plugin repo](https://github.com/trunk-io/plugins/tree/main).
 
 You can also try running `trunk check --verbose` to see what’s going on under the hood. If that still doesn’t work then please reach out to us on [our community Slack](https://trunkcommunity.slack.com/ssb/redirect) with the output of `trunk check --verbose`.
 
-</details>
-
-<details>
-
-<summary>What is the difference between a Linter and a Formatter?</summary>
+## What is the difference between a Linter and a Formatter?
 
 A **linter** is a tool that looks for potential code errors such as security vulnerabilities, code spell, anti-patterns, and other things that might be a problem at runtime. _Linters generally report warnings and errors but do not modify code_. A **formatter** is a tool that reformats code to fit a particular style (indentation, sorting imports, semicolons, etc). _Formatters always modify code._ In general, even though your setup may use many different linters we recommend using only _one formatter per filetype_.
 
@@ -91,11 +73,7 @@ Some tools like ESLint can serve as both a linter and formatter for Javascript c
 
 Ruff and Black are another example of a linter/formatter pair that can collide with each other if not configured properly. If you enable Ruff but don’t already have a ruff config, Trunk Check will generate a `ruff.toml` file for you automatically. This [ruff.toml](https://github.com/trunk-io/plugins/blob/main/linters/ruff/ruff.toml) is _formatter friendly_, meaning that it will silence formatting related warnings and allow Black to take care of them more quickly and easily. This is another example of tuning your linters with linter configs.
 
-</details>
-
-<details>
-
-<summary>What is Hold-the-line (HTL)?</summary>
+## What is Hold-the-line (HTL)?
 
 **Hold The Line** (HTL) is the principle that Trunk Check will _only run on new changes_ in your codebase, rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.
 
@@ -115,19 +93,11 @@ trunk check --all
 
 to run on all files. [More on CLI options](https://docs.trunk.io/check/command-line#options).
 
-</details>
-
-<details>
-
-<summary>What does it mean when Trunk Check wants to format an image in my repo?</summary>
+## What does it mean when Trunk Check wants to format an image in my repo?
 
 Sometimes Trunk Check says there is some `Incorrect formatting` in your images. Check usually enables a program called [Oxipng](https://github.com/shssoichiro/oxipng) which can _optimize_ images to make them smaller (without losing any data). The error message just means that Oxipng wants to optimize those images. You can do that with `trunk fmt` or `trunk fmt filename.png`. You can also disable Oxipng with `trunk check disable oxipng`.
 
-</details>
-
-<details>
-
-<summary>Why does Trunk take up so much disk space?</summary>
+## Why does Trunk take up so much disk space?
 
 Trunk Check uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime you can safely clear your cache with
 
@@ -137,11 +107,7 @@ trunk cache clean --all
 
 then run `trunk install` again in your repos.
 
-</details>
-
-<details>
-
-<summary>How can I expand the number of tools I use with Trunk?</summary>
+## How can I expand the number of tools I use with Trunk?
 
 Trunk supports over 100 different linters, checkers, and other tools; and we are always adding more! Some tools are easier to configure than others, and we enable many of them out-of-the-box. You can read more about specific linter setup [here](https://docs.trunk.io/check/supported-linters). Trunk is intended to be the one-stop-shop for running all of your linters.
 
@@ -151,21 +117,13 @@ To see a list of currently available linters run
 trunk check list
 ```
 
-</details>
-
-<details>
-
-<summary>Upgrading Trunk</summary>
+## Upgrading Trunk
 
 Trunk automatically keeps your tools up to date. To check for recent updates you can run `trunk upgrade` to get the latest tools and fixes. You can read more about how this works [here](https://docs.trunk.io/cli/upgrade).
 
 When upgrading from Trunk CLI versions 1.14.2 or older, you will have to rerun `trunk upgrade`in order to get all available fixes.
 
-</details>
-
-<details>
-
-<summary>Runtime &#x26; Download Versioning</summary>
+## Runtime &#x26; Download Versioning
 
 Some of the tools that Trunk installs use direct downloads and others use runtime installs. For example, most Javascript tools run using the NodeJS runtime. Runtimes themselves are provided through Trunk as versioned direct downloads.
 
@@ -192,11 +150,7 @@ However, some versions are not supported in Trunk check by default. If you need 
 
 [More on how runtimes work](https://docs.trunk.io/runtimes)
 
-</details>
-
-<details>
-
-<summary>How do I Make a Linter Work with a Different Filetype?</summary>
+## How do I Make a Linter Work with a Different Filetype?
 
 Every linter defines a set of file types that it wants to work with in a section of the YAML called `files`. To change this you need to override the files section of that linter’s definition. [More linter application file types](https://docs.trunk.io/check/custom-linters#applicable-filetypes).
 
@@ -233,11 +187,7 @@ lint:
           - bar
 ```
 
-</details>
-
-<details>
-
-<summary>How can I disable trunk on commit for just me, but keep it on for the rest of my team?</summary>
+## How can I disable trunk on commit for just me, but keep it on for the rest of my team?
 
 If you prefer to never run Trunk on commit and push you can disable it just for you. Edit or create the `.trunk/user.yaml` file and change the `actions.disabled` section to look like this:
 
@@ -252,11 +202,7 @@ actions:
 
 This will disable the checks for just the current user. The `.trunk/user.yaml` file is specifically gitignored but will be loaded locally if present.
 
-</details>
-
-<details>
-
-<summary>What should I do if a linter process seems to take longer than expected during a Trunk check?</summary>
+## What should I do if a linter process seems to take longer than expected during a Trunk check?
 
 There are two main strategies to address this issue: **configuring timeouts** and **ignoring certain files**.
 
@@ -293,4 +239,8 @@ lint:
 
 This approach lets you specify which linters to ignore for particular paths, optimizing the check process and focusing on relevant files. [More details on ignoring files](configuration/ignoring-issues.md#ignoring-all-issues-formatting-in-a-file).
 
-</details>
+## `trunk init` says "Trunk can only init if it's run at the root of a git repo"
+
+Trunk requires that you run `trunk init` from the root of a git repository. Trunk is git-aware, and relies on git to understand which files are modified, gitignored, and more.
+
+If you see this message, it means that you are not in the root directory of a git repository. If you are in a git worktree, Trunk *does* support worktrees. Your worktree may be in a broken state, try running `git worktree repair` and then `trunk init` again.
