@@ -10,9 +10,9 @@ description: >-
 
 When testing and merging PRs to a main branch, your codebase will sometimes get what is called a _**logical**_** merge conflict**. This is when two PRs can each merge cleanly with the target branch, but together create a conflict. Git cannot resolve this type of a conflict, requiring manual intervention. Usually a engineer must merge one PR, rebase the second one, fix any conflicts, then submit again for testing. (for more see [What is a Logical Merge Conflict](https://trunk.io/learn/what-is-a-logical-merge-conflict)).&#x20;
 
-Manually fixing logical merge conflicts is annoying but manageable. With a codebase developed by a only a couple  of developer on a single working branch, logical merge conflicts are rare. The developers make changes, push PRs, and they gets merged into main after passing CI tests.&#x20;
+Manually fixing logical merge conflicts is annoying but manageable. With a codebase developed by a small engineering team logical merge conflicts are rare enough to be manageable. The developers make changes, push PRs, and they gets merged into main after passing CI tests.&#x20;
 
-As soon as your team has multiple developers, or are working on multiple branches, you risk more frequent logical conflicts. As your team grows or your pace speeds up, more and more time is wasted on fixing these conflicts, increasing costs and wasting time that could be spent on features instead of wrangling with infrastructure. Enter the merge queue.
+As soon as your team has 40-50 engineers, or are working on multiple branches, you risk more frequent logical conflicts. As your team grows or your pace speeds up, more and more time is wasted on fixing these conflicts, increasing costs and wasting time that could be spent on features instead of wrangling with infrastructure. Enter the _merge queue_.
 
 ### What a merge queue fixes
 
@@ -22,7 +22,7 @@ When a conflict happens without using a merge queue, the developer must rebase t
 
 ## The problems with traditional merge queues
 
-When a dev team is really cooking there can be many PRs going into a branch every day, sometimes hundreds as the team gets larger. If there are a lot of PRs in the queue then the queue gets backed up. Since each PR must be tested with every other PR, the test count and CI costs can grow rapidly.&#x20;
+A team of 100 developers can easily produce 50 to 60 PRs per day. When there are a lot of PRs, depending on how long a test run is, the queue can get backed up. Since each PR must be tested with every other PR, the test count and CI costs can grow rapidly.&#x20;
 
 Traditional merge queues are also FIFO (First In First Out) queues, thus simple changes, or emergency fixes, must still wait at the end of the queue until everything before them finishes. There is no way to mark a PR as high priority.
 
@@ -48,7 +48,11 @@ To make it even easier to set a PR priority you do not need to use a special UI.
 
 In certain cases Trunk Merge can [optimistically merge](optimistic-merging.md) a PR, even if it failed testing, if a second PR after it passes. This is configurable and can help your dev process handle flaky tests better.&#x20;
 
-Trunk Merge can also [group PRs into batches](batching.md), testing and merging them together. When combined with optimistic merging, Merge can greatly speed up your development pipeline.
+Suppose a test fails 20% of the time due to a transient error (network delay, Chrome RAM usage, etc). With a traditional merge queue an engineer will have to investigate and at least hit a retry button. With Merge's intelligent _optimistic merging,_ if later PRs pass then the failure likely was transient and it can be safely merged without intervention. This minimizes the impact of flaky tests and keeps the developer pipeline running smoothly.
+
+Trunk Merge can also [group PRs into batches](batching.md). With a batch size of 4 Merge will wait until four PR have been queued and then combine them into a single PR with all of the changes, testing and merging them as a single unit. This results in 1/4 the amount of time spent running tests, and 1/4th cost.
+
+Trunk Merge with optimistic merging and batching greatly speed up your development pipeline.
 
 ### Pipeline Health
 
