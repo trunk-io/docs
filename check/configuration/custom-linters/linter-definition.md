@@ -20,7 +20,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `commands`
 
-`commands`: The list of commands exposed by this linter. See [Linter Command Definition](commands/command-definition.md).
+`commands`: The list of commands exposed by this linter. See [Linter Command Definition](commands/definition.md).
 
 ## `deprecated`
 
