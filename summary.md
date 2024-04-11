@@ -176,6 +176,7 @@
   * [Batching](merge/batching.md)
   * [Command Line](merge/command-line.md)
   * [Common Problems](merge/common-problems.md)
+  * [Using Trunk Merge with Bazel Projects](merge/using-trunk-merge-with-bazel-projects.md)
   * [Reference](merge/reference.md)
   * [Legacy Merge](merge/legacy/README.md)
     * [Getting Started](merge/legacy/getting-started.md)
