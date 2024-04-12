@@ -36,7 +36,7 @@ lint:
 
 ### `compile_commands`
 
-`compile_commands`: compile commands for clang-tidy. Must be one of `compile_commands_json` or `bazel`.
+`compile_commands`: compile commands for clang-tidy. Must be one of `json` or `bazel`.
 
 ### `compile_commands_roots`
 
