@@ -42,7 +42,7 @@ The priority can also be specified from the [Merge Web UI](using-the-webapp.md).
 
 valid values for the priority level:
 
-<table><thead><tr><th width="151">label</th><th width="109">number</th><th>note</th></tr></thead><tbody><tr><td>urgent</td><td>0</td><td>urgent items will interrupt running jobs and begin testing immediately</td></tr><tr><td>high</td><td>10</td><td></td></tr><tr><td>medium</td><td>100</td><td>default priority</td></tr><tr><td>low</td><td>200</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="151">label</th><th width="109">number</th><th>note</th></tr></thead><tbody><tr><td>urgent</td><td>0</td><td>urgent items will interrupt running jobs and begin testing immediately</td></tr><tr><td>high</td><td>10</td><td></td></tr><tr><td>medium</td><td>100</td><td>default priority</td></tr><tr><td>low</td><td>200</td><td></td></tr><tr><td></td><td>255</td><td>lowest possible priority</td></tr></tbody></table>
 
 ## How Priority Affects PR Order
 
