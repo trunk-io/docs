@@ -1,5 +1,5 @@
 ---
-description: Managing Runtimes (Pythong, NodeJS, etc) with Trunk Check
+description: Managing Runtimes (Python, NodeJS, etc) with Trunk Check
 ---
 
 # Runtimes
