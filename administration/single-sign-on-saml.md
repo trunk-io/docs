@@ -1,28 +1,18 @@
-# Single Sign-On (SAML)
-
-> 📘 Enterprise Tier Required
->
-> Contact sales@trunk.io for more information
+# Managing Users
 
 ### Overview
 
-Configuring SAML (Security Assertion Markup Language) for your Trunk account lets you and all your team log in to Trunk using the credentials stored in your organization’s identity store that has been configured with a SAML Identity Provider.
+Team members can create Trunk accounts with either GitHub or Google. We highly suggest you use the Google approach, because sometimes GitHub accounts are not associated with the company email, and once created they cannot be added to your Trunk org even if they later update GitHub with their work email address. A much better option is to use your company's Google account associated with your work email.
 
-#### Prerequisites
+### Initial Setup Steps
 
-* Trunk Enterpise Account with SAML enabled on the account. If SAML is not enabled for your organization in Trunk please reach out to support@trunk.io to enable it.
-* An Identitiy Provider (IdP) that support SAML 2.0 protocols.
+* Log in to [app.trunk.io](https://app.trunk.io/) with a Google account associated with the domain for your company,
+* Create a Trunk org
+* Add your company domain to the Trunk org under Settings -> Team Members -> Team Domains.
 
-#### Configuring SAML
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-Configuring SSO in trunk is not currently self service. Please reach out to your support contact for help onboarding your organization onto our SSO solution.
+* Have the rest of your users log in with their company email accounts as well
 
-#### Just in time (JIT) user provisioning
+Trunk does not support SAML at this time. If you are interested in SAML support please contact sales@trunk.io.
 
-With JIT provisioning, a user is created within Trunk the first time they try to log in. This eliminates the need for administrators to manually create user accounts one at a time.
-
-Some organizations might not want to invite all of their users to Trunk. If you would like to make changes to how SAML works for your account, contact Trunk support. It is up to the organization to configure their IdP to not send assertions to Trunk if they don’t want a particular user to access Trunk.
-
-#### SAML strict
-
-If you would like to enforce SAML Strict mode so other login methods are denied please reach out to your enterprise support contact at Trunk.

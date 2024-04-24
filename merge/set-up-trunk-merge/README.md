@@ -20,7 +20,7 @@ Go to the Merge tab. You will see the "Set Up Trunk Merge" page. From there, you
 2. The [number](advanced-settings.md#concurrency) of Pull Requests that Merge can test at the same time.
 3. The [mode](configuration.md#single-parallel-mode) that Trunk Merge Queues will start in.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="414"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="414"><figcaption></figcaption></figure>
 
 ### Define Required Status Checks For Testing
 

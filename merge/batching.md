@@ -68,7 +68,7 @@ Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly im
 
 Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](https://app.trunk.io/).
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
