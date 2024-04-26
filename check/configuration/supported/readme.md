@@ -55,6 +55,7 @@ trunk check enable <linter>
 | Nix | [nixpkgs-fmt](./nixpkgs-fmt.md)|
 | package.json | [sort-package-json](./sort-package-json.md)|
 | Perl | [perlcritic](./perlcritic.md), [perltidy](./perltidy.md)|
+| PHP | [phpstan](./phpstan.md)|
 | PNG | [oxipng](./oxipng.md)|
 | PowerShell | [psscriptanalyzer](./psscriptanalyzer.md)|
 | Prisma | [prisma](./prisma.md)|

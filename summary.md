@@ -68,6 +68,7 @@
       * [Oxipng](check/configuration/supported/oxipng.md)
       * [perlcritic](check/configuration/supported/perlcritic.md)
       * [perltidy](check/configuration/supported/perltidy.md)
+      * [phpstan](check/configuration/supported/phpstan.md)
       * [pmd](check/configuration/supported/pmd.md)
       * [pragma-once](check/configuration/supported/pragma-once.md)
       * [pre-commit-hooks](check/configuration/supported/pre-commit-hooks.md)
