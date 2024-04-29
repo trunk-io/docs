@@ -35,6 +35,7 @@ trunk check enable <linter>
 | Cloudformation | [cfnlint](./cfnlint.md), [checkov](./checkov.md)|
 | CSS, SCSS | [prettier](./prettier.md), [stylelint](./stylelint.md)|
 | Cue | [cue-fmt](./cue-fmt.md)|
+| Dart | [dart](./dart.md)|
 | Docker | [checkov](./checkov.md), [hadolint](./hadolint.md)|
 | Dotenv | [dotenv-linter](./dotenv-linter.md)|
 | GitHub | [actionlint](./actionlint.md)|
@@ -54,11 +55,13 @@ trunk check enable <linter>
 | Nix | [nixpkgs-fmt](./nixpkgs-fmt.md)|
 | package.json | [sort-package-json](./sort-package-json.md)|
 | Perl | [perlcritic](./perlcritic.md), [perltidy](./perltidy.md)|
+| PHP | [phpstan](./phpstan.md)|
 | PNG | [oxipng](./oxipng.md)|
 | PowerShell | [psscriptanalyzer](./psscriptanalyzer.md)|
 | Prisma | [prisma](./prisma.md)|
 | Protobuf | [buf](./buf.md), [clang-format](./clang-format.md), [clang-tidy](./clang-tidy.md)|
 | Python | [autopep8](./autopep8.md), [bandit](./bandit.md), [black](./black.md), [flake8](./flake8.md), [isort](./isort.md), [mypy](./mypy.md), [pylint](./pylint.md), [pyright](./pyright.md), [ruff](./ruff.md), [semgrep](./semgrep.md), [sourcery](./sourcery.md), [yapf](./yapf.md)|
+| Rego | [opa](./opa.md), [regal](./regal.md)|
 | Renovate | [renovate](./renovate.md)|
 | Ruby | [brakeman](./brakeman.md), [rubocop](./rubocop.md), [rufo](./rufo.md), [semgrep](./semgrep.md), [standardrb](./standardrb.md)|
 | Rust | [clippy](./clippy.md), [rustfmt](./rustfmt.md)|
@@ -67,7 +70,7 @@ trunk check enable <linter>
 | SQL | [sql-formatter](./sql-formatter.md), [sqlfluff](./sqlfluff.md), [sqlfmt](./sqlfmt.md)|
 | SVG | [svgo](./svgo.md)|
 | Swift | [stringslint](./stringslint.md), [swiftformat](./swiftformat.md), [swiftlint](./swiftlint.md)|
-| Terraform | [checkov](./checkov.md), [terraform](./terraform.md), [terrascan](./terrascan.md), [tflint](./tflint.md), [tfsec](./tfsec.md)|
+| Terraform | [checkov](./checkov.md), [terraform](./terraform.md), [terrascan](./terrascan.md), [tflint](./tflint.md), [tfsec](./tfsec.md), [tofu](./tofu.md)|
 | Terragrunt | [terragrunt](./terragrunt.md)|
 | Terrascan | [terrascan](./terrascan.md)|
 | Textproto | [txtpbfmt](./txtpbfmt.md)|

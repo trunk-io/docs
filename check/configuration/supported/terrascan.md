@@ -26,7 +26,7 @@ trunk check enable terrascan
 
 ## Auto Enabling
 
-terrascan will be auto-enabled if any *Terraform or Docker* files are present.
+terrascan will never be auto-enabled. It must be enabled manually.
 
 
 

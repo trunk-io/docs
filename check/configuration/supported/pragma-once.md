@@ -23,7 +23,7 @@ You can enable the pragma-once linter with:
 ```shell
 trunk check enable pragma-once
 ```
-
+![pragma-once example output](./pragma-once.gif)
 ## Auto Enabling
 
 pragma-once will never be auto-enabled. It must be enabled manually.

@@ -23,7 +23,7 @@ You can enable the ShellCheck linter with:
 ```shell
 trunk check enable shellcheck
 ```
-
+![shellcheck example output](./shellcheck.gif)
 ## Auto Enabling
 
 ShellCheck will be auto-enabled if any *Shell* files are present.
