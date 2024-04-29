@@ -216,7 +216,6 @@
     * [Webhook Reference](apis/webhooks/webhook-reference.md)
 * [Administration](administration/README.md)
   * [Billing](administration/billing.md)
-  * [Managing Users](administration/single-sign-on-saml.md)
   * [Community](administration/community.md)
   * [Contact Support](administration/support.md)
   * [Integration for Slack](administration/integration-for-slack.md)
