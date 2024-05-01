@@ -9,11 +9,14 @@ The trunk analytics test uploader currently only supports Linux x64. If you have
 {% endhint %}
 
 1. Create a Semaphore workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produce a test report in [JUnit XML](https://github.com/testmoapp/junitxml) format.&#x20;
-2. Find your organization slug. First you'll need to navigate to [app.trunk.io](https://app.trunk.io/). Once logged in, you will be automatically redirected to a URL similar to `https://app.trunk.io/my-org-slug/repo-owner/repo-name/ci-analytics`. Copy this slug.
-3. Find your Trunk token by navigating to Settings -> Manage Organization -> Organization API Token and clicking _View._ Copy this token.
-4. In your Semaphore dashboard, store your Trunk token in a secret named TRUNK\_TOKEN.&#x20;
-5. Update your Semaphore workflow to download and run the test uploader binary after you've run your tests.&#x20;
-6. Add a second Semaphore config to run tests on the main branch every hour.
+
+## Find Organization Slug and Token
+
+Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to Settings -> Manage -> Organization.  Copy your organization slug. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View."  Copy this token.
+
+{% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
+
+In your Semaphore dashboard, store your Trunk token in a secret named TRUNK\_TOKEN. Update your Semaphore workflow to download and run the test uploader binary after you've run your tests.&#x20;
 
 ## Sample Semaphore workflow steps
 
