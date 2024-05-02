@@ -58,7 +58,13 @@ struct FooBar {
 };
 ```
 
-Notice that a `trunk-ignore` directive applies not to the next line, but the next non-`trunk-ignore` line (this only works for _preceding_ directives, not _trailing_ directives), and that you can use a single directive for suppressing multiple checks.
+`trunk-ignore` directives can also apply to other `trunk-ignore`s if need be:
+
+```ts
+// trunk-ignore(eslint/max-line-length)
+// trunk-ignore(eslint/@typescript-eslint/no-unsafe-member-access,eslint/@typescript-eslint/no-unsafe-assignment)
+const version = parsedConfig.version;
+```
 
 ### Ignoring all issues/formatting in a file
 
@@ -87,6 +93,24 @@ struct FooBar {
   void *ptr2 = NULL;
   // trunk-ignore-end(clang-tidy)
 };
+```
+
+### Tracking unused ignores
+
+Trunk will alert you if your `trunk-ignore` directives are unused. This can happen due to user error or even innocuously over time, for example, if your internal APIs change or if a linter's output changes.
+
+```
+app/parse.ts:18:3
+ 18:3  note  trunk-ignore(eslint/@typescript-eslint/no-unsafe-member-access)   trunk/ignore-does-nothing
+             is not suppressing a lint issue
+```
+
+[Hold the Line](./hold-the-line.md) will continue to only surface ignore issues that you have introduced, and these issues will have a `note` [severity](./README.md#blocking-thresholds), indicating they are non-blocking by default.
+
+If you need to, you can ignore issues from unused `trunk-ignore` directives, using `trunk-ignore(trunk)`:
+```
+// trunk-ignore(trunk): This error will resurface after our API migration.
+// trunk-ignore(eslint/@typescript-eslint/no-unsafe-member-access)
 ```
 
 ### Specification

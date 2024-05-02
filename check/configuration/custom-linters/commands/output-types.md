@@ -140,7 +140,7 @@ If your linter produces a different output type, you can also write a [parser](c
 * `path`: file path (required)
 * `line`: line number
 * `col`: column number
-* `severity`: one of `allow`, `deny`, `disabled`, `error`, `info`, `warning`
+* `severity`: one of `note`, `notice`, `allow`, `deny`, `disabled`, `error`, `info`, `warning`
 * `code`: linter diagnostic code
 * `message`: description
 
