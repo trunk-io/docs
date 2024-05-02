@@ -4,6 +4,8 @@ description: >-
   files.
 ---
 
+<!-- trunk-ignore-all(trunk): These ignores are for docs -->
+
 # Ignoring Issues and Files
 
 ## Ignoring parts of a file
