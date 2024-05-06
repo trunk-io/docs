@@ -1,28 +1,20 @@
 ---
-description: Different ways Merge handles failures to optimistically speed up PR.
+description: >-
+  Using optimistic merging and pending-failure-depth to protect your Merge Queue
+  from flaky failures
 ---
 
-# Optimistic Merging
-
-Merge intelligently handles failures to run your CI pipeline as efficiently as possible.  There are a few ways it does this, and can be customized for different use cases.
+# Anti-Flake Protection
 
 ## Optimistic Merging
 
 Sometimes, a pull request (PR) fails testing for reasons outside of the actual code change - [a test was flaky](../flaky-tests/), a CI runner was disconnected, and so on.  If a second PR that depends on the first **does** pass, then it is very likely that the first PR was actually good and simply experienced a transient failure.  In these cases, Merge can use **Optimistic Merging** to pass and merge both PRs.
 
-With Optimistic Merging enabled, **Merge will allow failed tests to be merged only in the case where a following PR succeeds,** up to the limit of the [pending failure depth](optimistic-merging.md#pending-failure-depth).
+With Optimistic Merging enabled, **Merge will allow failed tests to be merged only in the case where a following PR succeeds,** up to the limit of the [pending failure depth](optimistic-merging.md#pending-failure-depth).\
+\
+Here is a short animation to describe how this works. In this case we are demonstrating optimistic merging with a pending failure set to at least 1.
 
-For example: suppose `A`, `B`, `C`, and `D` are in the queue with a testing concurrency of 2 in this order:
-
-**main <- A (testing) <- B(testing) <- C (pending) <- D (pending)**
-
-Suppose `A` fails due to a flaky test. Without Optimistic Merge, `A` would be kicked out due to failure and `B` would have to restart. However, with Optimistic Merge enabled, `A` would go into the pending failure state until `B` completes testing, like this:
-
-**main <- A (pending failure) <- B(testing) <- C (pending) <- D (pending)**
-
-If `B` passes testing, then **both A and B will be merged**.  If `B` fails, then `A` will be kicked out and `B` will be restarted as normal.
-
-Fundamentally **Optimstic Merging is a tradeoff, giving up a small guarantee of correctness in favor of speed.** This only happens with the PRs depend on each other and when Optimistic Merging is turned on.
+![anti-flake protection with optimistic merging + pending failure depth](https://play.vidyard.com/5YxXzJ5Szy7vP4F7awgTsc.jpg)
 
 {% hint style="info" %}
 Optimistic Merging only works when the [Pending Failure Depth](optimistic-merging.md#pending-failure-depth) is set to **a value greater than zero**. When zero or disabled, Merge will not hold any failed tests in the queue.
@@ -50,3 +42,5 @@ Pending Failure Depth works very well with [Optimistic Merging](optimistic-mergi
 
 <figure><img src="../.gitbook/assets/om-pfd-settings.png" alt=""><figcaption></figcaption></figure>
 
+**The Fine Print**\
+There is a small tradeoff to be made when optimistic merging is used. You can get into a situation where an actually broken test in say change 'B' is corrected by a change in 'C'. In this case if you later reverted 'C' your build would be broken.&#x20;
