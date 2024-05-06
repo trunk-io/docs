@@ -177,7 +177,7 @@
     * [Integration for Slack](merge/set-up-trunk-merge/integration-for-slack.md)
   * [Using the Merge UI](merge/using-the-webapp.md)
   * [PR Prioritization](merge/pr-prioritization.md)
-  * [Anti-Flake Protection](merge/optimistic-merging.md)
+  * [Anti-Flake Protection](merge/anti-flake-protection.md)
   * [Batching](merge/batching.md)
   * [Command Line](merge/command-line.md)
   * [Common Problems](merge/common-problems.md)

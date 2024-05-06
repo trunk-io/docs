@@ -46,7 +46,7 @@ To make it even easier to set a PR priority you do not need to use a special UI.
 
 ### Optimistic Merging and Batching
 
-In certain cases Trunk Merge can [optimistically merge](optimistic-merging.md) a PR, even if it failed testing, if a second PR after it passes. This is configurable and can help your dev process handle flaky tests better.&#x20;
+In certain cases Trunk Merge can [optimistically merge](anti-flake-protection.md) a PR, even if it failed testing, if a second PR after it passes. This is configurable and can help your dev process handle flaky tests better.&#x20;
 
 Suppose a test fails 20% of the time due to a transient error (network delay, Chrome RAM usage, etc). With a traditional merge queue an engineer will have to investigate and at least hit a retry button. With Merge's intelligent _optimistic merging,_ if later PRs pass then the failure likely was transient and it can be safely merged without intervention. This minimizes the impact of flaky tests and keeps the developer pipeline running smoothly.
 

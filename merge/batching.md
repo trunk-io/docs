@@ -41,7 +41,7 @@ If a batch fails then Merge will move the batch to a separate queue for bisectio
 ### Optimistic Merging and Pending Failure Depth
 
 {% hint style="info" %}
-The [_Optimistic Merging_](optimistic-merging.md#optimistic-merging) and [_Pending Failure Depth_](optimistic-merging.md#pending-failure-depth) features of Merge work together to make batching much more performant.
+The [_Optimistic Merging_](anti-flake-protection.md#optimistic-merging) and [_Pending Failure Depth_](anti-flake-protection.md#pending-failure-depth) features of Merge work together to make batching much more performant.
 {% endhint %}
 
 The **Pending Failure Depth** makes the queue hold onto failed PRs before kicking them out of the queue. **Optimistic Merging** makes the queue merge a failed PR if the one after it succeeds. These features apply to both batches and individual PRs.

@@ -10,14 +10,14 @@ description: >-
 
 Sometimes, a pull request (PR) fails testing for reasons outside of the actual code change - [a test was flaky](../flaky-tests/), a CI runner was disconnected, and so on.  If a second PR that depends on the first **does** pass, then it is very likely that the first PR was actually good and simply experienced a transient failure.  In these cases, Merge can use **Optimistic Merging** to pass and merge both PRs.
 
-With Optimistic Merging enabled, **Merge will allow failed tests to be merged only in the case where a following PR succeeds,** up to the limit of the [pending failure depth](optimistic-merging.md#pending-failure-depth).\
+With Optimistic Merging enabled, **Merge will allow failed tests to be merged only in the case where a following PR succeeds,** up to the limit of the [pending failure depth](anti-flake-protection.md#pending-failure-depth).\
 \
 Here is a short animation to describe how this works. In this case we are demonstrating optimistic merging with a pending failure set to at least 1.
 
 ![anti-flake protection with optimistic merging + pending failure depth](https://play.vidyard.com/5YxXzJ5Szy7vP4F7awgTsc.jpg)
 
 {% hint style="info" %}
-Optimistic Merging only works when the [Pending Failure Depth](optimistic-merging.md#pending-failure-depth) is set to **a value greater than zero**. When zero or disabled, Merge will not hold any failed tests in the queue.
+Optimistic Merging only works when the [Pending Failure Depth](anti-flake-protection.md#pending-failure-depth) is set to **a value greater than zero**. When zero or disabled, Merge will not hold any failed tests in the queue.
 {% endhint %}
 
 ## Pending Failure Depth
@@ -34,7 +34,7 @@ main <- A (testing)
 
 If _pending failure depth_ is set to `1` and `A` fails, Merge will wait until both `B` and `C` finish testing before retrying or kicking `A` out of the queue.
 
-Pending Failure Depth works very well with [Optimistic Merging](optimistic-merging.md#optimistic-merging) - it gives a chance for a failed PR to be optimistically merged, as we’ll wait for PRs after it to finish testing. This gives great protection against flaky tests as you can make merge wait to see if it will have a chance to optimistically merge a PR further down the line. This feature can still be used without optimistic merging, but without it, a restart or PR getting kicked from a failure is still inevitable - you just now have additional time to go see why the PR failed and if you should manually restart it or not.
+Pending Failure Depth works very well with [Optimistic Merging](anti-flake-protection.md#optimistic-merging) - it gives a chance for a failed PR to be optimistically merged, as we’ll wait for PRs after it to finish testing. This gives great protection against flaky tests as you can make merge wait to see if it will have a chance to optimistically merge a PR further down the line. This feature can still be used without optimistic merging, but without it, a restart or PR getting kicked from a failure is still inevitable - you just now have additional time to go see why the PR failed and if you should manually restart it or not.
 
 ### Enabling&#x20;
 
