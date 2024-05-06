@@ -14,7 +14,9 @@ With Optimistic Merging enabled, **Merge will allow failed tests to be merged on
 \
 Here is a short animation to describe how this works. In this case we are demonstrating optimistic merging with a pending failure set to at least 1.
 
-![anti-flake protection with optimistic merging + pending failure depth](https://play.vidyard.com/5YxXzJ5Szy7vP4F7awgTsc.jpg)
+{% embed url="https://share.vidyard.com/watch/5YxXzJ5Szy7vP4F7awgTsc" %}
+anti-flake protection with optimistic merging + pending failure depth
+{% endembed %}
 
 {% hint style="info" %}
 Optimistic Merging only works when the [Pending Failure Depth](anti-flake-protection.md#pending-failure-depth) is set to **a value greater than zero**. When zero or disabled, Merge will not hold any failed tests in the queue.
