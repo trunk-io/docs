@@ -12,7 +12,7 @@ Flaky Tests is available by invite only. Please [**contact**](https://trunk.io/a
 
 Flaky tests are monitored by regularly running your test suites on branches that should not have test failures and tracking those failures. This is typically `main` or `master`, but can also be other branches that are expected not to fail like `production`, `release`, etc., depending on your workflow.
 
-To start monitoring flaky tests, set up an automated CI job that runs your tests and uploads the resulting JUnit XML test report.
+To start monitoring flaky tests, set up an automated CI job that runs your tests and uploads the resulting JUnit XML test report. See [Framework Configuration](frameworks/) to learn how to enable XML output for your particular testing framework.
 
 ### Quickstart
 

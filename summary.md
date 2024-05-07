@@ -203,7 +203,7 @@
   * [Semaphore CI Quickstart](flaky-tests/semaphore-ci-quickstart.md)
   * [Other CI Providers Quickstart](flaky-tests/other-ci-providers-quickstart.md)
   * [Generating JUnit Reports](flaky-tests/generating-junit-reports.md)
-  * [Frameworks](flaky-tests/frameworks/README.md)
+  * [Testing Framework Configuration](flaky-tests/frameworks/README.md)
     * [Jest](flaky-tests/frameworks/jest.md)
 * [CI Debugger (beta)](ci-debugger/README.md)
   * [Overview](ci-debugger/README.md)
