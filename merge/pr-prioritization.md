@@ -56,11 +56,11 @@ When prioritizing a PR, Merge will explicitly **not interrupt** any currently te
 
 Say you have a queue that is configured to test two PRs at once. The queue currently looks like this:
 
-<img src="../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw.svg" alt="queue with two testing PRs and one pending" class="gitbook-drawing">
 
 If you submit a PR D with a `"high"` priority it will be put in front of C (since it is a higher priority than C and C is not testing). D will begin as soon either A or B finishes, like this:
 
-<img src="../.gitbook/assets/file.excalidraw (1).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (1).svg" alt="queue with two testing PRs and a new higher priority pending PR" class="gitbook-drawing">
 
 If instead you submit PR D with an `"urgent"` priority, then D would be tested immediately,  A would be restarted, and B would be bumped back to pending, like this:
 
