@@ -93,6 +93,12 @@ tools:
 
 Note that for the downloaded archive, the binary named `gh` is inside the `bin` directory, so we use the environment to point the `$PATH` there.
 
+### Download fields
+
+`strip_components`: This number of leading directory components to remove from all files in an archive when extracting.
+
+`rename_single_file`: If an archive contains a single file, this will cause that file to be renamed to the name of the tool. This is most useful for downloads of gzip'd binaries with the platform name in the binary.
+
 ### Package-based tools
 
 Package-based tools depend on specified `package` and `runtime` attributes. Here is an example of configuring `mypy` as a tool:
