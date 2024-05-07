@@ -179,7 +179,7 @@ lint:
 
 Every entry in `threshold` defines a set of linters and the severity threshold that is considered blocking. In this example, we're saying that only `high` lint issues should be considered blocking for `clang-tidy`.
 
-<table><thead><tr><th width="97">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (e.g. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>level</td><td>Threshold at which issues are considered blocking. One of : <code>low</code>, <code>medium</code>, <code>high</code>, or <code>none</code> (this last option will result in issues never blocking)</td></tr></tbody></table>
+<table><thead><tr><th width="97">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (e.g. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>level</td><td>Threshold at which issues are considered blocking. One of : <code>note</code>, <code>low</code>, <code>medium</code>, <code>high</code>, or <code>none</code> (this last option will result in issues never blocking)</td></tr></tbody></table>
 
 ### Trigger rules
 
