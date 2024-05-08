@@ -14,8 +14,6 @@ layout:
     visible: true
 ---
 
-# Jest
-
 Jest is a testing framework for JavaScript and TypeScript.
 
 # Enabling XML Output

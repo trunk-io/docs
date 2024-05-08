@@ -14,8 +14,6 @@ layout:
     visible: true
 ---
 
-# Cypress
-
 Cypress is a testing framework for JavaScript and TypeScript.
 
 # Enabling XML Output

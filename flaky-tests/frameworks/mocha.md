@@ -14,8 +14,6 @@ layout:
     visible: true
 ---
 
-# Mocha
-
 Mocha is a testing framework for JavaScript and TypeScript.
 
 # Enabling XML Output
