@@ -4,3 +4,6 @@ In order for Flaky Tests to do it's job, you must configure your testing framewo
 
 <table data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><strong>Jest</strong></td><td></td><td></td><td><a href="jest.md">jest.md</a></td><td><a href="../../.gitbook/assets/jest-logo.png">jest-logo.png</a></td></tr><tr><td align="center"></td><td></td><td></td><td></td><td></td></tr><tr><td align="center"></td><td></td><td></td><td></td><td></td></tr></tbody></table>
 
+
+
+<figure><img src="https://www.datocms-assets.com/98527/1715193855-pytest-logo.png" alt=""><figcaption></figcaption></figure>
