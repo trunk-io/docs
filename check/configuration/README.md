@@ -168,7 +168,7 @@ For full details please see the [Ignoring Issues and Files](ignoring-issues.md) 
 
 ### Blocking Thresholds
 
-All issue severities are considered blocking by default. In cases where you might want to slowly try out a new linter, we provide a mechanism to set specific thresholds for each linter.
+All issue severities low-high are considered blocking by default. In cases where you might want to slowly try out a new linter, we provide a mechanism to set specific thresholds for each linter.
 
 ```yaml
 lint:
@@ -179,7 +179,7 @@ lint:
 
 Every entry in `threshold` defines a set of linters and the severity threshold that is considered blocking. In this example, we're saying that only `high` lint issues should be considered blocking for `clang-tidy`.
 
-<table><thead><tr><th width="97">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (e.g. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>level</td><td>Threshold at which issues are considered blocking. One of : <code>note</code>, <code>low</code>, <code>medium</code>, <code>high</code>, or <code>none</code> (this last option will result in issues never blocking)</td></tr></tbody></table>
+<table><thead><tr><th width="97">Key</th><th>Value</th></tr></thead><tbody><tr><td>linters</td><td>List of linters (e.g. <code>[black, eslint]</code>) or the special <code>[ALL]</code> tag</td></tr><tr><td>level</td><td>Default <code>low</code>. Threshold at which issues are considered blocking. One of: <code>note</code>, <code>low</code>, <code>medium</code>, <code>high</code>, or <code>none</code> (this last option will result in issues never blocking)</td></tr></tbody></table>
 
 ### Trigger rules
 
