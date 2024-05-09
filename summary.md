@@ -201,6 +201,7 @@
   * [GitHub Actions Quickstart](flaky-tests/github-actions-quickstart.md)
   * [Buildkite Quickstart](flaky-tests/buildkite-quickstart.md)
   * [Semaphore CI Quickstart](flaky-tests/semaphore-ci-quickstart.md)
+  * [CircleCI Quickstart](flaky-tests/semaphore-ci-quickstart-1.md)
   * [Other CI Providers Quickstart](flaky-tests/other-ci-providers-quickstart.md)
   * [Generating JUnit Reports](flaky-tests/generating-junit-reports.md)
   * [Testing Framework Configuration](flaky-tests/frameworks/README.md)
