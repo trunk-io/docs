@@ -115,7 +115,7 @@ lint:
 
 ### `threshold`
 
-`threshold`: where you specify the blocking behavior of linters. The threshold for whether an error from a linter should block commits or not.
+`threshold`: where you specify the blocking behavior of linters. The [threshold](../README.md#blocking-thresholds) for whether an error from a linter should block commits or not.
 
 ### `upstream_mode`
 
