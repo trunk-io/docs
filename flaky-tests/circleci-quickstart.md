@@ -2,21 +2,62 @@
 
 ## Getting Started
 
-You can use the analytics test uploader within your [CircleCI](https://circleci.com/) workflows to upload your test results.
+You can use the analytics test uploader within your [CircleCI](https://circleci.com/) workflows to upload and analyze your test results.
 
 {% hint style="info" %}
 The Trunk Flaky Tests uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
-1. Create a CircleCI workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produce a test report in [JUnit XML](https://github.com/testmoapp/junitxml) format.&#x20;
+### Create a CircleCI Workflow
 
-## Find Organization Slug and Token
+Create a CircleCI workflow (or modify an existing one) to run the tests that you want to monitor. The workflow should produce a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format. Most testing frameworks support XML output. See [Testing Framework Configuration](frameworks/) for guides for common testing frameworks. Make sure that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.&#x20;
 
-Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to Settings -> Manage -> Organization.  Copy your organization slug. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View."  Copy this token.
+### Find Organization Slug and Token
+
+Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings -> Manage -> Organization**.  Copy your organization slug. You can find your Trunk token by navigating to **Settings → Manage Organization → Organization API** Token and clicking "View."  Copy this token. Make sure you are getting your _organization token_, not your project/repo token.
 
 {% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
 
-In your CircleCI dashboard, store your Trunk token in a secret named TRUNK\_TOKEN. Update your CircleCI workflow to download and run the test uploader binary after you've run your tests.&#x20;
+### Set Project Environment Variables
+
+In your CircleCI project settings under **Environment Variables**, create new variables for your Trunk org as `TRUNK_ORG_SLUG` and the api token as `TRUNK_API_TOKEN`.&#x20;
+
+<figure><img src="../.gitbook/assets/CircleCI-env-var-settings-screenshot.png" alt=""><figcaption><p>CircleCI Project Settings</p></figcaption></figure>
+
+### Add Uploader to Testing Workflow
+
+Now update your CircleCI workflow to download and run the test uploader binary after you've run your tests. Here is an example of a NodeJS project using JUnit tests.
+
+```yaml
+version: 2.1
+orbs:
+  node: circleci/node@5
+  python: circleci/python@2
+jobs:
+  test-node:
+    # Install node dependencies and run tests
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run:
+          name: Run tests with Jest
+          command: |
+            ./node_modules/.bin/jest --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
+      - run:
+          name: Upload test results to Trunk
+          when: always
+          command: |
+            curl -fsSL --retry 3 "https://trunk.io/releases/analytics-cli/latest" -o ./trunk-analytics-uploader
+            chmod +x ./trunk-analytics-uploader
+            ./trunk-analytics-uploader upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
+
+
+```
+
+In the config about we have added a second `run` step fo the `test-node` job. This step downloads the latest release of the `trunk-analytics-uploader`, makes it executable, then runs it to upload the test output xml file.  The TRUNK\_ORG\_SLUG and TRUNK\_API\_TOKEN variables are filled in at runtime by the CircleCI environment variables set earlier. Note that the `when` property is set to `always`  because it should run whether or not the actual tests in the previous `run` step succeed.
 
 ***
 
