@@ -67,7 +67,7 @@ In sampling mode, Trunk may run multiple linters on a single file, and may not r
 
 Most linters offer some form of configuration. **Trunk uses the native configuration setup of all the tools it runs**. No need to learn a new config language or hunt for specific ways to tune a linter inside trunk. Whether it's `clang-tidy`, `eslint`, or any other linter, all the documentation you'll find online about it is still applicable. We're proud to stand on the shoulders of giants and believe that the open source communities building these tools know best how they should work. Our goal is simply to make it as easy as possible for you to adopt these tools.
 
-To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [docs](broken-reference) on linter-specific tips. To configure **how** Trunk runs a linter, read on.
+To configure **what** a linter does, you will continue to use the linter's own config files. Check out our [configs](https://github.com/trunk-io/configs) repository for always-up-to-date linter configs and some tips on how to structure your linters and repo. Check out our [docs](supported/) on linter-specific tips. To configure **how** Trunk runs a linter, read on.
 
 #### Moving linter configs
 
@@ -140,7 +140,7 @@ By default Trunk will install hermetic versions of runtimes required by the lint
 
 ### Ignoring Issues and Files
 
-By default Check will ignore issues in files which are listed in the `.gitignore` file.&#x20;
+By default Check will ignore issues in files which are listed in the `.gitignore` file.
 
 If you want to ignore groups of files, such as generated code, you can do that with the [`lint.ignore`](ignoring-issues.md#ignoring-multiple-files) section of your `.trunk/trunk.yaml` file. ex:
 
@@ -229,8 +229,6 @@ lint:
       max_file_size: 2097152 # Bytes
 ```
 
-
-
 ### Timeout
 
 Each linter has a default timeout of 10 minutes. If its execution takes longer than this amount of time, Trunk Check will terminate the process and return an error to the user.
@@ -245,4 +243,3 @@ lint:
 ```
 
 The `run_timeout` value can be specified in seconds (`s`), minutes (`m`), or hours (`h`).
-
