@@ -24,7 +24,7 @@ When a PR has not been admitted to the queue yet, Trunk Merge waits for:
 2. The PR to be mergeable according to GitHub. If the PR is not mergeable yet, this most likely means that the PR is not meeting all branch protection rules you have set (for example, not all required status checks have passed yet) or has a merge conflict with the target branch
 3. The target branch of the pull request to match the branch that merge queue merges into
 
-<figure><img src="../.gitbook/assets/image (2).png" alt="" width="510"><figcaption><p>PR readiness details for a PR that has been submitted but has not yet entered the merge queue. In this example, the queue is waiting for impacted targets to be uploaded for the PR and is also waiting for the PR to be mergeable according to GitHub.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt="" width="510"><figcaption><p>PR readiness details for a PR that has been submitted but has not yet entered the merge queue. In this example, the queue is waiting for impacted targets to be uploaded for the PR and is also waiting for the PR to be mergeable according to GitHub.</p></figcaption></figure>
 
 In the screenshot above the PR's base branch matches the Merge branch, but the impacted targets are not yet uploaded, but it is not mergable on GitHub yet.
 
@@ -34,7 +34,7 @@ The PR Details panel has a dropdown menu (labeled "**..."**) with actions. From 
 2. Re-queue a PR if it is currently not in the queue
 3. Download any impacted targets that have been [uploaded](set-up-trunk-merge/impacted-targets.md#generating-impacted-targets) for the PR (uploading impacted targets is only required for [Parallel](set-up-trunk-merge/configuration.md#parallel-mode) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The "Remove from queue" action will remove the PR from the merge queue. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it:
 

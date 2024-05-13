@@ -184,6 +184,7 @@
   * [Using Trunk Merge with Bazel Projects](merge/using-trunk-merge-with-bazel-projects.md)
   * [Reference](merge/reference.md)
   * [Legacy Merge](merge/legacy/README.md)
+    * [Migrating From Merge V1 To V2](merge/legacy/migrating-from-merge-v1-to-v2.md)
     * [Getting Started](merge/legacy/getting-started.md)
     * [Configuration](merge/legacy/configuration.md)
     * [Using the Webapp](merge/legacy/using-the-webapp.md)

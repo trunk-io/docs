@@ -39,7 +39,7 @@ Team members can be added automatically by setting the email domain, or by indiv
 * Add your team's email domain. This will automatically add any existing and future Trunk users with an email in your domain to your Organization. This will not send invitations to any users to\
   confirm being added.&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Adding teammates by email.
 
