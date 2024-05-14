@@ -64,4 +64,4 @@ If you submit a PR D with a `"high"` priority it will be put in front of C (sinc
 
 If instead you submit PR D with an `"urgent"` priority, then D would be tested immediately,  A would be restarted, and B would be bumped back to pending, like this:
 
-<img src="../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (2).svg" alt="queue with an urgent PR moved to the front and a normal PR restarting" class="gitbook-drawing">
