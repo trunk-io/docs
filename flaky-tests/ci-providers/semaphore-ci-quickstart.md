@@ -1,4 +1,8 @@
-# Semaphore CI Quickstart
+---
+description: Configure Flaky Tests detection using Semaphore CI
+---
+
+# Semaphore CI
 
 ## Getting Started
 

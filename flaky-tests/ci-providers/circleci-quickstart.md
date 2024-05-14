@@ -1,4 +1,8 @@
-# CircleCI Quickstart
+---
+description: Configure Flaky Tests detection using CircleCI
+---
+
+# CircleCI
 
 ## Getting Started
 
@@ -10,7 +14,7 @@ The Trunk Flaky Tests uploader currently only supports Linux x64. If you have an
 
 ### Create a CircleCI Workflow
 
-Create a CircleCI workflow (or modify an existing one) to run the tests that you want to monitor. The workflow should produce a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format. Most testing frameworks support XML output. See [Testing Framework Configuration](frameworks/) for guides for common testing frameworks. Make sure that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.&#x20;
+Create a CircleCI workflow (or modify an existing one) to run the tests that you want to monitor. The workflow should produce a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format. Most testing frameworks support XML output. See [Testing Framework Configuration](../frameworks/) for guides for common testing frameworks. Make sure that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.&#x20;
 
 ### Find Organization Slug and Token
 
@@ -22,7 +26,7 @@ Next you will need your Trunk **organization slug** and **token.** Navigate to [
 
 In your CircleCI project settings under **Environment Variables**, create new variables for your Trunk org as `TRUNK_ORG_SLUG` and the api token as `TRUNK_API_TOKEN`.&#x20;
 
-<figure><img src="../.gitbook/assets/CircleCI-env-var-settings-screenshot.png" alt=""><figcaption><p>CircleCI Project Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CircleCI-env-var-settings-screenshot.png" alt=""><figcaption><p>CircleCI Project Settings</p></figcaption></figure>
 
 ### Add Uploader to Testing Workflow
 

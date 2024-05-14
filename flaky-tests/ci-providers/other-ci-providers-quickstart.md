@@ -1,6 +1,8 @@
-# Other CI Providers Quickstart
+---
+description: Configure Flaky Tests detection using any CI Provider
+---
 
-Trunk Flaky Tests natively supports GitHub Actions. If you use a different CI provider, you can still use Trunk Flaky Tests with a few extra steps.
+# Other CI Providers
 
 ## Getting Started
 
