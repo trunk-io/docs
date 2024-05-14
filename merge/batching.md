@@ -16,6 +16,8 @@ Without batching enabled, Merge will test PRs individually in order. For example
 
 **main <- A <- B <- C <- D**
 
+<img src="../.gitbook/assets/file.excalidraw (3).svg" alt="four PRs testing" class="gitbook-drawing">
+
 A, B, C, and D will all begin testing individually. For D to merge, A, B, and C must pass and merge themselves (or be kicked from the queue when they fail).&#x20;
 
 In this scenario, it is highly likely that the same tests will be run multiple times, once for each PR.  Additionally, if A, B, or C fails, it will cause other PRs in the queue to restart.
@@ -24,13 +26,13 @@ In this scenario, it is highly likely that the same tests will be run multiple t
 
 Merge will group PRs together into Batches based on the **Minimum Batch Size**. In the example above, if the **batch size** was set to **4** then all of the PRs would be grouped into a single branch and tested as a whole, resulting in 1/4th the testing work.
 
-**main <- ABCD**
+<img src="../.gitbook/assets/file.excalidraw (4).svg" alt="four PRs in a single batch" class="gitbook-drawing">
 
 ### Batch Size and Timeouts
 
 The Target Batch Size controls how many PRs merge puts into a single batch.  When batches are enabled Merge will wait until the batch is filled before processing any of the PRs. For example: if the target batch size was set to 4 with the PRs A, B, C the queue would look like this
 
-**main <- A <- B <- C**&#x20;
+<img src="../.gitbook/assets/file.excalidraw (5).svg" alt="3 PRs in a batch watiing for a fourth" class="gitbook-drawing">
 
 Merge will not create a batch until a fourth PR comes in. Since this could be a while, you can set a **Maximum Wait Time.** Merge will wait up until the wait time, and then will process the partially filled batch.
 
@@ -46,13 +48,9 @@ The [_Optimistic Merging_](anti-flake-protection.md#optimistic-merging) and [_Pe
 
 The **Pending Failure Depth** makes the queue hold onto failed PRs before kicking them out of the queue. **Optimistic Merging** makes the queue merge a failed PR if the one after it succeeds. These features apply to both batches and individual PRs.
 
-For example: suppose the batch size is set to 4, Optimistic Merging is enabled, and the Pending Failure Depth is set to 1.  There are eight PRs in the queue like this:
+For example: suppose the batch size is set to 4, Optimistic Merging is enabled, and the Pending Failure Depth is set to 1.  There are eight PRs in the queue.  With batching the queue will be converted into two batches.
 
-**main <- A <- B <- C <- D <- E <- F <- G <- H**
-
-With batching the queue will be converted into two batches.
-
-**main <- ABCD <- EFGH**
+<img src="../.gitbook/assets/file.excalidraw (6).svg" alt="Eight PRs in two batches" class="gitbook-drawing">
 
 Now suppose **ABCD** fails. Because Pending Failure Depth is set to 1 the batch stays in the queue until **EFGH** is tested.
 
