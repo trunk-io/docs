@@ -47,6 +47,7 @@ redirects:
   docs/vscode: check/ide-integration/vs-code.md
   docs/what-is-trunk: readme.md
   docs/windows-beta: check/cli/windows-beta.md
+  flaky-tests/generating-junit-reports: flaky-tests/frameworks/README.md
   get-started: welcome.md
   merge-graph: merge/readme.md
   merge-graph/merge: merge/legacy/readme.md
