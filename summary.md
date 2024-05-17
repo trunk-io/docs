@@ -111,6 +111,7 @@
       * [Trivy](check/configuration/supported/trivy.md)
       * [Trufflehog](check/configuration/supported/trufflehog.md)
       * [txtpbfmt](check/configuration/supported/txtpbfmt.md)
+      * [vale](check/configuration/supported/vale.md)
       * [Yamllint](check/configuration/supported/yamllint.md)
       * [yapf](check/configuration/supported/yapf.md)
     * [Hold the Line](check/configuration/hold-the-line.md)
