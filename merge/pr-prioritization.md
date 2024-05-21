@@ -1,8 +1,8 @@
 ---
-description: Control the order PRs are tested and merged in the Merge Queue
+description: Control the order pull requests are tested and merged in the Merge Queue
 ---
 
-# PR Prioritization
+# Priority
 
 When a high-priority change must be merged quickly but still validated by the Merge queue, you can use **PR Prioritization** to create a PR that goes through the queue faster than others.
 

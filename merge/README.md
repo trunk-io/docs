@@ -8,7 +8,19 @@ description: Parallel-powered Merge Queue to speed up developer workflows.
 
 
 **Why use a merge queue?**\
-Merge queues automate PR merges into your repo's `main` branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000+ active engineers.\
+Merge queues automate PR merges into your repo's `main` branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000+ active engineers.
+
+**How does a merge queue work?**
+
+1. Instead of merging your pull requests directly through GitHub, engineers submit their pull requests to the merge queues service. A pull request can be submitted to the queue before passing CI or code review is complete. Once the pre-requisites for the queue have been met - the pull request will formally enter the queue.
+2. Trunk Merge will test your pull request against the changes ahead of it in the queue so that the changes are tested against the predicted view of the branch, assuming everything ahead of it merges successfully. This process is called [**predictive testing** ](predictive-testing.md)and is illustrated in the video below.
+3. When all the required tests are passing, Trunk will merge your pull request into the protected branch automatically.
+4. If your pull requests fails testing - it will either be retested or removed from the queue for further inspection by the author.
+
+{% embed url="https://share.vidyard.com/watch/31gaLwGNSYTn2ec2BSQjkn" %}
+predictive testing // test pull requests ahead of you in the queue with your changes
+{% endembed %}
+
 \
 **Why are Merge Queues recommended for large monorepos?**\
 As the number of concurrent, unrelated changes to a repository grows, the likelihook of a [logical merge conflict](https://trunk.io/blog/what-is-a-logical-merge-conflict) increases. A logical merge conflict creates what is often referred to as a "broken main". \
