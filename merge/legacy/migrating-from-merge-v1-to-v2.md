@@ -41,5 +41,6 @@ If you wish to migrate yourself over before this date, you can do so by deleting
    1. This is to make sure that no pull requests get submitted to the queue while you are performing these steps
 2. Delete the merge queue from the settings page for your repo
 3. Go back to the Merge tab for your repository and re-create it. Select "Single" mode, as that matches exactly how your older merge queue operated and does not require additional setup
+4. If your merge queue is currently sending slack notifications to a specific channel, you will need to reconnect your merge queue to slack. The process for doing this is no different than when this was initially set up for your mergequeue, and can be found [here](https://docs.trunk.io/merge/set-up-trunk-merge/integration-for-slack#merge-queue-specific-notifications)
 
 If you have any questions, reach out on our [slack](https://join.slack.com/t/trunkcommunity/shared\_invite/zt-2ij902iie-QeVEgHfyIJP76XdlFuJz5g)!
