@@ -10,7 +10,7 @@ description: >-
 This article only applies to customers currently using an older Trunk  merge queue. Older versions will not have a "Graph" tab in the Merge UI, as seen below - if you do not have this tab, you are running on Merge V1. A banner will also show up on the Merge UI alerting you to this planned migration if you are on Merge V1.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Trunk Merge Queues that do not show the "Graph" tab on the UI are currently using a V1 Merge Queue.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Trunk Merge Queues that do not show the "Graph" tab on the UI are currently using a V1 Merge Queue.</p></figcaption></figure>
 
 {% hint style="warning" %}
 On **July 20th, 2024**, Trunk will migrate all merge queues created before November 16th, 2023. Below details this process and how to manually migrate your own merge queue.
