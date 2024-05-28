@@ -4,63 +4,42 @@ description: Speed up your testing and merging workflow with Merge Batching
 
 # Batching
 
-Normally, even when PRs depend on each other, they are always tested and merged individually. In a high velocity codebase it can make more sense to group PRs into batches. This is called Batching.
+Batching allows multiple pull requests in the queue to be tested as a single unit. Given the same CI resources, a system with batching enabled can achieve higher throughput while also reducing the net amount of CI time spent per pull request. \
+\
+By enabling batching, the cost per pull request in the Merge Queue can be reduced by almost 90%. For example, in the table below, you can see how batching affects the amount spent testing pull requests in the queue.&#x20;
+
+{% embed url="https://share.vidyard.com/watch/BsPi6f1KHvsa6wE18ySAJf" %}
+example of testing pull requests in batches of 3
+{% endembed %}
+
+<table><thead><tr><th data-type="number">Batch Size</th><th width="323">Pull Requests</th><th>Testing Cost</th><th>Savings</th></tr></thead><tbody><tr><td>1</td><td><strong>A</strong>, <strong>B</strong>, <strong>C</strong>, <strong>D</strong>, <strong>E</strong>, <strong>F</strong>, <strong>G</strong>, <strong>H, I, J, K, L</strong></td><td>12<code>x</code></td><td>0%</td></tr><tr><td>2</td><td><strong>AB, CD, EF, GH, IJ</strong></td><td>6<code>x</code></td><td>50%</td></tr><tr><td>4</td><td><strong>ABCD</strong>, <strong>EFGH, IJKL</strong></td><td>3<code>x</code></td><td>75%</td></tr><tr><td>8</td><td><strong>ABCDEFGH, IJKL</strong></td><td><code>1.5x</code></td><td>87.5%</td></tr><tr><td>12</td><td><strong>ABCDEFGHIJKL</strong></td><td><code>1x</code></td><td>92%</td></tr></tbody></table>
 
 {% hint style="info" %}
 Note that batching only works when Merge is set to single queue mode.
 {% endhint %}
 
-## Without Batching
+#### Configuring Batching
 
-Without batching enabled, Merge will test PRs individually in order. For example, suppose we have a queue with four PRs called A, B, C, and D that is set to test four PRs at a time (in other words, has a [concurrency](https://docs.trunk.io/merge/set-up-trunk-merge/advanced-settings#concurrency) of 4):
+The behavior of batching is controlled by two settings in the Merge Queue:\
+\
+**Target Batch Size:** The largest number of entries in the queue that will be tested in a single batch. A larger target batch size will help reduce CI cost per pull request but require more work to be performed when progressive failures necessitate bisection.\
+\
+**Maximum Wait Time:** The maximum amount of time the Merge Queue should wait to fill the target batch size before beginning testing. A higher maximum wait time will cause the Time-In-Queue metric to increase but have the net effect of reducing CI costs per pull request.
 
-**main <- A <- B <- C <- D**
+<table><thead><tr><th>Time (mm:ss)</th><th width="323">Batching 4;  Maximum Wait 5 minutes</th><th>Testing</th></tr></thead><tbody><tr><td>00:00</td><td><strong>enqueue A</strong></td><td><code>----</code></td></tr><tr><td>01:00</td><td><strong>enqueue B</strong></td><td><code>----</code></td></tr><tr><td>02:30</td><td><strong>enqueue C</strong></td><td><code>----</code></td></tr><tr><td>05:00</td><td>5 min maximum wait time reached</td><td><code>Begin testing ABC</code></td></tr></tbody></table>
 
-<img src="../.gitbook/assets/file.excalidraw (3).svg" alt="four PRs testing" class="gitbook-drawing">
+#### What happens when a batch fails testing?
 
-A, B, C, and D will all begin testing individually. For D to merge, A, B, and C must pass and merge themselves (or be kicked from the queue when they fail).&#x20;
+If a batch fails, Trunk Merge will move it to a separate queue for bisection analysis. In this queue, the batch will be split in various ways and tested in isolation to determine the PRs in the batch that introduced the failure. PRs that pass this way will be moved back to the main queue for re-testing. PRs that are believed to have caused the failure are kicked from the queue.
 
-In this scenario, it is highly likely that the same tests will be run multiple times, once for each PR.  Additionally, if A, B, or C fails, it will cause other PRs in the queue to restart.
+#### Batching + Optimistic Merging and Pending Failure Depth
 
-## With Batching
+By enabling batching along with [pending failure depth](pending-failure-depth.md) and [optimistic merging](optimistic-merging.md) you can realize the major cost savings of batching while still reaping the [anti-flake ](anti-flake-protection.md)protection of optimistic merging and pending failure depth.\
 
-Merge will group PRs together into Batches based on the **Minimum Batch Size**. In the example above, if the **batch size** was set to **4** then all of the PRs would be grouped into a single branch and tested as a whole, resulting in 1/4th the testing work.
 
-<img src="../.gitbook/assets/file.excalidraw (4).svg" alt="four PRs in a single batch" class="gitbook-drawing">
-
-### Batch Size and Timeouts
-
-The Target Batch Size controls how many PRs merge puts into a single batch.  When batches are enabled Merge will wait until the batch is filled before processing any of the PRs. For example: if the target batch size was set to 4 with the PRs A, B, C the queue would look like this
-
-<img src="../.gitbook/assets/file.excalidraw (5).svg" alt="3 PRs in a batch watiing for a fourth" class="gitbook-drawing">
-
-Merge will not create a batch until a fourth PR comes in. Since this could be a while, you can set a **Maximum Wait Time.** Merge will wait up until the wait time, and then will process the partially filled batch.
-
-## Handling Failures
-
-If a batch fails then Merge will move the batch to a separate queue for bisection analysis.  In this queue the batch will be split in various ways and tested in isolation in order to determine the PRs in the batch that introduced the failure. PRs that pass this way will be moved back to the main queue for re-testing. PRs that are believed to have caused the failure are kicked from the queue.
-
-### Optimistic Merging and Pending Failure Depth
-
-{% hint style="info" %}
-The [_Optimistic Merging_](anti-flake-protection.md#optimistic-merging) and [_Pending Failure Depth_](anti-flake-protection.md#pending-failure-depth) features of Merge work together to make batching much more performant.
-{% endhint %}
-
-The **Pending Failure Depth** makes the queue hold onto failed PRs before kicking them out of the queue. **Optimistic Merging** makes the queue merge a failed PR if the one after it succeeds. These features apply to both batches and individual PRs.
-
-For example: suppose the batch size is set to 4, Optimistic Merging is enabled, and the Pending Failure Depth is set to 1.  There are eight PRs in the queue.  With batching the queue will be converted into two batches.
-
-<img src="../.gitbook/assets/file.excalidraw (6).svg" alt="Eight PRs in two batches" class="gitbook-drawing">
-
-Now suppose **ABCD** fails. Because Pending Failure Depth is set to 1 the batch stays in the queue until **EFGH** is tested.
-
-If **EFGH** fails then both will be kicked from the queue. However, if **EFGH** passed then **ABCD** was probably a transient failure. With Optimistic Merging turned on, both ABCD and EFGH will be merged.
-
-These two features apply to the main queue as well as the bisection queue.
+<table><thead><tr><th width="331">event</th><th>queue</th></tr></thead><tbody><tr><td>Enqueue  <strong>A</strong>, <strong>B</strong>, <strong>C, D, E, F, G</strong></td><td><code>main</code> &#x3C;- <strong>ABC</strong> &#x3C;- <strong>DEF</strong> +abc </td></tr><tr><td>Batch ABC fails</td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark></td></tr><tr><td>pending failure depth keeps <strong>ABC</strong> from  being evicted while <strong>DEF</strong></td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark> (hold) &#x3C;- <strong>DEF</strong>+abc</td></tr><tr><td><strong>DEF</strong> passes</td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark>  &#x3C;- <mark style="color:green;"><strong>DEF</strong>+abc</mark></td></tr><tr><td>optimistic merging allows <strong>ABC</strong> and <strong>DEF</strong> to merge</td><td><code>merge</code> <strong>ABC</strong>, <strong>DEF</strong></td></tr></tbody></table>
 
 Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly improve your CI performance because now Merge can optimistically merge whole batches of PRs, with far less wasted testing.
-
-
 
 ## Enable Batching
 
