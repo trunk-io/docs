@@ -1,5 +1,7 @@
 ---
-description: Parallel-powered Merge Queue to speed up developer workflows.
+description: >-
+  Enterprise scale merge queue to merge pull requests quickly while protecting
+  your main branch
 ---
 
 # Merge
@@ -8,40 +10,29 @@ description: Parallel-powered Merge Queue to speed up developer workflows.
 
 
 **Why use a merge queue?**\
-Merge queues automate PR merges into your repo's `main` branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000+ active engineers.\
-\
-**Why are Merge Queues recommended for large monorepos?**\
-As the number of concurrent, unrelated changes to a repository grows, the likelihook of a [logical merge conflict](https://trunk.io/blog/what-is-a-logical-merge-conflict) increases. A logical merge conflict creates what is often referred to as a "broken main". \
-\
-There are two common ways a `main` branch can become broken:
+Merge queues automate PR merges into your repo's `main` branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000+ active engineers.
 
-1. A PR was branched off of on an old commit of `main`, passed tests when run against that old view of main, but when merged into `main` no longer functions as expected.
-2. Two (or more) PRs made code changes that when tested independently function correctly, but not when combined onto main. e.g. - PR-1 adds a new test that calls function foo() while PR-2 renames the existing function foo() to bar(). In this case both PRs are correct in isolation but they are in conflict once merged onto main.
+**Why do teams adopt a merge queue?**\
+As the number of concurrent, changes to a repository grows, the likelihood that your pull request has stale/invalid test results increases. The only way to guarantee that your `main` branch doesn not become "broken" is to make sure that all code changes are tested against the head of `main`.&#x20;
 
-Either way, the more pull request velocity you have in a repo, the more often issues like these arise. A merge queue handles these problematic conflicts by testing PRs queued to be merged _in combination, based on the latest `main`,_ and only if the extra combination testing passes do they merge.
+As an example:
 
-### [Queue Mode](set-up-trunk-merge/configuration.md) (Single vs. Parallel) <a href="#single-mode-vs-parallel-mode" id="single-mode-vs-parallel-mode"></a>
+1. Jack opens pull request **A** which renames the function `foo()` to `bar()` and updates all the call sites to the new name.&#x20;
+2. Jill opens pull request **B** which adds a new file that uses the existing function `foo().`
+3. Jack and Jill are not aware of each other's PRs, and the automated build and tests for each of these independent pull requests both pass.
+4. Regardless of order, when pull requests **A** and **B** both merge, there is code in the system calling the function `foo()` that no longer exists.&#x20;
+5. The build is now broken.
 
-#### Single Mode
+A merge queue's purpose is to give you the guarantee of all code being tested against `main` without actually doing that work serially or in reaction to code merging onto main. The merge queue service predicts the future state of `main` and tests against that. ([see predictive testing](predictive-testing.md)). Returning to our example - pull requests A and B would both be submitted to the merge queue, which would then perform the predictive testing to ensure that A and B, when combined, do not break the build.
 
-In Single mode, Trunk Merge acts like a typical queue: first in, first out. All PRs are tested and merged in the order they arrived. It will still test many combinations of enqueued PRs at once against each other (and exactly how many is a configuration option), but fundamentally, regardless of whether two PRs are completely unrelated, it will test them against each other. This is a simple and effective way to start using Trunk Merge.
+**What is unique about Trunk Merge?**
 
-#### Parallel mode
-
-In Parallel mode, Trunk knows which PRs are related and which are unrelated and can function effectively as having many merge queues in the same repo, queueing only related PRs on top of one another. Trunk knows the relationship between PRs by you sending it to us; we call this [Impacted Targets](set-up-trunk-merge/impacted-targets.md) and it can be information pulled from build systems like Bazel, Nx, or Turborepo, or it can be defined by a set of glob file matching patterns.
-
-### Build system integration
-
-Trunk Merge in [Parallel Mode](./#parallel-mode) uses information from build systems to optimize merging code. This can be set for _**any**_** build system**, but we currently have first-class support for...
-
-#### Bazel Integration
-
-Trunk Merge has [first-class support](https://github.com/trunk-io/merge-action) for Bazel with GitHub Actions. Trunk Merge will automatically form a graph of PRs in parallel mode that mirrors the Bazel dependency graph relationship between the code changed in each PR. Testing enqueued PRs via Trunk Merge tests against _only_ other enqueued PRs with overlapping bazel dependencies. Read more about how to hook this up in the[ Impacted Targets docs](set-up-trunk-merge/impacted-targets.md).
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
 
 #### **Requirements**
 
-Trunk Merge works with any CI provider as long as you use GitHub for your repo hosting.
-
-## Getting Started
-
-Setup Trunk Merge with your repo [now](set-up-trunk-merge/).
+Trunk Merge works with any CI provider as long as you use GitHub for your repo hosting.\
+\
+**Next Steps**\
+\
+[Talk to a Developer](https://calendly.com/trunk/demo) || [Getting started on your own](set-up-trunk-merge/)\
