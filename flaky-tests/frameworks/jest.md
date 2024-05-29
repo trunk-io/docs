@@ -1,5 +1,5 @@
 ---
-description: ${meta_desc}
+description: Jest is a Javascript testing framework that can be configured to output XML
 title: Configuring jest
 layout:
   title:
@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-Jest is a testing framework for JavaScript and TypeScript.
+Jest is a testing framework for Javascript and Typescript.
 
 # Enabling XML Output
 Configure Jest to produce [JUnit XML](https://github.com/testmoapp/junitxml) output. 

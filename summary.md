@@ -214,6 +214,7 @@
     * [Jest](flaky-tests/frameworks/jest.md)
     * [Mocha](flaky-tests/frameworks/mocha.md)
     * [Pytest](flaky-tests/frameworks/pytest.md)
+    * [RSpec](flaky-tests/frameworks/rspec.md)
 * [CI Debugger (beta)](ci-debugger/README.md)
   * [Overview](ci-debugger/README.md)
   * [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)

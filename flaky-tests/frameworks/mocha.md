@@ -1,5 +1,5 @@
 ---
-description: ${meta_desc}
+description: Mocha is a Javascript testing framework that can be configured to output XML
 title: Configuring mocha
 layout:
   title:
@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-Mocha is a testing framework for JavaScript and TypeScript.
+Mocha is a testing framework for Javascript and Typescript.
 
 # Enabling XML Output
 Mocha can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by adding the [`mocha-junit-reporter`](https://www.npmjs.com/package/mocha-junit-reporter)  package to your codebase.

@@ -1,5 +1,5 @@
 ---
-description: ${meta_desc}
+description: PyTest is a testing framework for Python that can be configured to output XML
 title: Configuring pytest
 layout:
   title:
@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-Pytest is a testing framework for JavaScript and TypeScript.
+Pytest is a testing framework for Python.
 
 # Enabling XML Output
 Pytest can produce [JUnit XML](https://github.com/testmoapp/junitxml) output by running with the `--junit-xml=` option.

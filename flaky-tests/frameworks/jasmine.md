@@ -1,5 +1,5 @@
 ---
-description: ${meta_desc}
+description: Jasmine is a test runner and testing framework for Javascript and Typescript
 title: Configuring jasmine
 layout:
   title:
@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-Jasmine is a testing framework for JavaScript and TypeScript.
+Jasmine is a testing framework for Javascript and Typescript.
 
 # Enabling XML Output
 Configure Jasmine to produce [JUnit XML](https://github.com/testmoapp/junitxml) output. 
