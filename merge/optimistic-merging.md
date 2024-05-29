@@ -18,4 +18,4 @@ You can enable optimistic merging through the [Merge UI](using-the-webapp.md) se
 
 **What are the risks of optimistic merging?**
 
-The downsides here are very limited. You essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch. In the unlikely case that you have to revert a change from your protected branch - you will need to retest that revert to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
+The downsides here are very limited. You essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch. In the unlikely case that you have to revert a change from your protected branch, you will need to retest that revert or submit it to the queue to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.

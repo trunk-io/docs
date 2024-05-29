@@ -41,6 +41,10 @@ By enabling batching along with [pending failure depth](pending-failure-depth.md
 
 Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly improve your CI performance because now Merge can optimistically merge whole batches of PRs, with far less wasted testing.
 
+**What are the risks of batching?**
+
+The downsides here are very limited. Since batching combines multiple pull requests into one, you essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch. In the unlikely case that you have to revert a change from your protected branch or do a rollback, you will need to retest that revert or submit it to the queue to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
+
 ## Enable Batching
 
 Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](https://app.trunk.io/).
