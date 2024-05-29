@@ -212,6 +212,7 @@
     * [Cypress](flaky-tests/frameworks/cypress.md)
     * [Jasmine](flaky-tests/frameworks/jasmine.md)
     * [Jest](flaky-tests/frameworks/jest.md)
+    * [minitest](flaky-tests/frameworks/minitest.md)
     * [Mocha](flaky-tests/frameworks/mocha.md)
     * [Pytest](flaky-tests/frameworks/pytest.md)
     * [RSpec](flaky-tests/frameworks/rspec.md)
