@@ -210,6 +210,7 @@
     * [Other CI Providers](flaky-tests/ci-providers/other-ci-providers-quickstart.md)
   * [Test Frameworks](flaky-tests/frameworks/README.md)
     * [Cypress](flaky-tests/frameworks/cypress.md)
+    * [Jasmine](flaky-tests/frameworks/jasmine.md)
     * [Jest](flaky-tests/frameworks/jest.md)
     * [Mocha](flaky-tests/frameworks/mocha.md)
     * [Pytest](flaky-tests/frameworks/pytest.md)
