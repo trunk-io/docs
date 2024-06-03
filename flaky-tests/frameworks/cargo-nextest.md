@@ -73,6 +73,8 @@ You can change the name of the report with the `report-name` option.  Nextest wi
 
 
 ## Further Information
-[Documentation](https://nexte.st/book/configuration) for `cargo-nextest` config file.
+See an example of **cargo-nextest** invoked form a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/rust-tests.yaml).
+
+[Documentation](https://nexte.st/book/configuration) for the `cargo-nextest` config file.
 
 
