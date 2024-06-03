@@ -40,8 +40,6 @@ end
 ```
 
 
-
-
 # Test Suite Naming
 
 The output file can be configured where you require `minitest` and use the `JUnitReporter`. The first argument to the constructor sets the output file.
