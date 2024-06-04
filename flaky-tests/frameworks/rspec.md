@@ -31,7 +31,7 @@ rspec src --format RspecJunitFormatter
 
 # Test Suite Naming
 
-The output file can bet set with the `--out` option like this:
+The output file can be set with the `--out` option like this:
 
 ```undefined
 rspec src --format RspecJunitFormatter --out rspec_test.xml
