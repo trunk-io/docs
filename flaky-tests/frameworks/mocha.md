@@ -73,13 +73,3 @@ var mocha = new Mocha({
 See an example of MochaJS invoked form a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/javascript-tests.yaml#L29).
 
 
-
-MochaJS is only one of several popular testing frameworks for Javascript & Typescript. You might also want to look at:
-
-* [Jest](https://trunk.io/testing/jest)
-
-* [Jasmin](https://jasmine.github.io/)
-
-* [Vitest](https://vitest.dev/)
-
-

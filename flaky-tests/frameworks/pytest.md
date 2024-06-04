@@ -61,12 +61,4 @@ pytest --junitxml=output/path.xml -o junit_family=xunit1
 ## Further Information
 See an example of running **pytest** in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/python-tests.yaml#L34).
 
-**pytest** is only one of several popular testing frameworks for Python. You might also want to look at
-
-* [Behave](https://behave.readthedocs.io/en/latest/)
-
-* [Robot Framework](https://robotframework.org/)
-
-* Python [unittest](https://docs.python.org/3/library/unittest.html)
-
 

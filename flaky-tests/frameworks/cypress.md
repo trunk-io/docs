@@ -73,13 +73,7 @@ The default attributes [can be configured](https://www.npmjs.com/package/mocha-j
 
 
 
-## Further Information
-Cypress is only one of several popular testing frameworks for web front ends. You might also want to look at
 
-* [Jest](https://trunk.io/testing/jest)
 
-* [MochaJS](https://trunk.io/testing/mocha)
-
-* [Vitest](https://vitest.dev/)
 
 
