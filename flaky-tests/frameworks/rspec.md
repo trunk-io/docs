@@ -33,7 +33,7 @@ rspec src --format RspecJunitFormatter
 
 The output file can be set with the `--out` option like this:
 
-```undefined
+```shell
 rspec src --format RspecJunitFormatter --out rspec_test.xml
 ```
 
