@@ -1,6 +1,6 @@
 ---
+description: Cypress is a tool for testing dynamic web front end code.
 title: Configuring cypress
-description: ${meta_desc}
 layout:
   title:
     visible: true
@@ -14,19 +14,15 @@ layout:
     visible: true
 ---
 
-# Cypress
+Cypress is a testing framework for Webapps.
 
-Cypress is a testing framework for JavaScript and TypeScript.
-
-## Enabling XML Output
-
+# Enabling XML Output
 Cypress can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by adding the [mocha-junit-reporter](https://github.com/michaelleeallen/mocha-junit-reporter) package to your codebase and modify the config file to add it as a reporter.
 
 ```shell
 npm install --save-dev mocha-junit-reporter
 ```
-
-`cypress.config.js` or [similar file](https://docs.cypress.io/guides/references/configuration).
+`cypress.config.js` or [similar file](https://docs.cypress.io/guides/references/configuration). 
 
 ```javascript
 const { defineConfig } = require('cypress')
@@ -37,22 +33,21 @@ module.exports = defineConfig({
   },
 })
 ```
-
 Now you can run Cypress from the command line with
 
 ```shell
 cypress run
 ```
-
 And from within your CI system the same way
 
 ```shell
 cypress run
 ```
 
-## Test Suite Naming
 
-The `mocha-junit-reporter` will automatically fill in values for the and `name` and `class` attributes.&#x20;
+# Test Suite Naming
+
+The `mocha-junit-reporter` will automatically fill in values for the _<testcase>_ and _<testsuite>_ `name` and `class` attributes. 
 
 ```javascript
 describe('addition', () => {
@@ -63,7 +58,6 @@ describe('addition', () => {
   });
 });
 ```
-
 would produce output that looks like this:
 
 ```xml
@@ -75,15 +69,11 @@ would produce output that looks like this:
   </testsuite>
 </testsuites>
 ```
-
 The default attributes [can be configured](https://www.npmjs.com/package/mocha-junit-reporter) with the `reporterOptions` argument in the Cypress config.
 
-## Further Configuration
 
-## Other Testing Frameworks
 
-Cypress is only one of several popular testing frameworks for web front ends. You might also want to look at
 
-* [Jest](https://trunk.io/testing/jest)
-* [MochaJS](https://trunk.io/testing/mocha)
-* [Vitest](https://vitest.dev/)
+
+
+
