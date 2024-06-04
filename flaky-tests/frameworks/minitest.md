@@ -36,7 +36,6 @@ class ColorMixerTest < Minitest::Test
     assert mixer.mix('red', 'blue') == 'purple'
   end
 end
-  
 ```
 
 
@@ -47,7 +46,6 @@ The output file can be configured where you require `minitest` and use the `JUni
 ```ruby
 Minitest::Reporters.use! Minitest::Reporters::JUnitReporter
   .new('ruby/minitest/results', write_files: true)
-
 ```
 
 
