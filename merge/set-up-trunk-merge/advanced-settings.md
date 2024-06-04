@@ -4,7 +4,7 @@ description: >-
   protection.
 ---
 
-# Advanced Settings
+# Settings
 
 We offer some knobs and dials when configuring Merge. All of the following settings are specific to individual Merge Queues, and can be applied can be applied at [app.trunk.io](https://app.trunk.io) in the `Settings > Repositories > Repo-Name` page.
 
@@ -26,7 +26,7 @@ If you're unsure about what timeout to set, you can use our [CI Analytics](https
 
 For example, assuming a timeout of 4 hours:
 
-* At 3:00, Bob submits PR 456 to the MergeQueue.
+* At 3:00, Bob submits PR 456 to the Merge Queue.
 * At 3:05, PR 456 starts testing using Bob's CI system.
 * At 7:05, Trunk cancels PR 456, since PR 456 is still testing.
 
@@ -40,10 +40,10 @@ If your testing workload contains some flaky tests, a deeper queue (i.e. a highe
 
 For example, assuming a concurrency of 3:
 
-* At 12:00, Alice submits PR 1000 to the MergeQueue, and it starts testing.
-* At 12:05, Bob submits PR 888 to the MergeQueue, and it starts testing.
-* At 12:10, Charlie submits PR 777 to the MergeQueue, and it starts testing.
-* At 12:15, Alice submits PR 1001 to the MergeQueue. Tests do not start, because the MergeQueue is at its concurrency limit.
+* At 12:00, Alice submits PR 1000 to the Merge Queue, and it starts testing.
+* At 12:05, Bob submits PR 888 to the Merge Queue, and it starts testing.
+* At 12:10, Charlie submits PR 777 to the Merge Queue, and it starts testing.
+* At 12:15, Alice submits PR 1001 to the Merge Queue. Tests do not start, because the Merge Queue is at its concurrency limit.
 
 ## Branch Protection
 
