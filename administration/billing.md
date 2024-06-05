@@ -17,15 +17,15 @@ A user is a non-bot user who have made a commit to a private repo with Trunk ena
 
 For example, consider Alice, Bob, and Charlie are all in the same organization, which owns two private repos: `abc/repo1` and `abc/repo2`. Given the following timeline of events:
 
-| Day 1                              | Day 35                           | Day 42                               |
+| Day 1                              | Day 15                           | Day 22                               |
 | ---------------------------------- | -------------------------------- | ------------------------------------ |
 | Alice commits code to `abc/repo1`. | Bob commits code to `abc/repo2`. | Charlie commits code to `abc/repo1`. |
 
-On Day 30, the user count would be 1: just Alice.\
-On Day 40, the user count would be two: Alice and Bob, since the same organization owns both private repos.\
-On Day 50, the user count would be three: Alice, Bob, and Charlie.\
-On Day 90, the user count would be three. We consider days 1 thru 90 (inclusive), which includes Alice's, Bob's, and Charlie's commits.\
-On Day 91, the user count would be two. We consider days 2 thru 91 (inclusive), which only includes Bob's and Charlie's commits.
+On Day 1, the user count would be **one**: just Alice.\
+On Day 15, the user count would be **two**: Alice and Bob, since the same organization owns both private repos.\
+On Day 22, the user count would be **three**: Alice, Bob, and Charlie.\
+On Day 30, the user count would be **three**. We consider days 1 thru 30 (inclusive), which includes Alice's, Bob's, and Charlie's commits.\
+On Day 31, the user count would be **two**. We consider days 2 thru 31 (inclusive), which only includes Bob's and Charlie's commits.
 
 ### Calculating an Invoice
 
