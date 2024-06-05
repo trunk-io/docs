@@ -8,11 +8,12 @@ description: Trunk Subscription Plans
 
 Trunk offers a monthly subscription plan using a per-seat model. We calculate the number of users using Trunk at the end of every billing period, and update the next month’s invoice to reflect the latest user count.
 
-If you are the admin of your organization, you can view your current billing settings by navigating to Settings > Billing.
+If you are the admin of your organization, you can view your current billing settings by navigating to **Settings** > **Billing**.
 
 ### Calculating User Counts
 
-A user is defined as someone who has contributed to the main branch of your private repositories in the last 90 days. Specifically, we look at their username; if someone changes their username on Git, we would consider that a separate user.
+\
+A user is a non-bot user who have made a commit to a private repo with Trunk enabled in the last 30 days. Specifically, we look at their username; if someone changes their username on Git, _we would consider that a separate user_. We do not count contributions to public (open source) repos. Contributor counts are displayed on **Settings** > **Billing**.
 
 For example, consider Alice, Bob, and Charlie are all in the same organization, which owns two private repos: `abc/repo1` and `abc/repo2`. Given the following timeline of events:
 
@@ -42,7 +43,7 @@ At the beginning of the next billing cycle, they have exceeded their [free tier 
 
 **Free Plans**
 
-Trunk offers a free plan to experiment with each of our products. Each product has a free-tier limit; after exceeding this limit, the product is automatically added to any ongoing subscription, and will be billed on the next cycle. If there is no ongoing subscription, we prompt you to upgrade to a paying subscription.
+Trunk offers a free plan to experiment with each of our products. Each product has a free-tier limit; after exceeding this limit, the product is automatically added to any ongoing subscription, and will be billed on the next cycle. If there is no ongoing subscription, we prompt you to upgrade to a paid subscription.
 
 For example, this user is already paying for 19 users for Check and Merge, but was not paying for CI Analytics. On the next billing cycle, the user will start to be charged for CI Analytics.
 
@@ -50,19 +51,17 @@ For example, this user is already paying for 19 users for Check and Merge, but w
 
 **Free Tier Limits**
 
-Similar to \[calculating user counts]../administration/billing.md#calculating-user-counts), our free tier limits are calculated based on a 30 day rolling window.
+Similar to [calculating user counts](billing.md#calculating-user-counts), our free tier limits are calculated based on a 30 day rolling window.
 
-| Product      | Free Tier Limit         |
-| ------------ | ----------------------- |
-| Check        | 100,000 Files Checked   |
-| Merge        | 100 PRs Merged          |
-| CI Analytics | 14 Days of CI Analytics |
-
-CI Analytics is calculated slightly differently; we ingest 14 days of data for free.
+<table><thead><tr><th width="155">Product</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>5 commiters per month, unlimited on public repos</td></tr><tr><td>Check</td><td>Quality &#x26; security metrics</td><td>Up to 100k issues uploaded</td></tr><tr><td>Merge</td><td>PRs merged per month</td><td>100 PRs merged per month</td></tr><tr><td>CI Analytics</td><td>Real-time ingestion of data</td><td><p>14 days per repo</p><p></p></td></tr><tr><td></td><td>Data backfilling</td><td>Up to 30 days</td></tr></tbody></table>
 
 **Trials**
 
 Trunk offers you to trial products, either standalone or alongside a paying subscription. To enable a trial, please contact [sales@trunk.io](mailto:sales@trunk.io). At the end of a trial, the product will be automatically added to any ongoing paying subscription; to extend or cancel the trial, please contact [sales@trunk.io](mailto:sales@trunk.io).
+
+#### Open Source
+
+Trunk is also free for open-source projects. If you're a open source project maintainer and maintain your project in a public repo, you can use Trunk products at any scale without limitations.
 
 ### Editing Payment Details
 
