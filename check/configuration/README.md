@@ -121,6 +121,39 @@ lint:
     - tflint
 ```
 
+### Overwriting Linter Definitions
+
+Trunk's default linter definitions are found in the [trunk-io/plugins](https://github.com/trunk-io/plugins) repo. The definition for these linters can be overwritten if you need to change how the linters are run, toggle a flag, use additional packages, or use a different linter.\
+\
+You add definition overwrites by updating your `.trunk/trunk.yaml` config file.
+
+{% hint style="info" %}
+You only need to specify the parts of a linter definition that you need to override. Parts of the definition not found in your overwrite will use the default values.
+{% endhint %}
+
+\
+For example, overwriting the default pylint command.
+
+```yaml
+lint:
+  definitions:
+    - name: pylint
+      commands:
+        - name: lint
+          run: pylint --exit-zero --output ${tmpfile} --output-format json --my-other-flag ${target}
+```
+
+Changing the default `affects_cache` behavior.
+
+```yaml
+lint:
+  definitions:
+    - name: golangci-lint
+      affects_cache:
+        - cache/go.mod
+        - cache/go.sum
+```
+
 ### Installing additional packages
 
 We support installing additional packages along with your linter. For example, Pylint supports adding plugins which are installable as pip packages. For example, if you want to run the plugin `pylint-django` as part of your setup, you need to tell Trunk to install the package:
