@@ -59,6 +59,10 @@ Custom `required_statuses` defined in the `.trunk/trunk.yaml` file take preceden
 
 Trunk Merge creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
 
+{% hint style="info" %}
+If you already have tests that trigger on new PRs, you can use the [Draft PR Creation](https://docs.trunk.io/merge/set-up-trunk-merge/advanced-settings#draft-pr-creation) feature to let Trunk Merge create draft PRs instead of setting up a push triggered workflow.
+{% endhint %}
+
 For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:
 
 ```yaml

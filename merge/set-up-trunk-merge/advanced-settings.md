@@ -53,6 +53,8 @@ If you have trouble with merge queueing PRs, check if there is any kind of addit
 
 If there are any questions or help is needed, reach out on our  questions or help is needed, reach out on our [community slack](https://slack.trunk.io/)!
 
+### Draft PR Creation
 
+If you have tests that already trigger automatically on new PRs, you can enable this option so Trunk will automatically create Draft PRs when testing PRs in the queue as opposed to just creating merge branches. This lets you use Trunk Merge without setting up a push triggered workflow, like described in [Configure a Push Triggered Workflow For Required Status Checks](https://docs.trunk.io/merge/set-up-trunk-merge#configure-a-push-triggered-workflow-for-required-status-checks).&#x20;
 
-###
+To enable draft PR creation, navigation to **Settings > Repositories >** select your repository **> Merge >** toggle **Trunk Draft PR Creation.** When enabled, draft PRs will be created to trigger tests for your merge queue.
