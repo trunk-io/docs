@@ -65,8 +65,10 @@ lint:
 ```yaml
 lint:
   enabled:
-    markdownlint
-    markdown-link-checker@1.3.0
+    # Mutually exclusive, choose one:
+    - eslint # Use the system version of markdownlint
+    - eslint@9.0.0 # Use a hermetically managed version of eslint
+    - eslint@node # Use eslint from node_modules/.bin
 ```
 
 ### `exported_configs`
@@ -83,7 +85,7 @@ lint:
 
 Every linter must define the set of filetypes it applies to in the `lint.files` section.
 
-New filetypes are defined with the name and extensions properties. They may also include the comments properties to describe what style of comments are used in these files.&#x20;
+New filetypes are defined with the name and extensions properties. They may also include the comments properties to describe what style of comments are used in these files.
 
 This is how the C++ source filetype is defined. See also [Files and Caching](files.md#applicable-filetypes).
 
@@ -107,7 +109,7 @@ lint:
 
 ### `reuse_upstream`
 
-`reuse_upstream`:  If enabled, Trunk will cache upstream sandboxes instead of creating a new one each time. Options are `true`, or `false`.
+`reuse_upstream`: If enabled, Trunk will cache upstream sandboxes instead of creating a new one each time. Options are `true`, or `false`.
 
 ### `runtimes`
 
@@ -115,7 +117,7 @@ lint:
 
 ### `threshold`
 
-`threshold`: where you specify the blocking behavior of linters. The [threshold](../README.md#blocking-thresholds) for whether an error from a linter should block commits or not.
+`threshold`: where you specify the blocking behavior of linters. The [threshold](../#blocking-thresholds) for whether an error from a linter should block commits or not.
 
 ### `upstream_mode`
 
