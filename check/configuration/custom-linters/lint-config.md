@@ -115,6 +115,10 @@ lint:
 
 `runtimes`: Node, python, cargo, etc. Used to define or override a runtime environment for package management. [See Runtimes](../../advanced-setup/runtimes.md).
 
+### `skip_missing_compile_command`
+
+`skip_missing_compile_command`: For linters that depend on compile commands, setting this will cause Trunk to skip files without a compile command rather than report an error.
+
 ### `threshold`
 
 `threshold`: where you specify the blocking behavior of linters. The [threshold](../#blocking-thresholds) for whether an error from a linter should block commits or not.
