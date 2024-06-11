@@ -217,6 +217,7 @@
     * [Jest](flaky-tests/frameworks/jest.md)
     * [minitest](flaky-tests/frameworks/minitest.md)
     * [Mocha](flaky-tests/frameworks/mocha.md)
+    * [Playwright](flaky-tests/frameworks/playwright.md)
     * [pytest](flaky-tests/frameworks/pytest.md)
     * [RSpec](flaky-tests/frameworks/rspec.md)
 * [CI Debugger (beta)](ci-debugger/README.md)

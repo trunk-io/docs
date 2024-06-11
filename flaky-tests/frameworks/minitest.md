@@ -37,6 +37,23 @@ class ColorMixerTest < Minitest::Test
   end
 end
 ```
+Run it with `bundle exec ruby ruby/minitest/mixer.rb` and it will produce output that looks like this:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="ColorMixerTest" filepath="ruby/minitest/mixer.rb" skipped="0" failures="0" errors="0" tests="3" assertions="3" time="1.7999904230237007e-05">
+    <testcase name="test_red_and_yellow" 
+      lineno="12" 
+      classname="ColorMixerTest" 
+      assertions="1" 
+      time="1.0999967344105244e-05" 
+      file="ruby/minitest/mixer.rb">
+    </testcase>
+  </testsuite>
+</testsuites>
+
+```
 
 
 # Test Suite Naming
