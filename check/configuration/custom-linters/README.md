@@ -12,8 +12,8 @@ Trunk Check's linter integrations are fully configurable. This means that you ca
 
 Lint configuration is done in the `lint` section of the trunk.yaml file. There are three parts:
 
-* [Lint Config](reference/lint-config.md): defines overall linting.
-* [Linter Definition](reference/linter-definition.md): definition of a single linter
+* [Lint Config](lint-config.md): defines overall linting.
+* [Linter Definition](linter-definition.md): definition of a single linter
 * [Linter Command Definition](commands/definition.md): definition of a command within the linter
 
 The final config used at runtime is created by importing `.yaml` files from the plugins repo for each linter, merging them into a tree structure, then overriding values from your repo's `trunk.yaml` file to yield the final configuration.
@@ -47,7 +47,7 @@ Running `trunk check` tells `trunk` to do the following:
 
 ### Reference
 
-* [Reference of all Lint Config YAML fields](reference/lint-config.md)
-* [Reference of all Linter Definition YAML fields](reference/linter-definition.md)
+* [Reference of all Lint Config YAML fields](lint-config.md)
+* [Reference of all Linter Definition YAML fields](linter-definition.md)
 * [Reference of all Command Definition YAML fields](commands/definition.md)
 * [Full Tutorial](https://trunk.io/blog/integrating-your-own-custom-tools-with-trunk-check) on creating a linter form scratch in NodeJS

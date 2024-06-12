@@ -85,7 +85,7 @@ lint:
 
 ## `maximum_file_size`
 
-`maximum_file_size`: _optional number_. The maximum file size in bytes for input files to the linter. If not specified, the [lint.default\_max\_file\_size](../reference/lint-config.md#default\_max\_file\_size) will be used.
+`maximum_file_size`: _optional number_. The maximum file size in bytes for input files to the linter. If not specified, the [lint.default\_max\_file\_size](../lint-config.md#default\_max\_file\_size) will be used.
 
 ## `max_concurrency`
 

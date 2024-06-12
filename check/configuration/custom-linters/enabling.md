@@ -51,4 +51,4 @@ Trunk curates the values of `suggest_if` for all linters in the [plugins](https:
 
 Setting the `lint.definitions[*].enabled` property to true will force the linter to be enabled. Setting the `lint.definitions[*].disabled` property to true will force the linter to never be enabled, even if the `enabled` property is true, and will never suggest this linter, even if `suggest_if` says it should.
 
-For additional information on the properties of Linters, see the [Linter Definition Reference](reference/linter-definition.md).
+For additional information on the properties of Linters, see the [Linter Definition Reference](linter-definition.md).

@@ -18,7 +18,7 @@ The `lint` section of `.trunk/trunk.yaml` represents the configuration of all li
 
 `bazel`: bazel configuration
 
-* `paths` locations to look for Bazel binary. [Example](../../configuring-existing-linters/#using-bazel)
+* `paths` locations to look for Bazel binary. [Example](../configuring-existing-linters/#using-bazel)
 
 ### `comment_formats`
 
@@ -56,7 +56,7 @@ lint:
 
 ### `downloads`
 
-`downloads`: Locations to download binary artifacts from. Using [tool definitions](../../../advanced-setup/tools/) instead is preferred.
+`downloads`: Locations to download binary artifacts from. Using [tool definitions](../../advanced-setup/tools/) instead is preferred.
 
 ### `enabled`
 
@@ -73,7 +73,7 @@ lint:
 
 ### `exported_configs`
 
-`exported_configs`: Linter configs to export when another project is [importing this plugin](../../sharing-linters.md)
+`exported_configs`: Linter configs to export when another project is [importing this plugin](../sharing-linters.md)
 
 ### `extra_compilation_flags`
 
@@ -87,7 +87,7 @@ Every linter must define the set of filetypes it applies to in the `lint.files` 
 
 New filetypes are defined with the name and extensions properties. They may also include the comments properties to describe what style of comments are used in these files.
 
-This is how the C++ source filetype is defined. See also [Files and Caching](../files.md#applicable-filetypes).
+This is how the C++ source filetype is defined. See also [Files and Caching](files.md#applicable-filetypes).
 
 ```yaml
 lint:
@@ -105,7 +105,7 @@ lint:
 
 ### `ignore`
 
-`ignore`: files to be [ignored by linters](../../ignoring-issues.md#ignoring-multiple-files).
+`ignore`: files to be [ignored by linters](../ignoring-issues.md#ignoring-multiple-files).
 
 ### `reuse_upstream`
 
@@ -113,7 +113,7 @@ lint:
 
 ### `runtimes`
 
-`runtimes`: Node, python, cargo, etc. Used to define or override a runtime environment for package management. [See Runtimes](../../../advanced-setup/runtimes.md).
+`runtimes`: Node, python, cargo, etc. Used to define or override a runtime environment for package management. [See Runtimes](../../advanced-setup/runtimes.md).
 
 ### `skip_missing_compile_command`
 
@@ -121,7 +121,7 @@ lint:
 
 ### `threshold`
 
-`threshold`: where you specify the blocking behavior of linters. The [threshold](../../#blocking-thresholds) for whether an error from a linter should block commits or not.
+`threshold`: where you specify the blocking behavior of linters. The [threshold](../#blocking-thresholds) for whether an error from a linter should block commits or not.
 
 ### `upstream_mode`
 

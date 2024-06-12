@@ -73,7 +73,7 @@ To configure **what** a linter does, you will continue to use the linter's own c
 
 If you'd like, Trunk also supports migrating any linter configurations from the root of your repository into a `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run. Note that if you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.
 
-If you find that you want to tweak how Trunk runs a given linter, you may want to consult the documentation on [overriding defaults](../reference/trunk-yaml.md#overriding-defaults) and [the various linter settings](custom-linters-1/); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
+If you find that you want to tweak how Trunk runs a given linter, you may want to consult the documentation on [overriding defaults](../reference/trunk-yaml.md#overriding-defaults) and [the various linter settings](custom-linters/); for example, hold-the-line is enabled by default for most linters, but can be disabled like so:
 
 ```yaml
 lint:
@@ -103,7 +103,7 @@ lint:
     - hadolint@2.6.0
 ```
 
-Custom linters are slightly different; see [those docs](custom-linters-1/) to learn more.
+Custom linters are slightly different; see [those docs](custom-linters/) to learn more.
 
 {% hint style="info" %}
 You can also ask Trunk to detect new linters and upgrade existing linters to their latest respective versions by running [`trunk upgrade check`](../advanced-setup/cli/upgrade.md).

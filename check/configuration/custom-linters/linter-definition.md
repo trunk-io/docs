@@ -8,7 +8,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `affects_cache`
 
-`affects_cache`: The list of files that affect the cache results of this linter. [See Caching](../files.md#caching).
+`affects_cache`: The list of files that affect the cache results of this linter. [See Caching](files.md#caching).
 
 ## `allow_empty_files`
 
@@ -20,7 +20,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `commands`
 
-`commands`: The list of commands exposed by this linter. See [Linter Command Definition](../commands/definition.md).
+`commands`: The list of commands exposed by this linter. See [Linter Command Definition](commands/definition.md).
 
 ## `deprecated`
 
@@ -28,7 +28,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `direct_configs`
 
-`direct_configs`: _string list_. Indicates config files used to auto enable the linter. See [Auto Enabling](../enabling.md#auto-enabling).
+`direct_configs`: _string list_. Indicates config files used to auto enable the linter. See [Auto Enabling](enabling.md#auto-enabling).
 
 ## `disabled`
 
@@ -36,7 +36,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `download`
 
-`download`: _string_. The download url. You must provide either runtime + packages or download, not both. Using runtimes is preferred. See [Runtimes](../../../advanced-setup/runtimes.md).
+`download`: _string_. The download url. You must provide either runtime + packages or download, not both. Using runtimes is preferred. See [Runtimes](../../advanced-setup/runtimes.md).
 
 ## `enabled`
 
@@ -44,11 +44,11 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `environment`
 
-`environment`: a list of runtime variables used when running the linter. See [Command Environment Variables](../commands/#environment-variables).
+`environment`: a list of runtime variables used when running the linter. See [Command Environment Variables](commands/#environment-variables).
 
 ## `extra_packages`
 
-`extra_packages`: list of strings, Extra packages to install, versions are optional See [Linter Dependencies](../dependencies.md).
+`extra_packages`: list of strings, Extra packages to install, versions are optional See [Linter Dependencies](dependencies.md).
 
 ## `formatter`
 
@@ -60,7 +60,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `hold_the_line`
 
-`hold_the_line`: _optional boolean_. Whether [hold-the-line will](../../hold-the-line.md#what-is-hold-the-line) be done for this linter or not.
+`hold_the_line`: _optional boolean_. Whether [hold-the-line will](../hold-the-line.md#what-is-hold-the-line) be done for this linter or not.
 
 ## `include_lfs`
 
@@ -92,7 +92,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `package`
 
-`package`: string, What primary package to install, if using a package manager runtime. The enabled version of the runtime for this linter will apply to this package. See [Linter Dependencies](../dependencies.md).
+`package`: string, What primary package to install, if using a package manager runtime. The enabled version of the runtime for this linter will apply to this package. See [Linter Dependencies](dependencies.md).
 
 ## `path_format`
 
@@ -112,23 +112,23 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `runtime`
 
-`runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for this linter. Ex: `node`, `ruby`, `python`. See [Linter Dependencies](../dependencies.md).
+`runtime`: RuntimeType, Which package manager runtime, if any, to require to be setup for this linter. Ex: `node`, `ruby`, `python`. See [Linter Dependencies](dependencies.md).
 
 ## `run_timeout`
 
-`run_timeout`: _duration string_. Describes how long a linter can run before timing out. [See timeouts](../../#timeout).
+`run_timeout`: _duration string_. Describes how long a linter can run before timing out. [See timeouts](../#timeout).
 
 ## `suggest_if`
 
-How to determine if this linter should be auto-enabled/recommended. Possible values are `never`, `config_present`, and `files_present`. [See auto-enabling](../enabling.md#auto-enabling) for more details.
+How to determine if this linter should be auto-enabled/recommended. Possible values are `never`, `config_present`, and `files_present`. [See auto-enabling](enabling.md#auto-enabling) for more details.
 
 ## `supported_platforms`
 
-Platform constraint. If incompatible, renders a notice. See also [Command `platforms`](../commands/definition.md#platforms).
+Platform constraint. If incompatible, renders a notice. See also [Command `platforms`](commands/definition.md#platforms).
 
 ## `tools`
 
-`tools`, _string list_. The list of tools used by this linter. See [Dependencies](../dependencies.md).
+`tools`, _string list_. The list of tools used by this linter. See [Dependencies](dependencies.md).
 
 ## `version_command`
 

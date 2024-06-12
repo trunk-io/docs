@@ -4,7 +4,7 @@ Trunk Check allows you to define custom linters. If a linter is not within the [
 
 ### Defining a Custom Linter
 
-You can define linters right in your `.trunk/trunk.yaml` file in your repo. These definitions have the same configurable parameters as in our [public plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md).&#x20;
+You can define linters right in your `.trunk/trunk.yaml` file in your repo. These definitions have the same configurable parameters as in our [public plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) or [your own plugins repo](https://docs.trunk.io/check/advanced-setup/plugins#importing-a-plugin-repository).
 
 For example, you can define a simple [pass-fail linter](https://docs.trunk.io/check/configuration/custom-linters/commands/output-types#pass-fail-linters) that runs a custom script file. The linter passes or fails based on the status code returned.
 
@@ -50,7 +50,7 @@ lint:
           parse_regex: "(?P<path>.*):(?P<line>-?\\d+):(?P<col>-?\\d+): \\[(?P<severity>[^\\]]*)\\] (?P<message>[^\\(]*) \\((?P<code>[^\\)]*)\\)"
 ```
 
-To see the configurable fields available visit the [lint-config.md](custom-linters-1/reference/lint-config.md "mention")and [linter-definition.md](custom-linters-1/reference/linter-definition.md "mention") pages.
+To see the configurable fields available visit the [lint-config.md](custom-linters/lint-config.md "mention")and [linter-definition.md](custom-linters/linter-definition.md "mention") pages.
 
 ### Contributing a New Linter
 
