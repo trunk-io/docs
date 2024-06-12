@@ -221,6 +221,7 @@
     * [Playwright](flaky-tests/frameworks/playwright.md)
     * [pytest](flaky-tests/frameworks/pytest.md)
     * [RSpec](flaky-tests/frameworks/rspec.md)
+  * [GitHub Pull Request Comments](flaky-tests/github-pull-request-comments.md)
 * [CI Debugger (beta)](ci-debugger/README.md)
   * [Overview](ci-debugger/README.md)
   * [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)
