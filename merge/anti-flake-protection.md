@@ -6,7 +6,7 @@ description: >-
 
 # Anti-Flake Protection
 
-Sometimes, a pull request (PR) fails testing for reasons outside of the actual code change - [a test was flaky](../flaky-tests/), a CI runner was disconnected, etc..  If a second PR that depends on the first **does** pass, then it is very likely that the first PR was actually good and simply experienced a transient failure.  Trunk Merge can use the combination of [**Optimistic Merging** ](optimistic-merging.md)and [Pending Failure Depth](anti-flake-protection.md#pending-failure-depth) to merge pull requests that would otherwise be rejected from the queue. \
+Sometimes, a pull request (PR) fails testing for reasons outside of the actual code change - [a test was flaky](../test-analytics/), a CI runner was disconnected, etc..  If a second PR that depends on the first **does** pass, then it is very likely that the first PR was actually good and simply experienced a transient failure.  Trunk Merge can use the combination of [**Optimistic Merging** ](optimistic-merging.md)and [Pending Failure Depth](anti-flake-protection.md#pending-failure-depth) to merge pull requests that would otherwise be rejected from the queue. \
 \
 In the video below you can see an example of this anti-flake protection:
 
