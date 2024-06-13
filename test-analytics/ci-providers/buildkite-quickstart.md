@@ -1,5 +1,5 @@
 ---
-description: Configure Flaky Tests detection using BuildKite
+description: Configure Test Analytics using BuildKite
 ---
 
 # Buildkite
@@ -9,7 +9,7 @@ description: Configure Flaky Tests detection using BuildKite
 You can use the analytics test uploader within your Buildkite workflows to upload your test results.
 
 {% hint style="info" %}
-The trunk analytics test uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+The Trunk Test Analytics Uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
 ### Create workflow
@@ -18,7 +18,7 @@ Create a Buildkite workflow that runs the tests you want to monitor. In order fo
 
 ### Find Organization Slug and Token
 
-Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to Settings -> Manage -> Organization.  Copy your organization slug. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View." Store your trunk token in a [secret](https://buildkite.com/docs/pipelines/secrets) named `TRUNK_TOKEN`.&#x20;
+Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings** -> **Manage** -> **Organization**.  Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage** **Organization** → **Organization API Token** and clicking "View." Store your Trunk token in a [secret](https://buildkite.com/docs/pipelines/secrets) named `TRUNK_TOKEN`.&#x20;
 
 {% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
 

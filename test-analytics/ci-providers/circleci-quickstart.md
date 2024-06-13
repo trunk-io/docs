@@ -1,5 +1,5 @@
 ---
-description: Configure Flaky Tests detection using CircleCI
+description: Configure Test Analytics using CircleCI
 ---
 
 # CircleCI
@@ -9,7 +9,7 @@ description: Configure Flaky Tests detection using CircleCI
 You can use the analytics test uploader within your [CircleCI](https://circleci.com/) workflows to upload and analyze your test results.
 
 {% hint style="info" %}
-The Trunk Flaky Tests uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+The Trunk Test Analytics Uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
 ### Create a CircleCI Workflow

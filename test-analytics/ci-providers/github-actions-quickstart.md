@@ -1,12 +1,12 @@
 ---
-description: Configure Flaky Tests detection using a GitHub Action
+description: Configure Test Analytics detection using a GitHub Action
 ---
 
-# GitHub Actions Quickstart
+# GitHub Actions
 
 ### Configuring the Analytics Uploader Action
 
-The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploader)uploads test reports to Trunk Analytics from your GitHub workflows. Here are the steps for setting it up:
+The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploader)uploads test reports to Trunk Test Analytics from your GitHub workflows. Here are the steps for setting it up:
 
 * Create a GitHub workflow that runs the tests you want to monitor and produces a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format. Be careful that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.
 * Modify your GitHub workflow to add the [Trunk Analytics Uploader Action](https://github.com/trunk-io/analytics-uploader) as the step after your tests run. Point the uploader to the locations on disk where your test runner outputs Junit XML files:
@@ -29,7 +29,7 @@ The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploa
 
 ### Find Organization Slug and Token
 
-Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io).  Once logged in navigate to Settings -> Manage -> Organization.  Copy your organization slug. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View." Provide this token as a [GitHub secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).&#x20;
+Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io).  Once logged in navigate to **Settings** -> **Manage** -> **Organization**.  Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage Organization** → **Organization API Token** and clicking "View." Provide this token as a [GitHub secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).&#x20;
 
 {% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
 

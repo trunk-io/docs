@@ -1,5 +1,5 @@
 ---
-description: Configure Flaky Tests detection using Semaphore CI
+description: Configure Test Analytics using Semaphore CI
 ---
 
 # Semaphore CI
@@ -9,14 +9,14 @@ description: Configure Flaky Tests detection using Semaphore CI
 You can use the analytics test uploader within your [Semaphore CI](https://semaphoreci.com/) workflows to upload your test results.
 
 {% hint style="info" %}
-The trunk analytics test uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+The Trunk Test Analytics Uploader currently only supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
 1. Create a Semaphore workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produce a test report in [JUnit XML](https://github.com/testmoapp/junitxml) format.&#x20;
 
 ## Find Organization Slug and Token
 
-Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to Settings -> Manage -> Organization.  Copy your organization slug. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View."  Copy this token.
+Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings** -> **Manage** -> **Organization**.  Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage Organization** → **Organization API Token** and clicking "View."  Copy this token.
 
 {% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
 
@@ -78,7 +78,7 @@ The `trunk-analytics-uploader` tool has several important arguments.&#x20;
 
 ## Hourly Tests
 
-Running on a golden branch is how we detect that tests are flaky.  Create a copy of your `semaphore.yml` file called `hourly.yml` . In your Semaphore dashboard, create a new task to run tests on the main branch, and link to the `hourly.yml` file. Schedule it to run **every hour, every day**. Click _Create_ then manually run the workflow to check that it's working. Now you can look at the data being collected in Trunk's [flaky tests dashboard](https://app.trunk.io/).
+Running on a golden branch is how we detect that tests are flaky.  Create a copy of your `semaphore.yml` file called `hourly.yml` . In your Semaphore dashboard, create a new task to run tests on the main branch, and link to the `hourly.yml` file. Schedule it to run **every hour, every day**. Click _Create_ then manually run the workflow to check that it's working. Now you can look at the data being collected in Trunk's [Test Analytics dashboard](https://app.trunk.io/).
 
 The source for the settings above are available in our [SemaphoreFlakyTestExample](https://github.com/mmatheson/SemaphoreFlakyTestExample) repo.
 

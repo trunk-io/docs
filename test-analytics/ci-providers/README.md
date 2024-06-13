@@ -1,7 +1,7 @@
 ---
 description: >-
-  You can easily integrate Flaky Test detection from any CI Provider. Please
-  find quickstart instructions below that match your setup.
+  You can easily integrate Test Analytics from any CI Provider. Please find
+  quickstart instructions below that match your setup.
 ---
 
 # CI Providers
