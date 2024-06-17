@@ -26,11 +26,14 @@ trunk check enable eslint
 
 ## Auto Enabling
 
-ESLint will be auto-enabled if any of its config files are present: *`.eslintrc`, `.eslintrc.cjs`, `.eslintrc.js`*.
+ESLint will be auto-enabled if any of its config files are present: *`eslint.config.js`, `eslint.config.mjs`, `eslint.config.cjs`*.
 
 ## Settings
 
 ESLint supports the following config files:
+* `eslint.config.js`
+* `eslint.config.mjs`
+* `eslint.config.cjs`
 * `.eslintrc`
 * `.eslintrc.cjs`
 * `.eslintrc.js`
@@ -44,6 +47,10 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 ## Usage Notes
 
+# ESLint >= 9.x
+As of ESLint v9, all of the formatters have been removed. We suggest using [prettier](https://docs.trunk.io/check/configuration/supported/prettier) to format Javascript and Typescript code. The extra package mentioned below is no longer needed for ESLint v9 and higher.
+
+# ESlint < 8.x
 Most ESLint users use a number of plugins, custom parsers, etc. Trunk has the ability to turn sandboxing and caching on or off for each linter, and we've turned it off for ESLint so it can use your repo's installed packages for ESLint plugins and other required ESLint packages. Trunk does control the ESLint version itself, but otherwise ESLint looks for all plugins, configs, etc. based on the path of source file it is linting. **This all means you do need to have ****npm/yarn install****'d in your repo as a prerequisite before running ESLint via trunk**.
 
 We recommend you disable all Prettier rules in your ESLint config and let Trunk run Prettier automatically on your files. It's much nicer to just autoformat a file than to see a lint error for every missing space.
