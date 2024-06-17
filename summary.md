@@ -221,7 +221,7 @@
     * [Playwright](test-analytics/frameworks/playwright.md)
     * [pytest](test-analytics/frameworks/pytest.md)
     * [RSpec](test-analytics/frameworks/rspec.md)
-  * [GitHub Pull Request Comments](test-analytics/github-pull-request-comments.md)
+    * [XCTest](test-analytics/frameworks/xctest.md)
 * [CI Debugger (beta)](ci-debugger/README.md)
   * [Overview](ci-debugger/README.md)
   * [GitHub Actions Quickstart](ci-debugger/github-actions-quickstart.md)
