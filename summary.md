@@ -146,6 +146,7 @@
       * [Compatibility](check/advanced-setup/cli/compatibility.md)
       * [Windows Support (beta)](check/advanced-setup/cli/windows-beta.md)
       * [GitHub Codespaces](check/advanced-setup/cli/github-codespaces.md)
+      * [Caching](check/advanced-setup/cli/caching.md)
       * [Upgrade](check/advanced-setup/cli/upgrade.md)
     * [Tools](check/advanced-setup/tools/README.md)
       * [Overview](check/advanced-setup/tools/README.md)
