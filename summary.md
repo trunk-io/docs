@@ -68,6 +68,7 @@
       * [Oxipng](check/configuration/supported/oxipng.md)
       * [perlcritic](check/configuration/supported/perlcritic.md)
       * [perltidy](check/configuration/supported/perltidy.md)
+      * [php-cs-fixer](check/configuration/supported/php-cs-fixer.md)
       * [phpstan](check/configuration/supported/phpstan.md)
       * [pmd](check/configuration/supported/pmd.md)
       * [pragma-once](check/configuration/supported/pragma-once.md)
