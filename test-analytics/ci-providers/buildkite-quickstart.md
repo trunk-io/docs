@@ -14,7 +14,7 @@ The Trunk Test Analytics Uploader currently only supports Linux x64. If you have
 
 ### Create workflow
 
-Create a Buildkite workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produces a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format.
+Create a Buildkite workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produces a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format.
 
 ### Find Organization Slug and Token
 

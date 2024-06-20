@@ -12,7 +12,7 @@ After running tests, you must upload your test results to Trunk. You can use the
 The Trunk Test Analytics Uploader supports Linux x64. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
-Create a CI job that runs the tests you want to monitor and produces a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format. Be careful that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+Create a CI job that runs the tests you want to monitor and produces a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format. Be careful that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 
 ### Find Organization Slug and Token
 

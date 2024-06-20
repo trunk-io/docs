@@ -8,7 +8,7 @@ description: Configure Test Analytics detection using a GitHub Action
 
 The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploader)uploads test reports to Trunk Test Analytics from your GitHub workflows. Here are the steps for setting it up:
 
-* Create a GitHub workflow that runs the tests you want to monitor and produces a test report in [**JUnit XML**](https://www.ibm.com/docs/en/developer-for-zos/14.1?topic=formats-junit-xml-format) format. Be careful that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.
+* Create a GitHub workflow that runs the tests you want to monitor and produces a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format. Be careful that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.
 * Modify your GitHub workflow to add the [Trunk Analytics Uploader Action](https://github.com/trunk-io/analytics-uploader) as the step after your tests run. Point the uploader to the locations on disk where your test runner outputs Junit XML files:
 
 ```yaml
