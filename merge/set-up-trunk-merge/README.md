@@ -6,7 +6,7 @@ description: How to set up Trunk Merge for your project
 
 ### Connect your Trunk Organization to GitHub
 
-Sign up at [app.trunk.io](https://app.trunk.io/), create a Trunk organization, and connect it to your GitHub repositories. If your repository is already connected to your Trunk organization, you can skip this step.
+Sign up at [app.trunk.io](https://app.trunk.io/signup?intent=merge\&tr\_s=mergesetup\&tr\_l=1), create a Trunk organization, and connect it to your GitHub repositories. If your repository is already connected to your Trunk organization, you can skip this step.
 
 Select the repository you would like to use and click **Get Started.**
 

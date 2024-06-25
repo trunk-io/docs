@@ -25,3 +25,14 @@ predictive testing // test pull requests ahead of you in the queue with your cha
 2. Once the pre-requisites are met, Trunk Merge will create a temporary branch with the naming convention `trunk-merge/***`. This branch will be based on the head of `main` and will include the changes in your pull request and the changes from pull requests ahead of your pull request in the queue. This is the predictive branch described above and is used to guarantee the correctness of your system.&#x20;
 3. The same tests that are required for your pull request will now be run on this predictive branch. When those tests pass - your original pull request will be merged into `main`.&#x20;
 
+### Key Concepts
+
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
+
+#### **Requirements**
+
+Trunk Merge works with any CI provider as long as you use GitHub for your repo hosting.\
+\
+**Next Steps**\
+\
+[Talk to a Developer](https://calendly.com/trunk/demo) || [Getting started on your own](set-up-trunk-merge/)
