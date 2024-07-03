@@ -19,7 +19,9 @@
             "type": "string",
             "example": "github.com",
             "description": "The host of the repository. Currently only supports 'github.com'",
-            "enum": ["github.com"]
+            "enum": [
+              "github.com"
+            ]
           },
           "owner": {
             "type": "string",
@@ -62,13 +64,146 @@
         "type": "string",
         "example": "main",
         "description": "The branch the merge queue will be merging PRs into"
+      },
+      "prReadiness": {
+        "type": "object",
+        "properties": {
+          "hasImpactedTargets": {
+            "type": "boolean",
+            "example": false,
+            "description": "Whether the PR has had impacted targets uploaded for it"
+          },
+          "requiresImpactedTargets": {
+            "type": "boolean",
+            "example": false,
+            "description": "Whether the PR requires impacted targets to be uploaded for it before moving into the queue. This is true if the queue is in parallel mode"
+          },
+          "doesBaseBranchMatch": {
+            "type": "boolean",
+            "example": true,
+            "description": "Whether the base branch of the PR matches the target branch of the queue"
+          },
+          "gitHubMergeability": {
+            "type": "string",
+            "enum": [
+              "MERGEABLE",
+              "NOT_MERGEABLE",
+              "IN_PROGRESS",
+              "UNSPECIFIED"
+            ],
+            "example": "MERGEABLE",
+            "description": "The mergeability status of the PR on GitHub"
+          }
+        }
+      },
+      "pullRequest": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "number",
+            "example": 1,
+            "description": "The PR number"
+          },
+          "title": {
+            "type": "string",
+            "example": "Add new feature",
+            "description": "The title of the PR"
+          },
+          "sha": {
+            "type": "string",
+            "example": "1234567890abcdef",
+            "description": "The head SHA of the PR"
+          },
+          "baseBranch": {
+            "type": "string",
+            "example": "main",
+            "description": "The base branch of the PR"
+          },
+          "author": {
+            "type": "string",
+            "example": "dependabot",
+            "description": "The author of the PR"
+          }
+        }
+      },
+      "mergeItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the merge item in the queue"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "NOT_READY",
+              "PENDING",
+              "TESTING",
+              "TESTS_PASSED",
+              "PENDING_FAILURE",
+              "FAILED",
+              "CANCELLED",
+              "MERGED"
+            ],
+            "description": "The state of the PR in the queue - see https://docs.trunk.io/merge/reference#pr-states"
+          },
+          "stateChangedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The time the state of the PR changed"
+          },
+          "priorityValue": {
+            "type": "number",
+            "example": 100,
+            "description": "The priority value of the PR in the queue - ranges from 0-255 with 0 being the highest"
+          },
+          "priorityName": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "urgent"
+            ],
+            "example": "medium",
+            "description": "The priority name of the PR in the queue. Defaults to medium"
+          },
+          "usedDefaultPriorityName": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "urgent"
+            ],
+            "example": "medium",
+            "description": "The default priority given to the PR if no explicit priority was specified"
+          },
+          "skipTheLine": {
+            "type": "boolean",
+            "example": false,
+            "description": "Whether the PR will skip the line of the queue"
+          },
+          "isCurrentlySubmittedToQueue": {
+            "type": "boolean",
+            "description": "Whether the PR is currently submitted to the queue."
+          },
+          "readiness": {
+            "$ref": "#/components/schemas/prReadiness"
+          },
+          "pullRequest": {
+            "$ref": "#/components/schemas/pullRequest"
+          }
+        }
       }
     }
   },
   "paths": {
     "/submitPullRequest": {
       "post": {
-        "tags": ["Merge Items"],
+        "tags": [
+          "Merge Items"
+        ],
         "summary": "Submit a pull request to be tested and merged",
         "requestBody": {
           "content": {
@@ -89,7 +224,12 @@
                     "oneOf": [
                       {
                         "type": "string",
-                        "enum": ["low", "medium", "high", "urgent"],
+                        "enum": [
+                          "low",
+                          "medium",
+                          "high",
+                          "urgent"
+                        ],
                         "default": "medium",
                         "description": "The priority name to assign to the PR when it begins testing in the queue"
                       },
@@ -117,7 +257,9 @@
     },
     "/setImpactedTargets": {
       "post": {
-        "tags": ["Impacted Targets"],
+        "tags": [
+          "Impacted Targets"
+        ],
         "summary": "Set impacted targets",
         "description": "Upload impacted targets for the PR and its current SHA. Used specifically when running the queue in Parallel mode",
         "requestBody": {
@@ -147,7 +289,9 @@
                       },
                       {
                         "type": "string",
-                        "enum": ["IMPACTS_ALL"],
+                        "enum": [
+                          "IMPACTS_ALL"
+                        ],
                         "description": "Special value to indicate that all targets are impacted by the changes in the pull request"
                       }
                     ]
@@ -169,7 +313,9 @@
     },
     "/queuePullRequest": {
       "post": {
-        "tags": ["Merge Items"],
+        "tags": [
+          "Merge Items"
+        ],
         "summary": "Submits a Pull Request to the queue",
         "requestBody": {
           "content": {
@@ -190,7 +336,12 @@
                     "oneOf": [
                       {
                         "type": "string",
-                        "enum": ["low", "medium", "high", "urgent"],
+                        "enum": [
+                          "low",
+                          "medium",
+                          "high",
+                          "urgent"
+                        ],
                         "default": "medium",
                         "description": "The priority name to assign to the PR when it begins testing in the queue"
                       },
@@ -218,7 +369,9 @@
     },
     "/restartTestsOnPullRequest": {
       "post": {
-        "tags": ["Merge Items"],
+        "tags": [
+          "Merge Items"
+        ],
         "summary": "Restarts tests on a PR in the queue without moving its position or causing other PRs to be retested",
         "requestBody": {
           "content": {
@@ -252,7 +405,9 @@
     },
     "/cancelPullRequest": {
       "post": {
-        "tags": ["Merge Items"],
+        "tags": [
+          "Merge Items"
+        ],
         "summary": "Cancel a pull request already in the queue.",
         "requestBody": {
           "content": {
@@ -280,6 +435,75 @@
           },
           "401": {
             "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/host/github/owner/{owner}/name/{name}/branch/{targetBranch}/pr/{prNumber}": {
+      "get": {
+        "tags": [
+          "Merge Items"
+        ],
+        "summary": "Get information on a pull request that has been submitted to the queue",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "description": "owning organization of the repo the merge queue is for",
+            "schema": {
+              "type": "string",
+              "example": "trunk-io"
+            }
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "description": "name of the repo the merge queue is for",
+            "schema": {
+              "type": "string",
+              "example": "trunk"
+            }
+          },
+          {
+            "name": "targetBranch",
+            "in": "path",
+            "required": true,
+            "description": "The branch the merge queue is merging PRs into",
+            "schema": {
+              "type": "string",
+              "example": "main"
+            }
+          },
+          {
+            "name": "prNumber",
+            "in": "path",
+            "required": true,
+            "description": "The number of the PR to get information on",
+            "schema": {
+              "type": "number",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Information on the pull request",
+            "content": {
+              "application/json": {
+                "schema": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/mergeItem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Pull request with the provided number does not exist or has never been submitted to the specified queue before"
           }
         }
       }

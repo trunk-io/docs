@@ -16,6 +16,10 @@ All requests must be [authenticated](./#authentication) by providing the `x-api-
 [mergeapi.json](../.gitbook/assets/mergeapi.json)
 {% endswagger %}
 
+{% swagger src="../.gitbook/assets/mergeapi.json" path="/host/github/owner/{owner}/name/{name}/branch/{targetBranch}/pr/{prNumber}" method="get" %}
+[mergeapi.json](../.gitbook/assets/mergeapi.json)
+{% endswagger %}
+
 {% swagger src="../.gitbook/assets/mergeapi.json" path="/restartTestsOnPullRequest" method="post" %}
 [mergeapi.json](../.gitbook/assets/mergeapi.json)
 {% endswagger %}
@@ -23,3 +27,4 @@ All requests must be [authenticated](./#authentication) by providing the `x-api-
 {% swagger src="../.gitbook/assets/mergeapi.json" path="/setImpactedTargets" method="post" %}
 [mergeapi.json](../.gitbook/assets/mergeapi.json)
 {% endswagger %}
+
