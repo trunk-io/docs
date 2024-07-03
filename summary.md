@@ -202,6 +202,7 @@
   * [Overview](test-analytics/README.md)
   * [CI Providers](test-analytics/ci-providers/README.md)
     * [GitHub Actions](test-analytics/ci-providers/github-actions-quickstart.md)
+    * [GitLab](test-analytics/ci-providers/gitlab.md)
     * [Buildkite](test-analytics/ci-providers/buildkite-quickstart.md)
     * [Semaphore CI](test-analytics/ci-providers/semaphore-ci-quickstart.md)
     * [CircleCI](test-analytics/ci-providers/circleci-quickstart.md)
