@@ -53,8 +53,81 @@ If you have trouble with merge queueing PRs, check if there is any kind of addit
 
 If there are any questions or help is needed, reach out on our  questions or help is needed, reach out on our [community slack](https://slack.trunk.io/)!
 
-### Draft PR Creation
+### Draft PRs
 
-If you have tests that already trigger automatically on new PRs, you can enable this option so Trunk will automatically create Draft PRs when testing PRs in the queue as opposed to just creating merge branches. This lets you use Trunk Merge without setting up a push triggered workflow, like described in [Configure a Push Triggered Workflow For Required Status Checks](https://docs.trunk.io/merge/set-up-trunk-merge#configure-a-push-triggered-workflow-for-required-status-checks).&#x20;
+In some cases, you might not want every check that gets triggered when a PR gets created to run when testing PRs in the merge queue (say for example, you deploy your frontend on every PR so that reviewers can interact with it). In that case, if you prefer to use Trunk Merge without Draft PRs, you can disable it by navigating to **Settings > Repositories >** select your repository **> Merge >** toggle **Trunk Draft PR Creation.** \
+\
+When draft PR creation is disabled, you will need to configure push-triggered workflows to run on branches to test each merge request. You can also configure custom gating for your PRs if you want to gate on a different set of checks for Trunk Merge.
 
-To enable draft PR creation, navigation to **Settings > Repositories >** select your repository **> Merge >** toggle **Trunk Draft PR Creation.** When enabled, draft PRs will be created to trigger tests for your merge queue.
+#### Configure a Push Triggered Workflow For Required Status Checks
+
+When creating Draft PRs is disabled, Trunk Merge creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
+
+{% hint style="info" %}
+If you already have tests that trigger on new PRs, you can use the [Draft PR Creation](https://docs.trunk.io/merge/set-up-trunk-merge/advanced-settings#draft-pr-creation) feature to let Trunk Merge create draft PRs instead of setting up a push triggered workflow.
+{% endhint %}
+
+For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:
+
+```yaml
+name: Run Required Checks
+run-name: PR Checks for ${{ github.ref_name }}
+
+# Trigger jobs whenever Trunk Merge tests a PR using a `trunk-merge/` branch
+on:
+  push:
+    branches:
+      - trunk-merge/**
+
+jobs:
+  trunk_check:
+    runs-on: ubuntu-latest
+    # "Trunk Check" is specified in merge.required_status above
+    name: Trunk Check
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+  unit_tests:
+    runs-on: ubuntu-latest
+    # "Unit tests & test coverage" is specified in merge.required_status above
+    name: Unit tests & test coverage
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+    # Add more steps here..    
+```
+
+#### Define Required Status Checks For Testing
+
+Trunk needs to know which _status checks_ must pass while testing pull requests in the queue before it can merge a PR into your branch. Merge can pick up this list of required statuses in one of two ways:
+
+{% tabs %}
+{% tab title="Automatic (default)" %}
+In automatic mode, the status checks specified in your branch's [GitHub branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging) rule will be used.\
+\
+See GitHub's doc for more information on configuring [required status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
+{% endtab %}
+
+{% tab title="Custom (trunk.yaml)" %}
+```
+version: 0.1 
+```
+
+```
+cli:
+  version: 1.16.0
+merge: 
+  required_statuses:
+    - Trunk Check 
+    - Unit tests & test coverage
+    # Add more required statuses here
+```
+
+\
+Use custom when the status checks you want to enforce before merging do not match 1:1 with your GitHub branch protection rules. The names of the required\_statuses must match as specified on your [ ](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks)[GitHub status checks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) or [jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs) \
+\
+Custom `required_statuses` defined in the `.trunk/trunk.yaml` file take precedence over the GitHub required status checks from branch protection.&#x20;
+{% endtab %}
+{% endtabs %}
