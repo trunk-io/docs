@@ -207,6 +207,7 @@
     * [CircleCI](test-analytics/ci-providers/circleci-quickstart.md)
     * [Other CI Providers](test-analytics/ci-providers/other-ci-providers-quickstart.md)
   * [Test Frameworks](test-analytics/frameworks/README.md)
+    * [Android](test-analytics/frameworks/android.md)
     * [Cargo-nextest](test-analytics/frameworks/cargo-nextest.md)
     * [Cypress](test-analytics/frameworks/cypress.md)
     * [Jasmine](test-analytics/frameworks/jasmine.md)
