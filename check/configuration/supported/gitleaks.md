@@ -43,7 +43,7 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 Gitleaks v7 only works with Go 1.16, not Go 1.18 while Gitleaks v8 works with 1.18. We recommend using v8, but if you specifically need to use v7 you can override the go runtime version like so:
 
 ```yaml
-yaruntimes:
+runtimes:
   enabled:
     - go@1.16.7
 ```
