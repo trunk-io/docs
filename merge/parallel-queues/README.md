@@ -21,7 +21,7 @@ For example, the following four pull requests:
 
 Without parallelization, the PRs **A**, **B**, **C**, and **D** would all be tested in a single predictive path **A** <- **B** <- **C** <- **D**. Using the impacted target information we can instead build three dynamically provisioned queues and the predictive testing can yield higher throughput - which means your pull request spends less time in the queue stuck testing with unrelated code changes.
 
-<img src="../../.gitbook/assets/file.excalidraw.svg" alt="3 dynamic paralle queues" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw.svg" alt="Three Dynamic Parallel Queues" class="gitbook-drawing">
 
 **How does it work?**\
 To run in parallel mode, each pull request needs to be inspected for its impacted targets. This is a fancy way of saying that each pull request needs to report what parts of the codebase are changing.\
