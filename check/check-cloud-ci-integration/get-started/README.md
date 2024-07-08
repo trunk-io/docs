@@ -38,6 +38,8 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 ### Explore issues in your repository
 
+Keep track of pre-existing issues in your repository without creating noise in commits and PRs. Track your code base health over time and find ways to incrementally improve code quality.&#x20;
+
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Check showing all the issues present in trunk-demo1/sass</p></figcaption></figure>
 
 ### Get Slack notifications about new issues in your repository

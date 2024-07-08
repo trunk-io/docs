@@ -14,7 +14,15 @@ example of testing pull requests in batches of 3
 
 <table><thead><tr><th data-type="number">Batch Size</th><th width="323">Pull Requests</th><th>Testing Cost</th><th>Savings</th></tr></thead><tbody><tr><td>1</td><td><strong>A</strong>, <strong>B</strong>, <strong>C</strong>, <strong>D</strong>, <strong>E</strong>, <strong>F</strong>, <strong>G</strong>, <strong>H, I, J, K, L</strong></td><td><code>12x</code></td><td>0%</td></tr><tr><td>2</td><td><strong>AB, CD, EF, GH, IJ</strong></td><td><code>6x</code></td><td>50%</td></tr><tr><td>4</td><td><strong>ABCD</strong>, <strong>EFGH, IJKL</strong></td><td><code>3x</code></td><td>75%</td></tr><tr><td>8</td><td><strong>ABCDEFGH, IJKL</strong></td><td><code>1.5x</code></td><td>87.5%</td></tr><tr><td>12</td><td><strong>ABCDEFGHIJKL</strong></td><td><code>1x</code></td><td>92%</td></tr></tbody></table>
 
-#### Configuring Batching
+## Enable Batching
+
+Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](https://app.trunk.io/).
+
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### Configuring Batching
 
 The behavior of batching is controlled by two settings in the Merge Queue:\
 \
@@ -24,11 +32,11 @@ The behavior of batching is controlled by two settings in the Merge Queue:\
 
 <table><thead><tr><th>Time (mm:ss)</th><th width="323">Batching 4;  Maximum Wait 5 minutes</th><th>Testing</th></tr></thead><tbody><tr><td>00:00</td><td><strong>enqueue A</strong></td><td><code>----</code></td></tr><tr><td>01:00</td><td><strong>enqueue B</strong></td><td><code>----</code></td></tr><tr><td>02:30</td><td><strong>enqueue C</strong></td><td><code>----</code></td></tr><tr><td>05:00</td><td>5 min maximum wait time reached</td><td><code>Begin testing ABC</code></td></tr></tbody></table>
 
-#### What happens when a batch fails testing?
+### What happens when a batch fails testing?
 
 If a batch fails, Trunk Merge will move it to a separate queue for bisection analysis. In this queue, the batch will be split in various ways and tested in isolation to determine the PRs in the batch that introduced the failure. PRs that pass this way will be moved back to the main queue for re-testing. PRs that are believed to have caused the failure are kicked from the queue.
 
-#### Batching + Optimistic Merging and Pending Failure Depth
+### Batching + Optimistic Merging and Pending Failure Depth
 
 By enabling batching along with [pending failure depth](pending-failure-depth.md) and [optimistic merging](optimistic-merging.md) you can realize the major cost savings of batching while still reaping the [anti-flake ](anti-flake-protection.md)protection of optimistic merging and pending failure depth.\
 
@@ -37,17 +45,6 @@ By enabling batching along with [pending failure depth](pending-failure-depth.md
 
 Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly improve your CI performance because now Merge can optimistically merge whole batches of PRs, with far less wasted testing.
 
-**What are the risks of batching?**
+### **What are the risks of batching?**
 
 The downsides here are very limited. Since batching combines multiple pull requests into one, you essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch. In the unlikely case that you have to revert a change from your protected branch or do a rollback, you will need to retest that revert or submit it to the queue to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
-
-## Enable Batching
-
-Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](https://app.trunk.io/).
-
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-
-
-
-
