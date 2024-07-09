@@ -198,7 +198,7 @@
     * [Jenkins](ci-analytics/setup/jenkins.md)
   * [Pull Request Metrics](ci-analytics/pull-request-metrics.md)
   * [Using the Analysis UI](ci-analytics/using-the-analysis-ui.md)
-* [Test Analytics](test-analytics/README.md)
+* [Test Analytics (beta)](test-analytics/README.md)
   * [Overview](test-analytics/README.md)
   * [CI Providers](test-analytics/ci-providers/README.md)
     * [GitHub Actions](test-analytics/ci-providers/github-actions-quickstart.md)
