@@ -11,8 +11,6 @@ description: >-
 If you don't use GitHub, we recommend you check out the [Continuous Integration](../continuous-integration/) guide.
 {% endhint %}
 
-## How it works
-
 Trunk Check's GitHub integrations rely on the following:
 
 * An installation of the Trunk.io GitHub app in your GitHub organization, and
@@ -29,9 +27,11 @@ To find Check issues in your repositories and pull requests, we dispatch GitHub 
 * start using Trunk Check in all your repositories without any configuration, and
 * be in full control over the environment where we analyze your code, since we're running on your GitHub Actions runners.
 
-> 🚧 `.trunk` should have private visibility
->
-> Since we use workflow runs in `.trunk` to analyze any repository in your organization and record Check findings, you should think carefully about who has permissions to view workflow runs in your `.trunk` repository. For most organizations, simply making your `.trunk` repository private will be sufficient.
+{% hint style="info" %}
+🚧 `.trunk` should have private visibility
+
+Since we use workflow runs in `.trunk` to analyze any repository in your organization and record Check findings, you should think carefully about who has permissions to view workflow runs in your `.trunk` repository. For most organizations, simply making your `.trunk` repository private will be sufficient.
+{% endhint %}
 
 If you want to version the linter configuration for a given repo or enable linters that require more manual configuration, you can always [create and commit your Trunk configuration in said repository](broken-reference).
 
@@ -39,7 +39,7 @@ If you want to version the linter configuration for a given repo or enable linte
 
 Trunk Check can automatically detect new Check issues on your pull requests and flag them so that you can prevent pull requests from introducing any new issues in your repository.
 
-When running on a pull request, Trunk Check will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same [hold-the-line technology](../../#hold-the-line) that our VSCode extension and CLI use.
+When running on a pull request, Trunk Check will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same [hold-the-line technology](../../configuration/hold-the-line.md) that our VSCode extension and CLI use.
 
 <details>
 
@@ -71,7 +71,7 @@ Trunk Check can scan your repository for Check issues on a daily cadence, upload
 
 This allows you to build confidence in the code health of your repositories:
 
-* You will be alerted quickly in a Heartbleed-type event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
+* You will be alerted quickly in a [Heartbleed-type](https://heartbleed.com/) event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
 * You can monitor how many Check issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
 
 If you don't want Trunk Check to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io).
