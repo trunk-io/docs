@@ -1,6 +1,6 @@
 ---
-description: RSpec is a unit test runner for Ruby code
 title: Configuring rspec
+description: RSpec is a unit test runner for Ruby code
 layout:
   title:
     visible: true
@@ -16,7 +16,7 @@ layout:
 
 RSpec is a testing framework for Ruby.
 
-# Enabling XML Output
+## Enabling XML Output
 RSpec can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by installing the `rspec_junit_formatter `module. 
 
 ```shell
@@ -29,7 +29,7 @@ rspec src --format RspecJunitFormatter
 ```
 
 
-# Test Suite Naming
+## Test Suite Naming
 
 The output file can be set with the `--out` option like this:
 
