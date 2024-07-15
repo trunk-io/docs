@@ -16,7 +16,7 @@ example of testing pull requests in batches of 3
 
 ## Enable Batching
 
-Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](https://app.trunk.io/).
+Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](https://app.trunk.io/login?intent=merge).
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
