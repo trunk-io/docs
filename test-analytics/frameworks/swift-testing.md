@@ -45,32 +45,7 @@ swift test --xunit-output report.xml
 
 ## Test Suite Naming
 
-Once stable Swift Testing will use the name of a test function or suite as the `name` attribute  of the `testcase`by default. You can override the name using a string argument to the `@Test` and `@Suite` annotations. **Unfortunately these names are not currently propagated to the XML output**. Once fixed, you will be able to adjust the output like this:
-
-```swift
-import Testing
-
-@Suite("best tests evar") struct MyCoolTests {
-    @Test("rad test name") func helloworld() {
-        ...
-    }
-}
-```
-would produce
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="best tests evar" errors="0" tests="1" failures="1" time="0.001664833">
-    <testcase classname="MyCLITests" name="rad test name" time="0.000832083">
-      <failure message="Expectation failed: (greeting &#8594; &quot;hello, world!&quot;) == &quot;hello, worldz!&quot;" />
-    </testcase>
-  </testsuite>
-</testsuites>
-```
-
-
-See the official [Swift Testing docs](https://swiftpackageindex.com/apple/swift-testing/main/documentation/testing/definingtests) for more information.
+The format of Swift Testing's  XML output is intended to match XCTests, which does not support changing test names using the `@Suite` and `@Test` description parameters. However, Swift Testing is in the process of building a more flexible, JSON-based output mechanism which includes, among other data, the display names for tests. For more information about this feature see this [issue](https://github.com/apple/swift-testing/pull/479).
 
 
 
