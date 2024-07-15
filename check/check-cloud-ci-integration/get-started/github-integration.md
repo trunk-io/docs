@@ -63,7 +63,7 @@ This can be helpful if Check is flagging known issues in a given PR which you do
 
 </details>
 
-If you don't want Trunk Check to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io).
+If you don't want Trunk Check to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
 
 ## Scanning your repository
 
@@ -74,7 +74,7 @@ This allows you to build confidence in the code health of your repositories:
 * You will be alerted quickly in a [Heartbleed-type](https://heartbleed.com/) event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
 * You can monitor how many Check issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
 
-If you don't want Trunk Check to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io).
+If you don't want Trunk Check to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
 
 ## (optional) Custom setup logic
 
