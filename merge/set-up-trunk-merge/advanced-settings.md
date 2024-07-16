@@ -6,7 +6,7 @@ description: >-
 
 # Settings
 
-We offer some knobs and dials when configuring Merge. All of the following settings are specific to individual Merge Queues, and can be applied can be applied at [app.trunk.io](https://app.trunk.io) in the `Settings > Repositories > Repo-Name` page.
+We offer some knobs and dials when configuring Merge. All of the following settings are specific to individual Merge Queues, and can be applied can be applied at [app.trunk.io](https://app.trunk.io/login?intent=merge) in the `Settings > Repositories > Repo-Name` page.
 
 ## Merge Queue States
 
