@@ -50,5 +50,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [stylelint site](https://github.com/stylelint/stylelint#readme)
-- stylelint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stylelint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- stylelint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stylelint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

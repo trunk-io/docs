@@ -55,5 +55,5 @@ lint:
 ## Links
 
 - [SQLFluff site](https://github.com/sqlfluff/sqlfluff)
-- SQLFluff Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfluff)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- SQLFluff Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfluff)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

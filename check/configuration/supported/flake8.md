@@ -74,5 +74,5 @@ enabled:
 ## Links
 
 - [Flake8 site](https://flake8.pycqa.org/en/latest/)
-- Flake8 Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/flake8)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Flake8 Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/flake8)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

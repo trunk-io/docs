@@ -42,5 +42,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [Checkov site](https://github.com/bridgecrewio/checkov)
-- Checkov Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/checkov)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Checkov Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/checkov)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

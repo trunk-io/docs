@@ -55,5 +55,5 @@ runtimes:
 ## Links
 
 - [golangci-lint site](https://github.com/golangci/golangci-lint)
-- golangci-lint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/golangci-lint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- golangci-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/golangci-lint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

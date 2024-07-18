@@ -47,5 +47,5 @@ Trunk check provides a default `.remarkrc.yaml` if your project does not already
 ## Links
 
 - [remark-lint site](https://github.com/remarkjs/remark-lint#readme)
-- remark-lint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/remark-lint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- remark-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/remark-lint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

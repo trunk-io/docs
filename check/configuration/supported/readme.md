@@ -1,5 +1,5 @@
 ---
-description: Trunk Check supports over 100 linters and formatters
+description: Trunk Code Quality supports over 100 linters and formatters
 ---
 
 # Supported Linters

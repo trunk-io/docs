@@ -35,5 +35,5 @@ Black will be auto-enabled if any *Python, Jupyter or Python-interface* files ar
 ## Links
 
 - [Black site](https://pypi.org/project/black/)
-- Black Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/black)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Black Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/black)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

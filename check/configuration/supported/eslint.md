@@ -79,5 +79,5 @@ extends:
 ## Links
 
 - [ESLint site](https://eslint.org/)
-- ESLint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/eslint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- ESLint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/eslint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

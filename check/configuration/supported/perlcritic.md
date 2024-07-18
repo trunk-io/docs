@@ -41,5 +41,5 @@ Trunk check provides a default `.perlcriticrc` if your project does not already 
 ## Links
 
 - [perlcritic site](https://metacpan.org/pod/Perl::Critic)
-- perlcritic Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/perlcritic)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- perlcritic Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/perlcritic)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

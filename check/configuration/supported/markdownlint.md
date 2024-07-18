@@ -53,5 +53,5 @@ Older versions of `markdownlint` had a bug where it printed plaintext output eve
 ## Links
 
 - [Markdownlint site](https://github.com/DavidAnson/markdownlint)
-- Markdownlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/markdownlint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Markdownlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/markdownlint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

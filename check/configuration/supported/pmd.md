@@ -35,5 +35,5 @@ pmd will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [pmd site](https://pmd.github.io/)
-- pmd Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pmd)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- pmd Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pmd)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

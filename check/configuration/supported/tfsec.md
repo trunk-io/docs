@@ -45,5 +45,5 @@ Unlike with most tools under `trunk check`, these files cannot be moved.
 ## Links
 
 - [tfsec site](https://github.com/aquasecurity/tfsec)
-- tfsec Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tfsec)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- tfsec Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tfsec)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

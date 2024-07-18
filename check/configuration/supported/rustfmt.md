@@ -51,5 +51,5 @@ edition = "2021"
 ## Links
 
 - [rustfmt site](https://github.com/rust-lang/rustfmt)
-- rustfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rustfmt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- rustfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rustfmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

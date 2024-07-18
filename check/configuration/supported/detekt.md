@@ -83,5 +83,5 @@ direct_configs: ["lib/detekt.yaml"]
 ## Links
 
 - [Detekt site](https://github.com/detekt/detekt)
-- Detekt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/detekt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Detekt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/detekt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

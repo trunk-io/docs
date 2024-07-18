@@ -41,5 +41,5 @@ Trunk check provides a default `.djlintrc` if your project does not already have
 ## Links
 
 - [djlint site](https://github.com/Riverside-Healthcare/djlint#readme)
-- djlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/djlint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- djlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/djlint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [tflint site](https://github.com/terraform-linters/tflint#readme)
-- tflint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tflint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- tflint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tflint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

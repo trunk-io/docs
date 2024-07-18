@@ -42,5 +42,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [taplo site](https://github.com/tamasfe/taplo#readme)
-- taplo Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/taplo)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- taplo Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/taplo)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

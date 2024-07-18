@@ -42,5 +42,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [yapf site](https://github.com/google/yapf#readme)
-- yapf Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/yapf)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- yapf Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/yapf)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

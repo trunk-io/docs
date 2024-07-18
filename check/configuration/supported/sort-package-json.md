@@ -35,5 +35,5 @@ sort-package-json will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [sort-package-json site](https://github.com/keithamus/sort-package-json#readme)
-- sort-package-json Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sort-package-json)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- sort-package-json Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sort-package-json)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

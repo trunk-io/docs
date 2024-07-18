@@ -42,5 +42,5 @@ Trunk check provides a default `stylua.toml` if your project does not already ha
 ## Links
 
 - [stylua site](https://github.com/JohnnyMorganz/StyLua/tree/main)
-- stylua Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stylua)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- stylua Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stylua)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [swiftformat site](https://github.com/nicklockwood/SwiftFormat#readme)
-- swiftformat Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftformat)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- swiftformat Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftformat)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

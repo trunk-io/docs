@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [psscriptanalyzer site](https://github.com/PowerShell/PSScriptAnalyzer)
-- psscriptanalyzer Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/psscriptanalyzer)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- psscriptanalyzer Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/psscriptanalyzer)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

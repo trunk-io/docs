@@ -35,5 +35,5 @@ nixpkgs-fmt will be auto-enabled if any *Nix* files are present.
 ## Links
 
 - [nixpkgs-fmt site](https://github.com/nix-community/nixpkgs-fmt)
-- nixpkgs-fmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- nixpkgs-fmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

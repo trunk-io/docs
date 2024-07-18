@@ -41,5 +41,5 @@ Trunk check provides a default `analyzers.yml` if your project does not already 
 ## Links
 
 - [gokart site](https://github.com/praetorian-inc/gokart)
-- gokart Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gokart)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- gokart Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gokart)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

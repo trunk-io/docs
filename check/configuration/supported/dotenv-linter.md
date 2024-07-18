@@ -35,5 +35,5 @@ dotenv-linter will be auto-enabled if any *Dotenv* files are present.
 ## Links
 
 - [dotenv-linter site](https://github.com/dotenv-linter/dotenv-linter#readme)
-- dotenv-linter Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotenv-linter)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- dotenv-linter Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotenv-linter)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

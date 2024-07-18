@@ -35,5 +35,5 @@ gofumpt will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [gofumpt site](https://pkg.go.dev/mvdan.cc/gofumpt)
-- gofumpt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofumpt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- gofumpt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofumpt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

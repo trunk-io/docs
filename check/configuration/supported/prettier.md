@@ -66,5 +66,5 @@ You may also want to configure `printWidth` to your liking.
 ## Links
 
 - [Prettier site](https://prettier.io/)
-- Prettier Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/prettier)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Prettier Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/prettier)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

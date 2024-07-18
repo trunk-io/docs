@@ -54,5 +54,5 @@ Again, this is not recommended. Just use Gitleaks v8 or later with go 1.18 or la
 ## Links
 
 - [Gitleaks site](https://gitleaks.io/)
-- Gitleaks Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Gitleaks Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

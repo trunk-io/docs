@@ -42,5 +42,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [sourcery site](https://sourcery.ai/)
-- sourcery Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sourcery)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- sourcery Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sourcery)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

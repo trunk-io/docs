@@ -49,5 +49,5 @@ Unlike with most tools under `trunk check`, these files cannot be moved.
 ## Links
 
 - [renovate site](https://github.com/renovatebot/renovate#readme)
-- renovate Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/renovate)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- renovate Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/renovate)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

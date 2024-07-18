@@ -42,5 +42,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [semgrep site](https://github.com/returntocorp/semgrep#readme)
-- semgrep Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/semgrep)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- semgrep Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/semgrep)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
