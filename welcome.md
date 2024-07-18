@@ -17,7 +17,7 @@ layout:
 
 ### What is Trunk?
 
-Trunk is a developer experience (DevEx) toolkit that enables you to ship code quickly while maintaining the necessary guardrails for excellent eng teams. Use Trunk to check, test, merge, and monitor your code.
+Trunk is a developer-first software delivery toolkit to manage code quality, ci time, merge automation, and flaky tests.
 
 ### Tools
 

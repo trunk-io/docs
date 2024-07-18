@@ -48,7 +48,7 @@ redirects:
   docs/what-is-trunk: readme.md
   docs/windows-beta: check/cli/windows-beta.md
   flaky-tests/generating-junit-reports: flaky-tests/frameworks/README.md
-  test-analytics: flaky-tests
+  test-analytics/: flaky-tests
   get-started: welcome.md
   merge-graph: merge/readme.md
   merge-graph/merge: merge/legacy/readme.md
