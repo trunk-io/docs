@@ -64,7 +64,7 @@ Trunk uses this permission to view and merge pull requests managed by Merge.
 
 This permission includes access to update GitHub Action workflow files.
 
-Trunk uses this permission to facilitate onboarding to running Trunk Check on CI, for users who use Github Actions.
+Trunk uses this permission to facilitate onboarding to running Trunk Code Quality on CI, for users who use Github Actions.
 
 ## **Organization permissions**
 
