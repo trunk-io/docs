@@ -1,6 +1,6 @@
 ---
 description: >-
-  Test Analytics provides summary analytics about tests running on Pull
+  Flaky Tests provides summary analytics about tests running on Pull
   Requests.
 ---
 
@@ -8,9 +8,9 @@ description: >-
 
 ## Overview
 
-Test Analytics can post comments on GitHub pull requests to provide a summary of your tests’ health and prompt you to further inquire from the Test Analytics dashboard.
+Flaky Tests can post comments on GitHub pull requests to provide a summary of your tests’ health and prompt you to further inquire from the Flaky Tests dashboard.
 
-<figure><img src="../.gitbook/assets/test-analtyics-pr-comment-screenshot.png" alt=""><figcaption><p>Screenshot of Test Analytics test report</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/test-analtyics-pr-comment-screenshot.png" alt=""><figcaption><p>Screenshot of Flaky Tests test report</p></figcaption></figure>
 
 ## Getting Started
 
@@ -18,10 +18,10 @@ If you have the [Trunk GitHub App installed](https://docs.trunk.io/administratio
 
 ### Set Up (without Trunk GitHub App install)
 
-1. _\[Recommended]_ Create a dedicated CI user with access to the repositories in your GitHub Organization that Test Analytics will comment on e.g., `trunk-analytics-user`.
+1. _\[Recommended]_ Create a dedicated CI user with access to the repositories in your GitHub Organization that Flaky Tests will comment on e.g., `trunk-analytics-user`.
 2. On [github.com](https://github.com/), for `trunk-analytics-user` (or whichever user you wish you to use), generate a _"Personal access token"_ by navigating to **Settings** > **Developer settings** > **Personal access token** > **Fine-grained tokens** > **Generate new token**.
-3. Name the new token something memorable. ex: `trunk-test-analytics-token`.
-4. The expiry time is up to you - however long you wish to try out test analytics comments/how often you are willing to update the token. For a longer term solution, consider installing the Trunk GitHub App.
+3. Name the new token something memorable. ex: `trunk-flaky-tests-token`.
+4. The expiry time is up to you - however long you wish to try out Flaky Tests comments/how often you are willing to update the token. For a longer term solution, consider installing the Trunk GitHub App.
 5. The resource owner should be the GitHub Organization or user that owns the appropriate repositories. ([see note about GitHub Org Ownership settings](github-pull-request-comments.md#github-org-ownership))
 6. Select the repositories you wish to enable comments on.
 7. _\[Important]_ **Permissions** - you must enable **Issues (Read and write)** and **Pull requests (Read and write)**. Note: It is expected that metadata permissions automatically change.
@@ -40,7 +40,7 @@ Once the token is created, the Organization admin may need to approve the reques
 
 ## Disable commenting
 
-Pull Request comments are enabled by default. If you wish to disable the comments, you can do so by navigating to the Trunk App > click on your profile > **Settings** > **RepoName**. Scroll down to Test **Analytics** then toggle the **Summary Test Analytics Reports** setting.&#x20;
+Pull Request comments are enabled by default. If you wish to disable the comments, you can do so by navigating to the Trunk App > click on your profile > **Settings** > **RepoName**. Scroll down to Test **Analytics** then toggle the **Summary Flaky Tests Reports** setting.&#x20;
 
 ## Troubleshooting
 

@@ -2,10 +2,10 @@
 description: Monitor and detect flaky tests automatically.
 ---
 
-# Test Analytics
+# Flaky Tests
 
 {% hint style="warning" %}
-Test Analytics is available by invite only. Please [**contact**](https://trunk.io/about) us if you would like to try the product early.
+Flaky Tests is available by invite only. Please [**contact**](https://trunk.io/about) us if you would like to try the product early.
 {% endhint %}
 
 ## Monitoring Flaky Tests

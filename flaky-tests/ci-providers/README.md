@@ -1,6 +1,6 @@
 ---
 description: >-
-  You can easily integrate Test Analytics from any CI Provider. Please find
+  You can easily integrate Flaky Tests from any CI Provider. Please find
   quickstart instructions below that match your setup.
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Configure Test Analytics using any CI Provider
+description: Configure Flaky Tests using any CI Provider
 ---
 
 # Other CI Providers
@@ -9,7 +9,7 @@ description: Configure Test Analytics using any CI Provider
 After running tests, you must upload your test results to Trunk. You can use the analytics uploader binary.
 
 {% hint style="info" %}
-The Trunk Test Analytics Uploader currently only supports Linux x64 and macOS for Intel and Arm. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+The Trunk Flaky Tests Uploader currently only supports Linux x64 and macOS for Intel and Arm. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
 Create a CI job that runs the tests you want to monitor and produces a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format. Be careful that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
