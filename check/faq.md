@@ -75,9 +75,9 @@ Ruff and Black are another example of a linter/formatter pair that can collide w
 
 ## What is Hold-the-line (HTL)?
 
-**Hold The Line** (HTL) is the principle that Trunk Code Quality will _only run on new changes_ in your codebase, rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.
+**Hold The Line** (HTL) is the principle that Trunk Code Quality will _only run on new changes_ in your codebase, rather than every file in the whole repo. This allows you to use Code Quality to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.
 
-HTL works even within files! Check only processes changed lines in a file, not the entire file. More [on how Hold the Line works](configuration/hold-the-line.md).
+HTL works even within files! Code Quality only processes changed lines in a file, not the entire file. More [on how Hold the Line works](configuration/hold-the-line.md).
 
 If you specifically want to work on older files you can do that by running `trunk check` directly on that file
 
@@ -95,7 +95,7 @@ to run on all files. [More on CLI options](https://docs.trunk.io/check/command-l
 
 ## What does it mean when Trunk Code Quality wants to format an image in my repo?
 
-Sometimes Trunk Code Quality says there is some `Incorrect formatting` in your images. Check usually enables a program called [Oxipng](https://github.com/shssoichiro/oxipng) which can _optimize_ images to make them smaller (without losing any data). The error message just means that Oxipng wants to optimize those images. You can do that with `trunk fmt` or `trunk fmt filename.png`. You can also disable Oxipng with `trunk check disable oxipng`.
+Sometimes Trunk Code Quality says there is some `Incorrect formatting` in your images. Code Quality usually enables a program called [Oxipng](https://github.com/shssoichiro/oxipng) which can _optimize_ images to make them smaller (without losing any data). The error message just means that Oxipng wants to optimize those images. You can do that with `trunk fmt` or `trunk fmt filename.png`. You can also disable Oxipng with `trunk check disable oxipng`.
 
 ## Why does Trunk take up so much disk space?
 

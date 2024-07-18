@@ -22,7 +22,7 @@ The `.trunk` repository contains the workflows run to scan your codebase and pul
 
 Your `.trunk` repository must be added to your Trunk GitHub app installation. You can verify this by navigating to: `https://github.com/organizations/<your_organization>/settings/installations`, clicking "configure" next to Trunk-io, and verifying that the repository access is either "All repositories" or that your `.trunk` repository is selected.
 
-To find Check issues in your repositories and pull requests, we dispatch GitHub Actions workflows in your `.trunk` repository, which check out your repositories and pull requests and then run `trunk check` in them. This strategy allows you to:
+To find Code Quality issues in your repositories and pull requests, we dispatch GitHub Actions workflows in your `.trunk` repository, which check out your repositories and pull requests and then run `trunk check` in them. This strategy allows you to:
 
 * start using Trunk Code Quality in all your repositories without any configuration, and
 * be in full control over the environment where we analyze your code, since we're running on your GitHub Actions runners.
@@ -30,14 +30,14 @@ To find Check issues in your repositories and pull requests, we dispatch GitHub 
 {% hint style="info" %}
 🚧 `.trunk` should have private visibility
 
-Since we use workflow runs in `.trunk` to analyze any repository in your organization and record Check findings, you should think carefully about who has permissions to view workflow runs in your `.trunk` repository. For most organizations, simply making your `.trunk` repository private will be sufficient.
+Since we use workflow runs in `.trunk` to analyze any repository in your organization and record Code Quality findings, you should think carefully about who has permissions to view workflow runs in your `.trunk` repository. For most organizations, simply making your `.trunk` repository private will be sufficient.
 {% endhint %}
 
 If you want to version the linter configuration for a given repo or enable linters that require more manual configuration, you can always [create and commit your Trunk configuration in said repository](../../configuration/sharing-linters.md).
 
 ## Checking pull requests
 
-Trunk Code Quality can automatically detect new Check issues on your pull requests and flag them so that you can prevent pull requests from introducing any new issues in your repository.
+Trunk Code Quality can automatically detect new Code Quality issues on your pull requests and flag them so that you can prevent pull requests from introducing any new issues in your repository.
 
 When running on a pull request, Trunk Code Quality will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same [hold-the-line technology](../../configuration/hold-the-line.md) that our VSCode extension and CLI use.
 
@@ -47,7 +47,7 @@ When running on a pull request, Trunk Code Quality will only flag _new_ issues, 
 
 To confirm that you've fixed issues identified by Trunk Code Quality before pushing your pull request, just run `trunk check`.
 
-If Trunk continues to identify new Check issues on your PR, first try merging the latest changes from your base branch. When Trunk runs on a PR, it runs on a commit that merges your PR into its base branch, just like GitHub workflows.
+If Trunk continues to identify new Code Quality issues on your PR, first try merging the latest changes from your base branch. When Trunk runs on a PR, it runs on a commit that merges your PR into its base branch, just like GitHub workflows.
 
 If this continues to fail, then run `git checkout refs/pull/<PR number>/merge && trunk check`. This is a reference to the merge commit GitHub creates.
 
@@ -59,7 +59,7 @@ If this continues to fail, then run `git checkout refs/pull/<PR number>/merge &&
 
 You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Code Quality as "skipped". Trunk Code Quality will still run on your PR and report issues, but this will allow the PR to pass a GitHub required status check on `Trunk Code Quality`.
 
-This can be helpful if Check is flagging known issues in a given PR which you don't want to [ignore](../../configuration/ignoring-issues.md), which if you're doing a large refactor, can come in very handy.
+This can be helpful if Code Quality is flagging known issues in a given PR which you don't want to [ignore](../../configuration/ignoring-issues.md), which if you're doing a large refactor, can come in very handy.
 
 </details>
 
@@ -67,12 +67,12 @@ If you don't want Trunk Code Quality to run on pull requests, turn it off in [yo
 
 ## Scanning your repository
 
-Trunk Code Quality can scan your repository for Check issues on a daily cadence, upload them to Trunk for you to review at your convenience, and notify you via Slack whenever new issues are discovered in your repository.
+Trunk Code Quality can scan your repository for Code Quality issues on a daily cadence, upload them to Trunk for you to review at your convenience, and notify you via Slack whenever new issues are discovered in your repository.
 
 This allows you to build confidence in the code health of your repositories:
 
 * You will be alerted quickly in a [Heartbleed-type](https://heartbleed.com/) event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
-* You can monitor how many Check issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
+* You can monitor how many Code Quality issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
 
 If you don't want Trunk Code Quality to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
 
