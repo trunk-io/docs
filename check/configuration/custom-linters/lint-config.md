@@ -22,7 +22,7 @@ The `lint` section of `.trunk/trunk.yaml` represents the configuration of all li
 
 ### `comment_formats`
 
-`comment_formats`: Definitions of comment formats. Reused in linter definitions. Trunk Check already defines many common comment format such as `hash` (`# comment`), `slashes-block` (`/* comment */`), and `slashes-inline` (`// comment`). For the full list [see the linters plugin.yaml](https://github.com/trunk-io/plugins/blob/main/linters/plugin.yaml).
+`comment_formats`: Definitions of comment formats. Reused in linter definitions. Trunk Code Quality already defines many common comment format such as `hash` (`# comment`), `slashes-block` (`/* comment */`), and `slashes-inline` (`// comment`). For the full list [see the linters plugin.yaml](https://github.com/trunk-io/plugins/blob/main/linters/plugin.yaml).
 
 To create a new comment format provide the name and delimiters like this:
 
@@ -44,7 +44,7 @@ lint:
 
 ### `default_max_file_size`
 
-`default_max_file_size`: Default maximum filesize in bytes. Trunk Check will not run linters on any files larger than this. Default value is 4 megabytes.
+`default_max_file_size`: Default maximum filesize in bytes. Trunk Code Quality will not run linters on any files larger than this. Default value is 4 megabytes.
 
 ### `definitions`
 

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Trunk Check integrates with GitHub to automatically identify linter issues,
+  Trunk Code Quality integrates with GitHub to automatically identify linter issues,
   unformatted files, and vulnerabilities in your repositories without ever
   sending your code to Trunk.
 ---
@@ -11,7 +11,7 @@ description: >-
 If you don't use GitHub, we recommend you check out the [Continuous Integration](../continuous-integration/) guide.
 {% endhint %}
 
-Trunk Check's GitHub integrations rely on the following:
+Trunk Code Quality's GitHub integrations rely on the following:
 
 * An installation of the Trunk.io GitHub app in your GitHub organization, and
 * A `.trunk` repository in your GitHub organization.
@@ -24,7 +24,7 @@ Your `.trunk` repository must be added to your Trunk GitHub app installation. Yo
 
 To find Check issues in your repositories and pull requests, we dispatch GitHub Actions workflows in your `.trunk` repository, which check out your repositories and pull requests and then run `trunk check` in them. This strategy allows you to:
 
-* start using Trunk Check in all your repositories without any configuration, and
+* start using Trunk Code Quality in all your repositories without any configuration, and
 * be in full control over the environment where we analyze your code, since we're running on your GitHub Actions runners.
 
 {% hint style="info" %}
@@ -37,15 +37,15 @@ If you want to version the linter configuration for a given repo or enable linte
 
 ## Checking pull requests
 
-Trunk Check can automatically detect new Check issues on your pull requests and flag them so that you can prevent pull requests from introducing any new issues in your repository.
+Trunk Code Quality can automatically detect new Check issues on your pull requests and flag them so that you can prevent pull requests from introducing any new issues in your repository.
 
-When running on a pull request, Trunk Check will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same [hold-the-line technology](../../configuration/hold-the-line.md) that our VSCode extension and CLI use.
+When running on a pull request, Trunk Code Quality will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same [hold-the-line technology](../../configuration/hold-the-line.md) that our VSCode extension and CLI use.
 
 <details>
 
 <summary>Fixing issues in pull requests</summary>
 
-To confirm that you've fixed issues identified by Trunk Check before pushing your pull request, just run `trunk check`.
+To confirm that you've fixed issues identified by Trunk Code Quality before pushing your pull request, just run `trunk check`.
 
 If Trunk continues to identify new Check issues on your PR, first try merging the latest changes from your base branch. When Trunk runs on a PR, it runs on a commit that merges your PR into its base branch, just like GitHub workflows.
 
@@ -55,34 +55,34 @@ If this continues to fail, then run `git checkout refs/pull/<PR number>/merge &&
 
 <details>
 
-<summary>Skipping Trunk Check</summary>
+<summary>Skipping Trunk Code Quality</summary>
 
-You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Check as "skipped". Trunk Check will still run on your PR and report issues, but this will allow the PR to pass a GitHub required status check on `Trunk Check`.
+You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Code Quality as "skipped". Trunk Code Quality will still run on your PR and report issues, but this will allow the PR to pass a GitHub required status check on `Trunk Code Quality`.
 
 This can be helpful if Check is flagging known issues in a given PR which you don't want to [ignore](../../configuration/ignoring-issues.md), which if you're doing a large refactor, can come in very handy.
 
 </details>
 
-If you don't want Trunk Check to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
+If you don't want Trunk Code Quality to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
 
 ## Scanning your repository
 
-Trunk Check can scan your repository for Check issues on a daily cadence, upload them to Trunk for you to review at your convenience, and notify you via Slack whenever new issues are discovered in your repository.
+Trunk Code Quality can scan your repository for Check issues on a daily cadence, upload them to Trunk for you to review at your convenience, and notify you via Slack whenever new issues are discovered in your repository.
 
 This allows you to build confidence in the code health of your repositories:
 
 * You will be alerted quickly in a [Heartbleed-type](https://heartbleed.com/) event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
 * You can monitor how many Check issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
 
-If you don't want Trunk Check to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
+If you don't want Trunk Code Quality to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
 
 ## (optional) Custom setup logic
 
 If you need to do some setup before `trunk check` runs in `your-org/your-repo`, you can [define a GitHub composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) in `.trunk/setup-ci/action.yaml` in `your-repo`. This can be important if, for example, a linter needs some generated code to be present before it can run:
 
 ```yaml
-name: Trunk Check setup
-description: Set up dependencies for Trunk Check
+name: Trunk Code Quality setup
+description: Set up dependencies for Trunk Code Quality
 
 runs:
   using: composite

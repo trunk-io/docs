@@ -4,7 +4,7 @@ description: Special configuration for specific linters
 
 # Configuring Linters
 
-Most linters provide some mechanism to tweak their configuration, e.g. `.eslintrc` or `Cargo.toml`. Trunk is aware of all the ways individual tools are configured and supports them. This means that all the linters you've already configured will continue to work exactly the same, just now supercharged by Trunk Check.
+Most linters provide some mechanism to tweak their configuration, e.g. `.eslintrc` or `Cargo.toml`. Trunk is aware of all the ways individual tools are configured and supports them. This means that all the linters you've already configured will continue to work exactly the same, just now supercharged by Trunk Code Quality.
 
 Check out our open source [configs](https://github.com/trunk-io/configs/tree/main/configs) repo for our always up to date collection of sane linter configurations.
 

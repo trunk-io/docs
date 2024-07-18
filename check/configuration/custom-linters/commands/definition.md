@@ -89,7 +89,7 @@ lint:
 
 ## `max_concurrency`
 
-`max_concurrency`: _optional integer_, The maximum number of processes that Trunk Check will run concurrently for this linter. [See Limiting Concurrency](./#limiting-concurrency)
+`max_concurrency`: _optional integer_, The maximum number of processes that Trunk Code Quality will run concurrently for this linter. [See Limiting Concurrency](./#limiting-concurrency)
 
 ## `name`
 
@@ -113,7 +113,7 @@ lint:
 
 ## `platforms`
 
-`platforms`: A list of platforms this linter supports. (ex: `windows`, `macos`, `linux`). Linters using managed runtimes (node, python, etc.) can generally run cross-platform and do not need the `platforms` property set. For tools which _are_ platform specific or which have different configuration for each platform, this property can be used to distinguish between them.  When multiple command definitions have the same name, Trunk Check will pick the first one that matches the `platforms` setting.
+`platforms`: A list of platforms this linter supports. (ex: `windows`, `macos`, `linux`). Linters using managed runtimes (node, python, etc.) can generally run cross-platform and do not need the `platforms` property set. For tools which _are_ platform specific or which have different configuration for each platform, this property can be used to distinguish between them.  When multiple command definitions have the same name, Trunk Code Quality will pick the first one that matches the `platforms` setting.
 
 For example, the `detekt` plugin has different exit codes for Windows than MacOS or Linux, and has two command definitions with different `success_codes` fields. [Full Source](https://github.com/trunk-io/plugins/blob/main/linters/detekt/plugin.yaml).
 
@@ -264,9 +264,9 @@ lint:
 
 ## `version`
 
-`version`: _optional string_, Version constraint. When a linter has multiple commands with the same name, Trunk Check will select the first command that matches the version constraint. This is useful for when multiple incompatible versions of a tool need to be supported.
+`version`: _optional string_, Version constraint. When a linter has multiple commands with the same name, Trunk Code Quality will select the first command that matches the version constraint. This is useful for when multiple incompatible versions of a tool need to be supported.
 
-Example: the `ruff` linter changed a command line argument from `--format` to `--output-format` in version `v0.1.0`. To handle both versions, the linter defines two commands with different version attributes.  The first is for version `>=0.1.0`. If the first is not matched (because the install version of run is less that 0.1.0) then Trunk Check will move on to the next command until it finds a match.
+Example: the `ruff` linter changed a command line argument from `--format` to `--output-format` in version `v0.1.0`. To handle both versions, the linter defines two commands with different version attributes.  The first is for version `>=0.1.0`. If the first is not matched (because the install version of run is less that 0.1.0) then Trunk Code Quality will move on to the next command until it finds a match.
 
 &#x20;[Full source](https://github.com/trunk-io/plugins/blob/main/linters/ruff/plugin.yaml).
 

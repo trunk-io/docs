@@ -1,5 +1,5 @@
 ---
-description: List of linters supported out of the box by Trunk Check
+description: List of linters supported out of the box by Trunk Code Quality
 ---
 
 # Supported Standard Linters

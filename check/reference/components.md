@@ -1,5 +1,5 @@
 ---
-description: List of major components of Trunk Check
+description: List of major components of Trunk Code Quality
 ---
 
 # Components

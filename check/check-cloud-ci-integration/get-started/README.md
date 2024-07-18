@@ -12,7 +12,7 @@ Sign up at [app.trunk.io](https://app.trunk.io), create a Trunk organization, an
 
 {% @supademo/embed demoId="HXyBmoBn0_OX9Xite2fqd" url="https://app.supademo.com/demo/HXyBmoBn0_OX9Xite2fqd" %}
 
-## Set Up Trunk Check
+## Set Up Trunk Code Quality
 
 Once your Trunk organization is connected to GitHub, create a .trunk repo in your account or organization and grant Trunk permissions to access the repo.  The .trunk repo will hold the workflows to scan your codebase and pull requests. [Learn more about the .trunk repo](https://docs.trunk.io/check/check-cloud-ci-integration/get-started/github-integration#what-is-a-.trunk-repository).
 
@@ -32,7 +32,7 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 <div data-full-width="true">
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption><p>Trunk Check identifying a security issue in one of Trunk's own repositories</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption><p>Trunk Code Quality identifying a security issue in one of Trunk's own repositories</p></figcaption></figure>
 
 </div>
 
@@ -40,7 +40,7 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 Keep track of pre-existing issues in your repository without creating noise in commits and PRs. Track your code base health over time and find ways to incrementally improve code quality.&#x20;
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Check showing all the issues present in trunk-demo1/sass</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Code Quality showing all the issues present in trunk-demo1/sass</p></figcaption></figure>
 
 ### Get Slack notifications about new issues in your repository
 

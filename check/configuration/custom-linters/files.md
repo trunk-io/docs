@@ -46,7 +46,7 @@ lint:
 
 ## Caching
 
-Trunk Check automatically caches results from previous runs of linters to speed up development. To do this Trunk needs to know which files could potentially affect the cache, besides the source code files themselves.
+Trunk Code Quality automatically caches results from previous runs of linters to speed up development. To do this Trunk needs to know which files could potentially affect the cache, besides the source code files themselves.
 
 ### Enabling caching
 
@@ -72,6 +72,6 @@ lint:
 
 ### idempotency
 
-Trunk Check also needs to know if the linter command itself is idempotent, meaning the command will return the exact same results given the exact same inputs. Most linters are, however semgrep, for example, fetches rules from the internet so the output could be different each time.
+Trunk Code Quality also needs to know if the linter command itself is idempotent, meaning the command will return the exact same results given the exact same inputs. Most linters are, however semgrep, for example, fetches rules from the internet so the output could be different each time.
 
 Setting the `linter.definitions[*].commands.idempotent` property to true will tell trunk to only cache the result for a duration of `cache_ttl`, which is set to 24hrs by default.

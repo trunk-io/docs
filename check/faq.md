@@ -17,7 +17,7 @@ layout:
 
 ## What linters should I be using?
 
-The best set of linters depends on your particular needs and which tech stack you are using (C/C++, Javascript, Rust, Python, etc). By default Trunk Check will detect your project type and select a recommended set of linters for that type, ESLint for a Javascript project or `clang-tidy` for C++ projects. There are plenty more linters you can use, however. You can see all possible (built in) linters with
+The best set of linters depends on your particular needs and which tech stack you are using (C/C++, Javascript, Rust, Python, etc). By default Trunk Code Quality will detect your project type and select a recommended set of linters for that type, ESLint for a Javascript project or `clang-tidy` for C++ projects. There are plenty more linters you can use, however. You can see all possible (built in) linters with
 
 ```sh
 trunk check list
@@ -33,7 +33,7 @@ See more about our [supported linters here](configuration/supported/).
 
 ## Why aren't issues showing up anymore?
 
-If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Check only processes new changes to your codebase (read about [hold-the-line](https://docs.trunk.io/check/under-the-hood)). To scan older changes try running:
+If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Code Quality only processes new changes to your codebase (read about [hold-the-line](https://docs.trunk.io/check/under-the-hood)). To scan older changes try running:
 
 ```sh
 trunk check --samples=5 
@@ -71,11 +71,11 @@ A **linter** is a tool that looks for potential code errors such as security vul
 
 Some tools like ESLint can serve as both a linter and formatter for Javascript code. If Prettier is also enabled then code could be reformatted twice, creating conflicts. In this case we recommend using ESLint just for linting and use Prettier for code formatting. [Further advice for ESLint with prettier](https://docs.trunk.io/check/supported-linters#eslint).
 
-Ruff and Black are another example of a linter/formatter pair that can collide with each other if not configured properly. If you enable Ruff but don’t already have a ruff config, Trunk Check will generate a `ruff.toml` file for you automatically. This [ruff.toml](https://github.com/trunk-io/plugins/blob/main/linters/ruff/ruff.toml) is _formatter friendly_, meaning that it will silence formatting related warnings and allow Black to take care of them more quickly and easily. This is another example of tuning your linters with linter configs.
+Ruff and Black are another example of a linter/formatter pair that can collide with each other if not configured properly. If you enable Ruff but don’t already have a ruff config, Trunk Code Quality will generate a `ruff.toml` file for you automatically. This [ruff.toml](https://github.com/trunk-io/plugins/blob/main/linters/ruff/ruff.toml) is _formatter friendly_, meaning that it will silence formatting related warnings and allow Black to take care of them more quickly and easily. This is another example of tuning your linters with linter configs.
 
 ## What is Hold-the-line (HTL)?
 
-**Hold The Line** (HTL) is the principle that Trunk Check will _only run on new changes_ in your codebase, rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.
+**Hold The Line** (HTL) is the principle that Trunk Code Quality will _only run on new changes_ in your codebase, rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.
 
 HTL works even within files! Check only processes changed lines in a file, not the entire file. More [on how Hold the Line works](configuration/hold-the-line.md).
 
@@ -93,13 +93,13 @@ trunk check --all
 
 to run on all files. [More on CLI options](https://docs.trunk.io/check/command-line#options).
 
-## What does it mean when Trunk Check wants to format an image in my repo?
+## What does it mean when Trunk Code Quality wants to format an image in my repo?
 
-Sometimes Trunk Check says there is some `Incorrect formatting` in your images. Check usually enables a program called [Oxipng](https://github.com/shssoichiro/oxipng) which can _optimize_ images to make them smaller (without losing any data). The error message just means that Oxipng wants to optimize those images. You can do that with `trunk fmt` or `trunk fmt filename.png`. You can also disable Oxipng with `trunk check disable oxipng`.
+Sometimes Trunk Code Quality says there is some `Incorrect formatting` in your images. Check usually enables a program called [Oxipng](https://github.com/shssoichiro/oxipng) which can _optimize_ images to make them smaller (without losing any data). The error message just means that Oxipng wants to optimize those images. You can do that with `trunk fmt` or `trunk fmt filename.png`. You can also disable Oxipng with `trunk check disable oxipng`.
 
 ## Why does Trunk take up so much disk space?
 
-Trunk Check uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime you can safely clear your cache with
+Trunk Code Quality uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime you can safely clear your cache with
 
 ```
 trunk cache clean --all
@@ -208,7 +208,7 @@ There are two main strategies to address this issue: **configuring timeouts** an
 
 **Timeout Configuration**
 
-Each linter integrated with Trunk Check has a default timeout of 10 minutes to prevent processes from running indefinitely. If a linter exceeds this timeframe, Trunk Check will automatically terminate the process and notify you of the timeout.
+Each linter integrated with Trunk Code Quality has a default timeout of 10 minutes to prevent processes from running indefinitely. If a linter exceeds this timeframe, Trunk Code Quality will automatically terminate the process and notify you of the timeout.
 
 To adjust the timeout duration for a specific linter, you can modify its `run_timeout` setting in your configuration. For example:
 

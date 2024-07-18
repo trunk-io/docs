@@ -1,5 +1,5 @@
 ---
-description: Using Trunk Check with GitHub Codespaces
+description: Using Trunk Code Quality with GitHub Codespaces
 ---
 
 # GitHub Codespaces

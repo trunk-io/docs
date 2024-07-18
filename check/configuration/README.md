@@ -1,10 +1,10 @@
 ---
-description: Overview of Trunk Check's supported linters and configuration
+description: Overview of Trunk Code Quality's supported linters and configuration
 ---
 
 # Linters
 
-Trunk Check supports over [100 different linters](supported/) and formatters out of the box. The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml.md#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
+Trunk Code Quality supports over [100 different linters](supported/) and formatters out of the box. The configurations for `trunk check` and `trunk fmt` are governed by the `lint` section of the [`trunk.yaml`](../reference/trunk-yaml.md#cli)file stored in the `.trunk` directory of your git repo. Here's an example of what a fully-featured `lint` section looks like:
 
 ```yaml
 lint:
@@ -264,7 +264,7 @@ lint:
 
 ### Timeout
 
-Each linter has a default timeout of 10 minutes. If its execution takes longer than this amount of time, Trunk Check will terminate the process and return an error to the user.
+Each linter has a default timeout of 10 minutes. If its execution takes longer than this amount of time, Trunk Code Quality will terminate the process and return an error to the user.
 
 To override the timeout for a specific linter, specify a `run_timeout` in its definition:
 

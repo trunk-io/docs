@@ -1,5 +1,5 @@
 ---
-description: Initializing Trunk Check in a git repository
+description: Initializing Trunk Code Quality in a git repository
 ---
 
 # Init in a git repo
@@ -10,7 +10,7 @@ Initializing Trunk in a git repo is as simple as running:
 trunk init
 ```
 
-This will scan your repository and create a `.trunk/trunk.yaml` file which enables all the linters, formatters, and security analyzers that [Trunk Check](../../) recommends.
+This will scan your repository and create a `.trunk/trunk.yaml` file which enables all the linters, formatters, and security analyzers that [Trunk Code Quality](../../) recommends.
 
 {% hint style="info" %}
 Security-conscious users may want to also record the signature of the CLI, which the  [Trunk Launcher](../../reference/components.md#trunk-launcher) will use to verify the CLI's provenance:

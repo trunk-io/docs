@@ -6,7 +6,7 @@ description: Overview of defining linter integrations
 
 ## Linter Integration
 
-Trunk Check's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](../../reference/under-the-hood.md#hold-the-line) solution with your own custom linters.
+Trunk Code Quality's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](../../reference/under-the-hood.md#hold-the-line) solution with your own custom linters.
 
 ## Lint Config Definitions
 

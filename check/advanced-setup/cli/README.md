@@ -50,16 +50,16 @@ yarn add -D @trunkio/launcher
 
 The Trunk CLI can be used for:
 
-* [Trunk Check](../../): a pluggable superlinter with a builtin language server and pre-existing issue detection
+* [Trunk Code Quality](../../): a pluggable superlinter with a builtin language server and pre-existing issue detection
 * [Trunk Tools:](../tools/) hermetic runtime and CLI tool manager
 * [Trunk Actions](../actions/): local workflow automation and githooks manager
 * [Trunk Merge](../../../merge/): a merge queue to make merging code in github safer and easier
 
-[Trunk Check](../../) and [Trunk Actions](../actions/) can be used entirely locally without depending on hosted services or even having a Trunk account
+[Trunk Code Quality](../../) and [Trunk Actions](../actions/) can be used entirely locally without depending on hosted services or even having a Trunk account
 
 ### Initialize Trunk in your repo
 
-Whether you aim to use [Trunk Check](../../), [Trunk Merge](../../../merge/), [Trunk Actions](../actions/), or all of the above, the first step is to initialize Trunk in your git repo:
+Whether you aim to use [Trunk Code Quality](../../), [Trunk Merge](../../../merge/), [Trunk Actions](../actions/), or all of the above, the first step is to initialize Trunk in your git repo:
 
 ```bash
 trunk init

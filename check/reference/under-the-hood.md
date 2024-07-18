@@ -1,5 +1,5 @@
 ---
-description: Details of how various Trunk Check features work under the hood.
+description: Details of how various Trunk Code Quality features work under the hood.
 ---
 
 # Under the Hood
