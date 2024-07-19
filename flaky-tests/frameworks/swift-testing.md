@@ -45,7 +45,7 @@ swift test --xunit-output report.xml
 
 ## Test Suite Naming
 
-The format of Swift Testing's XML output is intended to match XCTests, which does not support changing test names using the `@Suite` and `@Test` description parameters. However, Swift Testing is in the process of building a more flexible, JSON-based output mechanism which includes, among other data, the display names for tests. For more information about this feature see this [issue](https://github.com/apple/swift-testing/pull/479).
+The format of Swift Testing's  XML output is intended to match XCTests, which does not support changing test names using the `@Suite` and `@Test` description parameters. However, Swift Testing is in the process of building a more flexible, JSON-based output mechanism which includes, among other data, the display names for tests. For more information about this feature see this [issue](https://github.com/apple/swift-testing/pull/479).
 
 
 

@@ -218,6 +218,7 @@
     * [Playwright](flaky-tests/frameworks/playwright.md)
     * [pytest](flaky-tests/frameworks/pytest.md)
     * [RSpec](flaky-tests/frameworks/rspec.md)
+    * [Swift Testing](flaky-tests/frameworks/swift-testing.md)
     * [XCTest](flaky-tests/frameworks/xctest.md)
   * [GitHub Pull Request Comments](flaky-tests/github-pull-request-comments.md)
 * [APIs](apis/README.md)

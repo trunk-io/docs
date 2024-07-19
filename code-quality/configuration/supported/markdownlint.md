@@ -40,7 +40,7 @@ Markdownlint supports the following config files:
 * `.markdownlint-cli2.jsonc`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
-Trunk check provides a default `.markdownlint.yaml` if your project does not already have one.
+Trunk Code Quality provides a default `.markdownlint.yaml` if your project does not already have one.
 
 ## Usage Notes
 
@@ -53,5 +53,5 @@ Older versions of `markdownlint` had a bug where it printed plaintext output eve
 ## Links
 
 - [Markdownlint site](https://github.com/DavidAnson/markdownlint)
-- Markdownlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/markdownlint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Markdownlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/markdownlint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

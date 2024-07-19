@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [php-cs-fixer site](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer)
-- php-cs-fixer Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/php-cs-fixer)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- php-cs-fixer Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/php-cs-fixer)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

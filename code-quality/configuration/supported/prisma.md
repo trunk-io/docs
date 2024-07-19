@@ -35,5 +35,5 @@ prisma will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [prisma site](https://github.com/prisma/prisma#readme)
-- prisma Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/prisma)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- prisma Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/prisma)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

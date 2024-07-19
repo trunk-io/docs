@@ -43,5 +43,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [swiftlint site](https://github.com/realm/SwiftLint#readme)
-- swiftlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftlint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- swiftlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftlint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

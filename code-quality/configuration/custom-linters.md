@@ -1,6 +1,6 @@
 # Custom Linters
 
-Trunk Check allows you to define custom linters. If a linter is not within the [list of supported linters](supported/) or you have a bespoke solution, you can define a custom linter.
+Trunk Code Quality allows you to define custom linters. If a linter is not within the [list of supported linters](supported/) or you have a bespoke solution, you can define a custom linter.
 
 ### Defining a Custom Linter
 
@@ -25,7 +25,7 @@ lint:
           success_codes: [0, 1]
 ```
 
-You can also define simple linters inline using tools like `grep`. This linter will grep against your custom regex pattern, format the output using sed, and then parse the output into pattern groups using a [regex output](https://docs.trunk.io/check/configuration/custom-linters/commands/output-types#regex) for Trunk Check to report.
+You can also define simple linters inline using tools like `grep`. This linter will grep against your custom regex pattern, format the output using sed, and then parse the output into pattern groups using a [regex output](https://docs.trunk.io/check/configuration/custom-linters/commands/output-types#regex) for Trunk Code Quality to report.
 
 ```yaml
 # This file controls the behavior of Trunk: https://docs.trunk.io/cli
@@ -54,4 +54,4 @@ To see the configurable fields available visit the [lint-config.md](custom-linte
 
 ### Contributing a New Linter
 
-The [Trunk Check plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) is public and welcomes contributions. Feel free to open a PR if the new custom linter you defined could be useful to others. You can reach out to us [on Slack](https://slack.trunk.io/) if you need a hand.
+The [Trunk Code Quality plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) is public and welcomes contributions. Feel free to open a PR if the new custom linter you defined could be useful to others. You can reach out to us [on Slack](https://slack.trunk.io/) if you need a hand.

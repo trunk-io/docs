@@ -1,6 +1,6 @@
 ---
 description: >-
-  How to tell a Trunk Check linter to ignore certain issues or entire groups of
+  How to tell a Trunk Code Quality linter to ignore certain issues or entire groups of
   files.
 ---
 

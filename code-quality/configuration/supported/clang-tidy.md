@@ -36,7 +36,7 @@ clang-tidy supports the following config files:
 * `.clang-tidy`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
-Trunk check provides a default `.clang-tidy` if your project does not already have one.
+Trunk Code Quality provides a default `.clang-tidy` if your project does not already have one.
 
 ## Usage Notes
 
@@ -95,5 +95,5 @@ Trunk runs `clang-tidy` with a compile commands database so that we can guarante
 ## Links
 
 - [clang-tidy site](https://clang.llvm.org/extra/clang-tidy/)
-- clang-tidy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-tidy)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- clang-tidy Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-tidy)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

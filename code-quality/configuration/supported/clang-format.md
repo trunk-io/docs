@@ -62,5 +62,5 @@ Language: Proto
 ## Links
 
 - [ClangFormat site](https://clang.llvm.org/docs/ClangFormat.html)
-- ClangFormat Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-format)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- ClangFormat Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-format)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

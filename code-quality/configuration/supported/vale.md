@@ -34,12 +34,12 @@ vale supports the following config files:
 * `.vale.ini`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
-Trunk check provides a default `.vale.ini` if your project does not already have one.
+Trunk Code Quality provides a default `.vale.ini` if your project does not already have one.
 
 
 
 ## Links
 
 - [vale site](https://vale.sh/)
-- vale Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/vale)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- vale Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/vale)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

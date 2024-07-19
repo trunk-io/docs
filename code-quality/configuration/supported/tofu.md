@@ -35,5 +35,5 @@ tofu will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [tofu site](https://github.com/opentofu/opentofu)
-- tofu Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tofu)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- tofu Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/tofu)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

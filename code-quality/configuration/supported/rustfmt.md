@@ -35,7 +35,7 @@ rustfmt supports the following config files:
 * `.rustfmt.toml`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
-Trunk check provides a default `.rustfmt.toml` if your project does not already have one.
+Trunk Code Quality provides a default `.rustfmt.toml` if your project does not already have one.
 
 ## Usage Notes
 
@@ -51,5 +51,5 @@ edition = "2021"
 ## Links
 
 - [rustfmt site](https://github.com/rust-lang/rustfmt)
-- rustfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rustfmt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- rustfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rustfmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

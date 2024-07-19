@@ -35,5 +35,5 @@ cfnlint will be auto-enabled if any *Cloudformation* files are present.
 ## Links
 
 - [cfnlint site](https://github.com/aws-cloudformation/cfn-lint#readme)
-- cfnlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cfnlint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- cfnlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cfnlint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -49,5 +49,5 @@ Trufflehog will be auto-enabled if any *ALL* files are present.
 ## Links
 
 - [Trufflehog site](https://github.com/trufflesecurity/trufflehog)
-- Trufflehog Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Trufflehog Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

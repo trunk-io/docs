@@ -1,16 +1,16 @@
 ---
-description: Manually upload Trunk Check results for CI use.
+description: Manually upload Trunk Code Quality results for CI use.
 ---
 
-# Upload Trunk Check Results
+# Upload Trunk Code Quality Results
 
 {% hint style="info" %}
 If you use GitHub, we recommend you follow the [GitHub Integration](../get-started/github-integration.md) guide.
 {% endhint %}
 
-Trunk Check has the ability to post its results to app.trunk.io. This will enable you to view your repository's Check history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
+Trunk Code Quality has the ability to post its results to app.trunk.io. This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
 
-In order to keep the data up-to-date, you should upload Trunk Check results regularly in an automated fashion. Depending on the size of your repository and the linters you have configured to run, running Trunk Check on your whole repository may take a while. Because this run may take a while, we recommend uploading Trunk Check results once daily. However, the system supports uploading results for every commit, so the granularity of upload is up to you.
+In order to keep the data up-to-date, you should upload Trunk Code Quality results regularly in an automated fashion. Depending on the size of your repository and the linters you have configured to run, running Trunk Code Quality on your whole repository may take a while. Because this run may take a while, we recommend uploading Trunk Code Quality results once daily. However, the system supports uploading results for every commit, so the granularity of upload is up to you.
 
 ### Running `trunk check --upload`
 

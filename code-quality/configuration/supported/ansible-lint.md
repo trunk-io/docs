@@ -49,5 +49,5 @@ If your ansible setup is not contained within a single folder you would list all
 ## Links
 
 - [Ansible-lint site](https://github.com/ansible/ansible-lint)
-- Ansible-lint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ansible-lint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Ansible-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ansible-lint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

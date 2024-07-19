@@ -41,5 +41,5 @@ Unlike with most tools under `trunk check`, these files cannot be moved.
 ## Links
 
 - [regal site](https://github.com/StyraInc/regal)
-- regal Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/regal)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- regal Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/regal)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

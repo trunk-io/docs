@@ -28,7 +28,7 @@ To run in parallel mode, each pull request needs to be inspected for its impacte
 \
 In the example above, the pull requests **A**, **B**, and **D** can be tested in isolation since they affect distinct targets - `backend`, `frontend` and `docs`. The **C** pull request affects both `frontend` and `backend` and would be tested predictively with the changes in both **A** and **B**. \
 \
-In order to understand the interactions or dependent changes between pull requests, Trunk Merge provides an API for posting the list of **impacted targets** that result from code changes in every PR. When Trunk Merge is running in parallel mode, pull requests will not be processed until the list of impacted targets are uploaded.  \
+In order to understand the interactions or dependent changes between pull requests, Trunk Merge Queue provides an API for posting the list of **impacted targets** that result from code changes in every PR. When Trunk Merge Queue is running in parallel mode, pull requests will not be processed until the list of impacted targets are uploaded.  \
 \
 **What are Impacted Targets?**\
 Impacted targets are metadata that describe the logical changes of a pull request. An impacted target is a string that can be as expressive as a bazel target or the name of a file folder. Calculating impacted targets with a purpose-built build system will provide absolute correctness for the merge queue, but more lightweight glob or folder-based approaches can also work with fewer guarantees around correctness. \

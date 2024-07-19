@@ -1,5 +1,5 @@
 ---
-description: Trunk Check usage data tracking
+description: Trunk Code Quality usage data tracking
 ---
 
 # Telemetry

@@ -35,5 +35,5 @@ txtpbfmt will be auto-enabled if any *Textproto* files are present.
 ## Links
 
 - [txtpbfmt site](https://github.com/protocolbuffers/txtpbfmt/)
-- txtpbfmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/txtpbfmt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- txtpbfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/txtpbfmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

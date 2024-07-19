@@ -35,5 +35,5 @@ pre-commit-hooks will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [pre-commit-hooks site](https://pre-commit.com/hooks.html)
-- pre-commit-hooks Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- pre-commit-hooks Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

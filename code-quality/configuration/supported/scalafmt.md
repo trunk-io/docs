@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [scalafmt site](https://github.com/scalameta/scalafmt#readme)
-- scalafmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/scalafmt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- scalafmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/scalafmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

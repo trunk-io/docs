@@ -48,12 +48,12 @@ Ruff supports the following config files:
 * `ruff.toml`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
-Trunk check provides a default `ruff.toml` if your project does not already have one.
+Trunk Code Quality provides a default `ruff.toml` if your project does not already have one.
 
 
 
 ## Links
 
 - [Ruff site](https://github.com/astral-sh/ruff)
-- Ruff Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ruff)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Ruff Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ruff)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
