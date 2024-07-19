@@ -34,7 +34,7 @@ The behavior of batching is controlled by two settings in the Merge Queue:\
 
 ### What happens when a batch fails testing?
 
-If a batch fails, Trunk Merge will move it to a separate queue for bisection analysis. In this queue, the batch will be split in various ways and tested in isolation to determine the PRs in the batch that introduced the failure. PRs that pass this way will be moved back to the main queue for re-testing. PRs that are believed to have caused the failure are kicked from the queue.
+If a batch fails, Trunk Merge Queue will move it to a separate queue for bisection analysis. In this queue, the batch will be split in various ways and tested in isolation to determine the PRs in the batch that introduced the failure. PRs that pass this way will be moved back to the main queue for re-testing. PRs that are believed to have caused the failure are kicked from the queue.
 
 ### Batching + Optimistic Merging and Pending Failure Depth
 

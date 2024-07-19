@@ -4,7 +4,7 @@ description: Push updates about your queue status to Slack to keep your team inf
 
 # Integration for Slack
 
-Trunk Merge integrates with Slack to push relevant information to your team so you can stay up to date with the status of your pull requests.
+Trunk Merge Queue integrates with Slack to push relevant information to your team so you can stay up to date with the status of your pull requests.
 
 ## Setup Integration with Slack
 

@@ -16,9 +16,9 @@ The queue tab provides an overview of the work done by Merge. Merged, testing, a
 
 ### Pull Request Details
 
-The PR details shows information about a PR, including a link to the PR in GitHub, the history of the PR within Trunk Merge, and what must be done before a PR can be admitted to the queue for PRs that have not entered the queue yet.
+The PR details shows information about a PR, including a link to the PR in GitHub, the history of the PR within Trunk Merge Queue, and what must be done before a PR can be admitted to the queue for PRs that have not entered the queue yet.
 
-When a PR has not been admitted to the queue yet, Trunk Merge waits for:
+When a PR has not been admitted to the queue yet, Trunk Merge Queue waits for:
 
 1. Impacted targets to be uploaded for the PRs current SHA (`Parallel` mode only)
 2. The PR to be mergeable according to GitHub. If the PR is not mergeable yet, this most likely means that the PR is not meeting all branch protection rules you have set (for example, not all required status checks have passed yet) or has a merge conflict with the target branch
@@ -52,7 +52,7 @@ A tabulated view of all the items that have failed in the Merge Queue, e.g. due 
 
 ## Manually Restarting Failed PRs
 
-Trunk Merge will automatically restart failed PRs when in can under certain conditions (see PR states). Since the restart is usually from a failed PR being removed form the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ using the **Restart tests** option of the PR dropdown (labeled "...")
+Trunk Merge Queue will automatically restart failed PRs when in can under certain conditions (see PR states). Since the restart is usually from a failed PR being removed form the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ using the **Restart tests** option of the PR dropdown (labeled "...")
 
 <figure><img src="../.gitbook/assets/pr-restart-menu.png" alt=""><figcaption><p>PR actions menu</p></figcaption></figure>
 
@@ -62,7 +62,7 @@ Another reason to restart a PR is if the proper tests don't get kicked off due t
 
 ## Queue Visualization
 
-The view of all current PRs being tested by Trunk Merge and their respective queues. Each node shown is a pull request, and each edge indicates that the pull request is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, the this will be a single line showing the testing and merging process.
+The view of all current PRs being tested by Trunk Merge Queue and their respective queues. Each node shown is a pull request, and each edge indicates that the pull request is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, the this will be a single line showing the testing and merging process.
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 

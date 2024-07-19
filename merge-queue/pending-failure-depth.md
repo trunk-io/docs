@@ -6,7 +6,7 @@ Let's take the example queue below:\
 \
 `main` <- **A** <- **B** <- **C**\
 \
-If _pending failure depth_ is set to 2 and **A** fails, Trunk Merge will wait until both **B** and **C** complete testing before retrying or kicking **A** out of the queue. \
+If _pending failure depth_ is set to 2 and **A** fails, Trunk Merge Queue will wait until both **B** and **C** complete testing before retrying or kicking **A** out of the queue. \
 \
 **Why does this matter?**\
 Since trunk merge performs predictive testing when the queue above is tested it is actually testing the code like this:\
