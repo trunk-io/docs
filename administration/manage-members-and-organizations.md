@@ -4,7 +4,7 @@ description: Configure team settings and invite team members
 
 # Manage Members & Organizations
 
-The Trunk App is available at [app.trunk.io](https://app.trunk.io/). In the app, you can view the health of your repositories, browse issues detected by [Check](../check/#what-is-trunk-check), configure merge queues with [Merge](../merge/), monitor CI with [CI Analytics](../ci-analytics/), and catch flaky tests detected by [Flaky Tests](../flaky-tests/).
+The Trunk App is available at [app.trunk.io](https://app.trunk.io/). In the app, you can view the health of your repositories, browse issues detected by [Check](../code-quality/#what-is-trunk-check), configure merge queues with [Merge](../merge-queue/), monitor CI with [CI Analytics](../ci-analytics/), and catch flaky tests detected by [Flaky Tests](../flaky-tests/).
 
 ## Creating a Trunk Organization <a href="#creating-a-trunk-organization" id="creating-a-trunk-organization"></a>
 
