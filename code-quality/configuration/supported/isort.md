@@ -43,5 +43,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 * [isort site](https://pycqa.github.io/isort/)
-* isort Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/isort)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* isort Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/isort)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

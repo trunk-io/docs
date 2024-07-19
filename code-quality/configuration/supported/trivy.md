@@ -63,5 +63,5 @@ lint:
 ## Links
 
 * [Trivy site](https://github.com/aquasecurity/trivy)
-* Trivy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trivy)
+* Trivy Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trivy)
 * Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

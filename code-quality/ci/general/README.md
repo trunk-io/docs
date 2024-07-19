@@ -1,6 +1,6 @@
 ---
 description: >-
-  How to integrate Trunk Check into CI for GitLab and other non-GitHub
+  How to integrate Trunk Code Quality into CI for GitLab and other non-GitHub
   providers, or for GitHub without using the Trunk GitHub App
 layout:
   title:

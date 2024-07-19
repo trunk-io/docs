@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 * [autopep8 site](https://github.com/hhatto/autopep8#readme)
-* autopep8 Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/autopep8)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* autopep8 Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/autopep8)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

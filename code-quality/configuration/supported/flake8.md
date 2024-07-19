@@ -55,8 +55,8 @@ enabled:
 `flake8-bugbear` is probably the most popular **flake8** plugin, we recommend it!. Here are a few other popular flake8 plugins you should consider.
 
 * **flake8-comprehensions**: Helps in identifying unnecessary comprehensions in your code.
-* **flake8-docstrings**: Checks for compliance with Python docstring conventions.
-* **flake8-import-order**: Checks the order of your imports according to various configurable ordering styles.
+* **flake8-docstrings**: Code Qualitys for compliance with Python docstring conventions.
+* **flake8-import-order**: Code Qualitys the order of your imports according to various configurable ordering styles.
 
 Here's an updated code snippet with the above Plugins enabled:
 
@@ -73,5 +73,5 @@ enabled:
 ## Links
 
 * [Flake8 site](https://flake8.pycqa.org/en/latest/)
-* Flake8 Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/flake8)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* Flake8 Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/flake8)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

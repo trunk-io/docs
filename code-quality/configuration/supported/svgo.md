@@ -43,5 +43,5 @@ Trunk check provides a default `svgo.config.js` if your project does not already
 ## Links
 
 - [SVGO site](https://github.com/svg/svgo)
-- SVGO Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/svgo)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- SVGO Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/svgo)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

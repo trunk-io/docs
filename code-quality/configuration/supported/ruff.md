@@ -55,5 +55,5 @@ Trunk check provides a default `ruff.toml` if your project does not already have
 ## Links
 
 - [Ruff site](https://github.com/astral-sh/ruff)
-- Ruff Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ruff)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Ruff Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ruff)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

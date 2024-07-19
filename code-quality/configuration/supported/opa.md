@@ -35,5 +35,5 @@ opa will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [opa site](https://www.openpolicyagent.org/docs/latest/cli/#opa-fmt)
-- opa Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/opa)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- opa Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/opa)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

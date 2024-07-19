@@ -44,5 +44,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 * [Bandit site](https://github.com/PyCQA/bandit)
-* Bandit Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/bandit)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* Bandit Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/bandit)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

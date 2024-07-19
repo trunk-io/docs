@@ -4,7 +4,7 @@ description: Installing the Neovim plugin
 
 # Neovim Plugin
 
-> 📘 The Trunk Check Neovim Plugin is available for beta!
+> 📘 The Trunk Code Quality Neovim Plugin is available for beta!
 >
 > Try it out by following the instructions below.
 
@@ -56,6 +56,6 @@ The Neovim Plugin is designed to mirror the [VSCode extension](vs-code.md). Supp
 
 ### Limitations
 
-The Trunk Check Neovim Plugin is in beta with limited support. If you encounter any issues, feel free to reach out on [Slack](https://slack.trunk.io).
+The Trunk Code Quality Neovim Plugin is in beta with limited support. If you encounter any issues, feel free to reach out on [Slack](https://slack.trunk.io).
 
 For other notes and configuration, see the [Neovim Plugins repo](https://github.com/trunk-io/neovim-trunk#trunk-check-neovim-plugin).

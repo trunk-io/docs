@@ -42,5 +42,5 @@ Trunk check provides a default `.hadolint.yaml` if your project does not already
 ## Links
 
 - [hadolint site](https://github.com/hadolint/hadolint#readme)
-- hadolint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/hadolint)
+- hadolint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/hadolint)
 - Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -1,7 +1,7 @@
 ---
-title: Trunk | How to run ShellCheck
+title: Trunk | How to run ShellCode Quality
 description: >-
-  ShellCheck is a static analysis tool designed to identify and report syntax
+  ShellCode Quality is a static analysis tool designed to identify and report syntax
   errors and potential issues in shell scripts
 layout:
   title:
@@ -16,11 +16,11 @@ layout:
     visible: true
 ---
 
-# ShellCheck
+# ShellCode Quality
 
-[**ShellCheck**](https://www.shellcheck.net/) is a linter for Bash.
+[**ShellCode Quality**](https://www.shellcheck.net/) is a linter for Bash.
 
-You can enable the ShellCheck linter with:
+You can enable the ShellCode Quality linter with:
 
 ```shell
 trunk check enable shellcheck
@@ -30,11 +30,11 @@ trunk check enable shellcheck
 
 ## Auto Enabling
 
-ShellCheck will be auto-enabled if any _Shell_ files are present.
+ShellCode Quality will be auto-enabled if any _Shell_ files are present.
 
 ## Settings
 
-ShellCheck supports the following config files:
+ShellCode Quality supports the following config files:
 
 * `.shellcheckrc`
 * `shellcheckrc`
@@ -44,5 +44,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 * [ShellCheck site](https://www.shellcheck.net/)
-* ShellCheck Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shellcheck)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* ShellCheck Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shellcheck)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -4,7 +4,7 @@ description: Installing the Visual Studio Code extension
 
 # VS Code
 
-Trunk Check is available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=trunk.io) that you can use to streamline your linting and formatting experience.
+Trunk Code Quality is available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=trunk.io) that you can use to streamline your linting and formatting experience.
 
 ### Get Started
 
@@ -34,7 +34,7 @@ On the side bar to the left you'll see the Trunk icon, which you can use to open
 
 ![side panel](https://static.trunk.io/assets/vscode\_side\_panel.png)
 
-Trunk also shows Trunk Check Issues in a panel in the File Explorer, but you can hide it if you wish:
+Trunk also shows Trunk Code Quality Issues in a panel in the File Explorer, but you can hide it if you wish:
 
 ![hide explorer panel](https://static.trunk.io/assets/vscode\_hide\_explorer\_panel.jpg)
 

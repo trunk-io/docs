@@ -43,5 +43,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [stringslint site](https://github.com/dral3x/StringsLint#readme)
-- stringslint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stringslint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- stringslint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stringslint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

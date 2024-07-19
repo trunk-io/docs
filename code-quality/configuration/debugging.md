@@ -53,7 +53,7 @@ report:
 
 ## Debugging Linter Failures in CI
 
-If linter failures occur while Trunk Check is running in CI, you'll see something like this:
+If linter failures occur while Trunk Code Quality is running in CI, you'll see something like this:
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-10-16 at 5.09.29 PM.png" alt=""><figcaption></figcaption></figure>
 

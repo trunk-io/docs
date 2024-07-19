@@ -51,5 +51,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 * [cspell site](https://github.com/streetsidesoftware/cspell#readme)
-* cspell Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cspell)
-* Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* cspell Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cspell)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

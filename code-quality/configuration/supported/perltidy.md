@@ -41,5 +41,5 @@ Trunk check provides a default `.perltidyrc` if your project does not already ha
 ## Links
 
 - [perltidy site](https://metacpan.org/dist/Perl-Tidy/view/bin/perltidy)
-- perltidy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/perltidy)
+- perltidy Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/perltidy)
 - Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
