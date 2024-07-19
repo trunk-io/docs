@@ -1,5 +1,5 @@
 ---
-description: Merge can be configured in single or parallel mode depending on your needs.
+description: Merge Queue can be configured in single or parallel mode depending on your needs.
 layout:
   title:
     visible: true
@@ -21,7 +21,7 @@ Merge can support two different modes - `Single` and `Parallel` mode. The mode a
 
 #### Parallel Mode
 
-In this mode, Trunk Merge will dynamically create new merge queues for PRs that affect different parts of your code base. To support this, you will be required to provide a list of impacted targets that result from code changes in the PR (see [impacted-targets.md](set-up-trunk-merge/impacted-targets.md "mention") for more details as well as how to generate the list of impacted targets). Trunk Merge will then examine the provided list of impacted targets for all PRs in the existing merge queues and only make your PR depend in the other PRs it actually affects.
+In this mode, Trunk Merge Queue will dynamically create new merge queues for PRs that affect different parts of your code base. To support this, you will be required to provide a list of impacted targets that result from code changes in the PR (see [impacted-targets.md](set-up-trunk-merge/impacted-targets.md "mention") for more details as well as how to generate the list of impacted targets). Trunk Merge will then examine the provided list of impacted targets for all PRs in the existing merge queues and only make your PR depend in the other PRs it actually affects.
 
 For example, the following PRs:
 
