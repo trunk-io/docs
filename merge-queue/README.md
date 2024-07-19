@@ -4,10 +4,9 @@ description: >-
   your main branch.
 ---
 
-# Merge
+# Merge Queue
 
-**Trunk Merge Queue** is a hosted merge queue service. It manages and controls the order in which enqueued pull requests are merged into the `main` branch of your repository. Trunk Merge Queue enables large teams working in a monorepo to reduce merge conflicts and maintain a green, healthy main branch. \
-
+**Trunk Merge Queue** is a hosted merge queue service. It manages and controls the order in which enqueued pull requests are merged into the `main` branch of your repository. Trunk Merge Queue enables large teams working in a monorepo to reduce merge conflicts and maintain a green, healthy main branch.
 
 ### **Why use a merge queue?**
 
@@ -15,14 +14,14 @@ Merge queues automate PR merges into your repo's `main` branch, ensuring incompa
 
 ### **Why do teams adopt a merge queue?**
 
-As the number of concurrent, changes to a repository grows, the likelihood that your pull request has stale/invalid test results increases. The only way to guarantee that your `main` branch doesn not become "broken" is to make sure that all code changes are tested against the head of `main`.&#x20;
+As the number of concurrent, changes to a repository grows, the likelihood that your pull request has stale/invalid test results increases. The only way to guarantee that your `main` branch doesn not become "broken" is to make sure that all code changes are tested against the head of `main`.
 
 As an example:
 
-1. Jack opens pull request **A** which renames the function `foo()` to `bar()` and updates all the call sites to the new name.&#x20;
+1. Jack opens pull request **A** which renames the function `foo()` to `bar()` and updates all the call sites to the new name.
 2. Jill opens pull request **B** which adds a new file that uses the existing function `foo().`
 3. Jack and Jill are not aware of each other's PRs, and the automated build and tests for each of these independent pull requests both pass.
-4. Regardless of order, when pull requests **A** and **B** both merge, there is code in the system calling the function `foo()` that no longer exists.&#x20;
+4. Regardless of order, when pull requests **A** and **B** both merge, there is code in the system calling the function `foo()` that no longer exists.
 5. The build is now broken.
 
 A merge queue's purpose is to give you the guarantee of all code being tested against `main` without actually doing that work serially or in reaction to code merging onto main. The merge queue service predicts the future state of `main` and tests against that. ([see predictive testing](predictive-testing.md)). Returning to our example - pull requests A and B would both be submitted to the merge queue, which would then perform the predictive testing to ensure that A and B, when combined, do not break the build.
