@@ -35,5 +35,5 @@ dotnet-format will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [dotnet-format site](https://github.com/dotnet/format#readme)
-- dotnet-format Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotnet-format)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- dotnet-format Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dotnet-format)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

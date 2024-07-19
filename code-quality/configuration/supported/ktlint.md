@@ -35,5 +35,5 @@ ktlint will be auto-enabled if any *Kotlin* files are present.
 ## Links
 
 - [ktlint site](https://github.com/pinterest/ktlint#readme)
-- ktlint Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ktlint)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- ktlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ktlint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -48,5 +48,5 @@ Clippy is distributed with rust itself, so specify your rust version for your cl
 ## Links
 
 - [Clippy site](https://doc.rust-lang.org/clippy/)
-- Clippy Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clippy)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Clippy Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clippy)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

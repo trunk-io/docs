@@ -35,5 +35,5 @@ terrascan will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [terrascan site](https://github.com/tenable/terrascan#readme)
-- terrascan Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terrascan)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- terrascan Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terrascan)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

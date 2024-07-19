@@ -35,5 +35,5 @@ Oxipng will be auto-enabled if any *Png* files are present.
 ## Links
 
 - [Oxipng site](https://github.com/shssoichiro/oxipng)
-- Oxipng Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/oxipng)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Oxipng Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/oxipng)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

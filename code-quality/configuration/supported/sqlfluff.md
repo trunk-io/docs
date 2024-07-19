@@ -36,7 +36,7 @@ SQLFluff supports the following config files:
 * `.sqlfluff`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
-Trunk check provides a default `.sqlfluff` if your project does not already have one.
+Trunk Code Quality provides a default `.sqlfluff` if your project does not already have one.
 
 ## Usage Notes
 
@@ -55,5 +55,5 @@ lint:
 ## Links
 
 - [SQLFluff site](https://github.com/sqlfluff/sqlfluff)
-- SQLFluff Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfluff)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- SQLFluff Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfluff)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

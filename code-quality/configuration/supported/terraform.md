@@ -49,5 +49,5 @@ Note: you must run `terraform init` before running `trunk check` with `terraform
 ## Links
 
 - [Terraform site](https://developer.hashicorp.com/terraform/cli/commands)
-- Terraform Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terraform)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Terraform Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terraform)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

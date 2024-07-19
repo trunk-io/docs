@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [Brakeman site](https://github.com/presidentbeef/brakeman)
-- Brakeman Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/brakeman)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Brakeman Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/brakeman)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

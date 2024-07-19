@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [pyright site](https://github.com/microsoft/pyright)
-- pyright Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pyright)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- pyright Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pyright)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

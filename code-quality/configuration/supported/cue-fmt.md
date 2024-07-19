@@ -35,5 +35,5 @@ cue-fmt will be auto-enabled if any *Cue* files are present.
 ## Links
 
 - [cue-fmt site](https://cuelang.org)
-- cue-fmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cue-fmt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- cue-fmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cue-fmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

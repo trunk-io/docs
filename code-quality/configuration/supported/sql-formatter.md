@@ -35,5 +35,5 @@ sql-formatter will never be auto-enabled. It must be enabled manually.
 ## Links
 
 - [sql-formatter site](https://github.com/sql-formatter-org/sql-formatter#readme)
-- sql-formatter Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sql-formatter)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- sql-formatter Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sql-formatter)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -1,8 +1,6 @@
 ---
-title: Trunk | How to run ShellCode Quality
-description: >-
-  ShellCode Quality is a static analysis tool designed to identify and report syntax
-  errors and potential issues in shell scripts
+description: ShellCheck is a static analysis tool designed to identify and report syntax errors and potential issues in shell scripts
+title: Trunk | How to run ShellCheck
 layout:
   title:
     visible: true
@@ -16,33 +14,33 @@ layout:
     visible: true
 ---
 
-# ShellCode Quality
+# ShellCheck
 
-[**ShellCode Quality**](https://www.shellcheck.net/) is a linter for Bash.
+[**ShellCheck**](https://www.shellcheck.net/) is a linter for Bash.
 
-You can enable the ShellCode Quality linter with:
+You can enable the ShellCheck linter with:
 
 ```shell
 trunk check enable shellcheck
 ```
-
-![shellcheck example output](../../../check/configuration/supported/shellcheck.gif)
-
+![shellcheck example output](./shellcheck.gif)
 ## Auto Enabling
 
-ShellCode Quality will be auto-enabled if any _Shell_ files are present.
+ShellCheck will be auto-enabled if any *Shell* files are present.
 
 ## Settings
 
-ShellCode Quality supports the following config files:
-
+ShellCheck supports the following config files:
 * `.shellcheckrc`
 * `shellcheckrc`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](../#moving-linter-configs) for more info. Trunk check provides a default `.shellcheckrc` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk Code Quality provides a default `.shellcheckrc` if your project does not already have one.
+
+
 
 ## Links
 
-* [ShellCheck site](https://www.shellcheck.net/)
-* ShellCheck Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shellcheck)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [ShellCheck site](https://www.shellcheck.net/)
+- ShellCheck Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shellcheck)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

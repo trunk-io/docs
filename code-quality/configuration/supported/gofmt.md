@@ -35,5 +35,5 @@ gofmt will be auto-enabled if any *Go* files are present.
 ## Links
 
 - [gofmt site](https://pkg.go.dev/cmd/gofmt)
-- gofmt Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- gofmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

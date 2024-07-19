@@ -34,7 +34,7 @@ perltidy supports the following config files:
 * `.perltidyrc`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
-Trunk check provides a default `.perltidyrc` if your project does not already have one.
+Trunk Code Quality provides a default `.perltidyrc` if your project does not already have one.
 
 
 
@@ -42,4 +42,4 @@ Trunk check provides a default `.perltidyrc` if your project does not already ha
 
 - [perltidy site](https://metacpan.org/dist/Perl-Tidy/view/bin/perltidy)
 - perltidy Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/perltidy)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

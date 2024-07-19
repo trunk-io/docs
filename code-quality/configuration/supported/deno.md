@@ -43,4 +43,4 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 - [deno site](https://deno.land/manual)
 - deno Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/deno)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

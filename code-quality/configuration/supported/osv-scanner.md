@@ -41,5 +41,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [OSV-Scanner site](https://github.com/google/osv-scanner)
-- OSV-Scanner Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/osv-scanner)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- OSV-Scanner Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/osv-scanner)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

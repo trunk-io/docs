@@ -42,5 +42,5 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 ## Links
 
 - [biome site](https://biomejs.dev/)
-- biome Trunk Check [integration source](https://github.com/trunk-io/plugins/tree/main/linters/biome)
-- Trunk Check's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- biome Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/biome)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

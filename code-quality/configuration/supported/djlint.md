@@ -34,7 +34,7 @@ djlint supports the following config files:
 * `.djlintrc`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
-Trunk check provides a default `.djlintrc` if your project does not already have one.
+Trunk Code Quality provides a default `.djlintrc` if your project does not already have one.
 
 
 

@@ -1,8 +1,6 @@
 ---
+description: isort is a Python utility for sorting imports alphabetically and automatically separating them into sections and by type. 
 title: Trunk | How to run isort
-description: >-
-  isort is a Python utility for sorting imports alphabetically and automatically
-  separating them into sections and by type.
 layout:
   title:
     visible: true
@@ -25,23 +23,23 @@ You can enable the isort formatter with:
 ```shell
 trunk check enable isort
 ```
-
-![isort example output](../../../check/configuration/supported/isort.gif)
-
+![isort example output](./isort.gif)
 ## Auto Enabling
 
-isort will be auto-enabled if any _Python_ files are present.
+isort will be auto-enabled if any *Python* files are present.
 
 ## Settings
 
 isort supports the following config files:
-
 * `.isort.cfg`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](../#moving-linter-configs) for more info. Trunk check provides a default `.isort.cfg` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk Code Quality provides a default `.isort.cfg` if your project does not already have one.
+
+
 
 ## Links
 
-* [isort site](https://pycqa.github.io/isort/)
-* isort Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/isort)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [isort site](https://pycqa.github.io/isort/)
+- isort Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/isort)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
