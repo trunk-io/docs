@@ -110,7 +110,7 @@ lint:
           success_codes: [0]
 ```
 
-See our documentation on [custom linters](../../configuration/custom-linters-1/) and [custom parsers](../../configuration/custom-linters-1/commands/custom-parsers.md) for more on what you can do, such as writing your parser in Javascript or Python!
+See our documentation on [custom linters](../../configuration/integrating-linters/) and [custom parsers](../../configuration/integrating-linters/commands/custom-parsers.md) for more on what you can do, such as writing your parser in Javascript or Python!
 
 ### Publishing your plugin
 

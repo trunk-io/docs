@@ -50,7 +50,7 @@ lint:
           parse_regex: "(?P<path>.*):(?P<line>-?\\d+):(?P<col>-?\\d+): \\[(?P<severity>[^\\]]*)\\] (?P<message>[^\\(]*) \\((?P<code>[^\\)]*)\\)"
 ```
 
-To see the configurable fields available visit the [lint-config.md](custom-linters-1/reference/lint-config.md "mention")and [linter-definition.md](custom-linters-1/reference/linter-definition.md "mention") pages.
+To see the configurable fields available visit the [lint-config.md](integrating-linters/reference/lint-config.md "mention")and [linter-definition.md](integrating-linters/reference/linter-definition.md "mention") pages.
 
 ### Contributing a New Linter
 
