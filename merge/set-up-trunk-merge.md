@@ -1,5 +1,5 @@
 ---
-description: How to set up Trunk Merge for your project
+description: How to set up Trunk Merge Queue for your project
 ---
 
 # Setup
@@ -12,11 +12,11 @@ Select the repository you would like to use and click **Get Started.**
 
 <figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-### Set Up Trunk Merge
+### Set Up Trunk Merge Queue
 
-Go to the Merge tab. You will see the "Set Up Trunk Merge" page. From there, you can specify:
+Go to the Merge tab. You will see the "Set Up Trunk Merge Queue" page. From there, you can specify:
 
-1. The name of the branch that Trunk Merge should help manage merging PRs into.
+1. The name of the branch that Trunk Merge Queue should help manage merging PRs into.
 2. The [number](set-up-trunk-merge/advanced-settings.md#concurrency) of Pull Requests that Merge can test at the same time.
 3. The [mode](configuration.md#single-parallel-mode) that Trunk Merge Queues will start in.
 
@@ -45,12 +45,12 @@ merge:
 To use GitHub branch protection instead follow GitHub's instructions for [requiring status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
 
 {% hint style="info" %}
-Required statuses defined in the `.trunk/trunk.yaml` file take precedence over the GitHub required status checks from branch protection, as Trunk Merge will only pull the list of required statuses from one or the other - it will not combine them. If neither is defined the merge process will fail.
+Required statuses defined in the `.trunk/trunk.yaml` file take precedence over the GitHub required status checks from branch protection, as Trunk Merge Queue will only pull the list of required statuses from one or the other - it will not combine them. If neither is defined the merge process will fail.
 {% endhint %}
 
 ### Configure a Push Triggered Workflow For Required Status Checks
 
-Trunk Merge creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
+Trunk Merge Queue creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
 
 For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:
 
@@ -58,7 +58,7 @@ For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtere
 name: Run Required Checks
 run-name: PR Checks for ${{ github.ref_name }}
 
-# Trigger jobs whenever Trunk Merge tests a PR using a `trunk-merge/` branch
+# Trigger jobs whenever Trunk Merge Queue tests a PR using a `trunk-merge/` branch
 on:
   push:
     branches:
@@ -90,7 +90,7 @@ Now you are ready to submit your first PR. Let's go!
 
 Try making a simple change on a branch and submit it as PR in GitHub.
 
-Now trigger Trunk Merge to process this PR using either a comment on the PR  in GitHub or using the Trunk CLI.
+Now trigger Trunk Merge Queue to process this PR using either a comment on the PR  in GitHub or using the Trunk CLI.
 
 {% tabs %}
 {% tab title="GitHub Pull Request View" %}
@@ -117,7 +117,7 @@ Once a PR is submitted to the Merge queue, it will start as _Not Ready_ until al
 
 ## Success!
 
-Now Trunk Merge is setup with your repo. Whenever a PR is pushed to your merge branch it will be safely tested and automatically merged when all tests pass, regardless of the order they were pushed in.
+Now Trunk Merge Queue is setup with your repo. Whenever a PR is pushed to your merge branch it will be safely tested and automatically merged when all tests pass, regardless of the order they were pushed in.
 
 ### Next Steps
 

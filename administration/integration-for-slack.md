@@ -1,6 +1,6 @@
 ---
 description: >-
-  Trunk Code Quality, Trunk Merge, and other Trunk products can communicate directly
+  Trunk Code Quality, Trunk Merge Queue, and other Trunk products can communicate directly
   with your developer team through Slack.
 ---
 
@@ -31,7 +31,7 @@ Now that you've connected your Slack account with Trunk, you will choose the typ
 
 {% tabs %}
 {% tab title="trunk merge" %}
-<figure><img src="../.gitbook/assets/Screenshot 2024-06-04 at 6.35.18 PM.png" alt=""><figcaption><p>Configure Slack notifications for Trunk Merge</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-06-04 at 6.35.18 PM.png" alt=""><figcaption><p>Configure Slack notifications for Trunk Merge Queue</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="trunk check" %}

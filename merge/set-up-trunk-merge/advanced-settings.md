@@ -47,7 +47,7 @@ For example, assuming a concurrency of 3:
 
 ## Branch Protection
 
-Trunk Merge, since it will eventually merge your PR on GitHub, is still **bound by any protection rules set in GitHub** that affect the branch Trunk Merge will merge into or that affect your Trunk Merge branch. For example, if a PR requires at least one review to merge, then Trunk Merge would display `'not mergable GitHub yet'` until that PR has a review.
+Trunk Merge Queue, since it will eventually merge your PR on GitHub, is still **bound by any protection rules set in GitHub** that affect the branch Trunk Merge Queue will merge into or that affect your Trunk Merge Queue branch. For example, if a PR requires at least one review to merge, then Trunk Merge Queue would display `'not mergable GitHub yet'` until that PR has a review.
 
 If you have trouble with merge queueing PRs, check if there is any kind of additional branch protection set up on your repo. Existing branch protection rules must be changed in order to **not** protect branches in the form of `trunk-temp/*` and `trunk-merge/*` . If either of those branches are considered protected in any way according to GitHub (e.g., if there is a `*/*` branch protection rule), then Merge will not be able to run tests properly due to GitHub permission errors.
 
@@ -55,16 +55,16 @@ If there are any questions or help is needed, reach out on our  questions or hel
 
 ### Draft PRs
 
-In some cases, you might not want every check that gets triggered when a PR gets created to run when testing PRs in the merge queue (say for example, you deploy your frontend on every PR so that reviewers can interact with it). In that case, if you prefer to use Trunk Merge without Draft PRs, you can disable it by navigating to **Settings > Repositories >** select your repository **> Merge >** toggle **Trunk Draft PR Creation.** \
+In some cases, you might not want every check that gets triggered when a PR gets created to run when testing PRs in the merge queue (say for example, you deploy your frontend on every PR so that reviewers can interact with it). In that case, if you prefer to use Trunk Merge Queue without Draft PRs, you can disable it by navigating to **Settings > Repositories >** select your repository **> Merge >** toggle **Trunk Draft PR Creation.** \
 \
-When draft PR creation is disabled, you will need to configure push-triggered workflows to run on branches to test each merge request. You can also configure custom gating for your PRs if you want to gate on a different set of checks for Trunk Merge.
+When draft PR creation is disabled, you will need to configure push-triggered workflows to run on branches to test each merge request. You can also configure custom gating for your PRs if you want to gate on a different set of checks for Trunk Merge Queue.
 
 #### Configure a Push Triggered Workflow For Required Status Checks
 
-When creating Draft PRs is disabled, Trunk Merge creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
+When creating Draft PRs is disabled, Trunk Merge Queue creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
 
 {% hint style="info" %}
-If you already have tests that trigger on new PRs, you can use the [Draft PR Creation](https://docs.trunk.io/merge/set-up-trunk-merge/advanced-settings#draft-pr-creation) feature to let Trunk Merge create draft PRs instead of setting up a push triggered workflow.
+If you already have tests that trigger on new PRs, you can use the [Draft PR Creation](https://docs.trunk.io/merge/set-up-trunk-merge/advanced-settings#draft-pr-creation) feature to let Trunk Merge Queue create draft PRs instead of setting up a push triggered workflow.
 {% endhint %}
 
 For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:
@@ -73,7 +73,7 @@ For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtere
 name: Run Required Checks
 run-name: PR Checks for ${{ github.ref_name }}
 
-# Trigger jobs whenever Trunk Merge tests a PR using a `trunk-merge/` branch
+# Trigger jobs whenever Trunk Merge Queue tests a PR using a `trunk-merge/` branch
 on:
   push:
     branches:

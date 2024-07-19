@@ -6,7 +6,7 @@ description: Troubleshooting and FAQ
 
 ## My PR is testing in my Merge Queue but it doesn't look like my required status checks are being triggered?
 
-Solution: Most likely you did not set up the required status checks to trigger for `trunk-merge/` branches. It is also possible that your CI provider just randomly never started testing on the Trunk Merge branch, even after setting the required status checks to trigger. To assist with this, you can [configure a testing timeout](set-up-trunk-merge/advanced-settings.md#timeout-for-tests-to-complete).
+Solution: Most likely you did not set up the required status checks to trigger for `trunk-merge/` branches. It is also possible that your CI provider just randomly never started testing on the Trunk Merge Queue branch, even after setting the required status checks to trigger. To assist with this, you can [configure a testing timeout](set-up-trunk-merge/advanced-settings.md#timeout-for-tests-to-complete).
 
 ## My PR appears to be ready but isn't entering the Merge Queue?
 
@@ -20,7 +20,7 @@ Most likely you have a branch protection rule that is affecting Merge branches. 
 
 ## My PR is constantly failing when attempting to merge it
 
-The two most likely problems are that you are restricting **who can merge**, or that you have **disabled squash merges** into your repo. Trunk Merge needs to use squash merges. To fix this turn on `'allow squash merges'` for this repo in your GitHub setup.
+The two most likely problems are that you are restricting **who can merge**, or that you have **disabled squash merges** into your repo. Trunk Merge Queue needs to use squash merges. To fix this turn on `'allow squash merges'` for this repo in your GitHub setup.
 
 ## How do I know if I'm running a legacy merge queue?
 

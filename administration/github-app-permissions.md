@@ -16,7 +16,7 @@ Repository permissions permit access to repositories and related resources.
 
 This permission allows access to the results of workflow and job runs.
 
-Trunk uses this permission to read the results of workflow and job runs, and to dispatch or cancel workflow runs triggered by Trunk Merge.
+Trunk uses this permission to read the results of workflow and job runs, and to dispatch or cancel workflow runs triggered by Trunk Merge Queue.
 
 ### Administration (Read-only)
 

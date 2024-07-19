@@ -6,7 +6,7 @@ description: >-
 
 # Merge
 
-**Trunk Merge** is a hosted merge queue service. It manages and controls the order in which enqueued pull requests are merged into the `main` branch of your repository. Trunk Merge enables large teams working in a monorepo to reduce merge conflicts and maintain a green, healthy main branch. \
+**Trunk Merge Queue** is a hosted merge queue service. It manages and controls the order in which enqueued pull requests are merged into the `main` branch of your repository. Trunk Merge Queue enables large teams working in a monorepo to reduce merge conflicts and maintain a green, healthy main branch. \
 
 
 ### **Why use a merge queue?**
@@ -27,13 +27,13 @@ As an example:
 
 A merge queue's purpose is to give you the guarantee of all code being tested against `main` without actually doing that work serially or in reaction to code merging onto main. The merge queue service predicts the future state of `main` and tests against that. ([see predictive testing](predictive-testing.md)). Returning to our example - pull requests A and B would both be submitted to the merge queue, which would then perform the predictive testing to ensure that A and B, when combined, do not break the build.
 
-### **What is unique about Trunk Merge?**
+### **What is unique about Trunk Merge Queue?**
 
 <table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
 
 ### **Requirements**
 
-Trunk Merge works with any CI provider as long as you use GitHub for your repo hosting.
+Trunk Merge Queue works with any CI provider as long as you use GitHub for your repo hosting.
 
 ### **Next Steps**
 
