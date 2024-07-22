@@ -16,7 +16,7 @@ layout:
 
 # buildifier
 
-[**buildifier**](https://github.com/bazelbuild/buildtools/blob/master/buildifier/readme.md) is a linter for Bazel, Starlark.
+[**buildifier**](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md) is a linter for Bazel, Starlark.
 
 You can enable the buildifier linter with:
 
@@ -41,6 +41,6 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 ## Links
 
-- [buildifier site](https://github.com/bazelbuild/buildtools/blob/master/buildifier/readme.md)
+- [buildifier site](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md)
 - buildifier Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buildifier)
 - Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
