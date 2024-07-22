@@ -107,7 +107,7 @@ app/parse.ts:18:3
              is not suppressing a lint issue
 ```
 
-[Hold the Line](./hold-the-line.md) will continue to only surface ignore issues that you have introduced, and these issues will have a `note` [severity](./README.md#blocking-thresholds), indicating they are non-blocking by default.
+[Hold the Line](./hold-the-line.md) will continue to only surface ignore issues that you have introduced, and these issues will have a `note` [severity](./readme.md#blocking-thresholds), indicating they are non-blocking by default.
 
 If you need to, you can ignore issues from unused `trunk-ignore` directives, using `trunk-ignore(trunk)`:
 ```
