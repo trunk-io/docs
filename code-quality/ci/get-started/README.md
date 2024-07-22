@@ -56,4 +56,4 @@ Not only do our daily scans allow you to browse and triage the issues in your re
 
 [Read the documentation about our GitHub integration to learn more.](github-integration.md)
 
-If you don't host your source code on GitHub, we recommend setting[ up Trunk locally](broken-reference/).
+If you don't host your source code on GitHub, we recommend setting [up Trunk locally](../../usage.md).

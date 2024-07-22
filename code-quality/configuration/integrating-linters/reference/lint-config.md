@@ -18,7 +18,7 @@ The `lint` section of `.trunk/trunk.yaml` represents the configuration of all li
 
 `bazel`: bazel configuration
 
-* `paths` locations to look for Bazel binary. [Example](../../../../check/configuration/configuring-existing-linters/#using-bazel)
+* `paths` locations to look for Bazel binary. [Example](../../supported/clang-tidy.md#using-bazel).
 
 ### `comment_formats`
 
