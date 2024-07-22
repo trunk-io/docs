@@ -7,10 +7,10 @@ description: Instructions for enabled dynamic parallel queues powered by your ba
 Leveraging [parallel mode](../#single-mode-vs.-parallel-mode) for Trunk Merge Queue is easy for Bazel-enabled repos because Bazel already knows the structure of your code and can automatically generate a dependency graph. Merge can use this information in parallel mode to create dynamic parallel queues enabling your pull requests to run through your Merge Queue faster.\
 \
 **How do we create parallel queues?**\
-By understanding which bazel targets a pull request affects, we can build a real-time graph and detect intersection points and where distinct non-overlapping graphs exist. This information is essentially a list of unique target names, which can then be used in real time to understand along which targets pull requests might overlap.&#x20;
+By understanding which bazel targets a pull request affects, we can build a real-time graph and detect intersection points and where distinct non-overlapping graphs exist. This information is essentially a list of unique target names, which can then be used in real time to understand along which targets pull requests might overlap.
 
 **Calculating impacted targets in GitHub Actions**\
-Trunk ships a [GitHub action](https://github.com/trunk-io/bazel-action) that will generate the list of impacted targets for a pull request and post that information to the Trunk Merge Queue service.&#x20;
+Trunk ships a [GitHub action](https://github.com/trunk-io/bazel-action) that will generate the list of impacted targets for a pull request and post that information to the Trunk Merge Queue service.
 
 ```yaml
 name: Upload and Test Impacted Targets
@@ -34,5 +34,4 @@ jobs:
           # workspace-path: {your bazel workspace path}
 ```
 
-The above sample GitHub action code will calculate the impacted targets of your pull request and post that information to the trunk merge service. That data will be used to run your trunk merge queue in parallel mode.\
-\
+The above sample GitHub action code will calculate the impacted targets of your pull request and post that information to the trunk merge service. That data will be used to run your trunk merge queue in parallel mode.

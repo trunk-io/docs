@@ -1,10 +1,8 @@
 ---
 description: >-
-  How to tell a Trunk Code Quality linter to ignore certain issues or entire groups of
-  files.
+  How to tell a Trunk Code Quality linter to ignore certain issues or entire
+  groups of files.
 ---
-
-<!-- trunk-ignore-all(trunk): These ignores are for docs -->
 
 # Ignoring Issues and Files
 
@@ -107,9 +105,10 @@ app/parse.ts:18:3
              is not suppressing a lint issue
 ```
 
-[Hold the Line](./hold-the-line.md) will continue to only surface ignore issues that you have introduced, and these issues will have a `note` [severity](./readme.md#blocking-thresholds), indicating they are non-blocking by default.
+[Hold the Line](hold-the-line.md) will continue to only surface ignore issues that you have introduced, and these issues will have a `note` [severity](./#blocking-thresholds), indicating they are non-blocking by default.
 
 If you need to, you can ignore issues from unused `trunk-ignore` directives, using `trunk-ignore(trunk)`:
+
 ```
 // trunk-ignore(trunk): This error will resurface after our API migration.
 // trunk-ignore(eslint/@typescript-eslint/no-unsafe-member-access)

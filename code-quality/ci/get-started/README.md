@@ -14,7 +14,7 @@ Sign up at [app.trunk.io](https://app.trunk.io), create a Trunk organization, an
 
 ## Set Up Trunk Code Quality
 
-Once your Trunk organization is connected to GitHub, create a .trunk repo in your account or organization and grant Trunk permissions to access the repo.  The .trunk repo will hold the workflows to scan your codebase and pull requests. [Learn more about the .trunk repo](https://docs.trunk.io/check/check-cloud-ci-integration/get-started/github-integration#what-is-a-.trunk-repository).
+Once your Trunk organization is connected to GitHub, create a .trunk repo in your account or organization and grant Trunk permissions to access the repo. The .trunk repo will hold the workflows to scan your codebase and pull requests. [Learn more about the .trunk repo](https://docs.trunk.io/check/check-cloud-ci-integration/get-started/github-integration#what-is-a-.trunk-repository).
 
 {% @supademo/embed demoId="pRr_eDzh-klIQdK_yW3se" url="https://app.supademo.com/demo/pRr_eDzh-klIQdK_yW3se" %}
 
@@ -38,7 +38,7 @@ Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?che
 
 ### Explore issues in your repository
 
-Keep track of pre-existing issues in your repository without creating noise in commits and PRs. Track your code base health over time and find ways to incrementally improve code quality.&#x20;
+Keep track of pre-existing issues in your repository without creating noise in commits and PRs. Track your code base health over time and find ways to incrementally improve code quality.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Code Quality showing all the issues present in trunk-demo1/sass</p></figcaption></figure>
 
@@ -56,4 +56,4 @@ Not only do our daily scans allow you to browse and triage the issues in your re
 
 [Read the documentation about our GitHub integration to learn more.](github-integration.md)
 
-If you don't host your source code on GitHub, we recommend setting[ up Trunk locally](broken-reference).
+If you don't host your source code on GitHub, we recommend setting[ up Trunk locally](broken-reference/).
