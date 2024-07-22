@@ -1,10 +1,10 @@
 ---
-description: Public Merge API. All requests should be authenticated.
+description: Public Trunk Merge Queue API. All requests should be authenticated.
 ---
 
-# Merge
+# Merge Queue
 
-The Trunk Merge API provides access to submit PRs for testing and merging, canceling PRs, and providing extra information to optimize the queue.  The API is an HTTP REST API, returns JSON from all requests, and uses standard HTTP response codes.&#x20;
+The Trunk Merge Queue API provides access to submit PRs for testing and merging, canceling PRs, and providing extra information to optimize the queue.  The API is an HTTP REST API, returns JSON from all requests, and uses standard HTTP response codes.&#x20;
 
 All requests must be [authenticated](./#authentication) by providing the `x-api-token` header.
 

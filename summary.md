@@ -222,7 +222,7 @@
     * [XCTest](flaky-tests/frameworks/xctest.md)
   * [GitHub Pull Request Comments](flaky-tests/github-pull-request-comments.md)
 * [APIs](apis/readme.md)
-  * [Merge](apis/merge.md)
+  * [Merge Queue](apis/merge.md)
   * [CI Analytics](ci-analytics/setup/api.md)
   * [Webhooks](apis/webhooks/readme.md)
     * [Webhook Reference](apis/webhooks/webhook-reference.md)
