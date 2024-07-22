@@ -57,24 +57,24 @@ redirects:
   reference/reference-trunk-yaml: check/reference/trunk-yaml.md
   reference/trunk-yaml: check/reference/trunk-yaml.md
   test-analytics: flaky-tests/readme.md
-  test-analytics/flaky-tests/ci-providers: flaky-tests/ci-providers/readme.md
-  test-analytics/flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/ci-providers/buildkite-quickstart.md
-  test-analytics/flaky-tests/ci-providers/circleci-quickstart: flaky-tests/ci-providers/circleci-quickstart.md
-  test-analytics/flaky-tests/ci-providers/github-actions-quickstart: flaky-tests/ci-providers/github-actions-quickstart.md
-  test-analytics/flaky-tests/ci-providers/gitlab: flaky-tests/ci-providers/gitlab.md
-  test-analytics/flaky-tests/ci-providers/other-ci-providers-quickstart: flaky-tests/ci-providers/other-ci-providers-quickstart.md
-  test-analytics/flaky-tests/ci-providers/semaphore-ci-quickstart: flaky-tests/ci-providers/semaphore-ci-quickstart.md
-  test-analytics/flaky-tests/frameworks: flaky-tests/frameworks/readme.md
-  test-analytics/flaky-tests/frameworks/android: flaky-tests/frameworks/android.md
-  test-analytics/flaky-tests/frameworks/cargo-nextest: flaky-tests/frameworks/cargo-nextest.md
-  test-analytics/flaky-tests/frameworks/cypress: flaky-tests/frameworks/cypress.md
-  test-analytics/flaky-tests/frameworks/jasmine: flaky-tests/frameworks/jasmine.md
-  test-analytics/flaky-tests/frameworks/jest: flaky-tests/frameworks/jest.md
-  test-analytics/flaky-tests/frameworks/minitest: flaky-tests/frameworks/minitest.md
-  test-analytics/flaky-tests/frameworks/mocha: flaky-tests/frameworks/mocha.md
-  test-analytics/flaky-tests/frameworks/playwright: flaky-tests/frameworks/playwright.md
-  test-analytics/flaky-tests/frameworks/pytest: flaky-tests/frameworks/pytest.md
-  test-analytics/flaky-tests/frameworks/rspec: flaky-tests/frameworks/rspec.md
-  test-analytics/flaky-tests/frameworks/swift-testing: flaky-tests/frameworks/swift-testing.md
-  test-analytics/flaky-tests/frameworks/xctest: flaky-tests/frameworks/xctest.md
-  test-analytics/flaky-tests/github-pull-request-comments: flaky-tests/github-pull-request-comments.md
+  test-analytics/ci-providers: flaky-tests/ci-providers/readme.md
+  test-analytics/ci-providers/buildkite-quickstart: flaky-tests/ci-providers/buildkite-quickstart.md
+  test-analytics/ci-providers/circleci-quickstart: flaky-tests/ci-providers/circleci-quickstart.md
+  test-analytics/ci-providers/github-actions-quickstart: flaky-tests/ci-providers/github-actions-quickstart.md
+  test-analytics/ci-providers/gitlab: flaky-tests/ci-providers/gitlab.md
+  test-analytics/ci-providers/other-ci-providers-quickstart: flaky-tests/ci-providers/other-ci-providers-quickstart.md
+  test-analytics/ci-providers/semaphore-ci-quickstart: flaky-tests/ci-providers/semaphore-ci-quickstart.md
+  test-analytics/frameworks: flaky-tests/frameworks/readme.md
+  test-analytics/frameworks/android: flaky-tests/frameworks/android.md
+  test-analytics/frameworks/cargo-nextest: flaky-tests/frameworks/cargo-nextest.md
+  test-analytics/frameworks/cypress: flaky-tests/frameworks/cypress.md
+  test-analytics/frameworks/jasmine: flaky-tests/frameworks/jasmine.md
+  test-analytics/frameworks/jest: flaky-tests/frameworks/jest.md
+  test-analytics/frameworks/minitest: flaky-tests/frameworks/minitest.md
+  test-analytics/frameworks/mocha: flaky-tests/frameworks/mocha.md
+  test-analytics/frameworks/playwright: flaky-tests/frameworks/playwright.md
+  test-analytics/frameworks/pytest: flaky-tests/frameworks/pytest.md
+  test-analytics/frameworks/rspec: flaky-tests/frameworks/rspec.md
+  test-analytics/frameworks/swift-testing: flaky-tests/frameworks/swift-testing.md
+  test-analytics/frameworks/xctest: flaky-tests/frameworks/xctest.md
+  test-analytics/github-pull-request-comments: flaky-tests/github-pull-request-comments.md
