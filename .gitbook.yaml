@@ -7,14 +7,14 @@ structure:
 redirects:
   adminstration: administration/readme.md
   check/performance: check/under-the-hood.md
-  check/under-the-hood: check/reference/under-the-hood.md
-  check/tools/configuration: check/advanced-setup/tools/configuration.md
   check/supported-linters: check/configuration/supported/readme.md
+  check/tools/configuration: check/advanced-setup/tools/configuration.md
+  check/under-the-hood: check/reference/under-the-hood.md
   cli/windows-beta: check/advanced-setup/cli/windows-beta.md
   docs: welcome.md
   docs/actions-config: check/actions/config.md
   docs/actions-git-hooks: check/actions/git-hooks.md
-  docs/actions: check/advanced-setup/actions/README.md
+  docs/actions: check/advanced-setup/actions/readme.md
   docs/check-cli: check/command-line.md
   docs/check-config: check/config.md
   docs/check-custom-linters: check/custom-linters.md
@@ -47,13 +47,34 @@ redirects:
   docs/vscode: check/ide-integration/vs-code.md
   docs/what-is-trunk: readme.md
   docs/windows-beta: check/cli/windows-beta.md
-  flaky-tests/generating-junit-reports: flaky-tests/frameworks/README.md
-  test-analytics: flaky-tests
+  flaky-tests/generating-junit-reports: flaky-tests/frameworks/readme.md
   get-started: welcome.md
   merge-graph: merge/readme.md
-  merge-graph/merge: merge/legacy/readme.md
   merge-graph/configuration: merge/configuration.md
+  merge-graph/merge: merge/legacy/readme.md
   merge-graph/set-up-trunk-merge: merge/readme.md
   merge/getting-started: merge/set-up-trunk-merge.md
   reference/reference-trunk-yaml: check/reference/trunk-yaml.md
   reference/trunk-yaml: check/reference/trunk-yaml.md
+  test-analytics: flaky-tests/readme.md
+  test-analytics/flaky-tests/ci-providers: flaky-tests/ci-providers/readme.md
+  test-analytics/flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/ci-providers/buildkite-quickstart.md
+  test-analytics/flaky-tests/ci-providers/circleci-quickstart: flaky-tests/ci-providers/circleci-quickstart.md
+  test-analytics/flaky-tests/ci-providers/github-actions-quickstart: flaky-tests/ci-providers/github-actions-quickstart.md
+  test-analytics/flaky-tests/ci-providers/gitlab: flaky-tests/ci-providers/gitlab.md
+  test-analytics/flaky-tests/ci-providers/other-ci-providers-quickstart: flaky-tests/ci-providers/other-ci-providers-quickstart.md
+  test-analytics/flaky-tests/ci-providers/semaphore-ci-quickstart: flaky-tests/ci-providers/semaphore-ci-quickstart.md
+  test-analytics/flaky-tests/frameworks: flaky-tests/frameworks/readme.md
+  test-analytics/flaky-tests/frameworks/android: flaky-tests/frameworks/android.md
+  test-analytics/flaky-tests/frameworks/cargo-nextest: flaky-tests/frameworks/cargo-nextest.md
+  test-analytics/flaky-tests/frameworks/cypress: flaky-tests/frameworks/cypress.md
+  test-analytics/flaky-tests/frameworks/jasmine: flaky-tests/frameworks/jasmine.md
+  test-analytics/flaky-tests/frameworks/jest: flaky-tests/frameworks/jest.md
+  test-analytics/flaky-tests/frameworks/minitest: flaky-tests/frameworks/minitest.md
+  test-analytics/flaky-tests/frameworks/mocha: flaky-tests/frameworks/mocha.md
+  test-analytics/flaky-tests/frameworks/playwright: flaky-tests/frameworks/playwright.md
+  test-analytics/flaky-tests/frameworks/pytest: flaky-tests/frameworks/pytest.md
+  test-analytics/flaky-tests/frameworks/rspec: flaky-tests/frameworks/rspec.md
+  test-analytics/flaky-tests/frameworks/swift-testing: flaky-tests/frameworks/swift-testing.md
+  test-analytics/flaky-tests/frameworks/xctest: flaky-tests/frameworks/xctest.md
+  test-analytics/flaky-tests/github-pull-request-comments: flaky-tests/github-pull-request-comments.md
