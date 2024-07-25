@@ -189,6 +189,7 @@
   * [Priority](merge-queue/pr-prioritization.md)
   * [Command Line](merge-queue/command-line.md)
   * [Using the Merge UI](merge-queue/using-the-webapp.md)
+  * [Metrics](merge-queue/metrics.md)
   * [FAQ](merge-queue/common-problems.md)
   * [Reference](merge-queue/reference.md)
 * [CI Analytics](ci-analytics/readme.md)
