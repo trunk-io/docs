@@ -48,7 +48,7 @@ yarn add -D @trunkio/launcher
 {% endtab %}
 
 {% tab title="bun" %}
-```
+```sh
 bun install -D @trunkio/launcher
 ```
 {% endtab %}
