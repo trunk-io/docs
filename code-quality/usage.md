@@ -46,6 +46,12 @@ pnpm add -D @trunkio/launcher
 yarn add -D @trunkio/launcher
 ```
 {% endtab %}
+
+{% tab title="bun" %}
+```
+bun install -D @trunkio/launcher
+```
+{% endtab %}
 {% endtabs %}
 
 ## Initialize `trunk`
@@ -56,7 +62,7 @@ From the root of a git repo, run:
 trunk init
 ```
 
-This will scan your repository and create a `.trunk/trunk.yaml` that enables all the linters, formatters, and security analyzers that are recommended for your project based on the source code types (\*`.c`, \*.`py`, \*.`js`, etc.) as well as existing tool configuration files (ex: `.eslintrc`, `.clang-format`, `.flake8`).  You can enable additional linters with the `trunk check enable <toolname>` command.  For more details, see [here](advanced-setup/cli/init-in-a-git-repo.md).
+This will scan your repository and create a `.trunk/trunk.yaml` that enables all the linters, formatters, and security analyzers that are recommended for your project based on the source code types (\*`.c`, \*.`py`, \*.`js`, etc.) as well as existing tool configuration files (ex: `.eslintrc`, `.clang-format`, `.flake8`). You can enable additional linters with the `trunk check enable <toolname>` command. For more details, see [here](advanced-setup/cli/init-in-a-git-repo.md).
 
 ## Basic Usage
 
@@ -164,4 +170,3 @@ trunk upgrade
 ```
 
 `trunk upgrade` will also recommend new tools that have become applicable since the last time your repository was scanned. This can be a result of using new technologies in your repository or trunk itself adding support for more tools. If you don't like a particular recommendation you can run `trunk check disable <linter>` to teach trunk not to recommend it.
-
