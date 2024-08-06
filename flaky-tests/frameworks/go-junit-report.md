@@ -17,7 +17,7 @@ layout:
 go-junit-report is a testing framework for Go.
 
 ## Enabling XML Output
-go-junit-report converts the output of `go test` to JUnit compatible XML. First install it with
+go-junit-report converts the output of `go test` to [JUnit compatible XML](https://github.com/testmoapp/junitxml). First install it with
 
 ```shell
 go install github.com/jstemmer/go-junit-report/v2@latest
@@ -31,7 +31,7 @@ go test -v 2>&1 ./... | go-junit-report -set-exit-code > report.xml
 
 ## Test Suite Naming
 
-go-junit-report produces JUnit XML with the name and classname fields set by the function name and classnames being tested. For example, this function in the module `example/hello`
+[go-junit-report](https://github.com/jstemmer/go-junit-report) produces JUnit XML with the name and classname fields set by the function name and classnames being tested. For example, this function in the module `example/hello`
 
 ```go
 func TestHelloName(t *testing.T) {

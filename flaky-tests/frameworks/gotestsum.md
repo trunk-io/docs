@@ -17,7 +17,7 @@ layout:
 gotestsum is a testing framework for Go.
 
 ## Enabling XML Output
-Since `go test` does not support XML output directly, you can use [**gotestsum**](https://github.com/gotestyourself/gotestsum) to convert the native output to JUnit XML. First install it with
+Since `go test` does not support XML output directly, you can use [**gotestsum**](https://github.com/gotestyourself/gotestsum) to convert the native output to [JUnit XML](https://github.com/testmoapp/junitxml). First install it with
 
 ```shell
 go install gotest.tools/gotestsum@latest

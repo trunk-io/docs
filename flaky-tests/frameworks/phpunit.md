@@ -59,6 +59,6 @@ will produce XML output that looks like this:
 
 
 ## Further Information
-See an example of PHPUNit invoked form a GitHub action he[https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/php.yaml#L22](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/php.yaml#L22)re.
+See an example of PHPUnit invoked from a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/php.yaml).
 
 
