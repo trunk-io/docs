@@ -1,6 +1,6 @@
 ---
-title: Configuring pytest
-description: pytest is a testing framework for Python that can be configured to output XML
+title: Configuring unittest
+description: unittest is a testing framework built into the Python standard library.
 layout:
   title:
     visible: true
@@ -14,10 +14,12 @@ layout:
     visible: true
 ---
 
-pytest is a testing framework for Python.
+unittest is a testing framework for Python.
 
 ## Enabling XML Output
-pytest can produce [JUnit XML](https://github.com/testmoapp/junitxml) output by running with the `--junit-xml=` option.
+Though unittest is a part of the standard Python library, it does not support [JUnit XML](https://github.com/testmoapp/junitxml) output. However [**pytest**](https://trunk.io/testing/pytest), another Python unit testing framework, supports running unittest tests [out of the box](https://docs.pytest.org/en/6.2.x/unittest.html). 
+
+pytest can produce  output by running with the `--junit-xml=` option.
 
 ```shell
 pytest --junit-xml=filepath.xml 
