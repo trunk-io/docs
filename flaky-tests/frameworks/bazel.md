@@ -23,7 +23,7 @@ By default `bazel test` will output JUnit compatible XML.  If you are using gtes
 
 ## Test Suite Naming
 
-By default `bazel test` will produce XML output in a file named `test.xml`You can override this default using the `XML_OUTPUT_FILE`variable. See the [Bazel Testing docs](https://bazel.build/reference/test-encyclopedia) for more information.
+By default `bazel test` will produce XML output in a file named `test.xml`
 
 
 
