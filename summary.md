@@ -210,6 +210,7 @@
     * [Other CI Providers](flaky-tests/ci-providers/other-ci-providers-quickstart.md)
   * [Test Frameworks](flaky-tests/frameworks/readme.md)
     * [Android](flaky-tests/frameworks/android.md)
+    * [Bazel](flaky-tests/frameworks/bazel.md)
     * [Cargo-nextest](flaky-tests/frameworks/cargo-nextest.md)
     * [Cypress](flaky-tests/frameworks/cypress.md)
     * [go-junit-report](flaky-tests/frameworks/go-junit-report.md)
