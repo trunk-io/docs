@@ -61,7 +61,7 @@ unit-test-job:   # This job runs the tests
 upload_test_results: # This job uploads tests results run in the last stage
   stage: flaky-tests
   script:
-    - curl -fsSL --retry 3 "https://trunk.io/releases/analytics-cli/latest" -o ./trunk-analytics-uploader
+    - curl -fsSL --retry 3 "UPLOADER_LINK" -o ./trunk-analytics-uploader
     - chmod +x ./trunk-analytics-uploader
     - ./trunk-analytics-uploader upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
       
