@@ -24,7 +24,23 @@ Next you will need your Trunk **organization slug** and **token.** Navigate to [
 
 ### Setup Buildkite workflow
 
-Update your Buildkite workflow to download and run the test uploader binary after you've run your tests:
+You can upload test results to Flaky Tests with
+the [`trunk-analytics-uploader`](https://github.com/trunk-io/analytics-uploader) by running it in a stage after
+your tests are complete. There are five different OS/arch builds of the uploader in the latest release.
+Pick the one you need for your testing platform and be sure to download the release on every CI run.
+Do not bake the CLI into a container or VM. This ensures your CI runs are always using the latest build.
+
+Right click and copy the appropriate link from this table.
+
+| CPU Architecture    | link                                                                                                                                                   |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MacOS Intel         | [x68_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz)               |
+| MacOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)             |
+| Arm64 Linux         | [aarch64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux-musl.tar.gz) |
+| Intel Linux (musl)  | [x86_64-unknown-linux-gnu](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux-gnu.tar.gz)     |
+| Intel Linux (gnu)   | [x86_64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux-musl.tar.gz)   |
+
+
 
 #### Sample Buildkite workflow steps:
 
@@ -35,9 +51,9 @@ steps:
     key: tests
   - label: "Upload test results"
     commands:
-      - "curl -fsSL --retry 3 https://trunk.io/releases/analytics-cli/latest -o ./trunk-analytics-uploader"
-      - "chmod +x ./trunk-analytics-uploader"
-      - "./trunk-analytics-uploader upload --junit-paths *.xml --org-url-slug trunk --token $$TRUNK_TOKEN"
+      - curl -fsSL --retry 3 "UPLOADER_LINK" -o ./trunk-analytics-uploader
+      - chmod +x ./trunk-analytics-uploader
+      - ./trunk-analytics-uploader upload --junit-paths *.xml --org-url-slug trunk --token $$TRUNK_TOKEN
     key: upload
     depends_on:
        - tests
