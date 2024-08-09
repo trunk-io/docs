@@ -18,8 +18,6 @@ The Trunk Flaky Tests Uploader currently only supports Linux x64 and macOS for I
 
 Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings** -> **Manage** -> **Organization**. Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage Organization** → **Organization API Token** and clicking "View." Copy this token.
 
-{% @supademo/embed demoid="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
-
 {% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" fullWidth="true" %}
 
 In your Semaphore dashboard, store your Trunk token in a secret named TRUNK\_TOKEN. Update your Semaphore workflow to download and run the test uploader binary after you've run your tests.
