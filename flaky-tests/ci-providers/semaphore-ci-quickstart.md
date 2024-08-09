@@ -32,7 +32,7 @@ Pick the one you need for your testing platform and be sure to download the rele
 
 Right click and copy the appropriate link from this table.
 
-| CPU Architecture    | link                                                                                                                                                   |
+| CPU Architecture    | Link                                                                                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | macOS Intel         | [x68_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz)               |
 | macOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)             |
