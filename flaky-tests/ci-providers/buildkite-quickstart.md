@@ -22,8 +22,6 @@ Next you will need your Trunk **organization slug** and **token.** Navigate to [
 
 {% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" fullWidth="true" %}
 
-{% @supademo/embed demoid="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
-
 ### Setup Buildkite workflow
 
 You can upload test results to Flaky Tests with the [`trunk-analytics-uploader`](https://github.com/trunk-io/analytics-uploader) by running it in a stage after your tests are complete. There are five different OS/arch builds of the uploader in the latest release. Pick the one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a container or VM**. This ensures your CI runs are always using the latest build.
