@@ -18,9 +18,9 @@ Create a CI job that runs the tests you want to monitor and produces a test repo
 
 Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to Settings -> Manage -> Organization. Copy your organization slug. You can find your Trunk token by navigating to Settings → Manage Organization → Organization API Token and clicking "View." Copy this token.
 
-&#x20;
-
 {% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
+
+### Add Uploader to Testing Workflow
 
 After the test step, download and run the test uploader binary. Use the token and slug you copied above.
 
