@@ -34,6 +34,7 @@ before include
 
 after include
 
+{% code title="gitlab.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
 image: node:latest
 
@@ -55,6 +56,7 @@ upload_test_results: # This job uploads tests results run in the last stage
     - ./trunk-analytics-uploader upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
       
 ```
+{% endcode %}
 
 The `trunk-analytics-uploader` tool has several important arguments;
 
