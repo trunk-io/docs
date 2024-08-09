@@ -29,9 +29,9 @@ The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploa
 
 ### Find Organization Slug and Token
 
-Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io).  Once logged in navigate to **Settings** -> **Manage** -> **Organization**.  Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage Organization** → **Organization API Token** and clicking "View." Provide this token as a [GitHub secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).&#x20;
+Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings** -> **Manage** -> **Organization**. Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage Organization** → **Organization API Token** and clicking "View." Provide this token as a [GitHub secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
-{% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
+{% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" fullWidth="true" %}
 
 ### Sample GitHub Actions workflow file:
 
