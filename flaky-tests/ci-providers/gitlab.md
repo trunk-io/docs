@@ -28,7 +28,11 @@ Next you will need your Trunk **organization slug** and **token.** Navigate to [
 
 ### Add Uploader to Testing Workflow
 
+before include
+
 {% include "./uploader-instructions.md" %}
+
+after include
 
 ```yaml
 image: node:latest
