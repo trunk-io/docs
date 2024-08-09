@@ -42,7 +42,7 @@ Right click and copy the appropriate link from this table.
 
 
 ```bash
-$ curl -fsSL --retry 3 "https://trunk.io/releases/analytics-cli/latest" -o ./trunk-analytics-uploader
+$ curl -fsSL --retry 3 "UPLOADER_LINK" -o ./trunk-analytics-uploader
 $ chmod +x ./trunk-analytics-uploader
 $ ./trunk-analytics-uploader upload \
     --junit-paths "${JUNIT_PATHS}" \
