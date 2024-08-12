@@ -33,12 +33,11 @@ You can upload test results to Flaky Tests with the [`trunk-analytics-uploader`]
 Right click and copy the appropriate link from this table.
 
 | CPU Architecture    | Link                                                                                                                                                   |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|---------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | macOS Intel         | [x68\_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-apple-darwin.tar.gz)             |
 | macOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)             |
 | Arm64 Linux         | [aarch64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux-musl.tar.gz) |
-| Intel Linux (musl)  | [x86\_64-unknown-linux-gnu](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux-gnu.tar.gz)   |
-| Intel Linux (gnu)   | [x86\_64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux-musl.tar.gz) |
+| Intel Linux         | [x86\_64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux-musl.tar.gz) |
 
 {% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
