@@ -34,10 +34,10 @@ Right click and copy the appropriate link from this table.
 
 | CPU Architecture    | Link                                                                                                                                                   |
 |---------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| macOS Intel         | [x68\_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-apple-darwin.tar.gz)             |
-| macOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)             |
-| Arm64 Linux         | [aarch64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux-musl.tar.gz) |
-| Intel Linux         | [x86\_64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux-musl.tar.gz) |
+| macOS Intel         | [x86_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz)         |
+| macOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)        |
+| Arm64 Linux         | [aarch64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz) |
+| Intel Linux         | [x86_64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz)  |
 
 {% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
