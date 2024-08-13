@@ -29,12 +29,11 @@ You can upload test results to Flaky Tests with the [`trunk-analytics-uploader`]
 Right click and copy the appropriate link from this table.
 
 | CPU Architecture    | Link                                                                                                                                                   |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| macOS Intel         | [x68\_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-apple-darwin.tar.gz)             |
-| macOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)             |
-| Arm64 Linux         | [aarch64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux-musl.tar.gz) |
-| Intel Linux (musl)  | [x86\_64-unknown-linux-gnu](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux-gnu.tar.gz)   |
-| Intel Linux (gnu)   | [x86\_64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux-musl.tar.gz) |
+|---------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| macOS Intel         | [x86_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz)         |
+| macOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)        |
+| Arm64 Linux         | [aarch64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz) |
+| Intel Linux         | [x86_64-unknown-linux-musl](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz)  |
 
 Portion of `repo/.semaphore/semaphore.yml`. See the complete file [here](https://github.com/mmatheson/SemaphoreFlakyTestExample/blob/main/.semaphore/semaphore.yml).
 
