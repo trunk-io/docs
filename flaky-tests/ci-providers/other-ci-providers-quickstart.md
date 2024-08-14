@@ -39,7 +39,7 @@ Right click and copy the appropriate link from this table.
 | Intel Linux         | [x86\_64-unknown-linux](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux.tar.gz) |
 
 ```bash
-$ curl -fsSL --retry 3 "CLI_LINK" | tar -xvf > ./trunk-analytics-cli
+$ curl -fsSL --retry 3 "CLI_LINK" | tar -xvz > ./trunk-analytics-cli
 $ chmod +x ./trunk-analytics-cli
 $ ./trunk-analytics-cli upload \
     --junit-paths "${JUNIT_PATHS}" \

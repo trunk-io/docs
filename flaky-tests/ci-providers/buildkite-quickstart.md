@@ -47,7 +47,7 @@ steps:
     key: tests
   - label: "Upload test results"
     commands:
-    - curl -fsSL --retry 3 "CLI_LINK" | tar -xvf > ./trunk-analytics-cli
+    - curl -fsSL --retry 3 "CLI_LINK" | tar -xvz > ./trunk-analytics-cli
       - chmod +x ./trunk-analytics-cli
       - ./trunk-analytics-cli upload --junit-paths *.xml --org-url-slug trunk --token $$TRUNK_TOKEN
     key: upload
