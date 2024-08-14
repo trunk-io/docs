@@ -40,7 +40,6 @@ Right click and copy the appropriate link from this table.
 
 ```bash
 $ curl -fsSL --retry 3 "CLI_LINK" | tar -xvz > ./trunk-analytics-cli
-$ chmod +x ./trunk-analytics-cli
 $ ./trunk-analytics-cli upload \
     --junit-paths "${JUNIT_PATHS}" \
     --org-url-slug "${ORG_URL_SLUG}" \

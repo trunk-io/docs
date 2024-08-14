@@ -71,7 +71,6 @@ blocks:
             - test-results publish junit.xml
             # Upload results to trunk.io
             - curl -fsSL --retry 3 "CLI_LINK" | tar -xvz > ./trunk-analytics-cli
-            - chmod +x ./trunk-analytics-cli
             - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
 
 after_pipeline:

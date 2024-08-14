@@ -69,7 +69,6 @@ jobs:
           when: always
           command: |
             curl -fsSL --retry 3 "CLI_LINK" | tar -xvz > ./trunk-analytics-cli
-            chmod +x ./trunk-analytics-cli
             ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
 
 
