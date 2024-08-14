@@ -192,7 +192,7 @@
   * [Metrics](merge-queue/metrics.md)
   * [FAQ](merge-queue/common-problems.md)
   * [Reference](merge-queue/reference.md)
-* [CI Analytics](ci-analytics/readme.md)
+* [CI Analytics (beta)](ci-analytics/readme.md)
   * [Overview](ci-analytics/readme.md)
   * [Setup](ci-analytics/setup/README.md)
     * [GitHub Actions](ci-analytics/setup/github-actions.md)
