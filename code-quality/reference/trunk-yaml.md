@@ -117,6 +117,15 @@ Other features - namely `trunk check` - need to be aware of the primary upstream
 
 The above configuration is how you would specify that [https://github.com/github/gitignore](https://github.com/github/gitignore) is your canonical repository and that `main` is the branch which `trunk` should always think of as your upstream branch.
 
+### `trunk_remote_hint`
+
+```
+repo:
+  trunk_remote_hint: github.com/organization/my_repo
+```
+
+If this hint is set, Trunk will search all local remotes looking for the one that best matches `<remote_host>/<organization>/<repo_name>` instead of defaulting to `origin`. It will then use this remote as the default upstream for computing changed files.
+
 ## `api`
 
 ```yaml
