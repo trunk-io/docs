@@ -133,3 +133,7 @@ Platform constraint. If incompatible, renders a notice. See also [Command `platf
 ## `version_command`
 
 `version_command`: Version check commands.
+
+## `verbatim_message`
+
+`verbatim_message`: Do not try to truncate or reflow the output of this linter.
