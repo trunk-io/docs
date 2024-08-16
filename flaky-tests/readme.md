@@ -1,11 +1,11 @@
 ---
-description: Monitor and detect flaky tests automatically.
+description: Detect and eliminate flaky tests.
 ---
 
-# Flaky Tests
+# Flaky Tests (beta)
 
 {% hint style="warning" %}
-Flaky Tests is available by invite only. Please [**contact**](https://trunk.io/about) us if you would like to try the product early.
+Flaky Tests is currently available by invite only. Please [sign up for the waitlist](https://trunk.io/flaky-tests) for access.
 {% endhint %}
 
 ## Monitoring Flaky Tests
