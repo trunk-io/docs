@@ -9,7 +9,7 @@ description: Configure Flaky Tests using CircleCI
 You can use the Flaky Tests CLI within your [CircleCI](https://circleci.com/) workflows to upload and analyze your test results.
 
 {% hint style="info" %}
-The Trunk Flaky Tests CLI currently only supports Intel and Arm for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
 ### Create a CircleCI Workflow
@@ -37,15 +37,13 @@ it in a stage after your tests are complete. There are four different OS/arch bu
 one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a
 container or VM.** This ensures your CI runs are always using the latest build.
 
-Right click and copy the appropriate link from this table.
 
-| CPU Architecture    | Link                                                                                                                                              |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| macOS Intel         | [x86\_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-apple-darwin.tar.gz)        |
-| macOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)        |
-| Arm64 Linux         | [aarch64-unknown-linux](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz) |
-| Intel Linux         | [x86\_64-unknown-linux](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux.tar.gz) |
 
+{% tabs %}
+
+
+{% tab title="Linux x86_64" %}
+{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
 version: 2.1
 orbs:
@@ -68,11 +66,111 @@ jobs:
           name: Upload test results to Trunk
           when: always
           command: |
-            curl -fsSL --retry 3 "CLI_LINK" | tar -xvz > ./trunk-analytics-cli
+            curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
+            ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Linux arm64" %}
+{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
+```yaml
+version: 2.1
+orbs:
+  node: circleci/node@5
+  python: circleci/python@2
+jobs:
+  test-node:
+    # Install node dependencies and run tests
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run:
+          name: Run tests with Jest
+          command: |
+            ./node_modules/.bin/jest --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
+      - run:
+          name: Upload test results to Trunk
+          when: always
+          command: |
+            curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
             ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
 
 
 ```
+{% endcode %}
+{% endtab %}
+
+{% tab title="macOS x86_64" %}
+{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
+```yaml
+version: 2.1
+orbs:
+  node: circleci/node@5
+  python: circleci/python@2
+jobs:
+  test-node:
+    # Install node dependencies and run tests
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run:
+          name: Run tests with Jest
+          command: |
+            ./node_modules/.bin/jest --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
+      - run:
+          name: Upload test results to Trunk
+          when: always
+          command: |
+            curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
+            ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
+
+
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="macOS arm64" %}
+{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
+```yaml
+version: 2.1
+orbs:
+  node: circleci/node@5
+  python: circleci/python@2
+jobs:
+  test-node:
+    # Install node dependencies and run tests
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run:
+          name: Run tests with Jest
+          command: |
+            ./node_modules/.bin/jest --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
+      - run:
+          name: Upload test results to Trunk
+          when: always
+          command: |
+            curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
+            ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
+
+
+```
+{% endcode %}
+{% endtab %}
+
+{% endtabs %}
+
+
 
 In the config about we have added a second `run` step fo the `test-node` job. This step downloads the latest release of the `trunk-analytics-cli`, makes it executable, then runs it to upload the test output xml file. The TRUNK\_ORG\_SLUG and TRUNK\_API\_TOKEN variables are filled in at runtime by the CircleCI environment variables set earlier. Note that the `when` property is set to `always` because it should run whether or not the actual tests in the previous `run` step succeed.
 

@@ -9,7 +9,7 @@ description: Configure Flaky Tests using Semaphore CI
 You can use the Flaky Tests CLI within your [Semaphore CI](https://semaphoreci.com/) workflows to upload your test results.
 
 {% hint style="info" %}
-The Trunk Flaky Tests CLI currently only supports Intel and Arm for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
 1. Create a Semaphore workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produce a test report in [JUnit XML](https://github.com/testmoapp/junitxml) format.
@@ -29,17 +29,14 @@ it in a stage after your tests are complete. There are four different OS/arch bu
 one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a
 container or VM.** This ensures your CI runs are always using the latest build.
 
-Right click and copy the appropriate link from this table.
 
-| CPU Architecture    | Link                                                                                                                                              |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| macOS Intel         | [x86\_64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-apple-darwin.tar.gz)        |
-| macOS Apple Silicon | [aarch64-apple-darwin](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz)        |
-| Arm64 Linux         | [aarch64-unknown-linux](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz) |
-| Intel Linux         | [x86\_64-unknown-linux](https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86\_64-unknown-linux.tar.gz) |
 
 Portion of `repo/.semaphore/semaphore.yml`. See the complete file [here](https://github.com/mmatheson/SemaphoreFlakyTestExample/blob/main/.semaphore/semaphore.yml).
 
+{% tabs %}
+
+{% tab title="Linux x86_64" %}
+{% code title="semaphore.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
 version: v1.0
 name: Semaphore JavaScript Example Pipeline
@@ -70,7 +67,7 @@ blocks:
             # Publish results to Semaphore
             - test-results publish junit.xml
             # Upload results to trunk.io
-            - curl -fsSL --retry 3 "CLI_LINK" | tar -xvz > ./trunk-analytics-cli
+            - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
             - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
 
 after_pipeline:
@@ -80,6 +77,145 @@ after_pipeline:
         commands:
           - test-results gen-pipeline-report
 ```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Linux arm64" %}
+{% code title="semaphore.yaml" overflow="wrap" lineNumbers="true" %}
+```yaml
+version: v1.0
+name: Semaphore JavaScript Example Pipeline
+blocks:
+  - name: Tests
+    task:
+      secrets:
+        - name: Trunk API Token
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: "true"
+      prologue:
+        commands:
+          - checkout
+          - nvm use
+          - node --version
+          - npm --version
+      jobs:
+        - name: Run Tests
+          commands:
+            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+            - npm test
+      epilogue:
+        always:
+          commands:
+            # Publish results to Semaphore
+            - test-results publish junit.xml
+            # Upload results to trunk.io
+            - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
+            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
+
+after_pipeline:
+  task:
+    jobs:
+      - name: Publish Results
+        commands:
+          - test-results gen-pipeline-report
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="macOS x86_64" %}
+{% code title="semaphore.yaml" overflow="wrap" lineNumbers="true" %}
+```yaml
+version: v1.0
+name: Semaphore JavaScript Example Pipeline
+blocks:
+  - name: Tests
+    task:
+      secrets:
+        - name: Trunk API Token
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: "true"
+      prologue:
+        commands:
+          - checkout
+          - nvm use
+          - node --version
+          - npm --version
+      jobs:
+        - name: Run Tests
+          commands:
+            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+            - npm test
+      epilogue:
+        always:
+          commands:
+            # Publish results to Semaphore
+            - test-results publish junit.xml
+            # Upload results to trunk.io
+            - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
+            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
+
+after_pipeline:
+  task:
+    jobs:
+      - name: Publish Results
+        commands:
+          - test-results gen-pipeline-report
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="macOS arm64" %}
+{% code title="semaphore.yaml" overflow="wrap" lineNumbers="true" %}
+```yaml
+version: v1.0
+name: Semaphore JavaScript Example Pipeline
+blocks:
+  - name: Tests
+    task:
+      secrets:
+        - name: Trunk API Token
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: "true"
+      prologue:
+        commands:
+          - checkout
+          - nvm use
+          - node --version
+          - npm --version
+      jobs:
+        - name: Run Tests
+          commands:
+            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+            - npm test
+      epilogue:
+        always:
+          commands:
+            # Publish results to Semaphore
+            - test-results publish junit.xml
+            # Upload results to trunk.io
+            - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
+            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
+
+after_pipeline:
+  task:
+    jobs:
+      - name: Publish Results
+        commands:
+          - test-results gen-pipeline-report
+```
+{% endcode %}
+{% endtab %}
+
+{% endtabs %}
 
 The workflow above configures the cache and then runs `npm test` to actually generate the test output XML. The epilogue of the test block uses Semaphore's `test-results` command to publish the `junit.xml` file to Semaphore. Then it uses the curl command to download the latest version of the `trunk-analytics-cli`, make it executable, and finally run the uploader to send the `junit.xml` to Trunk.
 
