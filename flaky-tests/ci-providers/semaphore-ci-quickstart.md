@@ -9,7 +9,7 @@ description: Configure Flaky Tests using Semaphore CI
 You can use the Flaky Tests CLI within your [Semaphore CI](https://semaphoreci.com/) workflows to upload your test results.
 
 {% hint style="info" %}
-The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+The Trunk Flaky Tests CLI currently only supports x86\_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
 1. Create a Semaphore workflow that runs the tests you want to monitor. In order for us to use the results, these tests **must** produce a test report in [JUnit XML](https://github.com/testmoapp/junitxml) format.
@@ -18,23 +18,17 @@ The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linu
 
 Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings** -> **Manage** -> **Organization**. Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage Organization** → **Organization API Token** and clicking "View." Copy this token.
 
-{% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
-
 In your Semaphore dashboard, store your Trunk token in a secret named TRUNK\_TOKEN. Update your Semaphore workflow to download and run the test uploader binary after you've run your tests.
+
+{% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
 
 ## Sample Semaphore workflow steps
 
-You can upload test results to Flaky Tests with the [`trunk-analytics-cli`](https://github.com/trunk-io/analytics-cli) by running
-it in a stage after your tests are complete. There are four different OS/arch builds of the CLI in the latest release. Pick the
-one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a
-container or VM.** This ensures your CI runs are always using the latest build.
-
-
+You can upload test results to Flaky Tests with the [`trunk-analytics-cli`](https://github.com/trunk-io/analytics-cli) by running it in a stage after your tests are complete. There are four different OS/arch builds of the CLI in the latest release. Pick the one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a container or VM.** This ensures your CI runs are always using the latest build.
 
 Portion of `repo/.semaphore/semaphore.yml`. See the complete file [here](https://github.com/mmatheson/SemaphoreFlakyTestExample/blob/main/.semaphore/semaphore.yml).
 
 {% tabs %}
-
 {% tab title="Linux x86_64" %}
 {% code title="semaphore.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
@@ -214,7 +208,6 @@ after_pipeline:
 ```
 {% endcode %}
 {% endtab %}
-
 {% endtabs %}
 
 The workflow above configures the cache and then runs `npm test` to actually generate the test output XML. The epilogue of the test block uses Semaphore's `test-results` command to publish the `junit.xml` file to Semaphore. Then it uses the curl command to download the latest version of the `trunk-analytics-cli`, make it executable, and finally run the uploader to send the `junit.xml` to Trunk.
