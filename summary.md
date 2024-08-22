@@ -9,7 +9,7 @@
     * [Initialize Trunk](code-quality/setup-and-installation/initialize-trunk.md)
     * [Deal with Existing Issues](code-quality/setup-and-installation/deal-with-existing-issues.md)
     * [Prevent New Issues](code-quality/setup-and-installation/prevent-new-issues.md)
-    * [Nightly Reports](code-quality/ci-setup/README.md)
+    * [Nightly Reports](code-quality/ci-setup.md)
   * [IDE Integration](code-quality/ide-integration/README.md)
     * [VSCode](code-quality/ide-integration/vscode.md)
     * [Neovim](code-quality/ide-integration/neovim.md)
@@ -125,7 +125,7 @@
     * [Custom Linters](code-quality/linters/custom-linters.md)
     * [Shared Configs](code-quality/linters/shared-configs.md)
     * [Upgrades](cli/upgrades.md)
-  * [CI Setup](code-quality/ci-setup/README.md)
+  * [CI Setup](code-quality/ci-setup.md)
     * [GitHub Integration](code-quality/ci-setup/github-integration.md)
     * [Manual Setup](code-quality/ci-setup/manual-setup.md)
     * [Slack Integration](administration/integration-for-slack.md)
@@ -223,8 +223,8 @@
     * [Merge](cli/configuration/merge.md)
     * [Telemetry](cli/configuration/telemetry.md)
     * [Per User Overrides](cli/configuration/per-user-overrides.md)
-    *
-  *
+    * [GitHub Codespaces](cli/configuration/github-codespaces.md)
+  * [Upgrades](cli/upgrades.md)
 * [APIs](apis/readme.md)
   * [Merge Queue](apis/merge.md)
   * [CI Analytics](ci-analytics/setup/api.md)
