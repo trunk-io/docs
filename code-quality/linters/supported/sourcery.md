@@ -1,0 +1,43 @@
+---
+description: sourcery is a linter for Python
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
+# sourcery
+
+[**sourcery**](https://sourcery.ai/) is a linter for Python.
+
+You can enable the sourcery linter with:
+
+```shell
+trunk check enable sourcery
+```
+
+## Auto Enabling
+
+sourcery will never be auto-enabled. It must be enabled manually.
+
+## Settings
+
+sourcery supports the following config files:
+
+* `.sourcery.yaml`
+* `sourcery.yaml`
+
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+
+## Links
+
+* [sourcery site](https://sourcery.ai/)
+* sourcery Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sourcery)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
