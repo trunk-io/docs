@@ -23,7 +23,7 @@ You can enable the Checkov linter with:
 ```shell
 trunk check enable checkov
 ```
-![checkov example output](./checkov.gif)
+![checkov example output](/.gitbook/assets/checkov.gif)
 ## Auto Enabling
 
 Checkov will be auto-enabled if any *Terraform, Cloudformation, Docker, Yaml or Json* files are present.

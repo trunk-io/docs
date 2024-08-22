@@ -23,7 +23,7 @@ You can enable the buildifier linter with:
 ```shell
 trunk check enable buildifier
 ```
-![buildifier example output](./buildifier.gif)
+![buildifier example output](/.gitbook/assets/buildifier.gif)
 ## Auto Enabling
 
 buildifier will be auto-enabled if any *Bazel or Starlark* files are present.

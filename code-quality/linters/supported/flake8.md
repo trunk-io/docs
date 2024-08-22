@@ -23,7 +23,7 @@ You can enable the Flake8 linter with:
 ```shell
 trunk check enable flake8
 ```
-![flake8 example output](./flake8.gif)
+![flake8 example output](/.gitbook/assets/flake8.gif)
 ## Auto Enabling
 
 Flake8 will be auto-enabled if a `.flake8` config file is present.

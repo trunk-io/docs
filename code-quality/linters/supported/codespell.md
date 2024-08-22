@@ -23,7 +23,7 @@ You can enable the codespell linter with:
 ```shell
 trunk check enable codespell
 ```
-![codespell example output](./codespell.gif)
+![codespell example output](/.gitbook/assets/codespell.gif)
 ## Auto Enabling
 
 codespell will be auto-enabled if a `.codespellrc` config file is present.
