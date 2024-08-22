@@ -23,7 +23,7 @@ You can enable the Black formatter with:
 ```shell
 trunk check enable black
 ```
-![black example output](./black.gif)
+![black example output](/.gitbook/assets/black.gif)
 ## Auto Enabling
 
 Black will be auto-enabled if any *Python, Jupyter or Python-interface* files are present.
