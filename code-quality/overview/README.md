@@ -14,7 +14,7 @@ There are many reasons for you to want to use a metalinter like Trunk Code Quali
 
 Trunk Code Quality is easy to adopt. [Running `trunk init`](../setup-and-installation/initialize-trunk.md) will [recommend linters and formatters](../linters/supported/) for your project with reasonable default configuration. Hold off on fixing existing issues using [hold-the-line](how-does-it-work.md#hold-the-line) and only get warnings for new issues introduced in each commit or PR.
 
-Trunk Code Quality [GitHub Integration](../ci-setup/get-started.md)s to set up nightly runs and linter checks on PRs.&#x20;
+Trunk Code Quality [GitHub Integration](broken-reference)s to set up nightly runs and linter checks on PRs.&#x20;
 
 #### Run and manage a long list of linters
 

@@ -28,7 +28,7 @@ Trunk Code Quality solves this by being [Git aware](how-does-it-work.md#hold-the
 
 [ESLint](https://github.com/eslint/eslint) adopted Trunk Code Quality to replace their [linter script](https://github.com/eslint/eslint/pull/18643/files#diff-3fc6364bd19a0e4ee8d1e0fe312541201418d80f9d1b08015db4d11e7dbde39e) because it's difficult to maintain. Writing a script that can do everything a metalinter does is not trivial. You need to handle per-line and file properly ignores, adapt to the many config and output formats of different tools, support different OS and architectures, lint in a way that's [git-aware](how-does-it-work.md#hold-the-line) so it can run on large code bases quickly, and adapt to breaking changes or newly added linters.
 
-That code is outside of a project's core goals and is bound to become debt. Code Quality is free to run locally and in CI, and reporting to the [Web App](../ci-setup/get-started.md) is free for open-source teams.&#x20;
+That code is outside of a project's core goals and is bound to become debt. Code Quality is free to run locally and in CI, and reporting to the [Web App](broken-reference) is free for open-source teams.&#x20;
 
 ### Who uses Trunk Code Quality?
 

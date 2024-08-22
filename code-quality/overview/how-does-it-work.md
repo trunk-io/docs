@@ -52,12 +52,12 @@ This can be overridden by defining your own plugin repo to import, overriding in
 
 ### Run on every PR
 
-Trunk works in CI. Trunk Code Quality provides [GitHub integration](../ci-setup/get-started.md) and can run in any other CI environment. This lets you check Code Quality in every PR with consistent config and consistent results.
+Trunk works in CI. Trunk Code Quality provides [GitHub integration](broken-reference) and can run in any other CI environment. This lets you check Code Quality in every PR with consistent config and consistent results.
 
-[Learn more about Code Quality in CI.](../ci-setup/)
+[Learn more about Code Quality in CI.](../ci-setup.md)
 
 ### Nightly reports
 
-Trunk Code Quality allows you to [upload results](../ci-setup/) to the [Trunk Web App](https://app.trunk.io/), which provides a dashboard for you to view your current code base issues and track code base health over time.
+Trunk Code Quality allows you to [upload results](../ci-setup.md) to the [Trunk Web App](https://app.trunk.io/), which provides a dashboard for you to view your current code base issues and track code base health over time.
 
 [Learn more about nightly reporting.](how-does-it-work.md#nightly-reports)
