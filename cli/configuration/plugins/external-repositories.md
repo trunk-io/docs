@@ -110,7 +110,7 @@ lint:
           success_codes: [0]
 ```
 
-See our documentation on [custom linters](broken-reference) and [custom parsers](broken-reference) for more on what you can do, such as writing your parser in Javascript or Python!
+See our documentation on [custom linters](../../../code-quality/linters/custom-linters.md) and [custom parsers](../lint/output-parsing.md) for more on what you can do, such as writing your parser in Javascript or Python!
 
 ### Publishing your plugin
 

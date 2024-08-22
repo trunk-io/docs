@@ -36,7 +36,7 @@ Trunk also shows Trunk Code Quality Issues in a panel in the File Explorer, but 
 
 #### Single-player Mode
 
-In single-player mode, Trunk creates a [configuration file](broken-reference) and hides it from Git, so that you can test out Trunk on your own and get familiar with how it works, without committing this file.
+In single-player mode, Trunk creates a [configuration file](../../cli/configuration/) and hides it from Git, so that you can test out Trunk on your own and get familiar with how it works, without committing this file.
 
 Users normally check this file in to your repository so that you can run Trunk reproducibly: it pins the version of trunk, as well as that of every runtime and linter that you've enabled, allowing your team to guarantee that everyone and your CI runners are always running the exact same checks on your code.
 
@@ -50,7 +50,7 @@ or click on the notification to "Share trunk config", which will commit `.trunk/
 
 ### Learn more
 
-Check out how to [install the CLI](broken-reference), [set it up in CI](broken-reference), [ignore issues](broken-reference), and set up [Custom Linters](broken-reference).
+Check out how to [install the CLI](../setup-and-installation/), [set it up in CI](../setup-and-installation/initialize-trunk.md), [ignore issues](../linters/ignoring-issues-and-files.md), and set up [Custom Linters](../linters/custom-linters.md).
 
 ![linter code docs](https://static.trunk.io/assets/vscode\_doc\_links.png)
 

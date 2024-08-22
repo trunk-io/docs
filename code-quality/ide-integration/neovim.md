@@ -44,11 +44,11 @@ For other plugin managers and installation methods, see our [Neovim Plugin repo]
 
 ### Features
 
-The Neovim Plugin is designed to mirror the [VSCode extension](broken-reference). Supported features include:
+The Neovim Plugin is designed to mirror the [VSCode extension](vscode.md). Supported features include:
 
 * Provide inline diagnostics and auto-fixes
 * Format files on save
-* Run [Trunk Actions](broken-reference) notifications
+* Run [Trunk Actions](../../cli/getting-started/actions/) notifications
 * Display the linters that Trunk runs on a file
 
 ### Limitations

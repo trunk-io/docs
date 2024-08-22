@@ -14,7 +14,7 @@ There are many reasons for you to want to use a metalinter like Trunk Code Quali
 
 Trunk Code Quality is easy to adopt. [Running `trunk init`](../setup-and-installation/initialize-trunk.md) will [recommend linters and formatters](../linters/supported/) for your project with reasonable default configuration. Hold off on fixing existing issues using [hold-the-line](how-does-it-work.md#hold-the-line) and only get warnings for new issues introduced in each commit or PR.
 
-Trunk Code Quality [GitHub Integration](broken-reference)s to set up nightly runs and linter checks on PRs.&#x20;
+Trunk Code Quality [GitHub Integration](../ci-setup/github-integration.md)s to set up nightly runs and linter checks on PRs.&#x20;
 
 #### Run and manage a long list of linters
 
@@ -24,7 +24,7 @@ Trunk will install, manage, and run tools like linters and formatters for you. T
 
 [Adopting new linters is a pain](https://trunk.io/blog/reasons-developers-hate-linters) because of the large amount of upfront configuration and fixes needed. Enabling a new linter or formatter in an old repo will yield thousands of issues, most of which might not have auto fixes.
 
-Trunk supports [hold-the-line](how-does-it-work.md#hold-the-line) to lint only new issues introduced with a commit or PR, to let developers adopt new linters fast, focus on preventing new issues first, and[ report on existing issues nightly](broken-reference) to fix later. Waiting will only accumulate debt, stop debt accumulation immediately and fix as you code.
+Trunk supports [hold-the-line](how-does-it-work.md#hold-the-line) to lint only new issues introduced with a commit or PR, to let developers adopt new linters fast, focus on preventing new issues first, and[ report on existing issues nightly](../ci-setup/github-integration.md) to fix later. Waiting will only accumulate debt, stop debt accumulation immediately and fix as you code.
 
 #### Linters take too long to run
 
@@ -40,7 +40,7 @@ Trunk Code Quality uses an extensible [plugin system](../../cli/configuration/pl
 
 #### Lack of consistent output and reporting
 
-Every linter outputs differently. If you've got a backlog of issues like ESLint errors, OSV Scanner dependency vulnerabilities, poorly optimized images, and vulnerabilities in your Docker Config, you'd want to see them in an [organized report](broken-reference), sorted by severity or by file, with[ consistent format](../../cli/configuration/lint/output-parsing.md). Trunk Code Quality can do this.
+Every linter outputs differently. If you've got a backlog of issues like ESLint errors, OSV Scanner dependency vulnerabilities, poorly optimized images, and vulnerabilities in your Docker Config, you'd want to see them in an [organized report](../ci-setup/github-integration.md), sorted by severity or by file, with[ consistent format](../../cli/configuration/lint/output-parsing.md). Trunk Code Quality can do this.
 
 ### Features
 

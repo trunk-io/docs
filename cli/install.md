@@ -122,7 +122,7 @@ You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17
 
 Trunk has a very minimal installation, and therefore, there's not much to uninstall. The two system paths we use are:
 
-* `/usr/local/bin/trunk`: the [Trunk Launcher](broken-reference)
+* `/usr/local/bin/trunk`: the [Trunk Launcher](install.md#the-trunk-launcher)
 * `~/.cache/trunk`: cached versions of the trunk cli, linters, formatters, etc.
 
 You can delete those two paths to uninstall.

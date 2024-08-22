@@ -20,7 +20,7 @@ You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17
 
 Thank you for being a beta tester of Trunk Check on Windows! We are actively working to improve the experience. If you have any feedback or questions, please contact us directly on [Slack](https://slack.trunk.io/).
 
-If you want to override a repo-wide setting just for your Windows machine, you can modify your [`.trunk/user.yaml`](broken-reference).
+If you want to override a repo-wide setting just for your Windows machine, you can modify your [`.trunk/user.yaml`](configuration/per-user-overrides.md).
 
 #### Supported Features
 
@@ -42,4 +42,4 @@ Trunk runs most linters on all platforms. However, some linters are not yet supp
 
 ### Backward Compatibility
 
-We generally strive to maintain backward compatibility between the [Trunk Launcher](broken-reference) and the Trunk binary, but you may need to occasionally upgrade the launcher to support the newest version of Trunk.
+We generally strive to maintain backward compatibility between the [Trunk Launcher](install.md#the-trunk-launcher) and the Trunk binary, but you may need to occasionally upgrade the launcher to support the newest version of Trunk.
