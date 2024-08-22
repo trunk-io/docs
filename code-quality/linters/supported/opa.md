@@ -1,5 +1,6 @@
 ---
 description: opa is a linter for Rego
+title: Trunk | How to run opa
 layout:
   title:
     visible: true
@@ -27,8 +28,12 @@ trunk check enable opa
 
 opa will never be auto-enabled. It must be enabled manually.
 
+
+
+
+
 ## Links
 
-* [opa site](https://www.openpolicyagent.org/docs/latest/cli/#opa-fmt)
-* opa Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/opa)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [opa site](https://www.openpolicyagent.org/docs/latest/cli/#opa-fmt)
+- opa Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/opa)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

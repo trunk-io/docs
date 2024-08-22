@@ -1,8 +1,6 @@
 ---
-description: >-
-  Discover Trufflehog with our detailed guide. Learn installation,
-  configuration, usage, and how to integrate it with other linters for optimal
-  code security.
+description: Discover Trufflehog with our detailed guide. Learn installation, configuration, usage, and how to integrate it with other linters for optimal code security.
+title: Trunk | How to run Trufflehog
 layout:
   title:
     visible: true
@@ -20,8 +18,9 @@ layout:
 
 [**Trufflehog**](https://github.com/trufflesecurity/trufflehog) is a linter for Security.
 
-trufflehog is composed of several linter commands.
 
+trufflehog is composed of several linter commands.
+    
 `trufflehog` runs trufflehog normally.
 
 You can enable the `trufflehog` linter with:
@@ -38,12 +37,17 @@ You can enable the `trufflehog-git` linter with:
 trunk check enable trufflehog-git
 ```
 
+
 ## Auto Enabling
 
-Trufflehog will be auto-enabled if any _ALL_ files are present.
+Trufflehog will be auto-enabled if any *ALL* files are present.
+
+
+
+
 
 ## Links
 
-* [Trufflehog site](https://github.com/trufflesecurity/trufflehog)
-* Trufflehog Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Trufflehog site](https://github.com/trufflesecurity/trufflehog)
+- Trufflehog Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/trufflehog)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -1,5 +1,6 @@
 ---
 description: djlint is a linter for HTML Templates
+title: Trunk | How to run djlint
 layout:
   title:
     visible: true
@@ -30,13 +31,15 @@ djlint will be auto-enabled if a `.djlintrc` config file is present.
 ## Settings
 
 djlint supports the following config files:
-
 * `.djlintrc`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info. Trunk Code Quality provides a default `.djlintrc` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk Code Quality provides a default `.djlintrc` if your project does not already have one.
+
+
 
 ## Links
 
-* [djlint site](https://github.com/Riverside-Healthcare/djlint#readme)
-* djlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/djlint)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [djlint site](https://github.com/Riverside-Healthcare/djlint#readme)
+- djlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/djlint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

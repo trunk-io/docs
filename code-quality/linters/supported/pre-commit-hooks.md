@@ -1,5 +1,6 @@
 ---
 description: pre-commit-hooks is a linter for All
+title: Trunk | How to run pre-commit-hooks
 layout:
   title:
     visible: true
@@ -27,8 +28,12 @@ trunk check enable pre-commit-hooks
 
 pre-commit-hooks will never be auto-enabled. It must be enabled manually.
 
+
+
+
+
 ## Links
 
-* [pre-commit-hooks site](https://pre-commit.com/hooks.html)
-* pre-commit-hooks Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [pre-commit-hooks site](https://pre-commit.com/hooks.html)
+- pre-commit-hooks Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pre-commit-hooks)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

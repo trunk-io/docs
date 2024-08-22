@@ -1,5 +1,6 @@
 ---
 description: cspell is a linter for All
+title: Trunk | How to run cspell
 layout:
   title:
     visible: true
@@ -22,9 +23,7 @@ You can enable the cspell linter with:
 ```shell
 trunk check enable cspell
 ```
-
-![cspell example output](../../configuration/supported/cspell.gif)
-
+![cspell example output](./cspell.gif)
 ## Auto Enabling
 
 cspell will never be auto-enabled. It must be enabled manually.
@@ -32,7 +31,6 @@ cspell will never be auto-enabled. It must be enabled manually.
 ## Settings
 
 cspell supports the following config files:
-
 * `.cspell.json`
 * `cspell.json`
 * `.cSpell.json`
@@ -45,10 +43,13 @@ cspell supports the following config files:
 * `cspell.yaml`
 * `cspell.yml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info. Trunk Code Quality provides a default `cspell.yaml` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Trunk Code Quality provides a default `cspell.yaml` if your project does not already have one.
+
+
 
 ## Links
 
-* [cspell site](https://github.com/streetsidesoftware/cspell#readme)
-* cspell Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cspell)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [cspell site](https://github.com/streetsidesoftware/cspell#readme)
+- cspell Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cspell)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

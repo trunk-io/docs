@@ -1,5 +1,6 @@
 ---
 description: swiftformat is a linter for Swift
+title: Trunk | How to run swiftformat
 layout:
   title:
     visible: true
@@ -30,13 +31,15 @@ swiftformat will be auto-enabled if a `.swiftformat` config file is present.
 ## Settings
 
 swiftformat supports the following config files:
-
 * `.swiftformat`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+
 
 ## Links
 
-* [swiftformat site](https://github.com/nicklockwood/SwiftFormat#readme)
-* swiftformat Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftformat)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [swiftformat site](https://github.com/nicklockwood/SwiftFormat#readme)
+- swiftformat Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/swiftformat)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

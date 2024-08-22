@@ -1,5 +1,6 @@
 ---
 description: shfmt is a linter for Bash
+title: Trunk | How to run shfmt
 layout:
   title:
     visible: true
@@ -25,10 +26,14 @@ trunk check enable shfmt
 
 ## Auto Enabling
 
-shfmt will be auto-enabled if any _Shell_ files are present.
+shfmt will be auto-enabled if any *Shell* files are present.
+
+
+
+
 
 ## Links
 
-* [shfmt site](https://github.com/mvdan/sh#readme)
-* shfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shfmt)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [shfmt site](https://github.com/mvdan/sh#readme)
+- shfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/shfmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

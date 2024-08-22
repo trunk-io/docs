@@ -1,5 +1,6 @@
 ---
 description: iwyu is a linter for C, C++
+title: Trunk | How to run iwyu
 layout:
   title:
     visible: true
@@ -27,8 +28,12 @@ trunk check enable iwyu
 
 iwyu will never be auto-enabled. It must be enabled manually.
 
+
+
+
+
 ## Links
 
-* [iwyu site](https://github.com/include-what-you-use/include-what-you-use#readme)
-* iwyu Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/iwyu)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [iwyu site](https://github.com/include-what-you-use/include-what-you-use#readme)
+- iwyu Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/iwyu)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

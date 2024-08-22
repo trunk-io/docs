@@ -1,5 +1,6 @@
 ---
 description: php-cs-fixer is a linter for PHP
+title: Trunk | How to run php-cs-fixer
 layout:
   title:
     visible: true
@@ -30,13 +31,15 @@ php-cs-fixer will be auto-enabled if a `.php-cs-fixer.dist.php` config file is p
 ## Settings
 
 php-cs-fixer supports the following config files:
-
 * `.php-cs-fixer.dist.php`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+
 
 ## Links
 
-* [php-cs-fixer site](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer)
-* php-cs-fixer Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/php-cs-fixer)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [php-cs-fixer site](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer)
+- php-cs-fixer Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/php-cs-fixer)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

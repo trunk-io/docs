@@ -1,5 +1,6 @@
 ---
 description: dustilock is a linter for Security
+title: Trunk | How to run dustilock
 layout:
   title:
     visible: true
@@ -27,8 +28,12 @@ trunk check enable dustilock
 
 dustilock will never be auto-enabled. It must be enabled manually.
 
+
+
+
+
 ## Links
 
-* [dustilock site](https://github.com/Checkmarx/dustilock)
-* dustilock Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dustilock)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [dustilock site](https://github.com/Checkmarx/dustilock)
+- dustilock Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/dustilock)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
