@@ -1,5 +1,6 @@
 ---
 description: rubocop is a linter for Ruby
+title: Trunk | How to run rubocop
 layout:
   title:
     visible: true
@@ -30,13 +31,15 @@ rubocop will be auto-enabled if a `.rubocop.yml` config file is present.
 ## Settings
 
 rubocop supports the following config files:
-
 * `.rubocop.yml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+
 
 ## Links
 
-* [rubocop site](https://github.com/rubocop/rubocop#readme)
-* rubocop Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rubocop)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [rubocop site](https://github.com/rubocop/rubocop#readme)
+- rubocop Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rubocop)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -78,3 +78,6 @@ redirects:
   test-analytics/frameworks/swift-testing: flaky-tests/frameworks/swift-testing.md
   test-analytics/frameworks/xctest: flaky-tests/frameworks/xctest.md
   test-analytics/github-pull-request-comments: flaky-tests/github-pull-request-comments.md
+  /runtimes: /cli/configuration/runtimes
+  /check/configuration: /cli/configuration
+  /plugins: /cli/configuration/plugins

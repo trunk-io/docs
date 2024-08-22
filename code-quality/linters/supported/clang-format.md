@@ -1,7 +1,8 @@
 ---
-description: >-
-  Clang Format is a set of tools to format code that is processed by the Clang
-  compiler suite.
+description: Clang Format is a set of tools to format code that is processed by the Clang compiler suite.
+
+
+title: Trunk | How to run ClangFormat
 layout:
   title:
     visible: true
@@ -32,10 +33,10 @@ ClangFormat will be auto-enabled if a `.clang-format` config file is present.
 ## Settings
 
 ClangFormat supports the following config files:
-
 * `.clang-format`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 ## Usage Notes
 
@@ -45,7 +46,6 @@ By default, Trunk uses Clang-format to additionally format `.proto` files. Howev
 ---
 Language: Proto
 ```
-
 For example, you might have this for your entire `.clang-format` file:
 
 ```yaml
@@ -58,8 +58,9 @@ DerivePointerAlignment: false
 Language: Proto
 ```
 
+
 ## Links
 
-* [ClangFormat site](https://clang.llvm.org/docs/ClangFormat.html)
-* ClangFormat Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-format)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [ClangFormat site](https://clang.llvm.org/docs/ClangFormat.html)
+- ClangFormat Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/clang-format)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

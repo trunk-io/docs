@@ -1,5 +1,6 @@
 ---
 description: cue-fmt is a linter for Cue
+title: Trunk | How to run cue-fmt
 layout:
   title:
     visible: true
@@ -25,10 +26,14 @@ trunk check enable cue-fmt
 
 ## Auto Enabling
 
-cue-fmt will be auto-enabled if any _Cue_ files are present.
+cue-fmt will be auto-enabled if any *Cue* files are present.
+
+
+
+
 
 ## Links
 
-* [cue-fmt site](https://cuelang.org)
-* cue-fmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cue-fmt)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [cue-fmt site](https://cuelang.org)
+- cue-fmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/cue-fmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

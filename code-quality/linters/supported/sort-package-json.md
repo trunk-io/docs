@@ -1,5 +1,6 @@
 ---
 description: sort-package-json is a linter for package.json
+title: Trunk | How to run sort-package-json
 layout:
   title:
     visible: true
@@ -27,8 +28,12 @@ trunk check enable sort-package-json
 
 sort-package-json will never be auto-enabled. It must be enabled manually.
 
+
+
+
+
 ## Links
 
-* [sort-package-json site](https://github.com/keithamus/sort-package-json#readme)
-* sort-package-json Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sort-package-json)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [sort-package-json site](https://github.com/keithamus/sort-package-json#readme)
+- sort-package-json Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sort-package-json)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

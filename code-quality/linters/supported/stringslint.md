@@ -1,5 +1,6 @@
 ---
 description: stringslint is a linter for Swift
+title: Trunk | How to run stringslint
 layout:
   title:
     visible: true
@@ -25,20 +26,22 @@ trunk check enable stringslint
 
 ## Auto Enabling
 
-stringslint will be auto-enabled if any of its config files are present: _`.stringslint.yml`, `.stringslint.yaml`, `.stringslint`_.
+stringslint will be auto-enabled if any of its config files are present: *`.stringslint.yml`, `.stringslint.yaml`, `.stringslint`*.
 
 ## Settings
 
 stringslint supports the following config files:
-
 * `.stringslint.yml`
 * `.stringslint.yaml`
 * `.stringslint`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+
 
 ## Links
 
-* [stringslint site](https://github.com/dral3x/StringsLint#readme)
-* stringslint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stringslint)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [stringslint site](https://github.com/dral3x/StringsLint#readme)
+- stringslint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stringslint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

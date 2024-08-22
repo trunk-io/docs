@@ -1,5 +1,6 @@
 ---
 description: terrascan is a linter for Terrascan, Security and Terraform
+title: Trunk | How to run terrascan
 layout:
   title:
     visible: true
@@ -27,8 +28,12 @@ trunk check enable terrascan
 
 terrascan will never be auto-enabled. It must be enabled manually.
 
+
+
+
+
 ## Links
 
-* [terrascan site](https://github.com/tenable/terrascan#readme)
-* terrascan Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terrascan)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [terrascan site](https://github.com/tenable/terrascan#readme)
+- terrascan Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terrascan)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

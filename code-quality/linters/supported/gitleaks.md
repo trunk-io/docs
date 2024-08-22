@@ -1,7 +1,6 @@
 ---
-description: >-
-  Explore Gitleaks, an open-source tool for identifying secrets in codebases.
-  Learn about its file type support and integration with Trunk.
+description: Explore Gitleaks, an open-source tool for identifying secrets in codebases. Learn about its file type support and integration with Trunk.
+title: Trunk | How to run Gitleaks
 layout:
   title:
     visible: true
@@ -24,22 +23,20 @@ You can enable the Gitleaks linter with:
 ```shell
 trunk check enable gitleaks
 ```
-
-![gitleaks example output](../../configuration/supported/gitleaks.gif)
-
+![gitleaks example output](./gitleaks.gif)
 ## Auto Enabling
 
-Gitleaks will be auto-enabled if any of its config files are present: _`.gitleaks.config`, `.gitleaks.toml`, `.gitleaksignore`_.
+Gitleaks will be auto-enabled if any of its config files are present: *`.gitleaks.config`, `.gitleaks.toml`, `.gitleaksignore`*.
 
 ## Settings
 
 Gitleaks supports the following config files:
-
 * `.gitleaks.config`
 * `.gitleaks.toml`
 * `.gitleaksignore`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 ## Usage Notes
 
@@ -50,11 +47,12 @@ yaruntimes:
   enabled:
     - go@1.16.7
 ```
-
 Again, this is not recommended. Just use Gitleaks v8 or later with go 1.18 or later.
+
+
 
 ## Links
 
-* [Gitleaks site](https://gitleaks.io/)
-* Gitleaks Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Gitleaks site](https://gitleaks.io/)
+- Gitleaks Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

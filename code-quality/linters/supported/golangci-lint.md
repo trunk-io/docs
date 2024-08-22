@@ -1,8 +1,6 @@
 ---
-description: >-
-  Fast Go linters runner. It runs linters in parallel, uses caching, supports
-  yaml config, has integrations with all major IDE and has dozens of linters
-  included.
+description: Fast Go linters runner. It runs linters in parallel, uses caching, supports yaml config, has integrations with all major IDE and has dozens of linters included.
+title: Trunk | How to run golangci-lint
 layout:
   title:
     visible: true
@@ -28,18 +26,18 @@ trunk check enable golangci-lint
 
 ## Auto Enabling
 
-golangci-lint will be auto-enabled if any _Go_ files are present.
+golangci-lint will be auto-enabled if any *Go* files are present.
 
 ## Settings
 
 golangci-lint supports the following config files:
-
 * `.golangci.json`
 * `.golangci.toml`
 * `.golangci.yaml`
 * `.golangci.yml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
 
 ## Usage Notes
 
@@ -51,8 +49,11 @@ runtimes:
     - go@1.21.0
 ```
 
+
+
+
 ## Links
 
-* [golangci-lint site](https://github.com/golangci/golangci-lint)
-* golangci-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/golangci-lint)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [golangci-lint site](https://github.com/golangci/golangci-lint)
+- golangci-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/golangci-lint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

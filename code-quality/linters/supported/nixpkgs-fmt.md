@@ -1,5 +1,6 @@
 ---
 description: nixpkgs-fmt is a linter for Nix
+title: Trunk | How to run nixpkgs-fmt
 layout:
   title:
     visible: true
@@ -25,10 +26,14 @@ trunk check enable nixpkgs-fmt
 
 ## Auto Enabling
 
-nixpkgs-fmt will be auto-enabled if any _Nix_ files are present.
+nixpkgs-fmt will be auto-enabled if any *Nix* files are present.
+
+
+
+
 
 ## Links
 
-* [nixpkgs-fmt site](https://github.com/nix-community/nixpkgs-fmt)
-* nixpkgs-fmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [nixpkgs-fmt site](https://github.com/nix-community/nixpkgs-fmt)
+- nixpkgs-fmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/nixpkgs-fmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

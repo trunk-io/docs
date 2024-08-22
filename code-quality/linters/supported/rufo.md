@@ -1,5 +1,6 @@
 ---
 description: rufo is a linter for Ruby
+title: Trunk | How to run rufo
 layout:
   title:
     visible: true
@@ -30,13 +31,15 @@ rufo will be auto-enabled if a `.rufo` config file is present.
 ## Settings
 
 rufo supports the following config files:
-
 * `.rufo`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+
 
 ## Links
 
-* [rufo site](https://github.com/ruby-formatter/rufo#readme)
-* rufo Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rufo)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [rufo site](https://github.com/ruby-formatter/rufo#readme)
+- rufo Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rufo)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

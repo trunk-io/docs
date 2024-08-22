@@ -1,5 +1,6 @@
 ---
 description: git-diff-check is a linter for All
+title: Trunk | How to run git-diff-check
 layout:
   title:
     visible: true
@@ -25,10 +26,14 @@ trunk check enable git-diff-check
 
 ## Auto Enabling
 
-git-diff-check will be auto-enabled if any _ALL_ files are present.
+git-diff-check will be auto-enabled if any *ALL* files are present.
+
+
+
+
 
 ## Links
 
-* [git-diff-check site](https://git-scm.com/docs/git-diff)
-* git-diff-check Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/git-diff-check)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [git-diff-check site](https://git-scm.com/docs/git-diff)
+- git-diff-check Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/git-diff-check)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -1,5 +1,6 @@
 ---
 description: gofmt is a linter for Go
+title: Trunk | How to run gofmt
 layout:
   title:
     visible: true
@@ -25,10 +26,14 @@ trunk check enable gofmt
 
 ## Auto Enabling
 
-gofmt will be auto-enabled if any _Go_ files are present.
+gofmt will be auto-enabled if any *Go* files are present.
+
+
+
+
 
 ## Links
 
-* [gofmt site](https://pkg.go.dev/cmd/gofmt)
-* gofmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [gofmt site](https://pkg.go.dev/cmd/gofmt)
+- gofmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

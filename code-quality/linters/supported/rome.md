@@ -1,5 +1,6 @@
 ---
 description: rome is a linter for JavaScript and TypeScript
+title: Trunk | How to run rome
 layout:
   title:
     visible: true
@@ -30,13 +31,15 @@ rome will never be auto-enabled. It must be enabled manually.
 ## Settings
 
 rome supports the following config files:
-
 * `rome.json`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](broken-reference) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+
 
 ## Links
 
-* [rome site](https://github.com/rome/tools#readme)
-* rome Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rome)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [rome site](https://github.com/rome/tools#readme)
+- rome Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rome)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

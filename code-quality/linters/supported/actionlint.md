@@ -1,7 +1,6 @@
 ---
-description: >-
-  Explore our guide on Actionlint, the linter for Github Actions. Learn about
-  its features, installation, and configuration.
+description: Explore our guide on Actionlint, the linter for Github Actions. Learn about its features, installation, and configuration.
+title: Trunk | How to run Actionlint
 layout:
   title:
     visible: true
@@ -27,19 +26,21 @@ trunk check enable actionlint
 
 ## Auto Enabling
 
-Actionlint will be auto-enabled if any _Github-workflow_ files are present.
+Actionlint will be auto-enabled if any *Github-workflow* files are present.
 
 ## Settings
 
 Actionlint supports the following config files:
-
 * `.github/actionlint.yaml`
 * `.github/actionlint.yml`
 
 Unlike with most tools under `trunk check`, these files cannot be moved.
 
+
+
+
 ## Links
 
-* [Actionlint site](https://github.com/rhysd/actionlint)
-* Actionlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/actionlint)
-* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- [Actionlint site](https://github.com/rhysd/actionlint)
+- Actionlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/actionlint)
+- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
