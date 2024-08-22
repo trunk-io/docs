@@ -9,7 +9,7 @@
     * [Initialize Trunk](code-quality/setup-and-installation/initialize-trunk.md)
     * [Deal with Existing Issues](code-quality/setup-and-installation/deal-with-existing-issues.md)
     * [Prevent New Issues](code-quality/setup-and-installation/prevent-new-issues.md)
-    * [Nightly Reports](code-quality/ci-setup.md)
+    * [Nightly Report](code-quality/ci-setup/github-integration.md)
   * [IDE Integration](code-quality/ide-integration/README.md)
     * [VSCode](code-quality/ide-integration/vscode.md)
     * [Neovim](code-quality/ide-integration/neovim.md)
