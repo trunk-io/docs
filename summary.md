@@ -125,10 +125,9 @@
     * [Custom Linters](code-quality/linters/custom-linters.md)
     * [Shared Configs](code-quality/linters/shared-configs.md)
     * [Upgrades](cli/upgrades.md)
-  * [CI Setup](code-quality/ci-setup.md)
+  * [CI Setup](code-quality/ci-setup/README.md)
     * [GitHub Integration](code-quality/ci-setup/github-integration.md)
     * [Manual Setup](code-quality/ci-setup/manual-setup.md)
-    * [Slack Integration](administration/integration-for-slack.md)
   * [Debugging](code-quality/debugging.md)
 * [Merge Queue](merge-queue/readme.md)
   * [Overview](merge-queue/readme.md)
@@ -223,8 +222,8 @@
     * [Merge](cli/configuration/merge.md)
     * [Telemetry](cli/configuration/telemetry.md)
     * [Per User Overrides](cli/configuration/per-user-overrides.md)
-    * [GitHub Codespaces](cli/configuration/github-codespaces.md)
-  * [Upgrades](cli/upgrades.md)
+    *
+  *
 * [APIs](apis/readme.md)
   * [Merge Queue](apis/merge.md)
   * [CI Analytics](ci-analytics/setup/api.md)

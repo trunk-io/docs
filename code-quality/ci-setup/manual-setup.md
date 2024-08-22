@@ -49,7 +49,7 @@ You may also want to specify `--upstream` if, for example, your PRs are not merg
 {% endtab %}
 {% endtabs %}
 
-### Caching and Persistence
+#### Caching and Persistence
 
 * Trunk caches the version of `trunk` itself, linters, formatters, and lint results, in `~/.cache/trunk`
 * If your build machines are persistent, make sure this directory is not wiped out between CI jobs for best performance. If Trunk has to re-download every linter for every job because this directory is wiped out, it will be very slow.
@@ -60,7 +60,7 @@ You may also want to specify `--upstream` if, for example, your PRs are not merg
     * [Travis CI](https://docs.travis-ci.com/user/caching/)
   * You can include a seeded trunk cache in a regularly updated image used for CI by running `trunk check download`, which will download all requirements to `~/.cache/trunk`
 
-### Running `trunk check` on Hourly/Nightly Builds
+#### Running `trunk check` on Hourly/Nightly Builds
 
 If you'd like to setup `trunk check` to run on a hourly/nightly CI run or release branch we recommend running with the following command:
 
@@ -72,13 +72,13 @@ trunk check --all --ci-progress --monitor=false
 
 You can also explicitly set the upstream branch if needed via `--upstream`, but we do detect your main branch by default.
 
-#### Uploading Results From Hourly/Nightly Builds
+**Uploading Results From Hourly/Nightly Builds**
 
 Trunk Code Quality has the ability to post its results to [app.trunk.io](https://app.trunk.io). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
 
 In order to keep the data up-to-date, you should upload Trunk Code Quality results regularly in an automated fashion. Depending on the size of your repository and the linters you have configured to run, running Trunk Code Quality on your whole repository may take a while. Because this run may take a while, we recommend uploading Trunk Code Quality results once daily. However, the system supports uploading results for every commit, so the granularity of upload is up to you.
 
-#### Running `trunk check --upload`
+**Running `trunk check --upload`**
 
 {% hint style="info" %}
 Before running `trunk check --upload` you must have connected your Github repository to your Trunk account.
