@@ -23,7 +23,7 @@ You can enable the isort formatter with:
 ```shell
 trunk check enable isort
 ```
-![isort example output](./isort.gif)
+![isort example output](/.gitbook/assets/isort.gif)
 ## Auto Enabling
 
 isort will be auto-enabled if any *Python* files are present.

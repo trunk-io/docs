@@ -23,7 +23,7 @@ You can enable the pmd linter with:
 ```shell
 trunk check enable pmd
 ```
-![pmd example output](./pmd.gif)
+![pmd example output](/.gitbook/assets/pmd.gif)
 ## Auto Enabling
 
 pmd will never be auto-enabled. It must be enabled manually.
