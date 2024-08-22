@@ -8,7 +8,7 @@ To standardize Trunk configuration across an organization, you can create and pu
 
 Once you've created your plugin repository, you can source it in other repositories to adopt shared configuration across your organization. For an example of how we do this in our own org, check out our [configs repo](https://github.com/trunk-io/configs).
 
-Note that in order to keep linters and tools up to date in your plugin configs repo, you'll need to run `trunk upgrade --apply-to=plugin.yaml` to apply [upgrades](broken-reference). After making a public GitHub release with your plugin changes, other dependent repos will pick up these changes automatically when running `trunk upgrade`.
+Note that in order to keep linters and tools up to date in your plugin configs repo, you'll need to run `trunk upgrade --apply-to=plugin.yaml` to apply [upgrades](../../upgrades.md). After making a public GitHub release with your plugin changes, other dependent repos will pick up these changes automatically when running `trunk upgrade`.
 
 ### Get started
 
