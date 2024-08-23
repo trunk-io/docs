@@ -222,8 +222,6 @@
     * [Merge](cli/configuration/merge.md)
     * [Telemetry](cli/configuration/telemetry.md)
     * [Per User Overrides](cli/configuration/per-user-overrides.md)
-    *
-  *
 * [APIs](apis/readme.md)
   * [Merge Queue](apis/merge.md)
   * [CI Analytics](ci-analytics/setup/api.md)
