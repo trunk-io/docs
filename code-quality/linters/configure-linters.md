@@ -1,6 +1,6 @@
 # Configure Linters
 
-Trunk Code Quality's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](https://app.gitbook.com/o/rjlr5hBehAMxRavWFlli/s/61Ep9MrYBkJa0Yq3zS1s/code-quality/reference/under-the-hood#hold-the-line) solution with your own custom linters.
+Trunk Code Quality's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](../overview/how-does-it-work.md#hold-the-line) solution with your own custom linters.
 
 Here's an overview of the ways you can configure linters.
 
