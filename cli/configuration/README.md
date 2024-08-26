@@ -129,7 +129,16 @@ api:
   org: { your-org-name }
 ```
 
-Some Trunk features, like the CI Debugger, require knowledge of the Trunk organization your repository is using. This information can be provided on the command-line or hard-coded in the `trunk.yaml` file.
+Some Trunk features, like the CI Debugger, require knowledge of the Trunk organization your repository is using. This information can be provided on the command line or hard-coded in the `trunk.yaml` file.
+
+### `trunk_remote_hint`
+
+```yaml
+repo:
+  trunk_remote_hint: github.com/organization/my_repo
+```
+
+If this hint is set, Trunk will search all local remotes looking for the one that best matches `<remote_host>/<organization>/<repo_name>` instead of defaulting to `origin`. It will then use this remote as the default upstream for computing changed files.
 
 ### Stacked PR support
 
