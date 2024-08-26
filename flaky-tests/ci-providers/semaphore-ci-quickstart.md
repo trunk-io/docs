@@ -62,7 +62,7 @@ blocks:
             - test-results publish junit.xml
             # Upload results to trunk.io
             - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
-            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
+            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token "${TRUNK_API_TOKEN}"
 
 after_pipeline:
   task:
@@ -107,7 +107,7 @@ blocks:
             - test-results publish junit.xml
             # Upload results to trunk.io
             - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
-            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
+            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token "${TRUNK_API_TOKEN}"
 
 after_pipeline:
   task:
@@ -152,7 +152,7 @@ blocks:
             - test-results publish junit.xml
             # Upload results to trunk.io
             - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
-            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
+            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token "${TRUNK_API_TOKEN}"
 
 after_pipeline:
   task:
@@ -197,7 +197,7 @@ blocks:
             - test-results publish junit.xml
             # Upload results to trunk.io
             - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
-            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug "semaphore-example" --token "${TRUNK_API_TOKEN}"
+            - ./trunk-analytics-cli upload --junit-paths "junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token "${TRUNK_API_TOKEN}"
 
 after_pipeline:
   task:

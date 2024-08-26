@@ -9,7 +9,7 @@ description: Configure Flaky Tests using GitLab CI
 You can use the Flaky Tests CLI within your [GitLab Pipelines](https://docs.gitlab.com/ee/ci/pipelines/) to upload your test results.
 
 {% hint style="info" %}
-The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
+The Trunk Flaky Tests CLI currently only supports x86\_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
 ### Create workflow
@@ -28,15 +28,9 @@ Next you will need your Trunk **organization slug** and **token.** Navigate to [
 
 ### Add Analytics CLI to Testing Workflow
 
-You can upload test results to Flaky Tests with the [`trunk-analytics-cli`](https://github.com/trunk-io/analytics-cli) by running
-it in a stage after your tests are complete. There are four different OS/arch builds of the CLI in the latest release. Pick the 
-one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a 
-container or VM.** This ensures your CI runs are always using the latest build.
-
+You can upload test results to Flaky Tests with the [`trunk-analytics-cli`](https://github.com/trunk-io/analytics-cli) by running it in a stage after your tests are complete. There are four different OS/arch builds of the CLI in the latest release. Pick the one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a container or VM.** This ensures your CI runs are always using the latest build.
 
 {% tabs %}
-
-
 {% tab title="Linux x86_64" %}
 {% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
@@ -57,7 +51,6 @@ upload_test_results: # This job uploads tests results run in the last stage
   script:
     - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
     - ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
-      
 ```
 {% endcode %}
 {% endtab %}
@@ -82,7 +75,6 @@ upload_test_results: # This job uploads tests results run in the last stage
   script:
     - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
     - ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
-      
 ```
 {% endcode %}
 {% endtab %}
@@ -107,7 +99,6 @@ upload_test_results: # This job uploads tests results run in the last stage
   script:
     - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
     - ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
-      
 ```
 {% endcode %}
 {% endtab %}
@@ -132,13 +123,10 @@ upload_test_results: # This job uploads tests results run in the last stage
   script:
     - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
     - ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
-      
 ```
 {% endcode %}
 {% endtab %}
-
 {% endtabs %}
-
 
 The `trunk-analytics-cli` tool has several important arguments;
 
