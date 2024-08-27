@@ -27,7 +27,7 @@ There are different approaches to dealing with existing issues, such as running 
 
 You don't need to fix all issues upfront. Trunk lets you fix linter errors incrementally with hold-the-line.
 
-Lean more about[#hold-the-line-1](deal-with-existing-issues.md#hold-the-line-1 "mention")
+Lean more about [#hold-the-line-1](deal-with-existing-issues.md#hold-the-line-1 "mention")
 {% endhint %}
 
 #### Running Formatters and Applying Fixes
@@ -113,5 +113,5 @@ You don't need to fix all the issues. Trunk Code Quality has the ability to _**H
 
 This allows you to clean up as you go, preventing new issues and letting your team leave each file with better code quality than before.
 
-When you've fixed the existing issues you want to fix, you can skip to [prevent-new-issues.md](prevent-new-issues.md "mention")directly.
+When you've fixed the existing issues you want to fix, you can skip to [prevent-new-issues.md](prevent-new-issues.md "mention") directly.
 

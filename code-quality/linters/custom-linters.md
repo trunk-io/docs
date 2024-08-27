@@ -4,11 +4,11 @@ Trunk Code Quality allows you to define custom linters. If a linter is not withi
 
 ### Defining a Custom Linter
 
-You can define linters right in your `.trunk/trunk.yaml` file in your repo. These definitions have the same configurable parameters as in our [public plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) or [your own plugins repo](https://docs.trunk.io/check/advanced-setup/plugins#importing-a-plugin-repository).
+You can define linters right in your `.trunk/trunk.yaml` file in your repo. These definitions have the same configurable parameters as in our [public plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) or [your own plugins repo](../../cli/configuration/plugins/external-repositories.md).
 
 #### Pass-Fail Linter Script Example
 
-For example, you can define a simple [pass-fail linter](https://docs.trunk.io/check/configuration/custom-linters/commands/output-types#pass-fail-linters) that runs a custom script file. The linter passes or fails based on the status code returned.
+For example, you can define a simple [pass-fail linter](../../cli/configuration/lint/output.md#pass-fail-linters) that runs a custom script file. The linter passes or fails based on the status code returned.
 
 ```yaml
 version: 0.1
@@ -29,7 +29,7 @@ lint:
 
 #### Inline Grep Command Example
 
-You can also define simple linters inline using tools like `grep`. This linter will grep against your custom regex pattern, format the output using sed, and then parse the output into pattern groups using a [regex output](https://docs.trunk.io/check/configuration/custom-linters/commands/output-types#regex) for Trunk Code Quality to report.
+You can also define simple linters inline using tools like `grep`. This linter will grep against your custom regex pattern, format the output using sed, and then parse the output into pattern groups using a [regex output](../../cli/configuration/lint/output.md#regex) for Trunk Code Quality to report.
 
 ```yaml
 # This file controls the behavior of Trunk: https://docs.trunk.io/cli
