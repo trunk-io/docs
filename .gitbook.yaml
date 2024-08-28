@@ -81,3 +81,8 @@ redirects:
   runtimes: cli/configuration/runtimes.md
   check/configuration: cli/configuration/README.md
   plugins: cli/configuration/plugins/README.md
+  ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
+  code-quality/ci/get-started: code-quality/ci-setup/README.md
+  code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
+  
+  
