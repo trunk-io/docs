@@ -40,7 +40,7 @@ Custom linters are slightly different; see [those docs](custom-linters.md) to le
 
 ### Disable Linters
 
-Trunk will continuously monitor your repository and make recommendations of additional new tools to run on your codebase. You can tell trunk not to recommend a specific linter by adding it to the disabled list.
+Trunk will continuously monitor your repository and make recommendations of additional new tools to run on your codebase. You can tell Trunk not to recommend a specific linter by adding it to the disabled list.
 
 ```yaml
 lint:
