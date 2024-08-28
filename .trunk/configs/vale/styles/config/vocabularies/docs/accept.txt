@@ -2,3 +2,7 @@ Config
 config
 Configs
 configs
+metalinter
+ESLint
+repos
+VSCode
