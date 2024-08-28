@@ -62,11 +62,11 @@ Trunk Code Quality speeds up static analysis by using a background daemon to che
 
 #### **Time-consuming PR iteration and triage**
 
-Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](../ci-setup/), improving PR triage. It can optionally also function as a [githooks manager](https://docs.trunk.io/code-quality/advanced-setup/actions/git-hooks) to reject `git push`es unless they're passing `trunk check`
+Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](../ci-setup/), improving PR triage. It can optionally also function as a [githooks manager](../../cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`
 
 #### **Lack of team visibility into the repo's health**
 
-Trunk Code Quality improves team communication by providing a [web app](https://app.trunk.io/login?intent=check) for repo stats and [slack notifications](https://docs.trunk.io/administration/integration-for-slack), ensuring everyone on the team is aware of the current health of your repo.
+Trunk Code Quality improves team communication by providing a [web app](https://app.trunk.io/login?intent=check) for repo stats and [Slack notifications](../../administration/integration-for-slack.md), ensuring everyone on the team is aware of the current health of your repo.
 
 ### Components
 
