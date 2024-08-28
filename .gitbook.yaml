@@ -84,5 +84,3 @@ redirects:
   ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/ci/get-started: code-quality/ci-setup/README.md
   code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
-  
-  
