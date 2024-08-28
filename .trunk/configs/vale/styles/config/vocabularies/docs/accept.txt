@@ -2,7 +2,12 @@ Config
 config
 Configs
 configs
-metalinter
 ESLint
+gitignored
+Linter
+linter
+metalinter
+repo
 repos
 VSCode
+worktree
