@@ -6,11 +6,13 @@ structure:
 
 redirects:
   adminstration: administration/readme.md
-  check/performance: check/under-the-hood.md
-  check/supported-linters: check/configuration/supported/readme.md
-  check/tools/configuration: check/advanced-setup/tools/configuration.md
-  check/under-the-hood: check/reference/under-the-hood.md
-  cli/windows-beta: check/advanced-setup/cli/windows-beta.md
+  check: code-quality/README.md
+  check/performance: code-quality/overview/how-does-it-work.md
+  check/supported-linters: code-quality/linters/supported/README.md
+  check/tools/configuration: cli/configuration/tools.md
+  check/under-the-hood: code-quality/overview/how-does-it-work.md
+  check/github-integration: code-quality/ci-setup/github-integration.md
+  cli/windows-beta: cli/compatibility.md
   docs: welcome.md
   docs/actions-config: check/actions/config.md
   docs/actions-git-hooks: check/actions/git-hooks.md
@@ -18,7 +20,7 @@ redirects:
   docs/check-cli: check/command-line.md
   docs/check-config: check/config.md
   docs/check-custom-linters: check/custom-linters.md
-  docs/check-debugging: check/debugging.md
+  docs/check-debugging: code-quality/debugging.md
   docs/check-get-started: check/get-started.md
   docs/check-github-integration: check/github-integration.md
   docs/check-supported-linters: check/configuration/supported/readme.md
@@ -39,12 +41,12 @@ redirects:
   docs/merge: merge/readme.md
   docs/overview: check/cli/readme.md
   docs/plugins: plugins/readme.md
-  docs/reference-trunk-yaml: check/reference/trunk-yaml.md
+  docs/reference-trunk-yaml: cli/configuration/README.md
   docs/shell-hooks: check/tools/readme.md#running-tools
   docs/tools: check/tools/readme.md
   docs/trunk-app-for-slack: check/reference/integration-for-slack.md
   docs/upload-check-results: web-app/upload-trunk-check-results.md
-  docs/vscode: check/ide-integration/vs-code.md
+  docs/vscode: code-quality/ide-integration/vscode
   docs/what-is-trunk: readme.md
   docs/windows-beta: check/cli/windows-beta.md
   flaky-tests/generating-junit-reports: flaky-tests/frameworks/readme.md
@@ -84,4 +86,5 @@ redirects:
   ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/ci/get-started: code-quality/ci-setup/README.md
   code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
+  code-quality/configuration/debugging: code-quality/debugging.md
   check/check-cloud-ci-integration/get-started/github-integration: code-quality/ci-setup/github-integration.md
