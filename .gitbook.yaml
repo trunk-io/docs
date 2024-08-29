@@ -7,6 +7,8 @@ structure:
 redirects:
   adminstration: administration/readme.md
   check: code-quality/README.md
+  check/configuration: cli/configuration/README.md
+  check/usage: code-quality/setup-and-installation/initialize-trunk.md
   check/performance: code-quality/overview/how-does-it-work.md
   check/supported-linters: code-quality/linters/supported/README.md
   check/tools/configuration: cli/configuration/tools.md
@@ -81,9 +83,9 @@ redirects:
   test-analytics/frameworks/xctest: flaky-tests/frameworks/xctest.md
   test-analytics/github-pull-request-comments: flaky-tests/github-pull-request-comments.md
   runtimes: cli/configuration/runtimes.md
-  check/configuration: cli/configuration/README.md
   plugins: cli/configuration/plugins/README.md
   ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
+  code-quality/usage: code-quality/setup-and-installation/initialize-trunk.md
   code-quality/ci/get-started: code-quality/ci-setup/README.md
   code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/configuration/debugging: code-quality/debugging.md
