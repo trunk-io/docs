@@ -25,7 +25,7 @@ lint:
           run: markdown-link-check -q "${target}" -c "${workspace}/.markdown-link-check.json"
     - name: non-relative-link-check
       description: Uses grep to look for docs.trunk.io links that should be relative
-      files: [ALL]
+      files: [markdown]
       commands:
         - name: lint
           run: bash ${workspace}/find_nonrelative.sh ${target}
