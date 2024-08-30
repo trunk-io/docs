@@ -14,7 +14,7 @@ Now factor in your IaC files, CI config, and build scripts; these are the places
 
 Having good linter coverage in any modern project is difficult because there isn't just one language and technology. There are tons of scripts, images, config files, docs, and IaC files to lint.&#x20;
 
-The tools required to lint everything installs, runs, outputs, upgrades, and configures differently. Now consider the tools that require dependencies and runtimes, such as [nancy](https://docs.trunk.io/code-quality/configuration/supported/nancy) and [actionlint](https://docs.trunk.io/code-quality/configuration/supported/actionlint) that depends on Go, or [bandit](https://trunk.io/linters/python/bandit) and [sqlfmt](https://docs.trunk.io/code-quality/configuration/supported/sqlfmt) that depend on Python. You have to maintain **version pinned tools** and their **runtimes**.
+The tools required to lint everything installs, runs, outputs, upgrades, and configures differently. Now consider the tools that require dependencies and runtimes, such as [nancy](../linters/supported/nancy.md) and [actionlint](../linters/supported/actionlint.md) that depends on Go, or [Bandit](../linters/supported/bandit.md) and [sqlfmt](../linters/supported/sqlfmt.md) that depend on Python. You have to maintain **version pinned tools** and their **runtimes**.
 
 These tools are also prone to tool-rot, where dependencies become old, deprecated, or known vulnerabilities are discovered. In fact, [82% of open-source projects suffer from tool-rot](https://trunk.io/blog/82-of-open-source-projects-suffer-from-tool-rot). Keeping these tools up to date is a Sisyphean task. It's better to have a metalinter handle all of it.
 

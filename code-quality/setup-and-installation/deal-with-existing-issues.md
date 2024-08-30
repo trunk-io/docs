@@ -15,7 +15,7 @@ trunk check --all
 {% hint style="info" %}
 #### Trunk is Git aware
 
-When you run `trunk check` without specifying `--all`, it will **only run on files you've modified according to git**. Remember to [specify a base branch ](https://docs.trunk.io/code-quality/setup-and-installation/initialize-trunk#trunk-is-git-aware)if you're using something other than `main` or `master`.
+When you run `trunk check` without specifying `--all`, it will **only run on files you've modified according to git**. Remember to [specify a base branch](initialize-trunk.md#initializing-trunk) if you're using something other than `main` or `master`.
 {% endhint %}
 
 ### Fixing Existing Issues
