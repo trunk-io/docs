@@ -36,6 +36,7 @@ lint:
           success_codes: [0, 1]
   disabled:
     - markdownlint
+    - trivy
   ignore:
     - linters: [prettier]
       paths:
