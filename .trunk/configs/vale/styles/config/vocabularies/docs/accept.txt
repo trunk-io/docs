@@ -1,0 +1,13 @@
+Config
+config
+Configs
+configs
+ESLint
+gitignored
+Linter
+linter
+metalinter
+repo
+repos
+VSCode
+worktree
