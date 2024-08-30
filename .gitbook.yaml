@@ -14,6 +14,7 @@ redirects:
   check/tools/configuration: cli/configuration/tools.md
   check/under-the-hood: code-quality/overview/how-does-it-work.md
   check/github-integration: code-quality/ci-setup/github-integration.md
+  check/configuration/supported: code-quality/linters/supported/README.md
   cli/windows-beta: cli/compatibility.md
   docs: welcome.md
   docs/actions-config: check/actions/config.md
@@ -26,7 +27,7 @@ redirects:
   docs/check-get-started: check/get-started.md
   docs/check-github-integration: check/github-integration.md
   docs/check-supported-linters: check/configuration/supported/readme.md
-  docs/check: check/readme.md
+  docs/check: code-quality/README.md
   docs/check/github-integration: code-quality/ci-setup/github-integration.md
   docs/ci-debugger: ci-debugger/readme.md
   docs/ci: check/check-cloud-ci-integration/readme.md
