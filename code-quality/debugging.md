@@ -2,7 +2,7 @@
 
 ## Why Aren't Issues Showing up Anymore?
 
-If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Code Quality only processes new changes to your codebase (read about [hold-the-line](https://docs.trunk.io/check/under-the-hood)). To scan older changes try running:
+If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Code Quality only processes new changes to your codebase (read about [hold-the-line](overview/how-does-it-work.md#hold-the-line)). To scan older changes try running:
 
 ```sh
 trunk check --samples=5 
@@ -14,7 +14,7 @@ to look at a sampling of each linter's issues for 5 random files
 trunk check --all
 ```
 
-to scan all files, whether they've changed or not. [More on CLI options](https://docs.trunk.io/check/command-line).
+to scan all files, whether they've changed or not. [More on CLI options](setup-and-installation/deal-with-existing-issues.md#fixing-existing-issues).
 
 ## My Linters Are Failing or Not Running as Expected
 
@@ -34,7 +34,7 @@ then run `trunk install` again in your repos.
 
 ## How do I Make a Linter Work with a Different File Type?
 
-Every linter defines a set of file types that it wants to work with in a section of the YAML called `files`. To change this you need to override the files section of that linter’s definition. [More linter application file types](https://docs.trunk.io/check/custom-linters#applicable-filetypes).
+Every linter defines a set of file types that it wants to work with in a section of the YAML called `files`. To change this you need to override the files section of that linter’s definition. [More linter application file types](../cli/configuration/lint/files-and-caching.md#applicable-filetypes).
 
 Suppose you are using the **foo-linter** which normally runs on `foo` files. The config might look like this:
 
