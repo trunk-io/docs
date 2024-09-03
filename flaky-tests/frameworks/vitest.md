@@ -1,6 +1,6 @@
 ---
 title: Configuring vitest
-description: Vitest is a testing framework for Javascript and Typescript applications
+description: Vitest is a testing framework for JavaScript and TypeScript applications
 layout:
   title:
     visible: true
@@ -17,7 +17,7 @@ layout:
 Vitest is a testing framework for Javascript.
 
 ## Enabling XML Output
-Configure Vitest to produce JUnit XML output using the built in junit reporter command line option.
+Configure Vitest to produce JUnit XML output using the built in `junit` reporter command line option.
 
 ```shell
 vitest --reporter=junit --outputFile=test-output.xml

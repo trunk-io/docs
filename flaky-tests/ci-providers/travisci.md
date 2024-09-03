@@ -24,13 +24,13 @@ Next you will need your Trunk **organization slug** and **token.** Navigate to [
 
 ### Set Project Environment Variables
 
-In your Travis CI project settings under **Environment Variables**, create new variables for your Trunk org as `TRUNK_ORG_SLUG` and the api token as `TRUNK_API_TOKEN`.
+In your Travis CI project settings under **Environment Variables**, create new variables for your Trunk org as `TRUNK_ORG_SLUG` and the API token as `TRUNK_API_TOKEN`.
 
 [//]: # (<figure><img src="../../.gitbook/assets/CircleCI-env-var-settings-screenshot.png" alt=""><figcaption><p>CircleCI Project Settings</p></figcaption></figure>)
 
 ### Add Uploader to Testing Workflow
 
-Now update your Travis CI workflow to download and run the test uploader binary after you've run your tests. Here is an example of a NodeJS project using Vitest tests.
+Now update your Travis CI workflow to download and run the Trunk Uploader binary after you've run your tests. Here is an example of a NodeJS project using Vitest tests.
 
 You can upload test results to Flaky Tests with the [`trunk-analytics-cli`](https://github.com/trunk-io/analytics-cli) by running
 it in a stage after your tests are complete. There are four different OS/arch builds of the CLI in the latest release. Pick the
@@ -119,7 +119,7 @@ script:
 
 
 In the config about we have added two additional commands to download the latest release of the `trunk-analytics-cli` and 
-then run it to upload the test output xml file. The TRUNK\_ORG\_SLUG and TRUNK\_API\_TOKEN variables are filled in at runtime by 
+then run it to upload the test output XML file. The TRUNK\_ORG\_SLUG and TRUNK\_API\_TOKEN variables are filled in at runtime by 
 the Travis CI environment variables set earlier.
 
 ***
