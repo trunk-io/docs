@@ -185,6 +185,7 @@
     * [RSpec](flaky-tests/frameworks/rspec.md)
     * [Swift Testing](flaky-tests/frameworks/swift-testing.md)
     * [unittest](flaky-tests/frameworks/unittest.md)
+    * [Vitest](flaky-tests/frameworks/vitest.md)
     * [XCTest](flaky-tests/frameworks/xctest.md)
   * [GitHub Pull Request Comments](flaky-tests/github-pull-request-comments.md)
 * [CLI](cli/README.md)
