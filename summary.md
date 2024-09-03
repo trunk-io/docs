@@ -166,6 +166,7 @@
     * [Buildkite](flaky-tests/ci-providers/buildkite-quickstart.md)
     * [Semaphore CI](flaky-tests/ci-providers/semaphore-ci-quickstart.md)
     * [CircleCI](flaky-tests/ci-providers/circleci-quickstart.md)
+    * [Travis CI](flaky-tests/ci-providers/travisci.md)
     * [Other CI Providers](flaky-tests/ci-providers/other-ci-providers-quickstart.md)
   * [Test Frameworks](flaky-tests/frameworks/readme.md)
     * [Android](flaky-tests/frameworks/android.md)
