@@ -37,6 +37,10 @@ it in a stage after your tests are complete. There are four different OS/arch bu
 one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a
 container or VM.** This ensures your CI runs are always using the latest build.
 
+Note that TravisCI requires a recent version of Linux to use the current NodeJS runtimes. You may need to set the
+`dist` to `jammy` or later. See 
+this [forum note](https://travis-ci.community/t/node-lib-x86-64-linux-gnu-libm-so-6-version-glibc-2-27-not-found-required-by-node/13655/2) 
+for more details.
 
 
 {% tabs %}
