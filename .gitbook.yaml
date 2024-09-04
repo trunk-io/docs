@@ -91,3 +91,4 @@ redirects:
   code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/configuration/debugging: code-quality/debugging.md
   check/check-cloud-ci-integration/get-started/github-integration: code-quality/ci-setup/github-integration.md
+  check/cli: code-quality/setup-and-installation/initialize-trunk
