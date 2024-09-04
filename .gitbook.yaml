@@ -7,6 +7,7 @@ structure:
 redirects:
   adminstration: administration/readme.md
   check: code-quality/README.md
+  check/cli: code-quality/setup-and-installation/initialize-trunk
   check/configuration: cli/configuration/README.md
   check/usage: code-quality/setup-and-installation/initialize-trunk.md
   check/performance: code-quality/overview/how-does-it-work.md
@@ -91,4 +92,3 @@ redirects:
   code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/configuration/debugging: code-quality/debugging.md
   check/check-cloud-ci-integration/get-started/github-integration: code-quality/ci-setup/github-integration.md
-  check/cli: code-quality/setup-and-installation/initialize-trunk
