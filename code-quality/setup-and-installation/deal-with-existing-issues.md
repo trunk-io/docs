@@ -1,6 +1,6 @@
 # Deal with Existing Issues
 
-After initializing Trunk, you can begin to scan for issues in your repo. You can decide to fix them up front, fix them incrementally as you code, or ignore irrelevant suggestions. This page walks through the process of fixing existing issues.
+After initializing Trunk, you can begin scanning for issues in your repo, and decide whether to fix them up front, fix them incrementally as you code, or ignore irrelevant suggestions. This page walks through the process of fixing existing issues.
 
 If you **only want to prevent new issues** from new code changes, skip to [prevent-new-issues.md](prevent-new-issues.md "mention").
 
@@ -71,9 +71,9 @@ trunk check disable <linter>
 
 #### Ignore Issues
 
-If there are warnings that don't apply to your project, you can ignore them by line, by file, and ignore a class of warnings in each linter's config files.
+If there are warnings that don't apply to your project, you can ignore them by line, by file, and by entire class of warnings in each linter's config files.
 
-To tell Trunk Code Quality to ignore a line in your source code with a special comment like this:
+You can tell Trunk Code Quality to ignore a line in your source code with a special comment like this:
 
 ```cpp
 struct FooBar {
@@ -95,7 +95,7 @@ lint:
         - src/generated/**
 ```
 
-You can also ignore an entire class of warnings, you can do this in the config file of your linter, either at the project root or in `.trunk/configs`
+You can also ignore an entire class of warnings using the config file of your linter, either at the project root or in `.trunk/configs`
 
 For example, these are the ignores for Markdownlint in `.trunk/configs/.markdownlint.yaml`:
 
