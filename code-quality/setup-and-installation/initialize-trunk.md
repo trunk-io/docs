@@ -116,7 +116,7 @@ You can then execute trunk as `.\trunk.ps1`.
 
 #### Compatibility
 
-Trunk only supports Windows with the following versions and above:
+Only some versions of Trunk are compatible with Windows. See the compatibility page for[#windows](../../cli/compatibility.md#windows "mention") to learn more.
 
 You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17/release/vc\_redist.x64.exe) in order to run some linters.
 
