@@ -20,6 +20,8 @@ Code Quality can automatically run formatters on each commit to new formatting f
 <pre class="language-shell"><code class="lang-shell"><strong>trunk actions enable trunk-fmt-pre-commit
 </strong></code></pre>
 
+This enables a [Git hook](../../cli/getting-started/actions/git-hooks.md) managed by Trunk which is defined in the `trunk.yaml` config file. When other developers pull the updated `trunk.yaml` file, they will automatically have this Git hook enabled to run `trunk fmt` on each commit.
+
 ### Prevent Issues Before Push
 
 Code Quality can automatically run linters and formatters on each commit to new formatting from appearing in your commit history. Code Quality uses a Git hook to automate this process. This will flag lint issues so they never make it into your PRs.
@@ -27,6 +29,8 @@ Code Quality can automatically run linters and formatters on each commit to new 
 ```bash
 trunk actions enable trunk-check-pre-push
 ```
+
+This enables a [Git hook](../../cli/getting-started/actions/git-hooks.md) managed by Trunk which is defined in the `trunk.yaml` config file. When other developers pull the updated `trunk.yaml` file, they will automatically have this Git hook enabled to run `trunk check` before each push.
 
 ### Prevent Issues on PRs
 
