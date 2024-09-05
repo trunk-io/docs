@@ -7,6 +7,7 @@ structure:
 redirects:
   adminstration: administration/readme.md
   check: code-quality/README.md
+  check/cli: code-quality/setup-and-installation/initialize-trunk.md
   check/configuration: cli/configuration/README.md
   check/usage: code-quality/setup-and-installation/initialize-trunk.md
   check/performance: code-quality/overview/how-does-it-work.md
