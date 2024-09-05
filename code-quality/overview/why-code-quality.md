@@ -14,7 +14,7 @@ Now factor in your IaC files, CI config, and build scripts; these are the places
 
 Having good linter coverage in any modern project is difficult because there isn't just one language and technology. There are tons of scripts, images, config files, docs, and IaC files to lint.&#x20;
 
-The tools required to lint everything installs, runs, outputs, upgrades, and configures differently. Now consider the tools that require dependencies and runtimes, such as [nancy](../linters/supported/nancy.md) and [actionlint](../linters/supported/actionlint.md) that depends on Go, or [Bandit](../linters/supported/bandit.md) and [sqlfmt](../linters/supported/sqlfmt.md) that depend on Python. You have to maintain **version pinned tools** and their **runtimes**.
+The tools required to lint everything install, run, output, upgrade, and configure differently. Now consider the tools that require dependencies and runtimes, such as [nancy](../linters/supported/nancy.md) and [actionlint](../linters/supported/actionlint.md) that depend on Go, or [Bandit](../linters/supported/bandit.md) and [sqlfmt](../linters/supported/sqlfmt.md) that depend on Python. You have to maintain **version pinned tools** and their **runtimes**.
 
 These tools are also prone to tool-rot, where dependencies become old, deprecated, or known vulnerabilities are discovered. In fact, [82% of open-source projects suffer from tool-rot](https://trunk.io/blog/82-of-open-source-projects-suffer-from-tool-rot). Keeping these tools up to date is a Sisyphean task. It's better to have a metalinter handle all of it.
 
@@ -26,7 +26,7 @@ Trunk Code Quality solves this by being [Git aware](how-does-it-work.md#hold-the
 
 ### **Why not just write a script?**&#x20;
 
-[ESLint](https://github.com/eslint/eslint) adopted Trunk Code Quality to replace their [linter script](https://github.com/eslint/eslint/pull/18643/files#diff-3fc6364bd19a0e4ee8d1e0fe312541201418d80f9d1b08015db4d11e7dbde39e) because it's difficult to maintain. Writing a script that can do everything a metalinter does is not trivial. You need to handle per-line and file properly ignores, adapt to the many config and output formats of different tools, support different OS and architectures, lint in a way that's [git-aware](how-does-it-work.md#hold-the-line) so it can run on large code bases quickly, and adapt to breaking changes or newly added linters.
+[ESLint](https://github.com/eslint/eslint) adopted Trunk Code Quality to replace their [linter script](https://github.com/eslint/eslint/pull/18643/files#diff-3fc6364bd19a0e4ee8d1e0fe312541201418d80f9d1b08015db4d11e7dbde39e) because it's difficult to maintain. Writing a script that can do everything a metalinter does is not trivial. You need to handle per-line and file ignores properly, adapt to the many config and output formats of different tools, support different OS and architectures, lint in a way that's [git-aware](how-does-it-work.md#hold-the-line) so it can run on large code bases quickly, and adapt to breaking changes or newly added linters.
 
 That code is outside of a project's core goals and is bound to become debt. Code Quality is free to run locally and in CI, and reporting to the [Web App](../ci-setup/github-integration.md) is free for open-source teams.&#x20;
 
