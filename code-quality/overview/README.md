@@ -14,7 +14,7 @@ There are many reasons for you to want to use a metalinter like Trunk Code Quali
 
 Trunk Code Quality is easy to adopt. [Running `trunk init`](../setup-and-installation/initialize-trunk.md) will [recommend linters and formatters](../linters/supported/) for your project with reasonable default configuration. Hold off on fixing existing issues using [hold-the-line](how-does-it-work.md#hold-the-line) and only get warnings for new issues introduced in each commit or PR.
 
-Trunk Code Quality [GitHub Integration](../ci-setup/github-integration.md)s to set up nightly runs and linter checks on PRs.&#x20;
+Trunk Code Quality [GitHub Integrations](../ci-setup/github-integration.md) to set up nightly runs and linter checks on PRs.&#x20;
 
 #### Run and manage a long list of linters
 
@@ -24,7 +24,7 @@ Trunk will install, manage, and run tools like linters and formatters for you. T
 
 [Adopting new linters is a pain](https://trunk.io/blog/reasons-developers-hate-linters) because of the large amount of upfront configuration and fixes needed. Enabling a new linter or formatter in an old repo will yield thousands of issues, most of which might not have auto fixes.
 
-Trunk supports [hold-the-line](how-does-it-work.md#hold-the-line) to lint only new issues introduced with a commit or PR, to let developers adopt new linters fast, focus on preventing new issues first, and[ report on existing issues nightly](../ci-setup/) to fix later. Waiting will only accumulate debt, stop debt accumulation immediately and fix as you code.
+Trunk supports [hold-the-line](how-does-it-work.md#hold-the-line) to lint only new issues introduced with a commit or PR, to let developers adopt new linters fast, focus on preventing new issues first, and[ report on existing issues nightly](../ci-setup/) to fix later. Waiting will only accumulate debt; stop debt accumulation immediately and fix as you code.
 
 #### Linters take too long to run
 
@@ -62,7 +62,7 @@ Trunk Code Quality speeds up static analysis by using a background daemon to che
 
 #### **Time-consuming PR iteration and triage**
 
-Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](../ci-setup/), improving PR triage. It can optionally also function as a [githooks manager](../../cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`
+Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](../ci-setup/), improving PR triage. It can optionally also function as a [githooks manager](../../cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`.
 
 #### **Lack of team visibility into the repo's health**
 
