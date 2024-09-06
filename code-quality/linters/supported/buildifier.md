@@ -1,6 +1,6 @@
 ---
-description: buildifier is a linter for Bazel, Starlark
-title: Trunk | How to run buildifier
+description:  Learn how to install, configure, and use buildifier effectively for Bazel build scripts.
+title: Trunk | How to run Buildifier 
 layout:
   title:
     visible: true
@@ -14,11 +14,11 @@ layout:
     visible: true
 ---
 
-# buildifier
+# Buildifier 
 
-[**buildifier**](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md) is a linter for Bazel, Starlark.
+[**Buildifier **](https://github.com/rhysd/actionlint) is a linter for Bazel, Starlark.
 
-You can enable the buildifier linter with:
+You can enable the Buildifier  linter with:
 
 ```shell
 trunk check enable buildifier
@@ -26,11 +26,11 @@ trunk check enable buildifier
 ![buildifier example output](/.gitbook/assets/buildifier.gif)
 ## Auto Enabling
 
-buildifier will be auto-enabled if any *Bazel or Starlark* files are present.
+Buildifier  will be auto-enabled if any *Bazel or Starlark* files are present.
 
 ## Settings
 
-buildifier supports the following config files:
+Buildifier  supports the following config files:
 * `.buildifier.json`
 * `.buildifier-tables.json`
 
@@ -41,6 +41,6 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 ## Links
 
-- [buildifier site](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md)
-- buildifier Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buildifier)
+- [Buildifier  site](https://github.com/rhysd/actionlint)
+- Buildifier  Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/buildifier)
 - Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

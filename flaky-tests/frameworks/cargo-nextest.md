@@ -26,36 +26,14 @@ curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C ${CARGO_HOME:-~/.car
 ```
 or [install and compile](https://nexte.st/book/installing-from-source) from source.
 
-
-
 Next add a `.config/nextest.toml`  config file to tell **cargo-nextest** what output format to use and where the output should be written too, among other settings. Something like this:
 
 ```toml
-[store]
-dir = "target/nextest"
-
-# This section defines the default nextest profile. Custom profiles are layered
-# on top of the default profile.
-[profile.default]
-retries = 0
-test-threads = "num-cpus"
-threads-required = 1
-status-level = "pass"
-final-status-level = "flaky"
-failure-output = "immediate"
-success-output = "never"
-fail-fast = true
-slow-timeout = { period = "60s" }
-
 [profile.ci]
 fail-fast = false
 
 [profile.ci.junit]
 path = "junit.xml"
-
-report-name = "nextest-run"
-store-success-output = false
-store-failure-output = true
 ```
 The **default** profile will use standard text output. The **ci** profile will use JUnit XML output.
 
