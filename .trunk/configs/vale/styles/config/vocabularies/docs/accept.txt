@@ -4,6 +4,7 @@ Configs
 configs
 ESLint
 gitignored
+JUnit
 Linter
 linter
 metalinter
