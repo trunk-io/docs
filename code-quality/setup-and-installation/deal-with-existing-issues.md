@@ -71,7 +71,7 @@ trunk check disable <linter>
 
 #### Ignore Issues
 
-If there are warnings that don't apply to your project, you can ignore them by line, by file, and by entire class of warnings in each linter's config files.
+If there are warnings that don't apply to your project, you can ignore them by line, by file, or by entire class of warnings in each linter's config files.
 
 You can tell Trunk Code Quality to ignore a line in your source code with a special comment like this:
 
