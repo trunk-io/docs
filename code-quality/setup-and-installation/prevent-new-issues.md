@@ -60,7 +60,11 @@ jobs:
       # ... other CI steps
 ```
 
-This step will automatically run Trunk Code Quality to reveal problems found when comparing the branch to `main`. It will also **annotate** the PR with comments for where lint issues are found.
+This step will automatically run Trunk Code Quality to reveal problems found when comparing the branch to `main`.&#x20;
+
+When `post-annotations` is set to `true` Code Quality will also **annotate** the PR with comments for where lint issues are found.
+
+<figure><img src="../../.gitbook/assets/Annotations.png" alt=""><figcaption><p>Example of inline annotations</p></figcaption></figure>
 
 #### Manual Configuration and Non-GitHub CI
 
