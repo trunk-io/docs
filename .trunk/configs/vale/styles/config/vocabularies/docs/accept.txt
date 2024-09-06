@@ -12,6 +12,7 @@ linter
 metalinter
 repo
 repos
+runtimes
 Uploader
 Vitest
 VSCode
