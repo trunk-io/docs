@@ -9,5 +9,6 @@ linter
 metalinter
 repo
 repos
+Vitest
 VSCode
 worktree
