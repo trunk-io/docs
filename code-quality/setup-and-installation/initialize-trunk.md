@@ -84,9 +84,9 @@ When the launcher is called for the first time by your teammates, the Trunk Laun
 
 <details>
 
-<summary>Using homebrew</summary>
+<summary>macOS (using homebrew)</summary>
 
-You can run the following command if you prefer to install this tool via homebrew. Keep in mind that other developers on your team will also have to install manually.
+You can run the following command if you prefer to install this tool via [homebrew](https://brew.sh/). Keep in mind that other developers on your team will also have to install manually.
 
 ```bash
 brew install trunk-io
@@ -218,4 +218,4 @@ If you're using an IDE Extension like `clangd` with an LSP that relies on those 
 
 ### Next Steps
 
-After initializing Trunk Code Quality, you can check for issues and configure Code Quality. The next steps in Setup & Installation will walk you through this process.
+After initializing Trunk Code Quality, you can check for issues and configure Code Quality. The [next steps](./deal-with-existing-issues.md) in Setup & Installation will walk you through this process.

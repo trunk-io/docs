@@ -65,7 +65,7 @@ If this continues to fail, then run `git checkout refs/pull/<PR number>/merge &&
 
 You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Code Quality as "skipped". Trunk Code Quality will still run on your PR and report issues, but this will allow the PR to pass a GitHub required status check on `Trunk Check`.
 
-This can be helpful if Code Quality is flagging known issues in a given PR which you don't want to ignore, which if you're doing a large refactor, can come in very handy.
+This can be helpful if Code Quality is flagging known issues in a given PR that you don't want to ignore, which can come in handy if you're doing a large refactor.
 
 </details>
 
