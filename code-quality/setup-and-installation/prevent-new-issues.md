@@ -15,7 +15,7 @@ repo:
 
 ### Prevent Issues On Commits
 
-Code Quality can automatically run formatters on each commit to new formatting from appearing in your commit history. Code Quality uses a Git hook to automate this process. Formatting changes will automatically be applied to what you commit.
+Code Quality can automatically run formatters on each commit to prevent new formatting from appearing in your commit history. Code Quality uses a Git hook to automate this process. Formatting changes will automatically be applied to what you commit.
 
 <pre class="language-shell"><code class="lang-shell"><strong>trunk actions enable trunk-fmt-pre-commit
 </strong></code></pre>
@@ -24,7 +24,7 @@ This enables a [Git hook](../../cli/getting-started/actions/git-hooks.md) manage
 
 ### Prevent Issues Before Push
 
-Code Quality can automatically run linters and formatters on each commit to new formatting from appearing in your commit history. Code Quality uses a Git hook to automate this process. This will flag lint issues so they never make it into your PRs.
+Code Quality can automatically run linters and formatters on each commit to prevent new formatting from appearing in your commit history. Code Quality uses a Git hook to automate this process. This will flag lint issues so they never make it into your PRs.
 
 ```bash
 trunk actions enable trunk-check-pre-push
@@ -60,7 +60,11 @@ jobs:
       # ... other CI steps
 ```
 
-This step will automatically run Trunk Code Quality to reveal problems found when comparing the branch to `main`. It will also **annotate** the PR with comments for where lint issues are found.
+This step will automatically run Trunk Code Quality to reveal problems found when comparing the branch to `main`.&#x20;
+
+When `post-annotations` is set to `true` Code Quality will also **annotate** the PR with comments for where lint issues are found.
+
+<figure><img src="../../.gitbook/assets/Annotations.png" alt=""><figcaption><p>Example of inline annotations</p></figcaption></figure>
 
 #### Manual Configuration and Non-GitHub CI
 

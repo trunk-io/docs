@@ -38,7 +38,7 @@ Some native linters are more compute/memory intensive and `check` support disabl
 
 Trunk hermetically installs the static analysis tools you run and the runtimes they run on. This means, these tools are installed and managed by the Trunk CLI, unaffected by your systems environment.
 
-If a tool is required `python 3.10` but you require `python 3.7` for certain projects you're working on, Trunk will manage that tool and it's `python 3.10` runtime automatically and not affect the `python 3.7` environment. This means Trunk will not affect or pollute your machine.
+If a tool requires `python 3.10` but the projects you're working on requires `python 3.7`, Trunk will manage that tool and it's `python 3.10` runtime automatically and not affect the `python 3.7` environment. This means Trunk will not modify or pollute your machine.
 
 Trunk manages the hermetic installation of all required runtimes. You can also specifically pin a version of a runtime you'd like Trunk to use, or tell Trunk to re-use an already-installed runtime on the system.
 
