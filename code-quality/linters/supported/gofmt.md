@@ -6,7 +6,7 @@ description: Gofmt simplifies Go coding by automatically formatting code to matc
 
 
 
-title: Trunk | How to run Gofmt 
+title: Trunk | How to run Gofmt
 layout:
   title:
     visible: true
@@ -20,11 +20,11 @@ layout:
     visible: true
 ---
 
-# Gofmt 
+# Gofmt
 
-[**Gofmt **](https://github.com/rhysd/actionlint) is a formatter for Go.
+[**Gofmt**](https://github.com/rhysd/actionlint) is a formatter for Go.
 
-You can enable the Gofmt  formatter with:
+You can enable the Gofmt formatter with:
 
 ```shell
 trunk check enable gofmt
@@ -32,7 +32,7 @@ trunk check enable gofmt
 
 ## Auto Enabling
 
-Gofmt  will be auto-enabled if any *Go* files are present.
+Gofmt will be auto-enabled if any *Go* files are present.
 
 
 
@@ -40,6 +40,6 @@ Gofmt  will be auto-enabled if any *Go* files are present.
 
 ## Links
 
-- [Gofmt  site](https://github.com/rhysd/actionlint)
-- Gofmt  Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
+- [Gofmt site](https://github.com/rhysd/actionlint)
+- Gofmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
 - Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
