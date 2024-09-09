@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # Vitest
 
 Vitest is a testing framework for Javascript.
 
 ### Enabling XML Output
+
 Configure Vitest to produce JUnit XML output using the built in `junit` reporter command line option.
 
 ```shell
@@ -48,8 +50,6 @@ export default defineConfig({
 })
 ```
 For more details see the [Vitest JUnit Reporter docs](https://vitest.dev/guide/reporters#junit-reporter).
-
-
 
 
 

@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # RSpec
 
 RSpec is a testing framework for Ruby.
 
 ### Enabling XML Output
+
 RSpec can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by installing the `rspec_junit_formatter `module. 
 
 ```shell
@@ -68,5 +70,3 @@ expected: 1.5
 
 ## Further Information
 See an example of using RSpec in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/ruby-tests.yaml#L22).
-
-

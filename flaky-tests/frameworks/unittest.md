@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # unittest
 
 unittest is a testing framework for Python.
 
 ### Enabling XML Output
+
 Though unittest is a part of the standard Python library, it does not support [JUnit XML](https://github.com/testmoapp/junitxml) output. However [**pytest**](https://trunk.io/testing/pytest), another Python unit testing framework, supports running unittest tests [out of the box](https://docs.pytest.org/en/6.2.x/unittest.html). 
 
 pytest can produce  output by running with the `--junit-xml=` option.
@@ -65,5 +67,3 @@ By default, **pytest** will include the `file` attribute in the output XML.
 
 ## Further Information
 See an example of running **pytest** in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/python-tests.yaml#L34).
-
-

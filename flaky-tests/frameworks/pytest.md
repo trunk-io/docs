@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # pytest
 
 pytest is a testing framework for Python.
 
 ### Enabling XML Output
+
 pytest can produce [JUnit XML](https://github.com/testmoapp/junitxml) output by running with the `--junit-xml=` option.
 
 ```shell
@@ -63,5 +65,3 @@ By default, **pytest** will include the `file` attribute in the output XML.
 
 ## Further Information
 See an example of running **pytest** in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/python-tests.yaml#L34).
-
-

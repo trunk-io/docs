@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # Mocha
 
 Mocha is a testing framework for Javascript and Typescript.
 
 ### Enabling XML Output
+
 Mocha can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by adding the [`mocha-junit-reporter`](https://www.npmjs.com/package/mocha-junit-reporter)  package to your codebase.
 
 ```shell
@@ -74,5 +76,3 @@ By default Mocha will include the `file` attribute.
 
 ## Further Information
 See an example of MochaJS invoked form a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/javascript-tests.yaml#L29).
-
-

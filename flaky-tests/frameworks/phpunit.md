@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # PHPUnit
 
 PHPUnit is a testing framework for Php.
 
 ### Enabling XML Output
+
 PHPUnit can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by adding the `--log-junit` argument to your command line.  ex:
 
 ```undefined
@@ -61,5 +63,3 @@ will produce XML output that looks like this:
 
 ## Further Information
 See an example of PHPUnit invoked from a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/php.yaml).
-
-

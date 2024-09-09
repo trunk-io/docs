@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # Jasmine
 
 Jasmine is a testing framework for Javascript and Typescript.
 
 ### Enabling XML Output
+
 Configure Jasmine to produce [JUnit XML](https://github.com/testmoapp/junitxml) output. 
 
 Install the  [`jasmine-reporters`](https://www.npmjs.com/package/jasmine-reporters) package
@@ -64,5 +66,3 @@ Unfortunately this reporter does not support adding the `file` attribute to the 
 
 ## Further Information
 See an example of running Jasmine inside of a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/javascript-tests.yaml#L56).
-
-

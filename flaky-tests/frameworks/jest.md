@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # Jest
 
 Jest is a testing framework for Javascript and Typescript.
 
 ### Enabling XML Output
+
 Configure Jest to produce [JUnit XML](https://github.com/testmoapp/junitxml) output. 
 
 * Install the [jest-junit.](https://github.com/jest-community/jest-junit)
@@ -79,5 +81,3 @@ The default attributes can be changed using `jest-junit` [configuration settings
 See an example of running Jest inside of a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/javascript-tests.yaml#L42).
 
 Jest is highly customizable. See more at the [Jestjs.io](https://jestjs.io/) homepage.
-
-

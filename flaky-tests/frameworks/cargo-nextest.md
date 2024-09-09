@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # Cargo-nextest
 
 Cargo-nextest is a testing framework for Rust.
 
 ### Enabling XML Output
+
 Rust has built in support for unit tests using `cargo test`.  Unfortunately `cargo test` does not support customizing output formats (though there is [experimental support for JSON output](https://doc.rust-lang.org/beta/test/enum.OutputFormat.html)). Instead we suggest using **cargo-nextest.**
 
 [cargo-nextest](https://nexte.st/) is an alternative test runner for Rust which, among other cool features, supports XML and JSON output. Install **cargo-nextest** as either a [pre-built binary](https://nexte.st/book/installation) like this:
@@ -55,5 +57,3 @@ You can change the name of the report with the `report-name` option.  Nextest wi
 See an example of **cargo-nextest** invoked form a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/rust-tests.yaml).
 
 [Documentation](https://nexte.st/book/configuration) for the `cargo-nextest` config file.
-
-

@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # gotestsum
 
 gotestsum is a testing framework for Go.
 
 ### Enabling XML Output
+
 Since `go test` does not support XML output directly, you can use [**gotestsum**](https://github.com/gotestyourself/gotestsum) to convert the native output to [JUnit XML](https://github.com/testmoapp/junitxml). First install it with
 
 ```shell
@@ -63,8 +65,6 @@ produces XML that looks like this:
 </testsuites>
 
 ```
-
-
 
 
 

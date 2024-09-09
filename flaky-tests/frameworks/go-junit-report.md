@@ -13,11 +13,13 @@ layout:
   pagination:
     visible: true
 ---
+
 # go-junit-report
 
 go-junit-report is a testing framework for Go.
 
 ### Enabling XML Output
+
 go-junit-report converts the output of `go test` to [JUnit compatible XML](https://github.com/testmoapp/junitxml). First install it with
 
 ```shell
@@ -56,8 +58,6 @@ will produce XML output that looks like:
 </testsuites>
 
 ```
-
-
 
 
 
