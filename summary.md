@@ -109,7 +109,7 @@
       * [Terraform](code-quality/linters/supported/terraform.md)
       * [terragrunt](code-quality/linters/supported/terragrunt.md)
       * [terrascan](code-quality/linters/supported/terrascan.md)
-      * [TFLint  ](code-quality/linters/supported/tflint.md)
+      * [TFLint](code-quality/linters/supported/tflint.md)
       * [tfsec](code-quality/linters/supported/tfsec.md)
       * [tofu](code-quality/linters/supported/tofu.md)
       * [Trivy](code-quality/linters/supported/trivy.md)
