@@ -1,9 +1,12 @@
+API
 Bazel
 Config
 config
 Configs
 configs
 ESLint
+JavaScript
+JUnit
 gitignored
 JUnit
 Linter
@@ -13,6 +16,8 @@ PHPUnit
 repo
 repos
 RSpec
+runtimes
+Uploader
 Vitest
 VSCode
 worktree

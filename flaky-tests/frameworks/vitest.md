@@ -50,8 +50,3 @@ export default defineConfig({
 })
 ```
 For more details see the [Vitest JUnit Reporter docs](https://vitest.dev/guide/reporters#junit-reporter).
-
-
-
-
-
