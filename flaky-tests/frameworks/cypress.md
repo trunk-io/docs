@@ -13,10 +13,11 @@ layout:
   pagination:
     visible: true
 ---
+# Cypress
 
 Cypress is a testing framework for Webapps.
 
-## Enabling XML Output
+### Enabling XML Output
 Cypress can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by adding the [mocha-junit-reporter](https://github.com/michaelleeallen/mocha-junit-reporter) package to your codebase and modify the config file to add it as a reporter.
 
 ```shell
@@ -45,7 +46,7 @@ cypress run
 ```
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 The `mocha-junit-reporter` will automatically fill in values for the _<testcase>_ and _<testsuite>_ `name` and `class` attributes. 
 

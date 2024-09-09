@@ -13,10 +13,11 @@ layout:
   pagination:
     visible: true
 ---
+# Android
 
 Android is a testing framework for Android, Kotlin and Java.
 
-## Enabling XML Output
+### Enabling XML Output
 Android tests run with Gradle generate XML output by default.
 
 There are two output paths depending on the type of tests that are run.
@@ -26,7 +27,7 @@ See the [Android Developer Docs](https://developer.android.com/studio/test/comma
 
 
 
-## Test Suite Naming
+### Test Suite Naming
 
  
 

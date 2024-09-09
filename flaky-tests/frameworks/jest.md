@@ -13,10 +13,11 @@ layout:
   pagination:
     visible: true
 ---
+# Jest
 
 Jest is a testing framework for Javascript and Typescript.
 
-## Enabling XML Output
+### Enabling XML Output
 Configure Jest to produce [JUnit XML](https://github.com/testmoapp/junitxml) output. 
 
 * Install the [jest-junit.](https://github.com/jest-community/jest-junit)
@@ -37,7 +38,7 @@ With this configuration, Jest runs with by default output a `junit.xml` file in 
 
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 The `jest-junit` reporter will automatically fill in values for the _<testcase>_ and _<testsuite>_ `name` and `class` attributes using the _description_ parameters to the tests. The `testsuites.name` is set to `jest tests` by default.   
 

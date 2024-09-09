@@ -13,10 +13,11 @@ layout:
   pagination:
     visible: true
 ---
+# Playwright
 
 Playwright is a testing framework for Webapp.
 
-## Enabling XML Output
+### Enabling XML Output
 Playwright has multiple built in reporters. To get [XML output](https://github.com/testmoapp/junitxml) use the `junit` reporter.
 
 ```shell
@@ -40,7 +41,7 @@ See the [Playwright JUnit reporter docs](https://playwright.dev/docs/test-report
 
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 Playwright tests are driven by functions in `*.spec.ts` files. The XML testsuite `name` attributes will automatically be set by the description parameters to the test functions.  The `name` attribute of the `<testsuites>` element can be set with the `PLAYWRIGHT_JUNIT_SUITE_NAME` environment variable.
 

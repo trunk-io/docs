@@ -13,10 +13,11 @@ layout:
   pagination:
     visible: true
 ---
+# gotestsum
 
 gotestsum is a testing framework for Go.
 
-## Enabling XML Output
+### Enabling XML Output
 Since `go test` does not support XML output directly, you can use [**gotestsum**](https://github.com/gotestyourself/gotestsum) to convert the native output to [JUnit XML](https://github.com/testmoapp/junitxml). First install it with
 
 ```shell
@@ -29,7 +30,7 @@ gotestsum --junitfile gotestsum_test.xml
 ```
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 **gotestsum** produces JUnit XML with the name and classname fields set by the function name and classnames being tested. For example, this function in the module `example/hello`
 

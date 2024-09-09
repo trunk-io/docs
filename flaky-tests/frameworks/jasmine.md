@@ -13,10 +13,11 @@ layout:
   pagination:
     visible: true
 ---
+# Jasmine
 
 Jasmine is a testing framework for Javascript and Typescript.
 
-## Enabling XML Output
+### Enabling XML Output
 Configure Jasmine to produce [JUnit XML](https://github.com/testmoapp/junitxml) output. 
 
 Install the  [`jasmine-reporters`](https://www.npmjs.com/package/jasmine-reporters) package
@@ -51,7 +52,7 @@ With this configuration, Jasmine will output an xml file in the `tests/jasmine/r
 
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 Jasmine will use the test suite names for the file name and xml attributes by combining them with the `JUnitXmlReporter` settings. For example with the `savePath` set to `"tests/jasmine/reports"` the test suite named `"HuntingSeason"` will output to the file `"tests/jasmine/reports/junitresults-HuntingSeason.xml".`
 

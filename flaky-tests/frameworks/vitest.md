@@ -13,10 +13,11 @@ layout:
   pagination:
     visible: true
 ---
+# Vitest
 
 Vitest is a testing framework for Javascript.
 
-## Enabling XML Output
+### Enabling XML Output
 Configure Vitest to produce JUnit XML output using the built in `junit` reporter command line option.
 
 ```shell
@@ -33,7 +34,7 @@ For more details see the [Vitest reporter docs](https://vitest.dev/guide/reporte
 
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 The generated XML contains nested `testsuites` and `testcase` tags. You can use the environment variables `VITEST_JUNIT_SUITE_NAME` and `VITEST_JUNIT_CLASSNAME` to configure their `name` and `classname` attributes, respectively. These can also be customized via reporter options:
 
