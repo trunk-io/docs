@@ -25,8 +25,7 @@ Cypress can be configured to produce [JUnit XML](https://github.com/testmoapp/ju
 ```shell
 npm install --save-dev mocha-junit-reporter
 ```
-
-`cypress.config.js` or [similar file](https://docs.cypress.io/guides/references/configuration).
+`cypress.config.js` or [similar file](https://docs.cypress.io/guides/references/configuration). 
 
 ```javascript
 const { defineConfig } = require('cypress')
@@ -37,22 +36,21 @@ module.exports = defineConfig({
   },
 })
 ```
-
 Now you can run Cypress from the command line with
 
 ```shell
 cypress run
 ```
-
 And from within your CI system the same way
 
 ```shell
 cypress run
 ```
 
+
 ### Test Suite Naming
 
-The `mocha-junit-reporter` will automatically fill in values for the and `name` and `class` attributes.&#x20;
+The `mocha-junit-reporter` will automatically fill in values for the _<testcase>_ and _<testsuite>_ `name` and `class` attributes. 
 
 ```javascript
 describe('addition', () => {
@@ -63,7 +61,6 @@ describe('addition', () => {
   });
 });
 ```
-
 would produce output that looks like this:
 
 ```xml
@@ -75,5 +72,9 @@ would produce output that looks like this:
   </testsuite>
 </testsuites>
 ```
-
 The default attributes [can be configured](https://www.npmjs.com/package/mocha-junit-reporter) with the `reporterOptions` argument in the Cypress config.
+
+
+
+
+

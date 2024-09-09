@@ -40,7 +40,7 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 ## Usage Notes
 
-By default, Trunk uses Clang-format to additionally format `.proto` files. However, for this to work, you need to have told `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format file`:
+By default, Trunk uses ClangFormat to additionally format `.proto` files. However, for this to work, you need to have told `clang-format` to do so in your `.clang-format` config file. You can do that by adding the following to the end of your `.clang-format file`:
 
 ```yaml
 ---

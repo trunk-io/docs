@@ -1,5 +1,6 @@
 ---
-description: A tool for formatting Rust code according to style guidelines.
+description: Rustfmt is a code formatting tool for Rust that helps ensure your code adheres to the community-driven coding standards and style guidelines.
+
 title: Trunk | How to run rustfmt
 layout:
   title:

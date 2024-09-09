@@ -14,9 +14,12 @@ layout:
     visible: true
 ---
 
+# go-junit-report
+
 go-junit-report is a testing framework for Go.
 
-## Enabling XML Output
+### Enabling XML Output
+
 go-junit-report converts the output of `go test` to [JUnit compatible XML](https://github.com/testmoapp/junitxml). First install it with
 
 ```shell
@@ -29,7 +32,7 @@ go test -v 2>&1 ./... | go-junit-report -set-exit-code > report.xml
 ```
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 [go-junit-report](https://github.com/jstemmer/go-junit-report) produces JUnit XML with the name and classname fields set by the function name and classnames being tested. For example, this function in the module `example/hello`
 
@@ -55,8 +58,6 @@ will produce XML output that looks like:
 </testsuites>
 
 ```
-
-
 
 
 

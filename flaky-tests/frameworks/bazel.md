@@ -14,14 +14,17 @@ layout:
     visible: true
 ---
 
+# Bazel
+
 Bazel is a testing framework for Any.
 
-## Enabling XML Output
+### Enabling XML Output
+
 By default `bazel test` will output JUnit compatible XML.  If you are using gtest for your testing framework, Bazel is still in control of running the tests and will still produce XML output.  By default the XML output will go to `./bazel-testlogs/TEST_NAME/test.xml` along with the other test outputs.
 
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 By default `bazel test` will produce XML output in a file named `test.xml`
 
@@ -29,5 +32,3 @@ By default `bazel test` will produce XML output in a file named `test.xml`
 
 ## Further Information
 See an example of running Bazel inside of a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/bazel.yaml).
-
-

@@ -1,6 +1,12 @@
 ---
-description: gofmt is a linter for Go
-title: Trunk | How to run gofmt
+description: Gofmt simplifies Go coding by automatically formatting code to match Go's style guidelines, enhancing readability and teamwork without the manual hassle.
+
+
+
+
+
+
+title: Trunk | How to run Gofmt
 layout:
   title:
     visible: true
@@ -14,11 +20,11 @@ layout:
     visible: true
 ---
 
-# gofmt
+# Gofmt
 
-[**gofmt**](https://pkg.go.dev/cmd/gofmt) is a linter for Go.
+[**Gofmt**](https://github.com/rhysd/actionlint) is a formatter for Go.
 
-You can enable the gofmt linter with:
+You can enable the Gofmt formatter with:
 
 ```shell
 trunk check enable gofmt
@@ -26,7 +32,7 @@ trunk check enable gofmt
 
 ## Auto Enabling
 
-gofmt will be auto-enabled if any *Go* files are present.
+Gofmt will be auto-enabled if any *Go* files are present.
 
 
 
@@ -34,6 +40,6 @@ gofmt will be auto-enabled if any *Go* files are present.
 
 ## Links
 
-- [gofmt site](https://pkg.go.dev/cmd/gofmt)
-- gofmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
+- [Gofmt site](https://github.com/rhysd/actionlint)
+- Gofmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gofmt)
 - Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

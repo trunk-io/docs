@@ -1,4 +1,5 @@
 API
+Bazel
 Config
 config
 Configs
@@ -7,13 +8,17 @@ ESLint
 JavaScript
 JUnit
 gitignored
+JUnit
 Linter
 linter
 metalinter
+PHPUnit
 repo
 repos
+RSpec
 runtimes
 Uploader
 Vitest
 VSCode
 worktree
+XCTest

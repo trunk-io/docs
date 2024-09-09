@@ -14,9 +14,12 @@ layout:
     visible: true
 ---
 
+# minitest
+
 minitest is a testing framework for Ruby.
 
-## Enabling XML Output
+### Enabling XML Output
+
 **minitest** can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by installing the `minitest` Ruby gem. 
 
 ```shell
@@ -56,7 +59,7 @@ Run it with `bundle exec ruby ruby/minitest/mixer.rb` and it will produce output
 ```
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 The output file can be configured where you require `minitest` and use the `JUnitReporter`. The first argument to the constructor sets the output file.
 
@@ -68,5 +71,3 @@ Minitest::Reporters.use! Minitest::Reporters::JUnitReporter
 
 ## Further Information
 See an example of using minitest in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/ruby-tests.yaml#L35).
-
-

@@ -14,9 +14,12 @@ layout:
     visible: true
 ---
 
+# Swift Testing
+
 Swift Testing is a testing framework for Apple platforms.
 
-## Enabling XML Output
+### Enabling XML Output
+
 Swift testing has built in XUnit XML reporting support. When you run your tests from the command line add `--xunit-output report.xml`to output an XML report to a file. Ex:
 
 ```swift
@@ -43,11 +46,9 @@ swift test --xunit-output report.xml
 ```
 
 
-## Test Suite Naming
+### Test Suite Naming
 
 The format of Swift Testing's  XML output is intended to match XCTests, which does not support changing test names using the `@Suite` and `@Test` description parameters. However, Swift Testing is in the process of building a more flexible, JSON-based output mechanism which includes, among other data, the display names for tests. For more information about this feature see this [issue](https://github.com/apple/swift-testing/pull/479).
-
-
 
 
 
