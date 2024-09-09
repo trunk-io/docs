@@ -16,7 +16,7 @@ layout:
 
 # Jest
 
-Jest is a testing framework for Javascript and Typescript.
+Jest is a testing framework for JavaScript and TypeScript.
 
 ### Enabling XML Output
 

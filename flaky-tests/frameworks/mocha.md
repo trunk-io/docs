@@ -16,7 +16,7 @@ layout:
 
 # Mocha
 
-Mocha is a testing framework for Javascript and Typescript.
+Mocha is a testing framework for JavaScript and TypeScript.
 
 ### Enabling XML Output
 

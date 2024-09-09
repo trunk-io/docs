@@ -16,7 +16,7 @@ layout:
 
 # Vitest
 
-Vitest is a testing framework for Javascript.
+Vitest is a testing framework for JavaScript.
 
 ### Enabling XML Output
 
