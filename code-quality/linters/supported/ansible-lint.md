@@ -1,6 +1,6 @@
 ---
-description: ansible-lint is a linter for Ansible
-title: Trunk | How to run ansible-lint
+description: Checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you
+title: Trunk | How to run Ansible-lint
 layout:
   title:
     visible: true
@@ -14,11 +14,11 @@ layout:
     visible: true
 ---
 
-# ansible-lint
+# Ansible-lint
 
-[**ansible-lint**](https://github.com/ansible/ansible-lint#readme) is a linter for Ansible.
+[**Ansible-lint**](https://github.com/ansible/ansible-lint) is a linter for Ansible.
 
-You can enable the ansible-lint linter with:
+You can enable the Ansible-lint linter with:
 
 ```shell
 trunk check enable ansible-lint
@@ -26,20 +26,28 @@ trunk check enable ansible-lint
 
 ## Auto Enabling
 
-ansible-lint will never be auto-enabled. It must be enabled manually.
+Ansible-lint will never be auto-enabled. It must be enabled manually.
 
 ## Settings
 
-ansible-lint supports the following config files:
+Ansible-lint supports the following config files:
 * `.ansible-lint`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+
+
+## Usage Notes
+
+**Ansible-lint** must be configured with a trigger. See the [trigger rules](../#trigger-rules) documentation for more information.
+
+If your ansible setup is not contained within a single folder you would list all files and directories belonging to your ansible setup.
+
 
 
 
 
 ## Links
 
-- [ansible-lint site](https://github.com/ansible/ansible-lint#readme)
-- ansible-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ansible-lint)
+- [Ansible-lint site](https://github.com/ansible/ansible-lint)
+- Ansible-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ansible-lint)
 - Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
