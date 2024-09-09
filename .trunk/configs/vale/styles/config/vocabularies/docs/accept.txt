@@ -8,8 +8,11 @@ JUnit
 Linter
 linter
 metalinter
+PHPUnit
 repo
 repos
+RSpec
 Vitest
 VSCode
 worktree
+XCTest
