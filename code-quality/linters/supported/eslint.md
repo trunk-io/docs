@@ -42,7 +42,7 @@ ESLint supports the following config files:
 * `.eslintrc.yaml`
 * `.eslintrc.yml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+Unlike with most tools under `trunk check`, these files cannot be moved.
 
 
 ## Usage Notes
