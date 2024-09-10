@@ -31,7 +31,6 @@ then run it from inside your go project like this:
 go test -v 2>&1 ./... | go-junit-report -set-exit-code > report.xml
 ```
 
-
 ### Test Suite Naming
 
 [go-junit-report](https://github.com/jstemmer/go-junit-report) produces JUnit XML with the name and classname fields set by the function name and classnames being tested. For example, this function in the module `example/hello`
@@ -58,7 +57,5 @@ will produce XML output that looks like:
 </testsuites>
 
 ```
-
-
 
 
