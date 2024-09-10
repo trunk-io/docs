@@ -17,15 +17,15 @@ Whether invoked directly by developers on their local machines, triggered automa
 
 ### VS Code Extension
 
-The Trunk VS Code extension has the same privacy properties as the Trunk CLI. Under the hood, all code-checking by the VS Code extension is completed via the Trunk CLI, which drives the VSCode extension.
+The Trunk VS Code extension has the same privacy properties as the Trunk CLI. Under the hood, all code-checking by the VS Code extension is completed via the Trunk CLI, which drives the VS Code extension.
 
-### Trunk Code Quality Web App
+### Web App ([app.trunk.io](https://app.trunk.io))
 
 The Trunk Code Quality web app is powered via running nightly scans in your repo’s own CI system which uploads results to the Trunk backend. This feature is optional, but it enables you to audit the issues in your repo and prioritize fixes. Here's how it works:
 
 * Whole-repo scans are performed nightly in your CI environment
 * Results are uploaded to Trunk’s backend, using an API token specific to your organization
-* Five line code snippets around each issue Trunk Code Quality detects are uploaded along with the actual issues for better viewing in the Trunk Code Quality web app
+* Five-line code snippets around each issue Trunk Code Quality detects are uploaded along with the actual issues for better viewing in the Trunk Code Quality web app
 * This process ensures that only necessary, limited data is shared, without transmitting or storing your full source code
 * You have full control over when and how often these scans and uploads occur
 
