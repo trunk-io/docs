@@ -81,7 +81,7 @@ In order to keep the data up-to-date, you should upload Trunk Code Quality resul
 **Running `trunk check --upload`**
 
 {% hint style="info" %}
-Before running `trunk check --upload` you must have connected your Github repository to your Trunk account.
+Before running `trunk check --upload` you must either have connected your Github repository to your Trunk account, or you must use the Trunk API token for your organization (see `--token` below).
 {% endhint %}
 
 **CI Setup for nightly uploads**
@@ -96,7 +96,7 @@ Example nightly workflow to upload results: [`nightly.yaml`](https://github.com/
 2. `trunk check --upload` accepts the same flags and filters as `trunk check` that you run locally and for CI, and it also has the same runtime dependencies.
 3. You should run your `trunk check --upload` command locally without the `--upload` flag to verify that it is working as expected. If you have a large repository or many checks enabled, `--all` may take a long time. In this case, remember to use `--sample`.
 4. Required command line parameters
-   1. `--token`: The Trunk API token for this repository. You can find this by navigating to Settings → Repositories → {your repository} and clicking "View Api Token".
+   1. `--token`: The Trunk API token for this repository. You can find this by navigating to Settings → Repositories → {your repository} and clicking "View Api Token". Alternatively, you can use the Trunk API token for your organization, by navigating to Settings and clicking "View Organization API Token". This will allow you to upload results without first connecting your GitHub repository to Trunk.
    2. `--series`: This is the name of the time-series this upload run is a part of. We recommend using the name of the branch you are running `trunk check` on. For example, we run `trunk check --upload` regularly on our `main` branch, so we use `--series main`. You may instead prefer to track specific releases or tags, or create an experimental series. The series name does not need to match any git object, it is available as a way to organize your upload data. If you're unsure of what to use for `--series`, just use the name of your main branch (typically `main` or `master`)
 
 ```bash
