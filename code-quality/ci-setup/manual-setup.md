@@ -1,3 +1,9 @@
+---
+description: >-
+  How to run Trunk Code Quality without installing the Trunk Github App, or on
+  platforms other than GitHub.
+---
+
 # Manual Setup
 
 {% hint style="warning" %}
