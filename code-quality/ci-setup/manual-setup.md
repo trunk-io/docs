@@ -14,17 +14,17 @@ If you use GitHub, we recommend you follow the GitHub Integration guide. If you 
 
 {% tabs %}
 {% tab title="GitHub Actions" %}
-If you're using GitHub but wish to setup up your own GitHub Actions Workflows, you can use the provided [Trunk GitHub Action](https://github.com/marketplace/actions/trunk-check).
+If you're using GitHub but wish to set up your own GitHub Actions Workflows, you can use the provided [Trunk GitHub Action](https://github.com/marketplace/actions/trunk-check).&#x20;
+
+Here's an example of a standalone GitHub workflow to achieve this, but you can also merge the below `job` into an existing workflow that runs on PRs:
 
 ```yaml
 name: Linter
 on:
-  push:
-    branches: main
   pull_request:
     branches: main
 jobs:
-  test:
+  trunk-code-quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
