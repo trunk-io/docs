@@ -1,8 +1,10 @@
 # Manual Setup
 
-{% hint style="info" %}
-If you use GitHub, we recommend you follow the GitHub Integration guide.
+{% hint style="warning" %}
+If you use GitHub, we recommend you follow the GitHub Integration guide. If you don't use GitHub or cannot install the Trunk GitHub app, you can still run Trunk Code Quality using these manual setup steps.
 {% endhint %}
+
+### Running Trunk Code Quality on PRs
 
 {% tabs %}
 {% tab title="GitHub Actions" %}
@@ -24,7 +26,7 @@ jobs:
       - name: Trunk Check
         uses: trunk-io/trunk-action@v1
         with:
-          post-annotations: true 
+          post-annotations: true
       # ... other CI steps
 ```
 {% endtab %}
@@ -38,7 +40,7 @@ trunk check --ci
 ```
 
 {% hint style="info" %}
-If your default branch is named something else (e.g. `master`), you should `fetch` that branch inst
+If your default branch is named something else (e.g. `master`), you should `fetch` that branch instead
 {% endhint %}
 {% endtab %}
 
@@ -72,25 +74,38 @@ trunk check --all --ci-progress --monitor=false
 
 You can also explicitly set the upstream branch if needed via `--upstream`, but we do detect your main branch by default.
 
-**Uploading Results From Hourly/Nightly Builds**
+### Uploading results to the Trunk web app
+
+{% hint style="info" %}
+After your first upload to the Trunk Web App _without_ the Trunk GitHub App installed, you'll see the web app populate and be aware of the repo you uploaded from. We don't send or store your repo in the Trunk backend, see [security.md](../security.md "mention") for more info.
+{% endhint %}
 
 Trunk Code Quality has the ability to post its results to [app.trunk.io](https://app.trunk.io). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
 
 In order to keep the data up-to-date, you should upload Trunk Code Quality results regularly in an automated fashion. Depending on the size of your repository and the linters you have configured to run, running Trunk Code Quality on your whole repository may take a while. Because this run may take a while, we recommend uploading Trunk Code Quality results once daily. However, the system supports uploading results for every commit, so the granularity of upload is up to you.
 
-**Running `trunk check --upload`**
+**Uploading using the** [**Trunk GitHub Action**](https://github.com/trunk-io/trunk-action)
 
-{% hint style="info" %}
-Before running `trunk check --upload` you must either have connected your Github repository to your Trunk account, or you must use the Trunk API token for your organization (see `--token` below).
-{% endhint %}
+By providing a `trunk-token` (as seen below) and running on a `schedule` workflow dispatch ([example](https://github.com/trunk-io/trunk-action/blob/main/.github/workflows/nightly.yaml)), Trunk will infer to run with `check-mode` as `all` and to upload results to Trunk.
 
-**CI Setup for nightly uploads**
+```yaml
+- name: Trunk Check
+  uses: trunk-io/trunk-action@v1
+  with:
+    trunk-token: ${{ secrets.TRUNK_TOKEN }}
+```
 
-You can use the [Trunk GitHub Action](https://github.com/marketplace/actions/trunk-check) to upload results nightly for your main branch. You can provide it with a `trunk-token` by navigating to Settings → Repositories → {your repository} and clicking "View Api Token".
+Note: When run as a periodic workflow on a branch, Trunk will automatically infer `check-mode` to be `all`.
 
-Example nightly workflow to upload results: [`nightly.yaml`](https://github.com/trunk-io/trunk-action/blob/main/.github/workflows/nightly.yaml)
+**Uploading without using the** [**Trunk GitHub Action**](https://github.com/trunk-io/trunk-action)
 
-**Running `trunk check --upload` locally**
+In a nightly CI job, run:
+
+```bash
+trunk check --all --upload --series main --token REDACTED
+```
+
+Notes:
 
 1. `trunk check --upload` is different than a normal `trunk check` invocation because we explicitly want the Trunk CLI to find all of the issues in the repository. Because of this, we recommend adding the `--all` flag to your `trunk check --upload` invocation. Keep in mind, this won't override the ignore settings in your `trunk.yaml` file. Any linter or file-level ignores you have configured will be honored by `trunk check --upload`.
 2. `trunk check --upload` accepts the same flags and filters as `trunk check` that you run locally and for CI, and it also has the same runtime dependencies.
@@ -98,10 +113,6 @@ Example nightly workflow to upload results: [`nightly.yaml`](https://github.com/
 4. Required command line parameters
    1. `--token`: The Trunk API token for this repository. You can find this by navigating to Settings → Repositories → {your repository} and clicking "View Api Token". Alternatively, you can use the Trunk API token for your organization, by navigating to Settings and clicking "View Organization API Token". This will allow you to upload results without first connecting your GitHub repository to Trunk.
    2. `--series`: This is the name of the time-series this upload run is a part of. We recommend using the name of the branch you are running `trunk check` on. For example, we run `trunk check --upload` regularly on our `main` branch, so we use `--series main`. You may instead prefer to track specific releases or tags, or create an experimental series. The series name does not need to match any git object, it is available as a way to organize your upload data. If you're unsure of what to use for `--series`, just use the name of your main branch (typically `main` or `master`)
-
-```bash
-trunk check --all --upload --series main --token REDACTED
-```
 
 **Troubleshooting**
 
