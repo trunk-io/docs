@@ -27,8 +27,6 @@ phpunit --log-junit output.xml
 ```
 will produce XML output in the `output.xml` file.
 
-
-
 ### Test Suite Naming
 
 By default PHPUnit use the name of your PHP files as the `name` attribute of the output XML. For example, this test code
@@ -60,6 +58,6 @@ will produce XML output that looks like this:
 ...
 ```
 
-
 ## Further Information
+
 See an example of PHPUnit invoked from a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/php.yaml).

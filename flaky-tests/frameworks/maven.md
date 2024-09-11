@@ -36,8 +36,6 @@ mvn test
 ```
 The output will be in the `target/surefire-reports` directory.
 
-
-
 ### Test Suite Naming
 
 You can change the output filename with the `<reportsDirectory>` property.
@@ -54,7 +52,6 @@ You can change the output filename with the `<reportsDirectory>` property.
 ```
 You can see a full list of configuration options [here](https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#reportsDirectory).
 
-
-
 ## Further Information
+
 See an example of running Maven inside of a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/java-tests.yaml#L34).

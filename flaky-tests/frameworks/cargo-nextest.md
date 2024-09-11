@@ -46,14 +46,12 @@ Now run the tests with:
 cargo nextest run --profile=ci
 ```
 
-
 ### Test Suite Naming
 
 You can change the name of the report with the `report-name` option.  Nextest will use the test binary names for the `<testsuite>` and the individual test names for the `<testcase>`. However, Nextest does not currently support adding the filepaths and names.
 
-
-
 ## Further Information
+
 See an example of **cargo-nextest** invoked form a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/rust-tests.yaml).
 
 [Documentation](https://nexte.st/book/configuration) for the `cargo-nextest` config file.

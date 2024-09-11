@@ -34,8 +34,6 @@ Typically you will do this in the package.json script that runs your tests, like
 ```
 For more details see the [Vitest reporter docs](https://vitest.dev/guide/reporters).
 
-
-
 ### Test Suite Naming
 
 The generated XML contains nested `testsuites` and `testcase` tags. You can use the environment variables `VITEST_JUNIT_SUITE_NAME` and `VITEST_JUNIT_CLASSNAME` to configure their `name` and `classname` attributes, respectively. These can also be customized via reporter options:
@@ -50,3 +48,5 @@ export default defineConfig({
 })
 ```
 For more details see the [Vitest JUnit Reporter docs](https://vitest.dev/guide/reporters#junit-reporter).
+
+

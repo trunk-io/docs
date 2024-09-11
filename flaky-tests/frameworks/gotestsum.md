@@ -31,7 +31,6 @@ Then run your tests with
 gotestsum --junitfile gotestsum_test.xml
 ```
 
-
 ### Test Suite Naming
 
 **gotestsum** produces JUnit XML with the name and classname fields set by the function name and classnames being tested. For example, this function in the module `example/hello`
@@ -65,7 +64,5 @@ produces XML that looks like this:
 </testsuites>
 
 ```
-
-
 
 

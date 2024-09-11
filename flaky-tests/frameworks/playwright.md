@@ -41,17 +41,10 @@ export default defineConfig({
 ```
 See the [Playwright JUnit reporter docs](https://playwright.dev/docs/test-reporters#junit-reporter) for more information.
 
-
-
 ### Test Suite Naming
 
 Playwright tests are driven by functions in `*.spec.ts` files. The XML testsuite `name` attributes will automatically be set by the description parameters to the test functions.  The `name` attribute of the `<testsuites>` element can be set with the `PLAYWRIGHT_JUNIT_SUITE_NAME` environment variable.
 
 Playwright does not support including the full filepath of the failed test in the XML output.
-
-
-
-
-
 
 

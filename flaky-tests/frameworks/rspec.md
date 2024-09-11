@@ -31,7 +31,6 @@ Add the formatter to your command line like this:
 rspec src --format RspecJunitFormatter
 ```
 
-
 ### Test Suite Naming
 
 The output file can be set with the `--out` option like this:
@@ -65,8 +64,6 @@ expected: 1.5
 
 ```
 
-
-
-
 ## Further Information
+
 See an example of using RSpec in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/ruby-tests.yaml#L22).
