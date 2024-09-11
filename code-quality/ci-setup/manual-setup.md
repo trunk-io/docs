@@ -92,7 +92,7 @@ In order to keep the data up-to-date, you should upload Trunk Code Quality resul
 
 **Uploading using the** [**Trunk GitHub Action**](https://github.com/trunk-io/trunk-action)
 
-By providing a `trunk-token` (as seen below) and running on a `schedule` workflow dispatch ([example](https://github.com/trunk-io/trunk-action/blob/main/.github/workflows/nightly.yaml)), Trunk will infer to run with `check-mode` as `all` and to upload results to Trunk.
+If you have or make a nightly GitHub Workflow ([example](https://github.com/trunk-io/trunk-action/blob/main/.github/workflows/nightly.yaml)), you can add a step which runs the Trunk GitHub Action (as shown below) to upload to the Trunk web app. By providing a `trunk-token` and running on a `schedule` workflow dispatch ([example](https://github.com/trunk-io/trunk-action/blob/main/.github/workflows/nightly.yaml)), Trunk will infer to run with `check-mode` as `all` and to upload results to Trunk.
 
 ```yaml
 - name: Trunk Check
