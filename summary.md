@@ -189,6 +189,7 @@
     * [unittest](flaky-tests/frameworks/unittest.md)
     * [Vitest](flaky-tests/frameworks/vitest.md)
     * [XCTest](flaky-tests/frameworks/xctest.md)
+  * [Trunk Flaky Tests CLI](flaky-tests/trunk-flaky-tests-cli.md)
   * [GitHub Pull Request Comments](flaky-tests/github-pull-request-comments.md)
 * [CLI](cli/README.md)
   * [Install](cli/install.md)

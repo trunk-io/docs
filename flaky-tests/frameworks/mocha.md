@@ -20,11 +20,12 @@ Mocha is a testing framework for JavaScript and TypeScript.
 
 ### Enabling XML Output
 
-Mocha can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by adding the [`mocha-junit-reporter`](https://www.npmjs.com/package/mocha-junit-reporter)  package to your codebase.
+Mocha can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by adding the [`mocha-junit-reporter`](https://www.npmjs.com/package/mocha-junit-reporter)  package to your codebase.
 
 ```shell
 npm install --save-dev mocha-junit-reporter
 ```
+
 Now run Mocha from the command line or inside your CI system as:
 
 ```shell
@@ -33,7 +34,7 @@ mocha test --reporter mocha-junit-reporter
 
 ### Test Suite Naming
 
-The `mocha-junit-reporter` will automatically fill in values for the _<testcase>_ and _<testsuite>_ `name` and `class` attributes. The test:
+The `mocha-junit-reporter` will automatically fill in values for the and `name` and `class` attributes. The test:
 
 ```javascript
 describe('addition', () => {
@@ -44,6 +45,7 @@ describe('addition', () => {
   });
 });
 ```
+
 will produce output that looks like this:
 
 ```xml
@@ -57,7 +59,8 @@ will produce output that looks like this:
   </testsuite>
 </testsuites>
 ```
-The default attributes [can be configured](https://www.npmjs.com/package/mocha-junit-reporter) with the `reporterOptions` argument in the  `.mocharc.js` or [similar config file.](https://mochajs.org/#configuring-mocha-nodejs)
+
+The default attributes [can be configured](https://www.npmjs.com/package/mocha-junit-reporter) with the `reporterOptions` argument in the `.mocharc.js` or [similar config file.](https://mochajs.org/#configuring-mocha-nodejs)
 
 ```javascript
 var mocha = new Mocha({
@@ -69,6 +72,7 @@ var mocha = new Mocha({
     }
 });
 ```
+
 By default Mocha will include the `file` attribute.
 
 ## Further Information
