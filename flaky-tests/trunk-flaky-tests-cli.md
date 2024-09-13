@@ -66,11 +66,11 @@ If you receive an error that the org slug or API token is not found, double chec
 
 Make sure you are getting your _Organization Slug_, not the Organization Name.
 
-<figure><img src="../.gitbook/assets/cubesYellow.png" alt=""><figcaption><p>Get the Organization Slug</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Organization Slug.png" alt=""><figcaption><p>Get the Organization Slug</p></figcaption></figure>
 
 Also make sure you are getting your O_rganization API Token_, _**not your project/repo token**_.
 
-<figure><img src="../.gitbook/assets/org-api-2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Organization API Token.png" alt=""><figcaption></figcaption></figure>
 
 
 
