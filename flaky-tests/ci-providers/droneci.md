@@ -29,7 +29,7 @@ In your Drone CI project settings create new variables for your Trunk org as `TR
 
 ### Add Uploader to Testing Pipeline
 
-Now update your Drone CI pipeline to download and run the Trunk Uploader binary after you've run your tests. Below is an example of a NodeJS project using Vitest tests. It accepts env variables from a secret file for local testing. In your project configure it to accept the variables using your preferred method.
+Now update your Drone CI pipeline to download and run the Trunk Uploader binary after you've run your tests. Below is an example of a NodeJS project using Vitest tests. It accepts environment variables from a secret file for local testing. In your project configure it to accept the variables using your preferred method.
 
 You can upload test results to Flaky Tests with the [`trunk-analytics-cli`](https://github.com/trunk-io/analytics-cli) by running
 it in a stage after your tests are complete. There are four different OS/arch builds of the CLI in the latest release. Pick the
