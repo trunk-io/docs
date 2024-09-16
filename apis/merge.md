@@ -12,11 +12,7 @@ All requests must be [authenticated](./#authentication) by providing the `x-api-
 [mergeapi.json](../.gitbook/assets/mergeapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/mergeapi.json" path="/cancelPullRequest" method="post" %}
-[mergeapi.json](../.gitbook/assets/mergeapi.json)
-{% endswagger %}
-
-{% swagger src="../.gitbook/assets/mergeapi.json" path="/host/github/owner/{owner}/name/{name}/branch/{targetBranch}/pr/{prNumber}" method="get" %}
+{% swagger src="../.gitbook/assets/mergeapi.json" path="/queuePullRequest" method="post" %}
 [mergeapi.json](../.gitbook/assets/mergeapi.json)
 {% endswagger %}
 
@@ -24,7 +20,18 @@ All requests must be [authenticated](./#authentication) by providing the `x-api-
 [mergeapi.json](../.gitbook/assets/mergeapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/mergeapi.json" path="/setImpactedTargets" method="post" %}
+{% swagger src="../.gitbook/assets/mergeapi.json" path="/cancelPullRequest" method="post" %}
 [mergeapi.json](../.gitbook/assets/mergeapi.json)
 {% endswagger %}
 
+{% swagger src="../.gitbook/assets/mergeapi.json" path="/getQueue" method="post" %}
+[mergeapi.json](../.gitbook/assets/mergeapi.json)
+{% endswagger %}
+
+{% swagger src="../.gitbook/assets/mergeapi.json" path="/getSubmittedPullRequest" method="post" %}
+[mergeapi.json](../.gitbook/assets/mergeapi.json)
+{% endswagger %}
+
+{% swagger src="../.gitbook/assets/mergeapi.json" path="/setImpactedTargets" method="post" %}
+[mergeapi.json](../.gitbook/assets/mergeapi.json)
+{% endswagger %}

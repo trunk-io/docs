@@ -9,6 +9,7 @@ redirects:
   check: code-quality/README.md
   check/cli: code-quality/setup-and-installation/initialize-trunk.md
   check/configuration: cli/configuration/README.md
+  check/get-started: code-quality/ci-setup/README.md
   check/usage: code-quality/setup-and-installation/initialize-trunk.md
   check/performance: code-quality/overview/how-does-it-work.md
   check/supported-linters: code-quality/linters/supported/README.md
