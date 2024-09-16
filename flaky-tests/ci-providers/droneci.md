@@ -140,7 +140,7 @@ steps:
 
 
 In the config about we have added two additional commands to download the latest release of the `trunk-analytics-cli` and
-then run it to upload the test output XML file. The TRUNK\_ORG\_SLUG and TRUNK\_API\_TOKEN variables are filled in at runtime by
+then run it to upload the test output XML file. The `TRUNK\_ORG\_SLUG` and `TRUNK\_API\_TOKEN` variables are filled in at runtime by
 the Drone CI environment variables set earlier.
 
 ***
