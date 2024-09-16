@@ -30,6 +30,7 @@ redirects:
   docs/check-supported-linters: check/configuration/supported/readme.md
   docs/check: code-quality/README.md
   docs/check/github-integration: code-quality/ci-setup/github-integration.md
+  docs/check/get-started: code-quality/ci-setup/README.md
   docs/ci-debugger: ci-debugger/readme.md
   docs/ci: check/check-cloud-ci-integration/readme.md
   docs/cli: check/cli/readme.md
