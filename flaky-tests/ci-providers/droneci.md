@@ -14,7 +14,7 @@ The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linu
 
 ### Create a Drone CI Pipeline
 
-Create a Drone CI pipeline (or modify an existing one) to run the tests that you want to monitor. The pipeline should produce a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format. Most testing frameworks support XML output. See [Testing Framework Configuration](../frameworks/) for guides for common testing frameworks. Make sure that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.
+Create a Drone CI pipeline (or modify an existing one) to run the tests that you want to monitor. The pipeline should produce a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format. Most testing frameworks support XML output. See [Testing Framework Configuration](../frameworks/readme.md) for guides for common testing frameworks. Make sure that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.
 
 ### Find Organization Slug and Token
 
