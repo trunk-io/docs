@@ -9,7 +9,7 @@ description: Configure Flaky Tests using Drone CI
 You can use the Flaky Tests CLI within your [Drone CI](https://www.drone.io/) pipelines to upload and analyze your test results.
 
 {% hint style="info" %}
-The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation does not use cached test results and does not automatically retry failing tests.
+The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support in our [community Slack](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation does not use cached test results and does not automatically retry failing tests.
 {% endhint %}
 
 ### Create a Drone CI Pipeline
