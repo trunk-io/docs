@@ -9,6 +9,7 @@ redirects:
   check: code-quality/README.md
   check/cli: code-quality/setup-and-installation/initialize-trunk.md
   check/configuration: cli/configuration/README.md
+  check/get-started: code-quality/ci-setup/README.md
   check/usage: code-quality/setup-and-installation/initialize-trunk.md
   check/performance: code-quality/overview/how-does-it-work.md
   check/supported-linters: code-quality/linters/supported/README.md
@@ -30,7 +31,6 @@ redirects:
   docs/check-supported-linters: check/configuration/supported/readme.md
   docs/check: code-quality/README.md
   docs/check/github-integration: code-quality/ci-setup/github-integration.md
-  docs/check/get-started: code-quality/ci-setup/README.md
   docs/ci-debugger: ci-debugger/readme.md
   docs/ci: check/check-cloud-ci-integration/readme.md
   docs/cli: check/cli/readme.md
