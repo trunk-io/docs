@@ -1,16 +1,16 @@
 ---
-description: Detect and eliminate flaky tests.
+description: Detect, quarantine, and eliminates flaky tests from your codebase
 ---
 
 # Flaky Tests (beta)
 
-{% hint style="warning" %}
+{% hint style="info" %}
 Flaky Tests is currently available by invite only. Please [sign up for the waitlist](https://trunk.io/flaky-tests) for access.
 {% endhint %}
 
 ## Monitoring Flaky Tests
 
-Flaky tests are monitored by regularly running your test suites on branches that should not have test failures and tracking those failures. This is typically `main` or `master`, but can also be other branches that are expected not to fail like `production`, `release`, etc., depending on your workflow.
+Flaky tests are monitored by regularly running your test suites on branches that should not have test failures and tracking those failures. This is typically `main` or `master`, but there can also be other branches that are expected not to fail, like `production`, `release`, etc., depending on your workflow.
 
 To start monitoring flaky tests, set up an automated CI job that runs your tests and uploads the resulting JUnit XML test report. See [Framework Configuration](frameworks/) to learn how to enable XML output for your particular testing framework.
 

@@ -1,5 +1,5 @@
 ---
-description: Trunk is a devex toolkit to check, test, merge, and monitor your code.
+description: Trunk is a DevEx toolkit to check, test, merge, and monitor your code.
 layout:
   title:
     visible: true

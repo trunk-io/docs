@@ -1,6 +1,6 @@
 ---
 description: >-
-  Enterprise scale merge queue to merge pull requests quickly while protecting
+  Enterprise-scale merge queue to merge pull requests quickly while protecting
   your main branch.
 ---
 
