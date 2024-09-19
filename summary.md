@@ -129,6 +129,7 @@
     * [GitHub Integration](code-quality/ci-setup/github-integration.md)
     * [Manual Setup](code-quality/ci-setup/manual-setup.md)
   * [Debugging](code-quality/debugging.md)
+  * [Licensing](code-quality/licensing.md)
   * [Security](code-quality/security.md)
 * [Merge Queue](merge-queue/readme.md)
   * [Overview](merge-queue/readme.md)
