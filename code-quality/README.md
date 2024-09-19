@@ -8,7 +8,7 @@ description: 'Metalinter for over 100 code checking tools: CLI, IDE, and on the 
 
 Trunk Code Quality is a **metalinter** that lets you lint every language and every file in your project with a single tool using 100+ supported idiomatic code-checking tools, such as ESLint, Prettier, Ruff, and more for every language and project.&#x20;
 
-Trunk Code Quality helps you install the tools hermetically, run them faster, upgrade them more easily, and run them on PRs and in CI, all with unified configuration and output reporting.&#x20;
+Trunk Code Quality is trusted by popular open-source projects like [**ESLint**](https://eslint.org/) to improve their developer experience. [Learn more about how ESLint leverages Code Quality in their repos](https://trunk.io/blog/improving-linting-experience-in-eslint-s-open-source-repo-with-trunk-code-quality).
 
 {% hint style="success" %}
 #### Trunk Code Quality is free for Open-Source.
