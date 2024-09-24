@@ -118,7 +118,7 @@ Set-ExecutionPolicy Bypass -Scope CurrentUser
 
 You can then execute trunk as `.\trunk.ps1`.
 
-#### Compatibility
+**Compatibility**
 
 Only some versions of Trunk are compatible with Windows. See the compatibility page for[#windows](../../cli/compatibility.md#windows "mention") to learn more.
 
@@ -146,13 +146,13 @@ trunk init
 
 Follow the wizard, you'll be prompted with the following options:
 
-1. `Sign up or log in`: If you plan to upload runner results to the Trunk Web App for tracking, login, otherwise this can be skipped.
-2. Trunk will automatically[ recommend some common linters](initialize-trunk.md#recommended-linters) according to files in your repo.
-3. `Would you like Trunk to manage your git hooks and enable some built-in hooks? (Y/n)`: If you wish to run Trunk on commit and before push automatically, you and respond `Y` otherwise `n`.
-4. `Would you like Trunk to scan your repo for issues? (Y/n)`: Run newly enabled linters with Trunk Code Quality immediately with `Y`, otherwise, existing issues are hidden by default with hold-the-line. You can still [scan for existing issues in the next step](deal-with-existing-issues.md).
+1. `Sign up or log in`: Connect the CLI with your Trunk account to enable all of Trunk's feature.
+2. Trunk will automatically [enable the most useful linters](https://docs.trunk.io/code-quality/setup-and-installation/initialize-trunk#recommended-linters) based on the files in your repo.
+3. `Trunk will manage your git hooks and enable some built-in hooks.`: This sets up Trunk to run automatically on commit and before you push, saving you time waiting for CI only to have it fail.
+4. `Trunk will now run a local, one-time scan of your code and report any issues it finds`: This initial scan will give you a good overview of the problem areas in your code. Subsequent scans will only run on changed lines using hold-the-line.
 
 {% hint style="info" %}
-#### Trunk is Git aware
+**Trunk is Git aware**
 
 Trunk speeds up your linting process by running on only the files that have changed in your branch compared to upstream. This means if you're using a base/trunk branch that's not `master` or `main`, you will need to specify it in your `.trunk/trunk.yaml`
 
@@ -166,8 +166,6 @@ repo:
 ... rest of configs
 ```
 {% endhint %}
-
-
 
 ### The .trunk Directory
 
@@ -185,7 +183,7 @@ After initialization, a new folder `.trunk` will be generated with the following
 └── trunk.yaml # Top-level Trunk config
 ```
 
-You will spend most of your time configuring Trunk Code Quality's linter definitions  `trunk.yaml` and individual linter configurations in `configs`.&#x20;
+You will spend most of your time configuring Trunk Code Quality's linter definitions `trunk.yaml` and individual linter configurations in `configs`.
 
 ### Recommended Linters
 
@@ -210,7 +208,7 @@ Trunk Code Quality supports [VSCode](../ide-integration/vscode.md) and [Neovim](
 
 ### Move Existing Configs
 
-If you have existing linter configs in your repo, you can move them into the `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run.&#x20;
+If you have existing linter configs in your repo, you can move them into the `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run.
 
 {% hint style="warning" %}
 If you're using an IDE Extension like `clangd` with an LSP that relies on those configs being in the root, you must create an additional symlink from the hidden config to the workspace root.
@@ -218,4 +216,4 @@ If you're using an IDE Extension like `clangd` with an LSP that relies on those 
 
 ### Next Steps
 
-After initializing Trunk Code Quality, you can check for issues and configure Code Quality. The [next steps](./deal-with-existing-issues.md) in Setup & Installation will walk you through this process.
+After initializing Trunk Code Quality, you can check for issues and configure Code Quality. The [next steps](deal-with-existing-issues.md) in Setup & Installation will walk you through this process.
