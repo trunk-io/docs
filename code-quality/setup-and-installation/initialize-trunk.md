@@ -7,7 +7,7 @@ Before you can start using Trunk Code Quality, you need to install and initializ
 The Trunk CLI can be installed in many different ways depending on your use case.
 
 {% hint style="info" %}
-We recommend installing the CLI using **NPM** or installing with **cURL and committing the launcher** to Git. These install methods allow your teammates to use Trunk without an additional install step.
+We recommend installing the CLI via **NPM** if you’re already using NPM, or using **cURL** and **committing the launcher to Git** for all other projects. Both methods allow your teammates to use Trunk without needing an additional install step.
 {% endhint %}
 
 #### Using NPM
