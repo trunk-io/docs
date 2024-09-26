@@ -17,6 +17,8 @@ redirects:
   check/under-the-hood: code-quality/overview/how-does-it-work.md
   check/github-integration: code-quality/ci-setup/github-integration.md
   check/configuration/supported: code-quality/linters/supported/README.md
+  check/configuration/supported/clang-tidy: code-quality/linters/supported/clang-tidy.md
+  check/configuration/supported/gitleaks: code-quality/linters/supported/gitleaks.md
   cli/windows-beta: cli/compatibility.md
   docs: welcome.md
   docs/actions-config: check/actions/config.md
