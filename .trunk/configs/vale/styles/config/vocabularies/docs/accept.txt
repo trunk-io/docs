@@ -1,6 +1,8 @@
 API
 Bazel
 Buildkite
+classname
+classnames
 Config
 config
 Configs
