@@ -10,11 +10,11 @@ All requests must be [authenticated](../../apis/#authentication) by providing th
 
 ## Track Events
 
-<mark style="color:green;">`POST`</mark> `https://api.trunk.io/v1/metrics/trackEvent`
+<mark style="color:green;">`POST`</mark> `https://api.trunk.io/v1/metrics/trackEvents`
 
 ## Track Events
 
-<mark style="color:green;">`POST`</mark> `https://api.trunk.io/v1/metrics/trackEvent`
+<mark style="color:green;">`POST`</mark> `https://api.trunk.io/v1/metrics/trackEvents`
 
 The track events endpoint uploads event data about a CI run. Each event contains a start and end timestamp, metrics, tags, and an optional parent association ID.
 
