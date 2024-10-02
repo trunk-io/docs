@@ -74,7 +74,29 @@ If you wanted to flip the value of `disable_upstream` to `false`, you could, in 
 Overriding definitions in your `trunk.yaml` file doesn't require you to specify the entire definition again. You only need to specify what's being overridden.
 {% endhint %}
 
-Some linters have multiple commands, such as [trivy](https://github.com/trunk-io/plugins/blob/main/linters/trivy/plugin.yaml), which can run in different ways. Similarly, some linters are configured to run differently on different platforms or at different versions. When overriding a command definition, overrides are applied on the tuple `[name, version, platforms]`.&#x20;
+#### Configure Linter Commands
+
+Some linters have multiple commands, such as [Ruff](supported/ruff.md), which can run in different ways. By default, Ruff is configured to only run as a linter:
+
+```yaml
+lint:
+  enabled:
+    - ruff@<version>:
+        commands: [lint]
+```
+
+You can configure ruff to also run the format command by adding it to the commands tuple:
+
+```yaml
+lint:
+  enabled:
+    - ruff@<version>:
+        commands: [lint, format]
+```
+
+#### Configure Linter Platforms
+
+Similarly, some linters are configured to run differently on different platforms or at different versions. When overriding a command definition, overrides are applied on the tuple `[name, version, platforms]`.&#x20;
 
 For example, if you wanted to disable batching when running [ktlint](https://github.com/trunk-io/plugins/blob/main/linters/ktlint/plugin.yaml) on Windows, you could consider its default configuration:
 
