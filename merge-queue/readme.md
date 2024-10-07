@@ -8,6 +8,8 @@ description: >-
 
 **Trunk Merge Queue** is a hosted merge queue service. It manages and controls the order in which enqueued pull requests are merged into the `main` branch of your repository. Trunk Merge Queue enables large teams working in a monorepo to reduce merge conflicts and maintain a green, healthy main branch.
 
+{% embed url="https://youtu.be/qFCXVkx3pbo" %}
+
 ### **Why use a merge queue?**
 
 Merge queues automate PR merges into your repo's `main` branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000+ active engineers.
