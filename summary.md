@@ -33,7 +33,7 @@
       * [Clippy](code-quality/linters/supported/clippy.md)
       * [cmake-format](code-quality/linters/supported/cmake-format.md)
       * [codespell](code-quality/linters/supported/codespell.md)
-      * [cspell ](code-quality/linters/supported/cspell.md)
+      * [cspell](code-quality/linters/supported/cspell.md)
       * [cue-fmt](code-quality/linters/supported/cue-fmt.md)
       * [dart](code-quality/linters/supported/dart.md)
       * [deno](code-quality/linters/supported/deno.md)

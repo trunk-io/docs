@@ -16,7 +16,7 @@ layout:
 
 # Cucumber
 
-Cucumber is a testing framework for All.
+Cucumber is a testing framework for all.
 
 ### Enabling XML Output
 
