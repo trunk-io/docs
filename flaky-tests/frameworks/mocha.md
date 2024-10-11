@@ -33,7 +33,7 @@ mocha test --reporter mocha-junit-reporter
 
 ### Test Suite Naming
 
-The `mocha-junit-reporter` will automatically fill in values for the _<testcase>_ and _<testsuite>_ `name` and `class` attributes. The test:
+The `mocha-junit-reporter` will automatically fill in values for the `<testcase/>` and `<testsuite/>` `name` and `class` attributes. The test:
 
 ```javascript
 describe('addition', () => {

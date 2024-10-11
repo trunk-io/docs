@@ -40,7 +40,7 @@ With this configuration, Jest runs with by default output a `junit.xml` file in 
 
 ### Test Suite Naming
 
-The `jest-junit` reporter will automatically fill in values for the _<testcase>_ and _<testsuite>_ `name` and `class` attributes using the _description_ parameters to the tests. The `testsuites.name` is set to `jest tests` by default.   
+The `jest-junit` reporter will automatically fill in values for the `<testcase/>` and `<testsuite/>` `name` and `class` attributes using the _description_ parameters to the tests. The `testsuites.name` is set to `jest tests` by default.   
 
 To make it easier to debug, it is also useful to include the name of the file that the failing test is in. You can do this by adding this to the `jest.config.json` file.
 

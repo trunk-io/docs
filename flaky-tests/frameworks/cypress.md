@@ -49,7 +49,7 @@ cypress run
 
 ### Test Suite Naming
 
-The `mocha-junit-reporter` will automatically fill in values for the _<testcase>_ and _<testsuite>_ `name` and `class` attributes. 
+The `mocha-junit-reporter` will automatically fill in values for the `<testcase/>` and `<testsuite/>` `name` and `class` attributes. 
 
 ```javascript
 describe('addition', () => {
