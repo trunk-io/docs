@@ -30,7 +30,7 @@ pytest --junit-xml=filepath.xml
 
 ### Test Suite Naming
 
-**pytest** will automatically fill in values for the _<testcase/>_ and _<testsuite/>_ `name` and `classname` attributes. 
+**pytest** will automatically fill in values for the `<testcase/>` and `<testsuite/>` `name` and `classname` attributes. 
 
 ```python
 def test_95_percent():
