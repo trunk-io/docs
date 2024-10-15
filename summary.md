@@ -187,7 +187,7 @@
     * [Vitest](flaky-tests/frameworks/vitest.md)
     * [XCTest](flaky-tests/frameworks/xctest.md)
   * [Trunk Flaky Tests CLI](flaky-tests/trunk-flaky-tests-cli.md)
-  * [GitHub Pull Request Comments](flaky-tests/github-pull-request-comments.md)
+  * [PR Test Summary](flaky-tests/github-pull-request-comments.md)
 * [CI Analytics (beta)](ci-analytics/readme.md)
   * [Overview](ci-analytics/readme.md)
   * [Setup](ci-analytics/setup/README.md)
