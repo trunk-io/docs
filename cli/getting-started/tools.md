@@ -1,5 +1,7 @@
 # Tools
 
+You can use the Trunk CLI to manage tools used by your repo. Trunk CLI can install the tools needed for a project according to what's configured in the `trunk.yaml` config file and let your team mates easily install the same versions of the tools. Trunk will also help you expose those installed tools by dynamically adding them to your `PATH` when you enter the project directory, but will not pollute your `PATH` outside of the project.
+
 ### Command Line
 
 | trunk tools \<command>           | Description                                                                    |
@@ -19,13 +21,11 @@ trunk tools list
 
 <figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption><p>list of available and enabled tools</p></figcaption></figure>
 
-### Running Tools
+### Configuring Shell Hooks
 
-Trunk installs your enabled tools into the `.trunk/tools` directory. Each tool exposes a list of **shims** (these may or may not be identically named to the tool - most typically a tool has one shim matching the name of the tool). Each shim is installed into the `.trunk/tools` directory.
+Before running any tools managed by trunk, enable shell hooks. With shell hooks, Trunk can manage your path variable dynamically, which lets you install tools used only in specific repos without polluting your shell by installing global tools. This is especially useful if you work on two repos using the same tool, but locked to different versions.
 
-You can run your tools by referring to the path `<path-to-workspace>/.trunk/tools/<shim-name>` but this is unwieldy. We highly recommend using our shell hooks to manage your PATH.
-
-Starting with CLI version `1.18.0`, you can do so by running `trunk shellhooks install`, which will install the Trunk hooks to the config file of your $SHELL. You can also run `trunk shellhooks install <shell_name>` to install a specific shell hook.
+You can enable shell hooks by running `trunk shellhooks install`, which will install the Trunk hooks to the config file of your $SHELL. You can also run `trunk shellhooks install <shell_name>` to install a specific shell hook.
 
 Supported shells:
 
@@ -59,7 +59,20 @@ cli:
       - "${workspace}/tools"
 ```
 
-Paths can either be absolute, or relative to the workspace using the special `${workspace}` variable
+Paths can either be absolute, or relative to the workspace using the special `${workspace}` variable.
+
+### Running Tools
+
+With shell hooks enabled, you can just run your tools by their name. For example, if you have run `trunk tools install grpcui` to install the GRPC UI tool, you can run it with:
+
+<pre><code><strong>grpcui 
+</strong></code></pre>
+
+#### Running tools without shell hooks
+
+Trunk installs your enabled tools into the `.trunk/tools` directory. Each tool exposes a list of **shims** (these may or may not be identically named to the tool - most typically a tool has one shim matching the name of the tool). Each shim is installed into the `.trunk/tools` directory.
+
+You can run your tools by referring to the path `<path-to-workspace>/.trunk/tools/<shim-name>` but this is unwieldy. We highly recommend using our shell hooks to manage your PATH.
 
 ### Troubleshooting Linters
 
