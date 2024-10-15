@@ -1,5 +1,12 @@
 ---
-description: codespell is a linter for All
+description: Codespell fixes common misspellings in text files. It's designed primarily to check misspelled words in source code.
+
+
+
+
+
+
+
 title: Trunk | How to run codespell
 layout:
   title:

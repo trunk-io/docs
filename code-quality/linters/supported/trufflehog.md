@@ -40,7 +40,7 @@ trunk check enable trufflehog-git
 
 ## Auto Enabling
 
-Trufflehog will be auto-enabled if any *ALL* files are present.
+Trufflehog will be auto-enabled if any *all* files are present.
 
 
 

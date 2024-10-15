@@ -51,7 +51,7 @@ trunk check enable <linter>
 | Kotlin | [detekt](./detekt.md), [ktlint](./ktlint.md)|
 | Kubernetes | [kube-linter](./kube-linter.md)|
 | Lua | [stylua](./stylua.md)|
-| Markdown | [deno](./deno.md), [markdown-link-check](./markdown-link-check.md), [markdown-table-prettify](./markdown-table-prettify.md), [markdownlint](./markdownlint.md), [prettier](./prettier.md), [remark-lint](./remark-lint.md)|
+| Markdown | [deno](./deno.md), [markdown-link-check](./markdown-link-check.md), [markdown-table-prettify](./markdown-table-prettify.md), [markdownlint](./markdownlint.md), [markdownlint-cli2](./markdownlint-cli2.md), [prettier](./prettier.md), [remark-lint](./remark-lint.md)|
 | Nix | [nixpkgs-fmt](./nixpkgs-fmt.md)|
 | package.json | [sort-package-json](./sort-package-json.md)|
 | Perl | [perlcritic](./perlcritic.md), [perltidy](./perltidy.md)|
@@ -68,7 +68,7 @@ trunk check enable <linter>
 | Rust | [clippy](./clippy.md), [rustfmt](./rustfmt.md)|
 | Scala | [scalafmt](./scalafmt.md)|
 | Security | [checkov](./checkov.md), [dustilock](./dustilock.md), [nancy](./nancy.md), [osv-scanner](./osv-scanner.md), [terrascan](./terrascan.md), [tfsec](./tfsec.md), [trivy](./trivy.md), [trufflehog](./trufflehog.md)|
-| SQL | [sql-formatter](./sql-formatter.md), [sqlfluff](./sqlfluff.md), [sqlfmt](./sqlfmt.md)|
+| SQL | [sql-formatter](./sql-formatter.md), [sqlfluff](./sqlfluff.md), [sqlfmt](./sqlfmt.md), [squawk](./squawk.md)|
 | SVG | [svgo](./svgo.md)|
 | Swift | [stringslint](./stringslint.md), [swiftformat](./swiftformat.md), [swiftlint](./swiftlint.md)|
 | Terraform | [checkov](./checkov.md), [terraform](./terraform.md), [terrascan](./terrascan.md), [tflint](./tflint.md), [tfsec](./tfsec.md), [tofu](./tofu.md)|

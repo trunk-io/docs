@@ -1,5 +1,5 @@
 ---
-description: cspell is a linter for All
+description: CSpell is a linter for identifying and fixing spelling errors in source code, documentation, and configuration files, enhancing overall project quality.
 title: Trunk | How to run cspell
 layout:
   title:

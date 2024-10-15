@@ -1,6 +1,6 @@
 ---
-description: biome is a linter for JavaScript, TypeScript, jsx and json
-title: Trunk | How to run biome
+description: Biome is a linter for JavaScript and TypeScript, improving code quality by automatically fixing issues, enforcing standards, and ensuring consistency.
+title: Trunk | How to run Biome
 layout:
   title:
     visible: true
@@ -14,11 +14,11 @@ layout:
     visible: true
 ---
 
-# biome
+# Biome
 
-[**biome**](https://biomejs.dev/) is a linter for JavaScript, TypeScript, jsx and json.
+[**Biome**](https://biomejs.dev/) is a linter for JavaScript, TypeScript, jsx and json.
 
-You can enable the biome linter with:
+You can enable the Biome linter with:
 
 ```shell
 trunk check enable biome
@@ -26,11 +26,11 @@ trunk check enable biome
 
 ## Auto Enabling
 
-biome will be auto-enabled if any of its config files are present: *`biome.json`, `rome.json`*.
+Biome will be auto-enabled if any of its config files are present: *`biome.json`, `rome.json`*.
 
 ## Settings
 
-biome supports the following config files:
+Biome supports the following config files:
 * `biome.json`
 * `rome.json`
 
@@ -41,6 +41,6 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 ## Links
 
-- [biome site](https://biomejs.dev/)
-- biome Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/biome)
+- [Biome site](https://biomejs.dev/)
+- Biome Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/biome)
 - Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

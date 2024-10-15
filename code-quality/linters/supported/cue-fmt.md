@@ -1,5 +1,5 @@
 ---
-description: cue-fmt is a linter for Cue
+description: cue-fmt is a formatter for CUE files that improves consistency and readability. Learn how to install, configure, and run cue-fmt.
 title: Trunk | How to run cue-fmt
 layout:
   title:
@@ -16,9 +16,9 @@ layout:
 
 # cue-fmt
 
-[**cue-fmt**](https://cuelang.org) is a linter for Cue.
+[**cue-fmt**](https://cuelang.org) is a formatter for Cue.
 
-You can enable the cue-fmt linter with:
+You can enable the cue-fmt formatter with:
 
 ```shell
 trunk check enable cue-fmt

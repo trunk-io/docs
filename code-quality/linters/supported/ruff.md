@@ -40,7 +40,7 @@ trunk check enable ruff-nbqa
 
 ## Auto Enabling
 
-Ruff will be auto-enabled if any *Python or Python-interface* files are present.
+Ruff will be auto-enabled if any *Python, Python-interface, Jupyter, Python, Python-interface, Python, Python-interface, Python, Python-interface, Python or Python-interface* files are present.
 
 ## Settings
 

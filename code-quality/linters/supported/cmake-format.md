@@ -1,5 +1,13 @@
 ---
-description: cmake-format is a linter for C, C++
+description: Learn how to install, configure, and run CMake-Format with Trunk Check to ensure consistent formatting and best practices for your CMake scripts.
+
+
+
+
+
+
+
+
 title: Trunk | How to run cmake-format
 layout:
   title:
@@ -16,9 +24,9 @@ layout:
 
 # cmake-format
 
-[**cmake-format**](https://github.com/cheshirekow/cmake_format) is a linter for C, C++.
+[**cmake-format**](https://github.com/cheshirekow/cmake_format) is a formatter for C, C++.
 
-You can enable the cmake-format linter with:
+You can enable the cmake-format formatter with:
 
 ```shell
 trunk check enable cmake-format

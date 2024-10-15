@@ -35,9 +35,6 @@ Markdownlint supports the following config files:
 * `.markdownlint.yaml`
 * `.markdownlint.yml`
 * `.markdownlintrc`
-* `.markdownlint-cli2.json`
-* `.markdownlint-cli2.yaml`
-* `.markdownlint-cli2.jsonc`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
 Trunk Code Quality provides a default `.markdownlint.yaml` if your project does not already have one.
