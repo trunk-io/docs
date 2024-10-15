@@ -1,18 +1,58 @@
-# Trunk Flaky Tests CLI
+# Uploader
 
-The Trunk Flaky Tests CLI is used to upload test results from your CI provider to the Trunk Flaky Tests web app.&#x20;
+Trunk Flaky Tests detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI. Trunk Flaky Tests takes the [JUnit XML format](https://github.com/testmoapp/junitxml) for uploads. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and your PR checks.
+
+If you're setting up Trunk Flaky Tests for the first time, you can follow the guides for your CI provider and test framework.
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guide by Test Frameworks</td><td></td><td></td><td><a href="frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="ci-providers/">ci-providers</a></td></tr></tbody></table>
+
+
+
+### Installing the CLI
 
 {% hint style="info" %}
 The Trunk Flaky Tests CLI currently only supports x86\_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
 {% endhint %}
 
-## Installing the CLI
-
 The CLI should be downloaded as part of your test workflow in your CI system. The details vary by [CI Provider](ci-providers/), but generally should be downloaded directly from the analytics-cli release page using curl like this:
 
+{% tabs %}
+{% tab title="Linux x86_64" %}
+```bash
+curl -fsSL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" \
+  | tar -xvz > ./trunk-analytics-cli
 ```
-curl -fsSL --retry 3 <RELEASE_URL> | tar -xvz > ./trunk-analytics-cli
+{% endtab %}
+
+{% tab title="Linux arm64" %}
+```bash
+curl -fsSL --retry 3 \
+    "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz" \
+    | tar -xvz > ./trunk-analytics-cli
 ```
+{% endtab %}
+
+{% tab title="macOS x86_64" %}
+```bash
+curl -fsSL --retry 3 \
+    "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz" \
+    | tar -xvz > ./trunk-analytics-cli
+```
+{% endtab %}
+
+{% tab title="macOS arm64" %}
+```bash
+curl -fsSL --retry 3 \
+    "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz" \
+    | tar -xvz > ./trunk-analytics-cli
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+The `trunk-analytics-cli`&#x20;
+{% endhint %}
 
 and then invoked like this. The `trunk-analytics-cli` binary will already be marked executable.
 
@@ -22,15 +62,21 @@ and then invoked like this. The `trunk-analytics-cli` binary will already be mar
    --token $TRUNK_API_TOKEN
 ```
 
-## Using the CLI
+### Uploading from the CLI
+
+{% hint style="info" %}
+The uploaded tests are processed by Trunk periodically on a schedule and not in real-time. Wait for at least an hour after the initial upload before they’re accurately displayed in Trunk. Multiple uploads are required before a test can be accurately detected as broken or flaky.
+{% endhint %}
+
+Trunk provides the `trunk-analytics-cli` command-line tool to upload and analyze test results.
 
 Run the command line with one of the following commands
 
-| Command  | Description             |
-| -------- | ----------------------- |
-| `test`   | Test the upload process |
-| `upload` | Really upload data      |
-| `help`   | Print the help message  |
+| Command  | Description                                          |
+| -------- | ---------------------------------------------------- |
+| `test`   | Test the upload process, but do not upload any data. |
+| `upload` | Upload data to Trunk Flaky Tests                     |
+| `help`   | Print the help message                               |
 
 The `upload` command uses the following arguments
 
@@ -52,8 +98,6 @@ The `upload` command uses the following arguments
 | `--codeowners-path <CODEOWNERS_PATH>`               | Value to override CODEOWNERS file or directory path. **Optional**.                          |
 | `--use-quarantining`                                | Run commands with the quarantining step.                                                    |
 
-
-
 ## Troubleshooting
 
 As a general rule you should download the release on every CI run. **Do not bake the CLI into a container or VM.** This ensures your CI runs are always using the latest build.
@@ -71,12 +115,4 @@ Make sure you are getting your _Organization Slug_, not the Organization Name.
 Also make sure you are getting your O_rganization API Token_, _**not your project/repo token**_.
 
 <figure><img src="../.gitbook/assets/Organization API Token.png" alt=""><figcaption></figcaption></figure>
-
-
-
-
-
-
-
-
 
