@@ -33,7 +33,7 @@ OSV-Scanner will be auto-enabled if any *Lockfile* files are present.
 OSV-Scanner supports the following config files:
 * `osv-scanner.toml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 
 
 

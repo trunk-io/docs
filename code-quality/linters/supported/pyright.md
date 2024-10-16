@@ -33,7 +33,7 @@ pyright will be auto-enabled if a `pyrightconfig.json` config file is present.
 pyright supports the following config files:
 * `pyrightconfig.json`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 
 
 

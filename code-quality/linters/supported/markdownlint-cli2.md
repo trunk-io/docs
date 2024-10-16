@@ -36,7 +36,7 @@ markdownlint-cli2 supports the following config files:
 * `.markdownlint-cli2.cjs`
 * `.markdownlint-cli2.mjs`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 
 
 

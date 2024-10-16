@@ -33,7 +33,7 @@ Squawk will be auto-enabled if a `.squawk.toml` config file is present.
 Squawk supports the following config files:
 * `.squawk.toml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 
 
 

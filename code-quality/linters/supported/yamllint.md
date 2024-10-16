@@ -35,7 +35,7 @@ Yamllint supports the following config files:
 * `.yamllint.yaml`
 * `.yamllint.yml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 Trunk Code Quality provides a default `.yamllint.yaml` if your project does not already have one.
 
 
