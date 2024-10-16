@@ -1,6 +1,6 @@
 ---
 description: squawk is a linter for SQL
-title: Trunk | How to run squawk
+title: Trunk | How to run Squawk
 layout:
   title:
     visible: true
@@ -14,11 +14,11 @@ layout:
     visible: true
 ---
 
-# squawk
+# Squawk
 
-[**squawk**](https://github.com/sbdchd/squawk) is a linter for SQL.
+[**Squawk**](https://github.com/sbdchd/squawk) is a linter for SQL.
 
-You can enable the squawk linter with:
+You can enable the Squawk linter with:
 
 ```shell
 trunk check enable squawk
@@ -26,11 +26,11 @@ trunk check enable squawk
 
 ## Auto Enabling
 
-squawk will be auto-enabled if a `.squawk.toml` config file is present.
+Squawk will be auto-enabled if a `.squawk.toml` config file is present.
 
 ## Settings
 
-squawk supports the following config files:
+Squawk supports the following config files:
 * `.squawk.toml`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
@@ -40,6 +40,6 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 ## Links
 
-- [squawk site](https://github.com/sbdchd/squawk)
-- squawk Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/squawk)
+- [Squawk site](https://github.com/sbdchd/squawk)
+- Squawk Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/squawk)
 - Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
