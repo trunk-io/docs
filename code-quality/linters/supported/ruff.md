@@ -40,14 +40,14 @@ trunk check enable ruff-nbqa
 
 ## Auto Enabling
 
-Ruff will be auto-enabled if any *Python or Python-interface* files are present.
+Ruff will be auto-enabled if any *Python, Python-interface, Jupyter, Python, Python-interface, Python, Python-interface, Python, Python-interface, Python or Python-interface* files are present.
 
 ## Settings
 
 Ruff supports the following config files:
 * `ruff.toml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 Trunk Code Quality provides a default `ruff.toml` if your project does not already have one.
 
 

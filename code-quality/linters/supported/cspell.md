@@ -1,5 +1,5 @@
 ---
-description: cspell is a linter for All
+description: CSpell is a linter for identifying and fixing spelling errors in source code, documentation, and configuration files, enhancing overall project quality.
 title: Trunk | How to run cspell
 layout:
   title:
@@ -43,7 +43,7 @@ cspell supports the following config files:
 * `cspell.yaml`
 * `cspell.yml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 Trunk Code Quality provides a default `cspell.yaml` if your project does not already have one.
 
 

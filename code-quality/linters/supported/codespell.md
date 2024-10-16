@@ -1,5 +1,12 @@
 ---
-description: codespell is a linter for All
+description: Codespell fixes common misspellings in text files. It's designed primarily to check misspelled words in source code.
+
+
+
+
+
+
+
 title: Trunk | How to run codespell
 layout:
   title:
@@ -33,7 +40,7 @@ codespell will be auto-enabled if a `.codespellrc` config file is present.
 codespell supports the following config files:
 * `.codespellrc`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 
 
 

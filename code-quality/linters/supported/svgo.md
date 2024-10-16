@@ -35,7 +35,7 @@ SVGO supports the following config files:
 * `svgo.config.mjs`
 * `svgo.config.cjs`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linter Configs](..#moving-linter-configs) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
 Trunk Code Quality provides a default `svgo.config.js` if your project does not already have one.
 
 

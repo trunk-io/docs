@@ -15,6 +15,7 @@ JUnit
 Linter
 linter
 metalinter
+markdownlint-cli2
 PHPUnit
 repo
 repos

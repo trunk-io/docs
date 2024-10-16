@@ -20,7 +20,7 @@ Maven is a testing framework for Java.
 
 ### Enabling XML Output
 
-When a Maven project is tested with `mvn test` it does not automatically produce [JUnit XML](https://github.com/testmoapp/junitxml) output. You can enable XML output with the [Surefire plugin](https://maven.apache.org/surefire/maven-surefire-plugin/).  To enable it, add the following to the `plugins` section of your `pom.xml` file.
+When a Maven project is tested with `mvn test` it does not automatically produce [JUnit XML](https://github.com/testmoapp/junitxml) output. You can enable XML output with the [Surefire plugin](https://maven.apache.org/surefire/maven-surefire-plugin/).  To enable it, add the following to the `plugins` section of your `pom.xml` file.  This process is the same whether you use test using JUnit or TestNG. 
 
 ```xml
 <plugin>
