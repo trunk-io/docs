@@ -35,7 +35,7 @@ Gitleaks supports the following config files:
 * `.gitleaks.toml`
 * `.gitleaksignore`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info.
 
 
 ## Usage Notes
