@@ -33,7 +33,7 @@ isort will be auto-enabled if any *Python* files are present.
 isort supports the following config files:
 * `.isort.cfg`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters#moving-linters) for more info.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info.
 Trunk Code Quality provides a default `.isort.cfg` if your project does not already have one.
 
 
