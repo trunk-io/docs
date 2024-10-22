@@ -6,7 +6,7 @@ description: >-
 
 # Predictive Testing
 
-The core concept of any merge queue solution is predictive testing. The idea here is to test your pull request against the head of your protected branch `main` and all the pull requests ahead of your own in the queue. \
+The core concept of any merge queue solution is predictive testing. The idea here is to test your pull request against the head of your protected branch `main` and all the pull requests ahead of your own in the queue.  \
 
 
 {% embed url="https://share.vidyard.com/watch/31gaLwGNSYTn2ec2BSQjkn" %}
@@ -25,9 +25,7 @@ When you merge a pull request with stale results you are effectively merging in 
 \
 No blind spots === no build breakages.
 
-{% synced-block url="https://app.gitbook.com/o/rjlr5hBehAMxRavWFlli/blocks/syb_xRRqz" %}
-[Have a question? ](https://app.gitbook.com/o/rjlr5hBehAMxRavWFlli/blocks/syb\_xRRqz)
-{% endsynced-block %}
+{% include "../.gitbook/includes/have-a-question.md" %}
 
 
 

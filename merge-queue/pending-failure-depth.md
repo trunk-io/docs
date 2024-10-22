@@ -1,6 +1,6 @@
 # Pending Failure Depth
 
-By default, a PR that fails testing will be evicted from the queue. The **Pending Failure Depth** feature allows a failed PR to remain in the queue for pull requests behind it to finish testing before this eviction occurs. The number of PRs that the queue will wait for is the _Pending Failure Depth._ This depth is configurable and reflects the number of pull requests behind this one that should complete testing before eviction is assessed.\
+By default, a PR that fails testing will be evicted from the queue. The **Pending Failure Depth** feature allows a failed PR to remain in the queue for pull requests behind it to finish testing before this eviction occurs. The number of PRs that the queue will wait for is the _Pending Failure Depth._ This depth is configurable and reflects the number of pull requests behind this one that should complete testing before eviction is assessed. \
 \
 Let's take the example queue below:\
 \
@@ -17,6 +17,4 @@ The code in A is actually being tested when both **B** and **C** are being teste
 \
 That means that if pull request **A** fails because of a flaky test it doesn't have to be immediately rejected and can leverage the test coverage it receives during the testing of **B** and **C**. By combining pending failure depth with optimistic merging - we can create a merge queue better [protected from flaky failures](anti-flake-protection.md).&#x20;
 
-{% synced-block url="https://app.gitbook.com/o/rjlr5hBehAMxRavWFlli/blocks/syb_xRRqz" %}
-[Have a question? ](https://app.gitbook.com/o/rjlr5hBehAMxRavWFlli/blocks/syb\_xRRqz)
-{% endsynced-block %}
+{% include "../.gitbook/includes/have-a-question.md" %}

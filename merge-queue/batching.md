@@ -4,7 +4,7 @@ description: Speed up your testing and merging workflow with Merge Batching
 
 # Batching
 
-Batching allows multiple pull requests in the queue to be tested as a single unit. Given the same CI resources, a system with batching enabled can achieve higher throughput while also reducing the net amount of CI time spent per pull request. \
+Batching allows multiple pull requests in the queue to be tested as a single unit. Given the same CI resources, a system with batching enabled can achieve higher throughput while also reducing the net amount of CI time spent per pull request.\
 \
 By enabling batching, the cost per pull request in the Merge Queue can be reduced by almost 90%. For example, in the table below, you can see how batching affects the amount spent testing pull requests in the queue.&#x20;
 
@@ -20,8 +20,6 @@ Batching is enabled in the Merge Settings of your repo in the [Trunk webapp](htt
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-
-
 ### Configuring Batching
 
 The behavior of batching is controlled by two settings in the Merge Queue:\
@@ -30,7 +28,7 @@ The behavior of batching is controlled by two settings in the Merge Queue:\
 \
 **Maximum Wait Time:** The maximum amount of time the Merge Queue should wait to fill the target batch size before beginning testing. A higher maximum wait time will cause the Time-In-Queue metric to increase but have the net effect of reducing CI costs per pull request.
 
-<table><thead><tr><th>Time (mm:ss)</th><th width="323">Batching 4;  Maximum Wait 5 minutes</th><th>Testing</th></tr></thead><tbody><tr><td>00:00</td><td><strong>enqueue A</strong></td><td><code>----</code></td></tr><tr><td>01:00</td><td><strong>enqueue B</strong></td><td><code>----</code></td></tr><tr><td>02:30</td><td><strong>enqueue C</strong></td><td><code>----</code></td></tr><tr><td>05:00</td><td>5 min maximum wait time reached</td><td><code>Begin testing ABC</code></td></tr></tbody></table>
+<table><thead><tr><th>Time (mm:ss)</th><th width="323">Batching 4; Maximum Wait 5 minutes</th><th>Testing</th></tr></thead><tbody><tr><td>00:00</td><td><strong>enqueue A</strong></td><td><code>----</code></td></tr><tr><td>01:00</td><td><strong>enqueue B</strong></td><td><code>----</code></td></tr><tr><td>02:30</td><td><strong>enqueue C</strong></td><td><code>----</code></td></tr><tr><td>05:00</td><td>5 min maximum wait time reached</td><td><code>Begin testing ABC</code></td></tr></tbody></table>
 
 ### What happens when a batch fails testing?
 
@@ -38,13 +36,14 @@ If a batch fails, Trunk Merge Queue will move it to a separate queue for bisecti
 
 ### Batching + Optimistic Merging and Pending Failure Depth
 
-By enabling batching along with [pending failure depth](pending-failure-depth.md) and [optimistic merging](optimistic-merging.md) you can realize the major cost savings of batching while still reaping the [anti-flake ](anti-flake-protection.md)protection of optimistic merging and pending failure depth.\
+By enabling batching along with [pending failure depth](pending-failure-depth.md) and [optimistic merging](optimistic-merging.md) you can realize the major cost savings of batching while still reaping the [anti-flake ](anti-flake-protection.md)protection of optimistic merging and pending failure depth.\\
 
-
-<table><thead><tr><th width="331">event</th><th>queue</th></tr></thead><tbody><tr><td>Enqueue  <strong>A</strong>, <strong>B</strong>, <strong>C, D, E, F, G</strong></td><td><code>main</code> &#x3C;- <strong>ABC</strong> &#x3C;- <strong>DEF</strong> +abc </td></tr><tr><td>Batch ABC fails</td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark></td></tr><tr><td>pending failure depth keeps <strong>ABC</strong> from  being evicted while <strong>DEF</strong></td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark> (hold) &#x3C;- <strong>DEF</strong>+abc</td></tr><tr><td><strong>DEF</strong> passes</td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark>  &#x3C;- <mark style="color:green;"><strong>DEF</strong>+abc</mark></td></tr><tr><td>optimistic merging allows <strong>ABC</strong> and <strong>DEF</strong> to merge</td><td><code>merge</code> <strong>ABC</strong>, <strong>DEF</strong></td></tr></tbody></table>
+<table><thead><tr><th width="331">event</th><th>queue</th></tr></thead><tbody><tr><td>Enqueue <strong>A</strong>, <strong>B</strong>, <strong>C, D, E, F, G</strong></td><td><code>main</code> &#x3C;- <strong>ABC</strong> &#x3C;- <strong>DEF</strong> +abc</td></tr><tr><td>Batch ABC fails</td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark></td></tr><tr><td>pending failure depth keeps <strong>ABC</strong> from being evicted while <strong>DEF</strong></td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark> (hold) &#x3C;- <strong>DEF</strong>+abc</td></tr><tr><td><strong>DEF</strong> passes</td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark> &#x3C;- <mark style="color:green;"><strong>DEF</strong>+abc</mark></td></tr><tr><td>optimistic merging allows <strong>ABC</strong> and <strong>DEF</strong> to merge</td><td><code>merge</code> <strong>ABC</strong>, <strong>DEF</strong></td></tr></tbody></table>
 
 Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly improve your CI performance because now Merge can optimistically merge whole batches of PRs, with far less wasted testing.
 
 ### **What are the risks of batching?**
 
 The downsides here are very limited. Since batching combines multiple pull requests into one, you essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch. In the unlikely case that you have to revert a change from your protected branch or do a rollback, you will need to retest that revert or submit it to the queue to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
+
+{% include "../.gitbook/includes/have-a-question.md" %}
