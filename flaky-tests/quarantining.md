@@ -14,9 +14,9 @@ A test's status history shows it labeled as flaky.
 
 Quarantining operates in one of three modes, disabled, enabled, and preview. If you’re trying quarantining for the first time in a project, you can enable the preview mode, which will show you what could be quarantined but will not affect your CI job results.
 
-<table data-header-hidden><thead><tr><th width="167"></th><th></th></tr></thead><tbody><tr><td>Mode</td><td>Behavior</td></tr><tr><td>Disabled</td><td>No tests will be quarantined.</td></tr><tr><td>Enabled</td><td>If CI jobs use the<a href="https://open.gitbook.com/~space/HGOcicyppLcsuUEwz9hd/~changes/kktdUpvJkOC1F16Yh1ml/~gitbook/pdf?back=false&#x26;only=yes&#x26;page=ypJ8CSYxGsp7J1Eev0JW#pdf-page-ypJ8CSYxGsp7J1Eev0JW-update-ci-jobs"> Analytics Uploader with Quarantining enabled</a>, failed flaky tests will be quarantined. If all failed tests are quarantined, the CI job result will be overridden as a pass.</td></tr><tr><td>Preview</td><td>If CI jobs use the<a href="https://open.gitbook.com/~space/HGOcicyppLcsuUEwz9hd/~changes/kktdUpvJkOC1F16Yh1ml/~gitbook/pdf?back=false&#x26;only=yes&#x26;page=ypJ8CSYxGsp7J1Eev0JW#pdf-page-ypJ8CSYxGsp7J1Eev0JW-update-ci-jobs"> Analytics Uploader with Quarantining enabled</a>, failed flaky tests will be displayed as quarantined in the Flaky Test web app, but the CI jobs will not be overridden as a pass.</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="167"></th><th></th></tr></thead><tbody><tr><td>Mode</td><td>Behavior</td></tr><tr><td>Disabled</td><td>No tests will be quarantined.</td></tr><tr><td>Enabled</td><td>If CI jobs use the<a href="quarantining.md#enable-quarantining"> Analytics Uploader with Quarantining enabled</a>, failed flaky tests will be quarantined. If all failed tests are quarantined, the CI job result will be overridden as a pass.</td></tr><tr><td>Preview</td><td>If CI jobs use the<a href="quarantining.md#enable-quarantining"> Analytics Uploader with Quarantining enabled</a>, failed flaky tests will be displayed as quarantined in the Flaky Test web app, but the CI jobs will not be overridden as a pass.</td></tr></tbody></table>
 
-#### Enable Quarantining
+### Enable Quarantining
 
 You can enable quarantining by navigating to **Settings** > **Repositories** > **Flaky Tests** > **Quarantine Flaky Tests** and selecting enabled in the drop-down.
 
