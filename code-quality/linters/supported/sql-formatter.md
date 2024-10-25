@@ -32,6 +32,11 @@ sql-formatter will never be auto-enabled. It must be enabled manually.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [sql-formatter site](https://github.com/sql-formatter-org/sql-formatter#readme)

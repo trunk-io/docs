@@ -32,6 +32,11 @@ shfmt will be auto-enabled if any *Shell* files are present.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [shfmt site](https://github.com/mvdan/sh#readme)

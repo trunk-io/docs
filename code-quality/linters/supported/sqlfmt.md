@@ -32,6 +32,11 @@ sqlfmt will never be auto-enabled. It must be enabled manually.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [sqlfmt site](https://github.com/tconbeer/sqlfmt#readme)

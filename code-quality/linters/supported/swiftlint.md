@@ -40,6 +40,11 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [swiftlint site](https://github.com/realm/SwiftLint#readme)

@@ -38,6 +38,11 @@ Trunk Code Quality provides a default `.djlintrc` if your project does not alrea
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [djlint site](https://github.com/Riverside-Healthcare/djlint#readme)

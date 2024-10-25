@@ -32,6 +32,11 @@ Oxipng will be auto-enabled if any *Png* files are present.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [Oxipng site](https://github.com/shssoichiro/oxipng)

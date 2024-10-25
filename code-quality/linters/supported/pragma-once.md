@@ -32,6 +32,11 @@ pragma-once will never be auto-enabled. It must be enabled manually.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [pragma-once site](https://github.com/trunk-io/plugins/blob/main/linters/pragma-once/README.md)

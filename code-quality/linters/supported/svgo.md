@@ -40,6 +40,11 @@ Trunk Code Quality provides a default `svgo.config.js` if your project does not 
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [SVGO site](https://github.com/svg/svgo)

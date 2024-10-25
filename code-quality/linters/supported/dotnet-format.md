@@ -32,6 +32,11 @@ dotnet-format will never be auto-enabled. It must be enabled manually.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [dotnet-format site](https://github.com/dotnet/format#readme)

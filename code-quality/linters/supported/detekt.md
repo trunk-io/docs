@@ -80,6 +80,11 @@ direct_configs: ["lib/detekt.yaml"]
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [Detekt site](https://github.com/detekt/detekt)

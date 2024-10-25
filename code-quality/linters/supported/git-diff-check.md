@@ -32,6 +32,11 @@ git-diff-check will be auto-enabled if any *all* files are present.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [git-diff-check site](https://git-scm.com/docs/git-diff)

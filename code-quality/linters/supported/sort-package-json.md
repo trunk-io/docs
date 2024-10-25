@@ -32,6 +32,11 @@ sort-package-json will never be auto-enabled. It must be enabled manually.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [sort-package-json site](https://github.com/keithamus/sort-package-json#readme)

@@ -32,6 +32,11 @@ kube-linter will never be auto-enabled. It must be enabled manually.
 
 
 
+
+asdfasdf
+
+
+
 ## Links
 
 - [kube-linter site](https://github.com/stackrox/kube-linter#readme)
