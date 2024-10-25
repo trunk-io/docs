@@ -39,7 +39,7 @@ You can move these files to `.trunk/configs` and `trunk check` will still find t
 
 ## Usage Notes
 
-Clippy is distributed with rust itself, so specify your rust version for your clippy version (for example `clippy@1.61.0`).
+Clippy is distributed with rust itself, so specify your rust version for your clippy version (for example `clippy@1.61.0`). etc
 
 
 
