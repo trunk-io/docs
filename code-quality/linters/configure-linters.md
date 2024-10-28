@@ -55,7 +55,7 @@ definitions:
 
 #### Linter Definition Reference
 
-You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find reference for these fields in the [definitions.md](../../cli/configuration/lint/definitions.md "mention") page.
+You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find reference for these fields in the [Linter Definitions](../../cli/configuration/lint/definitions.md) page.
 
 ### Overriding Default Linter Definitions
 
@@ -163,7 +163,7 @@ runtimes:
           parse_regex: ${semver}
 ```
 
-If you wanted to add `${home}/my/special/node/path` to `PATH`, you could specify the following:
+If you want to add `${home}/my/special/node/path` to `PATH`, you could specify the following:
 
 ```yaml
 runtimes:
@@ -192,7 +192,7 @@ Every entry in `threshold` defines a set of linters and the severity threshold t
 
 ### Trigger rules
 
-Some linters do not operate on individual files. Instead you must lint your entire repo at once. The way this is handled in trunk is to set up a trigger rule. Most linters will not require the use of a trigger rule.
+Some linters do not operate on individual files. Instead, you must lint your entire repo at once. The way this is handled in Trunk is to set up a trigger rule. Most linters will not require the use of a trigger rule.
 
 Trigger rules work on 3 principles:
 

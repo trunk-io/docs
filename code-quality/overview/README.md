@@ -14,7 +14,7 @@ There are many reasons for you to want to use a metalinter like Trunk Code Quali
 
 Trunk Code Quality is easy to adopt. [Running `trunk init`](../setup-and-installation/initialize-trunk.md) will [recommend linters and formatters](../linters/supported/) for your project with reasonable default configuration. Hold off on fixing existing issues using [hold-the-line](how-does-it-work.md#hold-the-line) and only get warnings for new issues introduced in each commit or PR.
 
-Use Trunk Code Quality [GitHub Integrations](../ci-setup/github-integration.md) to set up nightly runs and linter checks on PRs.&#x20;
+Use Trunk Code Quality [GitHub Integrations](../ci-setup/github-integration.md) to set up nightly runs and linter checks on PRs.
 
 #### Run and manage a long list of linters
 
@@ -36,11 +36,11 @@ Many linters don't install neatly through a package manager, and for those that 
 
 #### Consistent linter configs and versions
 
-Trunk Code Quality uses an extensible [plugin system](../../cli/configuration/plugins/), so you can define linters to [auto-enable](../../cli/configuration/lint/auto-enable.md) and [share linter configurations](../../cli/configuration/plugins/external-repositories.md) to standardize across code bases.&#x20;
+Trunk Code Quality uses an extensible [plugin system](../../cli/configuration/plugins/), so you can define linters to [auto-enable](../../cli/configuration/lint/auto-enable.md) and [share linter configurations](../linters/shared-configs.md) to standardize across code bases.
 
 #### Lack of consistent output and reporting
 
-Every linter outputs differently. If you've got a backlog of issues like ESLint errors, OSV Scanner dependency vulnerabilities, poorly optimized images, and vulnerabilities in your Docker Config, you'd want to see them in an [organized report](../ci-setup/github-integration.md), sorted by severity or by file, with[ consistent format](../../cli/configuration/lint/output-parsing.md). Trunk Code Quality can do this.
+Every linter outputs differently. If you've got a backlog of issues like ESLint errors, OSV Scanner dependency vulnerabilities, poorly optimized images, and vulnerabilities in your Docker Config, you'd want to see them in an [organized report](../ci-setup/github-integration.md), sorted by severity or by file, with [consistent format](../../cli/configuration/lint/output.md). Trunk Code Quality can do this.
 
 ### Features
 
@@ -52,7 +52,7 @@ Linters are slow to run for large codebases with numerous issues and many linter
 
 #### **Inconsistent tooling for different file types**
 
-Trunk Code Quality provides a single way to check _everything_ in your codebase, including config and script files, as well as the main language(s) for your codebase. If you are already using ESLint for a JavaScript repo, you probably also have some bash scripts, CI yaml, Kube config, and other files for your workflow.&#x20;
+Trunk Code Quality provides a single way to check _everything_ in your codebase, including config and script files, as well as the main language(s) for your codebase. If you are already using ESLint for a JavaScript repo, you probably also have some bash scripts, CI yaml, Kube config, and other files for your workflow.
 
 These all have great tools you could be running, but they don't all install through npm. Trunk Code Quality simplifies this process by detecting and configuring the right tools for the files in your repo.
 

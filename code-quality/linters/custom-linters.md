@@ -8,7 +8,7 @@ You can define linters right in your `.trunk/trunk.yaml` file in your repo. Thes
 
 #### Pass-Fail Linter Script Example
 
-For example, you can define a simple [pass-fail linter](../../cli/configuration/lint/output.md#pass-fail-linters) that runs a custom script file. The linter passes or fails based on the status code returned.
+For example, you can define a simple [pass-fail linter](custom-linters.md#pass-fail-linter-script-example) that runs a custom script file. The linter passes or fails based on the status code returned.
 
 ```yaml
 version: 0.1
