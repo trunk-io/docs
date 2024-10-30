@@ -52,5 +52,3 @@ Switching modes can be done from the `Merge Queue Mode` section of the `Settings
 #### Store your Organization Token as a GitHub Secret
 
 {% @supademo/embed demoId="2UWXR9ccwhP4ng5-orZPG" url="https://app.supademo.com/demo/2UWXR9ccwhP4ng5-orZPG" %}
-
-{% include "../../.gitbook/includes/have-a-question.md" %}

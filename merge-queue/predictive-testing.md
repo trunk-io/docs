@@ -25,8 +25,6 @@ When you merge a pull request with stale results you are effectively merging in 
 \
 No blind spots === no build breakages.
 
-{% include "../.gitbook/includes/have-a-question.md" %}
-
 
 
 [^1]: 

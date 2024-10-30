@@ -45,5 +45,3 @@ Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly im
 ### **What are the risks of batching?**
 
 The downsides here are very limited. Since batching combines multiple pull requests into one, you essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch. In the unlikely case that you have to revert a change from your protected branch or do a rollback, you will need to retest that revert or submit it to the queue to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
-
-{% include "../.gitbook/includes/have-a-question.md" %}

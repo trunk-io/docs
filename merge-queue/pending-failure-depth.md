@@ -16,5 +16,3 @@ Since trunk merge performs predictive testing when the queue above is tested it 
 The code in A is actually being tested when both **B** and **C** are being tested. We can take advantage of this feature of [predictive testing](predictive-testing.md) to give pull request **A** a second and third chance to pass tests.\
 \
 That means that if pull request **A** fails because of a flaky test it doesn't have to be immediately rejected and can leverage the test coverage it receives during the testing of **B** and **C**. By combining pending failure depth with optimistic merging - we can create a merge queue better [protected from flaky failures](anti-flake-protection.md).&#x20;
-
-{% include "../.gitbook/includes/have-a-question.md" %}

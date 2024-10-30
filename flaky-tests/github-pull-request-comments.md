@@ -10,13 +10,13 @@ Flaky Tests can post comments on GitHub pull requests to provide a summary of yo
 
 <figure><img src="../.gitbook/assets/GitHub Comment.png" alt=""><figcaption></figcaption></figure>
 
-Each GitHub comment has a full summary report, containing all tests that passed, failed, flaked, skipped, and quarantined on this PR.&#x20;
+Each GitHub comment has a full summary report, containing all tests that passed, failed, flaked, skipped, and quarantined on this PR.
 
-<figure><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_pr_84_repo=gewenyu99%2Freal-saas-app&#x26;commitHash=7274ce1090cba4614cf9ebc316bacac090c06f56.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_pr_84_repo=gewenyu99/real-saas-app&#x26;commitHash=7274ce1090cba4614cf9ebc316bacac090c06f56.png" alt=""><figcaption></figcaption></figure>
 
 Each test case also contains the full stack trace attached when opened.
 
-<figure><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_pr_84_repo=gewenyu99%2Freal-saas-app&#x26;commitHash=7274ce1090cba4614cf9ebc316bacac090c06f56 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_pr_84_repo=gewenyu99/real-saas-app&#x26;commitHash=7274ce1090cba4614cf9ebc316bacac090c06f56%20(1).png" alt=""><figcaption></figcaption></figure>
 
 ## Getting Started
 
@@ -32,8 +32,6 @@ If you have the [Trunk GitHub App installed](https://docs.trunk.io/administratio
 6. Select the repositories you wish to enable comments on.
 7. _\[Important]_ **Permissions** - you must enable **Issues (Read and write)** and **Pull requests (Read and write)**. Note: It is expected that metadata permissions automatically change.
 8.  If everything looks good, scroll down to double check that your Overview for permissions looks something like the image below. If so, create the token.
-
-
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-06-12 at 9.52.28 AM.png" alt=""><figcaption></figcaption></figure>
 9. Once the token is generated, go back to the Trunk App ([app.trunk.io](https://app.trunk.io/)) > click on your profile > **Settings** > **Manage** (under _Organization_) > **Organization GitHub Token** and enter the copied token into the text field, then finally press **Submit**.

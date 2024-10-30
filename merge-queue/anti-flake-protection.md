@@ -28,5 +28,3 @@ Achieve anti-flake protection works by enabling [**Optimistic Merge**](optimisti
 
 **The Fine Print**\
 There is a small tradeoff to be made when optimistic merging is used. You can get into a situation where an actually broken test in say change 'B' is corrected by a change in 'C'. In this case if you later reverted 'C' your build would be broken.
-
-{% include "../.gitbook/includes/have-a-question.md" %}
