@@ -189,7 +189,7 @@
     * [Vitest](flaky-tests/frameworks/vitest.md)
     * [XCTest](flaky-tests/frameworks/xctest.md)
   * [Detection](flaky-tests/detection.md)
-  * [Create a New Ticket](flaky-tests/create-a-new-ticket.md)
+  * [Create Tickets](flaky-tests/create-tickets.md)
   * [Uploader](flaky-tests/uploader.md)
   * [Quarantining](flaky-tests/quarantining.md)
   * [PR Test Summary](flaky-tests/github-pull-request-comments.md)

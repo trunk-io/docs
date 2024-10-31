@@ -1,6 +1,6 @@
-# Create a New Ticket
+# Create Tickets
 
-When Trunk Flaky Tests detects a broken or flaky test, you can create an automatically generated ticket for your team to pick up and fix the test. Currently, Ticket Creation only supports integrations with Jira, but the automatically generated ticket content is formatted in Markdown and can be copied to other platforms like Asana, Linear, or GitHub issues.
+When Trunk Flaky Tests [detects a broken or flaky test](detection.md), you can create an automatically generated ticket for your team to pick up and fix the test. Currently, Ticket Creation only supports integrations with Jira, but the automatically generated ticket content is formatted in Markdown and can be copied to other platforms like Asana, Linear, or GitHub issues.
 
 ### Connecting to Jira
 
@@ -34,7 +34,7 @@ You can create a new ticket on the Flaky Test dashboard by clicking on the optio
 
 <figure><img src="../.gitbook/assets/create-ticket-kebab.png" alt=""><figcaption></figcaption></figure>
 
-You can also find a Create Ticket button in the top left corner of the test case details screen as well.
+You can also find a Create Ticket button in the top left corner of the [test case details ](detection.md#test-case-details)screen as well.
 
 <figure><img src="../.gitbook/assets/create-ticket-button.png" alt=""><figcaption></figcaption></figure>
 
