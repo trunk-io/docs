@@ -188,6 +188,7 @@
     * [unittest](flaky-tests/frameworks/unittest.md)
     * [Vitest](flaky-tests/frameworks/vitest.md)
     * [XCTest](flaky-tests/frameworks/xctest.md)
+  * [Detection](flaky-tests/detection.md)
   * [Create a New Ticket](flaky-tests/create-a-new-ticket.md)
   * [Uploader](flaky-tests/uploader.md)
   * [Quarantining](flaky-tests/quarantining.md)
