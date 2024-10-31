@@ -1,4 +1,4 @@
-# Table of Contents
+# Table of contents
 
 * [Welcome](welcome.md)
 * [Code Quality](code-quality/README.md)
@@ -188,6 +188,7 @@
     * [unittest](flaky-tests/frameworks/unittest.md)
     * [Vitest](flaky-tests/frameworks/vitest.md)
     * [XCTest](flaky-tests/frameworks/xctest.md)
+  * [Create a New Ticket](flaky-tests/create-a-new-ticket.md)
   * [Uploader](flaky-tests/uploader.md)
   * [Quarantining](flaky-tests/quarantining.md)
   * [PR Test Summary](flaky-tests/github-pull-request-comments.md)
@@ -244,7 +245,9 @@
   * [Integration for Slack](administration/integration-for-slack.md)
   * [GitHub App Permissions](administration/github-app-permissions.md)
   * [Manage Members & Organizations](administration/manage-members-and-organizations.md)
+
 ## Links
+
 * [Open App](https://app.trunk.io)
 * [Slack Community](https://slack.trunk.io)
 * [Changelog](https://trunk.io/changelog)
