@@ -60,7 +60,7 @@ jobs:
       # ... other CI steps
 ```
 
-This step will automatically run Trunk Code Quality to reveal problems found when comparing the branch to `main`.&#x20;
+This step will automatically run Trunk Code Quality to reveal problems found when comparing the branch to `main`.
 
 When `post-annotations` is set to `true` Code Quality will also **annotate** the PR with comments for where lint issues are found.
 
@@ -108,3 +108,17 @@ jobs:
       - run: pnpm run lint
       - run: pnpm run lint --ci
 ```
+
+#### Fixing issues in pull requests
+
+To confirm that you've fixed issues identified by Trunk Code Quality before pushing your pull request, just run `trunk check`.
+
+If Trunk continues to identify new Code Quality issues on your PR, first try merging the latest changes from your base branch. When Trunk runs on a PR, it runs on a commit that merges your PR into its base branch, just like GitHub workflows.
+
+If this continues to fail, then run `git checkout refs/pull/<PR number>/merge && trunk check`. This is a reference to the merge commit GitHub creates.
+
+#### Skipping Trunk Code Quality on PRs
+
+You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Code Quality as "skipped". Trunk Code Quality will still run on your PR and report issues, but this will allow the PR to pass a GitHub-required status check on `Trunk Check`.
+
+This can be helpful if Code Quality is flagging known issues in a given PR that you don't want to ignore, which can come in handy if you're doing a large refactor.

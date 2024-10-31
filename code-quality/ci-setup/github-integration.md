@@ -20,11 +20,13 @@ If you would like to receive notifications for new issues Trunk finds in your re
 
 {% @supademo/embed demoId="cllpdjqhy1jf1051a1nff1a3y" url="https://app.supademo.com/demo/cllpdjqhy1jf1051a1nff1a3y" %}
 
-### Use it!
+### Automated Runs
 
 #### **Ensure that PRs are free of issues**
 
-Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?check\_run\_id=15730277425) in our `plugins` repository!
+Trunk Code Quality will automatically run on your repos with a Trunk configuration present when you install the GitHub app. This will work similar to what's shown in the [Prevent New Issues](../setup-and-installation/prevent-new-issues.md) page.
+
+Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?check\_run\_id=15730277425) in our `plugins` repository. If you don't want Trunk Code Quality to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
 
 #### Scanning your repository
 
@@ -40,36 +42,6 @@ If you don't want Trunk Code Quality to scan your repository on a daily cadence 
 #### **Get Slack notifications about new issues in your repository**
 
 Not only do our daily scans allow you to browse and triage the issues in your repository, but they can also notify you when new security issues are discovered in packages you already depend on.
-
-#### Checking pull requests
-
-Trunk Code Quality can automatically detect new Code Quality issues on your pull requests and flag them so that you can prevent pull requests from introducing any new issues in your repository.
-
-When running on a pull request, Trunk Code Quality will only flag _new_ issues, not existing ones, so that your engineers don't have to fix pre-existing linter issues in every file they touch - this is the same hold-the-line technology that our VSCode extension and CLI use.
-
-<details>
-
-<summary>Fixing issues in pull requests</summary>
-
-To confirm that you've fixed issues identified by Trunk Code Quality before pushing your pull request, just run `trunk check`.
-
-If Trunk continues to identify new Code Quality issues on your PR, first try merging the latest changes from your base branch. When Trunk runs on a PR, it runs on a commit that merges your PR into its base branch, just like GitHub workflows.
-
-If this continues to fail, then run `git checkout refs/pull/<PR number>/merge && trunk check`. This is a reference to the merge commit GitHub creates.
-
-</details>
-
-<details>
-
-<summary>Skipping Trunk Code Quality</summary>
-
-You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Code Quality as "skipped". Trunk Code Quality will still run on your PR and report issues, but this will allow the PR to pass a GitHub required status check on `Trunk Check`.
-
-This can be helpful if Code Quality is flagging known issues in a given PR that you don't want to ignore, which can come in handy if you're doing a large refactor.
-
-</details>
-
-If you don't want Trunk Code Quality to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
 
 ### **Uploading Results**
 
