@@ -8,7 +8,7 @@ It’s recommended to upload test results from CI jobs consistently to Trunk Fla
 
 ### How Tests Are Labeled
 
-Trunk Flaky Tests processes test runs uploaded on a schedule, which means new uploads may not be immediately available on Trunk Flaky Tests. Expect test results for individual PRs to be up to date for [PR Test Summaries](broken-reference) within 15 minutes and all other metrics to be up to date within an hour of a new upload.
+Trunk Flaky Tests processes test runs uploaded on a schedule, which means new uploads may not be immediately available on Trunk Flaky Tests. Expect test results for individual PRs to be up to date for [PR Test Summaries](github-pull-request-comments.md) within 15 minutes and all other metrics to be up to date within an hour of a new upload.
 
 ### Test State Transitions
 
@@ -24,13 +24,13 @@ Flaky Tests considers failures on PRs to be a weaker signal for flaky tests than
 
 Trunk Flaky Test provides key repo metrics based on the detected health status of your tests. At the top of the Flaky Test dashboard, you’ll find metrics for the following information.
 
-| Metric                      | Description                                                                                                                                                                                                                         |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Flaky tests                 | Number of flaky test cases in your repo.                                                                                                                                                                                            |
-| Broken tests                | Number of broken test cases in your repo.                                                                                                                                                                                           |
-| PRs blocked by failed tests | PRs that have been blocked by failed tests in CI.                                                                                                                                                                                   |
-| PRs rescued by quarantining | This figure is available if you have [quarantining](broken-reference) set to preview or enabled. This shows the PRs with CI jobs containing quarantined flaky tests that would have failed if all flaky tests were not quarantined. |
-| Engineering hours saved     | Estimated engineering hours saved based on the study [The Cost of Interrupted Work](https://ics.uci.edu/\~gmark/chi08-mark.pdf), where each context switch to debug a flaky test costs 23 minutes of focused productivity.          |
+| Metric                      | Description                                                                                                                                                                                                                        |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Flaky tests                 | Number of flaky test cases in your repo.                                                                                                                                                                                           |
+| Broken tests                | Number of broken test cases in your repo.                                                                                                                                                                                          |
+| PRs blocked by failed tests | PRs that have been blocked by failed tests in CI.                                                                                                                                                                                  |
+| PRs rescued by quarantining | This figure is available if you have [quarantining](quarantining.md) set to preview or enabled. This shows the PRs with CI jobs containing quarantined flaky tests that would have failed if all flaky tests were not quarantined. |
+| Engineering hours saved     | Estimated engineering hours saved based on the study [The Cost of Interrupted Work](https://ics.uci.edu/\~gmark/chi08-mark.pdf), where each context switch to debug a flaky test costs 23 minutes of focused productivity.         |
 
 \
 
