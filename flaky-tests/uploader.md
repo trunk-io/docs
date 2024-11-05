@@ -6,13 +6,7 @@ If you're setting up Trunk Flaky Tests for the first time, you can follow the gu
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guide by Test Frameworks</td><td></td><td></td><td><a href="frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="ci-providers/">ci-providers</a></td></tr></tbody></table>
 
-
-
 ### Installing the CLI
-
-{% hint style="info" %}
-The Trunk Flaky Tests CLI currently only supports x86\_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
-{% endhint %}
 
 The CLI should be downloaded as part of your test workflow in your CI system. The details vary by [CI Provider](ci-providers/), but generally should be downloaded directly from the analytics-cli release page using curl like this:
 
@@ -51,7 +45,7 @@ curl -fsSL --retry 3 \
 {% endtabs %}
 
 {% hint style="info" %}
-The `trunk-analytics-cli`&#x20;
+The `trunk-analytics-cli`
 {% endhint %}
 
 and then invoked like this. The `trunk-analytics-cli` binary will already be marked executable.
@@ -112,7 +106,6 @@ Make sure you are getting your _Organization Slug_, not the Organization Name.
 
 <figure><img src="../.gitbook/assets/Organization Slug.png" alt=""><figcaption><p>Get the Organization Slug</p></figcaption></figure>
 
-Also make sure you are getting your O_rganization API Token_, _**not your project/repo token**_.
+Also make sure you are getting your O\_rganization API Token\_, _**not your project/repo token**_.
 
 <figure><img src="../.gitbook/assets/Organization API Token.png" alt=""><figcaption></figcaption></figure>
-
