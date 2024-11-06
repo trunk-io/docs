@@ -57,6 +57,16 @@ You may also want to specify `--upstream` if, for example, your PRs are not merg
 {% endtab %}
 {% endtabs %}
 
+#### Downloading the `trunk` CLI on CI
+
+If you're not using GitHub Actions, the preferred way to download the `trunk` CLI is:
+
+```bash
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+```
+
+If you are using GitHub Actions, this is taken care of for you.
+
 #### Caching and Persistence
 
 * Trunk caches the version of `trunk` itself, linters, formatters, and lint results, in `~/.cache/trunk`

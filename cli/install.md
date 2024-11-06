@@ -72,7 +72,7 @@ To allow your teammates to use `trunk` without installing anything, the launcher
 
 ```
 curl -LO https://trunk.io/releases/trunk
-chmod +x ./trunk
+chmod +x trunk
 git commit ./trunk -m "Commit Trunk to our repo"
 ```
 

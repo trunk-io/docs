@@ -1,57 +1,23 @@
-# Uploader
+# Uploader CLI Reference
 
 Trunk Flaky Tests detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI. Trunk Flaky Tests takes the [JUnit XML format](https://github.com/testmoapp/junitxml) for uploads. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and your PR checks.
 
 If you're setting up Trunk Flaky Tests for the first time, you can follow the guides for your CI provider and test framework.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guide by Test Frameworks</td><td></td><td></td><td><a href="frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="ci-providers/">ci-providers</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guides by Test Frameworks</td><td></td><td></td><td><a href="frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="ci-providers/">ci-providers</a></td></tr></tbody></table>
 
 ### Installing the CLI
 
-The CLI should be downloaded as part of your test workflow in your CI system. The details vary by [CI Provider](ci-providers/), but generally should be downloaded directly from the analytics-cli release page using curl like this:
+The CLI should be downloaded as part of your test workflow in your CI system. This can be done with the following command:
 
-{% tabs %}
-{% tab title="Linux x86_64" %}
 ```bash
-curl -fsSL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" \
-  | tar -xvz > ./trunk-analytics-cli
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 ```
-{% endtab %}
-
-{% tab title="Linux arm64" %}
-```bash
-curl -fsSL --retry 3 \
-    "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz" \
-    | tar -xvz > ./trunk-analytics-cli
-```
-{% endtab %}
-
-{% tab title="macOS x86_64" %}
-```bash
-curl -fsSL --retry 3 \
-    "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz" \
-    | tar -xvz > ./trunk-analytics-cli
-```
-{% endtab %}
-
-{% tab title="macOS arm64" %}
-```bash
-curl -fsSL --retry 3 \
-    "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz" \
-    | tar -xvz > ./trunk-analytics-cli
-```
-{% endtab %}
-{% endtabs %}
-
-{% hint style="info" %}
-The `trunk-analytics-cli`
-{% endhint %}
 
 and then invoked like this. The `trunk-analytics-cli` binary will already be marked executable.
 
-```
-./trunk-analytics-cli upload --junit-paths "test_output.xml" \
+```bash
+trunk flakytests upload --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -59,10 +25,10 @@ and then invoked like this. The `trunk-analytics-cli` binary will already be mar
 ### Uploading from the CLI
 
 {% hint style="info" %}
-The uploaded tests are processed by Trunk periodically on a schedule and not in real-time. Wait for at least an hour after the initial upload before they’re accurately displayed in Trunk. Multiple uploads are required before a test can be accurately detected as broken or flaky.
+The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in Trunk. Multiple uploads are required before a test can be accurately detected as broken or flaky.
 {% endhint %}
 
-Trunk provides the `trunk-analytics-cli` command-line tool to upload and analyze test results.
+The `trunk` command-line tool can upload and analyze test results. All of the following subcommands and arguments are to the `trunk flakytests` command.
 
 Run the command line with one of the following commands
 
@@ -106,6 +72,6 @@ Make sure you are getting your _Organization Slug_, not the Organization Name.
 
 <figure><img src="../.gitbook/assets/Organization Slug.png" alt=""><figcaption><p>Get the Organization Slug</p></figcaption></figure>
 
-Also make sure you are getting your O\_rganization API Token\_, _**not your project/repo token**_.
+Ensure you get your _Organization API Token_, _**not your repo token**_.
 
 <figure><img src="../.gitbook/assets/Organization API Token.png" alt=""><figcaption></figcaption></figure>
