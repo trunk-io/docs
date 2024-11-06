@@ -22,7 +22,7 @@ Jasmine is a testing framework for JavaScript and TypeScript.
 
 Configure Jasmine to produce [JUnit XML](https://github.com/testmoapp/junitxml) output. 
 
-Install the  [`jasmine-reporters`](https://www.npmjs.com/package/jasmine-reporters) package
+Install the [`jasmine-reporters`](https://www.npmjs.com/package/jasmine-reporters) package
 
 ```shell
 npm install --save-dev jasmine-reporters
