@@ -17,6 +17,7 @@ linter
 metalinter
 markdownlint-cli2
 Nextest
+nextest
 PHPUnit
 repo
 repos
