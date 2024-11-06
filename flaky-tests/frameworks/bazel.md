@@ -16,7 +16,7 @@ layout:
 
 # Bazel
 
-Bazel is a testing framework for Any.
+Bazel is a build system.
 
 ### Enabling XML Output
 

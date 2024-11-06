@@ -16,13 +16,20 @@ layout:
 
 # Cargo-nextest
 
-### Introduction
+Cargo-nextest is a testing framework for Rust.
 
-Rust has built in support for unit tests using `cargo test`. Unfortunately `cargo test` does not support customizing output formats. Instead we suggest using **cargo-nextest.**
+### Enabling XML Output
 
-### How to output test results to upload to Trunk
+Rust has built in support for unit tests using `cargo test`.  Unfortunately `cargo test` does not support customizing output formats (though there is [experimental support for JSON output](https://doc.rust-lang.org/beta/test/enum.OutputFormat.html)). Instead we suggest using **cargo-nextest.**
 
-In your `.config/nextest.toml` config file,  we recommend making a `ci` profile and setting the output format to `junit` for only that profile:
+[cargo-nextest](https://nexte.st/) is an alternative test runner for Rust which, among other cool features, supports XML and JSON output. Install **cargo-nextest** as either a [pre-built binary](https://nexte.st/book/installation) like this:
+
+```shell
+curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C ${CARGO_HOME:-~/.cargo}/bin
+```
+or [install and compile](https://nexte.st/book/installing-from-source) from source.
+
+Next add a `.config/nextest.toml`  config file to tell **cargo-nextest** what output format to use and where the output should be written too, among other settings. Something like this:
 
 ```toml
 [profile.ci]
@@ -31,19 +38,20 @@ fail-fast = false
 [profile.ci.junit]
 path = "junit.xml"
 ```
+The `default` profile will use standard text output. The `ci` profile will use JUnit XML output.
 
-The default profile will use standard text output. See full docs for configuring nextest [here](https://nexte.st/docs/configuration/).
+Now run the tests with: 
 
-In CI, run tests with the `--profile=ci` argument:
-
-```bash
+```shell
 cargo nextest run --profile=ci
 ```
 
-### Deficiencies
+### Test Suite Naming
 
-Currently, nextest does not support filenames and lines for test results. Trunk will show this information when available; however, uploading the nextest results will not contain this information.
+You can change the name of the report with the `report-name` option.  Nextest will use the test binary names for the `<testsuite>` and the individual test names for the `<testcase>`. However, Nextest does not currently support adding the filepaths and names.
 
-### Next Step
+## Further Information
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [ci-providers](../ci-providers/ "mention") for instructions to do this for the CI system you use.
+See an example of **cargo-nextest** invoked form a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/rust-tests.yaml).
+
+[Documentation](https://nexte.st/book/configuration) for the `cargo-nextest` config file.

@@ -20,14 +20,13 @@ Jest is a testing framework for JavaScript and TypeScript.
 
 ### Enabling XML Output
 
-Configure Jest to produce [JUnit XML](https://github.com/testmoapp/junitxml) output.&#x20;
+Configure Jest to produce [JUnit XML](https://github.com/testmoapp/junitxml) output. 
 
 * Install the [jest-junit.](https://github.com/jest-community/jest-junit)
 
 ```bash
 npm install --save-dev jest-junit
 ```
-
 Update your Jest config (`jest.config.json` or [similar file)](https://jestjs.io/docs/configuration) to add `jest-junit` as a reporter.
 
 `jest.config.json`
@@ -37,19 +36,17 @@ Update your Jest config (`jest.config.json` or [similar file)](https://jestjs.io
   "reporters": [ "default", "jest-junit" ]
 }
 ```
-
 With this configuration, Jest runs with by default output a `junit.xml` file in the working directory. To further configure the reporter, consult the [detailed documentation on GitHub](https://github.com/jest-community/jest-junit?tab=readme-ov-file#jest-junit).
 
 ### Test Suite Naming
 
-The `jest-junit` reporter will automatically fill in values for the `<testcase/>` and `<testsuite/>` `name` and `class` attributes using the _description_ parameters to the tests. The `testsuites.name` is set to `jest tests` by default.
+The `jest-junit` reporter will automatically fill in values for the `<testcase/>` and `<testsuite/>` `name` and `class` attributes using the _description_ parameters to the tests. The `testsuites.name` is set to `jest tests` by default.   
 
 To make it easier to debug, it is also useful to include the name of the file that the failing test is in. You can do this by adding this to the `jest.config.json` file.
 
 ```json
        "addFileAttribute": "true"
 ```
-
 For example, this test:
 
 ```javascript
@@ -61,7 +58,6 @@ describe('addition', () => {
   });
 });
 ```
-
 would produce output that looks like this:
 
 ```xml
@@ -75,7 +71,6 @@ would produce output that looks like this:
   </testsuite>
 </testsuites>
 ```
-
 The default attributes can be changed using `jest-junit` [configuration settings](https://github.com/jest-community/jest-junit?tab=readme-ov-file#configuration).
 
 ## Further Information
