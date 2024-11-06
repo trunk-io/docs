@@ -16,6 +16,7 @@ Linter
 linter
 metalinter
 markdownlint-cli2
+Nextest
 PHPUnit
 repo
 repos
