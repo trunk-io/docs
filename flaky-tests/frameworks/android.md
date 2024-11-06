@@ -27,8 +27,6 @@ Local unit test results will be in `/path_to_your_project/module_name/build/test
 
 See the [Android Developer Docs](https://developer.android.com/studio/test/command-line) for more info.
 
-### Test Suite Naming
-
 
 
 
