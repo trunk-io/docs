@@ -44,8 +44,8 @@ steps:
     
   - label: Upload Test Results
     commands:
-      - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-      - trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+      - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+      - ./trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
     key: upload
     depends_on:
       - tests

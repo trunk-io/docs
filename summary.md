@@ -3,6 +3,7 @@
 * [Welcome](welcome.md)
 * [Flaky Tests (beta)](flaky-tests/readme.md)
   * [Overview](flaky-tests/readme.md)
+  * [Get Started](flaky-tests/get-started.md)
   * [Test Frameworks](flaky-tests/frameworks/readme.md)
     * [Android](flaky-tests/frameworks/android.md)
     * [Bazel](flaky-tests/frameworks/bazel.md)

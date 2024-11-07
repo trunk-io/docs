@@ -2,11 +2,11 @@
 description: Flaky Tests provides summary analytics about tests running on Pull Requests.
 ---
 
-# PR Test Summary
+# PR Comments
 
 ## Overview
 
-Flaky Tests can post comments on GitHub pull requests to provide a summary of your tests’ health and prompt you to further inquire from the Flaky Tests dashboard.
+Flaky Tests can post comments on GitHub pull requests to provide a summary of all the tests run on this PR, across multiple CI jobs or even CI systems, as well as whether those failures are due to flakiness, the history of the failures of that test, and more.
 
 <figure><img src="../.gitbook/assets/GitHub Comment.png" alt=""><figcaption></figcaption></figure>
 
