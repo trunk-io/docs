@@ -16,17 +16,15 @@ layout:
 
 # pytest
 
-pytest is a testing framework for Python.
+## How to output test results to upload to Trunk
 
-### Enabling XML Output
-
-pytest can produce [JUnit XML](https://github.com/testmoapp/junitxml) output by running with the `--junit-xml=` option.
+pytest can produce [JUnit XML](https://github.com/testmoapp/junitxml) output that Trunk can ingest by running with the `--junit-xml=` option.
 
 ```shell
-pytest --junit-xml=filepath.xml 
+pytest --junit-xml=report.xml 
 ```
 
-### Test Suite Naming
+## Test Suite Naming
 
 **pytest** will automatically fill in values for the `<testcase/>` and `<testsuite/>` `name` and `classname` attributes.&#x20;
 
@@ -64,6 +62,6 @@ pytest --junitxml=output/path.xml -o junit_family=xunit1
 
 By default, **pytest** will include the `file` attribute in the output XML.
 
-## Further Information
+## Next Step
 
-See an example of running **pytest** in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/python-tests.yaml#L34).
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.

@@ -16,28 +16,28 @@ layout:
 
 # RSpec
 
-RSpec is a testing framework for Ruby.
+## How to output test results to upload to Trunk
 
-### Enabling XML Output
-
-RSpec can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by installing the `rspec_junit_formatter `module. 
+RSpec can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output that Trunk can ingest by installing the `rspec_junit_formatter` module.
 
 ```shell
 gem install rspec_junit_formatter
 ```
+
 Add the formatter to your command line like this:
 
 ```shell
 rspec src --format RspecJunitFormatter
 ```
 
-### Test Suite Naming
+## Test Suite Naming
 
 The output file can be set with the `--out` option like this:
 
 ```shell
-rspec src --format RspecJunitFormatter --out rspec_test.xml
+rspec src --format RspecJunitFormatter --out report.xml
 ```
+
 By default, RSpec will include the `file` attribute in the output XML like this:
 
 ```xml
@@ -64,6 +64,6 @@ expected: 1.5
 
 ```
 
-## Further Information
+## Next Step
 
-See an example of using RSpec in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/ruby-tests.yaml#L22).
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.

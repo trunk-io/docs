@@ -16,22 +16,21 @@ layout:
 
 # go-junit-report
 
-go-junit-report is a testing framework for Go.
+## How to output test results to upload to Trunk
 
-### Enabling XML Output
-
-go-junit-report converts the output of `go test` to [JUnit compatible XML](https://github.com/testmoapp/junitxml). First install it with
+go-junit-report converts the output of `go test` to [JUnit compatible XML](https://github.com/testmoapp/junitxml) that Trunk can ingest. First install it with
 
 ```shell
 go install github.com/jstemmer/go-junit-report/v2@latest
 ```
+
 then run it from inside your go project like this:
 
 ```shell
 go test -v 2>&1 ./... | go-junit-report -set-exit-code > report.xml
 ```
 
-### Test Suite Naming
+## Test Suite Naming
 
 [go-junit-report](https://github.com/jstemmer/go-junit-report) produces JUnit XML with the name and classname fields set by the function name and classnames being tested. For example, this function in the module `example/hello`
 
@@ -45,6 +44,7 @@ func TestHelloName(t *testing.T) {
     }
 }
 ```
+
 will produce XML output that looks like:
 
 ```xml
@@ -58,4 +58,6 @@ will produce XML output that looks like:
 
 ```
 
+## Next Step
 
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.

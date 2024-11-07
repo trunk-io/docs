@@ -16,16 +16,15 @@ layout:
 
 # minitest
 
-minitest is a testing framework for Ruby.
+## How to output test results to upload to Trunk
 
-### Enabling XML Output
-
-**minitest** can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by installing the `minitest` Ruby gem. 
+`minitest` can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output that Trunk can ingest by installing the `minitest` Ruby gem.
 
 ```shell
 gem install minitest
 ```
-Then require and enable the **minitest** gem in your test code like this:
+
+Then require and enable the `minitest` gem in your test code like this:
 
 ```ruby
 # mixer.rb
@@ -40,6 +39,7 @@ class ColorMixerTest < Minitest::Test
   end
 end
 ```
+
 Run it with `bundle exec ruby ruby/minitest/mixer.rb` and it will produce output that looks like this:
 
 ```xml
@@ -58,7 +58,7 @@ Run it with `bundle exec ruby ruby/minitest/mixer.rb` and it will produce output
 
 ```
 
-### Test Suite Naming
+## Test Suite Naming
 
 The output file can be configured where you require `minitest` and use the `JUnitReporter`. The first argument to the constructor sets the output file.
 
@@ -67,6 +67,6 @@ Minitest::Reporters.use! Minitest::Reporters::JUnitReporter
   .new('ruby/minitest/results', write_files: true)
 ```
 
-## Further Information
+## Next Step
 
-See an example of using minitest in a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/ruby-tests.yaml#L35).
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.

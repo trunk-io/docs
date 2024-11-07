@@ -16,22 +16,21 @@ layout:
 
 # gotestsum
 
-gotestsum is a testing framework for Go.
+## How to output test results to upload to Trunk
 
-### Enabling XML Output
-
-Since `go test` does not support XML output directly, you can use [**gotestsum**](https://github.com/gotestyourself/gotestsum) to convert the native output to [JUnit XML](https://github.com/testmoapp/junitxml). First install it with
+Since `go test` does not support XML output directly, you can use [**gotestsum**](https://github.com/gotestyourself/gotestsum) to convert the native output to [JUnit XML](https://github.com/testmoapp/junitxml) that Trunk can ingest. First install it with
 
 ```shell
 go install gotest.tools/gotestsum@latest
 ```
+
 Then run your tests with
 
 ```shell
-gotestsum --junitfile gotestsum_test.xml
+gotestsum --junitfile report.xml
 ```
 
-### Test Suite Naming
+## Test Suite Naming
 
 **gotestsum** produces JUnit XML with the name and classname fields set by the function name and classnames being tested. For example, this function in the module `example/hello`
 
@@ -45,6 +44,7 @@ func TestHelloName(t *testing.T) {
     }
 }
 ```
+
 produces XML that looks like this:
 
 ```xml
@@ -65,4 +65,6 @@ produces XML that looks like this:
 
 ```
 
+## Next Step
 
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.\

@@ -16,18 +16,17 @@ layout:
 
 # PHPUnit
 
-PHPUnit is a testing framework for Php.
+## How to output test results to upload to Trunk
 
-### Enabling XML Output
-
-PHPUnit can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output by adding the `--log-junit` argument to your command line.  ex:
+PHPUnit can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output that Trunk can ingest by adding the `--log-junit` argument to your command line.
 
 ```undefined
-phpunit --log-junit output.xml
+phpunit --log-junit report.xml
 ```
-will produce XML output in the `output.xml` file.
 
-### Test Suite Naming
+will produce XML output in the `report.xml` file.
+
+## Test Suite Naming
 
 By default PHPUnit use the name of your PHP files as the `name` attribute of the output XML. For example, this test code
 
@@ -41,6 +40,7 @@ final class EmailTest extends TestCase
     }
 }
 ```
+
 will produce XML output that looks like this:
 
 ```xml
@@ -58,6 +58,6 @@ will produce XML output that looks like this:
 ...
 ```
 
-## Further Information
+## Next Step
 
-See an example of PHPUnit invoked from a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/php.yaml).
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.

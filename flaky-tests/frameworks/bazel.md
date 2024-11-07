@@ -16,16 +16,18 @@ layout:
 
 # Bazel
 
-Bazel is a testing framework for Any.
+### How to upload test results to Trunk
 
-### Enabling XML Output
+By default `bazel test` will output JUnit compatible XML that Trunk can ingest. By default the XML output will go to `./bazel-testlogs/TEST_NAME/test.xml` along with the other test outputs. This cannot be changed.
 
-By default `bazel test` will output JUnit compatible XML.  If you are using gtest for your testing framework, Bazel is still in control of running the tests and will still produce XML output.  By default the XML output will go to `./bazel-testlogs/TEST_NAME/test.xml` along with the other test outputs.
+## Test Suite Naming
 
-### Test Suite Naming
+By default `bazel test` will produce XML output in a file named `test.xml`. This cannot be customized.
 
-By default `bazel test` will produce XML output in a file named `test.xml`
+## Next Step
 
-## Further Information
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](https://docs.trunk.io/flaky-tests/ci-providers) for instructions to do this for the CI system you use.
 
-See an example of running Bazel inside of a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/bazel.yaml).
+\
+
+

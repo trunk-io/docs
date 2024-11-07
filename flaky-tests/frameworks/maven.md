@@ -16,11 +16,9 @@ layout:
 
 # Maven
 
-Maven is a testing framework for Java.
+## How to output test results to upload to Trunk
 
-### Enabling XML Output
-
-When a Maven project is tested with `mvn test` it does not automatically produce [JUnit XML](https://github.com/testmoapp/junitxml) output. You can enable XML output with the [Surefire plugin](https://maven.apache.org/surefire/maven-surefire-plugin/).  To enable it, add the following to the `plugins` section of your `pom.xml` file.  This process is the same whether you use test using JUnit or TestNG. 
+When a Maven project is tested with `mvn test` it does not automatically produce [JUnit XML](https://github.com/testmoapp/junitxml) output. You can enable XML output that Trunk can ingest with the [Surefire plugin](https://maven.apache.org/surefire/maven-surefire-plugin/). To enable it, add the following to the `plugins` section of your `pom.xml` file. This process is the same whether you use test using JUnit or TestNG.
 
 ```xml
 <plugin>
@@ -29,14 +27,16 @@ When a Maven project is tested with `mvn test` it does not automatically produce
   <version>3.3.1</version>
 </plugin>
 ```
+
 and then run
 
 ```shell
 mvn test
 ```
+
 The output will be in the `target/surefire-reports` directory.
 
-### Test Suite Naming
+## Test Suite Naming
 
 You can change the output filename with the `<reportsDirectory>` property.
 
@@ -50,8 +50,10 @@ You can change the output filename with the `<reportsDirectory>` property.
   </configuration>
 </plugin>
 ```
+
 You can see a full list of configuration options [here](https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#reportsDirectory).
 
-## Further Information
+## Next Step
 
-See an example of running Maven inside of a GitHub action [here](https://github.com/trunk-io/flake-factory/blob/main/.github/workflows/java-tests.yaml#L34).
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
+

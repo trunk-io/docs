@@ -16,20 +16,20 @@ layout:
 
 # Playwright
 
-Playwright is a testing framework for Webapp.
+## How to output test results to upload to Trunk
 
-### Enabling XML Output
-
-Playwright has multiple built in reporters. To get [XML output](https://github.com/testmoapp/junitxml) use the `junit` reporter.
+Playwright has multiple built in reporters. To get [XML output](https://github.com/testmoapp/junitxml) that Trunk can ingest use the `junit` reporter.
 
 ```shell
 npx playwright test --reporter=junit
 ```
+
 The output file can be set by either using the `PLAYWRIGHT_JUNIT_OUTPUT_NAME` environment variable or the `outputFile` attribute in the `playwright.config.ts` file.
 
 ```shell
 PLAYWRIGHT_JUNIT_OUTPUT_FILE=tests/results.xml npx playwright test --reporter=junit
 ```
+
 or
 
 ```typescript
@@ -39,12 +39,15 @@ export default defineConfig({
   reporter: [['junit', { outputFile: 'tests/results.xml' }]],
 });
 ```
+
 See the [Playwright JUnit reporter docs](https://playwright.dev/docs/test-reporters#junit-reporter) for more information.
 
-### Test Suite Naming
+## Test Suite Naming
 
-Playwright tests are driven by functions in `*.spec.ts` files. The XML testsuite `name` attributes will automatically be set by the description parameters to the test functions.  The `name` attribute of the `<testsuites>` element can be set with the `PLAYWRIGHT_JUNIT_SUITE_NAME` environment variable.
+Playwright tests are driven by functions in `*.spec.ts` files. The XML testsuite `name` attributes will automatically be set by the description parameters to the test functions. The `name` attribute of the `<testsuites>` element can be set with the `PLAYWRIGHT_JUNIT_SUITE_NAME` environment variable.
 
-Playwright does not support including the full filepath of the failed test in the XML output.
+Playwright does not support including the full file path of the failed test in the XML output.
 
+## Next Step
 
+Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
