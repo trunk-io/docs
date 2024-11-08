@@ -61,20 +61,9 @@ blocks:
       epilogue:
         always:
           commands:
-            # Publish results to Semaphore
-            - test-results publish junit.xml
             # Upload results to trunk.io
-            - trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug <TRUNK_ORG_SLUG> --token ${TRUNK_TOKEN}
-
-after_pipeline:
-  task:
-    jobs:
-      - name: Publish Results
-        commands:
-          - test-results gen-pipeline-report            
+            - ./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug <TRUNK_ORG_SLUG> --token ${TRUNK_TOKEN}
 ```
-
-The epilogue of the test block uses Semaphore's `test-results` command to publish the `junit.xml` file to Semaphore.
 
 ## Hourly Tests
 
