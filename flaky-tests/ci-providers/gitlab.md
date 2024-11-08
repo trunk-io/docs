@@ -4,136 +4,58 @@ description: Configure Flaky Tests using GitLab CI
 
 # GitLab
 
-## Getting Started
+## Introduction
 
-You can use the Flaky Tests CLI within your [GitLab Pipelines](https://docs.gitlab.com/ee/ci/pipelines/) to upload your test results.
+Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your testing CI jobs via the [Trunk Uploader CLI](../uploader.md).&#x20;
 
-{% hint style="info" %}
-The Trunk Flaky Tests CLI currently only supports x86\_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
-{% endhint %}
+Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.
 
-### Create workflow
+### 1. Store a TRUNK\_TOKEN secret in your CI system
 
-Create a GitLab pipeline that runs the tests you want to monitor. In order for us to use the results, these tests **must** produces a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format.
+In [app.trunk.io](http://app.trunk.io), navigate to:
 
-## Find Organization Slug and Token
+**`Settings` -> `Manage Organization` -> `Organization API Token`**
 
-Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings** -> **Manage** -> **Organization**. Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage Organization** → **Organization API Token** and clicking "View." Copy this token.
+Store your API Token in a [GitLab Variable](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project) for your `TRUNK_TOKEN` by navigating to your GitLab project's **Settings** > **CI/CD** > **Variables**.&#x20;
 
-{% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
+### 2. Grab your Organization Slug
 
-### Create GitLab CI/CD Pipeline Variables
+To upload test results to Trunk, you'll need to pass a Trunk Org Slug to the upload command. To get your organization slug, in [app.trunk.io](http://app.trunk.io), navigate to:
 
-[Create a GitLab Variable](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project) for your `TRUNK_API_TOKEN` by navigating to your GitLab project's **Settings** > **CI/CD** > **Variables**. You will use this variable in the next steps to upload test results to Flaky Tests.
+&#x20;**`Settings` -> `Manage` -> `Organization` -> `Organization Slug`**
 
-### Add Analytics CLI to Testing Workflow
+Your Trunk Organization Slug can just be pasted directly into your CI workflow; it's not a secret. In the example workflow in the next step, replace `TRUNK_ORG_SLUG` with your actual organization slug.
 
-You can upload test results to Flaky Tests with the [`trunk-analytics-cli`](https://github.com/trunk-io/analytics-cli) by running it in a stage after your tests are complete. There are four different OS/arch builds of the CLI in the latest release. Pick the one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a container or VM.** This ensures your CI runs are always using the latest build.
+### 3. Modify GitLab pipelines to upload test results
 
-{% tabs %}
-{% tab title="Linux x86_64" %}
-{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or protected branches (`main`, `master`, `develop`, etc) .
+
+#### Example GitLab Pipeline
+
+The following is an example of a GitLab pipeline step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
+
+To find out how to produce the JUnit XML files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
+
 ```yaml
 image: node:latest
 
-stages:          # List of stages for jobs, and their order of execution
+stages:         # List of stages for jobs, and their order of execution
   - test
   - flaky-tests
 
-unit-test-job:   # This job runs the tests
+unit_test_job:   # This job runs the tests
   stage: test    
-  script:
-    - npm install 
-    - npm test --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
+  script: ...
 
 upload_test_results: # This job uploads tests results run in the last stage
   stage: flaky-tests
   script:
-    - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
-    - ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
+    - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
+    - ./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
-{% endcode %}
-{% endtab %}
 
-{% tab title="Linux arm64" %}
-{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
-```yaml
-image: node:latest
+See the [uploader.md](../uploader.md "mention") for all available command line arguments and usage.
 
-stages:          # List of stages for jobs, and their order of execution
-  - test
-  - flaky-tests
+#### Need Help?
 
-unit-test-job:   # This job runs the tests
-  stage: test    
-  script:
-    - npm install 
-    - npm test --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
-
-upload_test_results: # This job uploads tests results run in the last stage
-  stage: flaky-tests
-  script:
-    - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
-    - ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="macOS x86_64" %}
-{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
-```yaml
-image: node:latest
-
-stages:          # List of stages for jobs, and their order of execution
-  - test
-  - flaky-tests
-
-unit-test-job:   # This job runs the tests
-  stage: test    
-  script:
-    - npm install 
-    - npm test --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
-
-upload_test_results: # This job uploads tests results run in the last stage
-  stage: flaky-tests
-  script:
-    - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
-    - ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="macOS arm64" %}
-{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
-```yaml
-image: node:latest
-
-stages:          # List of stages for jobs, and their order of execution
-  - test
-  - flaky-tests
-
-unit-test-job:   # This job runs the tests
-  stage: test    
-  script:
-    - npm install 
-    - npm test --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
-
-upload_test_results: # This job uploads tests results run in the last stage
-  stage: flaky-tests
-  script:
-    - curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
-    - ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_API_TOKEN
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-The `trunk-analytics-cli` tool has several important arguments;
-
-* `--junit-paths`is a comma separated list of paths.
-* `--org-url-slug` is an identifier for the Trunk account you are using. This is the Organization Slug you copied from your Trunk settings above set as a GitLab Variable.
-* `--token` is the Trunk API token you added as a GitLab Variable above.
-
-***
-
-If you're interested in better understanding this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
+Join the [Trunk Slack Community](https://slack.trunk.io) for live support.

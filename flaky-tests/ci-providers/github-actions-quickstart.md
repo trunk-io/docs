@@ -4,76 +4,61 @@ description: Configure Flaky Tests detection using a GitHub Action
 
 # GitHub Actions
 
-### Configuring the Analytics Uploader Action
+## Introduction
 
-The [**Analytics Uploader Action** ](https://github.com/trunk-io/analytics-uploader)uploads test reports to Trunk Flaky Tests from your GitHub workflows. Here are the steps for setting it up:
+Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your GitHub workflows via the [Trunk Analytics Uploader Action](https://github.com/trunk-io/analytics-uploader).
 
-* Create a GitHub workflow that runs the tests you want to monitor and produces a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format. Be careful that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.
-* Modify your GitHub workflow to add the [Trunk Analytics Uploader Action](https://github.com/trunk-io/analytics-uploader) as the step after your tests run. Point the uploader to the locations on disk where your test runner outputs Junit XML files:
+Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.&#x20;
+
+### 1. Store a TRUNK\_TOKEN secret in your CI system
+
+In [app.trunk.io](http://app.trunk.io), navigate to:
+
+**`Settings` -> `Manage Organization` -> `Organization API Token`**
+
+Store your API Token in a [GitHub secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_TOKEN`.
+
+### 2. Grab your Organization Slug
+
+To upload test results to Trunk, you'll need to pass a Trunk Org Slug to the upload command. To get your organization slug, in [app.trunk.io](http://app.trunk.io), navigate to:
+
+&#x20;**`Settings` -> `Manage` -> `Organization` -> `Organization Slug`**
+
+Your Trunk Organization Slug can just be pasted directly into your CI workflow; it's not a secret. In the example workflow in the next step, replace `TRUNK_ORG_SLUG` with your actual organization slug.
+
+### 3. Modify GitHub Actions workflow file to upload test results
+
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or protected branches (`main`, `master`, `develop`, etc) .
+
+#### Example GitHub Actions Workflow
+
+The following is an example of a GitHub Actions workflow step to upload test results after your tests using Trunk's [**Analytics Uploader Action**](https://github.com/trunk-io/analytics-uploader).&#x20;
+
+To find out how to produce the JUnit XML files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
 
 ```yaml
-      - name: Upload results
-        # Run this step even if the test step ahead fails
-        if: "!cancelled()"
-        uses: trunk-io/analytics-uploader@main
-        with:
-          # Path to your test results.
-          junit-paths: target/path/**/*_test.xml
-          # Provide your Trunk organization slug.
-          org-slug: my-trunk-org
-          # Provide your Trunk API token as a GitHub secret.
-          token: ${{ secrets.TRUNK_API_TOKEN }}
-        continue-on-error: true
-
-```
-
-### Find Organization Slug and Token
-
-Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings** -> **Manage** -> **Organization**. Copy your organization slug. You can find your Trunk token by navigating to **Settings** → **Manage Organization** → **Organization API Token** and clicking "View." Provide this token as a [GitHub secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
-
-{% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
-
-### Sample GitHub Actions workflow file:
-
-```yaml
-name: Upload Test Results
-on:
-  workflow_dispatch: {}
-  schedule:
-    # run every hour on the hour
-    - cron: 0 * * * *
-
-permissions: read-all
-
 jobs:
   test:
-    name: Run Tests
+    name: Upload Tests
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Run Tests
+        run: ...
 
-      - name: Setup node
-        uses: actions/setup-node@v4
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Run Jest Tests
-        run: npm test
-
-      - name: Upload Jest Test Results
+      - name: Upload Test Results
+        if: "!cancelled()" # Upload the results even if the tests fail
+        continue-on-error: true # don't fail this job if the upload fails
         uses: trunk-io/analytics-uploader@main
-        # Upload the results even if the tests fail
-        if: "!cancelled()"
         with:
-          junit-paths: junit.xml
-          org-slug: matt
-          token: ${{ secrets.TRUNK_API_TOKEN }}
-        # don't fail this job if the upload fails
-        continue-on-error: true
+          junit-paths: "**/junit.xml"        
+          org-slug: <TRUNK_ORG_SLUG>
+          token: ${{ secrets.TRUNK_TOKEN }}
 
 ```
 
-\
-If you're interested in better understanding this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
+See the [uploader.md](../uploader.md "mention") for all available command line arguments and usage.
+
+#### Need Help?
+
+Join the [Trunk Slack Community](https://slack.trunk.io) for live support.\

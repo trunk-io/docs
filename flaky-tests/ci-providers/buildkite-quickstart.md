@@ -4,7 +4,7 @@ description: Configure Buildkite jobs to upload test results to Trunk Flaky Test
 
 # Buildkite
 
-### Introduction
+## Introduction
 
 Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your testing CI jobs via the [Trunk Uploader CLI](../uploader.md).&#x20;
 
@@ -16,7 +16,7 @@ In [app.trunk.io](http://app.trunk.io), navigate to:
 
 **`Settings` -> `Manage Organization` -> `Organization API Token`**
 
-Store your API Token in a [CI secret](https://buildkite.com/docs/pipelines/security/secrets/managing) named `TRUNK_TOKEN`.
+Store your API Token in a [Buildkite CI secret](https://buildkite.com/docs/pipelines/security/secrets/managing) named `TRUNK_TOKEN`.
 
 ### 2. Grab your Organization Slug
 
@@ -30,9 +30,9 @@ Your Trunk Organization Slug can just be pasted directly into your CI workflow; 
 
 Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or protected branches (`main`, `master`, `develop`, etc) .
 
-#### Example Buildkite Workflow
+#### Example Buildkite Pipeline
 
-The following is an example of a buildkite workflow step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
+The following is an example of a Buildkite step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
 
 To find out how to produce the JUnit XML files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
 
@@ -44,7 +44,7 @@ steps:
     
   - label: Upload Test Results
     commands:
-      - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+      - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
       - ./trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
     key: upload
     depends_on:

@@ -1,179 +1,62 @@
 ---
-description: Configure Flaky Tests using CircleCI
+description: Configure CircleCI jobs to upload test results to Trunk Flaky Tests
 ---
 
 # CircleCI
 
-## Getting Started
+## Introduction
 
-You can use the Flaky Tests CLI within your [CircleCI](https://circleci.com/) workflows to upload and analyze your test results.
+Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your [CircleCI](https://circleci.com/) workflows via the [Trunk Uploader CLI](../uploader.md).&#x20;
 
-{% hint style="info" %}
-The Trunk Flaky Tests CLI currently only supports x86_64 and arm64 for both Linux and macOS. If you have another use case, please get in touch with support at [https://slack.trunk.io](https://slack.trunk.io/). For the best results, you'll need to validate that your test invocation doesn't use cached test results and doesn't automatically retry failing tests.
-{% endhint %}
+Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.
 
-### Create a CircleCI Workflow
+### 1. Store a TRUNK\_TOKEN secret in your CI system
 
-Create a CircleCI workflow (or modify an existing one) to run the tests that you want to monitor. The workflow should produce a test report in [**JUnit XML**](https://github.com/testmoapp/junitxml) format. Most testing frameworks support XML output. See [Testing Framework Configuration](../frameworks/) for guides for common testing frameworks. Make sure that your test invocation doesn't use cached test results, and doesn't automatically retry failing tests.
+In [app.trunk.io](http://app.trunk.io), navigate to:
 
-### Find Organization Slug and Token
+**`Settings` -> `Manage Organization` -> `Organization API Token`**
 
-Next you will need your Trunk **organization slug** and **token.** Navigate to [app.trunk.io](http://app.trunk.io). Once logged in navigate to **Settings -> Manage -> Organization**. Copy your organization slug. You can find your Trunk token by navigating to **Settings → Manage Organization → Organization API** Token and clicking "View." Copy this token. Make sure you are getting your _organization token_, not your project/repo token.
+Store your API Token in your CircleCI project settings under  **Environment Variables** as a new variable  named `TRUNK_TOKEN`. Make sure you are getting your _organization token_, not your project/repo token.
 
-{% @supademo/embed demoId="clvmr1w3d19ac769dnukc5ywg" url="https://app.supademo.com/demo/clvmr1w3d19ac769dnukc5ywg" %}
+### 2. Grab your Organization Slug
 
-### Set Project Environment Variables
+To upload test results to Trunk, you'll need to pass a Trunk Org Slug to the upload command. To get your organization slug, in [app.trunk.io](http://app.trunk.io), navigate to:
 
-In your CircleCI project settings under **Environment Variables**, create new variables for your Trunk org as `TRUNK_ORG_SLUG` and the api token as `TRUNK_API_TOKEN`.
+&#x20;**`Settings` -> `Manage` -> `Organization` -> `Organization Slug`**
 
-<figure><img src="../../.gitbook/assets/CircleCI-env-var-settings-screenshot.png" alt=""><figcaption><p>CircleCI Project Settings</p></figcaption></figure>
+Your Trunk Organization Slug can just be pasted directly into your CI workflow; it's not a secret. In the example workflow in the next step, replace `TRUNK_ORG_SLUG` with your actual organization slug.
 
-### Add Uploader to Testing Workflow
+### 3. Modify CircleCI workflows to upload test results
 
-Now update your CircleCI workflow to download and run the test uploader binary after you've run your tests. Here is an example of a NodeJS project using JUnit tests.
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or protected branches (`main`, `master`, `develop`, etc) .
 
-You can upload test results to Flaky Tests with the [`trunk-analytics-cli`](https://github.com/trunk-io/analytics-cli) by running
-it in a stage after your tests are complete. There are four different OS/arch builds of the CLI in the latest release. Pick the
-one you need for your testing platform and be sure to download the release on every CI run. **Do not bake the CLI into a
-container or VM.** This ensures your CI runs are always using the latest build.
+#### Example CircleCI workflow
 
+The following is an example of a workflow step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
 
+To find out how to produce the JUnit XML files the uploader needs, see the instructions for your test framework in the [Test Frameworks](https://docs.trunk.io/flaky-tests/frameworks) docs.
 
-{% tabs %}
-
-
-{% tab title="Linux x86_64" %}
-{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
-version: 2.1
-orbs:
-  node: circleci/node@5
-  python: circleci/python@2
 jobs:
   test-node:
     # Install node dependencies and run tests
     executor: node/default
     steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: npm install
       - run:
-          name: Run tests with Jest
-          command: |
-            ./node_modules/.bin/jest --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
+          name: Run Tests
+          command: ...
+
       - run:
-          name: Upload test results to Trunk
-          when: always
+          name: Upload Test Results
           command: |
-            curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
-            ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
+            curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
+            ./trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token ${TRUNK_TOKEN}
 ```
-{% endcode %}
-{% endtab %}
 
-{% tab title="Linux arm64" %}
-{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
-```yaml
-version: 2.1
-orbs:
-  node: circleci/node@5
-  python: circleci/python@2
-jobs:
-  test-node:
-    # Install node dependencies and run tests
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: npm install
-      - run:
-          name: Run tests with Jest
-          command: |
-            ./node_modules/.bin/jest --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
-      - run:
-          name: Upload test results to Trunk
-          when: always
-          command: |
-            curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-unknown-linux.tar.gz" | tar -xvz > ./trunk-analytics-cli
-            ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
+See the [Uploader CLI Reference](https://docs.trunk.io/flaky-tests/uploader) for all available command line arguments and usage.
 
+**Need Help?**
 
-```
-{% endcode %}
-{% endtab %}
+Join the [Trunk Slack Community](https://slack.trunk.io/) for live support.
 
-{% tab title="macOS x86_64" %}
-{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
-```yaml
-version: 2.1
-orbs:
-  node: circleci/node@5
-  python: circleci/python@2
-jobs:
-  test-node:
-    # Install node dependencies and run tests
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: npm install
-      - run:
-          name: Run tests with Jest
-          command: |
-            ./node_modules/.bin/jest --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
-      - run:
-          name: Upload test results to Trunk
-          when: always
-          command: |
-            curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
-            ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
-
-
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="macOS arm64" %}
-{% code title="upload.yaml" overflow="wrap" lineNumbers="true" %}
-```yaml
-version: 2.1
-orbs:
-  node: circleci/node@5
-  python: circleci/python@2
-jobs:
-  test-node:
-    # Install node dependencies and run tests
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: npm install
-      - run:
-          name: Run tests with Jest
-          command: |
-            ./node_modules/.bin/jest --config=javascript/tests/jest/jest.config.json javascript/tests/jest/**/*.js
-      - run:
-          name: Upload test results to Trunk
-          when: always
-          command: |
-            curl -fsSL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-aarch64-apple-darwin.tar.gz" | tar -xvz > ./trunk-analytics-cli
-            ./trunk-analytics-cli upload --junit-paths "tests/jest/jest_junit_test.xml" --org-url-slug ${TRUNK_ORG_SLUG} --token ${TRUNK_API_TOKEN}
-
-
-```
-{% endcode %}
-{% endtab %}
-
-{% endtabs %}
-
-
-
-In the config about we have added a second `run` step fo the `test-node` job. This step downloads the latest release of the `trunk-analytics-cli`, makes it executable, then runs it to upload the test output xml file. The TRUNK\_ORG\_SLUG and TRUNK\_API\_TOKEN variables are filled in at runtime by the CircleCI environment variables set earlier. Note that the `when` property is set to `always` because it should run whether or not the actual tests in the previous `run` step succeed.
-
-***
-
-If you're interested in better understanding this binary or want to contribute to it, you can find the open source repo [here](https://github.com/trunk-io/analytics-cli).
+\
