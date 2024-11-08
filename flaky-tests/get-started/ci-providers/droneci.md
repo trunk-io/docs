@@ -6,7 +6,7 @@ description: Configure Flaky Tests using Drone CI
 
 ## Introduction
 
-Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your Drone CI pipelines to upload tests with the [Trunk Uploader CLI](../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your Drone CI pipelines to upload tests with the [Trunk Uploader CLI](../../uploader.md).
 
 Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.
 
@@ -56,7 +56,7 @@ steps:
       - ./trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 
-See the [uploader.md](../uploader.md "mention") for all available command line arguments and usage.
+See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
 #### Need Help?
 

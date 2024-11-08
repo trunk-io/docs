@@ -6,7 +6,7 @@ description: Configure CircleCI jobs to upload test results to Trunk Flaky Tests
 
 ## Introduction
 
-Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your [CircleCI](https://circleci.com/) workflows via the [Trunk Uploader CLI](../uploader.md).&#x20;
+Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your [CircleCI](https://circleci.com/) workflows via the [Trunk Uploader CLI](../../uploader.md).&#x20;
 
 Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.
 

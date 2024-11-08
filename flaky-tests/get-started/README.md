@@ -34,10 +34,10 @@ Once you've confirmed data is flowing properly into Trunk, let data accumulate f
 
 Flaky Tests can post comments on GitHub pull requests to provide a summary of all the tests run on this PR, across multiple CI jobs or even CI systems, as well as whether those failures are due to flakiness, the history of the failures of that test, and more.
 
-To enable PR Comments, see our documentation: [github-pull-request-comments.md](github-pull-request-comments.md "mention")
+To enable PR Comments, see our documentation: [github-pull-request-comments.md](../github-pull-request-comments.md "mention")
 
 ### 6. (Optional) Enable Quarantining
 
 Quarantining is an advanced feature that allows your CI test jobs to pass even if a flaky test is failing on them. This eliminates the pain developers feel from dealing with flaky tests.
 
-To enable Quarantining, see our documentation: [quarantining.md](quarantining.md "mention")
+To enable Quarantining, see our documentation: [quarantining.md](../quarantining.md "mention")

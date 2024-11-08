@@ -6,7 +6,7 @@ description: Configure Flaky Tests using Semaphore CI
 
 ## Introduction
 
-Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your testing Semaphore CI workflows via the [Trunk Uploader CLI](../uploader.md).&#x20;
+Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your testing Semaphore CI workflows via the [Trunk Uploader CLI](../../uploader.md).&#x20;
 
 Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.
 
@@ -70,7 +70,7 @@ blocks:
 
 Running on a golden branch is how we detect that tests are flaky. Create a copy of your `semaphore.yml` file called `hourly.yml` . In your Semaphore dashboard, create a new task to run tests on the main branch, and link to the `hourly.yml` file. Schedule it to run **every hour, every day**. Click _Create_ then manually run the workflow to check that it's working. Now you can look at the data being collected in Trunk's [Flaky Tests dashboard](https://app.trunk.io/). The source for the settings above are available in our [SemaphoreFlakyTestExample](https://github.com/mmatheson/SemaphoreFlakyTestExample) repo.
 
-See the [uploader.md](../uploader.md "mention") for all available command line arguments and usage.
+See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
 #### Need Help?
 

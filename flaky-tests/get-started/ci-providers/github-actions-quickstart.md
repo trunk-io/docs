@@ -57,7 +57,7 @@ jobs:
 
 ```
 
-See the [uploader.md](../uploader.md "mention") for all available command line arguments and usage.
+See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
 #### Need Help?
 

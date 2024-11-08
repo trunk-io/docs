@@ -6,7 +6,7 @@ description: Configure Flaky Tests using Travis CI
 
 ## Introduction
 
-Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your Travis CI jobs via the [Trunk Uploader CLI](../uploader.md).&#x20;
+Trunk Flaky Tests integrates with your CI by adding an `Upload Test Results` step in each of your Travis CI jobs via the [Trunk Uploader CLI](../../uploader.md).&#x20;
 
 Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.
 
@@ -48,7 +48,7 @@ script:
   - ./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 
-See the [uploader.md](../uploader.md "mention") for all available command line arguments and usage.
+See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
 #### Need Help?
 

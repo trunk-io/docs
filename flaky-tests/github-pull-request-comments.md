@@ -20,7 +20,7 @@ Each test case also contains the full stack trace attached when opened.
 
 ## Getting Started
 
-If you have the [Trunk GitHub App installed](https://docs.trunk.io/administration/github-app-permissions) and are [uploading JUnit XML](frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
+If you have the [Trunk GitHub App installed](https://docs.trunk.io/administration/github-app-permissions) and are [uploading JUnit XML](get-started/frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
 
 ### Set Up (without Trunk GitHub App install)
 
