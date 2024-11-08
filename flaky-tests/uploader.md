@@ -78,4 +78,4 @@ Ensure you get your _Organization API Token_, _**not your repo token**_.
 
 ### Test results aren't uploading
 
-If the test results aren't uploading from your CI system then one possible cause is malformed XML. Try modifying your job to run `./trunk --validate`. Also try using `--dry-run` and `--print-files` to show which files will be uploaded.
+If the test results aren't uploading from your CI system then one possible cause is malformed XML. Try modifying your job to run `./trunk flakytests validate`. Also try using `--dry-run` and `--print-files` to show which files will be uploaded.
