@@ -62,6 +62,7 @@ blocks:
         always:
           commands:
             # Upload results to trunk.io
+            - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
             - ./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug <TRUNK_ORG_SLUG> --token ${TRUNK_TOKEN}
 ```
 

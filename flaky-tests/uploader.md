@@ -17,7 +17,7 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 and then invoked like this. The `trunk-analytics-cli` binary will already be marked executable.
 
 ```bash
-trunk flakytests upload --junit-paths "test_output.xml" \
+./trunk flakytests upload --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -75,3 +75,7 @@ Make sure you are getting your _Organization Slug_, not the Organization Name.
 Ensure you get your _Organization API Token_, _**not your repo token**_.
 
 <figure><img src="../.gitbook/assets/Organization API Token.png" alt=""><figcaption></figcaption></figure>
+
+### Test results aren't uploading
+
+If the test results aren't uploading from your CI system then one possible cause is malformed XML. Try modifying your job to run `./trunk --validate`. Also try using `--dry-run` and `--print-files` to show which files will be uploaded.
