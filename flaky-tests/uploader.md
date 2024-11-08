@@ -14,7 +14,7 @@ The CLI should be downloaded as part of your test workflow in your CI system. Th
 curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 ```
 
-and then invoked like this. The `trunk-analytics-cli` binary will already be marked executable.
+and then invoked like this. The `trunk` binary will already be marked executable.
 
 ```bash
 ./trunk flakytests upload --junit-paths "test_output.xml" \
@@ -62,7 +62,7 @@ The `upload` command uses the following arguments
 
 As a general rule you should download the release on every CI run. **Do not bake the CLI into a container or VM.** This ensures your CI runs are always using the latest build.
 
-The `trunk-analytics-cli` binary should be run from the repository root. If you need to run the binary from another location, you must provide the path to the repo root using the `--repo-root`argument. The `--junit-paths` argument accepts the xml file locations as both a list of globs or absolute paths.
+The `trunk` binary should be run from the repository root. If you need to run the binary from another location, you must provide the path to the repo root using the `--repo-root`argument. The `--junit-paths` argument accepts the XML file locations as both a list of globs or absolute paths.
 
 ### Organization not found
 
