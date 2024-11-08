@@ -195,3 +195,4 @@ redirects:
   code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/configuration/debugging: code-quality/debugging.md
   check/check-cloud-ci-integration/get-started/github-integration: code-quality/ci-setup/github-integration.md
+  flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite-quickstart.md
