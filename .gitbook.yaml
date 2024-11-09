@@ -195,11 +195,11 @@ redirects:
   code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/configuration/debugging: code-quality/debugging.md
   check/check-cloud-ci-integration/get-started/github-integration: code-quality/ci-setup/github-integration.md
-  flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite-quickstart.md
-  flaky-tests/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci-quickstart.md
+  flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite.md
+  flaky-tests/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci.md
   flaky-tests/ci-providers/droneci: flaky-tests/get-started/ci-providers/droneci.md
-  flaky-tests/ci-providers/github-actions-quickstart: flaky-tests/get-started/ci-providers/github-actions-quickstart.md
+  flaky-tests/ci-providers/github-actions-quickstart: flaky-tests/get-started/ci-providers/github-actions.md
   flaky-tests/ci-providers/gitlab: flaky-tests/get-started/ci-providers/gitlab.md
-  flaky-tests/ci-providers/other-ci-providers-quickstart: flaky-tests/get-started/ci-providers/other-ci-providers-quickstart.md
-  flaky-tests/ci-providers/semaphore-ci-quickstart: flaky-tests/get-started/ci-providers/semaphore-ci-quickstart.md
+  flaky-tests/ci-providers/other-ci-providers-quickstart: flaky-tests/get-started/ci-providers/otherci.md
+  flaky-tests/ci-providers/semaphore-ci-quickstart: flaky-tests/get-started/ci-providers/semaphoreci.md
   flaky-tests/ci-providers/travisci: flaky-tests/get-started/ci-providers/travisci.md
