@@ -12,7 +12,7 @@ When a test is quarantined, it will still be run in your CI jobs and results wil
 
 When quarantining is enabled, tests that are _known_ to be flaky or broken will be quarantined. This means tests that have already been failing and not broken by your PR will be quarantined. You can see which tests are flaky or broken by seeing the tests's status in the overview dashboard, or each test's status history.
 
-<figure><img src="../.gitbook/assets/labelled as flaky.png" alt=""><figcaption><p>Status history showing a test to be flaky.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/labelled-flaky-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/labelled-flaky-light.png" alt=""></picture><figcaption><p>Status history showing a test to be flaky.</p></figcaption></figure>
 
 Tests that are overridden to always quarantine will also be quarantined, even if the test breaks for the first time. [Learn more about overriding.](quarantining.md#overriding-individual-tests)
 
@@ -99,15 +99,15 @@ jobs:
 
 You can enable quarantining by navigating to **Settings** > **Repositories** > **Flaky Tests** > **Quarantine Flaky Tests** and selecting enabled in the drop-down.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXe3-J-EA1yJ9kRz7_vdu23CtvZNh4nR03u7SRgciS_piqb2KYVvgNQI3ymXSwW8UOfl4eFOBoslB_3Br855qxIyLiUZkQ71THDiYz0nzSxxfSIiv1WR1ibdfh4g8oyd6kyN7vyJeNlON8pr5ke6aErKZ0Sw?key=X3VGLphhBSvJq7pfJ6AeNA" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (8).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (9).png" alt=""></picture><figcaption></figcaption></figure>
 
 After enabling quarantining on Trunk Flaky Tests, future CI jobs with quarantining enabled on the Analytics Uploader will begin quarantining failed flaky tests.
 
 #### Overriding Individual Tests
 
-If you have tests that should never be quarantined or should always be quarantined regardless of their current health status, you can do this through overriding individual tests.
+If you have tests that should never be quarantined or should always be quarantined regardless of their current health status, you can do this by overriding individual tests.
 
-<figure><img src="../.gitbook/assets/Enable Override Quarantining (1).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/override-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/override-light.png" alt=""></picture><figcaption><p>overriding</p></figcaption></figure>
 
 You can update the overriding settings on each test by navigating to the details page for a specific test and clicking the Quarantining (Repo Default) selector in the top left corner.
 
@@ -119,10 +119,6 @@ You can choose between one of three override settings:
 
 Trunk provides audit logs for all setting changes and overwrites for individual tests. You can access the audit log by navigating to **Settings** > **Repositories** > **Flaky Tests** > **Quarantine Flaky Tests** > **Audit logs**.
 
-<figure><img src="../.gitbook/assets/Audit log (2).png" alt=""><figcaption></figcaption></figure>
-
 You will also see a record of changes in the override settings in the **Status History** tab in each test's details screen.
-
-<figure><img src="../.gitbook/assets/labelled as flaky (1).png" alt=""><figcaption></figcaption></figure>
 
 [^1]: or broken
