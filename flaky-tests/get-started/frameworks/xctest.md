@@ -16,13 +16,11 @@ layout:
 
 # XCTest
 
-
-
 Test written in Objective-C and Swift projects using the XCTest framework can be run from the command line with `xcodebuild`. Trunk Flaky Tests accepts both `.xcresult` and JUnit XML files.
 
 ### Using XCResult
 
-`xcodebuild` produces test result files in the `.xcresult` default format. You can upload `.xcresult` files directly to Trunk Flaky Tests. The `trunk flakytests` subcommand takes `.xcresult` file paths using the `--xcresult-path` argument.
+`xcodebuild` produces a test result directory in the `.xcresult` default format. You can upload `.xcresult` directories directly to Trunk Flaky Tests. The `trunk flakytests` subcommand takes `.xcresult` paths using the `--xcresult-path` argument.
 
 ### Using JUnit XML Output (Optional)
 
