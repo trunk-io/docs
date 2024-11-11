@@ -8,15 +8,15 @@ description: Flaky Tests provides summary analytics about tests running on Pull 
 
 Flaky Tests can post comments on GitHub pull requests to provide a summary of all the tests run on this PR, across multiple CI jobs or even CI systems, as well as whether those failures are due to flakiness, the history of the failures of that test, and more.
 
-<figure><img src="../.gitbook/assets/GitHub Comment.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/github-comment-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Each GitHub comment has a full summary report, containing all tests that passed, failed, flaked, skipped, and quarantined on this PR.
 
-<figure><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_pr_84_repo=gewenyu99%2Freal-saas-app&#x26;commitHash=7274ce1090cba4614cf9ebc316bacac090c06f56.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/pr-test-summary (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/pr-test-summary.png" alt=""></picture><figcaption></figcaption></figure>
 
 Each test case also contains the full stack trace attached when opened. You can also click on the **Job run** link which will take you to the full CI logs.
 
-<figure><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_pr_84_repo=gewenyu99%2Freal-saas-app&#x26;commitHash=7274ce1090cba4614cf9ebc316bacac090c06f56 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (4).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (5).png" alt=""></picture><figcaption></figcaption></figure>
 
 ## Configuration
 

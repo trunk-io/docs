@@ -4,7 +4,7 @@ When Trunk Flaky Tests [detects a broken or flaky test](detection.md), you can c
 
 ### Connecting to Jira
 
-<figure><img src="../.gitbook/assets/example-jira-form.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/jira-connect-form-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/jira-connect-form-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 To connect a Jira Cloud project, navigate to Settings > Repositories > Jira Cloud. Then complete the form and click Connect to Jira Cloud with the following information.
 
@@ -32,15 +32,15 @@ You can create a new ticket for any test listed in Trunk Flaky Tests.&#x20;
 
 You can create a new ticket on the Flaky Test dashboard by clicking on the options menu for any test cases listed.
 
-<figure><img src="../.gitbook/assets/create-ticket-kebab.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/create-ticket-button-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/create-ticket-button-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 You can also find a Create Ticket button in the top left corner of the [test case details ](detection.md#test-case-details)screen as well.
 
-<figure><img src="../.gitbook/assets/create-ticket-button.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/create-ticket-button-details-page-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/create-ticket-button-details-page-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Before you create the ticket, you will have a preview of the title and description of the ticket.
 
-<figure><img src="../.gitbook/assets/example-jira-ticket (1).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/jira-ticket-creation-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/jira-ticket-creation-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 #### Create with Jira
 
