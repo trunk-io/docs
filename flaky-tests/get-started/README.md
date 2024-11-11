@@ -20,7 +20,15 @@ After you've set your test framework to output test results, you're ready to act
 
 Check out our guides to the most popular CI systems: [ci-providers](ci-providers/ "mention")
 
-Once you've merged changes to your CI test jobs, make sure you've run at least 1 testing job and your newly added upload step has completed.
+{% hint style="info" %}
+#### Stale files
+
+Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `./results/*.xml` to upload tests, stale files not cleaned up will be included as a part of the current test run.
+
+You should clean up all your results files after every upload step.
+{% endhint %}
+
+Once you've merged changes to your CI test jobs, make sure you've run at least 1 testing job, and your newly added upload step has completed.
 
 ### 4. Confirm your configuration, analyze your dashboard
 
