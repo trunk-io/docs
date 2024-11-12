@@ -20,7 +20,7 @@
       * [Playwright](flaky-tests/get-started/frameworks/playwright.md)
       * [pytest](flaky-tests/get-started/frameworks/pytest.md)
       * [RSpec](flaky-tests/get-started/frameworks/rspec.md)
-      * [Rust](flaky-tests/get-started/frameworks/cargo-nextest.md)
+      * [Rust](flaky-tests/get-started/frameworks/rust.md)
       * [Swift Testing](flaky-tests/get-started/frameworks/swift-testing.md)
       * [Vitest](flaky-tests/get-started/frameworks/vitest.md)
       * [XCTest](flaky-tests/get-started/frameworks/xctest.md)
