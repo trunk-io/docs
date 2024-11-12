@@ -1,11 +1,11 @@
 ---
 title: Configuring vitest
-description: Vitest is a testing framework for JavaScript and TypeScript applications
+description: A guide for generating JUnit test reports for Vitest tests
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -16,40 +16,28 @@ layout:
 
 # Vitest
 
-## How to output test results to upload to Trunk
+## 1. Generate JUnit
 
-Vitest can produce JUnit XML output that Trunk can ingest using the built in `junit` reporter command line option.
+Update your Vitest config to include the `junit` reporter:
 
-```shell
-vitest --reporter=junit --outputFile=report.xml
-```
-
-Typically you will do this in the package.json script that runs your tests, like this:
-
-```json
-"scripts": {
-  "vitest": "vitest run --dir test --reporter=junit --outputFile=./report.xml",
-}
-```
-
-For more details see the [Vitest reporter docs](https://vitest.dev/guide/reporters).
-
-## Test Suite Naming
-
-The generated XML contains nested `testsuites` and `testcase` tags. You can use the environment variables `VITEST_JUNIT_SUITE_NAME` and `VITEST_JUNIT_CLASSNAME` to configure their `name` and `classname` attributes, respectively. These can also be customized via reporter options:
-
+{% code title="vitest.config.ts" %}
 ```typescript
+import { defineConfig } from 'vitest/config';
+
 export default defineConfig({
   test: {
     reporters: [
-      ['junit', { suiteName: 'custom suite name', classname: 'custom-classname' }]
-    ]
+      ['junit', { outputFile: './junit.xml' }],
+    ],
   },
-})
+});
 ```
+{% endcode %}
 
-For more details see the [Vitest JUnit Reporter docs](https://vitest.dev/guide/reporters#junit-reporter).
+## 2. Output Location
+
+The JUnit report will be written to the `outputFile` specified in the Vite config. In the example above, the report would be written to `./junit.xml.`
 
 ## Next Step
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
+JUnit files generated with Vitest are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/ci-providers) for a guide on how to upload test results to Trunk.

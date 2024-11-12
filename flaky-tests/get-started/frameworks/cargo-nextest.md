@@ -1,11 +1,11 @@
 ---
 title: Configuring cargo-nextest
-description: a test runner for Rust
+description: A guide for generating JUnit test reports for Rust tests
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -14,34 +14,29 @@ layout:
     visible: true
 ---
 
-# Cargo-nextest
+# Rust
 
-Rust has built in support for unit tests using `cargo test`. Unfortunately `cargo test` does not support customizing output formats. Instead we suggest using **cargo-nextest.**
+## 1. Generate JUnit
 
-## How to output test results to upload to Trunk
+Use `cargo-nextest` to run your Rust tests and output JUnit reports. Add this to your nextest configuration:
 
-In your `.config/nextest.toml` config file,  we recommend making a `ci` profile and setting the output format to `junit` for only that profile:
-
+{% code title=".config/nextest.toml" fullWidth="false" %}
 ```toml
-[profile.ci]
-fail-fast = false
+[profile.ci.junit]  # this can be some other profile, too
+path = "junit.xml"
+```
+{% endcode %}
 
-[profile.ci.junit]
-path = "report.xml"
+Run your tests with `cargo-nextest` specifying  `--profile ci` to generate JUnit test reports.
+
+```
+cargo nextest run --profile ci
 ```
 
-The default profile will use standard text output. See full docs for configuring nextest [here](https://nexte.st/docs/configuration/).
+## 2. Output Location
 
-In CI, run tests with the `--profile=ci` argument:
-
-```bash
-cargo nextest run --profile=ci
-```
-
-## Deficiencies
-
-Currently, nextest does not support filenames and lines for test results. Trunk will show this information when available; however, uploading the nextest results will not contain this information.
+When using a profile with JUnit support configured, a JUnit report will be written out to `target/nextest/ci/junit.xml` within the workspace root.
 
 ## Next Step
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [ci-providers](../ci-providers/ "mention") for instructions to do this for the CI system you use.
+JUnit files generated with `cargo-nextest` are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/ci-providers) for a guide on how to upload test results to Trunk.

@@ -1,11 +1,11 @@
 ---
 title: Configuring minitest
-description: minitest is a test runner and testing framework for Ruby
+description: A guide for generating JUnit test reports for minitest tests
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -16,57 +16,27 @@ layout:
 
 # minitest
 
-## How to output test results to upload to Trunk
+## 1. Generate JUnit&#x20;
 
-`minitest` can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output that Trunk can ingest by installing the `minitest` Ruby gem.
+Install the `minitest-reporters` gem:
 
 ```shell
-gem install minitest
+gem install minitest-reporters
 ```
 
-Then require and enable the `minitest` gem in your test code like this:
+Configure the `JUnitReporter` reporter in your `test_helper.rb` file:
 
+{% code title="test_helper.rb" %}
 ```ruby
-# mixer.rb
-require 'minitest/autorun'
-require 'minitest/reporters'
-Minitest::Reporters.use! Minitest::Reporters::JUnitReporter.new('ruby/minitest/results', write_files: true)
-
-class ColorMixerTest < Minitest::Test
-  def test_red_and_blue
-    mixer = ColorMixer.new
-    assert mixer.mix('red', 'blue') == 'purple'
-  end
-end
+require "minitest/reporters"
+Minitest::Reporters.use! Minitest::Reporters::JUnitReporter.new(:reports_dir => "results")
 ```
+{% endcode %}
 
-Run it with `bundle exec ruby ruby/minitest/mixer.rb` and it will produce output that looks like this:
+## 2. Output Location
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="ColorMixerTest" filepath="ruby/minitest/mixer.rb" skipped="0" failures="0" errors="0" tests="3" assertions="3" time="1.7999904230237007e-05">
-    <testcase name="test_red_and_yellow" 
-      lineno="12" 
-      classname="ColorMixerTest" 
-      assertions="1" 
-      time="1.0999967344105244e-05" 
-      file="ruby/minitest/mixer.rb">
-    </testcase>
-  </testsuite>
-</testsuites>
-
-```
-
-## Test Suite Naming
-
-The output file can be configured where you require `minitest` and use the `JUnitReporter`. The first argument to the constructor sets the output file.
-
-```ruby
-Minitest::Reporters.use! Minitest::Reporters::JUnitReporter
-  .new('ruby/minitest/results', write_files: true)
-```
+This will automatically write all test results to JUnit XML files in the `results` directory.
 
 ## Next Step
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
+JUnit files generated with `minitest` are compatible with Trunk Flaky Tests. See [CI Providers](../ci-providers/) for a guide on how to upload test results to Trunk.

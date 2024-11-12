@@ -1,11 +1,11 @@
 ---
 title: Configuring playwright
-description: How to configure JUnit XML output for the Playwright testing framework
+description: A guide for generating JUnit test reports for Playwright tests
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -16,38 +16,28 @@ layout:
 
 # Playwright
 
-## How to output test results to upload to Trunk
+## 1. Generate JUnit
 
-Playwright has multiple built in reporters. To get [XML output](https://github.com/testmoapp/junitxml) that Trunk can ingest use the `junit` reporter.
+Configure Playwright to generate JUnit:
 
-```shell
-npx playwright test --reporter=junit
-```
-
-The output file can be set by either using the `PLAYWRIGHT_JUNIT_OUTPUT_NAME` environment variable or the `outputFile` attribute in the `playwright.config.ts` file.
-
-```shell
-PLAYWRIGHT_JUNIT_OUTPUT_FILE=tests/results.xml npx playwright test --reporter=junit
-```
-
-or
-
+{% code title="playwright.config.ts" %}
 ```typescript
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  reporter: [['junit', { outputFile: 'tests/results.xml' }]],
+  reporter: [
+    ['junit', 
+      { outputFile: 'junit.xml' }
+    ]
+  ],
 });
 ```
+{% endcode %}
 
-See the [Playwright JUnit reporter docs](https://playwright.dev/docs/test-reporters#junit-reporter) for more information.
+## 2. Output Location
 
-## Test Suite Naming
-
-Playwright tests are driven by functions in `*.spec.ts` files. The XML testsuite `name` attributes will automatically be set by the description parameters to the test functions. The `name` attribute of the `<testsuites>` element can be set with the `PLAYWRIGHT_JUNIT_SUITE_NAME` environment variable.
-
-Playwright does not support including the full file path of the failed test in the XML output.
+The JUnit file will be written to the `outputFile` specified in the configuration. In the example above, the results will be written to `junit.xml`.
 
 ## Next Step
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
+JUnit files generated with Playwright are compatible with Trunk Flaky Tests. See [CI Providers](../ci-providers/) for a guide on how to upload test results to Trunk.

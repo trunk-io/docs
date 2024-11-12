@@ -1,11 +1,11 @@
 ---
 title: Configuring cypress
-description: Cypress is a tool for testing dynamic web front end code.
+description: A guide for generating JUnit test reports for Cypress tests
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -16,69 +16,51 @@ layout:
 
 # Cypress
 
-## How to output test results to upload to Trunk
+## 1. Generate JUnit
 
-Cypress can be configured to produce [JUnit XML](https://github.com/testmoapp/junitxml) output that Trunk can ingest by adding the [mocha-junit-reporter](https://github.com/michaelleeallen/mocha-junit-reporter) package to your codebase and modifying the config file to add it as a reporter.
+Update your Cypress config to output JUnit reports:
 
-```shell
-npm install --save-dev mocha-junit-reporter
-```
-
-Edit `cypress.config.js` or [similar file](https://docs.cypress.io/guides/references/configuration):
-
+{% tabs %}
+{% tab title="JavaScript" %}
+{% code title="cypress.config.js" %}
 ```javascript
 const { defineConfig } = require('cypress')
+
 module.exports = defineConfig({
-  reporter: 'junit',
-  reporterOptions: {
-    mochaFile: 'report.xml',
-  },
+  reporter: 'junit',
+  reporterOptions: {
+    mochaFile: 'results/junit.xml',
+    toConsole: true,
+  },
 })
 ```
+{% endcode %}
+{% endtab %}
 
-Now you can run Cypress from the command line with
+{% tab title="Typescript" %}
+{% code title="cypress.config.ts" %}
+```typescript
+import { defineConfig } from 'cypress'
 
-```shell
-cypress run
+export default defineConfig({
+  reporter: 'junit',
+  reporterOptions: {
+    mochaFile: 'results/junit.xml',
+    toConsole: true,
+  },
+})
 ```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
-And from within your CI system the same way
+## 2. Output Location
 
-```shell
-cypress run
-```
-
-## Test Suite Naming
-
-`mocha-junit-reporter` will automatically fill in values for the `<testcase/>` and `<testsuite/>` `name` and `class` attributes. A test suite like this:
-
-```javascript
-describe('addition', () => {
-  describe('positive numbers', () => {
-    it('should add up', () => {
-      expect(1 + 2).toBe(3);
-    });
-  });
-});
-```
-
-will produce output that looks like this:
-
-```xml
-<testsuites name="Mocha Tests">
-  <testsuite name="addition">
-    <testcase classname="addition positive numbers should add up" 
-              name="addition positive numbers should add up">
-    </testcase>
-  </testsuite>
-</testsuites>
-```
-
-The default attributes [can be configured](https://www.npmjs.com/package/mocha-junit-reporter) with the `reporterOptions` argument in the Cypress config.
+The JUnit report location is specified by the `mochaFile` property in your Cypress config. In the above example, the file will be at `results/junit.xml`.
 
 ## Next Step
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
+JUnit files generated with Cypress are compatible with Trunk Flaky Tests. See [CI Providers](../ci-providers/) for a guide on how to upload test results to Trunk.
 
 \
 

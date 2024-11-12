@@ -1,10 +1,11 @@
 ---
 title: Configuring cucumber
+description: A guide for generating JUnit test reports for Cucumber tests
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -15,24 +16,18 @@ layout:
 
 # Cucumber
 
-## How to output test results to upload to Trunk
+## 1. Generate JUnit
 
-Cucumber can be configured to produce [JUnit compatible XML](https://github.com/testmoapp/junitxml), that Trunk can ingest, from the command line with the `--format` command line option. For example, to print the report at `output/report.xml`, use a command line like this:
+Add `--format junit:path/to/junit/output` to your cucumber test command line. For example:
 
-```shell
+```bash
 cucumber tests/test.feature --format junit:output/report.xml
 ```
 
-## Test Suite Naming
+## 2. Output Location
 
-Cucumber's JUnit report formatter has limited configuration options, but does let you set the `testsuite`s `name` attribute. You can set the suite name in the config file or on the command line:
-
-```shell
-cucumber --format junit:report.xml --format-options='{"junit": {"suiteName":"mySuite"} }'
-```
-
-The `--format-options` setting **must** be JSON that is escaped using single quotes. For more details see the [Cucumber Reporting documentation](https://cucumber.io/docs/cucumber/reporting/?lang=java).
+JUnit files will be written according to the path passed to the `--format` option. In the above example, a JUnit file will be written to `output/report.xml`.
 
 ## Next Step
 
-Once youv'e configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
+JUnit files generated with Cucumber are compatible with Trunk Flaky Tests. See [CI Providers](../ci-providers/) for a guide on how to upload test results to Trunk.
