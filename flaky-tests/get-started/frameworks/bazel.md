@@ -28,4 +28,4 @@ For example, a target named `//app/component:test` will generate a JUnit file at
 
 ## Next Step
 
-JUnit files generated with Bazel are compatible with Trunk Flaky Tests. See [CI Providers](../ci-providers/) for a guide on how to upload test results to Trunk.
+JUnit files generated with Bazel are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

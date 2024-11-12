@@ -46,4 +46,4 @@ The `outputDir` and `outputFile` specify the location of the JUnit test report. 
 
 ## Next Step <a href="#next-step" id="next-step"></a>
 
-JUnit files generated with Karma are compatible with Trunk Flaky Tests. See [CI Providers](../ci-providers/) for a guide on how to upload test results to Trunk.
+JUnit files generated with Karma are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

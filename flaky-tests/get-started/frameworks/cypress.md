@@ -40,4 +40,4 @@ The JUnit report location is specified by the `mochaFile` property in your Cypre
 
 ## Next Step
 
-JUnit files generated with Cypress are compatible with Trunk Flaky Tests. See [CI Providers](../ci-providers/) for a guide on how to upload test results to Trunk.
+JUnit files generated with Cypress are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

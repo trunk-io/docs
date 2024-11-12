@@ -36,4 +36,4 @@ Output from `./gradlew connectedAndroidTest` will be written to
 
 ## Next Step
 
-JUnit test reports for Android projects are compatible with Trunk Flaky Tests. See [[ci-providers](../ci-providers/ "mention")](../ci-providers/) for instructions to upload them to Trunk.
+JUnit test reports for Android projects are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

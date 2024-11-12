@@ -37,4 +37,4 @@ When using a profile with JUnit support configured, a JUnit report will be writt
 
 ## Next Step
 
-JUnit files generated with `cargo-nextest` are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/ci-providers) for a guide on how to upload test results to Trunk.
+JUnit files generated with `cargo-nextest` are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.
