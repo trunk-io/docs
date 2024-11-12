@@ -18,9 +18,9 @@ layout:
 
 ## 1. Generate JUnit
 
-Configure the `maven-surefire-plugin` plugin in your pom.xml file:
+Configure the `maven-surefire-plugin` plugin in your `pom.xml` file:
 
-<pre class="language-xml" data-title="pom.xml"><code class="lang-xml"><strong>&#x3C;build>
+<pre class="language-xml"><code class="lang-xml"><strong>&#x3C;build>
 </strong>  &#x3C;plugins>
     &#x3C;plugin>
       &#x3C;groupId>org.apache.maven.plugins&#x3C;/groupId>

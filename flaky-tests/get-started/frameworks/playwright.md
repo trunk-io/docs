@@ -20,7 +20,6 @@ layout:
 
 Configure Playwright to generate JUnit:
 
-{% code title="playwright.config.ts" %}
 ```typescript
 import { defineConfig } from '@playwright/test';
 
@@ -32,7 +31,6 @@ export default defineConfig({
   ],
 });
 ```
-{% endcode %}
 
 ## 2. Output Location
 

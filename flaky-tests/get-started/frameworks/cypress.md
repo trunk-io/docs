@@ -20,8 +20,6 @@ layout:
 
 Update your Cypress config to output JUnit reports:
 
-{% tabs %}
-{% tab title="JavaScript" %}
 {% code title="cypress.config.js" %}
 ```javascript
 const { defineConfig } = require('cypress')
@@ -35,24 +33,6 @@ module.exports = defineConfig({
 })
 ```
 {% endcode %}
-{% endtab %}
-
-{% tab title="Typescript" %}
-{% code title="cypress.config.ts" %}
-```typescript
-import { defineConfig } from 'cypress'
-
-export default defineConfig({
-  reporter: 'junit',
-  reporterOptions: {
-    mochaFile: 'results/junit.xml',
-    toConsole: true,
-  },
-})
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 ## 2. Output Location
 

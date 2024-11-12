@@ -26,7 +26,6 @@ npm install --save-dev jest-junit
 
 Update your Jest config to add `jest-junit` as a reporter:
 
-{% code title="jest.config.json" %}
 ```json
 {
   "reporters": [
@@ -38,7 +37,6 @@ Update your Jest config to add `jest-junit` as a reporter:
   ]
 }
 ```
-{% endcode %}
 
 ## 2. Output Location
 

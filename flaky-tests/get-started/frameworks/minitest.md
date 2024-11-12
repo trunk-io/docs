@@ -26,12 +26,10 @@ gem install minitest-reporters
 
 Configure the `JUnitReporter` reporter in your `test_helper.rb` file:
 
-{% code title="test_helper.rb" %}
 ```ruby
 require "minitest/reporters"
 Minitest::Reporters.use! Minitest::Reporters::JUnitReporter.new(:reports_dir => "results")
 ```
-{% endcode %}
 
 ## 2. Output Location
 

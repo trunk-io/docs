@@ -26,7 +26,6 @@ npm install --save-dev karma-junit-reporter
 
 Add the `junit` reporter to your karma config file:
 
-{% code title="karma.conf.js" %}
 ```javascript
 module.exports = function(config) {
   config.set(
@@ -40,7 +39,6 @@ module.exports = function(config) {
   )
 }
 ```
-{% endcode %}
 
 ## 2. Output Location
 
