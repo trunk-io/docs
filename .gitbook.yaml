@@ -196,3 +196,33 @@ redirects:
   code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/configuration/debugging: code-quality/debugging.md
   check/check-cloud-ci-integration/get-started/github-integration: code-quality/ci-setup/github-integration.md
+  flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite.md
+  flaky-tests/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci.md
+  flaky-tests/ci-providers/droneci: flaky-tests/get-started/ci-providers/droneci.md
+  flaky-tests/ci-providers/github-actions-quickstart: flaky-tests/get-started/ci-providers/github-actions.md
+  flaky-tests/ci-providers/gitlab: flaky-tests/get-started/ci-providers/gitlab.md
+  flaky-tests/ci-providers/other-ci-providers-quickstart: flaky-tests/get-started/ci-providers/otherci.md
+  flaky-tests/ci-providers/semaphore-ci-quickstart: flaky-tests/get-started/ci-providers/semaphoreci.md
+  flaky-tests/ci-providers/travisci: flaky-tests/get-started/ci-providers/travisci.md
+  flaky-tests/frameworks/android: flaky-tests/get-started/frameworks/android.md
+  flaky-tests/frameworks/bazel: flaky-tests/get-started/frameworks/bazel.md
+  flaky-tests/frameworks/cargo-nextest: flaky-tests/get-started/frameworks/cargo-nextest.md
+  flaky-tests/frameworks/cucumber: flaky-tests/get-started/frameworks/cucumber.md
+  flaky-tests/frameworks/cypress: flaky-tests/get-started/frameworks/cypress.md
+  flaky-tests/frameworks/go-junit-report: flaky-tests/get-started/frameworks/go-junit-report.md
+  flaky-tests/frameworks/gotestsum: flaky-tests/get-started/frameworks/gotestsum.md
+  flaky-tests/frameworks/jasmine: flaky-tests/get-started/frameworks/jasmine.md
+  flaky-tests/frameworks/jest: flaky-tests/get-started/frameworks/jest.md
+  flaky-tests/frameworks/karma: flaky-tests/get-started/frameworks/karma.md
+  flaky-tests/frameworks/maven: flaky-tests/get-started/frameworks/maven.md
+  flaky-tests/frameworks/minitest: flaky-tests/get-started/frameworks/minitest.md
+  flaky-tests/frameworks/mocha: flaky-tests/get-started/frameworks/mocha.md
+  flaky-tests/frameworks/phpunit: flaky-tests/get-started/frameworks/phpunit.md
+  flaky-tests/frameworks/playwright: flaky-tests/get-started/frameworks/playwright.md
+  flaky-tests/frameworks/pytest: flaky-tests/get-started/frameworks/pytest.md
+  flaky-tests/frameworks/rspec: flaky-tests/get-started/frameworks/rspec.md
+  flaky-tests/frameworks/swift-testing: flaky-tests/get-started/frameworks/swift-testing.md
+  flaky-tests/frameworks/unittest: flaky-tests/get-started/frameworks/unittest.md
+  flaky-tests/frameworks/vitest: flaky-tests/get-started/frameworks/vitest.md
+  flaky-tests/frameworks/xctest: flaky-tests/get-started/frameworks/xctest.md
+
