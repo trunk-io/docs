@@ -8,7 +8,7 @@ Trunk Flaky Tests works by changing all of your CI jobs that run tests to upload
 
 You must create an account and Trunk organization to complete the steps below.&#x20;
 
-### 2. Configure your test framework to output test results
+### 2. Configure your test framework to output compatible test results
 
 For Trunk to start detecting flaky tests, it needs to ingest the results from all of your CI test runs. To get started, configure your test framework (jest, pytest, gtest, etc) to output results. You'll do this only for CI jobs, _not_ for running tests locally.
 
@@ -20,7 +20,7 @@ After you've set your test framework to output test results, you're ready to act
 
 Check out our guides to the most popular CI systems: [ci-providers](ci-providers/ "mention")
 
-Once you've merged changes to your CI test jobs, make sure you've run at least 1 testing job and your newly added upload step has completed.
+Once you've merged changes to your CI test jobs, make sure you've run at least 1 testing job, and your newly added upload step has completed.
 
 ### 4. Confirm your configuration, analyze your dashboard
 

@@ -70,11 +70,13 @@ If you receive an error that the org slug or API token is not found, double chec
 
 Make sure you are getting your _Organization Slug_, not the Organization Name.
 
-<figure><img src="../.gitbook/assets/Organization Slug.png" alt=""><figcaption><p>Get the Organization Slug</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/org-slug-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/org-slug-light.png" alt=""></picture><figcaption><p>Get the Organization Slug</p></figcaption></figure>
 
 Ensure you get your _Organization API Token_, _**not your repo token**_.
 
-<figure><img src="../.gitbook/assets/Organization API Token.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/org-token-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/org-token-light.png" alt=""></picture><figcaption></figcaption></figure>
+
+
 
 ### Test results aren't uploading
 

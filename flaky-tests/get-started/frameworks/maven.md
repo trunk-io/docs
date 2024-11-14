@@ -1,11 +1,11 @@
 ---
 title: Configuring maven
-description: Maven is a build and testing tool for Java projects
+description: A guide for generating JUnit test reports for Maven tests
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -16,44 +16,38 @@ layout:
 
 # Maven
 
-## How to output test results to upload to Trunk
+## 1. Generate JUnit
 
-When a Maven project is tested with `mvn test` it does not automatically produce [JUnit XML](https://github.com/testmoapp/junitxml) output. You can enable XML output that Trunk can ingest with the [Surefire plugin](https://maven.apache.org/surefire/maven-surefire-plugin/). To enable it, add the following to the `plugins` section of your `pom.xml` file. This process is the same whether you use test using JUnit or TestNG.
-
-```xml
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-surefire-plugin</artifactId>
-  <version>3.3.1</version>
-</plugin>
-```
-
-and then run
-
-```shell
-mvn test
-```
-
-The output will be in the `target/surefire-reports` directory.
-
-## Test Suite Naming
-
-You can change the output filename with the `<reportsDirectory>` property.
+Configure the `maven-surefire-plugin` plugin in your `pom.xml` file:
 
 ```xml
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-surefire-report-plugin</artifactId>
-  <version>3.3.1</version>
-  <configuration>
-    <reportsDirectory>coolthing</reportsDirectory>
-  </configuration>
-</plugin>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.22.0</version>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.maven.surefire</groupId>
+          <artifactId>surefire-junit4</artifactId>
+          <version>2.22.0</version>
+        </dependency>
+      </dependencies>
+      <configuration>
+        <includes>
+          <include>**/*.java</include>
+        </includes>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
 ```
 
-You can see a full list of configuration options [here](https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#reportsDirectory).
+## 2. Output Location
+
+The JUnit report will be in the `target/surefire-reports` directory.
 
 ## Next Step
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
-
+JUnit files generated with Maven are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

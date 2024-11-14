@@ -55,6 +55,10 @@ jobs:
 
 See the [Uploader CLI Reference](https://docs.trunk.io/flaky-tests/uploader) for all available command line arguments and usage.
 
+#### Stale files
+
+Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
+
 **Need Help?**
 
 Join the [Trunk Slack Community](https://slack.trunk.io/) for live support.

@@ -20,7 +20,7 @@ Flaky Tests considers failures on PRs to be a weaker signal for flaky tests than
 
 ### Key Repo Metrics
 
-<figure><img src="../.gitbook/assets/BFNs (2).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/key-metrics-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/key-metrics-light.png" alt=""></picture><figcaption><p>Key repo metrics</p></figcaption></figure>
 
 Trunk Flaky Test provides key repo metrics based on the detected health status of your tests. At the top of the Flaky Test dashboard, you’ll find metrics for the following information.
 
@@ -32,14 +32,11 @@ Trunk Flaky Test provides key repo metrics based on the detected health status o
 | PRs rescued by quarantining | This figure is available if you have [quarantining](quarantining.md) set to preview or enabled. This shows the PRs with CI jobs containing quarantined flaky tests that would have failed if all flaky tests were not quarantined. |
 | Engineering hours saved     | Estimated engineering hours saved based on the study [The Cost of Interrupted Work](https://ics.uci.edu/\~gmark/chi08-mark.pdf), where each context switch to debug a flaky test costs 23 minutes of focused productivity.         |
 
-\
-
-
 These numbers are important for understanding the overall health of your repo’s tests, how much flaky and broken tests impact your developer productivity, and the developer hours saved from quarantining tests. You can also view the trends in these numbers in the trend charts.
 
 ### Tests Cases Overview
 
-<figure><img src="../.gitbook/assets/BFNs (3).png" alt=""><figcaption><p>A table overview of all tests and their status.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/dashboard-test-list-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dashboard-test-list-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 You can view a table of all your test cases and their current status in Trunk Flaky Tests. There are three different tables for tests labeled Flaky, Broken, and Healthy. \
 
@@ -58,20 +55,20 @@ You can click on any of the test cases listed on the Flaky Test dashboard to acc
 
 ### **Unique Failure Reasons**
 
-<figure><img src="../.gitbook/assets/unique failure reasons (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Unique failures show a history of all past runs for this test case over the selected time period with a list of unique failure types. You can click a failure type to see them highlighted in the timeline.
 
-The test types are a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs, labeled by branch, PR, Author, CI Job link, commit hash, duration, and time. You can click on a test run to see the detailed stack trace and similar failures on this test case and other test cases.
+The test types are a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, commit hash, duration, and time. You can click on a test run to see the detailed stack trace and similar failures on this test case and other test cases.
 
 ### **PRs Impacted**
 
-<figure><img src="../.gitbook/assets/prs impacted (1).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/prs-impacted-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/prs-impacted-light (1).png" alt=""></picture><figcaption></figcaption></figure>
 
-You can see a list of PRs impacted by failures for this test case. Each entry has links to the PR and the CI jobs impacted.
+You can see a list of PRs impacted by failures for this test case. Each entry has links to the PR, and the CI jobs impacted.&#x20;
 
 ### **Status History**
 
-<figure><img src="../.gitbook/assets/status history.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/status-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/status-history-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Tests may transition between flaky, broken, and healthy states multiple times over its lifetime. You can see previous changes in the detected health status of the test under Status History, as well as an explanation for why it was detected to have a new state.

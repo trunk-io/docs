@@ -1,11 +1,11 @@
 ---
 title: Configuring bazel
-description: Bazel is a scalable build and test system
+description: A guide for generating JUnit test reports with Bazel
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -16,18 +16,16 @@ layout:
 
 # Bazel
 
-### How to upload test results to Trunk
+## 1. Generate JUnit
 
-By default `bazel test` will output JUnit compatible XML that Trunk can ingest. By default the XML output will go to `./bazel-testlogs/TEST_NAME/test.xml` along with the other test outputs. This cannot be changed.
+The `bazel test` command outputs a JUnit for every test target in a test invocation.
 
-## Test Suite Naming
+## 2. Output Location
 
-By default `bazel test` will produce XML output in a file named `test.xml`. This cannot be customized.
+By default the JUnit output will be written to the `bazel-testlogs` output directory. The file containing JUnit is written to a directory with the same path as the test target.&#x20;
+
+For example, a target named `//app/component:test` will generate a JUnit file at `bazel-testlogs/app/component/test.xml`.
 
 ## Next Step
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](https://docs.trunk.io/flaky-tests/ci-providers) for instructions to do this for the CI system you use.
-
-\
-
-
+JUnit files generated with Bazel are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

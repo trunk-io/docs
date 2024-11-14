@@ -66,11 +66,11 @@ blocks:
             - ./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug <TRUNK_ORG_SLUG> --token ${TRUNK_TOKEN}
 ```
 
-## Hourly Tests
-
-Running on a golden branch is how we detect that tests are flaky. Create a copy of your `semaphore.yml` file called `hourly.yml` . In your Semaphore dashboard, create a new task to run tests on the main branch, and link to the `hourly.yml` file. Schedule it to run **every hour, every day**. Click _Create_ then manually run the workflow to check that it's working. Now you can look at the data being collected in Trunk's [Flaky Tests dashboard](https://app.trunk.io/). The source for the settings above are available in our [SemaphoreFlakyTestExample](https://github.com/mmatheson/SemaphoreFlakyTestExample) repo.
-
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
+
+#### Stale files
+
+Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
 
 #### Need Help?
 
