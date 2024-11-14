@@ -136,6 +136,7 @@ redirects:
   docs/ci-debugger: ci-debugger/readme.md
   docs/ci: check/check-cloud-ci-integration/readme.md
   docs/cli: check/cli/readme.md
+  docs/code-quality: code-quality/README.md
   docs/get-started: welcome.md
   docs/getting-started: welcome.md
   docs/github-app-permissions: administration/github-app-permissions.md
