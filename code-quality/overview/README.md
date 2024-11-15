@@ -66,7 +66,7 @@ Trunk Code Quality speeds up PR iteration by showing the _same_ results locally 
 
 #### **Lack of team visibility into the repo's health**
 
-Trunk Code Quality improves team communication by providing a [web app](https://app.trunk.io/login?intent=check) for repo stats and [Slack notifications](../../administration/integration-for-slack.md), ensuring everyone on the team is aware of the current health of your repo.
+Trunk Code Quality improves team communication by providing a [web app](https://app.trunk.io/login?intent=code+quality) for repo stats and [Slack notifications](../../administration/integration-for-slack.md), ensuring everyone on the team is aware of the current health of your repo.
 
 ### Components
 
