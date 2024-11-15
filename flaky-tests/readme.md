@@ -10,6 +10,10 @@ Trunk Flaky Tests lets your teams detect, track, quarantine, and fix **flaky tes
 
 Let's explore how Trunk Flaky Tests' features help you tackle Flaky Tests. If you can't wait to try Trunk, follow our [getting started guide](https://docs.trunk.io/flaky-tests/get-started).
 
+You can see a tour of Trunk Flaky Tests in this video.
+
+{% embed url="https://youtu.be/F2lyu9s-rxs" %}
+
 ### Understand The Impact
 
 Your dashboard shows a comprehensive overview of your test suite's health at a glance. It lets you see important impact metrics like the number of flaky tests, broken tests, PRs impacted by flaky tests, and PRs rescued by quarantining flaky tests.
