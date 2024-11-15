@@ -1,10 +1,10 @@
 # Nightly Report
 
-Trunk Code Quality has the ability to post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=check). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
+Trunk Code Quality has the ability to post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=code+quality). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
 
 ### Connect your Trunk organization to GitHub
 
-Sign up at [app.trunk.io](https://app.trunk.io), create a Trunk organization, and connect it to your repositories. You will need to grant the following GitHub App permissions.
+Sign up at [app.trunk.io](https://app.trunk.io?intent=code+quality), create a Trunk organization, and connect it to your repositories. You will need to grant the following GitHub App permissions.
 
 {% @supademo/embed demoId="HXyBmoBn0_OX9Xite2fqd" url="https://app.supademo.com/demo/HXyBmoBn0_OX9Xite2fqd" %}
 
@@ -26,7 +26,7 @@ If you would like to receive notifications for new issues Trunk finds in your re
 
 Trunk Code Quality will automatically run on your repos with a Trunk configuration present when you install the GitHub app. This will work similar to what's shown in the [Prevent New Issues](../setup-and-installation/prevent-new-issues.md) page.
 
-Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?check\_run\_id=15730277425) in our `plugins` repository. If you don't want Trunk Code Quality to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
+Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?check\_run\_id=15730277425) in our `plugins` repository. If you don't want Trunk Code Quality to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=code+quality).
 
 #### Scanning your repository
 
@@ -37,7 +37,7 @@ This allows you to build confidence in the code health of your repositories:
 * You will be alerted quickly in a [Heartbleed-type](https://heartbleed.com/) event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
 * You can monitor how many Code Quality issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
 
-If you don't want Trunk Code Quality to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
+If you don't want Trunk Code Quality to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=code+quality).
 
 #### **Get Slack notifications about new issues in your repository**
 

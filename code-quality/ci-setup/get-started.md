@@ -4,7 +4,7 @@ description: Automate your code quality enforcement with just a few clicks.
 
 # GitHub Integration
 
-Trunk Code Quality has the ability to post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=check). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
+Trunk Code Quality has the ability to post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=code+quality). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
 
 ## Connect your Trunk organization to GitHub
 
@@ -45,7 +45,7 @@ This allows you to build confidence in the code health of your repositories:
 * You will be alerted quickly in a [Heartbleed-type](https://heartbleed.com/) event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
 * You can monitor how many Code Quality issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
 
-If you don't want Trunk Code Quality to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
+If you don't want Trunk Code Quality to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=code+quality).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-08-23 173119.png" alt=""><figcaption><p>Trunk Code Quality showing all the issues present in trunk-demo1/sass</p></figcaption></figure>
 
@@ -87,7 +87,7 @@ This can be helpful if Code Quality is flagging known issues in a given PR that 
 
 </details>
 
-If you don't want Trunk Code Quality to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=check).
+If you don't want Trunk Code Quality to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=code+quality).
 
 ### Uploading Results
 
