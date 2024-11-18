@@ -12,7 +12,7 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 ### 1. Store a TRUNK\_TOKEN secret in your CI system
 
-In [app.trunk.io](http://app.trunk.io), navigate to:
+In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), navigate to:
 
 **`Settings` -> `Manage Organization` -> `Organization API Token`**
 
@@ -20,7 +20,7 @@ From your Semaphore dashboard, store your API Token in a secret named `TRUNK_TOK
 
 ### 2. Grab your Organization Slug
 
-To upload test results to Trunk, you'll need to pass a Trunk Org Slug to the upload command. To get your organization slug, in [app.trunk.io](http://app.trunk.io), navigate to:
+To upload test results to Trunk, you'll need to pass a Trunk Org Slug to the upload command. To get your organization slug, In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), navigate to:
 
 &#x20;**`Settings` -> `Manage` -> `Organization` -> `Organization Slug`**
 

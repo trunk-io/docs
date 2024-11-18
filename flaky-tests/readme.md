@@ -68,4 +68,4 @@ To learn more, [learn about our ticketing integrations](jira-integration.md).
 
 ### **Join Trunk Flaky Tests**
 
-Start finding flaky tests today by [signing up for Trunk](https://app.trunk.io/) or reading our [Getting Started guides](get-started/).
+Start finding flaky tests today by [signing up for Trunk](https://app.trunk.io/login/?intent=flaky+tests) or reading our [Getting Started guides](get-started/).
