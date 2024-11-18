@@ -4,7 +4,7 @@
 
 Trunk Flaky Tests works by changing all of your CI jobs that run tests to upload their test results to Trunk. This setup looks slightly different depending on which CI system and test framework(s) you use, but we have guides for all the popular systems.
 
-### 1. Sign up for [app.trunk.io](https://app.trunk.io/?intent=flaky+tests)
+### 1. Sign up for [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests)
 
 You must create an account and Trunk organization to complete the steps below.&#x20;
 
@@ -24,7 +24,7 @@ Once you've merged changes to your CI test jobs, make sure you've run at least 1
 
 ### 4. Confirm your configuration, analyze your dashboard
 
-In [app.trunk.io](https://app.trunk.io/?intent=flaky+tests), select the repo you're working in, and navigate to `Flaky Tests` -> `Uploads`. Confirm that you see the upload(s) from the previous step.
+In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), select the repo you're working in, and navigate to `Flaky Tests` -> `Uploads`. Confirm that you see the upload(s) from the previous step.
 
 Trunk needs to ingest a large amount of test data from a variety of pull request branches and protected branches (like `main` or `master`) before it can start accurately detecting flaky tests. This may happen quickly if you have a very high-velocity repo and run test jobs hundreds of times a day.
 

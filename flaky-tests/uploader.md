@@ -66,7 +66,7 @@ The `trunk` binary should be run from the repository root. If you need to run th
 
 ### Organization not found
 
-If you receive an error that the org slug or API token is not found, double check that the secrets stored in your CI provider are the same as the Organization settings by navigating to **Settings** -> **Manage** -> **Organization** on [app.trunk.io](https://app.trunk.io/?intent=flaky+tests).
+If you receive an error that the org slug or API token is not found, double check that the secrets stored in your CI provider are the same as the Organization settings by navigating to **Settings** -> **Manage** -> **Organization** on [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests).
 
 Make sure you are getting your _Organization Slug_, not the Organization Name.
 

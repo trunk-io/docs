@@ -12,7 +12,7 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 ### 1. Store a TRUNK\_TOKEN secret in your CI system
 
-In [app.trunk.io](https://app.trunk.io/?intent=flaky+tests), navigate to:
+In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), navigate to:
 
 
 **`Settings` -> `Manage Organization` -> `Organization API Token`**
@@ -21,7 +21,7 @@ Store your API Token in a [Buildkite CI secret](https://buildkite.com/docs/pipel
 
 ### 2. Grab your Organization Slug
 
-To upload test results to Trunk, you'll need to pass a Trunk Org Slug to the upload command. To get your organization slug, In [app.trunk.io](https://app.trunk.io/?intent=flaky+tests), navigate to:
+To upload test results to Trunk, you'll need to pass a Trunk Org Slug to the upload command. To get your organization slug, In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), navigate to:
 
 &#x20;**`Settings` -> `Manage` -> `Organization` -> `Organization Slug`**
 
