@@ -8,7 +8,6 @@ Trunk Code Quality has the ability to post its results to the [Trunk Code Qualit
 
 ## Connect your Trunk organization to GitHub
 
-
 Sign up at [app.trunk.io](https://app.trunk.io/login?intent=code+quality), create a Trunk organization, and connect it to your repositories. You will need to grant the following [GitHub App permissions](../../administration/github-app-permissions.md).
 
 {% @supademo/embed demoId="HXyBmoBn0_OX9Xite2fqd" url="https://app.supademo.com/demo/HXyBmoBn0_OX9Xite2fqd" %}
