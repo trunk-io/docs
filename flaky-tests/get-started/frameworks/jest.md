@@ -29,11 +29,14 @@ Update your Jest config to add `jest-junit` as a reporter:
 ```json
 {
   "reporters": [
-    "default",
-    "jest-junit": {
-      "outputDirectory": "./test_results",
-      "outputName": "report.xml"
-    }
+    [
+      "jest-junit",
+      {
+        "outputDirectory": "./test_results",
+        "outputName": "report.xml",
+        "addFileAttribute": "true"
+      }
+    ]
   ]
 }
 ```
