@@ -20,38 +20,15 @@ If you would like to receive notifications for new issues Trunk finds in your re
 
 {% @supademo/embed demoId="cllpdjqhy1jf1051a1nff1a3y" url="https://app.supademo.com/demo/cllpdjqhy1jf1051a1nff1a3y" %}
 
-### Automated Runs
-
-#### **Ensure that PRs are free of issues**
-
-Trunk Code Quality will automatically run on your repos with a Trunk configuration present when you install the GitHub app. This will work similar to what's shown in the [Prevent New Issues](../setup-and-installation/prevent-new-issues.md) page.
-
-Check out [this example](https://github.com/trunk-io/plugins/pull/424/checks?check\_run\_id=15730277425) in our `plugins` repository. If you don't want Trunk Code Quality to run on pull requests, turn it off in [your repository's settings](https://app.trunk.io/login?intent=code+quality).
-
-#### Scanning your repository
-
-Trunk Code Quality can scan your repository for Code Quality issues on a daily cadence, upload them to Trunk for you to review at your convenience, and notify you via Slack whenever new issues are discovered in your repository.
-
-This allows you to build confidence in the code health of your repositories:
-
-* You will be alerted quickly in a [Heartbleed-type](https://heartbleed.com/) event, giving you assurances about whether or not a newly discovered vulnerability affects any of your repositories, and
-* You can monitor how many Code Quality issues exist in each of your repositories and make data-driven decisions about prioritizing efforts to reduce tech debt
-
-If you don't want Trunk Code Quality to scan your repository on a daily cadence or notify you, you can turn it off in [your repository's settings](https://app.trunk.io/login?intent=code+quality).
-
-#### **Get Slack notifications about new issues in your repository**
-
-Not only do our daily scans allow you to browse and triage the issues in your repository, but they can also notify you when new security issues are discovered in packages you already depend on.
-
-### **Uploading Results**
+### **How Trunk Uploading Results**
 
 The upload feature of Trunk Code Quality will upload all of the issues found by Trunk to the Trunk services. In order to get an accurate picture of the state of your repository, you'll want to upload all of the Trunk Code Quality issues for your whole repository.
 
-Generally this should be done within your Continuous Integration system (CI) automatically whenever **pull requests are filed or pushed to a specific branch** in your repo. Trunk Code Quality can also **run periodically** to check for new vulnerabilities in your dependencies.
+Generally, this is done within your Continuous Integration system (CI) automatically whenever **pull requests are filed or pushed to a specific branch** in your repo. Trunk Code Quality can also **run periodically** to check for new vulnerabilities in your dependencies.
 
 #### **How Does It Work?**
 
-Under the hood, the GitHub integration does the following to your organization to enable Trunk Code Quality in GitHub Actions Workflows:
+Under the hood, the GitHub integration does the following for your organization to enable Trunk Code Quality in GitHub Actions Workflows:
 
 * An installation of the Trunk.io GitHub app in your GitHub organization
 * A `.trunk` repository in your GitHub organization.
