@@ -16,7 +16,7 @@ Each GitHub comment has a full summary report, containing all tests that passed,
 
 Each test case also contains the full stack trace attached when opened. You can also click on the **Job run** link which will take you to the full CI logs.
 
-<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (4).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (5).png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99/real-saas-app&#x26;intervalDays=14%20(4).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99/real-saas-app&#x26;intervalDays=14%20(5).png" alt=""></picture><figcaption></figcaption></figure>
 
 ## Configuration
 
@@ -42,7 +42,7 @@ It's recommended that the Trunk GitHub App be used to manage GitHub comments. If
 
 You should see comments posted by your service account on your next PR.
 
-#### GitHub Org Ownership
+**GitHub Org Ownership**
 
 If you wish to set the resource owner to be a GitHub Organization, you should double check that this is allowed by navigating to your **GitHub Organization** > **Settings** > **Personal access tokens** > **Settings**. Make sure under "_Fine-grained personal access tokens_", you have _"Allow access via fine-grained personal access tokens"_ selected.
 

@@ -40,13 +40,13 @@ To learn more, [see our docs about GitHub Comments and Test Summaries](github-pu
 
 ### Investigate Flaky Failures
 
-Flaky Tests creates detailed reports for individual test failures so you can debug faster.&#x20;
+Flaky Tests creates detailed reports for individual test failures so you can debug faster.
 
 <figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption><p>Summary of unique failure types.</p></figcaption></figure>
 
 Test details will summarize all the unique ways a flaky test fails and let you flip through the relevant stack traces in the Trunk app.
 
-<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (4).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (5).png" alt=""></picture><figcaption><p>Full failure stack traces</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99/real-saas-app&#x26;intervalDays=14%20(4).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99/real-saas-app&#x26;intervalDays=14%20(5).png" alt=""></picture><figcaption><p>Full failure stack traces</p></figcaption></figure>
 
 To learn more, [see our docs about the detection of flaky tests](detection.md#test-case-details).
 
