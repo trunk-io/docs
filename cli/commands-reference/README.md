@@ -22,7 +22,7 @@ trunk version
 
 ### trunk upgrade
 
-`trunk upgrade`: Upgrade Trunk and its linters to the latest releases.&#x20;
+`trunk upgrade`: Upgrade Trunk and its linters to the latest releases.
 
 #### **Usage** **example**
 
@@ -183,7 +183,7 @@ trunk config print
 trunk cache clean
 ```
 
-### trunk cache prine
+### trunk cache prune
 
 `trunk cache prune`: Prune unused cached files.
 
