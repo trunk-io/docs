@@ -32,11 +32,11 @@ The `trunk` command-line tool can upload and analyze test results. All of the fo
 
 Run the command line with one of the following commands
 
-| Command  | Description                                          |
-| -------- | ---------------------------------------------------- |
-| `test`   | Test the upload process, but do not upload any data. |
-| `upload` | Upload data to Trunk Flaky Tests                     |
-| `help`   | Print the help message                               |
+| Command          | Description                                                                                                                                         |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `upload`         | Upload data to Trunk Flaky Tests                                                                                                                    |
+| `validate`       | Validates if the provided JUnit XML files and prints any errors.                                                                                    |
+| `test <COMMAND>` | Runs tests using the provided command, uploads results, checks whether the failures are quarantined tests, and correct the exit code based on that. |
 
 The `upload` command uses the following arguments
 
@@ -75,8 +75,6 @@ Make sure you are getting your _Organization Slug_, not the Organization Name.
 Ensure you get your _Organization API Token_, _**not your repo token**_.
 
 <figure><picture><source srcset="../.gitbook/assets/org-token-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/org-token-light.png" alt=""></picture><figcaption></figcaption></figure>
-
-
 
 ### Test results aren't uploading
 
