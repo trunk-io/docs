@@ -16,12 +16,6 @@ When quarantining is enabled, tests that are _known_ to be flaky or broken will 
 
 Tests that are overridden to always quarantine will also be quarantined, even if the test breaks for the first time. [Learn more about overriding.](quarantining.md#overriding-individual-tests)
 
-### Quarantining Modes
-
-Quarantining operates in one of three modes, disabled, enabled, and preview. If you’re trying quarantining for the first time in a project, you can enable the preview mode, which will show you what could be quarantined but will not affect your CI job results.
-
-<table data-header-hidden><thead><tr><th width="167"></th><th></th></tr></thead><tbody><tr><td>Mode</td><td>Behavior</td></tr><tr><td>Disabled</td><td>No tests will be quarantined.</td></tr><tr><td>Enabled</td><td>If CI jobs use the<a href="quarantining.md#enable-quarantining"> Analytics Uploader with Quarantining enabled</a>, failed flaky tests will be quarantined. If all failed tests are quarantined, the CI job result will be overridden as a pass.</td></tr><tr><td>Preview</td><td>If CI jobs use the<a href="quarantining.md#enable-quarantining"> Analytics Uploader with Quarantining enabled</a>, failed flaky tests will be displayed as quarantined in the Flaky Test web app, but the CI jobs will not be overridden as a pass.</td></tr></tbody></table>
-
 ### Enable Quarantining
 
 {% hint style="warning" %}
