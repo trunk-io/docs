@@ -48,6 +48,20 @@ trunk config share
 
 or click on the notification to "Share trunk config", which will commit `.trunk/trunk.yaml`, the Trunk configuration file.
 
+### Trunk as default formatter
+
+Trunk does register as a formatter in vscode, remember that project should have Trunk enabled.
+
+You can set `trunk.io` as the default formatter for just one language as in the example, or as a default for all languages.
+In your settings json via:
+```json
+"[markdown]": {
+  "editor.defaultFormatter": "trunk.io"
+}
+```
+
+For manual formatting, from command pallete use `Format Document With...` and select `Trunk` there.
+
 ### Learn more
 
 Check out how to [install the CLI](../setup-and-installation/), [set it up in CI](../setup-and-installation/initialize-trunk.md), [ignore issues](../linters/ignoring-issues-and-files.md), and set up [Custom Linters](../linters/custom-linters.md).
