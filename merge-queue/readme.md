@@ -16,7 +16,7 @@ Merge queues automate PR merges into your repo's `main` branch, ensuring incompa
 
 ### **Why do teams adopt a merge queue?**
 
-As the number of concurrent, changes to a repository grows, the likelihood that your pull request has stale/invalid test results increases. The only way to guarantee that your `main` branch doesn not become "broken" is to make sure that all code changes are tested against the head of `main`.
+As the number of concurrent, changes to a repository grows, the likelihood that your pull request has stale/invalid test results increases. The only way to guarantee that your `main` branch does not become "broken" is to make sure that all code changes are tested against the head of `main`.
 
 As an example:
 
