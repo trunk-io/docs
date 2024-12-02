@@ -22,17 +22,55 @@ Tests that are overridden to always quarantine will also be quarantined, even if
 Enabling quarantining will drastically affect the results of CI jobs. Only new test failures introduced by your PR will fail CI jobs, known **flaky and broken** tests will no longer fail CI jobs. [Learn more about the effects of quarantining](quarantining.md#whats-affected)
 {% endhint %}
 
-**Update CI Jobs**
+Before tests can be quarantined on a CI job, quarantining needs to be enabled for your Analytics Uploader.
 
-Before tests can be quarantined on a CI job, quarantining needs to be enabled for your Analytics Uploader. There are two ways to do this, wrapping the test command and a followup step.
+With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky or broken, it will be quarantined. If all failed tests are flaky then the exit code of the test command will be overridden to return 0 which means the CI job will pass.
 
-With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests.[ If a test is known to be flaky](#user-content-fn-1)[^1], it will be quarantined. If all failed tests are flaky then the exit code of the test command will be overridden to return 0 which means the CI job will pass.
+#### Update Flaky Test Settings
 
-#### Wrapping the command
+You can enable quarantining by navigating to **Settings** > **Repositories** > **Flaky Tests** > **Quarantine Flaky Tests** and selecting enabled in the drop-down.
 
-The test command needs to be run via the Analytics Uploader through the `run: <COMMAND TO RUN TESTS>` parameter and have `quarantine: true`passed to the Analytics Uploader to enable quarantining. This will override the response code of the test command.
+<figure><picture><source srcset="../.gitbook/assets/enable-flaky-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/enable-flaky-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-Here is an example of a GitHub workflow:
+Here's what each of these options does when enabled:
+
+<table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>When enabled, tests will be quarantined if the <a href="quarantining.md#updates-in-ci">necessary configurations</a> are made in CI.</td></tr><tr><td>Auto-Quarantine</td><td>When enabled, flaky tests are automatically quarantined. When disabled, only flaky tests which are <a href="quarantining.md#overriding-individual-tests">manually marked as flaky</a> are quarantined.</td></tr><tr><td>Summary Test Reports</td><td>When enabled, PRs will generate a report covering test results, test health, and quarantining status. This will be accessible in the web app and as a GitHub comment. Learn more about <a href="github-pull-request-comments.md">PR Test Summaries</a></td></tr><tr><td>Public Dashboard Access</td><td>When enabled, unauthenticated users will get read-only access to your Flaky Tests dashboard, which is particularly useful for open-source projects.</td></tr></tbody></table>
+
+#### Updates In CI
+
+If you're using the provided GitHub Actions workflow to upload test results to Trunk, you can quarantine flaky tests by wrapping the test command or quarantining as a follow-up step. You may need to update your workflow to make sure that the test step
+
+{% tabs %}
+{% tab title="GitHub Actions Workflow" %}
+If you're using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, you may need to modify your workflow files to support quarantining. If you're using the Trunk CLI directly or using other CI providers, check the instructions in the **Using The Trunk CLI Directly** tab.
+
+If you upload your test results as a second step after you run your tests,  **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures. Here's an example file.
+
+<pre class="language-yaml" data-line-numbers><code class="lang-yaml"><strong>name: Run Tests And Upload results
+</strong>on:
+  workflow_dispatch:
+jobs:
+  upload-test-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:   
+<strong>    - name: Run Tests
+</strong>      id: unit_tests
+      shell: bash
+      run: &#x3C;COMMAND TO RUN TESTS>
+      continue-on-error: true
+        
+    - name: Upload JUnit.xml
+      if: always()
+      uses: trunk-io/analytics-uploader@main
+      with:
+        junit-paths: &#x3C;TEST OUTPUT PATH>
+        org-slug: my-trunk-org-slug
+        token: ${{ secrets.TRUNK_API_TOKEN }}
+        quarantine: true
+</code></pre>
+
+If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter. This will override the response code of the test command. Make sure to set `continue-on-error: false` so unquarantined tests are blocking.
 
 ```yaml
 name: Run Tests And Upload results
@@ -55,47 +93,41 @@ jobs:
           org-slug: my-trunk-org-slug
           quarantine: true
 ```
+{% endtab %}
 
-#### Quarantining as a separate step
+{% tab title="Using The Trunk CLI Directly" %}
+#### Using Flaky Tests as a separate step
 
-You can also quarantine your tests as a follow-up step. If you're already uploading flaky test results as a second step, you need to enable `quarantine: true` on your Analytics Uploader step, then add `continue-on-error: true` on your test step so your CI job will continue even on failures.
+If you upload your test results as a second step after you run your tests,  you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled the `flakytests upload` command will **return an error** if there are unquarantined failures, and return a status code 0 if all tests are quarantined.\
 
-Here is an example of a GitHub workflow:
 
-<pre class="language-yaml"><code class="lang-yaml"><strong>name: Run Tests And Upload results
-</strong>on:
-  workflow_dispatch:
-jobs:
-  upload-test-results:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    steps:   
-<strong>    - name: Run Tests
-</strong>      id: unit_tests
-      shell: bash
-      run: |
-        bazel test --compilation_mode=opt --build_tag_filters=-docker,-manual \
-          --test_tag_filters=-docker,-manual --test_env=DISABLE_JEST_RETRY=1 \
-          --flaky_test_attempts=1 --cache_test_results=no //...
-      continue-on-error: true
-        
-    - name: Upload JUnit.xml
-      if: always()
-      uses: trunk-io/analytics-uploader@main
-      with:
-        junit-paths: &#x3C;TEST OUTPUT PATH>
-        org-slug: my-trunk-org-slug
-        token: ${{ secrets.TRUNK_API_TOKEN }}
-        quarantine: true
-</code></pre>
+```bash
+<run my tests> || true # doesn't fail job on failure
+|
+    ./flakytests upload \
+--org-url-slug $TRUNK_ORG_SLUG \
+--token $TRUNK_API_TOKEN \
+--junit-paths $JUNIT_PATH
+```
 
-#### Update Flaky Test Settings
 
-You can enable quarantining by navigating to **Settings** > **Repositories** > **Flaky Tests** > **Quarantine Flaky Tests** and selecting enabled in the drop-down.
 
-<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (8).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99%2Freal-saas-app&#x26;intervalDays=14 (9).png" alt=""></picture><figcaption></figcaption></figure>
+#### Using Flaky Tests as a single step
 
-After enabling quarantining on Trunk Flaky Tests, future CI jobs with quarantining enabled on the Analytics Uploader will begin quarantining failed flaky tests.
+You can also wrap the test command with the Trunk CLI. When wrapping the command with the Trunk CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code 0.
+
+{% code overflow="wrap" %}
+```bash
+./flakytests test \
+    --org-url-slug <TRUNK_ORG_SLUG> \
+    --token $TRUNK_API_TOKEN \
+    --junit-paths $JUNIT_PATH \
+    --allow-empty-test-results \
+    <Test Command>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 #### Overriding Individual Tests
 
@@ -107,12 +139,10 @@ You can update the overriding settings on each test by navigating to the details
 
 You can choose between one of three override settings:
 
-<table data-header-hidden><thead><tr><th width="244"></th><th></th></tr></thead><tbody><tr><td>Setting</td><td>Behavior</td></tr><tr><td>Repo Default</td><td>Quarantining behavior follows the repository settings.<br><br><a href="quarantining.md#quarantining-modes">Learn more about quarantining modes</a></td></tr><tr><td>Always Quarantine</td><td>Quarantine a test failure even if the health status is healthy.</td></tr><tr><td>Never Quarantine</td><td>Never quarantine failures, even if the health status is flaky or broken, and quarantining is enabled for the repo.</td></tr></tbody></table>
+<table><thead><tr><th width="244">Setting</th><th>Behavior</th></tr></thead><tbody><tr><td>Quarantine</td><td>Quarantine automatically if <a href="quarantining.md#enable-quarantining">auto-quarantine</a> is enabled.<br><a href="quarantining.md#quarantining-modes">Learn more about quarantining modes</a></td></tr><tr><td>Always Quarantine</td><td>Quarantine a test failure even if the health status is healthy.</td></tr><tr><td>Never Quarantine</td><td>Never quarantine failures, even if the health status is flaky or broken, and quarantining is enabled for the repo.</td></tr></tbody></table>
 
 #### Audit Logs
 
 Trunk provides audit logs for all setting changes and overwrites for individual tests. You can access the audit log by navigating to **Settings** > **Repositories** > **Flaky Tests** > **Quarantine Flaky Tests** > **Audit logs**.
 
 You will also see a record of changes in the override settings in the **Status History** tab in each test's details screen.
-
-[^1]: or broken
