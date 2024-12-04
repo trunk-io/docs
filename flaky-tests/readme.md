@@ -32,7 +32,7 @@ To learn more, [see how Flaky Tests does detection](https://docs.trunk.io/flaky-
 
 ### Stay in Sync
 
-<figure><picture><source srcset="../.gitbook/assets/github-comment-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/github-comment-light (1).png" alt="PR comment linking to PR Test Summary"></picture><figcaption><p>PR comment linking to PR Test Summary</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/github-comment-light.png" alt="PR comment linking to PR Test Summary"></picture><figcaption><p>PR comment linking to PR Test Summary</p></figcaption></figure>
 
 Flaky Tests helps everyone in your team stay in sync about flaky test failures with [GitHub PR comments](https://docs.trunk.io/flaky-tests/github-pull-request-comments), so no time is wasted debugging failures from known flaky tests.
 
