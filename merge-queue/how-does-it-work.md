@@ -11,7 +11,7 @@ description: >-
 
 1. Instead of merging your pull requests directly through GitHub, engineers submit their pull requests to the merge queues service. A pull request can be submitted to the queue before passing CI or code review is complete. Once the prerequisites for the queue have been met - the pull request will formally enter the queue.
 2. Trunk Merge Queue will test your pull request against the changes ahead of it in the queue so that the changes are tested against the predicted view of the branch, assuming everything ahead of it merges successfully. This process is called [**predictive testing** ](predictive-testing.md)and is illustrated in the video below.
-3. When all the required tests are passing, Trunk will merge your pull request into the protected branch automatically.
+3. When all the required tests are passed, Trunk will **squash merge** your pull request into the protected branch automatically.
 4. If your pull requests fails testing - it will either be retested or removed from the queue for further inspection by the author.
 
 {% embed url="https://share.vidyard.com/watch/31gaLwGNSYTn2ec2BSQjkn" %}
