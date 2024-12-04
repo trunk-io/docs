@@ -53,7 +53,8 @@ or click on the notification to "Share trunk config", which will commit `.trunk/
 You can use Trunk as your default formatter in VSCode if you have Trunk configured for the project.
 
 You can set `trunk.io` as the default formatter for just one language as in the example, or as a default for all languages.
-In your settings json via:
+
+In your `settings.json` like this:
 ```json
 "[markdown]": {
   "editor.defaultFormatter": "trunk.io"
