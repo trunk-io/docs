@@ -18,7 +18,7 @@ layout:
 
 ## 1. Generate JUnit
 
-Add the `--`xunit-output argument to your Swift test command:
+Add the `--xunit-output` argument to your Swift test command:
 
 ```shell
 swift test --xunit-output junit.xml
