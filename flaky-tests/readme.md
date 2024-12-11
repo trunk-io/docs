@@ -22,7 +22,7 @@ Your dashboard shows a comprehensive overview of your test suite's health at a g
 
 To learn more, [see how Flaky Tests does detection](https://docs.trunk.io/flaky-tests/detection).
 
-### Track Every Flaky Tests
+### Track Every Flaky Test
 
 You can find a list of known flaky tests complete with important information like their impact on PRs and if someone's working on a fix. For more granularity, you can also inspect individual tests for their execution history, results, and status changes.
 
