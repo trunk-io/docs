@@ -8,6 +8,8 @@ Quarantining flaky tests lets you mitigate the negative effects of flaky tests w
 
 When a test is quarantined, it will still be run in your CI jobs and results will be uploaded to Trunk Flaky Tests so you can keep track of them. What changes are the results of your CI jobs. The [Flaky Tests Uploader](uploader.md) will check if the test is a known flaky or broken test. If the test has been failing on other PRs before yours, the results will be overridden. This means, that if all failures in a CI job are overridden by quarantining because they're known flaky or broken tests, the CI job will be overridden as passing.&#x20;
 
+{% include "../.gitbook/includes/slack-callout.md" %}
+
 ### What's Affected?
 
 When quarantining is enabled, tests that are _known_ to be flaky or broken will be quarantined. This means tests that have already been failing and not broken by your PR will be quarantined. You can see which tests are flaky or broken by seeing the tests's status in the overview dashboard, or each test's status history.

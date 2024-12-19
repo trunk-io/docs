@@ -4,6 +4,8 @@ Trunk provides webhooks for you to build custom integrations to automate workflo
 
 [Svix](https://docs.svix.com/) powers webhooks for Trunk. You'll be using Svix to configure webhooks and you should familiarize yourself with the [Svix App Portal docs](https://docs.svix.com/app-portal) to learn more.
 
+{% include "../../.gitbook/includes/slack-callout.md" %}
+
 ### Supported Events
 
 Trunk lets you create custom workflows with **event-triggered webhooks**. Flaky Test events are named with a `test_case` prefix. You can find all the events that Trunk supports in the event catalog:

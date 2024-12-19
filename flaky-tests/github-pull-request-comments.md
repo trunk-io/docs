@@ -4,7 +4,7 @@ description: Flaky Tests provides summary analytics about tests running on Pull 
 
 # PR Comments
 
-## Overview
+### Overview
 
 Flaky Tests can post comments on GitHub pull requests to provide a summary of all the tests run on this PR, across multiple CI jobs or even CI systems, as well as whether those failures are due to flakiness, the history of the failures of that test, and more.
 
@@ -16,11 +16,11 @@ Each GitHub comment has a full summary report, containing all tests that passed,
 
 Each test case also contains the full stack trace attached when opened. You can also click on the **Job run** link which will take you to the full CI logs.
 
-<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99/real-saas-app&#x26;intervalDays=14%20(4).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99/real-saas-app&#x26;intervalDays=14%20(5).png" alt=""></picture><figcaption></figcaption></figure>
+{% include "../.gitbook/includes/slack-callout.md" %}
 
 ## Configuration
 
-If you have the [Trunk GitHub App installed](https://docs.trunk.io/administration/github-app-permissions) and are [uploading JUnit XML](get-started/frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
+If you have the [Trunk GitHub App installed](https://docs.trunk.io/administration/github-app-permissions) and are [uploading JUnit XML](get-started/frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App, you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
 
 <details>
 

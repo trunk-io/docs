@@ -6,6 +6,8 @@ Trunk allows you to create custom workflows to send customized messages to Slack
 
 This guide will walk you through sending Slack messages using event-triggered webhooks. By the end of this tutorial, you'll receive Slack messages for test status changes. This guide should take 10 minutes to complete.
 
+{% include "../../.gitbook/includes/slack-callout.md" %}
+
 ### 1. Create a new Slack app
 
 You need to create a Slack app for your Slack workspace to receive webhooks from Trunk Flaky Tests.&#x20;
@@ -13,7 +15,7 @@ You need to create a Slack app for your Slack workspace to receive webhooks from
 1. Head to [Slack API](https://api.slack.com/apps)
 2. Click **Create New App** to create a new app
 3. This will open the **Create an App** modal. Select **From scratch**.
-4. Fill in a display name for your Slack bot under **App Name** and select the **Workspace** that the bot will post messages to.
+4. Fill in a display name for your Slack bot under App Name and select the Workspace to which the bot will post messages.
 5. Click **Create App**. You will be redirected to your App's settings
 
 ### 2. Add a Webhook URL to Your Slack App In Trunk

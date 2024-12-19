@@ -2,13 +2,15 @@
 
 Trunk Code Quality is available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=trunk.io) that you can use to streamline your linting and formatting experience.
 
+{% include "../../.gitbook/includes/slack-callout.md" %}
+
 ### Get Started
 
 By default, Trunk will try to automatically initialize itself in single-player mode. This means that it'll create a Trunk configuration that is hidden from git, which allows you to try it out [without Trunk's versioning powers](vscode.md#single-player-mode).
 
 If Trunk has not initialized itself in single-player mode, then you will need to initialize it manually, either by pressing the 'Initialize Trunk' button in the Trunk side panel:
 
-![initialize trunk](https://static.trunk.io/assets/vscode\_init\_trunk.png)
+![initialize trunk](https://static.trunk.io/assets/vscode_init_trunk.png)
 
 or via the command line: just install the CLI and run `trunk init` in your repo.
 
@@ -28,11 +30,11 @@ We believe that everything in your repository not only can be, but also should b
 
 On the side bar to the left you'll see the Trunk icon, which you can use to open the side panel to view issues. By default, issues are populated for every file you open as well as any modified files.
 
-![side panel](https://static.trunk.io/assets/vscode\_side\_panel.png)
+![side panel](https://static.trunk.io/assets/vscode_side_panel.png)
 
 Trunk also shows Trunk Code Quality Issues in a panel in the File Explorer, but you can hide it if you wish:
 
-![hide explorer panel](https://static.trunk.io/assets/vscode\_hide\_explorer\_panel.jpg)
+![hide explorer panel](https://static.trunk.io/assets/vscode_hide_explorer_panel.jpg)
 
 #### Single-player Mode
 
@@ -55,6 +57,7 @@ You can use Trunk as your default formatter in VSCode if you have Trunk configur
 You can set `trunk.io` as the default formatter for just one language as in the example, or as a default for all languages.
 
 In your `settings.json` like this:
+
 ```json
 "[markdown]": {
   "editor.defaultFormatter": "trunk.io"
@@ -67,9 +70,9 @@ For manual formatting, from command pallete use `Format Document With...` and se
 
 Check out how to [install the CLI](../setup-and-installation/), [set it up in CI](../setup-and-installation/initialize-trunk.md), [ignore issues](../linters/ignoring-issues-and-files.md), and set up [Custom Linters](../linters/custom-linters.md).
 
-![linter code docs](https://static.trunk.io/assets/vscode\_doc\_links.png)
+![linter code docs](https://static.trunk.io/assets/vscode_doc_links.png)
 
-![trunk-ignore](https://static.trunk.io/assets/vscode\_ignore\_issue.gif)
+![trunk-ignore](https://static.trunk.io/assets/vscode_ignore_issue.gif)
 
 ### Configuration
 

@@ -2,11 +2,13 @@
 
 ### The CLI Tool
 
-Trunk Code Quality still runs your favorite open-source linting, formatting, and static analysis tools and uses the same config files.&#x20;
+Trunk Code Quality still runs your favorite open-source linting, formatting, and static analysis tools and uses the same config files.
 
 Trunk gives superpowers to these tools by installing, managing, running, and re-throwing consistent output from them with the **Trunk CLI.** The Trunk CLI written in C++ is free, fully configurable, extensible, lightweight, and fast. It runs the tools according to Trunk's config files and can run these tools only on the lines or files change, which makes it **practical for large code bases**.
 
 [Learn more about the Trunk CLI.](../../cli/)
+
+{% include "../../.gitbook/includes/slack-callout.md" %}
 
 ### Hold-the-line
 
@@ -30,9 +32,9 @@ _**Hold the Line**_ is built into Trunk Code Quality itself. This means existing
 
 ### Daemon
 
-The Trunk CLI, specifically `trunk check`, runs a daemon that monitors relevant file changes and triggers jobs to precompute in the background while you work. The daemon is used both to support real-time background checking in supported extensions such as [VSCode](../ide-integration/vscode.md) and [Neovim](../ide-integration/neovim.md), and to precompute check results for faster commits/pushes.&#x20;
+The Trunk CLI, specifically `trunk check`, runs a daemon that monitors relevant file changes and triggers jobs to precompute in the background while you work. The daemon is used both to support real-time background checking in supported extensions such as [VSCode](../ide-integration/vscode.md) and [Neovim](../ide-integration/neovim.md), and to precompute check results for faster commits/pushes.
 
-Some native linters are more compute/memory intensive and `check` support disabling background linting of those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](../../cli/configuration/lint/commands.md#run\_when) configuration for a tool.
+Some native linters are more compute/memory intensive and `check` support disabling background linting of those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](../../cli/configuration/lint/commands.md#run_when) configuration for a tool.
 
 ### Hermetic tools and runtime management
 

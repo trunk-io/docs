@@ -6,6 +6,8 @@ description: Detect, quarantine, and eliminates flaky tests from your codebase
 
 <figure><picture><source srcset="../.gitbook/assets/dashboard-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dashboard-light (1).png" alt=""></picture><figcaption><p>The Trunk Flaky Tests Web App</p></figcaption></figure>
 
+{% include "../.gitbook/includes/slack-callout.md" %}
+
 Trunk Flaky Tests lets your teams detect, track, quarantine, and fix **flaky tests** in your codebase. Flaky Tests is language, environment, and framework-agnostic.
 
 Let's explore how Trunk Flaky Tests' features help you tackle Flaky Tests. If you can't wait to try Trunk, follow our [getting started guide](https://docs.trunk.io/flaky-tests/get-started).
@@ -66,6 +68,10 @@ Trunk enables the automation of quickly creating and assigning tickets through i
 
 To learn more, [learn about our ticketing integrations](jira-integration.md).
 
-### **Join Trunk Flaky Tests**
+### **Next Steps**
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Getting Started</h4></td><td></td><td><a href="get-started/">get-started</a></td></tr><tr><td><h4>Join Trunk</h4></td><td></td><td><a href="https://app.trunk.io/login/?intent=flaky+tests">https://app.trunk.io/login/?intent=flaky+tests</a></td></tr></tbody></table>
+
+
 
 Start finding flaky tests today by [signing up for Trunk](https://app.trunk.io/login/?intent=flaky+tests) or reading our [Getting Started guides](get-started/).

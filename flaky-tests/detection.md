@@ -10,9 +10,11 @@ It’s recommended to upload test results from CI jobs consistently to Trunk Fla
 
 Trunk Flaky Tests processes test runs uploaded on a schedule, which means new uploads may not be immediately available on Trunk Flaky Tests. Expect test results for individual PRs to be up to date for [PR Test Summaries](github-pull-request-comments.md) within 15 minutes and all other metrics to be up to date within an hour of a new upload.
 
+{% include "../.gitbook/includes/slack-callout.md" %}
+
 ### Test State Transitions
 
-A test’s health status transitions between broken, flaky, and healthy as new test runs with new results are uploaded to Trunk Flaky Tests. Trunk Flaky Tests determines if a test is flaky based on analyzing the results of recent runs. The process is deterministic and based on appropriate thresholds.
+A test’s health status transitions between broken, flaky, and healthy as new test runs with new results are uploaded to Trunk Flaky Tests. Trunk Flaky Tests determine if a test is flaky based on analyzing the results of recent runs. The process is deterministic and based on appropriate thresholds.
 
 This means if a test is healthy, it can transition into a broken or flaky status after new results appear that show failures. This also means if a test that was previously labeled as broken or flaky sees consistently passing runs, it can transition into a healthy test.&#x20;
 
@@ -30,7 +32,7 @@ Trunk Flaky Test provides key repo metrics based on the detected health status o
 | Broken tests                | Number of broken test cases in your repo.                                                                                                                                                                                          |
 | PRs blocked by failed tests | PRs that have been blocked by failed tests in CI.                                                                                                                                                                                  |
 | PRs rescued by quarantining | This figure is available if you have [quarantining](quarantining.md) set to preview or enabled. This shows the PRs with CI jobs containing quarantined flaky tests that would have failed if all flaky tests were not quarantined. |
-| Engineering hours saved     | Estimated engineering hours saved based on the study [The Cost of Interrupted Work](https://ics.uci.edu/\~gmark/chi08-mark.pdf), where each context switch to debug a flaky test costs 23 minutes of focused productivity.         |
+| Engineering hours saved     | Estimated engineering hours saved based on the study [The Cost of Interrupted Work](https://ics.uci.edu/~gmark/chi08-mark.pdf), where each context switch to debug a flaky test costs 23 minutes of focused productivity.          |
 
 These numbers are important for understanding the overall health of your repo’s tests, how much flaky and broken tests impact your developer productivity, and the developer hours saved from quarantining tests. You can also view the trends in these numbers in the trend charts.
 

@@ -6,6 +6,8 @@ Real-world code bases are complicated. Every project has many different types of
 
 A metalinter helps you lint **every file** in a modern code base by installing, managing, running, and reporting from individual static analysis tools with a **single tool**.
 
+{% include "../../.gitbook/includes/slack-callout.md" %}
+
 ### Use Cases
 
 There are many reasons for you to want to use a metalinter like Trunk Code Quality.

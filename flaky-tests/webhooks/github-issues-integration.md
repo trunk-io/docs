@@ -2,9 +2,11 @@
 
 <figure><img src="../../.gitbook/assets/example-webhook-github-issue-light.png" alt=""><figcaption><p>GitHub Issue created automatically with webhooks.</p></figcaption></figure>
 
-Trunk allows you to automate GitHub Issue creation through webhooks. This will allow you to create GitHub issues and auto-assign them to CODEOWNERS using Webhooks.
+Trunk allows you to automate GitHub Issue creation through webhooks. This will allow you to create GitHub issues and auto-assign them to [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) using Webhooks.
 
 This guide will walk you through integrating Trunk Flaky Tests with GitHub Issues through webhooks. You will be able to automatically generate GitHub issues for new flaky or broken tests. This guide should take 15 minutes to complete.
+
+{% include "../../.gitbook/includes/slack-callout.md" %}
 
 ### 1. Create a GitHub Token
 
