@@ -34,6 +34,7 @@
       * [Semaphore CI](flaky-tests/get-started/ci-providers/semaphoreci.md)
       * [Travis CI](flaky-tests/get-started/ci-providers/travisci.md)
       * [Other CI Providers](flaky-tests/get-started/ci-providers/otherci.md)
+  * [Dashboard](flaky-tests/dashboard.md)
   * [Detection](flaky-tests/detection.md)
   * [Quarantining](flaky-tests/quarantining.md)
   * [PR Comments](flaky-tests/github-pull-request-comments.md)
