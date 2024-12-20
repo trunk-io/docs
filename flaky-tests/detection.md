@@ -1,6 +1,6 @@
 # Detection
 
-Trunk Flaky Tests detect flaky tests by analyzing test runs uploaded from your CI jobs. The health of your repository’s test suite is displayed in the Flaky Tests dashboard. This page covers how flaky tests are detected and how to analyze your test suite’s health using the dashboard.
+Trunk Flaky Tests detect flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard. This page covers how flaky tests are detected and how to analyze your test suite’s health using the dashboard.
 
 {% hint style="info" %}
 It’s recommended to upload test results from CI jobs consistently to Trunk Flaky Tests for 14 days before expecting accurate detection results.
@@ -11,6 +11,30 @@ It’s recommended to upload test results from CI jobs consistently to Trunk Fla
 Trunk Flaky Tests processes test runs uploaded on a schedule, which means new uploads may not be immediately available on Trunk Flaky Tests. Expect test results for individual PRs to be up to date for [PR Test Summaries](github-pull-request-comments.md) within 15 minutes and all other metrics to be up to date within an hour of a new upload.
 
 {% include "../.gitbook/includes/slack-callout.md" %}
+
+<table><thead><tr><th width="218">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
+
+#### Branches
+
+Trunk analyzes test failures based on the context in which they are run. A test failing on main has a different impact on flake detection that a test failing on a pull request.
+
+{% hint style="warning" %}
+Uploading all test results from from your repository will result in the fastest and most accurate detection. Trunk relies on test results from main, pull requests, and (if you use one) mergequeues.
+{% endhint %}
+
+#### Protected/Default/Stable Branches
+
+In a [trunk-based development](https://trunkbaseddevelopment.com/) flow, do work on feature branches and merge their changes back into main. Typically, new code must pass automated tests before being merged. Tests that fail on main are unexpected and are a sign of flakiness.
+
+#### Mergequeue
+
+Mergequeues use temporary branches to test changes again before merging into main. Failures on mergequeue branches are unexpected and are used as a signal when detecting flaky tests.
+
+#### Pull Request
+
+Tests that are run on pull requests are expected to fail, so failure on pull requests is not used in detection of flaky tests.
+
+Flaky tests will produce inconsistent results even when run on the same code with the same input. Pull requests is where we see this behavior the most often: an engineer opens a pull request, sees a test fail, re-runs the code, and sees the test pass. We track this behavior (different results for a test on the same git commit) as sign that a test is flaky.
 
 ### Test State Transitions
 
@@ -43,8 +67,6 @@ These numbers are important for understanding the overall health of your repo’
 You can view a table of all your test cases and their current status in Trunk Flaky Tests. There are three different tables for tests labeled Flaky, Broken, and Healthy. \
 
 
-<table data-header-hidden><thead><tr><th width="218"></th><th></th></tr></thead><tbody><tr><td>Status</td><td>Description</td></tr><tr><td>Flaky</td><td>The test is labeled as flaky, which means it’s show to fail inconsistently and spuriously in recent runs.</td></tr><tr><td>Broken</td><td>The test is labeled as broken, which means the test is consistently failing in recent runs.</td></tr><tr><td>Healthy</td><td>The test is labeled as healthy, which means the test is consistently passing in recent runs. </td></tr></tbody></table>
-
 The table is sorted by default by the number of PRs impacted by the case, which is the best way to measure the impact of a flaky test. You can _click on each test_ case to view the [test case’s details](detection.md#test-case-details).
 
 <table><thead><tr><th width="188">Column</th><th>Description</th></tr></thead><tbody><tr><td>Status</td><td>The health status of the test case.</td></tr><tr><td>Tests</td><td>The file path and name of the test case.</td></tr><tr><td>PRs Impacted</td><td>The number of PRs that have been affected by this test case failing in CI.</td></tr><tr><td>Since</td><td>How long this test has been labeled with its current status.</td></tr><tr><td>Ticket</td><td>If a ticket has been created in your issue tracker integration, it will show the status of the ticket.</td></tr></tbody></table>
@@ -53,7 +75,7 @@ The table is sorted by default by the number of PRs impacted by the case, which 
 
 You can click on any of the test cases listed on the Flaky Test dashboard to access the test case’s details. In the details, you can find summary metrics at the top of the page, which covers the following information.
 
-<table data-header-hidden><thead><tr><th width="297"></th><th></th></tr></thead><tbody><tr><td><strong>Metric</strong></td><td><strong>Description</strong></td></tr><tr><td>PRs impacted by test</td><td>Describes the number of PRs affected by failures from this test case, the percent of PRs impact, and % change period over period.</td></tr><tr><td>PRs rescued by quarantining</td><td>If quarantining is enabled, describes the number of PRs with CI jobs containing quarantined flaky tests that would have failed, but were rescued by quarantining flaky failures. Also covers estimated engineer hours saved by quarantining flaky tests and unblocking PRs, as well as % change period over period.</td></tr><tr><td>Failure rate</td><td>Describes the failure rate of this test case and the % change period over period.</td></tr><tr><td>Earliest failure in last 7 days</td><td>Earliest failure in the selected data time range.</td></tr><tr><td>Most recent failure in last 7 days</td><td>Latest failure in the selected data time range.</td></tr><tr><td>Ticket Status</td><td>If a ticket was created using the Ticket Creation feature, this reflects the ID and status of the created ticket. You can click the ID to be redirected to your ticket.</td></tr></tbody></table>
+<table><thead><tr><th width="297">Metric</th><th>Description</th></tr></thead><tbody><tr><td>PRs impacted by test</td><td>Describes the number of PRs affected by failures from this test case, the percent of PRs impact, and % change period over period. <strong>PRs with all failures quarantined</strong> do not affect this number.  </td></tr><tr><td>PRs rescued by quarantining</td><td>If quarantining is enabled, describes the number of PRs with CI jobs containing quarantined flaky tests that would have failed, but were rescued by quarantining flaky failures. Also covers estimated engineer hours saved by quarantining flaky tests and unblocking PRs, as well as % change period over period.</td></tr><tr><td>Failure rate</td><td>Describes the failure rate of this test case and the % change period over period.</td></tr><tr><td>Earliest failure in last 7 days</td><td>Earliest failure in the selected data time range.</td></tr><tr><td>Most recent failure in last 7 days</td><td>Latest failure in the selected data time range.</td></tr><tr><td>Ticket Status</td><td>If a ticket was created using the Ticket Creation feature, this reflects the ID and status of the created ticket. You can click the ID to be redirected to your ticket.</td></tr></tbody></table>
 
 ### **Unique Failure Reasons**
 
@@ -73,4 +95,4 @@ You can see a list of PRs impacted by failures for this test case. Each entry ha
 
 <figure><picture><source srcset="../.gitbook/assets/status-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/status-history-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-Tests may transition between flaky, broken, and healthy states multiple times over its lifetime. You can see previous changes in the detected health status of the test under Status History, as well as an explanation for why it was detected to have a new state.
+Tests may transition between flaky, broken, and healthy states multiple times over their lifetime. You can see previous changes in the detected health status of a test under Status History, as well as an explanation for why it was detected to have a new state.
