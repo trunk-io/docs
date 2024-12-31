@@ -6,9 +6,13 @@ description: >-
 
 # Anti-Flake Protection
 
-Sometimes, a pull request (PR) fails testing for reasons outside of the actual code change - [a test was flaky](../flaky-tests/), a CI runner was disconnected, etc.. If a second PR that depends on the first **does** pass, then it is very likely that the first PR was actually good and simply experienced a transient failure. Trunk Merge Queue can use the combination of [**Optimistic Merging** ](optimistic-merging.md)and [Pending Failure Depth](anti-flake-protection.md#pending-failure-depth) to merge pull requests that would otherwise be rejected from the queue. \
-\
-In the video below you can see an example of this anti-flake protection:
+Some CI jobs fail for reasons unrelated to a PR's code change, such as due to [flaky tests](https://trunk.io/blog/the-ultimate-guide-to-flaky-tests) or a CI runner disconnecting. These failures are usually cleared when the CI job is rerun. If a second PR that depends on the first **does** pass, it is very likely that the first PR was good and simply experienced a transient failure. Trunk Merge Queue can use the combination of [**Optimistic Merging** ](optimistic-merging.md)and [Pending Failure Depth](anti-flake-protection.md#pending-failure-depth) to merge pull requests that would otherwise be rejected from the queue.&#x20;
+
+{% hint style="success" %}
+If you have a lot of flaky tests in your projects, you should track and fix them with [Trunk Flaky Tests](../flaky-tests/). Anti-flake protection helps reduce the impact of flaky tests but doesn't help you detect, track, and eliminate them.
+{% endhint %}
+
+In the video below, you can see an example of this anti-flake protection:
 
 {% embed url="https://share.vidyard.com/watch/5YxXzJ5Szy7vP4F7awgTsc" %}
 anti-flake protection with optimistic merging + pending failure depth
