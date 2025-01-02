@@ -36,6 +36,12 @@ export default defineConfig({
 
 The JUnit report will be written to the `outputFile` specified in the Vite config. In the example above, the report would be written to `./junit.xml.`
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+If you've enabled retries, you can disable them following the [Vitest docs](https://vitest.dev/api/) for more accurate results.
+
 ## Next Step
 
 JUnit files generated with Vitest are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

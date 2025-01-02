@@ -44,6 +44,12 @@ module.exports = function(config) {
 
 The `outputDir` and `outputFile` specify the location of the JUnit test report. In the example above, the JUnit would be at `./test_results/$browserName/report.xml`.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+Karma doesn't support retries out of the box, but if you implemented retries, remember to disable them.
+
 ## Next Step <a href="#next-step" id="next-step"></a>
 
 JUnit files generated with Karma are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

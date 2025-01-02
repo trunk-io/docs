@@ -38,6 +38,18 @@ module.exports = defineConfig({
 
 The JUnit report location is specified by the `mochaFile` property in your Cypress config. In the above example, the file will be at `results/junit.xml`.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+You can disable retries by setting `retries: 0`in your Cypress config file.
+
+```javascript
+module.exports = defineConfig({
+  retries: 1,
+})
+```
+
 ## Next Step
 
 JUnit files generated with Cypress are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

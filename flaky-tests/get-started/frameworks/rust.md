@@ -35,6 +35,12 @@ cargo nextest run --profile ci
 
 When using a profile with JUnit support configured, a JUnit report will be written out to `target/nextest/ci/junit.xml` within the workspace root.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.&#x20;
+
+Omit the `--retries` option.
+
 ## Next Step
 
 JUnit files generated with `cargo-nextest` are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

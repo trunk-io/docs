@@ -28,6 +28,12 @@ swift test --xunit-output junit.xml
 
 The test results JUnit report will be written to the location specified by the `--xunit-output` argument. In the example above, it would be at `./junit.xml`.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+Swift Testing doesn't support retries out of the box, but if you implemented retries or imported a package, remember to disable them.
+
 ## Next Step
 
 JUnit files generated with Swift Test are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

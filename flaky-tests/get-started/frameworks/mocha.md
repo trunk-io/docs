@@ -39,6 +39,12 @@ var mocha = new Mocha({
 
 The resulting JUnit XML file will be written to the location specified by the `mochaFile` property in `reporterOptions`. In the example above, the results would be at `./test_results/junit.xml`.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+You can disable retry by omitting the `--retries` CLI option and [removing retries for individual tests](https://mochajs.org/#retry-tests).
+
 ## Next Step
 
 JUnit files generated with Mocha are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

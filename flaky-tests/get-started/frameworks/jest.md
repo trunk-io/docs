@@ -45,6 +45,12 @@ Update your Jest config to add `jest-junit` as a reporter:
 
 The `outputDirectory` and `outputName` specify the location of the JUnit test report. In the example above, the JUnit would be at `./test_results/report.xml`.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+If you have retries configured using the [jest.retryTimes method](https://jestjs.io/docs/jest-object#jestretrytimesnumretries-options), disable them for more accurate results.
+
 ## Next Step
 
 JUnit files generated with Jest are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

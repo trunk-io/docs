@@ -54,6 +54,12 @@ jasmine.getEnv().addReporter(junitReporter)
 
 Jasmine will generate a JUnit report at the location specified by the `savePath` property. In the examples above, the JUnit report will be written to a directory named `test_reports/`.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+If you're using a package like [protractor-flake](https://www.npmjs.com/package/protractor-flake), disable it to get more accurate results from Trunk.
+
 ## Next Step
 
 JUnit files generated with Jasmine are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

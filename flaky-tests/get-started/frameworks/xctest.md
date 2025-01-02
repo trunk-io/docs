@@ -44,6 +44,12 @@ This will produce a `build/reports/junit.xml` output file.
 
 `xcbeautify` will use the name of file the tests are in as the name of the output `<testsuite>` and the function name as the `name` attribute of each `<testcase>` element.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+If you run tests in CI with [the `-retry-tests-on-failure` option](https://keith.github.io/xcode-man-pages/xcodebuild.1.html#retry-tests-on-failure), disable it for more accurate results.
+
 ## Next Step
 
 Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.

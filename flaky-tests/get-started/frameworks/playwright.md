@@ -34,7 +34,13 @@ export default defineConfig({
 
 ## 2. Output Location
 
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+## Disable Retries
+
 The JUnit file will be written to the `outputFile` specified in the configuration. In the example above, the results will be written to `junit.xml`.
+
+You can disable retries in Playwright by omitting the `--retries` command line option and [removing retries in your `playwright.config.ts` file](https://playwright.dev/docs/test-retries#retries).
 
 ## Next Step
 

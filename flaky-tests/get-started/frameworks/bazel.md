@@ -26,6 +26,12 @@ By default the JUnit output will be written to the `bazel-testlogs` output direc
 
 For example, a target named `//app/component:test` will generate a JUnit file at `bazel-testlogs/app/component/test.xml`.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+
+Disable retries if you're retrying tests using the `--flaky_test_attempts` command line option or retrying in your test runner.
+
 ## Next Step
 
 JUnit files generated with Bazel are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.

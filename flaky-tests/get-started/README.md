@@ -14,6 +14,8 @@ You must create an account and Trunk organization to complete the steps below.
 
 ### 2. Configure your test framework to output compatible test results
 
+{% include "../../.gitbook/includes/retries.md" %}
+
 For Trunk to start detecting flaky tests, it needs to ingest the results from all of your CI test runs. To get started, configure your test framework (jest, pytest, gtest, etc) to output results. You'll do this only for CI jobs, _not_ for running tests locally.
 
 Check out our guides to many of the most popular test frameworks: [frameworks](frameworks/ "mention")

@@ -42,6 +42,8 @@ A test’s health status transitions between broken, flaky, and healthy as new t
 
 This means if a test is healthy, it can transition into a broken or flaky status after new results appear that show failures. This also means if a test that was previously labeled as broken or flaky sees consistently passing runs, it can transition into a healthy test.&#x20;
 
+{% include "../.gitbook/includes/retries.md" %}
+
 <figure><picture><source srcset="../.gitbook/assets/status-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/status-history-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Tests may transition between flaky, broken, and healthy states multiple times over their lifetime. You can see previous changes in the detected health status of a test under Status History, as well as an explanation for why it was detected to have a new state.

@@ -48,6 +48,12 @@ Configure the `maven-surefire-plugin` plugin in your `pom.xml` file:
 
 The JUnit report will be in the `target/surefire-reports` directory.
 
+## Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.&#x20;
+
+If you're using the Surefire Plugin to retry tests, you can disable it by omitting the `-Dsurefire.rerunFailingTestsCount` option.
+
 ## Next Step
 
 JUnit files generated with Maven are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.
