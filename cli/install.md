@@ -56,19 +56,7 @@ Then add Trunk Launcher in your `package.json` as a script:
 
 You can install the Trunk Launcher script directly by downloading it through cURL. The launcher script supports both macOS and Linux environments.
 
-{% tabs %}
-{% tab title="bash" %}
-```bash
-curl https://get.trunk.io -fsSL | bash
-```
-{% endtab %}
-
-{% tab title="bash (no prompts)" %}
-```bash
-curl https://get.trunk.io -fsSL | bash -s -- -y
-```
-{% endtab %}
-{% endtabs %}
+{% include "../.gitbook/includes/curl-https-get.trunk.io-....md" %}
 
 To allow your teammates to use `trunk` without installing anything, the launcher can be committed directly into your repo:
 
