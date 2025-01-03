@@ -8,6 +8,14 @@ Trunk typically requires 10+ runs per test on CI to start accurately detecting f
 
 {% include "../.gitbook/includes/slack-callout.md" %}
 
+### Uploaded Test Results
+
+Trunk detects flaky tests by analyzing the test results uploaded from your CI jobs. Each new upload is processed and compared with historical test results to detect flaky tests. Trunk emphasizes each result differently depending on which branch it's run on. This is an asynchronous process and may take **up to an hour** before each upload's results are reflected in the [dashboard](dashboard.md).
+
+<figure><picture><source srcset="../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption><p>The uploads tab contains results received from past CI jobs.</p></figcaption></figure>
+
+If you have [PR Comments](github-pull-request-comments.md) enabled, you can follow the link in the PR comments to see a report for each upload.
+
 ### How Tests Are Labeled
 
 Trunk classifies all tests into one of three categories based on the history of each test:
