@@ -211,6 +211,7 @@
   * [Getting Started](cli/getting-started/README.md)
     * [Code Quality](code-quality/README.md)
     * [Merge Queue](merge-queue/command-line.md)
+    * [Flaky Tests](flaky-tests/get-started/README.md)
     * [Tools](cli/getting-started/tools.md)
     * [Actions](cli/getting-started/actions/README.md)
       * [Git Hooks](cli/getting-started/actions/git-hooks.md)
