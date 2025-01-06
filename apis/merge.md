@@ -35,3 +35,7 @@ All requests must be [authenticated](./#authentication) by providing the `x-api-
 {% swagger src="../.gitbook/assets/mergeapi.json" path="/setImpactedTargets" method="post" %}
 [mergeapi.json](../.gitbook/assets/mergeapi.json)
 {% endswagger %}
+
+{% swagger src="../.gitbook/assets/mergeapi.json" path="/getSubmittedPullRequest" method="post" %}
+[mergeapi.json](../.gitbook/assets/mergeapi.json)
+{% endswagger %}
