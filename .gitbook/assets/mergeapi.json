@@ -6,11 +6,19 @@
   },
   "servers": [
     {
-      "url": "https://api.trunk.io:433/v1",
+      "url": "https://api.trunk.io/v1",
       "description": "Server description"
     }
   ],
   "components": {
+    "securitySchemes": {
+      "x-api-token": {
+        "name": "x-api-token",
+        "type": "apiKey",
+        "in": "header",
+        "description": "Trunk API token - see https://docs.trunk.io/apis#authentication"
+      }
+    },
     "schemas": {
       "repo": {
         "type": "object",
@@ -33,6 +41,11 @@
             "example": "trunk",
             "description": "The name of the repository"
           }
+        },
+        "example": {
+          "host": "github.com",
+          "owner": "trunk-io",
+          "name": "trunk"
         }
       },
       "pr": {
@@ -43,6 +56,9 @@
             "example": 1,
             "description": "The PR number"
           }
+        },
+        "example": {
+          "number": 1
         }
       },
       "prWithSha": {
@@ -58,6 +74,10 @@
             "example": "1234567890abcdef",
             "description": "The SHA of the PR"
           }
+        },
+        "example": {
+          "number": 1,
+          "sha": "1234567890abcdef"
         }
       },
       "targetBranch": {
@@ -94,6 +114,12 @@
             "example": "MERGEABLE",
             "description": "The mergeability status of the PR on GitHub"
           }
+        },
+        "example": {
+          "hasImpactedTargets": false,
+          "requiresImpactedTargets": false,
+          "doesBaseBranchMatch": true,
+          "gitHubMergeability": "MERGEABLE"
         }
       },
       "pullRequest": {
@@ -124,6 +150,13 @@
             "example": "dependabot",
             "description": "The author of the PR"
           }
+        },
+        "example": {
+          "number": 1,
+          "title": "Add new feature",
+          "sha": "1234567890abcdef",
+          "baseBranch": "main",
+          "author": "dependabot"
         }
       },
       "mergeItem": {
@@ -216,6 +249,27 @@
             "example": "dependabot",
             "description": "The author of the PR"
           }
+        },
+        "example": {
+          "id": "1234567890abcdef",
+          "state": "PENDING",
+          "stateChangedAt": "2021-01-01T00:00:00Z",
+          "priorityValue": 100,
+          "priorityName": "medium",
+          "usedDefaultPriorityName": "medium",
+          "skipTheLine": false,
+          "isCurrentlySubmittedToQueue": true,
+          "readiness": {
+            "hasImpactedTargets": false,
+            "requiresImpactedTargets": false,
+            "doesBaseBranchMatch": true,
+            "gitHubMergeability": "MERGEABLE"
+          },
+          "prNumber": 1,
+          "prTitle": "Add new feature",
+          "prSha": "1234567890abcdef",
+          "prBaseBranch": "main",
+          "prAuthor": "dependabot"
         }
       },
       "mergeItemWithoutReadiness": {
@@ -301,6 +355,20 @@
             "example": "dependabot",
             "description": "The author of the PR"
           }
+        },
+        "example": {
+          "id": "1234567890abcdef",
+          "state": "PENDING",
+          "stateChangedAt": "2021-01-01T00:00:00Z",
+          "priorityValue": 100,
+          "priorityName": "medium",
+          "usedDefaultPriorityName": "medium",
+          "skipTheLine": false,
+          "prNumber": 1,
+          "prTitle": "Add new feature",
+          "prSha": "1234567890abcdef",
+          "prBaseBranch": "main",
+          "prAuthor": "dependabot"
         }
       },
       "queue": {
@@ -313,7 +381,9 @@
               "PAUSED",
               "DRAINING",
               "SWITCHING_MODES"
-            ]
+            ],
+            "example": "RUNNING",
+            "description": "The current state of the queue - see https://docs.trunk.io/merge-queue/set-up-trunk-merge/advanced-settings#merge-queue-states"
           },
           "branch": {
             "type": "string",
@@ -336,7 +406,8 @@
               "SINGLE",
               "PARALLEL"
             ],
-            "description": "The mode the queue is in"
+            "description": "The mode the queue is in - see https://docs.trunk.io/merge-queue/parallel-queues",
+            "example": "SINGLE"
           },
           "canOptimisticallyMerge": {
             "type": "boolean",
@@ -354,7 +425,8 @@
               "NONE",
               "SPECULATIVE"
             ],
-            "description": "The batching mode the queue is in"
+            "description": "The batching mode the queue is in. SPECULATIVE means batching is active. See https://docs.trunk.io/merge-queue/batching",
+            "example": "SPECULATIVE"
           },
           "batchingMaxWaitTimeMins": {
             "type": "number",
@@ -377,7 +449,57 @@
               "$ref": "#/components/schemas/mergeItemWithoutReadiness"
             }
           }
+        },
+        "example": {
+          "state": "RUNNING",
+          "branch": "main",
+          "concurrency": 1,
+          "testingTimeoutMins": 60,
+          "mode": "SINGLE",
+          "canOptimisticallyMerge": true,
+          "pendingFailureDepth": 1,
+          "batchingMode": "SPECULATIVE",
+          "batchingMaxWaitTimeMins": 60,
+          "batchingMinSize": 1,
+          "createPrsForTestingBranches": true,
+          "enqueuedPullRequests": [
+            {
+              "id": "1234567890abcdef",
+              "state": "PENDING",
+              "stateChangedAt": "2021-01-01T00:00:00Z",
+              "priorityValue": 100,
+              "priorityName": "medium",
+              "usedDefaultPriorityName": "medium",
+              "skipTheLine": false,
+              "prNumber": 1,
+              "prTitle": "Add new feature",
+              "prSha": "1234567890abcdef",
+              "prBaseBranch": "main",
+              "prAuthor": "dependabot"
+            }
+          ]
         }
+      },
+      "priority": {
+        "oneOf": [
+          {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "urgent"
+            ],
+            "default": "medium",
+            "description": "The priority name to assign to the PR when it begins testing in the queue",
+            "example": "high"
+          },
+          {
+            "type": "number",
+            "example": 1,
+            "description": "The priority number (0 - 255, 0 is the highest) to assign to the PR when it begins testing in the queue"
+          }
+        ]
       }
     }
   },
@@ -386,6 +508,11 @@
       "post": {
         "tags": [
           "Merge Items"
+        ],
+        "security": [
+          {
+            "x-api-token": []
+          }
         ],
         "summary": "Submit a pull request to be tested and merged",
         "requestBody": {
@@ -404,25 +531,20 @@
                     "$ref": "#/components/schemas/targetBranch"
                   },
                   "priority": {
-                    "oneOf": [
-                      {
-                        "type": "string",
-                        "enum": [
-                          "low",
-                          "medium",
-                          "high",
-                          "urgent"
-                        ],
-                        "default": "medium",
-                        "description": "The priority name to assign to the PR when it begins testing in the queue"
-                      },
-                      {
-                        "type": "number",
-                        "example": 1,
-                        "description": "The priority number (0 - 255, 0 is the highest) to assign to the PR when it begins testing in the queue"
-                      }
-                    ]
+                    "$ref": "#/components/schemas/priority"
                   }
+                },
+                "example": {
+                  "repo": {
+                    "host": "github.com",
+                    "owner": "trunk-io",
+                    "name": "trunk"
+                  },
+                  "pr": {
+                    "number": 1
+                  },
+                  "targetBranch": "main",
+                  "priority": "medium"
                 }
               }
             }
@@ -442,6 +564,11 @@
       "post": {
         "tags": [
           "Impacted Targets"
+        ],
+        "security": [
+          {
+            "x-api-token": []
+          }
         ],
         "summary": "Set impacted targets",
         "description": "Upload impacted targets for the PR and its current SHA. Used specifically when running the queue in Parallel mode",
@@ -479,6 +606,22 @@
                       }
                     ]
                   }
+                },
+                "example": {
+                  "repo": {
+                    "host": "github.com",
+                    "owner": "trunk-io",
+                    "name": "trunk"
+                  },
+                  "pr": {
+                    "number": 1,
+                    "sha": "1234567890abcdef"
+                  },
+                  "targetBranch": "main",
+                  "impactedTargets": [
+                    "services_backend",
+                    "services_frontend"
+                  ]
                 }
               }
             }
@@ -499,6 +642,11 @@
         "tags": [
           "Merge Items"
         ],
+        "security": [
+          {
+            "x-api-token": []
+          }
+        ],
         "summary": "Submits a Pull Request to the queue",
         "requestBody": {
           "content": {
@@ -516,25 +664,20 @@
                     "$ref": "#/components/schemas/targetBranch"
                   },
                   "priority": {
-                    "oneOf": [
-                      {
-                        "type": "string",
-                        "enum": [
-                          "low",
-                          "medium",
-                          "high",
-                          "urgent"
-                        ],
-                        "default": "medium",
-                        "description": "The priority name to assign to the PR when it begins testing in the queue"
-                      },
-                      {
-                        "type": "number",
-                        "example": 1,
-                        "description": "The priority number (0 - 255, 0 is the highest) to assign to the PR when it begins testing in the queue"
-                      }
-                    ]
+                    "$ref": "#/components/schemas/priority"
                   }
+                },
+                "example": {
+                  "repo": {
+                    "host": "github.com",
+                    "owner": "trunk-io",
+                    "name": "trunk"
+                  },
+                  "pr": {
+                    "number": 1
+                  },
+                  "targetBranch": "main",
+                  "priority": "medium"
                 }
               }
             }
@@ -555,6 +698,11 @@
         "tags": [
           "Merge Items"
         ],
+        "security": [
+          {
+            "x-api-token": []
+          }
+        ],
         "summary": "Restarts tests on a PR in the queue without moving its position or causing other PRs to be retested",
         "requestBody": {
           "content": {
@@ -572,6 +720,17 @@
                     "$ref": "#/components/schemas/targetBranch"
                   }
                 }
+              },
+              "example": {
+                "repo": {
+                  "host": "github.com",
+                  "owner": "trunk-io",
+                  "name": "trunk"
+                },
+                "pr": {
+                  "number": 1
+                },
+                "targetBranch": "main"
               }
             }
           }
@@ -591,6 +750,11 @@
         "tags": [
           "Merge Items"
         ],
+        "security": [
+          {
+            "x-api-token": []
+          }
+        ],
         "summary": "Cancel a pull request already in the queue.",
         "requestBody": {
           "content": {
@@ -608,6 +772,17 @@
                     "$ref": "#/components/schemas/targetBranch"
                   }
                 }
+              },
+              "example": {
+                "repo": {
+                  "host": "github.com",
+                  "owner": "trunk-io",
+                  "name": "trunk"
+                },
+                "pr": {
+                  "number": 1
+                },
+                "targetBranch": "main"
               }
             }
           }
@@ -622,123 +797,52 @@
         }
       }
     },
-    "/host/github/owner/{owner}/name/{name}/branch/{targetBranch}/pr/{prNumber}": {
-      "get": {
-        "tags": [
-          "Merge Items"
-        ],
-        "summary": "Get information on a pull request that has been submitted to the queue",
-        "parameters": [
-          {
-            "name": "owner",
-            "in": "path",
-            "required": true,
-            "description": "owning organization of the repo the merge queue is for",
-            "schema": {
-              "type": "string",
-              "example": "trunk-io"
-            }
-          },
-          {
-            "name": "name",
-            "in": "path",
-            "required": true,
-            "description": "name of the repo the merge queue is for",
-            "schema": {
-              "type": "string",
-              "example": "trunk"
-            }
-          },
-          {
-            "name": "targetBranch",
-            "in": "path",
-            "required": true,
-            "description": "The branch the merge queue is merging PRs into",
-            "schema": {
-              "type": "string",
-              "example": "main"
-            }
-          },
-          {
-            "name": "prNumber",
-            "in": "path",
-            "required": true,
-            "description": "The number of the PR to get information on",
-            "schema": {
-              "type": "number",
-              "example": 1
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Information on the pull request",
-            "content": {
-              "application/json": {
-                "schema": {
-                    "type": "object",
-                    "$ref": "#/components/schemas/mergeItem"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "404": {
-            "description": "Pull request with the provided number does not exist or has never been submitted to the specified queue before"
-          }
-        }
-      }
-    },
     "/getSubmittedPullRequest": {
       "post": {
         "tags": [
           "Merge Items"
         ],
-        "summary": "Get information on a pull request that has been submitted to the queue",
-        "parameters": [
+        "security": [
           {
-            "name": "owner",
-            "in": "path",
-            "required": true,
-            "description": "owning organization of the repo the merge queue is for",
-            "schema": {
-              "type": "string",
-              "example": "trunk-io"
-            }
-          },
-          {
-            "name": "name",
-            "in": "path",
-            "required": true,
-            "description": "name of the repo the merge queue is for",
-            "schema": {
-              "type": "string",
-              "example": "trunk"
-            }
-          },
-          {
-            "name": "targetBranch",
-            "in": "path",
-            "required": true,
-            "description": "The branch the merge queue is merging PRs into",
-            "schema": {
-              "type": "string",
-              "example": "main"
-            }
-          },
-          {
-            "name": "prNumber",
-            "in": "path",
-            "required": true,
-            "description": "The number of the PR to get information on",
-            "schema": {
-              "type": "number",
-              "example": 1
-            }
+            "x-api-token": []
           }
         ],
+        "summary": "Get information on a pull request that has been submitted to the queue",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "$ref": "#/components/schemas/repo"
+                  },
+                  "pr": {
+                    "$ref": "#/components/schemas/pr"
+                  },
+                  "targetBranch": {
+                    "$ref": "#/components/schemas/targetBranch"
+                  },
+                  "priority": {
+                    "$ref": "#/components/schemas/priority"
+                  }
+                },
+                "example": {
+                  "repo": {
+                    "host": "github.com",
+                    "owner": "trunk-io",
+                    "name": "trunk"
+                  },
+                  "pr": {
+                    "number": 1
+                  },
+                  "targetBranch": "main",
+                  "priority": "medium"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Information on the pull request",
@@ -747,6 +851,27 @@
                 "schema": {
                     "type": "object",
                     "$ref": "#/components/schemas/mergeItem"
+                },
+                "example": {
+                  "id": "1234567890abcdef",
+                  "state": "PENDING",
+                  "stateChangedAt": "2021-01-01T00:00:00Z",
+                  "priorityValue": 100,
+                  "priorityName": "medium",
+                  "usedDefaultPriorityName": "medium",
+                  "skipTheLine": false,
+                  "isCurrentlySubmittedToQueue": true,
+                  "readiness": {
+                    "hasImpactedTargets": false,
+                    "requiresImpactedTargets": false,
+                    "doesBaseBranchMatch": true,
+                    "gitHubMergeability": "MERGEABLE"
+                  },
+                  "prNumber": 1,
+                  "prTitle": "Add new feature",
+                  "prSha": "1234567890abcdef",
+                  "prBaseBranch": "main",
+                  "prAuthor": "dependabot"
                 }
               }
             }
@@ -765,39 +890,37 @@
         "tags": [
           "Merge Queue"
         ],
-        "summary": "Get information on your merge queue and the PRs currently in it",
-        "parameters": [
+        "security": [
           {
-            "name": "owner",
-            "in": "path",
-            "required": true,
-            "description": "owning organization of the repo the merge queue is for",
-            "schema": {
-              "type": "string",
-              "example": "trunk-io"
-            }
-          },
-          {
-            "name": "name",
-            "in": "path",
-            "required": true,
-            "description": "name of the repo the merge queue is for",
-            "schema": {
-              "type": "string",
-              "example": "trunk"
-            }
-          },
-          {
-            "name": "targetBranch",
-            "in": "path",
-            "required": true,
-            "description": "The branch the merge queue is merging PRs into",
-            "schema": {
-              "type": "string",
-              "example": "main"
-            }
+            "x-api-token": []
           }
         ],
+        "summary": "Get information on your merge queue and the PRs currently in it",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "$ref": "#/components/schemas/repo"
+                  },
+                  "targetBranch": {
+                    "$ref": "#/components/schemas/targetBranch"
+                  }
+                }
+              },
+              "example": {
+                "repo": {
+                  "host": "github.com",
+                  "owner": "trunk-io",
+                  "name": "trunk"
+                },
+                "targetBranch": "main"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Information on the pull request",
@@ -806,6 +929,35 @@
                 "schema": {
                     "type": "object",
                     "$ref": "#/components/schemas/queue"
+                },
+                "example": {
+                  "state": "RUNNING",
+                  "branch": "main",
+                  "concurrency": 1,
+                  "testingTimeoutMins": 60,
+                  "mode": "SINGLE",
+                  "canOptimisticallyMerge": true,
+                  "pendingFailureDepth": 1,
+                  "batchingMode": "SPECULATIVE",
+                  "batchingMaxWaitTimeMins": 60,
+                  "batchingMinSize": 1,
+                  "createPrsForTestingBranches": true,
+                  "enqueuedPullRequests": [
+                    {
+                      "id": "1234567890abcdef",
+                      "state": "PENDING",
+                      "stateChangedAt": "2021-01-01T00:00:00Z",
+                      "priorityValue": 100,
+                      "priorityName": "medium",
+                      "usedDefaultPriorityName": "medium",
+                      "skipTheLine": false,
+                      "prNumber": 1,
+                      "prTitle": "Add new feature",
+                      "prSha": "1234567890abcdef",
+                      "prBaseBranch": "main",
+                      "prAuthor": "dependabot"
+                    }
+                  ]
                 }
               }
             }
