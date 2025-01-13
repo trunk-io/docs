@@ -1,6 +1,6 @@
 ---
 title: Configuring android
-description: A guide for generating JUnit test reports for Android projects
+description: A guide for generating Trunk-compatible test reports for Android projects
 layout:
   title:
     visible: true

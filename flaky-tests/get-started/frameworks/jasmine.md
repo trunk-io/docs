@@ -1,6 +1,6 @@
 ---
 title: Configuring jasmine
-description: A guide for generating JUnit test reports for Jasmine tests
+description: A guide for generating Trunk-compatible test reports for Jasmine tests
 layout:
   title:
     visible: true

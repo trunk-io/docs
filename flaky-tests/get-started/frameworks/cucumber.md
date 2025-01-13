@@ -1,6 +1,6 @@
 ---
 title: Configuring cucumber
-description: A guide for generating JUnit test reports for Cucumber tests
+description: A guide for generating Trunk-compatible test reports for Cucumber tests
 layout:
   title:
     visible: true

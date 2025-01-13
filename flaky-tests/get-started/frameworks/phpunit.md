@@ -1,6 +1,6 @@
 ---
 title: Configuring phpunit
-description: A guide for generating JUnit test reports for PHPUnit tests
+description: A guide for generating Trunk-compatible test reports for PHPUnit
 layout:
   title:
     visible: true

@@ -1,6 +1,6 @@
 ---
 title: Configuring maven
-description: A guide for generating JUnit test reports for Maven tests
+description: A guide for generating Trunk-compatible test reports for Maven
 layout:
   title:
     visible: true

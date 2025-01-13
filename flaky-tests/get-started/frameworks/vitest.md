@@ -1,6 +1,6 @@
 ---
 title: Configuring vitest
-description: A guide for generating JUnit test reports for Vitest tests
+description: A guide for generating Trunk-compatible test reports with Vitest
 layout:
   title:
     visible: true

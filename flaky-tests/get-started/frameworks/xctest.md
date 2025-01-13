@@ -1,11 +1,11 @@
 ---
 title: Configuring xctest
-description: XCTest unit test framework for XCode and xcodebuild
+description: A guide for generating Trunk-compatible test reports for XCode and xcodebuild
 layout:
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:

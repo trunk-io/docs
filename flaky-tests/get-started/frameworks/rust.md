@@ -1,6 +1,6 @@
 ---
 title: Configuring cargo-nextest
-description: A guide for generating JUnit test reports for Rust tests
+description: A guide for generating Trunk-compatible test reports for Rust
 layout:
   title:
     visible: true

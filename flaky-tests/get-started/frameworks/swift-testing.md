@@ -1,6 +1,6 @@
 ---
 title: Configuring swift-testing
-description: A guide for generating JUnit test reports for Swift Test
+description: A guide for generating Trunk-compatible test reports with Swift Testing
 layout:
   title:
     visible: true

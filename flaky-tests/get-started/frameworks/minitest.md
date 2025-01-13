@@ -1,6 +1,6 @@
 ---
 title: Configuring minitest
-description: A guide for generating JUnit test reports for minitest tests
+description: A guide for generating Trunk-compatible test reports for Minitest
 layout:
   title:
     visible: true

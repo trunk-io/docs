@@ -1,6 +1,6 @@
 ---
 title: Configuring bazel
-description: A guide for generating JUnit test reports with Bazel
+description: A guide for generating Trunk-compatible test reports with Bazel
 layout:
   title:
     visible: true
@@ -16,19 +16,21 @@ layout:
 
 # Bazel
 
-## 1. Generate JUnit
+## 1. Generate Report&#x20;
 
-The `bazel test` command outputs a JUnit for every test target in a test invocation.
+Run the `bazel test` command with the options `--nobuild_event_json_file_path_conversion` and `--build_event_json_file=build_events.json`, which should output a JSON serialization of the [build event protocol](https://bazel.build/remote/bep).&#x20;
+
+Trunk will parse this build event JSON file to access your test results.
 
 ## 2. Output Location
 
-By default the JUnit output will be written to the `bazel-testlogs` output directory. The file containing JUnit is written to a directory with the same path as the test target.&#x20;
+As specified by the `--build_event_json_file=build_events.json` option added in step 1, the output will be in  `build_events.json` in your current working directory.
 
-For example, a target named `//app/component:test` will generate a JUnit file at `bazel-testlogs/app/component/test.xml`.
+When you later [configure your CI ](https://docs.trunk.io/flaky-tests/ci-providers)to upload to Trunk, you'll need to specify the path to your build events file with the `--bazel-bep-path=build_events.json` option instead of the `--junit-paths` for JUnit files.
 
 ## Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+You need to disable automatic retries if you previously enabled them for more accurate detection results.
 
 Disable retries if you're retrying tests using the `--flaky_test_attempts` command line option or retrying in your test runner.
 

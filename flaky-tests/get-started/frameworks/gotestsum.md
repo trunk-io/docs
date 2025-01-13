@@ -1,6 +1,6 @@
 ---
 title: Configuring gotestsum
-description: A guide for generating JUnit test reports for Go tests
+description: A guide for generating Trunk-compatible test reports for Go tests
 layout:
   title:
     visible: true

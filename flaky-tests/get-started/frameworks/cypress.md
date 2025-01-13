@@ -1,6 +1,6 @@
 ---
 title: Configuring cypress
-description: A guide for generating JUnit test reports for Cypress tests
+description: A guide for generating Trunk-compatible test reports for Cypress tests
 layout:
   title:
     visible: true

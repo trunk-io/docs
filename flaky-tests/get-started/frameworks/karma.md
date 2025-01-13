@@ -1,6 +1,6 @@
 ---
 title: Configuring karma
-description: A guide for generating JUnit test reports for Karma tests
+description: A guide for generating Trunk-compatible test reports for Karma tests
 layout:
   title:
     visible: true

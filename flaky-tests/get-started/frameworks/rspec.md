@@ -1,6 +1,6 @@
 ---
 title: Configuring rspec
-description: A guide for generating JUnit test reports for RSpec tests
+description: A guide for generating Trunk-compatible test reports for RSpec
 layout:
   title:
     visible: true

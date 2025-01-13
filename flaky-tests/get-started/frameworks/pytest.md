@@ -1,6 +1,6 @@
 ---
 title: Configuring pytest
-description: A guide for generating JUnit test reports for pytest tests
+description: A guide for generating Trunk-compatible test reports for Pytest
 layout:
   title:
     visible: true
