@@ -29,7 +29,7 @@ You can create a new endpoint by:
 
 1. Login to [Trunk Flaky Tests](https://app.trunk.io/login/?intent=flaky+tests)
 2. From your profile on the top right, navigate to **Settings**
-3. Under **Organization > Webhooks**, in the Svix App Portal, click **Add Endpoint**&#x20;
+3. Under **Organization > Webhooks**, click **Add Endpoint**&#x20;
 4. Paste your GitHub repo's Issues endpoint into **Endpoint URL.** Your **Endpoint URL** should be formatted as: `https://api.github.com/repos/{OWNER}/{REPO}/issues`.  You can verify the URL by visiting it in your browser, such as [https://api.github.com/repos/trunk-io/docs/issues](https://api.github.com/repos/trunk-io/docs/issues).
 5. Under **Subscribe to events,** select `test_case.status_changed`&#x20;
 6. Create the new endpoint. You will be redirected to the endpoint configuration view.

@@ -43,6 +43,7 @@
   * [Webhooks](flaky-tests/webhooks/README.md)
     * [Slack Integration](flaky-tests/webhooks/slack-integration.md)
     * [GitHub Issues Integration](flaky-tests/webhooks/github-issues-integration.md)
+    * [Linear Integration](flaky-tests/webhooks/linear-integration.md)
   * [Uploader CLI Reference](flaky-tests/uploader.md)
 * [Code Quality](code-quality/README.md)
   * [Overview](code-quality/overview/README.md)

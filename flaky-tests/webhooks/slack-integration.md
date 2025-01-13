@@ -35,7 +35,7 @@ You can add the new Slack Webhook URL to Svix by:
 
 1. Login to [Trunk Flaky Tests](https://app.trunk.io/login/?intent=flaky+tests)
 2. From your profile on the top right, navigate to **Settings**
-3. Under **Organization > Webhooks**, in the Svix App Portal, click **Add Endpoint**&#x20;
+3. Under **Organization > Webhooks**, click **Add Endpoint**&#x20;
 4. Paste the Webhook URL from Slack into **Endpoint URL**
 5. Under **Subscribe to events,** select `test_case.status_changed`&#x20;
 6. Create the new endpoint. You will be redirected to the endpoint configuration view.
