@@ -33,6 +33,8 @@ The table is sorted by default by the number of PRs impacted by the case, which 
 
 ### Test Case Details
 
+<figure><picture><source srcset="../.gitbook/assets/flaky-tests-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-details-light.png" alt=""></picture><figcaption></figcaption></figure>
+
 You can click on any of the test cases listed on the Flaky Test dashboard to access the test case’s details. In the details, you can find summary metrics at the top of the page, which covers the following information.
 
 <table><thead><tr><th width="297">Metric</th><th>Description</th></tr></thead><tbody><tr><td>PRs impacted by test</td><td>Describes the number of PRs affected by failures from this test case, the percent of PRs impact, and % change period over period. <strong>PRs with all failures quarantined</strong> do not affect this number.  </td></tr><tr><td>PRs rescued by quarantining</td><td>If quarantining is enabled, describes the number of PRs with CI jobs containing quarantined flaky tests that would have failed, but were rescued by quarantining flaky failures. Also covers estimated engineer hours saved by quarantining flaky tests and unblocking PRs, as well as % change period over period.</td></tr><tr><td>Failure rate</td><td>Describes the failure rate of this test case and the % change period over period.</td></tr><tr><td>Earliest failure in last 7 days</td><td>Earliest failure in the selected data time range.</td></tr><tr><td>Most recent failure in last 7 days</td><td>Latest failure in the selected data time range.</td></tr><tr><td>Ticket Status</td><td>If a ticket was created using the Ticket Creation feature, this reflects the ID and status of the created ticket. You can click the ID to be redirected to your ticket.</td></tr></tbody></table>
@@ -43,7 +45,13 @@ You can click on any of the test cases listed on the Flaky Test dashboard to acc
 
 Unique failures show a history of all past runs for this test case over the selected time period with a list of unique failure types. You can click a failure type to see them highlighted in the timeline.
 
-The test types are a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, commit hash, duration, and time. You can click on a test run to see the detailed stack trace and similar failures on this test case and other test cases.
+The test types are a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, commit hash, duration, and time.&#x20;
+
+You can click on a failure type to see the detailed stack trace:
+
+<figure><picture><source srcset="../.gitbook/assets/test-run-detail-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-run-detail-light.png" alt=""></picture><figcaption></figcaption></figure>
+
+You can flip through the stack traces of similar failures across different test runs by clicking the left and right arrow buttons. You can also see other similar failures on this and other tests.
 
 ### **PRs Impacted**
 
