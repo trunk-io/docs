@@ -4,8 +4,6 @@ description: Detect, quarantine, and eliminates flaky tests from your codebase
 
 # Flaky Tests (beta)
 
-<figure><picture><source srcset="../.gitbook/assets/dashboard-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dashboard-light (1).png" alt=""></picture><figcaption><p>The Trunk Flaky Tests Web App</p></figcaption></figure>
-
 {% include "../.gitbook/includes/slack-callout.md" %}
 
 Trunk Flaky Tests lets your teams detect, track, quarantine, and fix **flaky tests** in your codebase. Flaky Tests is language, environment, and framework-agnostic.
@@ -44,11 +42,11 @@ To learn more, [see our docs about GitHub Comments and Test Summaries](github-pu
 
 Flaky Tests creates detailed reports for individual test failures so you can debug faster.
 
-<figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption><p>Summary of unique failure types.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption><p>Summary of unique failure types</p></figcaption></figure>
 
 Test details will summarize all the unique ways a flaky test fails and let you flip through the relevant stack traces in the Trunk app.
 
-<figure><picture><source srcset="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99/real-saas-app&#x26;intervalDays=14%20(4).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/app.trunk-staging.io_totally-real-saas_flaky-tests_test_6675ee1f-49c5-5400-a6e1-96292a9307ec_status_repo=gewenyu99/real-saas-app&#x26;intervalDays=14%20(5).png" alt=""></picture><figcaption><p>Full failure stack traces</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/test-run-detail-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-run-detail-light (1).png" alt=""></picture><figcaption><p>Full failure stack traces</p></figcaption></figure>
 
 To learn more, [see our docs about the detection of flaky tests](detection.md#test-case-details).
 

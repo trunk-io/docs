@@ -25,7 +25,7 @@ Trunk is a developer experience (DevEx) toolkit that enables you to ship code qu
 
 ### Start Using Trunk
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Web App</strong></td><td>Access dashboards and analytics for all of Trunk's tools</td><td></td><td><a href="https://app.trunk.io">https://app.trunk.io</a></td></tr><tr><td><strong>CLI</strong></td><td>Use the Trunk CLI to check your code for issues and automate local workflows</td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>VS Code Extension</strong></td><td>Get Trunk code checking results inline in VS Code</td><td></td><td><a href="code-quality/ide-integration/vscode.md">vscode.md</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Web App</strong></td><td>Access dashboards and analytics for all of Trunk's tools</td><td></td><td><a href="https://app.trunk.io">https://app.trunk.io</a></td></tr><tr><td><strong>CLI</strong></td><td>Use the Trunk CLI to check your code for issues and automate local workflows</td><td></td><td><a href="https://docs.trunk.io/cli">https://docs.trunk.io/cli</a></td></tr><tr><td><strong>VS Code Extension</strong></td><td>Get Trunk code checking results inline in VS Code</td><td></td><td><a href="code-quality/ide-integration/vscode.md">vscode.md</a></td></tr></tbody></table>
 
 ### Join Our Community
 
