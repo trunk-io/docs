@@ -96,7 +96,7 @@ Yes, you can integrate the Trunk CLI into your CI/CD pipelines for free if youâ€
 
 **Is support provided for free users?**
 
-Yes, free users can seek help through our community Slack channel at [slack.trunk.io](http://slack.trunk.io) or participate in discussions on our [GitHub page](https://github.com/orgs/trunk-io/discussions). Our community members and developer relations engineers regularly participate in discussions and answer questions.
+Yes, free users can seek help through our community Slack channel at [slack.trunk.io](https://slack.trunk.io) or participate in discussions on our [GitHub page](https://github.com/orgs/trunk-io/discussions). Our community members and developer relations engineers regularly participate in discussions and answer questions.
 
 **Why are some components open-source while the core is closed-source?**
 
@@ -109,9 +109,9 @@ Yes, the open-source components are designed to work with the Trunk CLI. They en
 
 **How to Contribute to the Open-Source Components?**
 
-* Plugin Development: You can develop new plugins or improve existing ones by visiting our public GitHub repository at github.com/trunk-io/plugins.
-* GitHub Action: Modify or fork our GitHub Action to better suit your CI workflows. The source code is available at github.com/trunk-io/trunk-action.
-* Community Engagement: Join our community Slack channel at slack.trunk.io to collaborate with other users and our development team.
+* Plugin Development: You can develop new plugins or improve existing ones by visiting our public GitHub repository at [github.com/trunk-io/plugins](https://github.com/trunk-io/plugins).
+* GitHub Action: Modify or fork our GitHub Action to better suit your CI workflows. The source code is available at [github.com/trunk-io/trunk-action](https://github.com/trunk-io/trunk-action).
+* Community Engagement: Join our community Slack channel at [slack.trunk.io](https://slack.trunk.io) to collaborate with other users and our development team.
 
 #### Contact Us
 
