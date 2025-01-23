@@ -1,4 +1,12 @@
+---
+description: >-
+  Triage your flaky tests faster by creating automatically assigned and labeled
+  tickets with the Jira integration.
+---
+
 # Jira Integration
+
+<figure><picture><source srcset="../.gitbook/assets/jira-ticket-creation-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/jira-ticket-creation-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 When Trunk Flaky Tests [detects a broken or flaky test](detection.md), you can create an automatically generated ticket for your team to pick up and fix the test. Currently, Ticket Creation only supports integrations with Jira, but the automatically generated ticket content is formatted in Markdown and can be copied to other platforms like Asana, Linear, or GitHub issues.
 

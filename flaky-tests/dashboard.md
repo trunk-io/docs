@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn to find flaky tests and understand their impact using the Flaky Tests
+  dashboard.
+---
+
 # Dashboard
 
 Trunk Flaky Tests detect flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard.
@@ -10,13 +16,7 @@ Trunk Flaky Tests detect flaky tests by analyzing test results. The health of yo
 
 Trunk Flaky Test provides key repo metrics based on the detected health status of your tests. At the top of the Flaky Test dashboard, you’ll find metrics for the following information.
 
-| Metric                      | Description                                                                                                                                                                                                                        |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Flaky tests                 | Number of flaky test cases in your repo.                                                                                                                                                                                           |
-| Broken tests                | Number of broken test cases in your repo.                                                                                                                                                                                          |
-| PRs blocked by failed tests | PRs that have been blocked by failed tests in CI.                                                                                                                                                                                  |
-| PRs rescued by quarantining | This figure is available if you have [quarantining](quarantining.md) set to preview or enabled. This shows the PRs with CI jobs containing quarantined flaky tests that would have failed if all flaky tests were not quarantined. |
-| Engineering hours saved     | Estimated engineering hours saved based on the study [The Cost of Interrupted Work](https://ics.uci.edu/~gmark/chi08-mark.pdf), where each context switch to debug a flaky test costs 23 minutes of focused productivity.          |
+<table><thead><tr><th width="209">Metric</th><th>Description</th></tr></thead><tbody><tr><td>Flaky tests</td><td>Number of flaky test cases in your repo.</td></tr><tr><td>Broken tests</td><td>Number of broken test cases in your repo.</td></tr><tr><td>PRs blocked by failed tests</td><td>PRs that have been blocked by failed tests in CI.</td></tr><tr><td>PRs rescued by quarantining</td><td>This figure is available if you have <a href="quarantining.md">quarantining</a> set to preview or enabled. This shows the PRs with CI jobs containing quarantined flaky tests that would have failed if all flaky tests were not quarantined.</td></tr><tr><td>Engineering hours saved</td><td>Estimated engineering hours saved based on the study <a href="https://ics.uci.edu/~gmark/chi08-mark.pdf">The Cost of Interrupted Work</a>, where each context switch to debug a flaky test costs 23 minutes of focused productivity.</td></tr></tbody></table>
 
 These numbers are important for understanding the overall health of your repo’s tests, how much flaky and broken tests impact your developer productivity, and the developer hours saved from quarantining tests. You can also view the trends in these numbers in the trend charts.
 

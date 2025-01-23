@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to configure CI to upload test results to Trunk and detect flaky
+  tests.
+---
+
 # Get Started
 
 ### Introduction
