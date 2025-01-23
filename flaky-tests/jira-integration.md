@@ -27,6 +27,7 @@ The ticket description contains the following information:
 * The impact when run on branches
 * Quarantine status
 * Most common failure reasons
+* Code owners according to the [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) file in your repository
 
 ### Create a New Ticket&#x20;
 
