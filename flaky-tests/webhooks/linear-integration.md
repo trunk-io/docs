@@ -33,9 +33,9 @@ If you're having trouble adding a new webhook endpoint with Svix, please see the
 
 ### **3. Add Custom Headers**
 
-The Linear GraphQL API requires some custom headers. You can configure custom headers in Trunk:
+The Linear GraphQL API requires some custom headers. You can configure custom headers in the endpoint configuration that was set up in step 2:
 
-1. You can add custom headers under **Advanced > Custom Headers**&#x20;
+1. You can add custom headers under **Webhooks > Advanced > Custom Headers.**&#x20;
 2. Fill in the **Key** and **Value** referencing the table below, and click the **+** button to add each header.
 
 You'll need to configure the following headers.&#x20;
