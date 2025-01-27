@@ -8,48 +8,33 @@ This guide will walk you through sending Slack messages using event-triggered we
 
 {% include "../../.gitbook/includes/slack-callout.md" %}
 
-### 1. Create a new Slack app
-
-You need to create a Slack app for your Slack workspace to receive webhooks from Trunk Flaky Tests.&#x20;
-
-1. Head to [Slack API](https://api.slack.com/apps)
-2. Click **Create New App** to create a new app
-3. This will open the **Create an App** modal. Select **From scratch**.
-4. Fill in a display name for your Slack bot under App Name and select the Workspace to which the bot will post messages.
-5. Click **Create App**. You will be redirected to your App's settings
-
-### 2. Add a Webhook URL to Your Slack App In Trunk
-
-For the new Slack app created, you need to enable incoming webhooks and add a webhook to your workspace.
-
-1. In your Slack app's settings, under **Features**, navigate to **Incoming Webhooks**&#x20;
-2. Toggle **Activate Incoming Webhooks**
-3. Click **Add New Webhook to Workspace** and select the channel messages should be posted in. Click **Allow** to add the new endpoint.
-4. Copy the **Webhook URL**, such as `https://hooks.slack.com/services/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`
-
-### 3. Configure Slack Webhook URL in Trunk
+### 1. Configure Slack Webhooks
 
 Trunk uses Svix to integrate with other services, such as Slack, through webhooks.&#x20;
 
-You can add the new Slack Webhook URL to Svix by:
+You can add the new Slack Webhook URL to Svix by following these steps:
 
 1. Login to [Trunk Flaky Tests](https://app.trunk.io/login/?intent=flaky+tests)
 2. From your profile on the top right, navigate to **Settings**
-3. Under **Organization > Webhooks**, click **Add Endpoint**&#x20;
-4. Paste the Webhook URL from Slack into **Endpoint URL**
-5. Under **Subscribe to events,** select `test_case.status_changed`&#x20;
-6. Create the new endpoint. You will be redirected to the endpoint configuration view.
+3.  Under **Organization > Webhooks**, click **Slack**&#x20;
+
+    <figure><img src="../../.gitbook/assets/example-webhook-connector-light.png" alt=""><figcaption></figcaption></figure>
+4.  Click **Connect to Slack** and select the server and channel to connect to.
+
+    <figure><img src="../../.gitbook/assets/example-webhook-connector-slack (1).png" alt=""><figcaption></figcaption></figure>
+5. Review the transformation code automatically generated for GitHub issues. You can customize this transformation at any time. Learn more about [customizing transformations](slack-integration.md#id-4.customize-your-transformation).
+6. By default, this connection will send messages about Trunk Merge and Flaky Tests events. If you only want Flaky Test events, unselect all events other than `test_case.status_changed`.
+7. Create the new endpoint. You will be redirected to the endpoint configuration view.
 
 If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).
 
-### 4. Add a Custom Transformation
+### 2. Customize Your Transformation
 
-Next, you need to create a custom transformation to turn the Trunk Flaky Tests event into a Slack message.&#x20;
+Transformations are custom code snippets you can write to customize the Slack messages sent by the webhook. A working template transformation will be added automatically for your webhook, but you can further customize the behavior of this webhook.
 
 1. In the endpoint configuration view, navigate to the **Advanced** tab. Under **Transformation**, toggle the **Enabled** switch.
-2. Click **Edit transformation** to create a custom transformation script.
-3. Copy and paste the transformation script below and click **Save**. You can modify this script to customize your Slack message. You can find what's available in the webhook payload in [the events reference](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed).
-4. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step 5](slack-integration.md#id-5.-test-your-webhook).
+2. Click **Edit transformation** to update your transformation code, and click **Save** to update the transformation.
+3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step ](slack-integration.md#id-5.-test-your-webhook)[3](slack-integration.md#id-5.-test-your-webhook).
 
 An example transformation script is provided below and you can customize your Slack integration by following the [Slack](https://api.slack.com/messaging/webhooks) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
 
@@ -125,15 +110,15 @@ function summarizeTestCase(payload) {
 }
 ```
 
-### 5. Test Your Webhook
+### 3. Test Your Webhook
 
 You can send test messages to your Slack channels as you make updates. You can do this by:
 
 1. In the endpoint configuration view, navigate to the **Testing** tab and select a **Send event**
-2. Under **Subscribed events** select `test_case.status_changed`as the event type to send.
+2. Under **Subscribed events,** select `test_case.status_changed`as the event type to send.
 3. Click **Send Example** to test your webhook
 
-### 6. Monitoring Webhooks
+### 4. Monitoring Webhooks
 
 {% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
 

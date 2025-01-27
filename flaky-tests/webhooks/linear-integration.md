@@ -24,9 +24,11 @@ You can create a new endpoint by:
 
 1. Login to [Trunk Flaky Tests](https://app.trunk.io/login/?intent=flaky+tests)
 2. From your profile on the top right, navigate to **Settings**
-3. Under **Organization > Webhooks**, click **Add Endpoint**
+3.  Under **Organization > Webhooks**, click **Automate Linear Issues Creation.**&#x20;
+
+    <figure><picture><source srcset="../../.gitbook/assets/example-webhook-connector-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-connector-light.png" alt=""></picture><figcaption></figcaption></figure>
 4. Paste the Linear GraphQL API endpoint into **Endpoint URL**, which is: `https://api.linear.app/graphql`.
-5. Under **Subscribe to events,** select `test_case.status_changed`
+5. Review the transformation code automatically generated for Linear issues, you can customize this transformation at any time. Learn more about [customizing transformations](linear-integration.md#id-5.-customize-your-transformation).
 6. Create the new endpoint. You will be redirected to the endpoint configuration view.
 
 If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).
@@ -157,16 +159,19 @@ You'll receive a response that contains your labels and their IDs, for example:
 }
 ```
 
-### 5. Add a Custom Transformation
+### 5. Customize Your Transformation
 
-Next, you must create a custom transformation to turn the Trunk Flaky Tests event into a Linear Issue.&#x20;
+Transformations are custom code snippets you can write to customize the Linear issues created by the webhook. A working template transformation will be added automatically for your webhook, but you can further customize the behavior of this webhook.
 
 1. In the endpoint configuration view, navigate to the **Advanced** tab. Under **Transformation**, toggle the **Enabled** switch.
-2. Click **Edit transformation** to create a custom transformation script.
-3. Copy and paste the transformation script below and click **Save**. You can modify this script to customize how your issues look and what they contain.
-4. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step 5](linear-integration.md#id-5.-test-your-webhook).
+2. Click **Edit transformation** to update your transformation code, and click **Save** to update the transformation.
+3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message[ in step 6](linear-integration.md#id-6.-test-your-webhook).
 
-An example transformation script is provided below and you can customize your Linear Issues integration by following the[ Linear API](https://studio.apollographql.com/public/Linear-API/variant/current/schema/reference) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
+The generated webhook template contains several configurable constants out of the box:
+
+<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>LINEAR_TEAM_ID</code></td><td>(<strong>Required)</strong> Your Linear team ID. <a href="linear-integration.md#team-id">Learn about finding your team ID</a>.</td></tr><tr><td><code>LINEAR_PROJECT_ID</code></td><td><strong>(Optional)</strong> The Linear project ID assigned to new issues. <a href="linear-integration.md#project-id">Learn more about finding your project ID</a>.</td></tr><tr><td><code>LINEAR_LABEL_IDS</code></td><td>(<strong>Optional)</strong> Array of label IDs assigned to new issues. <a href="linear-integration.md#team-id">Learn about finding your l</a><a href="linear-integration.md#label-id">abel IDs</a>.</td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>. <br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
+
+Here is the provided transformation for context. You can customize your Linear Issues integration by following the[ Linear API](https://studio.apollographql.com/public/Linear-API/variant/current/schema/reference) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
 
 ```javascript
 /**
@@ -177,12 +182,28 @@ An example transformation script is provided below and you can customize your Li
  * @param webhook.payload JSON payload
  * @param webhook.cancel whether to cancel dispatch of the given webhook
  */
+
+// Your Linear Team ID from step 3 above. This is required!
+const LINEAR_TEAM_ID = "";
+// The Linear project ID you want issues assigned to from step 3 above. Optional.
+const LINEAR_PROJECT_ID = "";
+// IDs of any labels you want added to the linear issue. Optional.
+const LINEAR_LABEL_IDS = [];
+
+// Below are various configs to fine-tune when an issue is created.
+
+// At least many PRs need to be impacted for an issue to be created.
+const PRS_IMPACTED_THRESHOLD = 2;
+
 function handler(webhook) {
   const impacted_prs = webhook.payload.test_case.pull_requests_impacted_last_7d;
   const newStatus = webhook.payload.status_change.current_status.value;
 
-  // Filter for only flaky tests that impact more than 2 PRs
-  if (newStatus !== "flaky" || impacted_prs < 2) {
+  const resolvedProjectId = LINEAR_PROJECT_ID ? `"${LINEAR_PROJECT_ID}"` : undefined;
+  const resolvedLinearLabels = LINEAR_LABEL_IDS.map((id) => `"${id}"`).join(",");
+
+  // Filter for only flaky tests that impact more than the provided threshold
+  if (newStatus !== "flaky" || impacted_prs < PRS_IMPACTED_THRESHOLD) {
     webhook.payload = "canceled";
     webhook.cancel = true;
     return webhook;
@@ -196,9 +217,9 @@ function handler(webhook) {
       input: {
         title: "Flaky Test: ${webhook.payload.test_case.name}"
         description: """${description}"""
-        teamId: "<YOUR_TEAM_ID>"
-        projectId: "<YOUR_PROJECT_ID>"
-        labelIds: ["<YOUR_LABEL_ID>"]
+        teamId: "${LINEAR_TEAM_ID}"
+        projectId: ${resolvedProjectId}
+        labelIds: [${resolvedLinearLabels}]
       }
     ) {
       success

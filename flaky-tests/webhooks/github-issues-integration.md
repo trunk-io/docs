@@ -21,7 +21,7 @@ Before you can create a webhook to automate GitHub Issue creation, you need to c
     <figure><picture><source srcset="../../.gitbook/assets/example-webhook-github-permissions-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-github-permissions-light.png" alt=""></picture><figcaption></figcaption></figure>
 6. Click **Generate Token** and copy your API token.
 
-### 2. Add a Webhook URL to the GitHub Issues API In Trunk
+### 2. Add a New Webhook
 
 Trunk uses Svix to integrate with other services, such as GitHub Issues through webhooks.&#x20;
 
@@ -29,9 +29,11 @@ You can create a new endpoint by:
 
 1. Login to [Trunk Flaky Tests](https://app.trunk.io/login/?intent=flaky+tests)
 2. From your profile on the top right, navigate to **Settings**
-3. Under **Organization > Webhooks**, click **Add Endpoint**&#x20;
+3.  Under **Organization > Webhooks**, click **Automate GitHub Issue Creation**
+
+    <figure><picture><source srcset="../../.gitbook/assets/example-webhook-connector-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-connector-light.png" alt=""></picture><figcaption></figcaption></figure>
 4. Paste your GitHub repo's Issues endpoint into **Endpoint URL.** Your **Endpoint URL** should be formatted as: `https://api.github.com/repos/{OWNER}/{REPO}/issues`.  You can verify the URL by visiting it in your browser, such as [https://api.github.com/repos/trunk-io/docs/issues](https://api.github.com/repos/trunk-io/docs/issues).
-5. Under **Subscribe to events,** select `test_case.status_changed`&#x20;
+5. Review the transformation code automatically generated for GitHub issues. You can customize this transformation at any time. Learn more about [customizing transformations](github-issues-integration.md#id-5.-customize-your-transformation).
 6. Create the new endpoint. You will be redirected to the endpoint configuration view.
 
 If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).
@@ -51,16 +53,19 @@ You'll need to configure the following headers.&#x20;
 | `Authorization`        | `Bearer <YOUR_API_TOKEN>`     |
 | `X-GitHub-Api-Version` | `2022-11-28`                  |
 
-### 4. Add a Custom Transformation
+### 4. Customize Your Transformation
 
-Next, you need to create a custom transformation to turn the Trunk Flaky Tests event into a GitHub Issue.&#x20;
+Transformations are custom code snippets you can write to customize the GitHub issues created by the webhook. A working template transformation will be added automatically for your webhook, but you can further customize the behavior of this webhook.
 
 1. In the endpoint configuration view, navigate to the **Advanced** tab. Under **Transformation**, toggle the **Enabled** switch.
-2. Click **Edit transformation** to create a custom transformation script.
-3. Copy and paste the transformation script below and click **Save**. You can modify this script to customize how your issues look and what they contain.
-4. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step 5](github-issues-integration.md#id-5.-test-your-webhook).
+2. Click **Edit transformation** to update your transformation code, and click **Save** to update the transformation.
+3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step 5](github-issues-integration.md#id-5.-test-your-webhook).
 
-An example transformation script is provided below and you can customize your GitHub Issues integration by following the [GitHub](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
+The generated webhook template contains several configurable constants out of the box:
+
+<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>GITHUB_ISSUE_LABEL_IDS</code></td><td><strong>(Optional)</strong> GitHub labels that will be assigned to issues created by Trunk. </td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>. <br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
+
+Here is the provided transformation for context. You can customize your GitHub Issues integration by following the [GitHub](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
 
 {% code lineNumbers="true" %}
 ```javascript
@@ -72,13 +77,30 @@ An example transformation script is provided below and you can customize your Gi
  * @param webhook.payload JSON payload
  * @param webhook.cancel whether to cancel dispatch of the given webhook
  */
+// IDs of any labels you want added to the GitHub issue.
+const GITHUB_ISSUE_LABEL_IDS = [];
+
+// Below are various configs to fine-tune when an issue is created.
+
+// At least this many PRs need to be impacted for an issue to be created.
+const PRS_IMPACTED_THRESHOLD = 2;
+
 function handler(webhook) {
+  const impacted_prs = webhook.payload.test_case.pull_requests_impacted_last_7d;
+  const newStatus = webhook.payload.status_change.current_status.value;
+
+  // Filter for only flaky tests that impact more than the provided threshold
+  if (newStatus !== "flaky" || impacted_prs < PRS_IMPACTED_THRESHOLD) {
+    webhook.payload = "canceled";
+    webhook.cancel = true;
+    return webhook;
+  }
   webhook.payload = {
     "title":`Flaky Test: ${webhook.payload.test_case.name.substring(0, 25)} transitioned to ${webhook.payload.status_change.current_status.value}`,
     "body": summarizeTestCase(webhook.payload),
-    "labels": ["flaky-test"],
+    "labels": GITHUB_ISSUE_LABEL_IDS,
     // Uncomment this function for auto asignment
-    // webhook.payload.test_case.codeowners.map((assignee)=>{
+    // "assignees": webhook.payload.test_case.codeowners.map((assignee)=>{
     //     // Strip the `@` symbol from codeowners
     //     return assignee.slice(1)
     // })
@@ -132,12 +154,22 @@ ${
 
 #### Automatically Assign Issues with CODEOWNERS
 
-If you have [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) configured for your GitHub repo, you can create issues with assignees using CODEOWNERS. **Uncomment the code on lines 14-18** to enable automatic assignment. \
+If you have [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) configured for your GitHub repo, you can create issues with assignees using CODEOWNERS. \
 \
-**Limitations of Automatic Assignment**
+You can uncomment the code block on lines 31-35 or use a snippet similar to:
 
-1. CODEOWNERS supports assigning files to teams, but GitHub doesn't support assigning issues to teams. If you have team owners in your CODEOWNERS file, the requests will fail.
-2. The example payload has the CODEOWNERS assigned to `@backend`. If you're testing following the instructions in [step 5](github-issues-integration.md#id-5.-test-your-webhook), the delivery attempt can fail.
+```javascript
+"assignees": webhook.payload.test_case.codeowners.map((assignee)=>{
+         // Strip the `@` symbol from codeowners
+         return assignee.slice(1)
+     })
+```
+
+#### Limitations of CODEOWNERS
+
+1. CODEOWNERS supports assigning files to teams, but GitHub doesn't support assigning issues to teams. **If you have team owners in your CODEOWNERS file, the requests will fail**.
+2. If your code owners do not map 1:1 with GitHub users, you will need to provide your own mapping, or webhooks will fail.
+3. The example payload provided for testing has the CODEOWNERS assigned to `@backend`. If you're testing following the instructions in [step 5](github-issues-integration.md#id-5.-test-your-webhook), the delivery attempt can fail.
 
 ### 5. Test Your Webhook
 
