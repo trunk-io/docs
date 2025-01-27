@@ -1,9 +1,3 @@
----
-description: >-
-  Learn how to configure CI to upload test results to Trunk and detect flaky
-  tests.
----
-
 # Get Started
 
 ### Introduction
@@ -57,6 +51,10 @@ You can learn more about how Trunk detects flaky tests in our documentation:
 ### 5. Enable test summary comments on PRs
 
 Flaky Tests can post comments on GitHub pull requests to provide a summary of all the tests run on this PR, across multiple CI jobs or even CI systems, as well as whether those failures are due to flakiness, the history of the failures of that test, and more.
+
+<figure><picture><source srcset="../../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/github-comment-light.png" alt=""></picture><figcaption></figcaption></figure>
+
+
 
 To enable PR Comments, see our documentation:
 
