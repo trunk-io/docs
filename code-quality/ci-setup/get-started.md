@@ -14,7 +14,7 @@ Sign up at [app.trunk.io](https://app.trunk.io/login?intent=code+quality), creat
 
 ## Set Up Trunk Code Quality
 
-Once your Trunk organization is connected to GitHub, create a .trunk repo in your account or organization and grant Trunk permissions to access the repo. The .trunk repo will hold the workflows to scan your codebase and pull requests. [Learn more about the .trunk repo](https://docs.trunk.io/check/check-cloud-ci-integration/get-started/github-integration#what-is-a-.trunk-repository).
+Once your Trunk organization is connected to GitHub, create a .trunk repo in your account or organization and grant Trunk permissions to access the repo. The .trunk repo will hold the workflows to scan your codebase and pull requests. [Learn more about the .trunk repo](https://docs.trunk.io/code-quality/setup-and-installation/github-integration#what-is-a-.trunk-repository).
 
 {% @supademo/embed demoId="pRr_eDzh-klIQdK_yW3se" url="https://app.supademo.com/demo/pRr_eDzh-klIQdK_yW3se" %}
 

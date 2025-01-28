@@ -48,7 +48,7 @@ Unlike with most tools under `trunk check`, these files cannot be moved.
 ## Usage Notes
 
 # ESLint >= 9.x
-As of ESLint v9, all of the formatters have been removed. We suggest using [prettier](https://docs.trunk.io/check/configuration/supported/prettier) to format Javascript and Typescript code. The extra package mentioned below is no longer needed for ESLint v9 and higher.
+As of ESLint v9, all of the formatters have been removed. We suggest using [prettier](https://docs.trunk.io/code-quality/linters/supported/prettier) to format Javascript and Typescript code. The extra package mentioned below is no longer needed for ESLint v9 and higher.
 
 # ESlint < 8.x
 Most ESLint users use a number of plugins, custom parsers, etc. Trunk has the ability to turn sandboxing and caching on or off for each linter, and we've turned it off for ESLint so it can use your repo's installed packages for ESLint plugins and other required ESLint packages. Trunk does control the ESLint version itself, but otherwise ESLint looks for all plugins, configs, etc. based on the path of source file it is linting. **This all means you do need to have ****npm/yarn install****'d in your repo as a prerequisite before running ESLint via trunk**.

@@ -33,7 +33,7 @@ You can also define simple linters inline using tools like `grep`. This linter w
 
 ```yaml
 # This file controls the behavior of Trunk: https://docs.trunk.io/cli
-# To learn more about the format of this file, see https://docs.trunk.io/reference/trunk-yaml
+# To learn more about the format of this file, see https://docs.trunk.io/cli/configuration
 version: 0.1
 cli:
   version: 1.22.1

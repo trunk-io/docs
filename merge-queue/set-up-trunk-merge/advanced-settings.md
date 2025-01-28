@@ -21,7 +21,7 @@ There is an additional state, `Switching Modes`, that functions exactly like `Dr
 Configure how long a PR's test can run before auto-cancelling while testing in the Merge Queue. If a long-running test is detected, Merge will automatically cancel the test.
 
 {% hint style="info" %}
-If you're unsure about what timeout to set, you can use our [CI Analytics](https://trunk.io/products/ci-analytics) to analyze the runtime of your CI.
+If you're unsure about what timeout to set, you can use our [CI Analytics](https://trunk.io/ci-analytics) to analyze the runtime of your CI.
 {% endhint %}
 
 For example, assuming a timeout of 4 hours:
@@ -64,7 +64,7 @@ When draft PR creation is disabled, you will need to configure push-triggered wo
 When creating Draft PRs is disabled, Trunk Merge Queue creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
 
 {% hint style="info" %}
-If you already have tests that trigger on new PRs, you can use the [Draft PR Creation](https://docs.trunk.io/merge/set-up-trunk-merge/advanced-settings#draft-pr-creation) feature to let Trunk Merge Queue create draft PRs instead of setting up a push triggered workflow.
+If you already have tests that trigger on new PRs, you can use the [Draft PR Creation](https://docs.trunk.io/merge-queue/set-up-trunk-merge/advanced-settings#draft-prs) feature to let Trunk Merge Queue create draft PRs instead of setting up a push triggered workflow.
 {% endhint %}
 
 For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:
