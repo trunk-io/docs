@@ -42,6 +42,7 @@
   * [Jira Integration](flaky-tests/jira-integration.md)
   * [Webhooks](flaky-tests/webhooks/README.md)
     * [Slack Integration](flaky-tests/webhooks/slack-integration.md)
+    * [Microsoft Teams Integration](flaky-tests/webhooks/microsoft-teams-integration.md)
     * [GitHub Issues Integration](flaky-tests/webhooks/github-issues-integration.md)
     * [Linear Integration](flaky-tests/webhooks/linear-integration.md)
   * [Uploader CLI Reference](flaky-tests/uploader.md)
