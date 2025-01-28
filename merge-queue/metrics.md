@@ -18,7 +18,7 @@ You can access the metrics in your Trunk Merge Queue by navigating to the Trunk 
 
 The date ranges selector at the top left of the dashboard allows you to filter the data displayed by date and time. You can display time buckets by the day or hour in the day/hour dropdown.
 
-The metrics displayed only include data that have **completed within the time rage**, jobs started but not completed during the selected time **will not be displayed**.&#x20;
+The metrics displayed only include data that have **completed within the time range**, jobs started but not completed during the selected time **will not be displayed**.&#x20;
 
 {% hint style="info" %}
 When working across multiple time zones, enable **Time in UTC** to ensure everyone sees the same data.&#x20;
@@ -28,7 +28,7 @@ When working across multiple time zones, enable **Time in UTC** to ensure everyo
 
 Conclusion count displays the number of pull requests that exited the merge queue during each time bucket. This includes passes, failures, and cancellations. Passes and failures signal a PR that was tested in the queue to completion, while canceled signals that the request to merge terminated before testing finished or before testing began.
 
-Conclusion counts are an important signal to potential bottlenecks or underlying issues with your merging process, as a failure or cancellation in the merge queue can force other PRs to r**estart their testing**. A spike in the number of failures or passes can indicate a potential problem to investigate.
+Conclusion counts are an important signal to potential bottlenecks or underlying issues with your merging process, as a failure or cancellation in the merge queue can force other PRs to **restart their testing**. A spike in the number of failures or passes can indicate a potential problem to investigate.
 
 Conclusions are tagged with a reason to give further insights into how merges pass or fail in the queue. You can show or hide conclusions of a particular reason by using the **+ Add** button.
 
@@ -38,7 +38,7 @@ Conclusions are tagged with a reason to give further insights into how merges pa
 
 Time in queue shows how long each PR spends in the Merge Queue from the moment the PR enters the queue to the moment when it exits the queue, either from merging, failing, or being canceled.&#x20;
 
-Understanding the amount of time a pull request is spending in the queue is important for ensuring your merge process continues to ship code quickly. A spike in the time to merge indicates a slowdown somewhere that's impacting all developers. For example, it's taking longer to run tests on PRs, PRs are waiting too long to start testing, or constant failures in the queue are causing PRs to take longer to merge
+Understanding the amount of time a pull request spends in the queue is important for ensuring your merge process continues to ship code quickly. A spike in the time to merge indicates a slowdown somewhere that's impacting all developers. For example, it's taking longer to run tests on PRs, PRs are waiting too long to start testing, or constant failures in the queue are causing PRs to take longer to merge
 
 The time in queue can be displayed as different statistical measures. You can show or hide them by using the **+ Add** button.
 

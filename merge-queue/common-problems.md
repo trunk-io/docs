@@ -10,9 +10,9 @@ Solution: Most likely you did not set up the required status checks to trigger f
 
 ## My PR appears to be ready but isn't entering the Merge Queue?
 
-First, check the Trunk UI where it shows what Trunk is waiting on before putting your PR into the merge queue. **(screenshot)**
+First, check the Trunk web app to see what Trunk is waiting on before putting your PR into the merge queue.&#x20;
 
-Next, if something on that page doesn't look right (for example, it says that GitHub is still checking the merge-ability of the PR), comment `/trunk merge` again in the PR.
+Next, if something on that page doesn't look right, for example, it says that GitHub is still checking the mergeability of the PR, comment `/trunk merge` again in the PR.
 
 ## My PR is constantly failing when it starts testing because of "GitHub errors".
 
@@ -35,6 +35,6 @@ By default, both [dependabot](https://docs.github.com/en/code-security/dependabo
 
 ## I have an emergency PR that needs to merge right now. How can I do that?
 
-To merge a PR in the event of an emergency, you can just merge the PR directly though GitHub as you normally would. The merge queue will restart everything it is currently testing to account for the new head of the merge branch.
+To merge a PR in the event of an emergency, you can just merge the PR directly through GitHub as you normally would. The merge queue will restart everything it is currently testing to account for the new head of the merge branch.
 
 We currently have other features planned to help with this, so stay tuned!
