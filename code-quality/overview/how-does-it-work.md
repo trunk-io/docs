@@ -28,25 +28,25 @@ You can still run on all files.
 trunk check --all
 ```
 
-_**Hold the Line**_ is built into Trunk Code Quality itself. This means existing linters that do not support line by line functionality will still work with _Hold the Line_. Even [custom linters](../linters/custom-linters.md) you write yourself.
+_**Hold the Line**_ is built into Trunk Code Quality itself. This means existing linters that do not support line-by-line functionality will still work with _Hold the Line_. Even [custom linters](../linters/custom-linters.md) you write yourself.
 
 ### Daemon
 
 The Trunk CLI, specifically `trunk check`, runs a daemon that monitors relevant file changes and triggers jobs to precompute in the background while you work. The daemon is used both to support real-time background checking in supported extensions such as [VSCode](../ide-integration/vscode.md) and [Neovim](../ide-integration/neovim.md), and to precompute check results for faster commits/pushes.
 
-Some native linters are more compute/memory intensive and `check` support disabling background linting of those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](../../cli/configuration/lint/commands.md#run_when) configuration for a tool.
+Some native linters are more compute/memory intensive and `check` allows you to disable background linting for those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](../../cli/configuration/lint/commands.md#run_when) configuration for a tool.
 
 ### Hermetic tools and runtime management
 
-Trunk hermetically installs the static analysis tools you run and the runtimes they run on. This means, these tools are installed and managed by the Trunk CLI, unaffected by your systems environment.
+Trunk hermetically installs the static analysis tools you run and their required runtimes. This means these tools are installed and managed by the Trunk CLI, and are unaffected by your systems environment.
 
-If a tool requires `python 3.10` but the projects you're working on requires `python 3.7`, Trunk will manage that tool and it's `python 3.10` runtime automatically and not affect the `python 3.7` environment. This means Trunk will not modify or pollute your machine.
+If a tool requires `python 3.10` but the projects you're working on require `python 3.7`, Trunk will manage that tool and its `python 3.10` runtime automatically and not affect the `python 3.7` environment. This means Trunk will not modify or pollute your machine.
 
 Trunk manages the hermetic installation of all required runtimes. You can also specifically pin a version of a runtime you'd like Trunk to use, or tell Trunk to re-use an already-installed runtime on the system.
 
 ### Plugin system
 
-Trunk is fully extensible and configurable through the [Trunk Plugins Repo](https://github.com/trunk-io/plugins/). When you install a plugin through Trunk, their definition for their behavior, how they install, how they run, and how they report are all defined in the Plugins Repo.
+Trunk is fully extensible and configurable through the [Trunk Plugins Repo](https://github.com/trunk-io/plugins/).  When installing a plugin through Trunk, the definition of a plugin's behavior, including install, run, and report instructions, is defined in the Plugins Repo.
 
 This can be overridden by defining your own plugin repo to import, overriding individual linter definitions locally, and even writing your own custom linters.
 
@@ -60,6 +60,6 @@ Trunk works in CI. Trunk Code Quality provides [GitHub integration](../ci-setup/
 
 ### Nightly reports
 
-Trunk Code Quality allows you to [upload results](../ci-setup/manual-setup.md#other-providers) to the [Trunk Web App](https://app.trunk.io/login/?intent=code+quality), which provides a dashboard for you to view your current code base issues and track code base health over time.
+Trunk Code Quality allows you to [upload results](../ci-setup/manual-setup.md#other-providers) to the [Trunk Web App](https://app.trunk.io/login/?intent=code+quality), which provides a dashboard to view your current code base issues and track code base health over time.
 
 [Learn more about nightly reporting.](how-does-it-work.md#nightly-reports)

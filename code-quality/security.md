@@ -12,7 +12,7 @@ Whether invoked directly by developers on their local machines, triggered automa
 
 * Your code is processed entirely locally; by default, we never transmit, store, or share your source code on our servers.
 * All linting, formatting, and analysis occur within your own environment, ensuring your code never leaves your control.
-* Limited usage telemetry data is collected. This data never includes your source code, and it is possible to opt-out. For more details on telemetry, please refer to our[ telemetry documentation](https://docs.trunk.io/cli/configuration/telemetry).
+* Limited usage telemetry data is collected. This data never includes your source code, and it is possible to opt out. For more details on telemetry, please refer to our[ telemetry documentation](https://docs.trunk.io/cli/configuration/telemetry).
 * See below for the properties of setting up uploads to the Trunk web application.
 
 ### VS Code Extension
@@ -30,5 +30,3 @@ The Trunk Code Quality web app is powered via running nightly scans in your repo
 * You have full control over when and how often these scans and uploads occur
 
 For more information on setting up and configuring result uploads, including how to obtain and use the Trunk access token, please refer to our [upload documentation](https://docs.trunk.io/code-quality/setup-and-installation/github-integration).
-
-\

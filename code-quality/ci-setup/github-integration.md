@@ -1,6 +1,6 @@
 # Nightly Report
 
-Trunk Code Quality has the ability to post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=code+quality). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
+Trunk Code Quality can post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=code+quality). This allows you to view your repository's Code Quality history over time, track quality trends, and browse issues to help prioritize fixes.
 
 ### Connect your Trunk organization to GitHub
 
@@ -20,9 +20,9 @@ If you would like to receive notifications for new issues Trunk finds in your re
 
 {% @supademo/embed demoId="cllpdjqhy1jf1051a1nff1a3y" url="https://app.supademo.com/demo/cllpdjqhy1jf1051a1nff1a3y" %}
 
-### **How Trunk Uploading Results**
+### **How Trunk Uploads Results**
 
-The upload feature of Trunk Code Quality will upload all of the issues found by Trunk to the Trunk services. In order to get an accurate picture of the state of your repository, you'll want to upload all of the Trunk Code Quality issues for your whole repository.
+The upload feature of Trunk Code Quality will upload all of the issues found by Trunk to the Trunk services. To get an accurate picture of the state of your repository, you'll want to upload all of the Trunk Code Quality issues for your whole repository.
 
 Generally, this is done within your Continuous Integration system (CI) automatically whenever **pull requests are filed or pushed to a specific branch** in your repo. Trunk Code Quality can also **run periodically** to check for new vulnerabilities in your dependencies.
 
@@ -39,7 +39,7 @@ The `.trunk` repository contains the workflows run to scan your codebase and pul
 
 Your `.trunk` repository must be added to your Trunk GitHub app installation. You can verify this by navigating to: `https://github.com/organizations/<your_organization>/settings/installations`, clicking "configure" next to Trunk-io, and verifying that the repository access is either "All repositories" or that your `.trunk` repository is selected.
 
-To find Code Quality issues in your repositories and pull requests, we dispatch GitHub Actions workflows in your `.trunk` repository, which check out your repositories and pull requests and then run `trunk check` in them. This strategy allows you to:
+To find Code Quality issues in your repositories and pull requests, we dispatch GitHub Actions workflows in your `.trunk` repository, which checks out your repositories and pull requests and then run `trunk check` in them. This strategy allows you to:
 
 * start using Trunk Code Quality in all your repositories without any configuration, and
 * be in full control over the environment where we analyze your code, since we're running on your GitHub Actions runners.
@@ -47,7 +47,7 @@ To find Code Quality issues in your repositories and pull requests, we dispatch 
 {% hint style="info" %}
 🚧 `.trunk` should have private visibility
 
-Since we use workflow runs in `.trunk` to analyze any repository in your organization and record Code Quality findings, you should think carefully about who has permissions to view workflow runs in your `.trunk` repository. For most organizations, simply making your `.trunk` repository private will be sufficient.
+Since we use workflow runs in `.trunk` to analyze any repository in your organization and record Code Quality findings, you should think carefully about who has permission to view workflow runs in your `.trunk` repository. For most organizations, simply making your `.trunk` repository private will be sufficient.
 {% endhint %}
 
 #### (optional) Custom setup logic

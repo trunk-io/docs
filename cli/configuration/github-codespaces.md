@@ -22,11 +22,7 @@ To have the launcher binary install the CLI tool and associated linters, you can
 "updateContentCommand": "trunk install",
 ```
 
-From the [GitHub documentation](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds):
-
-> You can use the onCreateCommand and updateContentCommand commands in your devcontainer.json to include time-consuming processes as part of the prebuild creation. For more information, see the Visual Studio Code documentation, "devcontainer.json reference."
->
-> onCreateCommand is run only once, when the prebuild is created, whereas updateContentCommand is run at > creation of the prebuild and at subsequent updates to it. Incremental builds should be included in updateContentCommand since they represent the source of your project and need to be included for every prebuild update.
+Read the [GitHub docs](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds#configuring-time-consuming-tasks-to-be-included-in-the-prebuild) to learn more about `updateContentCommand` .
 
 Note: You should only add `trunk install` if you have a Trunk-configured repository.
 
@@ -34,7 +30,9 @@ You can then [configure pre-builds](https://docs.github.com/en/codespaces/prebui
 
 ## Installing the Trunk Extension
 
-If you are using the Trunk feature, we will automatically install the Trunk extension on your behalf. Note: We highly recommend turning off auto-save in your VSCode settings in your codespace (or to a longer timeout). Saving files triggers the extension to re-lint, which can quickly overload the extension for anything but the fastest linters. The auto-save setting is detailed [here](https://code.visualstudio.com/docs/editor/codebasics#\_save-auto-save).
+If you are using the Trunk feature, we will automatically install the Trunk extension on your behalf.&#x20;
+
+Note: We highly recommend turning off auto-save in your VSCode settings in your codespace (or set autosave to a longer timeout). Saving files triggers the extension to re-lint, which can quickly overload the extension for anything but the fastest linters. The auto-save setting is detailed [here](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save).
 
 Otherwise, You can add `trunk` to your list of extensions in `devcontainer.json` -
 
