@@ -16,7 +16,7 @@ Trunk lets you create custom workflows with **event-triggered webhooks**. Flaky 
 
 You can also find guides for specific examples here:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Send a Slack Message</td><td></td><td></td><td><a href="../../.gitbook/assets/Slack (1).svg">Slack (1).svg</a></td><td><a href="slack-integration.md">slack-integration.md</a></td></tr><tr><td>Create a GitHub Issue</td><td></td><td></td><td><a href="../../.gitbook/assets/github.png">github.png</a></td><td><a href="github-issues-integration.md">github-issues-integration.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Send a Slack Message</td><td></td><td></td><td></td><td><a href="slack-integration.md">slack-integration.md</a></td></tr><tr><td>Create a GitHub Issue</td><td></td><td></td><td></td><td><a href="github-issues-integration.md">github-issues-integration.md</a></td></tr><tr><td>Send a Microsoft Teams Message</td><td></td><td></td><td></td><td><a href="microsoft-teams-integration.md">microsoft-teams-integration.md</a></td></tr><tr><td>Create a Linear Issue</td><td></td><td></td><td></td><td><a href="linear-integration.md">linear-integration.md</a></td></tr></tbody></table>
 
 {% include "../../.gitbook/includes/verifying-webhooks.md" %}
 
