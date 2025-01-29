@@ -1,3 +1,7 @@
+---
+description: Learn how Trunk detects and labels flaky tests
+---
+
 # Flaky Test Detection
 
 Trunk detects flaky tests by analyzing test results uploaded from your CI jobs. This page covers how flaky tests are detected and how they're labeled after Trunk receives uploaded test results.&#x20;

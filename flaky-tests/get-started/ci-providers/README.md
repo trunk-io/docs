@@ -1,5 +1,5 @@
 ---
-description: You can easily integrate Flaky Tests from any CI Provider.
+description: You can easily integrate Flaky Tests from any CI Provider
 ---
 
 # CI Providers

@@ -52,4 +52,4 @@ If you run tests in CI with [the `-retry-tests-on-failure` option](https://keith
 
 ## Next Step
 
-Once you've configured your test runner to output JUnit XML, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
+Once you've configured your test runner to output JUnit XML or you have a `.xcresult` file, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.

@@ -20,12 +20,14 @@ layout:
 
 Use `cargo-nextest` to run your Rust tests and output JUnit reports. Add this to your nextest configuration:
 
+{% code title="nextest.toml" %}
 ```toml
 [profile.ci.junit]
 path = "junit.xml"
 ```
+{% endcode %}
 
-Run your tests with `cargo-nextest` specifying  `--profile ci` to generate JUnit test reports.
+Run your tests with `cargo-nextest` specifying  `--profile ci` to generate JUnit test reports:
 
 ```
 cargo nextest run --profile ci

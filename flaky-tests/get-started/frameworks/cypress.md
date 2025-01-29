@@ -44,11 +44,13 @@ You need to disable automatic retries if you previously enabled them. Retries co
 
 You can disable retries by setting `retries: 0`in your Cypress config file.
 
+{% code title="cypress.config.js" %}
 ```javascript
 module.exports = defineConfig({
-  retries: 1,
+  retries: 0,
 })
 ```
+{% endcode %}
 
 ## Next Step
 

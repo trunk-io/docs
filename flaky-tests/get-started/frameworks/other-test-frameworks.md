@@ -1,3 +1,9 @@
+---
+description: >-
+  A guide for generating Trunk-compatible test reports with other test
+  frameworks
+---
+
 # Other Test Frameworks
 
 Trunk Flaky Tests is designed to be test framework agnostic. If you don't see a guide for your test framework, you can still use Flaky Tests. To use Flaky Tests, you will need to report test results in a format that Trunk understands and upload them to Trunk in CI. This guide will explain how to integrate your test framework with Trunk.

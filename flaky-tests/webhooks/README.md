@@ -1,3 +1,7 @@
+---
+description: Use webhooks to automate custom flaky test workflows
+---
+
 # Webhooks
 
 Trunk provides webhooks for you to build custom integrations to automate workflows, like notifying your team when a test becomes flaky or automatically creating tickets to investigate flaky tests. Trunk already provides a Jira integration, and more are planned. Webhooks lets you build custom integrations for use cases that are not supported out of the box.

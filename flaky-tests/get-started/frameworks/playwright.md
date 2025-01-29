@@ -20,25 +20,25 @@ layout:
 
 Configure Playwright to generate JUnit:
 
+{% code title="playwright.config.ts" %}
 ```typescript
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   reporter: [
-    ['junit', 
-      { outputFile: 'junit.xml' }
-    ]
+    ['junit', { outputFile: 'junit.xml' }]
   ],
 });
 ```
+{% endcode %}
 
 ## 2. Output Location
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+The JUnit file will be written to the `outputFile` specified in the configuration. In the example above, the results will be written to `junit.xml`.
 
 ## Disable Retries
 
-The JUnit file will be written to the `outputFile` specified in the configuration. In the example above, the results will be written to `junit.xml`.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
 
 You can disable retries in Playwright by omitting the `--retries` command line option and [removing retries in your `playwright.config.ts` file](https://playwright.dev/docs/test-retries#retries).
 
