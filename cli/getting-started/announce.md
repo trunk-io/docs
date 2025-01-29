@@ -2,7 +2,7 @@
 
 ### Trunk Announce
 
-Does your Git commit carry some important information to share with the rest of your organization? Now you can easily share it with the rest of the org by including `/trunk announce` at the beginning of one of the lines of your commit message.&#x20;
+Does your Git commit carry some important information to share with the rest of your organization? Now you can easily share it with the rest of the org by including `/trunk announce` at the beginning of one of the lines of your commit message.
 
 {% hint style="info" %}
 If your org squashes commit messages, you should put it in your PR description
@@ -12,7 +12,7 @@ Any additional text on that line will form an optional title, and the remaining 
 
 ### Enable Trunk Announce
 
-Trunk Announce is a Git hook triggered Trunk Action. You can enable this Trunk Action by running this command:
+Trunk Announce is a githook-triggered Trunk Action. You can enable this Trunk Action by running this command:
 
 ```
 trunk actions enable trunk-announce
@@ -22,7 +22,7 @@ trunk actions enable trunk-announce
 
 When you pull new changes, new announcements are automatically shown.
 
-If you would like to see changes since some commit, use  `trunk show-announcements since <ref>`.
+If you would like to see changes since some commit, use `trunk show-announcements since <ref>`.
 
 For example:
 

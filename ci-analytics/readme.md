@@ -6,7 +6,7 @@ description: See live and trend data about the performance and flakiness of your
 
 ## Overview
 
-Trunk CI Analytics unifies information about CI performance, trends, and reliability. CI Analytics provides powerful dashboards that allow you to understand your CI systems' health quickly. CI Analytics gives developers the tools they need to investigate, triage, and fix performance and reliability problems that slow down your engineering teams.
+Trunk CI Analytics unifies information about CI performance, trends, and reliability. CI Analytics provides powerful dashboards that allow you to understand your CI systems' health quickly. CI Analytics gives developers the tools they need to investigate, triage, and fix performance and reliability problems that slow down engineering teams.
 
 {% embed url="https://share.vidyard.com/watch/wwnfuxL7ETg36DJrF2RBEZ" %}
 
@@ -14,7 +14,7 @@ Trunk CI Analytics unifies information about CI performance, trends, and reliabi
 
 Trunk CI Analytics integrates with the following CI providers to gather pipeline metrics that track the performance and results of your CI systems.
 
-<table data-column-title-hidden data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>GitHub Actions</td><td></td><td></td><td><a href="../.gitbook/assets/Group 1274.png">Group 1274.png</a></td><td><a href="setup/github-actions.md">github-actions.md</a></td></tr><tr><td><strong>Jenkins</strong></td><td></td><td></td><td><a href="../.gitbook/assets/Group 1273.png">Group 1273.png</a></td><td><a href="setup/jenkins.md">jenkins.md</a></td></tr><tr><td>Buildkite</td><td></td><td></td><td><a href="../.gitbook/assets/Group 1276.png">Group 1276.png</a></td><td><a href="setup/api.md">api.md</a></td></tr><tr><td>CircleCI</td><td></td><td></td><td><a href="../.gitbook/assets/Group 1275.png">Group 1275.png</a></td><td><a href="setup/api.md">api.md</a></td></tr><tr><td>API</td><td></td><td></td><td><a href="../.gitbook/assets/Group 1277.png">Group 1277.png</a></td><td><a href="setup/api.md">api.md</a></td></tr></tbody></table>
+<table data-column-title-hidden data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>GitHub Actions</td><td></td><td></td><td><a href="../.gitbook/assets/github.png">github.png</a></td><td><a href="setup/github-actions.md">github-actions.md</a></td></tr><tr><td><strong>Jenkins</strong></td><td></td><td></td><td><a href="../.gitbook/assets/jenkins.png">jenkins.png</a></td><td><a href="setup/jenkins.md">jenkins.md</a></td></tr><tr><td>Buildkite</td><td></td><td></td><td><a href="../.gitbook/assets/bazel.png">bazel.png</a></td><td><a href="setup/api.md">api.md</a></td></tr><tr><td>CircleCI</td><td></td><td></td><td><a href="../.gitbook/assets/circle-ci.png">circle-ci.png</a></td><td><a href="setup/api.md">api.md</a></td></tr><tr><td>API</td><td></td><td></td><td><a href="../.gitbook/assets/Group 1277.png">Group 1277.png</a></td><td><a href="setup/api.md">api.md</a></td></tr></tbody></table>
 
 Don't see your CI Provider listed here? Please contact our community slack at [slack.trunk.io](https://slack.trunk.io) or support at [support@trunk.io](mailto:support@trunk.io), and we'll add it.
 

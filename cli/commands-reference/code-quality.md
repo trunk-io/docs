@@ -2,7 +2,7 @@
 
 ### trunk check
 
-`trunk check`: Universal code checker.&#x20;
+`trunk check`: Universal code checker.
 
 #### **Usage** **example**
 
@@ -14,7 +14,7 @@ trunk check [options]
 
 * `-a, --all`: Check all files instead of only changed files
 * `--sample`: Run each linter on N files
-* `--filter`: Comma separated list of linters and/or issue codes to include or exclude
+* `--filter`: Comma-separated list of linters and/or issue codes to include or exclude
 * `--exclude`: Shorthand for an inverse --filter
 * `--scope`: Scope of checks to run {all | security}
 * `--ignore`: Glob pattern to exclude files from linting
@@ -50,11 +50,11 @@ trunk check [options]
 * `-n, --no-fix`: Don't automatically apply fixes
 * `--cache`: Disable to skip cache for all check actions
 * `--ignore-git-state`: Run linters even if a merge, rebase, or revert is in progress
-* `--upstream`: Upstream branch used to compute changed files&#x20;
+* `--upstream`: Upstream branch used to compute changed files
 
 ### Trunk Check Enable Linter
 
-`trunk check enable`: Enable linters for trunk check.&#x20;
+`trunk check enable`: Enable linters for trunk check.
 
 #### **Usage** **example**
 
@@ -64,7 +64,7 @@ trunk check enable [options]
 
 ### Trunk Check Disable Linter
 
-`trunk check disable`: Disable linters for trunk check.&#x20;
+`trunk check disable`: Disable linters for trunk check.
 
 #### **Usage** **example**
 
@@ -74,7 +74,7 @@ trunk check disable [options]
 
 ### Trunk Check List Linters
 
-`trunk check list`: List linters for trunk check.&#x20;
+`trunk check list`: List linters for trunk check.
 
 #### **Usage** **example**
 
@@ -84,7 +84,7 @@ trunk check list [options]
 
 ### Trunk Check Run Format
 
-`trunk fmt`: List linters for trunk check.&#x20;
+`trunk fmt`: List linters for trunk check.
 
 #### **Usage** **example**
 
@@ -97,7 +97,7 @@ trunk fmt [options]
 #### Filtering Options
 
 * `-a, --all`: Check all files instead of only changed files
-* `--filter`: Comma separated list of linters and/or issue codes to include or exclude
+* `--filter`: Comma-separated list of linters and/or issue codes to include or exclude
 * `--exclude`: Shorthand for an inverse --filter
 * `--scope`: Scope of checks to run {all | security}
 * `--ignore`: Glob pattern to exclude files from linting
@@ -126,7 +126,7 @@ trunk fmt [options]
 * `-n, --no-fix`: Don't automatically apply fixes
 * `--cache`: Disable to skip cache for all check actions
 * `--ignore-git-state`: Run linters even if a merge, rebase, or revert is in progress
-* `--upstream`: Upstream branch used to compute changed files&#x20;
+* `--upstream`: Upstream branch used to compute changed files
 * `-j`, `--jobs`: Number of concurrent jobs
 
 ## Advanced Trunk Check Features

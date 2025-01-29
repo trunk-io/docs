@@ -24,7 +24,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `direct_configs`
 
-`direct_configs`: _string list_. Indicates config files used to auto enable the linter. See [Auto Enabling](auto-enable.md).
+`direct_configs`: _string list_. Indicates config files used to auto-enable the linter. See [Auto Enabling](auto-enable.md).
 
 ## `disabled`
 
@@ -32,7 +32,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `download`
 
-`download`: _string_. The download url. You must provide either runtime + packages or download, not both. Using runtimes is preferred. See [Runtimes](../runtimes.md).
+`download`: _string_. The download URL. You must provide either runtime + packages or download, not both. Using runtimes is preferred. See [Runtimes](../runtimes.md).
 
 ## `enabled`
 
@@ -44,7 +44,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `extra_packages`
 
-`extra_packages`: list of strings, Extra packages to install, versions are optional See [Linter Dependencies](dependencies.md).
+`extra_packages`: list of strings, Extra packages to install, versions are optional. See [Linter Dependencies](dependencies.md).
 
 ## `formatter`
 
@@ -52,7 +52,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `good_without_config`
 
-`good_without_config`: _optional boolean_. Indicates whether this linter is recommended without the user tuning its configuration. Prefer [`suggest_if`](definitions.md#suggest\_if).
+`good_without_config`: _optional boolean_. Indicates whether this linter is recommended without the user tuning its configuration. Prefer [`suggest_if`](definitions.md#suggest_if).
 
 ## `hold_the_line`
 

@@ -8,7 +8,7 @@ description: >-
 
 ### Defining actions that produce notifications
 
-Typically, whatever actions write to stdout is stored in the log file and perhaps shown to the user. However, actions can also produce structured output if `output_type` is set on the Action Definition to be `notification_v1`.
+Typically, whatever actions write to stdout are stored in the log file and perhaps shown to the user. However, actions can also produce structured output if `output_type` is set on the Action Definition to be `notification_v1`.
 
 In this case, the action should print yaml to output with the following structure:
 
@@ -29,10 +29,10 @@ notifications:
 
 Some notes:
 
-1. The ID can be whatever you want it to, but generally should be made to match the action ID.
+1. The ID can be whatever you want it to be, but generally should be made to match the action ID.
 2. You may emit multiple notifications per action.
 3. `icon` and `commands` are used to control notifications display in VSCode.
-4. High priority notifications are immediately shown to the user in terminal. Low priority notifications are only shown every 24 hours (These are configurable).
+4. High-priority notifications are immediately shown to the user in terminal. Low-priority notifications are only shown every 24 hours (These are configurable).
 
 ### Deleting notifications
 

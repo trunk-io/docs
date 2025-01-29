@@ -16,13 +16,6 @@ To receive notifications and/or interact with Trunk from Slack, an admin needs t
 
     <figure><img src="https://files.readme.io/14d4355-image.png" alt=""><figcaption></figcaption></figure>
 2. This will open a window where you can sign in to your Slack workspace.
-
-<div data-full-width="false">
-
-<figure><img src="../.gitbook/assets/testtrunkintegration.slack.com_oauth_client_id=1523871431059.3961451315218&#x26;scope=incoming-webhook,channels:join,channels:manage&#x26;user_scope=&#x26;redirect_uri=https:/app.trunk.io/slack/07e100e0-5053-42ed-8d13-cd953bba3b42" alt="Dialog to connect Trunk to your Slack workspace" width="563"><figcaption></figcaption></figure>
-
-</div>
-
 3. Once you press **Allow**, Trunk will connect to your Slack automatically and begin pushing updates to the channel you have selected.
 
 ## Set repo-level notification preferences
