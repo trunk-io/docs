@@ -24,8 +24,6 @@ Trunk detects flaky tests by analyzing the test results uploaded from your CI jo
 
 <figure><picture><source srcset="../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption><p>The uploads tab contains results received from past CI jobs.</p></figcaption></figure>
 
-<table><thead><tr><th width="218">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
-
 ### How We Detect Flakiness
 
 Trunk analyzes test failures based on the context in which they are run. A test failing on `main` has a different impact on flake detection than a test failing on a pull request. After tests are uploaded to Trunk, they're analyzed based on different rules depending on which branch they were run on.
