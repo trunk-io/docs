@@ -14,6 +14,7 @@
       * [Jest](flaky-tests/get-started/frameworks/jest.md)
       * [Karma](flaky-tests/get-started/frameworks/karma.md)
       * [Maven](flaky-tests/get-started/frameworks/maven.md)
+      * [Gradle](flaky-tests/get-started/frameworks/gradle.md)
       * [minitest](flaky-tests/get-started/frameworks/minitest.md)
       * [Mocha](flaky-tests/get-started/frameworks/mocha.md)
       * [PHPUnit](flaky-tests/get-started/frameworks/phpunit.md)
