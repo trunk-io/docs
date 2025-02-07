@@ -20,6 +20,7 @@ layout:
 
 Configure the `maven-surefire-plugin` plugin in your `pom.xml` file:
 
+{% code title="pom.xml" %}
 ```xml
 <build>
   <plugins>
@@ -43,6 +44,7 @@ Configure the `maven-surefire-plugin` plugin in your `pom.xml` file:
   </plugins>
 </build>
 ```
+{% endcode %}
 
 ## 2. Output Location
 

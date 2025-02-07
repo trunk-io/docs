@@ -1,3 +1,7 @@
+---
+description: Learn how to use flaky test webhooks to power Slack notifications
+---
+
 # Slack Integration
 
 Trunk allows you to create custom workflows to send customized messages to Slack through webhooks.&#x20;

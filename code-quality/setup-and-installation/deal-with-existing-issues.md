@@ -13,7 +13,7 @@ trunk check --all
 ```
 
 {% hint style="info" %}
-#### Trunk is Git aware
+**Trunk is Git aware**
 
 When you run `trunk check` without specifying `--all`, it will **only run on files you've modified according to git**. Remember to [specify a base branch](initialize-trunk.md#initializing-trunk) if you're using something other than `main` or `master`.
 {% endhint %}
@@ -23,7 +23,7 @@ When you run `trunk check` without specifying `--all`, it will **only run on fil
 There are different approaches to dealing with existing issues, such as running `format` and applying automatic fixes, ignoring irrelevant issues, and sampling linters/files. This section walks you through the process to make fixing issues easier.
 
 {% hint style="info" %}
-#### Hold-the-line
+**Hold-the-line**
 
 You don't need to fix all issues upfront. Trunk lets you fix linter errors incrementally with hold-the-line.
 
@@ -71,7 +71,7 @@ trunk check disable <linter>
 
 #### Ignore Issues
 
-If there are warnings that don't apply to your project, you can ignore them by line, by file, or by entire class of warnings in each linter's config files.
+If there are warnings that don't apply to your project, you can ignore them by line, by file, or by class of warnings in each linter's config file.
 
 You can tell Trunk Code Quality to ignore a line in your source code with a special comment like this:
 
@@ -114,4 +114,3 @@ You don't need to fix all the issues. Trunk Code Quality has the ability to _**H
 This allows you to clean up as you go, preventing new issues and letting your team leave each file with better code quality than before.
 
 When you've fixed the existing issues you want to fix, you can skip to [prevent-new-issues.md](prevent-new-issues.md "mention") directly.
-

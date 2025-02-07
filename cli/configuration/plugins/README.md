@@ -5,20 +5,20 @@
 Trunk uses a plugin system where a root configuration is defined in the [trunk-io/plugin repository](https://github.com/trunk-io/plugins). You can import many plugin config sources, and fields defined at each level override the level above.
 
 {% hint style="info" %}
-When plugins configs are merged, only fields defined in a config file are merged into the level above. You can define just the fields you wish to override in `.trunk/trunk.yaml and .trunk/user.yaml.`
+When plugin configs are merged, only fields defined in a config file are merged into the level above. You can define just the fields you wish to override in `.trunk/trunk.yaml and .trunk/user.yaml.`
 {% endhint %}
 
 When using trunk, you can merge several sets of configuration files with a `trunk.yaml` schema. Config merging proceeds as follows:
 
 1. Remote plugins sourced in `.trunk/trunk.yaml` (and `.trunk/user.yaml`). Plugins are sourced in the order they're defined, with later plugins overriding those defined before it. The [`trunk`](https://github.com/trunk-io/plugins) plugin is implicitly sourced first.
-2. Your repo level `.trunk/trunk.yaml` file, complete with a CLI version and any definitions or enables. Configurations defined here overrides what's defined in the remote plugins.
+2. Your repo level `.trunk/trunk.yaml` file, complete with a CLI version and any definitions or enables. Configurations defined here override what's defined in the remote plugins.
 3. Optionally, `.trunk/user.yaml`, a local **git-ignored** file where users can provide their own overrides.
 
 Additionally, any files enumerated in the lint `exported_configs` section are symlinked from their relevant plugin into the root of the workspace when an applicable linter is run with `trunk check`.
 
 ### Importing a Plugin Repository
 
-By default trunk imports the trunk-io/plugins repository. To import a repo add it to the `plugins.sources` list. Each repo requires a URI and ref.
+By default, trunk imports the trunk-io/plugins repository. To import a repo add it to the `plugins.sources` list. Each repo requires a URI and ref.
 
 ```yaml
 plugins:

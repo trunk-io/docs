@@ -2,19 +2,23 @@
 
 ## Why Aren't Issues Showing up Anymore?
 
-If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Code Quality only processes new changes to your codebase (read about [hold-the-line](overview/how-does-it-work.md#hold-the-line)). To scan older changes try running:
+If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Code Quality only processes new changes to your codebase (read about [hold-the-line](overview/how-does-it-work.md#hold-the-line)).
+
+You can use `trunk check` to scan for older, pre-existing lint issues.
+
+For example, to look at a sampling of each linter's issues for 5 random files:
 
 ```sh
 trunk check --samples=5 
 ```
 
-to look at a sampling of each linter's issues for 5 random files
+You can also scan all files using `--all`:
 
 ```sh
 trunk check --all
 ```
 
-to scan all files, whether they've changed or not. [More on CLI options](setup-and-installation/deal-with-existing-issues.md#fixing-existing-issues).
+[Read our docs for more information on CLI options](setup-and-installation/deal-with-existing-issues.md#fixing-existing-issues).
 
 ## My Linters Are Failing or Not Running as Expected
 
@@ -24,7 +28,7 @@ You can also try running `trunk check --verbose` to see what’s going on under 
 
 ## Why Does Trunk Take up So Much Disk Space?
 
-Trunk Code Quality uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime you can safely clear your cache with
+Trunk Code Quality uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime, you can safely clear your cache with
 
 ```
 trunk cache clean --all

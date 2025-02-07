@@ -14,21 +14,21 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), navigate to:
 
-**`Settings` -> `Manage Organization` -> `Organization API Token`**
+**Settings > Organization > Manage > Organization API Token > View Organization API Token > View**
 
 Store your API Token in your Drone CI project settings as a new variable named `TRUNK_TOKEN`. Make sure you are getting your _organization token_, not your project/repo token.
 
 ### 2. Grab your Organization Slug
 
-To upload test results to Trunk, you'll need to pass a Trunk Org Slug to the upload command. To get your organization slug, In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), navigate to:
+To upload test results to Trunk, you'll need to pass a Trunk Organization Slug to the upload command. To get your organization slug, In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), navigate to:
 
-&#x20;**`Settings` -> `Manage` -> `Organization` -> `Organization Slug`**
+**Settings > Organization > Manage > Organization Name > Slug**
 
 Your Trunk Organization Slug can just be pasted directly into your CI workflow; it's not a secret. In the example workflow in the next step, replace `TRUNK_ORG_SLUG` with your actual organization slug.
 
 ### 3. Modify workflows to upload test results
 
-Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or protected branches (`main`, `master`, `develop`, etc) .
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or protected branches (`main`, `master`, `develop`, etc).
 
 #### Add Uploader to Testing Pipelines
 

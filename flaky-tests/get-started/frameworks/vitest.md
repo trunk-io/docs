@@ -20,6 +20,7 @@ layout:
 
 Update your Vitest config to include the `junit` reporter:
 
+{% code title="vitest.config.ts" %}
 ```typescript
 import { defineConfig } from 'vitest/config';
 
@@ -31,6 +32,7 @@ export default defineConfig({
   },
 });
 ```
+{% endcode %}
 
 ## 2. Output Location
 

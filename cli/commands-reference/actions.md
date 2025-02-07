@@ -190,7 +190,7 @@ trunk show-announcements post-merge --verbose
 trunk show-announcements pre-rebase [options] [branch-refs...]
 ```
 
-### **Trunk show announcements post checkout**
+### **Trunk show announcements post-checkout**
 
 **`trunk show-announcements post-checkout`**: Run on git checkout/switch, usually run by a git-hook and not directly.
 

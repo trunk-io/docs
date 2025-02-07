@@ -62,7 +62,7 @@ To enable PR Comments, see our documentation:
 
 ### 6. (Optional) Enable Quarantining
 
-Quarantining is an advanced feature that allows your CI test jobs to pass even if a flaky test is failing on them. This eliminates the pain developers feel from dealing with flaky tests.
+Quarantining is an advanced feature that allows your CI test jobs to pass even if a flaky test is failing. This eliminates the pain developers feel from dealing with flaky tests.
 
 To enable Quarantining, see our documentation:
 

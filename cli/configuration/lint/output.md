@@ -16,7 +16,7 @@ The output format that Trunk expects from a linter is determined by its [`output
 
 ## Output Types
 
-Trunk supports several different generic output types. Most linters will use one of these output types, but if your linter doesn't conform well to any of these specifications, you can also write a [custom parser](output-parsing.md). In general SARIF should be preferred over other formats because it is the most flexible and battle tested.
+Trunk supports several different generic output types. Most linters will use one of these output types, but if your linter doesn't conform well to any of these specifications, you can also write a [custom parser](output-parsing.md). In general, SARIF should be preferred over other formats because it is the most flexible and battle tested.
 
 Trunk currently supports the following linter output types.
 

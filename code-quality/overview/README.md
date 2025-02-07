@@ -56,7 +56,7 @@ Linters are slow to run for large codebases with numerous issues and many linter
 
 Trunk Code Quality provides a single way to check _everything_ in your codebase, including config and script files, as well as the main language(s) for your codebase. If you are already using ESLint for a JavaScript repo, you probably also have some bash scripts, CI yaml, Kube config, and other files for your workflow.
 
-These all have great tools you could be running, but they don't all install through npm. Trunk Code Quality simplifies this process by detecting and configuring the right tools for the files in your repo.
+These all have linters you could be running, but they don't all install through npm. Trunk Code Quality simplifies this process by detecting and configuring the right tools for the files in your repo.
 
 #### **Slow static analysis affecting development speed**
 

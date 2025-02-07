@@ -1,6 +1,6 @@
 # Tools
 
-You can use the Trunk CLI to manage tools used by your repo. Trunk CLI can install the tools needed for a project according to what's configured in the `trunk.yaml` config file and let your team mates easily install the same versions of the tools. Trunk will also help you expose those installed tools by dynamically adding them to your `PATH` when you enter the project directory, but will not pollute your `PATH` outside of the project.
+You can use the Trunk CLI to manage tools used by your repo. Trunk CLI can install the tools needed for a project according to what's configured in the `trunk.yaml` config file and let your teammates easily install the same versions of the tools. Trunk will also help you expose those installed tools by dynamically adding them to your `PATH` when you enter the project directory, but will not pollute your `PATH` outside of the project.
 
 ### Command Line
 
@@ -23,7 +23,7 @@ trunk tools list
 
 ### Configuring Shell Hooks
 
-Before running any tools managed by trunk, enable shell hooks. With shell hooks, Trunk can manage your path variable dynamically, which lets you install tools used only in specific repos without polluting your shell by installing global tools. This is especially useful if you work on two repos using the same tool, but locked to different versions.
+Before running any tools managed by Trunk, enable shell hooks. With shell hooks, Trunk can manage your path variable dynamically, which lets you install tools used only in specific repos without polluting your shell by installing global tools. This is especially useful if you work on two repos using the same tool, but locked to different versions.
 
 You can enable shell hooks by running `trunk shellhooks install`, which will install the Trunk hooks to the config file of your $SHELL. You can also run `trunk shellhooks install <shell_name>` to install a specific shell hook.
 
@@ -35,7 +35,7 @@ Supported shells:
 * fish
 * elvish
 
-For organization that want to require the use of the hooks, they can add to the config file:
+For organizations that want to require the use of the hooks, they can add to the config file:
 
 ```yaml
 # .trunk/trunk.yaml:
@@ -76,7 +76,7 @@ You can run your tools by referring to the path `<path-to-workspace>/.trunk/tool
 
 ### Troubleshooting Linters
 
-Tools enable you to run your linter binaries on the command line independent of `trunk check` and test and troubleshoot your integrations more easily.&#x20;
+Tools enable you to run your linter binaries on the command line independent of `trunk check` and test and troubleshoot your integrations more easily.
 
 Tools are configured in the `tools` section of `trunk.yaml`. As with other settings, you can override these values in your [User YAML](../configuration/per-user-overrides.md).
 

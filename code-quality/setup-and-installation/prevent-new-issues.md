@@ -1,6 +1,6 @@
 # Prevent New Issues
 
-Trunk operates in **hold-the-line** mode by default. This Trunk will run linters only on the **files that have changed** according to Git, by comparing it to the appropriate upstream branch.
+Trunk operates in **hold-the-line** mode by default. This means Trunk will run linters only on the **files that have changed** according to Git, by comparing it to the appropriate upstream branch.
 
 If you're not using `main` or `master` as the base branch, make sure it's specified in `.trunk/trunk.yaml`.
 

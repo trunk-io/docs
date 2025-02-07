@@ -122,7 +122,7 @@ You can then execute trunk as `.\trunk.ps1`.
 
 Only some versions of Trunk are compatible with Windows. See the compatibility page for [Windows](../../cli/compatibility.md) to learn more.
 
-You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17/release/vc\_redist.x64.exe) in order to run some linters.
+You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17/release/vc_redist.x64.exe) in order to run some linters.
 
 </details>
 
@@ -146,7 +146,7 @@ trunk init
 
 Follow the wizard, you'll be prompted with the following options:
 
-1. `Sign up or log in`: Connect the CLI with your Trunk account to enable all of Trunk's feature.
+1. `Sign up or log in`: Connect the CLI with your Trunk account to enable all of Trunk's features.
 2. Trunk will automatically [enable the most useful linters](https://docs.trunk.io/code-quality/setup-and-installation/initialize-trunk#recommended-linters) based on the files in your repo.
 3. `Trunk will manage your git hooks and enable some built-in hooks.`: This sets up Trunk to run automatically on commit and before you push, saving you time waiting for CI only to have it fail.
 4. `Trunk will now run a local, one-time scan of your code and report any issues it finds`: This initial scan will give you a good overview of the problem areas in your code. Subsequent scans will only run on changed lines using hold-the-line.

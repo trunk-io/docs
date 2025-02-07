@@ -1,3 +1,7 @@
+---
+description: Learn how Trunk detects and labels flaky tests
+---
+
 # Flaky Test Detection
 
 Trunk detects flaky tests by analyzing test results uploaded from your CI jobs. This page covers how flaky tests are detected and how they're labeled after Trunk receives uploaded test results.&#x20;
@@ -19,8 +23,6 @@ Trunk detects flaky tests by analyzing the test results uploaded from your CI jo
 **This is an asynchronous process, and it may take up to an hour for an upload's results to be reflected in the** [**dashboard**](dashboard.md)**.**
 
 <figure><picture><source srcset="../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption><p>The uploads tab contains results received from past CI jobs.</p></figcaption></figure>
-
-<table><thead><tr><th width="218">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
 
 ### How We Detect Flakiness
 

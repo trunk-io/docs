@@ -12,13 +12,13 @@ Every action execution is logged. We consider an action execution to have failed
 
 Failed action executions will also produce a notification so that background failures are periodically surfaced to the user.
 
-You can inspect also inspect action logs at `.trunk/out/actions/<action_id>/`.
+You can also inspect action logs at `.trunk/out/actions/<action_id>/`.
 
-We recommend running actions manually when you develop them in order to verify that they work correctly.
+We recommend running actions manually when you develop them to verify that they work correctly.
 
 ### Output Level
 
-In order to see a more verbose output when running trunk actions, particularly from git-hooks, you can add the following to your `trunk.yaml`:
+To see a more verbose output when running trunk actions, particularly from git-hooks, you can add the following to your `trunk.yaml`:
 
 ```yaml
 actions:

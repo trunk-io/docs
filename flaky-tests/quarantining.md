@@ -1,5 +1,5 @@
 ---
-description: Mitigate impact of known flaky tests by isolating them at run time.
+description: Mitigate impact of known flaky tests by isolating them at run time
 ---
 
 # Quarantining
@@ -10,11 +10,11 @@ Quarantining lets you isolate failures for known flaky tests so they don't fail 
 
 Quarantining flaky tests lets you mitigate the negative effects of flaky tests without disabling any tests. Quarantined failures will still be uploaded to Trunk Flaky Tests and displayed in PRs through a [PR Test Summary](github-pull-request-comments.md), allowing you to easily triage failures and identify real issues surfaced by flaky tests.
 
+{% include "../.gitbook/includes/slack-callout.md" %}
+
 ### What Does Quarantined Mean?
 
-When a test is quarantined, it will still be run in your CI jobs and results will be uploaded to Trunk Flaky Tests so you can keep track of them. What changes are the results of your CI jobs. The [Flaky Tests Uploader](uploader.md) will check if the test is a known flaky or broken test. If the test has been failing on other PRs before yours, the results will be overridden. This means, that if all failures in a CI job are overridden by quarantining because they're known flaky or broken tests, the CI job will be overridden as passing.&#x20;
-
-{% include "../.gitbook/includes/slack-callout.md" %}
+When a test is quarantined, it will still be run in your CI jobs and results will be uploaded to Trunk Flaky Tests. This allows you to track any changes to flaky tests as CI jobs are run. The [Flaky Tests Uploader](uploader.md) will check if the test is a known flaky or broken test. If the test has been failing on other PRs before yours, the results will be overridden. If all failures in a CI job are overridden by quarantining because they're known flaky or broken tests, the CI job will be overridden as passing.&#x20;
 
 ### What's Affected?
 
@@ -27,7 +27,7 @@ Tests that are overridden to always quarantine will also be quarantined, even if
 ### Enable Quarantining
 
 {% hint style="warning" %}
-Enabling quarantining will drastically affect the results of CI jobs. Only new test failures introduced by your PR will fail CI jobs, known **flaky and broken** tests will no longer fail CI jobs. [Learn more about the effects of quarantining](quarantining.md#whats-affected)
+Enabling quarantining will drastically affect the results of CI jobs. Only new test failures introduced by your PR will fail CI jobs, known **flaky and broken** tests will no longer fail CI jobs. [Learn more about the effects of quarantining](quarantining.md#whats-affected).
 {% endhint %}
 
 Before tests can be quarantined on a CI job, quarantining needs to be enabled for your Analytics Uploader.
@@ -46,11 +46,13 @@ Here's what each of these options does when enabled:
 
 #### Updates In CI
 
-If you're using the provided GitHub Actions workflow to upload test results to Trunk, you can quarantine flaky tests by wrapping the test command or quarantining as a follow-up step. You may need to update your workflow to make sure that the test step
+If you're using the provided GitHub Actions workflow to upload test results to Trunk, you can quarantine flaky tests by wrapping the test command or quarantining as a follow-up step.
+
+If you're using the Trunk CLI directly or using other CI providers, check the instructions in the **Using The Trunk CLI Directly** tab.
 
 {% tabs %}
 {% tab title="GitHub Actions Workflow" %}
-If you're using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, you may need to modify your workflow files to support quarantining. If you're using the Trunk CLI directly or using other CI providers, check the instructions in the **Using The Trunk CLI Directly** tab.
+If you're using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, you may need to modify your workflow files to support quarantining.&#x20;
 
 If you upload your test results as a second step after you run your tests,  **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures. Here's an example file.
 
@@ -68,7 +70,7 @@ jobs:
       run: &#x3C;COMMAND TO RUN TESTS>
       continue-on-error: true
         
-    - name: Upload JUnit.xml
+    - name: Upload test results
       if: always()
       uses: trunk-io/analytics-uploader@main
       with:
@@ -106,8 +108,7 @@ jobs:
 {% tab title="Using The Trunk CLI Directly" %}
 #### Using Flaky Tests as a separate step
 
-If you upload your test results as a second step after you run your tests,  you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled the `flakytests upload` command will **return an error** if there are unquarantined failures, and return a status code 0 if all tests are quarantined.\
-
+If you upload your test results as a second step after you run your tests,  you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled the `flakytests upload` command will **return an error** if there are unquarantined failures, and return a status code 0 if all tests are quarantined.
 
 ```bash
 <run my tests> || true # doesn't fail job on failure
@@ -117,8 +118,6 @@ If you upload your test results as a second step after you run your tests,  you 
 --token $TRUNK_API_TOKEN \
 --junit-paths $JUNIT_PATH
 ```
-
-
 
 #### Using Flaky Tests as a single step
 

@@ -1,8 +1,12 @@
+---
+description: Learn how to automatically create Linear issues with Flaky Test webhooks
+---
+
 # Linear Integration
 
-<figure><picture><source srcset="../../.gitbook/assets/example-webhook-linear-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-linear-light.png" alt=""></picture><figcaption></figcaption></figure>
-
 Trunk allows you to automate Linear Issue creation through webhooks. This will allow you to create Linear issues and auto-assign according to [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
+
+<figure><picture><source srcset="../../.gitbook/assets/example-webhook-linear-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-linear-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 This guide will walk you through integrating Trunk Flaky Tests with Linear Issues through webhooks. You will be able to automatically generate Linear issues for **new flaky tests** found in your repo that **impact more than 2 PRs**. This guide should take 15 minutes to complete.
 
@@ -14,7 +18,7 @@ Before you can create a webhook to automate GitHub Issue creation, you need to c
 
 1. In the Linear app, navigate to settings by holding `G` and pressing `S`, or by clicking on your profile on the top left and clicking **Settings**.
 2. Under **Account** > **Security & Access** > **Personal API Keys**, Click **New API Key** to create a new access token.
-3. Copy the new API key and save it in a secure location; you'll need to use this later.
+3. Copy the new API key and save it in a secure location. You'll need to use this later.
 
 ### 2. Add a New Webhook In Trunk <a href="#id-2.-add-a-webhook-url-to-the-github-issues-api-in-trunk" id="id-2.-add-a-webhook-url-to-the-github-issues-api-in-trunk"></a>
 

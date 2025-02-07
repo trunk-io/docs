@@ -1,5 +1,5 @@
 ---
-description: Flaky Tests provides summary analytics about tests running on Pull Requests.
+description: Flaky Tests provides summary analytics about tests running on Pull Requests
 ---
 
 # PR Comments
@@ -36,7 +36,7 @@ It's recommended that the Trunk GitHub App be used to manage GitHub comments. If
 8.  If everything looks good, scroll down to double check that your Overview for permissions looks something like the image below. If so, create the token.
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-06-12 at 9.52.28 AM.png" alt=""><figcaption></figcaption></figure>
-9. Once the token is generated, go back to the Trunk App ([app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests) ) > click on your profile > **Settings** > **Manage** (under _Organization_) > **Organization GitHub Token** and enter the copied token into the text field, then finally press **Submit**.
+9. Once the token is generated, go back to the Trunk App ([app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests)) > click on your profile > **Settings** > **Manage** (under _Organization_) > **Organization GitHub Token** and enter the copied token into the text field, then finally press **Submit**.
 
 You should see comments posted by your service account on your next PR.
 
