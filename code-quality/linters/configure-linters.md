@@ -21,7 +21,7 @@ Trunk defines linter configuration in a plugin system. By default, it'll point t
 version: 0.1
 cli:
   version: 1.22.2
-# Trunk provides extensibility via plugins. (https://docs.trunk.io/plugins)
+# Trunk provides extensibility via plugins. (https://docs.trunk.io/cli/configuration/plugins)
 plugins:
   sources:
     - id: trunk
