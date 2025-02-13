@@ -8,8 +8,6 @@ Trunk uses a launcher to automatically install the appropriate CLI for your plat
 
 The Trunk CLI can be installed in many different ways, depending on your use case.
 
-{% include "../.gitbook/includes/slack-callout.md" %}
-
 #### Using NPM
 
 If your project uses a `package.json`, you can specify the Trunk Launcher as a dependency so your developers can start using Trunk after installing Node dependencies.
@@ -55,8 +53,6 @@ Then add Trunk Launcher in your `package.json` as a script:
 #### Using cURL
 
 You can install the Trunk Launcher script directly by downloading it through cURL. The launcher script supports both macOS and Linux environments.
-
-{% include "../.gitbook/includes/curl-https-get.trunk.io-....md" %}
 
 To allow your teammates to use `trunk` without installing anything, the launcher can be committed directly into your repo:
 

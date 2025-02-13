@@ -10,8 +10,6 @@ description: >-
 
 When Trunk Flaky Tests [detects a broken or flaky test](detection.md), you can create an automatically generated ticket for your team to pick up and fix the test. Currently, Ticket Creation only supports integrations with Jira, but the automatically generated ticket content is formatted in Markdown and can be copied to other platforms like Asana, Linear, or GitHub issues.
 
-{% include "../.gitbook/includes/slack-callout.md" %}
-
 ### Connecting to Jira
 
 <figure><picture><source srcset="../.gitbook/assets/jira-connect-form-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/jira-connect-form-light.png" alt=""></picture><figcaption></figcaption></figure>

@@ -24,8 +24,6 @@ Since you'll be generating JUnit reports using a new plugin or custom reporter, 
 
 You can install the Trunk CLI locally like this:
 
-{% include "../../../.gitbook/includes/curl-https-get.trunk.io-....md" %}
-
 Then, you can validate the results using the `trunk flakytests validate` command like this:
 
 ```bash

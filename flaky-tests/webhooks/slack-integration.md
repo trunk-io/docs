@@ -10,8 +10,6 @@ Trunk allows you to create custom workflows to send customized messages to Slack
 
 This guide will walk you through sending Slack messages using event-triggered webhooks. By the end of this tutorial, you'll receive Slack messages for test status changes. This guide should take 10 minutes to complete.
 
-{% include "../../.gitbook/includes/slack-callout.md" %}
-
 ### 1. Configure Slack Webhooks
 
 Trunk uses Svix to integrate with other services, such as Slack, through webhooks.&#x20;
@@ -123,8 +121,6 @@ You can send test messages to your Slack channels as you make updates. You can d
 3. Click **Send Example** to test your webhook
 
 ### 4. Monitoring Webhooks
-
-{% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
 
 ### Congratulations!
 

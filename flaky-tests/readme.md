@@ -4,8 +4,6 @@ description: Detect, quarantine, and eliminates flaky tests from your codebase
 
 # Flaky Tests (beta)
 
-{% include "../.gitbook/includes/slack-callout.md" %}
-
 Trunk Flaky Tests lets your teams detect, track, quarantine, and fix **flaky tests** in your codebase. Flaky Tests is language, environment, and framework-agnostic.
 
 Let's explore how Trunk Flaky Tests' features help you tackle Flaky Tests. If you can't wait to try Trunk, follow our [getting started guide](https://docs.trunk.io/flaky-tests/get-started).

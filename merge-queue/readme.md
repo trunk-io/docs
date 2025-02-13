@@ -14,8 +14,6 @@ description: >-
 
 Merge queues automate PR merges into your repo's `main` branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000+ active engineers.
 
-{% include "../.gitbook/includes/slack-callout.md" %}
-
 ### **Why do teams adopt a merge queue?**
 
 As the number of concurrent, changes to a repository grows, the likelihood that your pull request has stale/invalid test results increases. The only way to guarantee that your `main` branch does not become "broken" is to make sure that all code changes are tested against the head of `main`.

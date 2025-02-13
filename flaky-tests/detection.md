@@ -16,8 +16,6 @@ You can learn more about how tests are uploaded to Trunk before they're labeled 
 Trunk typically requires 10+ runs per test on CI to start accurately detecting flaky tests. For example, detecting a flaky test that fails 25% of the time takes 9 runs to achieve 90% confidence in having seen it flake. Depending on the repository’s velocity, this could take hours or days.
 {% endhint %}
 
-{% include "../.gitbook/includes/slack-callout.md" %}
-
 Trunk detects flaky tests by analyzing the test results uploaded from your CI jobs. Each new upload is processed and compared with historical test results to detect flaky tests. Trunk emphasizes each result differently depending on which branch it's run on. \
 \
 **This is an asynchronous process, and it may take up to an hour for an upload's results to be reflected in the** [**dashboard**](dashboard.md)**.**

@@ -2,8 +2,6 @@
 
 Trunk Code Quality is available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=trunk.io) that you can use to streamline your linting and formatting experience.
 
-{% include "../../.gitbook/includes/slack-callout.md" %}
-
 ### Get Started
 
 By default, Trunk will try to automatically initialize itself in single-player mode. This means that it'll create a Trunk configuration that is hidden from git, which allows you to try it out [without Trunk's versioning powers](vscode.md#single-player-mode).

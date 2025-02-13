@@ -10,8 +10,6 @@ Trunk allows you to automate Linear Issue creation through webhooks. This will a
 
 This guide will walk you through integrating Trunk Flaky Tests with Linear Issues through webhooks. You will be able to automatically generate Linear issues for **new flaky tests** found in your repo that **impact more than 2 PRs**. This guide should take 15 minutes to complete.
 
-{% include "../../.gitbook/includes/slack-callout.md" %}
-
 ### 1. Create a Linear Personal Access Token
 
 Before you can create a webhook to automate GitHub Issue creation, you need to create an API token to authorize your requests.
@@ -320,8 +318,6 @@ You can create test issues by delivering a mock webhook. You can do this by:
 3. Click **Send Example** to test your webhook
 
 ### 7. Monitoring Webhooks
-
-{% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
 
 ### Congratulations!
 

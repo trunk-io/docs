@@ -8,8 +8,6 @@ Trunk gives superpowers to these tools by installing, managing, running, and re-
 
 [Learn more about the Trunk CLI.](../../cli/)
 
-{% include "../../.gitbook/includes/slack-callout.md" %}
-
 ### Hold-the-line
 
 **Hold The Line** (HTL) is the principle that Trunk Code Quality will _only run on new changes_ in your codebase rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.

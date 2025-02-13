@@ -18,6 +18,7 @@
       * [minitest](flaky-tests/get-started/frameworks/minitest.md)
       * [Mocha](flaky-tests/get-started/frameworks/mocha.md)
       * [PHPUnit](flaky-tests/get-started/frameworks/phpunit.md)
+      * [Pest](flaky-tests/get-started/frameworks/pest.md)
       * [Playwright](flaky-tests/get-started/frameworks/playwright.md)
       * [pytest](flaky-tests/get-started/frameworks/pytest.md)
       * [RSpec](flaky-tests/get-started/frameworks/rspec.md)

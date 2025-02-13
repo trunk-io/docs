@@ -6,8 +6,6 @@ Trunk allows you to create custom workflows to send customized messages to Micro
 
 This guide will walk you through sending Microsoft Teams messages using event-triggered webhooks. By the end of this tutorial, you'll receive Microsoft Teams messages for test status changes. This guide should take 10 minutes to complete.
 
-{% include "../../.gitbook/includes/slack-callout.md" %}
-
 ### 1. Configure Incoming Webhooks For Your Team
 
 Microsoft has two different concepts for accepting incoming webhooks. **Connectors** that are being deprecated and **Workflows** that are for newly created teams. This guide is for the newer **Workflows**. The workflow for configuring webhooks is similar, but you may see small differences. You can find more about the soon to be deprecated connectors in [Microsoft's documentation](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=newteams%2Cdotnet).
@@ -201,8 +199,6 @@ You can send test messages to your Microsoft Teams channels as you make updates.
 3. Click **Send Example** to test your webhook
 
 ### 5. Monitoring Webhooks
-
-{% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
 
 ### Congratulations!
 
