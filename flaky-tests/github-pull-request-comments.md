@@ -14,8 +14,6 @@ Each GitHub comment has a full summary report, containing all tests that passed,
 
 Each test case also contains the full stack trace attached when opened. You can also click on the **Job run** link which will take you to the full CI logs.
 
-{% include "../.gitbook/includes/slack-callout.md" %}
-
 ## Configuration
 
 If you have the [Trunk GitHub App installed](https://docs.trunk.io/administration/github-app-permissions) and are [uploading JUnit XML](get-started/frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App, you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
@@ -50,7 +48,7 @@ Once the token is created, the Organization admin may need to approve the reques
 
 ## Disable commenting
 
-Pull Request comments are enabled by default. If you wish to disable the comments, you can do so by navigating to the Trunk App > click on your profile > **Settings** > **RepoName**. Scroll down to Test **Analytics** then toggle the **Summary Flaky Tests Reports** setting.
+Pull Request comments are enabled by default. If you wish to disable the comments, you can do so by navigating to the Trunk App > click on your profile > **Settings** > **RepoName**.  In the **Flakey Tests** heading, toggle the **Summary Flaky Tests Reports** setting.
 
 ## Troubleshooting
 
