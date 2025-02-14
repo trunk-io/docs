@@ -18,7 +18,7 @@ layout:
 
 ## 1. Generate JUnit
 
-Add the `--junit-xml` argument to your pytest command:
+Add the `--junit-xml` argument to your `pytest` command:
 
 ```shell
 pytest --junit-xml=junit.xml 
@@ -26,7 +26,7 @@ pytest --junit-xml=junit.xml
 
 ## 2. Output Location
 
-The test results JUnit report will be written to the location specified by the `--junit-xml` argument. In the example above, it would be at `./junit.xml`.
+The JUnit report will be written to the location specified by the `--junit-xml` argument. In the example above, it would be at `./junit.xml`.
 
 ## Disable Retries
 

@@ -22,6 +22,7 @@
       * [Pest](flaky-tests/get-started/frameworks/pest.md)
       * [Playwright](flaky-tests/get-started/frameworks/playwright.md)
       * [pytest](flaky-tests/get-started/frameworks/pytest.md)
+      * [Robot Framework](flaky-tests/get-started/frameworks/robot-framework.md)
       * [RSpec](flaky-tests/get-started/frameworks/rspec.md)
       * [Rust](flaky-tests/get-started/frameworks/rust.md)
       * [Swift Testing](flaky-tests/get-started/frameworks/swift-testing.md)
