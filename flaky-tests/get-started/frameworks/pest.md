@@ -14,7 +14,7 @@ Append `--log-junit junit.xml` to your `pest` test command:
 
 ## 2. Output Location
 
-The JUnit report is written to the location specified by `--log-junit`. In the example above, the test results will be written to `./`junit.xml.
+The JUnit report is written to the location specified by `--log-junit`. In the example above, the test results will be written to `./junit.xml`.
 
 ## Disable Retries
 

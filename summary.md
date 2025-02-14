@@ -29,6 +29,7 @@
       * [Swift Testing](flaky-tests/get-started/frameworks/swift-testing.md)
       * [Vitest](flaky-tests/get-started/frameworks/vitest.md)
       * [XCTest](flaky-tests/get-started/frameworks/xctest.md)
+      * [Dart Test](flaky-tests/get-started/frameworks/dart-test.md)
       * [Other Test Frameworks](flaky-tests/get-started/frameworks/other-test-frameworks.md)
     * [CI Providers](flaky-tests/get-started/ci-providers/README.md)
       * [Buildkite](flaky-tests/get-started/ci-providers/buildkite.md)
