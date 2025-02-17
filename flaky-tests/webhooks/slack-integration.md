@@ -24,7 +24,7 @@ You can add the new Slack Webhook URL to Svix by following these steps:
 4.  Click **Connect to Slack** and select the server and channel to connect to.
 
     <figure><img src="../../.gitbook/assets/example-webhook-connector-slack (1).png" alt=""><figcaption></figcaption></figure>
-5. Review the transformation code automatically generated for GitHub issues. You can customize this transformation at any time. Learn more about [customizing transformations](slack-integration.md#id-4.customize-your-transformation).
+5. Review the transformation code automatically generated for GitHub issues. You can customize this transformation at any time. Learn more about [customizing transformations](slack-integration.md#id-2.-customize-your-transformation).
 6. By default, this connection will send messages about Trunk Merge and Flaky Tests events. If you only want Flaky Test events, unselect all events other than `test_case.status_changed`.
 7. Create the new endpoint. You will be redirected to the endpoint configuration view.
 
@@ -36,7 +36,7 @@ Transformations are custom code snippets you can write to customize the Slack me
 
 1. In the endpoint configuration view, navigate to the **Advanced** tab. Under **Transformation**, toggle the **Enabled** switch.
 2. Click **Edit transformation** to update your transformation code, and click **Save** to update the transformation.
-3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step ](slack-integration.md#id-5.-test-your-webhook)[3](slack-integration.md#id-5.-test-your-webhook).
+3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step 3](slack-integration.md#id-3.-test-your-webhook).
 
 An example transformation script is provided below and you can customize your Slack integration by following the [Slack](https://api.slack.com/messaging/webhooks) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
 
@@ -121,6 +121,8 @@ You can send test messages to your Slack channels as you make updates. You can d
 3. Click **Send Example** to test your webhook
 
 ### 4. Monitoring Webhooks
+
+{% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
 
 ### Congratulations!
 
