@@ -30,13 +30,35 @@ Trunk analyzes test failures based on the context in which they are run. A test 
 Uploading all test results from your repository will result in the fastest and most accurate detection. Trunk relies on test results from `main`, pull requests, and (if you use one) merge queues.
 {% endhint %}
 
-#### Main Branch
+### Stable Branches
 
-Trunk detects flaky tests with the assumption that automated tests should be passing before being merged into protected branches like `main` or `master`. This means failures on `main` or `master` are unexpected and indicate flakiness or a broken test.&#x20;
+Trunk detects flaky tests with the assumption that automated tests should be passing before being merged into stable branches like `main`. This means failures on `main` are unexpected and indicate flakiness or a broken test.&#x20;
+
+{% hint style="info" %}
+Stable branches are sometimes referred to as _protected_ or _default_ branches.
+{% endhint %}
+
+Flaky Tests will look for `main` to use as a stable branch by default. You can override the default selection and set a custom stable branch, for example, `master` or`develop`.
+
+#### Overriding Stable Branch Defaults
+
+It is important to set your stable branch correctly to ensure fast and accurate detection of flaky tests.
+
+Flaky Test users with the administrator role can update the current stable branch in the repository settings:
+
+1. Click on your profile and open **Settings.**
+2. Click on your repository in the left nav.
+3. Update the **Override Default Stable Branch** setting with the name of your stable branch.
+
+{% hint style="warning" %}
+Changing the stable branch will not re-build your test history, a stable branch change will only be applied to new test runs.&#x20;
+
+Flaky Tests will require additional CI runs on the updated stable branch to detect test flakes.
+{% endhint %}
 
 #### Pull Requests
 
-Tests that are run on pull requests are expected to fail, so failures on pull requests are not directly used in the detection of flaky tests.
+Tests run on pull requests are expected to fail, so these PR failures are not directly used to detect flaky tests.
 
 Flaky tests will produce inconsistent results even when run on the same code with the same input. Pull requests are where we see this behavior the most often: an engineer opens a pull request, sees a test fail, re-runs the code, and sees the test pass. If a test is detected to produce different results on the same git commit, which means different results on the same code, we consider that test to be flaky.
 

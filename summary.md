@@ -19,6 +19,7 @@
       * [minitest](flaky-tests/get-started/frameworks/minitest.md)
       * [Mocha](flaky-tests/get-started/frameworks/mocha.md)
       * [Nightwatch](flaky-tests/get-started/frameworks/nightwatch.md)
+      * [NUnit](flaky-tests/get-started/frameworks/nunit.md)
       * [PHPUnit](flaky-tests/get-started/frameworks/phpunit.md)
       * [Pest](flaky-tests/get-started/frameworks/pest.md)
       * [Playwright](flaky-tests/get-started/frameworks/playwright.md)

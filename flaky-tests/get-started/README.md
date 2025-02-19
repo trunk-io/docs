@@ -40,7 +40,7 @@ In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), select the re
 
 <figure><picture><source srcset="../../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption><p>The uploads tab</p></figcaption></figure>
 
-Trunk needs to ingest a large amount of test data from a variety of pull request branches and protected branches (like `main` or `master`) before it can start accurately detecting flaky tests. This may happen quickly if you have a very high-velocity repo and run test jobs hundreds of times a day.
+Trunk needs to ingest a large amount of test data from many different pull request branches and [stable branches](../detection.md#stable-branches), `main` for example, before it can detect flaky tests accurately. This may happen quickly if you have a very high-velocity repo and run test jobs hundreds of times a day.
 
 Once you've confirmed data is flowing properly into Trunk, let data accumulate for several days and check back to analyze the results. We'll also email you when your first flaky test is detected.
 

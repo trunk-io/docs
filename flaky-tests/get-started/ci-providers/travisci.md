@@ -28,7 +28,7 @@ Your Trunk Organization Slug can just be pasted directly into your CI workflow; 
 
 ### 3. Modify Travis CI workflows to upload test results
 
-Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or protected branches (`main`, `master`, `develop`, etc).
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example,`main`, `master`, or `develop`..
 
 #### Example Travis CI Workflow
 

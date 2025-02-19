@@ -28,7 +28,7 @@ Your Trunk Organization Slug can just be pasted directly into your CI workflow; 
 
 ### 3. Modify GitHub Actions workflow file to upload test results
 
-Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or protected branches (`main`, `master`, `develop`, etc).
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example: `main`, `master`, or `develop`.
 
 #### Example GitHub Actions Workflow
 
@@ -46,7 +46,7 @@ jobs:
       - name: Run Tests
         run: ...
 
-      - name: Upload Test Results
+      - name: Upload Test Results to Trunk
         if: "!cancelled()" # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
         uses: trunk-io/analytics-uploader@main

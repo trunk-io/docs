@@ -1,6 +1,6 @@
 ---
 description: >-
-  Test pull requests with a predicted view of your protected branch by including
+  Test pull requests with a predicted view of your stable branch by including
   all the changes in the pull requests ahead of it.
 ---
 
@@ -15,7 +15,7 @@ test your pull request withj the changes ahead of it in the queue
 
 
 
-<table><thead><tr><th width="331">What's Happening?</th><th>Queue</th></tr></thead><tbody><tr><td><strong>A</strong> begins testing</td><td><code>main</code> &#x3C;- <mark style="background-color:orange;"><strong>A</strong></mark></td></tr><tr><td><strong>B</strong> begins predictive testing by including the changes in <strong>A</strong></td><td><code>main</code> &#x3C;- <strong>A</strong> &#x3C;- <a data-footnote-ref href="#user-content-fn-1"><mark style="background-color:orange;"><strong>B</strong>+a</mark></a> &#x3C;- <strong>C</strong>+ba</td></tr><tr><td><strong>C</strong> begins predictive testing by including the changes in both <strong>A</strong> and B</td><td><code>main</code> &#x3C;- <strong>A</strong> &#x3C;- <strong>B+a</strong>  &#x3C;- <mark style="background-color:orange;"><strong>C</strong>+ba</mark></td></tr><tr><td>as testing completes - pull requests can merge safely</td><td><code>merge</code> <strong>A</strong>, <strong>B</strong>, <strong>C</strong></td></tr></tbody></table>
+<table><thead><tr><th width="331">What's Happening?</th><th>Queue</th></tr></thead><tbody><tr><td><strong>A</strong> begins testing</td><td><code>main</code> &#x3C;- <mark style="background-color:orange;"><strong>A</strong></mark></td></tr><tr><td><strong>B</strong> begins predictive testing by including the changes in <strong>A</strong></td><td><code>main</code> &#x3C;- <strong>A</strong> &#x3C;- <mark style="background-color:orange;"><strong>B</strong>+a</mark> &#x3C;- <strong>C</strong>+ba</td></tr><tr><td><strong>C</strong> begins predictive testing by including the changes in both <strong>A</strong> and B</td><td><code>main</code> &#x3C;- <strong>A</strong> &#x3C;- <strong>B+a</strong>  &#x3C;- <mark style="background-color:orange;"><strong>C</strong>+ba</mark></td></tr><tr><td>as testing completes - pull requests can merge safely</td><td><code>merge</code> <strong>A</strong>, <strong>B</strong>, <strong>C</strong></td></tr></tbody></table>
 
 **What's the point of predictive testing?**
 
@@ -25,6 +25,3 @@ When you merge a pull request with stale results you are effectively merging in 
 \
 No blind spots === no build breakages.
 
-
-
-[^1]: 
