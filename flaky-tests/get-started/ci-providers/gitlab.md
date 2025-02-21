@@ -47,7 +47,7 @@ unit_test_job:   # This job runs the tests
   stage: test    
   script: ...
 
-upload_test_results: # This job uploads tests results run in the last stage
+upload_test_results: # This job uploads tests results run in the last stage to Trunk.io
   stage: flaky-tests
   script:
     - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk

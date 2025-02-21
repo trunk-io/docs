@@ -47,7 +47,7 @@ jobs:
           command: ...
 
       - run:
-          name: Upload Test Results
+          name: Upload Test Results to Trunk.io
           command: |
             curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
             ./trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token ${TRUNK_TOKEN}

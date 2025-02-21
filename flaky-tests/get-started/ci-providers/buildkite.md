@@ -42,7 +42,7 @@ steps:
     command: ...
     key: tests
     
-  - label: Upload Test Results
+  - label: Upload Test Results to Trunk.io
     commands:
       - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
       - ./trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN

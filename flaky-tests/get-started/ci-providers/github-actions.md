@@ -46,7 +46,7 @@ jobs:
       - name: Run Tests
         run: ...
 
-      - name: Upload Test Results to Trunk
+      - name: Upload Test Results to Trunk.io
         if: "!cancelled()" # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
         uses: trunk-io/analytics-uploader@main

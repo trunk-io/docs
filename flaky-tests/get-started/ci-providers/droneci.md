@@ -45,7 +45,7 @@ steps:
   - name: Run Tests
     commands: ...
 
-  - name: Upload Test Results
+  - name: Upload Test Results to Trunk.io
     environment:
       TRUNK_ORG_SLUG:
         from_secret: TRUNK_ORG_SLUG
