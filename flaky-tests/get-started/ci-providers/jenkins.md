@@ -45,7 +45,7 @@ pipeline {
     stage('Run Tests'){
       ...
     }
-    stage('Upload Test Results to Trunk.io'){
+    stage('Upload Test Results'){
       sh 'curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk'
       sh './trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN'
     }
