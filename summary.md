@@ -35,6 +35,7 @@
       * [Other Test Frameworks](flaky-tests/get-started/frameworks/other-test-frameworks.md)
     * [CI Providers](flaky-tests/get-started/ci-providers/README.md)
       * [Azure DevOps Pipelines](flaky-tests/get-started/ci-providers/azure-devops-pipelines.md)
+      * [BitBucket Pipelines](flaky-tests/get-started/ci-providers/bitbucket-pipelines.md)
       * [Buildkite](flaky-tests/get-started/ci-providers/buildkite.md)
       * [CircleCI](flaky-tests/get-started/ci-providers/circleci.md)
       * [Drone CI](flaky-tests/get-started/ci-providers/droneci.md)
