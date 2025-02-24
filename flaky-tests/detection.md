@@ -66,6 +66,14 @@ Flaky tests will produce inconsistent results even when run on the same code wit
 
 Merge queues use temporary branches to test changes again before merging into `main`. Failures on merge queue branches are unexpected and are used as a signal when detecting flaky tests. Trunk currently auto-detects merge queue CI jobs from Trunk Merge Queues, GitHub Merge Queues, GitLab Merge Trains, and Graphite Merge Queues.
 
+#### Examples
+
+To help illustrate the implications of these rules, consider the following scenarios.
+
+* Scenario 1: A test fails on a CI job run on the `main` branch, which is a protected branch. It will be marked as **flaky** because we expect PRs to pass automated tests before being merged, which means its results are inconsistent. If it continues to fail consistently on `main`, it will be marked as broken.
+* Scenario 2: A test fails on a PR branch. A new commit is pushed, which fixes the test. Later, another commit breaks the test again, and it fails consistently for the next 3 commits and fails on reruns. It is **not marked flaky or broken** because it's displaying consistent behavior on the same commit, and it's failing on a development/PR branch, which is expected to fail and be fixed during development to catch regressions.
+* Scenario 3: A test fails on a PR. A developer reruns the tests, and they pass. This test will be marked as **flaky** because it demonstrates inconsistent results on the same commit, which means it's flaky because the results changed without code changes.
+
 {% hint style="info" %}
 Expect test results for individual PRs to be up-to-date for [PR Test Summaries](github-pull-request-comments.md) within 15 minutes post-upload and all other metrics to be up-to-date within an hour.
 {% endhint %}
