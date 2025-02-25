@@ -91,7 +91,7 @@ You can also explicitly set the upstream branch if needed via `--upstream`, but 
 
 ### Uploading Results From Hourly/Nightly Builds
 
-Trunk Code Quality has the ability to post its results to [app.trunk.io](https://app.trunk.io/login/?intent=code+quality). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
+Trunk Code Quality has the ability to post its results to [app.trunk.io](https://app.trunk.io/login?intent=code%20quality). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.
 
 In order to keep the data up-to-date, you should upload Trunk Code Quality results regularly in an automated fashion. Depending on the size of your repository and the linters you have configured to run, running Trunk Code Quality on your whole repository may take a while. Because this run may take a while, we recommend uploading Trunk Code Quality results once daily. However, the system supports uploading results for every commit, so the granularity of upload is up to you.
 

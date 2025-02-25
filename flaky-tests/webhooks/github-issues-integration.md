@@ -29,7 +29,7 @@ Trunk uses Svix to integrate with other services, such as GitHub Issues through 
 
 You can create a new endpoint by:
 
-1. Login to [Trunk Flaky Tests](https://app.trunk.io/login/?intent=flaky+tests)
+1. Login to [Trunk Flaky Tests](https://app.trunk.io/login?intent=flaky%20tests)
 2. From your profile on the top right, navigate to **Settings**
 3.  Under **Organization > Webhooks**, click **Automate GitHub Issue Creation**
 

@@ -1,10 +1,10 @@
 # Nightly Report
 
-Trunk Code Quality can post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=code+quality). This allows you to view your repository's Code Quality history over time, track quality trends, and browse issues to help prioritize fixes.
+Trunk Code Quality can post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=code%20quality). This allows you to view your repository's Code Quality history over time, track quality trends, and browse issues to help prioritize fixes.
 
 ### Connect your Trunk organization to GitHub
 
-Sign up at [app.trunk.io](https://app.trunk.io/login?intent=code+quality), create a Trunk organization, and connect it to your repositories. You will need to grant the following GitHub App permissions.
+Sign up at [app.trunk.io](https://app.trunk.io/signup?intent=code%20quality), create a Trunk organization, and connect it to your repositories. You will need to grant the following GitHub App permissions.
 
 {% @supademo/embed demoId="HXyBmoBn0_OX9Xite2fqd" url="https://app.supademo.com/demo/HXyBmoBn0_OX9Xite2fqd" %}
 

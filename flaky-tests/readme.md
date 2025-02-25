@@ -66,8 +66,8 @@ To learn more, [learn about our ticketing integrations](jira-integration.md).
 
 ### **Next Steps**
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Getting Started</h4></td><td></td><td><a href="get-started/">get-started</a></td></tr><tr><td><h4>Join Trunk</h4></td><td></td><td><a href="https://app.trunk.io/login/?intent=flaky+tests">https://app.trunk.io/login/?intent=flaky+tests</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Getting Started</h4></td><td></td><td><a href="get-started/">get-started</a></td></tr><tr><td><h4>Join Trunk</h4></td><td></td><td><a href="https://app.trunk.io/signup?intent=flaky+tests">https://app.trunk.io/signup?intent=flaky%20tests</a></td></tr></tbody></table>
 
 
 
-Start finding flaky tests today by [signing up for Trunk](https://app.trunk.io/login/?intent=flaky+tests) or reading our [Getting Started guides](get-started/).
+Start finding flaky tests today by [signing up for Trunk](https://app.trunk.io/signup?intent=flaky%20tests) or reading our [Getting Started guides](get-started/).

@@ -20,4 +20,4 @@ Don't see your CI Provider listed here? Please contact our community slack at [s
 
 ## Get Started
 
-Choose an integration above and follow the steps to connect your CI metrics to Trunk CI Analytics. Then, start exploring details about your pipelines using the dashboards at [app.trunk.io](https://app.trunk.io/login?intent=ci%20analytics).
+Choose an integration above and follow the steps to connect your CI metrics to Trunk CI Analytics. Then, start exploring details about your pipelines using the dashboards at [app.trunk.io](https://app.trunk.io/signup?intent=ci%20analytics).

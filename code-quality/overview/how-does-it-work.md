@@ -58,6 +58,6 @@ Trunk works in CI. Trunk Code Quality provides [GitHub integration](../ci-setup/
 
 ### Nightly reports
 
-Trunk Code Quality allows you to [upload results](../ci-setup/manual-setup.md#other-providers) to the [Trunk Web App](https://app.trunk.io/login/?intent=code+quality), which provides a dashboard to view your current code base issues and track code base health over time.
+Trunk Code Quality allows you to [upload results](../ci-setup/manual-setup.md#other-providers) to the [Trunk Web App](https://app.trunk.io/login?intent=code%20quality), which provides a dashboard to view your current code base issues and track code base health over time.
 
 [Learn more about nightly reporting.](how-does-it-work.md#nightly-reports)
