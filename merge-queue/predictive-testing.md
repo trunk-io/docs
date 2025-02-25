@@ -10,7 +10,7 @@ The core concept of any merge queue solution is predictive testing. The idea her
 
 
 {% embed url="https://share.vidyard.com/watch/31gaLwGNSYTn2ec2BSQjkn" %}
-test your pull request withj the changes ahead of it in the queue
+Test your pull request with the changes ahead of it in the queue
 {% endembed %}
 
 
