@@ -8,9 +8,9 @@ If you prefer to see an example onboarding flow, watch a video here:
 
 {% embed url="https://youtu.be/p6YC4vow804" %}
 
-### 1. Sign up for [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests)
+### 1. Sign up for [app.trunk.io](https://app.trunk.io/signup?intent=flaky%20tests)
 
-You must [create an account ](https://app.trunk.io/login?intent=flaky%20tests)and Trunk organization to complete the steps below.
+You must [create an account ](https://app.trunk.io/signup?intent=flaky%20tests)and Trunk organization to complete the steps below.
 
 ### 2. Configure your test framework to output compatible test results
 
@@ -36,7 +36,7 @@ Once you've updated your CI configuration to upload to Trunk, run a test job and
 
 ### 4. Confirm your configuration, analyze your dashboard
 
-In [app.trunk.io](https://app.trunk.io/login/?intent=flaky+tests), select the repo you've just updated and navigate to **Flaky Tests** > **Uploads**. Confirm that you see the upload(s) from the previous step.
+In [app.trunk.io](https://app.trunk.io/login?intent=flaky%20tests), select the repo you've just updated and navigate to **Flaky Tests** > **Uploads**. Confirm that you see the upload(s) from the previous step.
 
 <figure><picture><source srcset="../../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption><p>The uploads tab</p></figcaption></figure>
 

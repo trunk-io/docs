@@ -6,7 +6,7 @@ description: >-
 
 # Using the Merge UI
 
-The web app can be found at [app.trunk.io](https://app.trunk.io/login?intent=merge).
+The web app can be found at [app.trunk.io](https://app.trunk.io/login?intent=merge%20queue).
 
 ## Queue Overview
 

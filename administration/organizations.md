@@ -1,12 +1,12 @@
 # Overview
 
-The Trunk App is available at [app.trunk.io](https://app.trunk.io/login). This is where you can view the health of your repositories, browse issues detected by `trunk check`, and manage your `merge` service (currently in limited beta).
+The Trunk App is available at [app.trunk.io](https://app.trunk.io). This is where you can view the health of your repositories, browse issues detected by `trunk check`, and manage your `merge` service (currently in limited beta).
 
 ### Creating a Trunk Organization
 
 Trunk Organizations are how you organize your repositories and your collaborators on app.trunk.io. You'll need to create a Trunk Organization to get started with any of the Trunk services.
 
-1. Create or log in to your Trunk account at [app.trunk.io](https://app.trunk.io/).
+1. Create or log in to your Trunk account at [app.trunk.io](https://app.trunk.io/signup).
 2. If you are creating a new account, you will be prompted to create an organization when you log\
    in. Otherwise, select your organization at the bottom left-hand corner, hover over\
    "Organization", and then click "Create Organization".
@@ -16,7 +16,7 @@ Trunk Organizations are how you organize your repositories and your collaborator
 
 ### Adding your Github Repositories to your Trunk Organization (optional)
 
-1. Create or log in to your Trunk account at [app.trunk.io](https://app.trunk.io/).
+1. Log in to your Trunk account at [app.trunk.io](https://app.trunk.io/login).
 2. Navigate to the organization to which you'd like to add your Github repositories using the\
    Organization selector UI in the top left-hand corner.
 3. Click the "Connect to Github" button
