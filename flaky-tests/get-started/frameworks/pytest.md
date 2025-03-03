@@ -18,11 +18,13 @@ layout:
 
 ## 1. Generate JUnit
 
-Add the `--junit-xml` argument to your `pytest` command:
+Add the `--junit-xml` and `junit_family=xunit1` argument to your `pytest` command:
 
 ```shell
-pytest --junit-xml=junit.xml 
+pytest --junit-xml=junit.xml -o junit_family=xunit1
 ```
+
+This `--junit-xml` argument specifies the path of the JUnit report and `junit_family=xunit1` is required for file paths to be reported.&#x20;
 
 ## 2. Output Location
 
