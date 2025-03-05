@@ -27,7 +27,7 @@ There are different approaches to dealing with existing issues, such as running 
 
 You don't need to fix all issues upfront. Trunk lets you fix linter errors incrementally with hold-the-line.
 
-Lean more about [#hold-the-line-1](deal-with-existing-issues.md#hold-the-line-1 "mention")
+Lean more about [hold-the-line](deal-with-existing-issues.md#hold-the-line).
 {% endhint %}
 
 #### Running Formatters and Applying Fixes
