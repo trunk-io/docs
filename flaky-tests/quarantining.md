@@ -106,15 +106,15 @@ jobs:
 {% tab title="Using The Trunk CLI Directly" %}
 #### Using Flaky Tests as a separate step
 
-If you upload your test results as a second step after you run your tests,  you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled the `flakytests upload` command will **return an error** if there are unquarantined failures, and return a status code 0 if all tests are quarantined.
+If you upload your test results as a second step after you run your tests,  you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled, the `flakytests upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
 
 ```bash
 <run my tests> || true # doesn't fail job on failure
 |
-    ./flakytests upload \
---org-url-slug $TRUNK_ORG_SLUG \
---token $TRUNK_API_TOKEN \
---junit-paths $JUNIT_PATH
+    ./trunk flakytests upload \
+        --org-url-slug $TRUNK_ORG_SLUG \
+        --token $TRUNK_API_TOKEN \
+        --junit-paths $JUNIT_PATH
 ```
 
 #### Using Flaky Tests as a single step
@@ -123,7 +123,7 @@ You can also wrap the test command with the Trunk CLI. When wrapping the command
 
 {% code overflow="wrap" %}
 ```bash
-./flakytests test \
+./trunk flakytests test \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token $TRUNK_API_TOKEN \
     --junit-paths $JUNIT_PATH \
