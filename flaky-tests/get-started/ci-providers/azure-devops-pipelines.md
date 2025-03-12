@@ -26,6 +26,8 @@ Your Trunk Organization Slug can be pasted directly into your CI workflow; it's 
 
 Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
+{% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
+
 #### Add Uploader to Testing Pipelines
 
 The following is an example of a workflow step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
@@ -60,6 +62,5 @@ Ensure you report every test run in CI and **clean up stale files** produced by 
 
 [Learn more about cleaning up artifacts in Azure DevOps Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops\&tabs=yaml#clean-the-local-repo-on-the-agent)
 
-#### Need Help?
+{% include "../../../.gitbook/includes/have-questions-join-us-and-....md" %}
 
-Join the [Trunk Slack Community](https://slack.trunk.io) for live support.

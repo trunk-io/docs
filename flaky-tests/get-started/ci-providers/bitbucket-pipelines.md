@@ -12,7 +12,7 @@ In [app.trunk.io](https://app.trunk.io/login?intent=flaky%20tests), navigate to:
 
 **Settings > Organization > Manage > Organization API Token > View Organization API Token > View**
 
-Store your API Token in your BitBucket  as a new variable named `TRUNK_TOKEN`. Make sure you are getting your _organization token_, not your project/repo token.
+Store your API Token in your BitBucket as a new variable named `TRUNK_TOKEN`. Make sure you are getting your _organization token_, not your project/repo token.
 
 ### 2. Grab your Organization Slug
 
@@ -25,6 +25,8 @@ Your Trunk Organization Slug can be pasted directly into your CI workflow; it's 
 ### 3. Modify workflows to upload test results
 
 Add an `after-script` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
+
+{% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
 
 #### Add Uploader to Testing Pipelines
 
@@ -61,6 +63,4 @@ Ensure you report every test run in CI and **clean up stale files** produced by 
 
 You can do this by omitting the `artifacts` definitions in the test steps of your configuration. [Learn more about artifacts in BitBucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/use-artifacts-in-steps/).
 
-#### Need Help?
-
-Join the [Trunk Slack Community](https://slack.trunk.io) for live support.
+{% include "../../../.gitbook/includes/have-questions-join-us-and-....md" %}

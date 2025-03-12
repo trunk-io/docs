@@ -26,6 +26,8 @@ You can follow along using the in-app onboarding wizard or read about it in our 
 
 After you've set your test framework to output test results, you're ready to update your CI jobs to upload test results to Trunk.
 
+{% include "../../.gitbook/includes/you-must-upload-tests-from-....md" %}
+
 <figure><picture><source srcset="../../.gitbook/assets/add-test-framework-step-4-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/add-test-framework-step-4-light.png" alt=""></picture><figcaption><p>Step 4 of the in-app onboarding wizard</p></figcaption></figure>
 
 You can follow along using the in-app onboarding wizard or read about it in our docs.
@@ -54,8 +56,6 @@ Flaky Tests can post comments on GitHub pull requests to provide a summary of al
 
 <figure><picture><source srcset="../../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/github-comment-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-
-
 To enable PR Comments, see our documentation:
 
 {% embed url="https://docs.trunk.io/flaky-tests/github-pull-request-comments" %}
@@ -67,3 +67,5 @@ Quarantining is an advanced feature that allows your CI test jobs to pass even i
 To enable Quarantining, see our documentation:
 
 {% embed url="https://docs.trunk.io/flaky-tests/quarantining" %}
+
+{% include "../../.gitbook/includes/have-questions-join-us-and-....md" %}

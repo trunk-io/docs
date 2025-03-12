@@ -26,6 +26,8 @@ Your slug can just be pasted directly into your CI workflow; it's not a secret. 
 
 Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
+{% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
+
 #### Add Uploader to a Build Step
 
 Add the following command as a build step after your test run to upload test results. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
@@ -38,7 +40,7 @@ chmod +x ./trunk
     --token $TRUNK_TOKEN
 ```
 
-In your build step settings under the **Show advanced options** toggle, find the **Execute step settings** and select `Always, even if build stop command was issued` to ensure that the Upload step will still run if tests have failed.&#x20;
+In your build step settings under the **Show advanced options** toggle, find the **Execute step settings** and select `Always, even if build stop command was issued` to ensure that the Upload step will still run if tests have failed.
 
 To find out how to produce the JUnit XML files the uploader needs, see the instructions for your test framework in the [Test Frameworks](https://docs.trunk.io/flaky-tests/frameworks) docs.
 
@@ -50,6 +52,4 @@ Ensure you report every test run in CI and **clean up stale files** produced by 
 
 You can do this in TeamCity by omitting your JUnit XML path in the saved artifacts. [Learn more about artifacts in TeamCity](https://www.jetbrains.com/help/teamcity/cloud/configure-and-run-your-first-build.html#Artifacts).
 
-#### Need Help?
-
-Join the [Trunk Slack Community](https://slack.trunk.io) for live support.
+{% include "../../../.gitbook/includes/have-questions-join-us-and-....md" %}
