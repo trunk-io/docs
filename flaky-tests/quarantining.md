@@ -54,7 +54,7 @@ If you're using the Trunk Analytics Uploader Action in your GitHub Actions Workf
 
 If you upload your test results as a second step after you run your tests,  **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures. Here's an example file.
 
-<pre class="language-yaml" data-line-numbers><code class="lang-yaml"><strong>name: Run Tests And Upload results
+<pre class="language-yaml" data-line-numbers><code class="lang-yaml"><strong>name: Run Tests And Upload Results
 </strong>on:
   workflow_dispatch:
 jobs:
@@ -75,13 +75,13 @@ jobs:
         junit-paths: &#x3C;TEST OUTPUT PATH>
         org-slug: my-trunk-org-slug
         token: ${{ secrets.TRUNK_API_TOKEN }}
-        quarantine: true
 </code></pre>
 
 If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter. This will override the response code of the test command. Make sure to set `continue-on-error: false` so unquarantined tests are blocking.
 
+{% code lineNumbers="true" %}
 ```yaml
-name: Run Tests And Upload results
+name: Run Tests And Upload Results
 on:
   workflow_dispatch:
 jobs:
@@ -99,8 +99,8 @@ jobs:
           run: <COMMAND TO RUN TESTS>
           token: ${{ secrets.TRUNK_API_TOKEN }}
           org-slug: my-trunk-org-slug
-          quarantine: true
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Using The Trunk CLI Directly" %}
