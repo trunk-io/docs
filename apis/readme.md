@@ -2,7 +2,7 @@
 description: Trunk APIs for integrating with Trunk products
 ---
 
-# APIs
+# API Reference
 
 ## REST API Overview
 
@@ -10,6 +10,7 @@ Trunk provides HTTP REST APIs for several of our products. The APIs use status c
 
 ## Available APIs
 
+* Flaky Tests: for accessing information like quarantined tests in your repo.
 * [Merge API](merge.md) : for controlling the Trunk Merge Queue
 * [CI Analytics API](../ci-analytics/setup/api.md): for submitting events to be tracked by the CI Analytics engine.
 
@@ -43,6 +44,3 @@ curl \
 	"events":[]
 	}'
 ```
-
-
-

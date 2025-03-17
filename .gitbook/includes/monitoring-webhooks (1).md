@@ -2,9 +2,9 @@
 title: Monitoring Webhooks
 ---
 
-You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
+You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.&#x20;
 
-You can see an overview of how many webhook deliveries have been attempted, how many are successful, how many are in flight, and how many fail in the **Attempt Delivery Status** modal.
+You can see an overview of how many webhook deliveries have been attempted, how many are successful, how many are in-flight, and how many fail in the **Attempt Delivery Status** modal.
 
 <figure><img src="../assets/example-webhook-delivery-status.png" alt=""><figcaption></figcaption></figure>
 
