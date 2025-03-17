@@ -1,0 +1,367 @@
+{
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "url": "https://api.trunk.io/v1"
+    }
+  ],
+  "info": {
+    "title": "Trunk APIs",
+    "version": "1.0.0",
+    "license": {
+      "name": "UNLICENSED"
+    }
+  },
+  "paths": {
+    "/flaky-tests/list-quarantined-tests": {
+      "post": {
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get a list of quarantined tests",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "type": "object",
+                    "properties": {
+                      "host": {
+                        "type": "string"
+                      },
+                      "owner": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "host",
+                      "owner",
+                      "name"
+                    ]
+                  },
+                  "orgUrlSlug": {
+                    "type": "string"
+                  },
+                  "pageQuery": {
+                    "type": "object",
+                    "properties": {
+                      "pageSize": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 100
+                      },
+                      "pageToken": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "pageSize"
+                    ]
+                  }
+                },
+                "required": [
+                  "repo",
+                  "orgUrlSlug",
+                  "pageQuery"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "quarantined_tests": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "parent": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "file": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "class_name": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "HEALTHY",
+                              "FLAKY",
+                              "BROKEN"
+                            ]
+                          },
+                          "code_owners": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "quarantine_setting": {
+                            "type": "string",
+                            "enum": [
+                              "ALWAYS_QUARANTINE",
+                              "AUTO_QUARANTINE"
+                            ]
+                          },
+                          "last_updated_at": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "parent",
+                          "file",
+                          "class_name",
+                          "status",
+                          "code_owners",
+                          "quarantine_setting",
+                          "last_updated_at"
+                        ]
+                      }
+                    },
+                    "page": {
+                      "type": "object",
+                      "properties": {
+                        "total_rows": {
+                          "type": "integer",
+                          "exclusiveMinimum": 0
+                        },
+                        "total_pages": {
+                          "type": "integer",
+                          "exclusiveMinimum": 0
+                        },
+                        "next_page_token": {
+                          "type": "string"
+                        },
+                        "prev_page_token": {
+                          "type": "string"
+                        },
+                        "last_page_token": {
+                          "type": "string"
+                        },
+                        "page_index": {
+                          "type": "integer",
+                          "exclusiveMinimum": 0
+                        }
+                      },
+                      "required": [
+                        "total_rows",
+                        "total_pages",
+                        "next_page_token",
+                        "prev_page_token",
+                        "last_page_token",
+                        "page_index"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "quarantined_tests",
+                    "page"
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/plain-text": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/plain-text": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "security": [],
+        "summary": "Get the status of Trunk services",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "overallStatus": {
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "const": "up"
+                            },
+                            "color": {
+                              "type": "string",
+                              "enum": [
+                                "green"
+                              ]
+                            },
+                            "overallStatusDescription": {
+                              "type": "string",
+                              "const": "All systems operational"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "color",
+                            "overallStatusDescription"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "const": "impacted"
+                            },
+                            "color": {
+                              "type": "string",
+                              "enum": [
+                                "yellow",
+                                "red"
+                              ]
+                            },
+                            "overallStatusDescription": {
+                              "type": "string",
+                              "const": "Impacted"
+                            },
+                            "impactedStatuses": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "color": {
+                                    "type": "string",
+                                    "enum": [
+                                      "yellow",
+                                      "red"
+                                    ]
+                                  },
+                                  "statusDescription": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "name",
+                                  "color",
+                                  "statusDescription"
+                                ]
+                              }
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "color",
+                            "overallStatusDescription",
+                            "impactedStatuses"
+                          ]
+                        }
+                      ]
+                    },
+                    "statuses": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "color": {
+                            "type": "string",
+                            "enum": [
+                              "green",
+                              "yellow",
+                              "red"
+                            ]
+                          },
+                          "statusDescription": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "color",
+                          "statusDescription"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "overallStatus",
+                    "statuses"
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/plain-text": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-token"
+      }
+    }
+  }
+}

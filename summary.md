@@ -256,6 +256,7 @@
     * [Telemetry](cli/configuration/telemetry.md)
     * [Per User Overrides](cli/configuration/per-user-overrides.md)
 * [API Reference](apis/readme.md)
+  * [Flaky Tests](apis/flaky-tests.md)
   * [Merge Queue](apis/merge.md)
   * [CI Analytics](ci-analytics/setup/api.md)
   * [Webhooks Reference](apis/webhooks.md)

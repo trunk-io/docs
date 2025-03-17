@@ -1,7 +1,8 @@
 ---
-description: Rustfmt is a code formatting tool for Rust that helps ensure your code adheres to the community-driven coding standards and style guidelines.
-
 title: Trunk | How to run rustfmt
+description: >-
+  Rustfmt is a code formatting tool for Rust that helps ensure your code adheres
+  to the community-driven coding standards and style guidelines.
 layout:
   title:
     visible: true
@@ -27,16 +28,16 @@ trunk check enable rustfmt
 
 ## Auto Enabling
 
-rustfmt will be auto-enabled if any *Rust* files are present.
+rustfmt will be auto-enabled if any _Rust_ files are present.
 
 ## Settings
 
 rustfmt supports the following config files:
+
 * `rustfmt.toml`
 * `.rustfmt.toml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info.
-Trunk Code Quality provides a default `.rustfmt.toml` if your project does not already have one.
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info. Trunk Code Quality provides a default `.rustfmt.toml` if your project does not already have one.
 
 ## Usage Notes
 
@@ -48,9 +49,8 @@ If you have `edition` in your `cargo.toml`, `rustfmt` also needs the same inform
 edition = "2021"
 ```
 
-
 ## Links
 
-- [rustfmt site](https://github.com/rust-lang/rustfmt)
-- rustfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rustfmt)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [rustfmt site](https://github.com/rust-lang/rustfmt)
+* rustfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/rustfmt)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

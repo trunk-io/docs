@@ -1,6 +1,6 @@
 ---
-description: remark-lint is a linter for Markdown
 title: Trunk | How to run remark-lint
+description: remark-lint is a linter for Markdown
 layout:
   title:
     visible: true
@@ -26,11 +26,12 @@ trunk check enable remark-lint
 
 ## Auto Enabling
 
-remark-lint will be auto-enabled if any of its config files are present: *`.remarkrc`, `.remarkrc.json`, `.remarkrc.cjs`*.
+remark-lint will be auto-enabled if any of its config files are present: _`.remarkrc`, `.remarkrc.json`, `.remarkrc.cjs`_.
 
 ## Settings
 
 remark-lint supports the following config files:
+
 * `.remarkrc`
 * `.remarkrc.json`
 * `.remarkrc.cjs`
@@ -39,13 +40,10 @@ remark-lint supports the following config files:
 * `.remarkrc.yaml`
 * `.remarkrc.yml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info.
-Trunk Code Quality provides a default `.remarkrc.yaml` if your project does not already have one.
-
-
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info. Trunk Code Quality provides a default `.remarkrc.yaml` if your project does not already have one.
 
 ## Links
 
-- [remark-lint site](https://github.com/remarkjs/remark-lint#readme)
-- remark-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/remark-lint)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [remark-lint site](https://github.com/remarkjs/remark-lint#readme)
+* remark-lint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/remark-lint)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

@@ -1,6 +1,6 @@
 ---
-description: stylua is a linter for Lua
 title: Trunk | How to run stylua
+description: stylua is a linter for Lua
 layout:
   title:
     visible: true
@@ -26,21 +26,19 @@ trunk check enable stylua
 
 ## Auto Enabling
 
-stylua will be auto-enabled if any of its config files are present: *`stylua.toml`, `.stylua.toml`*.
+stylua will be auto-enabled if any of its config files are present: _`stylua.toml`, `.stylua.toml`_.
 
 ## Settings
 
 stylua supports the following config files:
+
 * `stylua.toml`
 * `.stylua.toml`
 
-You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info.
-Trunk Code Quality provides a default `stylua.toml` if your project does not already have one.
-
-
+You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info. Trunk Code Quality provides a default `stylua.toml` if your project does not already have one.
 
 ## Links
 
-- [stylua site](https://github.com/JohnnyMorganz/StyLua/tree/main)
-- stylua Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stylua)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [stylua site](https://github.com/JohnnyMorganz/StyLua/tree/main)
+* stylua Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stylua)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
