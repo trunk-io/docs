@@ -15,24 +15,65 @@ layout:
 
 # Behave
 
-## 1. Generate JUnit
+You can automatically [detect and manage flaky tests](../../detection.md) in your projects running Behave by integrating with Trunk. This document explains how to configure Behave to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
-Add the [`--junit`](https://behave.readthedocs.io/en/latest/behave/#cmdoption-junit) option to your `behave` command to generate separate JUnit XML reports for every `.feature` file in your repo:
+{% include "../../../.gitbook/includes/checklist.md" %}
 
-```shell
+### Generating Reports
+
+Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. Behave can output JUnit XML reports which are compatible with Trunk. You can do so with the `--junit` option:
+
+```sh
 behave --junit
 ```
 
-## 2. Output Location
+#### Report File Path
 
-JUnit reports will be written to a `reports` directory in your project root by default. You can modify this location using the [`--junit-directory`](https://behave.readthedocs.io/en/latest/behave/#cmdoption-junit-directory) option.
+You can customize the file path of the reports using the `--junit-directory` option.
 
-## Disable Retries
+```sh
+behave --junit --junit-directory ./junit-reports
+```
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.&#x20;
+Behave outputs multiple XML reports under the JUnit directory. You can locate these when uploading the reports in CI with the `"./junit-reports/*.xml"` glob.
+
+#### Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
 
 You must remove the [rerun formatter](https://behave.readthedocs.io/en/latest/formatters/#formatters) from your `behave.ini` file if it is being used to automatically rerun failed tests.
 
-## Next Step
+### Try It Locally
 
-JUnit files generated with Behave are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk. Multiple JUnit XML files should be uploaded together using a file glob or comma-separated list.
+#### The Validate Command
+
+You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+
+```sh
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+./trunk flakytests validate --junit-paths "./junit-reports/*.xml"
+```
+
+**This will not upload anything to Trunk**. To improve detection accuracy, you should **address all errors and warnings** before proceeding to the next steps.
+
+#### Test Upload
+
+Before modifying your CI jobs to automatically upload test results to Trunk, try uploading a single test run manually.
+
+You make a upload to Trunk using the following command:
+
+```sh
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+./trunk flakytests upload --junit-paths "./junit-reports/*.xml" \
+    --org-url-slug <TRUNK_ORG_SLUG> \
+    --token <TRUNK_ORG_TOKEN>
+```
+
+{% include "../../../.gitbook/includes/you-can-find-your-trunk-org....md" %}
+
+### Next Steps
+
+Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:
+
+{% include "../../../.gitbook/includes/ci-providers.md" %}
+

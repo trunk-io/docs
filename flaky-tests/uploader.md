@@ -8,13 +8,19 @@ If you're setting up Trunk Flaky Tests for the first time, you can follow the gu
 
 ### Installing the CLI
 
-The CLI should be downloaded as part of your test workflow in your **CI** system. This can be done with the following command:
+The CLI should be **downloaded as part of your test workflow** in your CI system. The launcher is platform agnostic and will download the latest version of the uploader for your platform.&#x20;
+
+{% hint style="success" %}
+You should **always use the latest version** of the uploader CLI by downloading it fresh in your CI jobs for the best detection results.
+{% endhint %}
+
+You can download the uploader CLI and mark it executable with the following command:
 
 ```bash
 curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 ```
 
-and then invoked like this. The `trunk` binary will already be marked executable.
+You can invoke an upload like this.
 
 ```bash
 ./trunk flakytests upload --junit-paths "test_output.xml" \
@@ -25,26 +31,28 @@ and then invoked like this. The `trunk` binary will already be marked executable
 ### Uploading from the CLI
 
 {% hint style="info" %}
-The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in Trunk. Multiple uploads are required before a test can be accurately detected as broken or flaky.
+The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as broken or flaky.
 {% endhint %}
 
-The `trunk` command-line tool can upload and analyze test results. All of the following subcommands and arguments are to the `trunk flakytests` command.
+The `trunk` command-line tool can upload and analyze test results. The `trunk flakytests` command accepts the following subcommands:
 
-Run the command line with one of the following commands:
+| Command                           | Description                                                                                                                                                                                         |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `trunk flakytests upload`         | Upload data to Trunk Flaky Tests.                                                                                                                                                                   |
+| `trunk flakytests validate`       | Validates if the provided JUnit XML files and prints any errors.                                                                                                                                    |
+| `trunk flakytests test <COMMAND>` | Runs tests using the provided command, uploads results, checks whether the failures are [quarantined](quarantining.md#using-the-trunk-cli-directly) tests, and correct the exit code based on that. |
 
-| Command          | Description                                                                                                                                         |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `upload`         | Upload data to Trunk Flaky Tests.                                                                                                                   |
-| `validate`       | Validates if the provided JUnit XML files and prints any errors.                                                                                    |
-| `test <COMMAND>` | Runs tests using the provided command, uploads results, checks whether the failures are quarantined tests, and correct the exit code based on that. |
-
-The `upload` command uses the following arguments:
+The `upload` command accepts the following options:
 
 <table><thead><tr><th width="265">Argument</th><th>Description</th></tr></thead><tbody><tr><td><code>--junit-paths &#x3C;JUNIT_PATHS></code></td><td>A comma separated list of paths containing the test output files. File globs are supported.</td></tr><tr><td><code>--org-url-slug &#x3C;ORG_URL_SLUG></code></td><td>Trunk Organization slug, from the Settings page.</td></tr><tr><td><code>--token &#x3C;TOKEN></code></td><td>Trunk Organization (not repo) token, from the Settings page. Defaults to the <code>TRUNK_API_TOKEN</code> variable.</td></tr><tr><td><code>-h, --help</code></td><td>Additional detailed description of the <code>upload</code> command.</td></tr><tr><td><code>--repo-root</code></td><td>Path to the repository root. Defaults to the current directory.</td></tr><tr><td><code>--repo-url &#x3C;REPO_URL></code></td><td>Value to override URL of repository. <strong>Optional</strong>.</td></tr><tr><td><code>--repo-head-sha</code> <code>&#x3C;REPO_HEAD_SHA></code></td><td>Value to override SHA of repository head. <strong>Optional</strong>.</td></tr><tr><td><code>--repo-head-branch &#x3C;REPO_HEAD_BRANCH></code></td><td>Value to override branch of repository head. <strong>Optional</strong>.</td></tr><tr><td><code>--repo-head-commit-epoch &#x3C;REPO_HEAD_COMMIT_EPOCH></code></td><td>Value to override commit epoch of repository head. <strong>Optional</strong>.</td></tr><tr><td><code>--tags &#x3C;TAGS></code></td><td>Comma separated list of custom tag=value pairs. <strong>Optional</strong>.</td></tr><tr><td><code>--print-files</code></td><td>Print files which will be uploaded to stdout.</td></tr><tr><td><code>--dry-run</code></td><td>Run metrics CLI without uploading to API. <strong>Optional</strong>.</td></tr><tr><td><code>--team</code> <code>&#x3C;TEAM></code></td><td>Value to tag team owner of upload. <strong>Optional</strong>.</td></tr><tr><td><code>--codeowners-path &#x3C;CODEOWNERS_PATH></code></td><td>Value to override CODEOWNERS file or directory path. <strong>Optional</strong>.</td></tr><tr><td><code>--use-quarantining</code></td><td>Quarantined tests according to repo settings. Defaults to <code>true</code>.</td></tr><tr><td><code>--allow-empty-test-results</code></td><td>Don't fail commands if test results are empty or missing. Use it when you sometimes skip all tests for certain CI jobs. Defaults to <code>true</code>.</td></tr></tbody></table>
 
+### Validating Test Reports
+
+You can validate your test reports locally
+
 ### Upgrade
 
-If you installed the CLI in your CI jobs following the instructions in the[#installing-the-cli](uploader.md#installing-the-cli "mention")step, the CI job will automatically install the latest version of the CLI.
+If you installed the CLI in your CI jobs following the instructions in the [Installing the CLI step](uploader.md#installing-the-cli), the CI job will automatically install the latest version of the CLI.
 
 If you're using the `flakytests` CLI subcommand using the Trunk CLI locally, you can upgrade with this command:
 

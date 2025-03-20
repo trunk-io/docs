@@ -4,9 +4,13 @@ description: A guide for generating Trunk-compatible test reports for Dart tests
 
 # Dart Test
 
-## 1. Generate JUnit
+You can automatically [detect and manage flaky tests](../../detection.md) in your Dart projects by integrating with Trunk. This document explains how to configure Dart to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
-Before you can upload to Trunk, you need to convert the reported test results to a Trunk-compatible format. Dart supports JUnit outputs by using the `tojunit` library. You can install the `tojunit` library using the following command:
+{% include "../../../.gitbook/includes/checklist.md" %}
+
+### Generating Reports
+
+Before you can upload to Trunk, you need to output a Trunk-compatible report. Dart supports JUnit outputs by using the `tojunit` library. You can install the `tojunit` library using the following command:
 
 ```sh
 dart pub global activate junitreport
@@ -14,20 +18,43 @@ dart pub global activate junitreport
 
 Then, you can convert test reports to a JUnit format by piping it to `tojunit`and piping the output to a file like this:&#x20;
 
-```sh
-dart test <TEST_PATH> --reporter json | tojunit > junit.xml
-```
+<pre class="language-sh"><code class="lang-sh"><strong>dart test &#x3C;TEST_PATH> --reporter json | tojunit > junit.xml
+</strong></code></pre>
 
-## 2. Output Location
+#### Report File Path
 
-The JUnit report is written to the location specified by `--log-junit`. In the example above, the test results will be written to `./junit.xml`.
+The JUnit report is written to the location specified by the `tojunit >` pipe. In the example above, the test results will be written to `./junit.xml`.
 
-## Disable Retries
+#### Disable Retries
 
 You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
 
-Dart `test` doesn't support retries out of the box, but if you implemented retries, remember to disable them.
+Dart provides retries through the [retry class annotations](https://pub.dev/documentation/test/latest/test/Retry-class.html). Disable retry, use Trunk to [detect](../../detection.md)[ flaky tests](../../detection.md), and use Quarantining to isolate flaky tests dynamically at run time.
 
-## Next Step
+### Try It Locally
 
-JUnit test reports for Dart projects are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.
+#### The Validate Command
+
+{% include "../../../.gitbook/includes/you-can-validate-your-test-....md" %}
+
+#### Test Upload
+
+Before modifying your CI jobs to automatically upload test results to Trunk, try uploading a single test run manually.
+
+You make an upload to Trunk using the following command:
+
+```sh
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+./trunk flakytests upload --junit-paths "./junit.xml" \
+    --org-url-slug <TRUNK_ORG_SLUG> \
+    --token <TRUNK_ORG_TOKEN>
+```
+
+{% include "../../../.gitbook/includes/you-can-find-your-trunk-org....md" %}
+
+### Next Steps
+
+Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:
+
+{% include "../../../.gitbook/includes/ci-providers.md" %}
+

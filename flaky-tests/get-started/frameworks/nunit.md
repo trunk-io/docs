@@ -4,50 +4,62 @@ description: A guide for generating Trunk-compatible test reports for NUnit
 
 # NUnit
 
-## 1. Install NUnit XML Test Result Adapter
+You can automatically [detect and manage flaky tests](../../detection.md) in your NUnit projects by integrating with Trunk. This document explains how to configure NUnit to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
-Ensure you have NUnit3TestAdapter, which allows NUnit to output results in JUnit XML format:
+{% include "../../../.gitbook/includes/checklist.md" %}
 
-```sh
-dotnet add package NUnit3TestAdapter
-dotnet add package Microsoft.NET.Test.Sdk
-dotnet restore
-```
+### Generating Reports
 
-## 2. Run Tests with JUnitXML Output
+Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. You can do this by generating Trunk-compatible XML reports from your test runs.
+
+You can do this in dotnet with the NUnit's built-in JUnit reporter:&#x20;
 
 ```sh
-dotnet test --logger "trx;LogFileName=test-results.trx"
+dotnet test -o build  -- NUnit.TestOutputXml="junit"
 ```
 
-This generates a .trx file in the test project’s output folder.
+#### Report File Path
 
-## 3. Convert `.trx` to JUnit.xml format
+.NET will output each build to the path specified by `-o <BUILD_PATH>` and test results under a sub-folder of `<BUILD PATH>/test-reports`, specified by the `-- NUnit.TestOutputXml="<XML PATH>"` option.
 
-NUnit does not output JUnit format directly, so you need to convert the `.trx` file to JUnit XML. Use the `trx2junit` tool:
+In the example command from the [Generating Reports step](nunit.md#generating-reports), the XMLs will be located under `./build/test-reports/junit/*.xml`. This is also the glob you'll use to locate the results when uploading test results.
 
-Install `trx2junit` using:
-
-```sh
-dotnet tool install -g trx2junit
-```
-
-Convert the .trx file to a JUnit.xml using:
-
-```sh
-trx2junit test-results.trx
-```
-
-## 4. Output Location
-
-The JUnit report will be written to the location of the source `.trx` file. In the example above, it would be at `test-results.xml`.
-
-## Disable Retries
+#### Disable Retries
 
 You need to disable automatic retries if you previously included them. Retries compromise the accurate detection of flaky tests.&#x20;
 
 Omit `[Retry(n)]` from tests to disable retries.
 
-## Next Step
+### Try It Locally
 
-JUnit files generated with NUnit are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.
+#### The Validate Command
+
+You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+
+```sh
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+./trunk flakytests validate --junit-paths "./build/test-reports/junit/*.xml"
+```
+
+**This will not upload anything to Trunk**. To improve detection accuracy, you should **address all errors and warnings** before proceeding to the next steps.
+
+#### Test Upload
+
+Before modifying your CI jobs to automatically upload test results to Trunk, try uploading a single test run manually.
+
+You make an upload to Trunk using the following command:
+
+```sh
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+./trunk flakytests upload --junit-paths "./build/test-reports/junit/*.xml" \
+    --org-url-slug <TRUNK_ORG_SLUG> \
+    --token <TRUNK_ORG_TOKEN>
+```
+
+{% include "../../../.gitbook/includes/you-can-find-your-trunk-org....md" %}
+
+### Next Steps
+
+Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:
+
+{% include "../../../.gitbook/includes/ci-providers.md" %}

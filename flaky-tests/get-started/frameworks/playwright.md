@@ -16,9 +16,13 @@ layout:
 
 # Playwright
 
-## 1. Generate JUnit
+You can automatically [detect and manage flaky tests](../../detection.md) in your Playwright projects by integrating with Trunk. This document explains how to configure Playwright to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
-Configure Playwright to generate JUnit:
+{% include "../../../.gitbook/includes/checklist.md" %}
+
+### Generating Reports
+
+Playwright has multiple built-in reporters, including JUnit XML which Trunk can ingest. To get XML reports, add the following to your Playwright config:
 
 {% code title="playwright.config.ts" %}
 ```typescript
@@ -32,16 +36,60 @@ export default defineConfig({
 ```
 {% endcode %}
 
-## 2. Output Location
+Alternatively, you can specify reporting behavior inline in your CI:
 
-The JUnit file will be written to the `outputFile` specified in the configuration. In the example above, the results will be written to `junit.xml`.
+```sh
+npx playwright test --reporter=junit
+```
 
-## Disable Retries
+#### Report File Path
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+You can specify the report's output location with the `PLAYWRIGHT_JUNIT_OUTPUT_FILE` environment variable:
+
+```sh
+export PLAYWRIGHT_JUNIT_OUTPUT_FILE=junit.xml
+```
+
+You can also specify the report's location in your `playwright.config.ts` file:
+
+```typescript
+export default defineConfig({
+  reporter: [
+    ['junit', { outputFile: 'junit.xml' }]
+  ],
+});
+```
+
+#### Disable Retries
+
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
 
 You can disable retries in Playwright by omitting the `--retries` command line option and [removing retries in your `playwright.config.ts` file](https://playwright.dev/docs/test-retries#retries).
 
+### Try It Locally
+
+#### The Validate Command
+
+{% include "../../../.gitbook/includes/you-can-validate-your-test-....md" %}
+
+#### Test Upload
+
+Before modifying your CI jobs to automatically upload test results to Trunk, try uploading a single test run manually.
+
+You make a upload to Trunk using the following command:
+
+```sh
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+./trunk flakytests upload --junit-paths "./junit.xml" \
+    --org-url-slug <TRUNK_ORG_SLUG> \
+    --token <TRUNK_ORG_TOKEN>
+```
+
+{% include "../../../.gitbook/includes/you-can-find-your-trunk-org....md" %}
+
 ## Next Step
 
-JUnit files generated with Playwright are compatible with Trunk Flaky Tests. See [CI Providers](https://docs.trunk.io/flaky-tests/get-started/ci-providers) for a guide on how to upload test results to Trunk.
+Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:
+
+{% include "../../../.gitbook/includes/ci-providers.md" %}
+

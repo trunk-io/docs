@@ -31,23 +31,44 @@
                     "type": "object",
                     "properties": {
                       "host": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The host of the repository. For example, `github.com` or `gitlab.com`. If self-hosting, this will be the hostname of your instance.",
+                        "examples": [
+                          "github.com",
+                          "gitlab.com",
+                          "github-enterprise.my-org-tld.com",
+                          "gitlab-enterprise.my-org-tld.com"
+                        ]
                       },
                       "owner": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The owner of the repository. For example, `my-github-org` or `my-gitlab-org/my/sub/group`.",
+                        "examples": [
+                          "my-github-org",
+                          "my-gitlab-org/my/sub/group"
+                        ]
                       },
                       "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The name of the repository.",
+                        "examples": [
+                          "my-repo"
+                        ]
                       }
                     },
                     "required": [
                       "host",
                       "owner",
                       "name"
-                    ]
+                    ],
+                    "description": "The repository to list quarantined tests for."
                   },
                   "orgUrlSlug": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The slug of your organization. Find this at https://app.trunk.io/trunk/settings under \"Organization Name\" > \"Slug\"",
+                    "examples": [
+                      "my-trunk-org-slug"
+                    ]
                   },
                   "pageQuery": {
                     "type": "object",
@@ -55,15 +76,21 @@
                       "pageSize": {
                         "type": "integer",
                         "minimum": 1,
-                        "maximum": 100
+                        "maximum": 100,
+                        "description": "The number of tests to return per page."
                       },
                       "pageToken": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The page token to use for pagination. This is returned from the previous call to this endpoint. For the first page, this should be empty.",
+                        "examples": [
+                          ""
+                        ]
                       }
                     },
                     "required": [
                       "pageSize"
-                    ]
+                    ],
+                    "description": "Pagination options for the list of quarantined tests."
                   }
                 },
                 "required": [
@@ -89,25 +116,29 @@
                         "type": "object",
                         "properties": {
                           "name": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "The name of the test case."
                           },
                           "parent": {
                             "type": [
                               "string",
                               "null"
-                            ]
+                            ],
+                            "description": "The parent of the test case."
                           },
                           "file": {
                             "type": [
                               "string",
                               "null"
-                            ]
+                            ],
+                            "description": "The file of the test case."
                           },
                           "class_name": {
                             "type": [
                               "string",
                               "null"
-                            ]
+                            ],
+                            "description": "The class name of the test case."
                           },
                           "status": {
                             "type": "string",
@@ -115,24 +146,28 @@
                               "HEALTHY",
                               "FLAKY",
                               "BROKEN"
-                            ]
+                            ],
+                            "description": "The status of the test case."
                           },
                           "code_owners": {
                             "type": "array",
                             "items": {
                               "type": "string"
-                            }
+                            },
+                            "description": "The latest codeowners of the test case."
                           },
                           "quarantine_setting": {
                             "type": "string",
                             "enum": [
                               "ALWAYS_QUARANTINE",
                               "AUTO_QUARANTINE"
-                            ]
+                            ],
+                            "description": "The quarantine setting of the test case."
                           },
-                          "last_updated_at": {
+                          "status_last_updated_at": {
                             "type": "string",
-                            "format": "date-time"
+                            "format": "date-time",
+                            "description": "The last time the status of the test case was updated."
                           }
                         },
                         "required": [
@@ -143,33 +178,41 @@
                           "status",
                           "code_owners",
                           "quarantine_setting",
-                          "last_updated_at"
-                        ]
-                      }
+                          "status_last_updated_at"
+                        ],
+                        "description": "A quarantined test case."
+                      },
+                      "description": "A page of quarantined test cases."
                     },
                     "page": {
                       "type": "object",
                       "properties": {
                         "total_rows": {
                           "type": "integer",
-                          "exclusiveMinimum": 0
+                          "exclusiveMinimum": 0,
+                          "description": "The total number of quarantined test cases in the paginated list."
                         },
                         "total_pages": {
                           "type": "integer",
-                          "exclusiveMinimum": 0
+                          "exclusiveMinimum": 0,
+                          "description": "The total number of pages in the paginated list of quarantined test cases."
                         },
                         "next_page_token": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "The next page token to use for pagination. See `pageToken` in the request for more information."
                         },
                         "prev_page_token": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "The previous page token to use for pagination. See `pageToken` in the request for more information."
                         },
                         "last_page_token": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "The last page token to use for pagination. See `pageToken` in the request for more information."
                         },
                         "page_index": {
                           "type": "integer",
-                          "exclusiveMinimum": 0
+                          "exclusiveMinimum": 0,
+                          "description": "The index of the current page in the paginated list of quarantined test cases."
                         }
                       },
                       "required": [
@@ -179,7 +222,8 @@
                         "prev_page_token",
                         "last_page_token",
                         "page_index"
-                      ]
+                      ],
+                      "description": "Pagination information for the list of quarantined test cases."
                     }
                   },
                   "required": [
@@ -192,16 +236,6 @@
           },
           "401": {
             "description": "Unauthorized",
-            "content": {
-              "application/plain-text": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal server error",
             "content": {
               "application/plain-text": {
                 "schema": {
@@ -337,16 +371,6 @@
                     "overallStatus",
                     "statuses"
                   ]
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal server error",
-            "content": {
-              "application/plain-text": {
-                "schema": {
-                  "type": "string"
                 }
               }
             }

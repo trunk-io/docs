@@ -16,40 +16,49 @@ layout:
 
 # XCTest
 
-Test written in Objective-C and Swift projects using the XCTest framework can be run from the command line with `xcodebuild`. Trunk Flaky Tests accepts both `.xcresult` and JUnit XML files.
+You can automatically [detect and manage flaky tests](../../detection.md) in your XCTest projects by integrating with Trunk. This document explains how to configure XCTest to output XCResult reports that can be uploaded to Trunk for analysis.
 
-### Using XCResult
+{% include "../../../.gitbook/includes/checklist.md" %}
 
-`xcodebuild` produces a test result directory in the `.xcresult` default format. You can upload `.xcresult` directories directly to Trunk Flaky Tests. The `trunk flakytests` subcommand takes `.xcresult` paths using the `--xcresult-path` argument.
+### Generating Reports
 
-### Using JUnit XML Output (Optional)
+Running XCTests from `xcodebuild` produces a `.xcresult` in an obscure directory by default. You can specify a `-resultBundlePath` option to generate the results locally:
 
-You can _optionally_ configure `xcodebuild` to produce the JUnit XML format, which is more commonly used by other test frameworks. Using the [xcbeautify](https://github.com/cpisciotta/xcbeautify) open source tool, `xcodebuild` can produce JUnit compatible XML output that Trunk can ingest.
-
-Install **xcbeautify** it on macOS with Homebrew. Alternative installation instructions [here](https://github.com/cpisciotta/xcbeautify?tab=readme-ov-file#installation).
-
-```shell
-brew install xcbeautify
+```sh
+xcodebuild test -scheme <YOUR_SCHEME> \
+  -resultBundlePath ./test-results.xcresult
 ```
 
-Then pipe the output of xcodebuild to xcbeautify with the `--report junit` option.
+You can upload `.xcresult` directories directly to Trunk Flaky Tests.&#x20;
 
-```shell
-xcodebuild test -scheme Testo2 | xcbeautify --report junit 
-```
+#### Report File Path
 
-This will produce a `build/reports/junit.xml` output file.
+The test reports will be written to the `./test-results.xcresult` directory when running tests with the `-resultBundlePath ./test-results.xcresult`option. You will need this path when uploading results to Trunk in CI.
 
-## Test Suite Naming
+#### Disable Retries
 
-`xcbeautify` will use the name of file the tests are in as the name of the output `<testsuite>` and the function name as the `name` attribute of each `<testcase>` element.
-
-## Disable Retries
-
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
 
 If you run tests in CI with [the `-retry-tests-on-failure` option](https://keith.github.io/xcode-man-pages/xcodebuild.1.html#retry-tests-on-failure), disable it for more accurate results.
 
-## Next Step
+### Try It Locally
 
-Once you've configured your test runner to output JUnit XML or you have a `.xcresult` file, you're ready to modify your CI test jobs to actually upload test results to Trunk. See [CI Providers](../ci-providers/) for instructions to do this for the CI system you use.
+Before modifying your CI jobs to automatically upload test results to Trunk, try uploading a single test run manually.
+
+You make an upload to Trunk using the following command:
+
+```sh
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+./trunk flakytests upload --xcresults-path "./test-results.xcresult" \
+    --org-url-slug <TRUNK_ORG_SLUG> \
+    --token <TRUNK_ORG_TOKEN>
+```
+
+{% include "../../../.gitbook/includes/you-can-find-your-trunk-org....md" %}
+
+### Next Step
+
+Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:
+
+{% include "../../../.gitbook/includes/ci-providers.md" %}
+
