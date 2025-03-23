@@ -38,7 +38,7 @@
       * [Buildkite](flaky-tests/get-started/ci-providers/buildkite.md)
       * [CircleCI](flaky-tests/get-started/ci-providers/circleci.md)
       * [Drone CI](flaky-tests/get-started/ci-providers/droneci.md)
-      * [GitHub Actions](flaky-tests/get-started/ci-providers/github-actions/README.md)
+      * [GitHub Actions](flaky-tests/get-started/ci-providers/github-actions.md)
         * [GitHub Action Reference](flaky-tests/get-started/ci-providers/github-actions/github-action-reference.md)
       * [GitLab](flaky-tests/get-started/ci-providers/gitlab.md)
       * [Jenkins](flaky-tests/get-started/ci-providers/jenkins.md)

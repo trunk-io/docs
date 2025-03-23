@@ -1,28 +1,18 @@
 # BitBucket Pipelines
 
-## Introduction
+Trunk Flaky Tests integrates with your CI by adding a step in your BitBucket Pipelines to upload tests with the [Trunk Uploader CLI](../../uploader.md).
 
-Trunk Flaky Tests integrates with your CI by adding an `after-script` step in each of your BitBucket Pipelines to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing a Trunk-compatible output for your test framework.
 
-Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.
+{% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
 
-### 1. Store a TRUNK\_TOKEN secret in your CI system
+{% include "../../../.gitbook/includes/trunk-organization-slug-and....md" %}
 
-In [app.trunk.io](https://app.trunk.io/login?intent=flaky%20tests), navigate to:
+### Add the Trunk Token as a Secret
 
-**Settings > Organization > Manage > Organization API Token > View Organization API Token > View**
+Store the Trunk slug and API token obtained in the previous step in your BitBucket as a new variable named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
 
-Store your API Token in your BitBucket as a new variable named `TRUNK_TOKEN`. Make sure you are getting your _organization token_, not your project/repo token.
-
-### 2. Grab your Organization Slug
-
-To upload test results to Trunk, you'll need to pass a Trunk Organization Slug to the upload command. To get your organization slug, In [app.trunk.io](https://app.trunk.io/login?intent=flaky%20tests), navigate to:
-
-**Settings > Organization > Manage > Organization Name > Slug**
-
-Your Trunk Organization Slug can be pasted directly into your CI workflow; it's not a secret. In the example workflow in the next step, replace `<TRUNK_ORG_SLUG>` with your organization slug.
-
-### 3. Modify workflows to upload test results
+### Upload to Trunk
 
 Add an `after-script` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
@@ -34,6 +24,8 @@ The following is an example of a workflow step to upload test results after your
 
 To find out how to produce the JUnit XML files the uploader needs, see the instructions for your test framework in the [Test Frameworks](https://docs.trunk.io/flaky-tests/frameworks) docs.
 
+{% tabs %}
+{% tab title="XML" %}
 ```yaml
 image: <BITBUCKET_IMAGE>
 
@@ -54,6 +46,54 @@ pipelines:
               --org-url-slug $TRUNK_ORG_SLUG \
               --token $TRUNK_TOKEN
 ```
+{% endtab %}
+
+{% tab title="Bazel" %}
+```yaml
+image: <BITBUCKET_IMAGE>
+
+pipelines:
+  default:
+    - step:
+       # ... omitted setup and build steps 
+    - step:
+        name: Run Tests and Upload Results
+        script:
+          - <COMMAND TO RUN TESTS>
+        after-script:
+          # This ensures trunk upload runs even if the test script fails
+          - |
+            curl -fsSLO --retry 3 https://trunk.io/releases/trunk
+            chmod +x ./trunk
+            ./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> \
+              --org-url-slug $TRUNK_ORG_SLUG \
+              --token $TRUNK_TOKEN
+```
+{% endtab %}
+
+{% tab title="XCode" %}
+```yaml
+image: <BITBUCKET_IMAGE>
+
+pipelines:
+  default:
+    - step:
+       # ... omitted setup and build steps 
+    - step:
+        name: Run Tests and Upload Results
+        script:
+          - <COMMAND TO RUN TESTS>
+        after-script:
+          # This ensures trunk upload runs even if the test script fails
+          - |
+            curl -fsSLO --retry 3 https://trunk.io/releases/trunk
+            chmod +x ./trunk
+            ./trunk flakytests upload --xcresults-path <XCRESULT_PATH> \
+              --org-url-slug $TRUNK_ORG_SLUG \
+              --token $TRUNK_TOKEN
+```
+{% endtab %}
+{% endtabs %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
