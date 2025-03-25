@@ -10,8 +10,6 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 {% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
 
-{% include "../../../.gitbook/includes/trunk-organization-slug-and....md" %}
-
 ### Add the Trunk Token as a Secret
 
 Store the Trunk slug and API token obtained in the previous step in your CI provider as a secret, environment variable, or an equivalent concept and name them `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
@@ -19,8 +17,6 @@ Store the Trunk slug and API token obtained in the previous step in your CI prov
 ### Upload to Trunk
 
 Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example,`main`, `master`, or `develop`.
-
-{% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
 
 #### Example Upload Script
 
@@ -38,5 +34,3 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 #### Stale files
 
 Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
-
-{% include "../../../.gitbook/includes/have-questions-join-us-and-....md" %}

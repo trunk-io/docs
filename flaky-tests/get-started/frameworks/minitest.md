@@ -57,7 +57,7 @@ Minitest doesn't support retries out of the box, but if you implemented retries 
 
 ### Try It Locally
 
-#### The Validate Command
+#### **The Validate Command**
 
 {% include "../../../.gitbook/includes/you-can-validate-your-test-....md" %}
 
@@ -73,8 +73,6 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```
-
-{% include "../../../.gitbook/includes/you-can-find-your-trunk-org....md" %}
 
 ### Next Steps
 

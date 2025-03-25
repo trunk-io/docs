@@ -54,8 +54,6 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
     --token <TRUNK_ORG_TOKEN>
 ```
 
-{% include "../../../.gitbook/includes/you-can-find-your-trunk-org....md" %}
-
 ### Next Step
 
 Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:

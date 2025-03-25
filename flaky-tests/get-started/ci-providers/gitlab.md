@@ -10,8 +10,6 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 {% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
 
-{% include "../../../.gitbook/includes/trunk-organization-slug-and....md" %}
-
 ### Add the Trunk Token as a Secret
 
 Store the Trunk slug and API token obtained in the previous step in your GitLab CI/CD pipelines as new [GitLab Variables](https://docs.gitlab.com/ee/ci/variables/index.html#for-a-project) named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
@@ -97,5 +95,3 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 #### Stale files
 
 Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
-
-{% include "../../../.gitbook/includes/have-questions-join-us-and-....md" %}

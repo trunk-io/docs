@@ -49,6 +49,10 @@ Disable retries if you're retrying tests using the `--flaky_test_attempts` comma
 
 ### Try It Locally
 
+#### **The Validate Command**
+
+{% include "../../../.gitbook/includes/you-can-validate-your-test-....md" %}
+
 #### Test Upload
 
 Before modifying your CI jobs to automatically upload test results to Trunk, try uploading a single test run manually.
@@ -61,8 +65,6 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```
-
-{% include "../../../.gitbook/includes/you-can-find-your-trunk-org....md" %}
 
 ### Next Steps
 

@@ -10,8 +10,6 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 {% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
 
-{% include "../../../.gitbook/includes/trunk-organization-slug-and....md" %}
-
 ### Add the Trunk Token as a Secret
 
 Store the Trunk slug and API token obtained in the previous step in your as a new [Buildkite CI secret](https://buildkite.com/docs/pipelines/security/secrets/managing) named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
@@ -26,7 +24,7 @@ Add an `Upload Test Results` step after running tests in each of your CI jobs th
 
 The following is an example of a Buildkite step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
 
-To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
+To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.&#x20;
 
 {% tabs %}
 {% tab title="XML" %}
@@ -81,12 +79,8 @@ steps:
 {% endtab %}
 {% endtabs %}
 
-
-
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
 #### Stale files
 
 Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
-
-{% include "../../../.gitbook/includes/have-questions-join-us-and-....md" %}

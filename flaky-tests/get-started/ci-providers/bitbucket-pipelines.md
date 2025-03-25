@@ -6,8 +6,6 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 {% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
 
-{% include "../../../.gitbook/includes/trunk-organization-slug-and....md" %}
-
 ### Add the Trunk Token as a Secret
 
 Store the Trunk slug and API token obtained in the previous step in your BitBucket as a new variable named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
@@ -16,13 +14,13 @@ Store the Trunk slug and API token obtained in the previous step in your BitBuck
 
 Add an `after-script` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
-{% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
-
 #### Add Uploader to Testing Pipelines
 
 The following is an example of a workflow step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
 
 To find out how to produce the JUnit XML files the uploader needs, see the instructions for your test framework in the [Test Frameworks](https://docs.trunk.io/flaky-tests/frameworks) docs.
+
+{% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
 
 {% tabs %}
 {% tab title="XML" %}
@@ -102,5 +100,3 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
 
 You can do this by omitting the `artifacts` definitions in the test steps of your configuration. [Learn more about artifacts in BitBucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/use-artifacts-in-steps/).
-
-{% include "../../../.gitbook/includes/have-questions-join-us-and-....md" %}

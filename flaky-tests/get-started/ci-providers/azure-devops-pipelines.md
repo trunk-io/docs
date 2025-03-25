@@ -6,8 +6,6 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 {% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
 
-{% include "../../../.gitbook/includes/trunk-organization-slug-and....md" %}
-
 ### Add the Trunk Token as a Secret
 
 Store the Trunk slug and API token obtained in the previous step in your Azure DevOps Pipelines as new variables named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
@@ -99,6 +97,4 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
 
 [Learn more about cleaning up artifacts in Azure DevOps Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops\&tabs=yaml#clean-the-local-repo-on-the-agent)
-
-{% include "../../../.gitbook/includes/have-questions-join-us-and-....md" %}
 
