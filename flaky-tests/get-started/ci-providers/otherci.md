@@ -6,6 +6,8 @@ description: Configure Flaky Tests using any CI Provider
 
 Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk Uploader CLI](../../uploader.md).
 
+{% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
+
 Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing JUnit XML output for your test runner, supported by virtually all test frameworks, which is what Trunk ingests.
 
 {% include "../../../.gitbook/includes/ci-provider-checklist.md" %}

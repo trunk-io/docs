@@ -2,6 +2,8 @@
 
 Trunk Flaky Tests integrates with your CI by adding a step in your BitBucket Pipelines to upload tests with the [Trunk Uploader CLI](../../uploader.md).
 
+{% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
+
 Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing a Trunk-compatible output for your test framework.
 
 {% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
