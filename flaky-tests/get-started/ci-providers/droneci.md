@@ -33,8 +33,6 @@ You can find your organization slug under **Settings > Organization > Manage > O
 
 You can find your token under **Settings > Organization > Manage > Organization API Token > View Organization API Token > View**. Since this is a secret, do not leak it publicly. Ensure you get your _organization token_, not your project/repo token.
 
-{% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
-
 ### Add the Trunk Token as a Secret
 
 Store your Trunk slug and API token in your Drone CI project settings as new variables named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
