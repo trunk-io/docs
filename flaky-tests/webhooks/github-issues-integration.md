@@ -18,14 +18,14 @@ Before you can create a webhook to automate GitHub Issue creation, you need to c
 2. Under **Personal access token** > **Fine-grained tokens** > Click **Generate new token**
 3. Name the token something like `Trunk Flaky Tests` so you can recognize your token and set it never to expire.
 4. Select the repositories you need to create issues to under **Repository access**
-5.  Under **Permissions** > **Repository Permissions**, select **Read and Write** access for **Issues.**&#x20;
+5.  Under **Permissions** > **Repository Permissions**, select **Read and Write** access for **Issues.**
 
     <figure><picture><source srcset="../../.gitbook/assets/example-webhook-github-permissions-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-github-permissions-light.png" alt=""></picture><figcaption></figcaption></figure>
 6. Click **Generate Token** and copy your API token.
 
 ### 2. Add a New Webhook
 
-Trunk uses Svix to integrate with other services, such as GitHub Issues through webhooks.&#x20;
+Trunk uses Svix to integrate with other services, such as GitHub Issues through webhooks.
 
 You can create a new endpoint by:
 
@@ -34,7 +34,7 @@ You can create a new endpoint by:
 3.  Under **Organization > Webhooks**, click **Automate GitHub Issue Creation**
 
     <figure><picture><source srcset="../../.gitbook/assets/example-webhook-connector-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-connector-light.png" alt=""></picture><figcaption></figcaption></figure>
-4. Paste your GitHub repo's Issues endpoint into **Endpoint URL.** Your **Endpoint URL** should be formatted as: `https://api.github.com/repos/{OWNER}/{REPO}/issues`.  You can verify the URL by visiting it in your browser, such as [https://api.github.com/repos/trunk-io/docs/issues](https://api.github.com/repos/trunk-io/docs/issues).
+4. Paste your GitHub repo's Issues endpoint into **Endpoint URL.** Your **Endpoint URL** should be formatted as: `https://api.github.com/repos/{OWNER}/{REPO}/issues`. You can verify the URL by visiting it in your browser, such as [https://api.github.com/repos/trunk-io/docs/issues](https://api.github.com/repos/trunk-io/docs/issues).
 5. Review the transformation code automatically generated for GitHub issues. You can customize this transformation at any time. Learn more about [customizing transformations](github-issues-integration.md#id-5.-customize-your-transformation).
 6. Create the new endpoint. You will be redirected to the endpoint configuration view.
 
@@ -47,7 +47,7 @@ The GitHub Issues API requires some custom headers. You can configure custom hea
 1. You can add custom headers under **Webhooks > Advanced > Custom Headers.**
 2. Fill in the **Key** and **Value** referencing the table below, and click the **+** button to add each header.
 
-You'll need to configure the following headers.&#x20;
+You'll need to configure the following headers.
 
 | Key                    | Value                         |
 | ---------------------- | ----------------------------- |
@@ -65,9 +65,9 @@ Transformations are custom code snippets you can write to customize the GitHub i
 
 The generated webhook template contains several configurable constants out of the box:
 
-<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>GITHUB_ISSUE_LABEL_IDS</code></td><td><strong>(Optional)</strong> GitHub labels that will be assigned to issues created by Trunk. </td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>. <br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
+<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>GITHUB_ISSUE_LABEL_IDS</code></td><td><strong>(Optional)</strong> GitHub labels that will be assigned to issues created by Trunk.</td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>.<br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
 
-Here is the provided transformation for context. You can customize your GitHub Issues integration by following the [GitHub](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
+Here is the provided transformation for context. You can customize your GitHub Issues integration by following the [GitHub](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
 
 {% code lineNumbers="true" %}
 ```javascript
@@ -156,7 +156,7 @@ ${
 
 #### Automatically Assign Issues with CODEOWNERS
 
-If you have [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) configured for your GitHub repo, you can create issues with assignees using CODEOWNERS. \
+If you have [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) configured for your GitHub repo, you can create issues with assignees using CODEOWNERS.\
 \
 You can uncomment the code block on lines 31-35 or use a snippet similar to:
 
@@ -183,11 +183,19 @@ You can create test issues by delivering a mock webhook. You can do this by:
 
 ### 6. Monitoring Webhooks
 
-{% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
+You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
+
+You can see an overview of how many webhook deliveries have been attempted, how many are successful, how many are in flight, and how many fail in the **Attempt Delivery Status** modal.
+
+<figure><img src="../../.gitbook/assets/example-webhook-delivery-status.png" alt=""><figcaption></figcaption></figure>
+
+You can see a list of past delivery attempts in the **Message Attempts** modal. You can filter this list by **Succeeded** and **Failed** status, and you can click on each message to see the **Message content**, response code, and error message of each attempt. You can learn more about [replaying messages](https://docs.svix.com/receiving/using-app-portal/replaying-messages) and [filtering logs](https://docs.svix.com/receiving/using-app-portal/filtering-logs) in the Svix docs.
+
+<figure><img src="../../.gitbook/assets/example-webhook-logs.png" alt=""><figcaption></figcaption></figure>
 
 ### Congratulations!
 
-A GitHub Issue will now be created when a test's health status changes. You can further modify your transformation script to customize your issues.&#x20;
+A GitHub Issue will now be created when a test's health status changes. You can further modify your transformation script to customize your issues.
 
 [See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed)
 

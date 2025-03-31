@@ -54,7 +54,7 @@ Then add Trunk Launcher in your `package.json` as a script:
 
 #### Using cURL
 
-You can install the [Trunk Launcher](../../cli/install.md#the-trunk-launcher) script directly by downloading it through cURL. The launcher script supports both macOS and Linux environments.
+You can install the [Trunk Launcher](../../references/cli/install.md#the-trunk-launcher) script directly by downloading it through cURL. The launcher script supports both macOS and Linux environments.
 
 {% tabs %}
 {% tab title="bash" %}
@@ -120,7 +120,7 @@ You can then execute trunk as `.\trunk.ps1`.
 
 **Compatibility**
 
-Only some versions of Trunk are compatible with Windows. See the compatibility page for [Windows](../../cli/compatibility.md) to learn more.
+Only some versions of Trunk are compatible with Windows. See the compatibility page for [Windows](../../references/cli/compatibility.md) to learn more.
 
 You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17/release/vc_redist.x64.exe) in order to run some linters.
 

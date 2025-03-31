@@ -4,7 +4,7 @@ Trunk Code Quality allows you to define custom linters. If a linter is not withi
 
 ### Defining a Custom Linter
 
-You can define linters right in your `.trunk/trunk.yaml` file in your repo. These definitions have the same configurable parameters as in our [public plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) or [your own plugins repo](../../cli/configuration/plugins/external-repositories.md).
+You can define linters right in your `.trunk/trunk.yaml` file in your repo. These definitions have the same configurable parameters as in our [public plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) or [your own plugins repo](../../references/cli/configuration/plugins/external-repositories.md).
 
 #### Pass-Fail Linter Script Example
 
@@ -29,7 +29,7 @@ lint:
 
 #### Inline Grep Command Example
 
-You can also define simple linters inline using tools like `grep`. This linter will grep against your custom regex pattern, format the output using sed, and then parse the output into pattern groups using a [regex output](../../cli/configuration/lint/output.md#regex) for Trunk Code Quality to report.
+You can also define simple linters inline using tools like `grep`. This linter will grep against your custom regex pattern, format the output using sed, and then parse the output into pattern groups using a [regex output](../../references/cli/configuration/lint/output.md#regex) for Trunk Code Quality to report.
 
 ```yaml
 # This file controls the behavior of Trunk: https://docs.trunk.io/cli
@@ -54,7 +54,7 @@ lint:
           parse_regex: "(?P<path>.*):(?P<line>-?\\d+):(?P<col>-?\\d+): \\[(?P<severity>[^\\]]*)\\] (?P<message>[^\\(]*) \\((?P<code>[^\\)]*)\\)"
 ```
 
-To see the configurable fields available [Linter Definition Reference](../../cli/configuration/lint/definitions.md).
+To see the configurable fields available [Linter Definition Reference](../../references/cli/configuration/lint/definitions.md).
 
 ### Contributing a New Linter
 

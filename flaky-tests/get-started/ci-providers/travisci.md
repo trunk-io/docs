@@ -12,6 +12,29 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 
 {% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
 
+### Checklist
+
+By the end of this guide, you should achieve the following.
+
+* [ ] Get your Trunk organization slug and token
+* [ ] Set your slug and token as a variable in CI
+* [ ] Configure your CI to upload to Trunk
+* [ ] Validate your uploads in Trunk
+
+After completing these checklist items, you'll be integrated with Trunk.&#x20;
+
+### Trunk Organization Slug and Token
+
+Before setting up uploads to Trunk, you must sign in to [app.trunk.io](https://app.trunk.io/login?intent=flaky%20tests) and obtain your Trunk organization slug and token.
+
+#### Trunk Slug
+
+You can find your organization slug under **Settings > Organization > Manage > Organization Name > Slug**. You'll save this as a variable in CI in a later step.
+
+#### Trunk Token
+
+You can find your token under **Settings > Organization > Manage > Organization API Token > View Organization API Token > View**. Since this is a secret, do not leak it publicly. Ensure you get your _organization token_, not your project/repo token.
+
 ### Add the Trunk Token as a Secret
 
 Store the Trunk slug and API token obtained in the previous step as new secrets named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
@@ -21,6 +44,12 @@ Store the Trunk slug and API token obtained in the previous step as new secrets 
 Add a script step after running tests in each of your CI jobs that run tests. This should be run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
 {% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
+
+{% hint style="danger" %}
+You must upload tests from both PR and [**stable branchs**](https://docs.trunk.io/flaky-tests/detection#stable-branches), such as `main`, `master`, or `develop` in CI for Trunk to detect flaky tests. Trunk will not detect flaky tests without uploads from both PR and stable branches.&#x20;
+
+[Learn more about detection](../../detection.md)
+{% endhint %}
 
 #### Example Travis CI Workflow
 
@@ -75,3 +104,9 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 #### Stale files
 
 Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
+
+{% hint style="success" %}
+**Have questions?**
+
+Join us and 1500+ fellow engineers [on Slack](https://slack.trunk.io/) to get help with Trunk.
+{% endhint %}

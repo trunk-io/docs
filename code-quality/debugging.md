@@ -38,7 +38,7 @@ then run `trunk install` again in your repos.
 
 ## How do I Make a Linter Work with a Different File Type?
 
-Every linter defines a set of file types that it wants to work with in a section of the YAML called `files`. To change this you need to override the files section of that linter’s definition. [More linter application file types](../cli/configuration/lint/files-and-caching.md#applicable-filetypes).
+Every linter defines a set of file types that it wants to work with in a section of the YAML called `files`. To change this you need to override the files section of that linter’s definition. [More linter application file types](../references/cli/configuration/lint/files-and-caching.md#applicable-filetypes).
 
 Suppose you are using the **foo-linter** which normally runs on `foo` files. The config might look like this:
 

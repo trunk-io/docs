@@ -4,7 +4,7 @@ description: Learn how to use flaky test webhooks to power Slack notifications
 
 # Slack Integration
 
-Trunk allows you to create custom workflows to send customized messages to Slack through webhooks.&#x20;
+Trunk allows you to create custom workflows to send customized messages to Slack through webhooks.
 
 <figure><picture><source srcset="../../.gitbook/assets/example-slack-message (1).png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -12,13 +12,13 @@ This guide will walk you through sending Slack messages using event-triggered we
 
 ### 1. Configure Slack Webhooks
 
-Trunk uses Svix to integrate with other services, such as Slack, through webhooks.&#x20;
+Trunk uses Svix to integrate with other services, such as Slack, through webhooks.
 
 You can add the new Slack Webhook URL to Svix by following these steps:
 
 1. Login to [Trunk Flaky Tests](https://app.trunk.io/login?intent=flaky%20tests)
 2. From your profile on the top right, navigate to **Settings**
-3.  Under **Organization > Webhooks**, click **Slack**&#x20;
+3.  Under **Organization > Webhooks**, click **Slack**
 
     <figure><img src="../../.gitbook/assets/example-webhook-connector-light.png" alt=""><figcaption></figcaption></figure>
 4.  Click **Connect to Slack** and select the server and channel to connect to.
@@ -38,7 +38,7 @@ Transformations are custom code snippets you can write to customize the Slack me
 2. Click **Edit transformation** to update your transformation code, and click **Save** to update the transformation.
 3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step 3](slack-integration.md#id-3.-test-your-webhook).
 
-An example transformation script is provided below and you can customize your Slack integration by following the [Slack](https://api.slack.com/messaging/webhooks) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
+An example transformation script is provided below and you can customize your Slack integration by following the [Slack](https://api.slack.com/messaging/webhooks) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
 
 ```javascript
 /**
@@ -122,13 +122,21 @@ You can send test messages to your Slack channels as you make updates. You can d
 
 ### 4. Monitoring Webhooks
 
-{% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
+You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
+
+You can see an overview of how many webhook deliveries have been attempted, how many are successful, how many are in flight, and how many fail in the **Attempt Delivery Status** modal.
+
+<figure><img src="../../.gitbook/assets/example-webhook-delivery-status.png" alt=""><figcaption></figcaption></figure>
+
+You can see a list of past delivery attempts in the **Message Attempts** modal. You can filter this list by **Succeeded** and **Failed** status, and you can click on each message to see the **Message content**, response code, and error message of each attempt. You can learn more about [replaying messages](https://docs.svix.com/receiving/using-app-portal/replaying-messages) and [filtering logs](https://docs.svix.com/receiving/using-app-portal/filtering-logs) in the Svix docs.
+
+<figure><img src="../../.gitbook/assets/example-webhook-logs.png" alt=""><figcaption></figcaption></figure>
 
 ### Congratulations!
 
 <figure><picture><source srcset="../../.gitbook/assets/example-slack-message (1).png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message.png" alt=""></picture><figcaption></figcaption></figure>
 
-You should now receive notifications in your Slack workspace when a test's status changes. You can further modify your transformation script to customize your messages.&#x20;
+You should now receive notifications in your Slack workspace when a test's status changes. You can further modify your transformation script to customize your messages.
 
 [See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed)
 

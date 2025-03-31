@@ -1,6 +1,6 @@
 # Microsoft Teams Integration
 
-Trunk allows you to create custom workflows to send customized messages to Microsoft Teams channels through webhooks.&#x20;
+Trunk allows you to create custom workflows to send customized messages to Microsoft Teams channels through webhooks.
 
 <figure><picture><source srcset="../../.gitbook/assets/example-slack-message-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message-light.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -12,13 +12,13 @@ Microsoft has two different concepts for accepting incoming webhooks. **Connecto
 
 1. Open the team in which you want to add the webhook and select the kebab menu (•••) from the upper-right corner.
 2. Select **Workflows** from the dropdown menu.
-3. Search for `Post to a channel when a webhook request is received`, select the workflow, then click **Next**.&#x20;
-4. Configure the workflow's **Microsoft Teams Team** and **Microsoft Teams Channel**, then click **Add workflow**.&#x20;
+3. Search for `Post to a channel when a webhook request is received`, select the workflow, then click **Next**.
+4. Configure the workflow's **Microsoft Teams Team** and **Microsoft Teams Channel**, then click **Add workflow**.
 5. When the workflow is added correctly, you can copy the URL displayed, then click **Done.**
 
 ### 2. Add a New Webhook
 
-Trunk uses Svix to integrate with other services, such as Microsoft Teams messages through webhooks.&#x20;
+Trunk uses Svix to integrate with other services, such as Microsoft Teams messages through webhooks.
 
 You can create a new endpoint by:
 
@@ -200,11 +200,19 @@ You can send test messages to your Microsoft Teams channels as you make updates.
 
 ### 5. Monitoring Webhooks
 
-{% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
+You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
+
+You can see an overview of how many webhook deliveries have been attempted, how many are successful, how many are in flight, and how many fail in the **Attempt Delivery Status** modal.
+
+<figure><img src="../../.gitbook/assets/example-webhook-delivery-status.png" alt=""><figcaption></figcaption></figure>
+
+You can see a list of past delivery attempts in the **Message Attempts** modal. You can filter this list by **Succeeded** and **Failed** status, and you can click on each message to see the **Message content**, response code, and error message of each attempt. You can learn more about [replaying messages](https://docs.svix.com/receiving/using-app-portal/replaying-messages) and [filtering logs](https://docs.svix.com/receiving/using-app-portal/filtering-logs) in the Svix docs.
+
+<figure><img src="../../.gitbook/assets/example-webhook-logs.png" alt=""><figcaption></figcaption></figure>
 
 ### Congratulations!
 
-You should now receive notifications in your Teams channel when a test's status changes. You can further modify your transformation script to customize your messages.&#x20;
+You should now receive notifications in your Teams channel when a test's status changes. You can further modify your transformation script to customize your messages.
 
 <figure><picture><source srcset="../../.gitbook/assets/example-slack-message-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message-light.png" alt=""></picture><figcaption></figcaption></figure>
 

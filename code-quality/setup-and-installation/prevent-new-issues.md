@@ -20,7 +20,7 @@ Code Quality can automatically run formatters on each commit to prevent new form
 <pre class="language-shell"><code class="lang-shell"><strong>trunk actions enable trunk-fmt-pre-commit
 </strong></code></pre>
 
-This enables a [Git hook](../../cli/getting-started/actions/git-hooks.md) managed by Trunk which is defined in the `trunk.yaml` config file. When other developers pull the updated `trunk.yaml` file, they will automatically have this Git hook enabled to run `trunk fmt` on each commit.
+This enables a [Git hook](../../references/cli/getting-started/actions/git-hooks.md) managed by Trunk which is defined in the `trunk.yaml` config file. When other developers pull the updated `trunk.yaml` file, they will automatically have this Git hook enabled to run `trunk fmt` on each commit.
 
 ### Prevent Issues Before Push
 
@@ -30,7 +30,7 @@ Code Quality can automatically run linters and formatters on each commit to prev
 trunk actions enable trunk-check-pre-push
 ```
 
-This enables a [Git hook](../../cli/getting-started/actions/git-hooks.md) managed by Trunk which is defined in the `trunk.yaml` config file. When other developers pull the updated `trunk.yaml` file, they will automatically have this Git hook enabled to run `trunk check` before each push.
+This enables a [Git hook](../../references/cli/getting-started/actions/git-hooks.md) managed by Trunk which is defined in the `trunk.yaml` config file. When other developers pull the updated `trunk.yaml` file, they will automatically have this Git hook enabled to run `trunk check` before each push.
 
 ### Prevent Issues on PRs
 

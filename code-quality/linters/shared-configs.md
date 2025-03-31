@@ -2,7 +2,7 @@
 
 ## Single Repo
 
-Linters are automatically shared with all developers for a repository using the [`.trunk/trunk.yaml` file](../../cli/configuration/).  This file is committed to the repo, so whenever anyone checks out the code, they will get the same configuration and linters. See the [Trunk YAML guide](../../cli/configuration/) for more details.
+Linters are automatically shared with all developers for a repository using the [`.trunk/trunk.yaml` file](../../references/cli/configuration/).  This file is committed to the repo, so whenever anyone checks out the code, they will get the same configuration and linters. See the [Trunk YAML guide](../../references/cli/configuration/) for more details.
 
 ## Per User Config
 

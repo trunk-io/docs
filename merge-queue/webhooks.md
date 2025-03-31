@@ -1,6 +1,6 @@
 # Webhooks
 
-Trunk provides a variety of webhooks to allow responding to various events from Trunk. Each event corresponds to a Trunk product and an action within that product (for example, a Pull Request being submitted to Trunk Merge).
+Trunk provides a variety of webhooks to allow responding to various events from Trunk. Each event corresponds to a Trunk feature and an action within that feature (for example, a Pull Request being submitted to Trunk Merge).
 
 ### Supported Events
 

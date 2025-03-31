@@ -1,4 +1,4 @@
-# Overview
+# Why Metalinters?
 
 ### Why metalinters?
 
@@ -18,7 +18,7 @@ Use Trunk Code Quality [GitHub Integrations](../ci-setup/github-integration.md) 
 
 #### Run and manage a long list of linters
 
-Trunk will install, manage, and run tools like linters and formatters for you. Trunk uses [hermetic installs](how-does-it-work.md#hermetic-tools-and-runtime-management) to manage both the static analysis [tools](../../cli/getting-started/tools.md) themselves and the [runtimes they depend](../../cli/configuration/runtimes.md) on. No more conflicts because a linter requires `python 3.11` while your projects require `python 3.7`.
+Trunk will install, manage, and run tools like linters and formatters for you. Trunk uses [hermetic installs](how-does-it-work.md#hermetic-tools-and-runtime-management) to manage both the static analysis [tools](../../references/cli/getting-started/tools.md) themselves and the [runtimes they depend](../../references/cli/configuration/runtimes.md) on. No more conflicts because a linter requires `python 3.11` while your projects require `python 3.7`.
 
 #### Incrementally adopt new linters
 
@@ -36,11 +36,11 @@ Many linters don't install neatly through a package manager, and for those that 
 
 #### Consistent linter configs and versions
 
-Trunk Code Quality uses an extensible [plugin system](../../cli/configuration/plugins/), so you can define linters to [auto-enable](../../cli/configuration/lint/auto-enable.md) and [share linter configurations](../linters/shared-configs.md) to standardize across code bases.
+Trunk Code Quality uses an extensible [plugin system](../../references/cli/configuration/plugins/), so you can define linters to [auto-enable](../../references/cli/configuration/lint/auto-enable.md) and [share linter configurations](../linters/shared-configs.md) to standardize across code bases.
 
 #### Lack of consistent output and reporting
 
-Every linter outputs differently. If you've got a backlog of issues like ESLint errors, OSV Scanner dependency vulnerabilities, poorly optimized images, and vulnerabilities in your Docker Config, you'd want to see them in an [organized report](../ci-setup/github-integration.md), sorted by severity or by file, with [consistent format](../../cli/configuration/lint/output.md). Trunk Code Quality can do this.
+Every linter outputs differently. If you've got a backlog of issues like ESLint errors, OSV Scanner dependency vulnerabilities, poorly optimized images, and vulnerabilities in your Docker Config, you'd want to see them in an [organized report](../ci-setup/github-integration.md), sorted by severity or by file, with [consistent format](../../references/cli/configuration/lint/output.md). Trunk Code Quality can do this.
 
 ### Features
 
@@ -62,11 +62,11 @@ Trunk Code Quality speeds up static analysis by using a background daemon to che
 
 #### **Time-consuming PR iteration and triage**
 
-Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](../ci-setup/), improving PR triage. It can optionally also function as a [githooks manager](../../cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`.
+Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](../ci-setup/), improving PR triage. It can optionally also function as a [githooks manager](../../references/cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`.
 
 #### **Lack of team visibility into the repo's health**
 
-Trunk Code Quality improves team communication by providing a [web app](https://app.trunk.io/login?intent=code%20quality) for repo stats and [Slack notifications](../../administration/integration-for-slack.md), ensuring everyone on the team is aware of the current health of your repo.
+Trunk Code Quality improves team communication by providing a [web app](https://app.trunk.io/login?intent=code%20quality) for repo stats and [Slack notifications](../../integration-for-slack.md), ensuring everyone on the team is aware of the current health of your repo.
 
 ### Components
 

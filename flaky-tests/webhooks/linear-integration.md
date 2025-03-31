@@ -26,7 +26,7 @@ You can create a new endpoint by:
 
 1. Login to [Trunk Flaky Tests](https://app.trunk.io/login?intent=flaky%20tests)
 2. From your profile on the top right, navigate to **Settings**
-3.  Under **Organization > Webhooks**, click **Automate Linear Issues Creation.**&#x20;
+3.  Under **Organization > Webhooks**, click **Automate Linear Issues Creation.**
 
     <figure><picture><source srcset="../../.gitbook/assets/example-webhook-connector-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-connector-light.png" alt=""></picture><figcaption></figcaption></figure>
 4. Paste the Linear GraphQL API endpoint into **Endpoint URL**, which is: `https://api.linear.app/graphql`.
@@ -39,10 +39,10 @@ If you're having trouble adding a new webhook endpoint with Svix, please see the
 
 The Linear GraphQL API requires some custom headers. You can configure custom headers in the endpoint configuration:
 
-1. You can add custom headers under **Webhooks > Advanced > Custom Headers.**&#x20;
+1. You can add custom headers under **Webhooks > Advanced > Custom Headers.**
 2. Fill in the **Key** and **Value** referencing the table below, and click the **+** button to add each header.
 
-You'll need to configure the following headers.&#x20;
+You'll need to configure the following headers.
 
 | Key             | Value              |
 | --------------- | ------------------ |
@@ -54,7 +54,7 @@ You need to find your Linear team, project, and label IDs to create issues with 
 
 #### Team ID
 
-First, you'll need to find your team ID so you can create Linear issues under the correct team. You can make a request in your terminal using cURL, or a similar tool.&#x20;
+First, you'll need to find your team ID so you can create Linear issues under the correct team. You can make a request in your terminal using cURL, or a similar tool.
 
 You'll need your Linear API key from [step 1](linear-integration.md#id-1.-create-a-linear-personal-access-token).
 
@@ -171,9 +171,9 @@ Transformations are custom code snippets you can write to customize the Linear i
 
 The generated webhook template contains several configurable constants out of the box:
 
-<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>LINEAR_TEAM_ID</code></td><td>(<strong>Required)</strong> Your Linear team ID. <a href="linear-integration.md#team-id">Learn about finding your team ID</a>.</td></tr><tr><td><code>LINEAR_PROJECT_ID</code></td><td><strong>(Optional)</strong> The Linear project ID assigned to new issues. <a href="linear-integration.md#project-id">Learn more about finding your project ID</a>.</td></tr><tr><td><code>LINEAR_LABEL_IDS</code></td><td>(<strong>Optional)</strong> Array of label IDs assigned to new issues. <a href="linear-integration.md#team-id">Learn about finding your l</a><a href="linear-integration.md#label-id">abel IDs</a>.</td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>. <br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
+<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>LINEAR_TEAM_ID</code></td><td>(<strong>Required)</strong> Your Linear team ID. <a href="linear-integration.md#team-id">Learn about finding your team ID</a>.</td></tr><tr><td><code>LINEAR_PROJECT_ID</code></td><td><strong>(Optional)</strong> The Linear project ID assigned to new issues. <a href="linear-integration.md#project-id">Learn more about finding your project ID</a>.</td></tr><tr><td><code>LINEAR_LABEL_IDS</code></td><td>(<strong>Optional)</strong> Array of label IDs assigned to new issues. <a href="linear-integration.md#team-id">Learn about finding your l</a><a href="linear-integration.md#label-id">abel IDs</a>.</td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>.<br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
 
-Here is the provided transformation for context. You can customize your Linear Issues integration by following the[ Linear API](https://studio.apollographql.com/public/Linear-API/variant/current/schema/reference) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.&#x20;
+Here is the provided transformation for context. You can customize your Linear Issues integration by following the[ Linear API](https://studio.apollographql.com/public/Linear-API/variant/current/schema/reference) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
 
 ```javascript
 /**
@@ -319,11 +319,19 @@ You can create test issues by delivering a mock webhook. You can do this by:
 
 ### 7. Monitoring Webhooks
 
-{% include "../../.gitbook/includes/monitoring-webhooks (1).md" %}
+You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
+
+You can see an overview of how many webhook deliveries have been attempted, how many are successful, how many are in flight, and how many fail in the **Attempt Delivery Status** modal.
+
+<figure><img src="../../.gitbook/assets/example-webhook-delivery-status.png" alt=""><figcaption></figcaption></figure>
+
+You can see a list of past delivery attempts in the **Message Attempts** modal. You can filter this list by **Succeeded** and **Failed** status, and you can click on each message to see the **Message content**, response code, and error message of each attempt. You can learn more about [replaying messages](https://docs.svix.com/receiving/using-app-portal/replaying-messages) and [filtering logs](https://docs.svix.com/receiving/using-app-portal/filtering-logs) in the Svix docs.
+
+<figure><img src="../../.gitbook/assets/example-webhook-logs.png" alt=""><figcaption></figcaption></figure>
 
 ### Congratulations!
 
-A Linear Issue will now be created when a test's health status changes to **flaky** and **impacts more than 2 PRs**. You can further modify your transformation script to customize your issues.&#x20;
+A Linear Issue will now be created when a test's health status changes to **flaky** and **impacts more than 2 PRs**. You can further modify your transformation script to customize your issues.
 
 [See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed)
 

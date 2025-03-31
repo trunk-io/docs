@@ -55,7 +55,7 @@ definitions:
 
 #### Linter Definition Reference
 
-You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find references for these fields on the [Linter Definitions](../../cli/configuration/lint/definitions.md) page.
+You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find references for these fields on the [Linter Definitions](../../references/cli/configuration/lint/definitions.md) page.
 
 ### Overriding Default Linter Definitions
 
@@ -96,7 +96,7 @@ lint:
 
 #### Configure Linter Platforms
 
-Similarly, some linters are configured to run differently on different platforms or at different versions. When overriding a command definition, overrides are applied on the tuple `[name, version, platforms]`.&#x20;
+Similarly, some linters are configured to run differently on different platforms or at different versions. When overriding a command definition, overrides are applied on the tuple `[name, version, platforms]`.
 
 For example, if you wanted to disable batching when running [ktlint](https://github.com/trunk-io/plugins/blob/main/linters/ktlint/plugin.yaml) on Windows, you could consider its default configuration:
 
@@ -261,7 +261,7 @@ Simply configure `.trunk/user.yaml` as you would for `.trunk/trunk.yaml`. Be min
 
 ### Per Linter Definitions
 
-Trunk allows you to keep using your existing linter configs, and new linters recommended by Trunk will have their configs added in the `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run.&#x20;
+Trunk allows you to keep using your existing linter configs, and new linters recommended by Trunk will have their configs added in the `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run.
 
 {% hint style="info" %}
 If you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.

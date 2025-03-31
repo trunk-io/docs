@@ -6,7 +6,7 @@ Trunk Code Quality still runs your favorite open-source linting, formatting, and
 
 Trunk gives superpowers to these tools by installing, managing, running, and re-throwing consistent output from them with the **Trunk CLI.** The Trunk CLI written in C++ is free, fully configurable, extensible, lightweight, and fast. It runs the tools according to Trunk's config files and can run these tools only on the lines or files change, which makes it **practical for large code bases**.
 
-[Learn more about the Trunk CLI.](../../cli/)
+[Learn more about the Trunk CLI.](../../references/cli/)
 
 ### Hold-the-line
 
@@ -32,7 +32,7 @@ _**Hold the Line**_ is built into Trunk Code Quality itself. This means existing
 
 The Trunk CLI, specifically `trunk check`, runs a daemon that monitors relevant file changes and triggers jobs to precompute in the background while you work. The daemon is used both to support real-time background checking in supported extensions such as [VSCode](../ide-integration/vscode.md) and [Neovim](../ide-integration/neovim.md), and to precompute check results for faster commits/pushes.
 
-Some native linters are more compute/memory intensive and `check` allows you to disable background linting for those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](../../cli/configuration/lint/commands.md#run_when) configuration for a tool.
+Some native linters are more compute/memory intensive and `check` allows you to disable background linting for those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](../../references/cli/configuration/lint/commands.md#run_when) configuration for a tool.
 
 ### Hermetic tools and runtime management
 
@@ -44,11 +44,11 @@ Trunk manages the hermetic installation of all required runtimes. You can also s
 
 ### Plugin system
 
-Trunk is fully extensible and configurable through the [Trunk Plugins Repo](https://github.com/trunk-io/plugins/).  When installing a plugin through Trunk, the definition of a plugin's behavior, including install, run, and report instructions, is defined in the Plugins Repo.
+Trunk is fully extensible and configurable through the [Trunk Plugins Repo](https://github.com/trunk-io/plugins/). When installing a plugin through Trunk, the definition of a plugin's behavior, including install, run, and report instructions, is defined in the Plugins Repo.
 
 This can be overridden by defining your own plugin repo to import, overriding individual linter definitions locally, and even writing your own custom linters.
 
-[Learn more about the plugin system.](../../cli/configuration/plugins/)
+[Learn more about the plugin system.](../../references/cli/configuration/plugins/)
 
 ### Run on every PR
 
