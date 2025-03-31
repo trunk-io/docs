@@ -18,8 +18,6 @@ layout:
 
 You can automatically [detect and manage flaky tests](../../detection.md) in your projects running RSpec by integrating with Trunk. This document explains how to configure RSpec to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
-{% include "../../../.gitbook/includes/checklist.md" %}
-
 ### Checklist
 
 By the end of this guide, you should achieve the following before proceeding to the [next steps](rspec.md#next-step) to configure your CI provider.
@@ -59,6 +57,8 @@ If you have a step in CI to rerun failed tests with the `--only-failures` option
 
 ### Try It Locally
 
+#### **The Validate Command**
+
 You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 ```sh
@@ -67,10 +67,6 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 ```
 
 **This will not upload anything to Trunk**. To improve detection accuracy, you should **address all errors and warnings** before proceeding to the next steps.
-
-#### **The Validate Command**
-
-{% include "../../../.gitbook/includes/you-can-validate-your-test-....md" %}
 
 #### Test Upload
 

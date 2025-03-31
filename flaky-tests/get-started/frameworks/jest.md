@@ -18,8 +18,6 @@ layout:
 
 You can automatically [detect and manage flaky tests](../../detection.md) in your Jest projects by integrating with Trunk. This document explains how to configure Jest to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
-{% include "../../../.gitbook/includes/checklist.md" %}
-
 ### Checklist
 
 By the end of this guide, you should achieve the following before proceeding to the [next steps](jest.md#next-step) to configure your CI provider.
@@ -71,15 +69,6 @@ You need to disable automatic retries if you previously enabled them. Retries co
 If you have retries configured using the [jest.retryTimes method](https://jestjs.io/docs/jest-object#jestretrytimesnumretries-options), disable them for more accurate results.
 
 ### Try It Locally
-
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
-
-```sh
-curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
-./trunk flakytests validate --junit-paths "./junit.xml"
-```
-
-**This will not upload anything to Trunk**. To improve detection accuracy, you should **address all errors and warnings** before proceeding to the next steps.
 
 #### **The Validate Command**
 
