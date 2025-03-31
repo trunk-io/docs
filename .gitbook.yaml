@@ -121,75 +121,71 @@ redirects:
   check/configuration/supported/php-cs-fixer: code-quality/linters/supported/php-cs-fixer.md
   cli/windows-beta: cli/compatibility.md
   docs: welcome.md
-  docs/actions-config: check/actions/config.md
-  docs/actions-git-hooks: check/actions/git-hooks.md
-  docs/actions: check/advanced-setup/actions/readme.md
-  docs/check-cli: check/command-line.md
-  docs/check-config: check/config.md
-  docs/check-custom-linters: check/custom-linters.md
+  docs/actions-config: cli/configuration/actions/README.md
+  docs/actions-git-hooks: cli/configuration/actions/README.md
+  docs/actions: cli/configuration/actions/README.md
+  docs/check-cli: code-quality/linters/run-linters.md
+  docs/check-config: code-quality/linters/configure-linters.md
+  docs/check-custom-linters: code-quality/linters/custom-linters.md
   docs/check-debugging: code-quality/debugging.md
-  docs/check-get-started: check/get-started.md
-  docs/check-github-integration: check/github-integration.md
-  docs/check-supported-linters: check/configuration/supported/readme.md
+  docs/check-get-started: code-quality/setup-and-installation/README.md
+  docs/check-github-integration: code-quality/setup-and-installation/prevent-new-issues.md
+  docs/check-supported-linters: code-quality/linters/supported/readme.md
   docs/check: code-quality/README.md
   docs/check/github-integration: code-quality/ci-setup/github-integration.md
-  docs/ci-debugger: ci-debugger/readme.md
-  docs/ci: check/check-cloud-ci-integration/readme.md
-  docs/cli: check/cli/readme.md
+  docs/cli: code-quality/cli/readme.md
   docs/code-quality: code-quality/README.md
   docs/get-started: welcome.md
   docs/getting-started: welcome.md
   docs/github-app-permissions: administration/github-app-permissions.md
-  docs/github-codespaces: check/cli/github-codespaces.md
-  docs/ignoring-issues: check/ignoring-issues.md
-  docs/initialize-trunk-in-a-git-repo: check/cli/init-in-a-git-repo.md
-  docs/install: check/usage.md
+  docs/github-codespaces: code-quality/cli/github-codespaces.md
+  docs/ignoring-issues: code-quality/ignoring-issues.md
+  docs/initialize-trunk-in-a-git-repo: code-quality/cli/init-in-a-git-repo.md
+  docs/install: cli/install.md
   docs/merge-get-started: merge/set-up-trunk-merge.md
   docs/merge-getting-started: merge/set-up-trunk-merge.md
-  docs/merge: merge/readme.md
-  docs/overview: check/cli/readme.md
+  docs/merge: merge-queue/README.md
+  docs/overview: readme.md
   docs/plugins: plugins/readme.md
   docs/reference-trunk-yaml: cli/configuration/README.md
-  docs/shell-hooks: check/tools/readme.md#running-tools
-  docs/tools: check/tools/readme.md
-  docs/trunk-app-for-slack: check/reference/integration-for-slack.md
-  docs/upload-check-results: web-app/upload-trunk-check-results.md
-  docs/vscode: code-quality/ide-integration/vscode
+  docs/shell-hooks: cli/configuration/tools.md
+  docs/tools: cli/configuration/tools.md
+  docs/trunk-app-for-slack: merge-queue/set-up-trunk-merge/integration-for-slack.md
+  docs/vscode: code-quality/ide-integration/vscode.md
   docs/what-is-trunk: readme.md
-  docs/windows-beta: check/cli/windows-beta.md
-  flaky-tests/generating-junit-reports: flaky-tests/frameworks/readme.md
+  docs/windows-beta: cli/compatibility.md
+  flaky-tests/generating-junit-reports: flaky-tests/get-started/frameworks/README.md
   get-started: welcome.md
-  merge-graph: merge/readme.md
-  merge-graph/configuration: merge/configuration.md
-  merge-graph/merge: merge/legacy/readme.md
-  merge-graph/set-up-trunk-merge: merge/readme.md
+  merge-graph: merge-queue/readme.md
+  merge-graph/configuration: merge-queue/set-up-trunk-merge/readme.md
+  merge-graph/set-up-trunk-merge: merge-queue/readme.md
   merge/getting-started: merge/set-up-trunk-merge.md
   reference/reference-trunk-yaml: cli/configuration/README.md
   reference/trunk-yaml: cli/configuration/README.md
   test-analytics: flaky-tests/readme.md
-  test-analytics/ci-providers: flaky-tests/ci-providers/readme.md
-  test-analytics/ci-providers/buildkite-quickstart: flaky-tests/ci-providers/buildkite-quickstart.md
-  test-analytics/ci-providers/circleci-quickstart: flaky-tests/ci-providers/circleci-quickstart.md
-  test-analytics/ci-providers/github-actions-quickstart: flaky-tests/ci-providers/github-actions-quickstart.md
-  test-analytics/ci-providers/gitlab: flaky-tests/ci-providers/gitlab.md
-  test-analytics/ci-providers/other-ci-providers-quickstart: flaky-tests/ci-providers/other-ci-providers-quickstart.md
-  test-analytics/ci-providers/semaphore-ci-quickstart: flaky-tests/ci-providers/semaphore-ci-quickstart.md
-  test-analytics/frameworks: flaky-tests/frameworks/readme.md
-  test-analytics/frameworks/android: flaky-tests/frameworks/android.md
-  test-analytics/frameworks/cargo-nextest: flaky-tests/frameworks/cargo-nextest.md
-  test-analytics/frameworks/cypress: flaky-tests/frameworks/cypress.md
-  test-analytics/frameworks/jasmine: flaky-tests/frameworks/jasmine.md
-  test-analytics/frameworks/jest: flaky-tests/frameworks/jest.md
-  test-analytics/frameworks/minitest: flaky-tests/frameworks/minitest.md
-  test-analytics/frameworks/mocha: flaky-tests/frameworks/mocha.md
-  test-analytics/frameworks/playwright: flaky-tests/frameworks/playwright.md
-  test-analytics/frameworks/pytest: flaky-tests/frameworks/pytest.md
-  test-analytics/frameworks/rspec: flaky-tests/frameworks/rspec.md
-  test-analytics/frameworks/swift-testing: flaky-tests/frameworks/swift-testing.md
-  test-analytics/frameworks/xctest: flaky-tests/frameworks/xctest.md
+  test-analytics/ci-providers: flaky-tests/get-started/ci-providers/README.md
+  test-analytics/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite.md
+  test-analytics/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci.md
+  test-analytics/ci-providers/github-actions-quickstart: flaky-tests/get-started/ci-providers/github-actions.md
+  test-analytics/ci-providers/gitlab: flaky-tests/get-started/ci-providers/gitlab.md
+  test-analytics/ci-providers/other-ci-providers-quickstart: flaky-tests/get-started/ci-providers/otherci.md
+  test-analytics/ci-providers/semaphore-ci-quickstart: flaky-tests/get-started/ci-providers/semaphoreci.md
+  test-analytics/frameworks: flaky-tests/get-started/frameworks/README.md
+  test-analytics/frameworks/android: flaky-tests/get-started/frameworks/android.md
+  test-analytics/frameworks/cargo-nextest: flaky-tests/get-started/frameworks/rust.md
+  test-analytics/frameworks/cypress: flaky-tests/get-started/frameworks/cypress.md
+  test-analytics/frameworks/jasmine: flaky-tests/get-started/frameworks/jasmine.md
+  test-analytics/frameworks/jest: flaky-tests/get-started/frameworks/jest.md
+  test-analytics/frameworks/minitest: flaky-tests/get-started/frameworks/minitest.md
+  test-analytics/frameworks/mocha: flaky-tests/get-started/frameworks/mocha.md
+  test-analytics/frameworks/playwright: flaky-tests/get-started/frameworks/playwright.md
+  test-analytics/frameworks/pytest: flaky-tests/get-started/frameworks/pytest.md
+  test-analytics/frameworks/rspec: flaky-tests/get-started/frameworks/rspec.md
+  test-analytics/frameworks/swift-testing: flaky-tests/get-started/frameworks/swift-testing.md
+  test-analytics/frameworks/xctest: flaky-tests/get-started/frameworks/xctest.md
   test-analytics/github-pull-request-comments: flaky-tests/github-pull-request-comments.md
   runtimes: cli/configuration/runtimes.md
-  plugins: cli/configuration/plugins/README.md
+  plugins: code-quality/linters/README.md
   ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
   code-quality/usage: code-quality/setup-and-installation/initialize-trunk.md
   code-quality/ci/get-started: code-quality/ci-setup/README.md
@@ -206,10 +202,9 @@ redirects:
   flaky-tests/ci-providers/travisci: flaky-tests/get-started/ci-providers/travisci.md
   flaky-tests/frameworks/android: flaky-tests/get-started/frameworks/android.md
   flaky-tests/frameworks/bazel: flaky-tests/get-started/frameworks/bazel.md
-  flaky-tests/frameworks/cargo-nextest: flaky-tests/get-started/frameworks/cargo-nextest.md
-  flaky-tests/frameworks/cucumber: flaky-tests/get-started/frameworks/cucumber.md
+  flaky-tests/frameworks/cargo-nextest: flaky-tests/get-started/frameworks/rust.md
   flaky-tests/frameworks/cypress: flaky-tests/get-started/frameworks/cypress.md
-  flaky-tests/frameworks/go-junit-report: flaky-tests/get-started/frameworks/go-junit-report.md
+  flaky-tests/frameworks/go-junit-report: flaky-tests/get-started/frameworks/gotestsum.md
   flaky-tests/frameworks/gotestsum: flaky-tests/get-started/frameworks/gotestsum.md
   flaky-tests/frameworks/jasmine: flaky-tests/get-started/frameworks/jasmine.md
   flaky-tests/frameworks/jest: flaky-tests/get-started/frameworks/jest.md
@@ -222,7 +217,35 @@ redirects:
   flaky-tests/frameworks/pytest: flaky-tests/get-started/frameworks/pytest.md
   flaky-tests/frameworks/rspec: flaky-tests/get-started/frameworks/rspec.md
   flaky-tests/frameworks/swift-testing: flaky-tests/get-started/frameworks/swift-testing.md
-  flaky-tests/frameworks/unittest: flaky-tests/get-started/frameworks/unittest.md
   flaky-tests/frameworks/vitest: flaky-tests/get-started/frameworks/vitest.md
   flaky-tests/frameworks/xctest: flaky-tests/get-started/frameworks/xctest.md
-
+  administration: setup-and-configuration/managing-your-organization.md
+  apis/api: references/apis.md
+  apis: references/apis.md
+  cli/configuration: references/cli/configuration.md
+  cli/configuration/actions: references/cli/configuration/actions.md
+  cli/configuration/lint: references/cli/configuration/lint.md
+  cli/configuration/plugins: references/cli/configuration/plugins.md
+  cli/commands-reference: references/cli/commands-reference.md
+  cli/getting-started/actions: references/cli/getting-started/actions.md
+  cli/getting-started: references/cli/getting-started.md
+  cli: references/cli/README.md
+  merge-queue/parallel-queues: merge-queue/concepts/parallel-queues.md
+  code-quality/linters/supported/sqlfluff: references/code-quality/linters/supported/sqlfluff.md
+  code-quality/linters/supported/sourcery: references/code-quality/linters/supported/sourcery.md
+  administration/github-app-permissions: references/administration/github-app-permissions.md
+  administration/billing: references/administration/billing.md
+  apis/flaky-tests: references/apis/flaky-tests.md
+  cli/configuration/lint/dependencies: references/cli/configuration/lint/dependencies.md
+  cli/configuration/lint/output-parsing: references/cli/configuration/lint/output-parsing.md
+  cli/configuration/lint/commands: references/cli/configuration/lint/commands.md
+  cli/configuration/tools: references/cli/configuration/tools.md
+  cli/configuration/plugins/exported-configs: references/cli/configuration/plugins/exported-configs.md
+  cli/getting-started/actions/git-hooks: references/cli/getting-started/actions/git-hooks.md
+  cli/install: references/cli/install.md
+  merge-queue/command-line: merge-queue/managing-merge-queue/command-line.md
+  merge-queue/optimistic-merging: merge-queue/concepts/optimistic-merging.md
+  merge-queue: merge-queue/merge-queue.md
+  code-quality/overview: code-quality/code-quality.md
+  code-quality: code-quality/code-quality.md
+  flaky-tests: flaky-tests/flaky-tests.md
