@@ -43,10 +43,8 @@ Store your Trunk slug and API token in your CircleCI project settings under **En
 
 Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
-{% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
-
 {% hint style="danger" %}
-You must upload tests from both PR and [**stable branchs**](https://docs.trunk.io/flaky-tests/detection#stable-branches), such as `main`, `master`, or `develop` in CI for Trunk to detect flaky tests. Trunk will not detect flaky tests without uploads from both PR and stable branches.&#x20;
+You must upload tests from both PR and [**stable branches**](https://docs.trunk.io/flaky-tests/detection#stable-branches), such as `main`, `master`, or `develop` in CI for Trunk to detect flaky tests. Trunk will not detect flaky tests without uploads from both PR and stable branches.&#x20;
 
 [Learn more about detection](../../detection.md)
 {% endhint %}

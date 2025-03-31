@@ -4,10 +4,6 @@ Trunk Flaky Tests integrates with your CI by adding a step in your BitBucket Pip
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
-Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing a Trunk-compatible output for your test framework.
-
-{% include "../../../.gitbook/includes/ci-provider-checklist.md" %}
-
 ### Checklist
 
 By the end of this guide, you should achieve the following.
@@ -40,7 +36,7 @@ Store the Trunk slug and API token obtained in the previous step in your BitBuck
 Add an `after-script` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
 {% hint style="danger" %}
-You must upload tests from both PR and [**stable branchs**](https://docs.trunk.io/flaky-tests/detection#stable-branches), such as `main`, `master`, or `develop` in CI for Trunk to detect flaky tests. Trunk will not detect flaky tests without uploads from both PR and stable branches.&#x20;
+You must upload tests from both PR and [**stable branches**](https://docs.trunk.io/flaky-tests/detection#stable-branches), such as `main`, `master`, or `develop` in CI for Trunk to detect flaky tests. Trunk will not detect flaky tests without uploads from both PR and stable branches.&#x20;
 
 [Learn more about detection](../../detection.md)
 {% endhint %}
@@ -50,8 +46,6 @@ You must upload tests from both PR and [**stable branchs**](https://docs.trunk.i
 The following is an example of a workflow step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
 
 To find out how to produce the JUnit XML files the uploader needs, see the instructions for your test framework in the [Test Frameworks](https://docs.trunk.io/flaky-tests/frameworks) docs.
-
-{% include "../../../.gitbook/includes/you-must-upload-tests-from-....md" %}
 
 {% tabs %}
 {% tab title="XML" %}
