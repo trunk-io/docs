@@ -16,8 +16,7 @@
 
 ## Flaky Tests (Beta) <a href="#flaky-tests" id="flaky-tests"></a>
 
-* [Overview](flaky-tests/overview/README.md)
-  * [Overview](flaky-tests/overview/README.md)
+* [Overview](flaky-tests/overview.md)
 * [Get Started](flaky-tests/get-started/README.md)
   * [Test Frameworks](flaky-tests/get-started/frameworks/README.md)
     * [Android](flaky-tests/get-started/frameworks/android.md)
@@ -208,8 +207,7 @@
 
 ## Merge Queue
 
-* [Overview](merge-queue/merge-queue/README.md)
-  * [Overview](merge-queue/merge-queue/README.md)
+* [Overview](merge-queue/merge-queue.md)
 * [How does it work?](merge-queue/how-does-it-work.md)
 * [Setup](merge-queue/set-up-trunk-merge/readme.md)
   * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
@@ -236,8 +234,7 @@
 
 ## CI Analytics (beta) <a href="#ci-analytics" id="ci-analytics"></a>
 
-* [Overview](ci-analytics/ci-analytics/README.md)
-  * [Overview](ci-analytics/ci-analytics/README.md)
+* [Overview](ci-analytics/ci-analytics.md)
 * [Setup](ci-analytics/setup/README.md)
   * [GitHub Actions](ci-analytics/setup/github-actions.md)
   * [Jenkins](ci-analytics/setup/jenkins.md)

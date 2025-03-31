@@ -9,8 +9,8 @@ The Trunk CLI can be used for:
 * [Trunk Code Quality](../../code-quality/code-quality.md): a pluggable metalinter/superlinter with a builtin language server and pre-existing issue detection
 * [Trunk Tools:](getting-started/tools.md) hermetic runtime and CLI tool manager
 * [Trunk Actions](getting-started/actions/): local workflow automation and githooks manager
-* [Trunk Merge](../../merge-queue/merge-queue/): a merge queue to make merging code in GitHub safer and easier
-* [Trunk Flaky Tests](../../flaky-tests/overview/): upload test results to Trunk Flaky Tests to detect, quarantine, and eliminates flaky tests.
+* [Trunk Merge](../../merge-queue/merge-queue.md): a merge queue to make merging code in GitHub safer and easier
+* [Trunk Flaky Tests](../../flaky-tests/overview.md): upload test results to Trunk Flaky Tests to detect, quarantine, and eliminates flaky tests.
 
 [Trunk Quality](../../code-quality/code-quality.md) and [Trunk Actions](getting-started/actions/) can be used entirely locally without depending on hosted services or even having a Trunk account.
 
