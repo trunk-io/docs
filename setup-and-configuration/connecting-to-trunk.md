@@ -9,7 +9,7 @@ Welcome to Trunk! Before you can access Trunk's toolkit to ship faster, you must
 
 ### Create an Organization
 
-After creating a Trunk Account, you'll be invited to [create an organization](https://app.trunk-staging.io/onboarding). Organizations are shared workspaces for your team, and **individual repositories** connected to Trunk will fall under your team's organization.
+After creating a Trunk Account, you'll be invited to [create an organization](https://app.trunk.io/onboarding). Organizations are shared workspaces for your team, and **individual repositories** connected to Trunk will fall under your team's organization.
 
 <figure><picture><source srcset="../.gitbook/assets/onboarding-create-org-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/onboarding-create-org-light.png" alt=""></picture><figcaption></figcaption></figure>
 
