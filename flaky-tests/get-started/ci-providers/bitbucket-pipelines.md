@@ -4,6 +4,8 @@ Trunk Flaky Tests integrates with your CI by adding a step in your BitBucket Pip
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
+Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing a Trunk-compatible output for your test framework.
+
 ### Checklist
 
 By the end of this guide, you should achieve the following.
