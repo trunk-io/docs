@@ -32,10 +32,4 @@ Now that you've connected your Slack account with Trunk, you will choose the typ
 {% endtab %}
 {% endtabs %}
 
-## Set your user-level notification preferences
-
-To set your individual user Slack notifications go to **Settings** > **Account** > **Connect**
-
-<figure><img src=".gitbook/assets/Screenshot 2024-06-04 at 6.34.10 PM.png" alt=""><figcaption><p>Configure Slack notifications for your user.</p></figcaption></figure>
-
 [Privacy Policy](https://trunk.io/privacy)
