@@ -24,7 +24,7 @@ To learn more, [see how Flaky Tests does detection](https://docs.trunk.io/flaky-
 
 You can find a list of known flaky tests complete with important information like their impact on PRs and if someone's working on a fix. For more granularity, you can also inspect individual tests for their execution history, results, and status changes.
 
-<figure><picture><source srcset="../.gitbook/assets/dashboard-test-list-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dashboard-test-list-light.png" alt=""></picture><figcaption><p>List of flaky tests</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/flaky-tests-overview-table-v2-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-overview-table-v2-light.png" alt=""></picture><figcaption><p>List of flaky tests</p></figcaption></figure>
 
 To learn more, [see how Flaky Tests does detection](https://docs.trunk.io/flaky-tests/detection).
 
@@ -52,7 +52,7 @@ To learn more, [see our docs about the detection of flaky tests](detection.md#te
 
 Flaky Tests allows you to [quarantine](https://docs.trunk.io/flaky-tests/quarantining) detected flaky tests, stopping them from failing your CI jobs. This prevents failed flaky tests from impacting your CI pipelines, so you won’t have to disable tests and won’t be slowed down by flaky CI jobs.
 
-<figure><picture><source srcset="../.gitbook/assets/override-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/override-light (1).png" alt=""></picture><figcaption><p>flaky tests can be quarantined automatically or manually</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/override-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/override-light.png" alt=""></picture><figcaption><p>flaky tests can be quarantined automatically or manually</p></figcaption></figure>
 
 To learn more, [see our docs about quarantining tests](quarantining.md).
 

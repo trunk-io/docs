@@ -4,7 +4,7 @@ description: Mitigate impact of known flaky tests by isolating them at run time
 
 # Quarantining
 
-<figure><picture><source srcset="../.gitbook/assets/override-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/override-light (1).png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/dashboard-quarantined-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dashboard-quarantined-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Quarantining lets you isolate failures for known flaky tests so they don't fail your CI jobs, while still continuing to run them. Quarantine looks for known flaky tests and determines which tests should be isolated at runtime, so you can avoid code changes usually required to disable flaky tests.
 
@@ -138,13 +138,17 @@ You can also wrap the test command with the Trunk CLI. When wrapping the command
 
 If you have tests that should never be quarantined or should always be quarantined regardless of their current health status, you can do this by overriding individual tests.
 
-<figure><picture><source srcset="../.gitbook/assets/override-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/override-light (1).png" alt=""></picture><figcaption><p>overriding</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/override-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/override-light.png" alt=""></picture><figcaption><p>overriding</p></figcaption></figure>
 
-You can update the overriding settings on each test by navigating to the details page for a specific test and clicking the Quarantining (Repo Default) selector in the top left corner.
+You can update the overriding settings on each test by navigating to the details page for a specific test and clicking the **Override** button.
 
-You can choose between one of three override settings:
+You can choose to Always Quarantine or Never Quarantine:
 
-<table><thead><tr><th width="244">Setting</th><th>Behavior</th></tr></thead><tbody><tr><td>Quarantine</td><td>Quarantine automatically if <a href="quarantining.md#enable-quarantining">auto-quarantine</a> is enabled.<br><a href="quarantining.md#quarantining-modes">Learn more about quarantining modes</a></td></tr><tr><td>Always Quarantine</td><td>Quarantine a test failure even if the health status is healthy.</td></tr><tr><td>Never Quarantine</td><td>Never quarantine failures, even if the health status is flaky or broken, and quarantining is enabled for the repo.</td></tr></tbody></table>
+<table><thead><tr><th width="244">Setting</th><th>Behavior</th></tr></thead><tbody><tr><td>Always Quarantine</td><td>Quarantine a test failure even if the health status is healthy.</td></tr><tr><td>Never Quarantine</td><td>Never quarantine failures, even if the health status is flaky or broken, and quarantining is enabled for the repo.</td></tr></tbody></table>
+
+Any comments added will appear in the Test History timeline on that test's details page.
+
+To remove an override and return to the repo's default quarantine setting, click on the **Clear Status** button.
 
 #### Audit Logs
 

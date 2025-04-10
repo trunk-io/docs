@@ -90,4 +90,4 @@ If you have not set up your CI jobs to upload results to Trunk, follow the [Get 
 
 If you're curious about why certain tests are labeled as flaky, you can visit each test's status history. [Learn more about Status History.](dashboard.md#status-history)
 
-<figure><picture><source srcset="../.gitbook/assets/status-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/status-history-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
