@@ -32,7 +32,7 @@ The PR Details panel has a dropdown menu (labeled "**..."**) with actions. From 
 
 1. Remove a PR from the queue. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it
 2. Re-queue a PR if it is currently not in the queue
-3. Download any impacted targets that have been uploaded for the PR (uploading impacted targets is only required for [Parallel](../concepts/parallel-queues/) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
+3. Download any impacted targets that have been uploaded for the PR (uploading impacted targets is only required for [Parallel](../concepts-and-optimizations/parallel-queues/) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
 
 <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 

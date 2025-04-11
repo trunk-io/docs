@@ -20,7 +20,7 @@ Go to the Merge tab. You will see the "Set Up Trunk Merge Queue" page. From ther
 
 1. The name of the branch that Trunk Merge Queue should help manage merging PRs into.
 2. The [number](advanced-settings.md#concurrency) of Pull Requests that Merge can test at the same time.
-3. The [mode](../concepts/parallel-queues/) that Trunk Merge Queue Queues will start in.
+3. The [mode](../concepts-and-optimizations/parallel-queues/) that Trunk Merge Queue Queues will start in.
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="414"><figcaption></figcaption></figure>
 
@@ -73,4 +73,4 @@ Now Trunk Merge Queue is setup with your repo. Whenever a PR is pushed to your m
 
 Now that you have the Merge Queue setup and running you can explore the knobs you can enable that will give you the most performant Merge solution. Explore the features powering Trunk Merge Queue here:
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="../concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="../concepts/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="../concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="../concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="../pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="../concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="../concepts-and-optimizations/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="../concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="../concepts-and-optimizations/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="../concepts-and-optimizations/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="../pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="../concepts-and-optimizations/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
