@@ -78,6 +78,27 @@ To help illustrate the implications of these rules, consider the following scena
 Expect test results for individual PRs to be up-to-date for [PR Test Summaries](github-pull-request-comments.md) within 15 minutes post-upload and all other metrics to be up-to-date within an hour.
 {% endhint %}
 
+### Use Variants to Track Environment-Specific Flakes
+
+If you run the same tests across different environments or architectures, you can use variants to separate these runs into distinct test cases. This allows Flaky Tests to detect environment-specific flakes.
+
+For example, a test for a mobile app might be flaky on iOS but stable on Android. Using variants, Flaky Tests can isolate flakes on the iOS variant instead of marking the test as flaky across all environments.
+
+You can specify a variant during upload using the [`--variant` option](uploader.md#full-command-reference):
+
+{% code title="Upload an iOS variant " %}
+```
+./trunk flakytests upload --junit-paths "test_output.xml" \
+   --org-url-slug <TRUNK_ORG_SLUG> \
+   --token $TRUNK_API_TOKEN \
+   --variant ios
+```
+{% endcode %}
+
+Variant names are displayed in brackets next to test names in your dashboard:
+
+<figure><picture><source srcset="../.gitbook/assets/variants-dark-border.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/variants-light-border.png" alt=""></picture><figcaption><p>The same test, but the first is a macOS variant.</p></figcaption></figure>
+
 ### Test Status
 
 Trunk classifies all tests into one of three categories based on the history of each test:

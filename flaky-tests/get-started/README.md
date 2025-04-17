@@ -30,6 +30,8 @@ After you've set your test framework to output test results, you're ready to upd
 
 You can follow along using the in-app onboarding wizard or read about it in our docs.
 
+If you run the same tests on different environments or architectures, for example, running tests for a mobile app on iOS and Android, use the [variants option](../detection.md#use-variants-to-track-environment-specific-flakes) during upload to detect flakes on each environment independently.
+
 {% embed url="https://docs.trunk.io/flaky-tests/get-started/ci-providers" %}
 
 Once you've updated your CI configuration to upload to Trunk, run a test job and ensure it completes without errors.
