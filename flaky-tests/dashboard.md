@@ -58,6 +58,8 @@ The Failure Types table shows the history of past test runs grouped by unique fa
 
 The Failure Type is a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, commit hash, duration, and time.&#x20;
 
+### Failure Details
+
 You can click on any of these test runs to see the detailed stack trace:
 
 <figure><picture><source srcset="../.gitbook/assets/test-run-detail-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-run-detail-light.png" alt=""></picture><figcaption></figcaption></figure>
