@@ -22,7 +22,7 @@ Trunk is a DevEx (Developer Experience) platform using autonomous, agentic AI to
 By collecting insights from your CI jobs and test results, Trunk can automatically detect problems in your CI, detect the root cause, alert developers, and help you take action through the Trunk MCP server.
 
 {% hint style="success" %}
-Sign up for the waitlist in the [Trunk Web App](https://app.trunk.io/trunk/devex-ai?repo=trunk-io%2Fflake-factory), and we'll reach out when we're ready to onboard you.
+Sign up for the waitlist in the [Trunk Web App](https://app.trunk.io/login), and we'll reach out when we're ready to onboard you.
 {% endhint %}
 
 {% code title="Trunk's architecture" %}
@@ -55,7 +55,7 @@ An autonomous agent continuously detects and quarantines flaky or broken tests b
 
 Finds and explains the root cause of failed tests or CI jobs using AI, in GitHub, Slack, and even Cursor via the Trunk MCP Server.
 
-[Sign up for the waitlist](https://app.trunk.io/trunk/devex-ai?repo=trunk-io%2Fflake-factory)
+[Sign up for the waitlist](https://app.trunk.io/login)
 
 #### Automated developer notifications
 
