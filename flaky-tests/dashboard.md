@@ -48,7 +48,7 @@ If you have a codeowners file configured in your repos, you will see who owns ea
 
 <figure><picture><source srcset="../.gitbook/assets/details-code-owners-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/details-code-owners-light (1).png" alt=""></picture><figcaption><p>You can find the code owners of each test on the top right of the test details screen.</p></figcaption></figure>
 
-This information will also be provided when creating a ticket with the [Jira integration](jira-integration.md) or [webhooks](webhooks/).
+This information will also be provided when creating a ticket with the [Jira integration](ticketing-integrations/jira-integration.md) or [webhooks](webhooks/).
 
 ### **Failure Types**
 

@@ -62,7 +62,7 @@ To learn more, [see our docs about quarantining tests](quarantining.md).
 
 Trunk enables the automation of quickly creating and assigning tickets through integrations with platforms like Jira and Linear, as well as custom workflows with webhooks. The status of tickets created will be reflected in real-time in the Trunk web app. This helps you track efforts to fix high-impact, flaky tests.
 
-To learn more, [learn about our ticketing integrations](jira-integration.md).
+To learn more, [learn about our ticketing integrations](ticketing-integrations/jira-integration.md).
 
 ### **Next Steps**
 

@@ -39,7 +39,7 @@ In your CI job, update your `pytest` command to include the `--junit-xml` and `j
 pytest --junit-xml=junit.xml -o junit_family=xunit1
 ```
 
-The `junit_family=xunit1` is necessary so that the generated XML report includes file paths for each test case. File paths for test cases are used for features that use code owners like the [Jira integration](../../jira-integration.md) and [webhooks](../../webhooks/).
+The `junit_family=xunit1` is necessary so that the generated XML report includes file paths for each test case. File paths for test cases are used for features that use code owners like the [Jira integration](../../ticketing-integrations/jira-integration.md) and [webhooks](../../webhooks/).
 
 #### Report File Path
 

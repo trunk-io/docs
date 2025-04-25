@@ -8,3 +8,10 @@ All requests must be [authenticated](./#authentication) by providing the `x-api-
 [Broken link](broken-reference)
 {% endopenapi-operation %}
 
+{% openapi-operation spec="trunk-api" path="/flaky-tests/list-quarantined-tests" method="post" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
+
+{% openapi-operation spec="trunk-api" path="/flaky-tests/link-ticket-to-test-case" method="post" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
