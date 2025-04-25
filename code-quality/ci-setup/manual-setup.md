@@ -90,10 +90,11 @@ trunk check --all --ci-progress --monitor=false
 
 You can also explicitly set the upstream branch if needed via `--upstream`, but we do detect your main branch by default.
 
-### Uploading results to the Trunk web app
+### Uploading results to the Trunk web app (Deprecated)
 
-{% hint style="info" %}
-After your first upload to the Trunk Web App _without_ the Trunk GitHub App installed, you'll see the web app populate and be aware of the repo you uploaded from. We don't send or store your repo in the Trunk backend, see [security.md](../../pricing-and-security/security.md "mention") for more info.
+{% hint style="danger" %}
+**Deprecation Warning**\
+The Trunk Code Quality web app, Code Quality on PRs, and Code Quality Nightly will soon be deprecated. Follow the instructions on the [Linting in CI](../setup-and-installation/prevent-new-issues/) page to migrate off these features.
 {% endhint %}
 
 Trunk Code Quality can post its results to [app.trunk.io](https://app.trunk.io/login?intent=code%20quality). This will enable you to view your repository's Code Quality history over time so you can track the trend of issues in your code, as well as browse the issues in your repository to help you understand which issues should be prioritized to fix.

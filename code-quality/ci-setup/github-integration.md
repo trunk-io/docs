@@ -1,4 +1,9 @@
-# Nightly Report
+# Nightly Report (Deprecated)
+
+{% hint style="danger" %}
+**Deprecation Warning**\
+The Trunk Code Quality web app, Code Quality on PRs, and Code Quality Nightly will soon be deprecated. Follow our [migration guide](../setup-and-installation/prevent-new-issues/migration-guide.md) to migrate off these features.
+{% endhint %}
 
 Trunk Code Quality can post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=code%20quality). This allows you to view your repository's Code Quality history over time, track quality trends, and browse issues to help prioritize fixes.
 
@@ -6,19 +11,19 @@ Trunk Code Quality can post its results to the [Trunk Code Quality web app](http
 
 Sign up at [app.trunk.io](https://app.trunk.io/signup?intent=code%20quality), create a Trunk organization, and connect it to your repositories. You will need to grant the following GitHub App permissions.
 
-{% @supademo/embed demoId="HXyBmoBn0_OX9Xite2fqd" url="https://app.supademo.com/demo/HXyBmoBn0_OX9Xite2fqd" %}
+{% @supademo/embed demoid="HXyBmoBn0_OX9Xite2fqd" url="https://app.supademo.com/demo/HXyBmoBn0_OX9Xite2fqd" %}
 
 ### Set Up Trunk Code Quality
 
 Once your Trunk organization is connected to GitHub, create a .trunk repo in your account or organization and grant Trunk permissions to access the repo. The .trunk repo will hold the workflows to scan your codebase and pull requests. [Learn more about the .trunk repo](github-integration.md#uploading-results).
 
-{% @supademo/embed demoId="pRr_eDzh-klIQdK_yW3se" url="https://app.supademo.com/demo/pRr_eDzh-klIQdK_yW3se" %}
+{% @supademo/embed demoid="pRr_eDzh-klIQdK_yW3se" url="https://app.supademo.com/demo/pRr_eDzh-klIQdK_yW3se" %}
 
 ### Configure Slack Notifications (optional)
 
 If you would like to receive notifications for new issues Trunk finds in your repo, you can configure Trunk to be connected to Slack.
 
-{% @supademo/embed demoId="cllpdjqhy1jf1051a1nff1a3y" url="https://app.supademo.com/demo/cllpdjqhy1jf1051a1nff1a3y" %}
+{% @supademo/embed demoid="cllpdjqhy1jf1051a1nff1a3y" url="https://app.supademo.com/demo/cllpdjqhy1jf1051a1nff1a3y" %}
 
 ### **How Trunk Uploads Results**
 

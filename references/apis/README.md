@@ -12,7 +12,7 @@ Trunk provides HTTP REST APIs for each of our features. The APIs use status code
 
 * [Flaky Tests](flaky-tests.md): for accessing information like quarantined tests in your repo.
 * [Merge API](merge.md) : for controlling the Trunk Merge Queue
-* [CI Analytics API](ci-analytics.md): for submitting events to be tracked by the CI Analytics engine.
+* [CI Analytics API](broken-reference): for submitting events to be tracked by the CI Analytics engine.
 
 ## Authentication
 

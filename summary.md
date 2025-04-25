@@ -79,9 +79,10 @@
   * [Why Code Quality?](code-quality/overview/why-code-quality.md)
 * [Setup & Installation](code-quality/setup-and-installation/README.md)
   * [Initialize Trunk](code-quality/setup-and-installation/initialize-trunk.md)
-  * [Deal with Existing Issues](code-quality/setup-and-installation/deal-with-existing-issues.md)
-  * [Prevent New Issues](code-quality/setup-and-installation/prevent-new-issues.md)
-  * [Nightly Report](code-quality/ci-setup/github-integration.md)
+  * [Local Linting](code-quality/setup-and-installation/deal-with-existing-issues.md)
+  * [Linting in CI](code-quality/setup-and-installation/prevent-new-issues/README.md)
+    * [Migration Guide](code-quality/setup-and-installation/prevent-new-issues/migration-guide.md)
+  * [Nightly Report (Deprecated)](code-quality/ci-setup/github-integration.md)
 * [IDE Integration](code-quality/ide-integration/README.md)
   * [VSCode](code-quality/ide-integration/vscode.md)
   * [Neovim](code-quality/ide-integration/neovim.md)
@@ -232,15 +233,6 @@
 * [Webhooks](merge-queue/webhooks.md)
 * [Reference](merge-queue/reference.md)
 
-## CI Analytics (beta) <a href="#ci-analytics" id="ci-analytics"></a>
-
-* [Overview](ci-analytics/ci-analytics.md)
-* [Setup](ci-analytics/setup/README.md)
-  * [GitHub Actions](ci-analytics/setup/github-actions.md)
-  * [Jenkins](ci-analytics/setup/jenkins.md)
-* [Pull Request Metrics](ci-analytics/pull-request-metrics.md)
-* [Using the Analysis UI](ci-analytics/using-the-analysis-ui.md)
-
 ## CLI & API References <a href="#references" id="references"></a>
 
 * [CLI Reference](references/cli/README.md)
@@ -282,7 +274,6 @@
 * [API Reference](references/apis/README.md)
   * [Flaky Tests](references/apis/flaky-tests.md)
   * [Merge Queue](references/apis/merge.md)
-  * [CI Analytics](references/apis/ci-analytics.md)
   * [Webhooks Reference](references/apis/webhooks.md)
 
 ## Pricing & Security

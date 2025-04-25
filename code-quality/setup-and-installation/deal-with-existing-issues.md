@@ -1,12 +1,12 @@
-# Deal with Existing Issues
+# Local Linting
 
-After initializing Trunk, you can begin scanning for issues in your repo, and decide whether to fix them up front, fix them incrementally as you code, or ignore irrelevant suggestions. This page walks through the process of fixing existing issues.
+After initializing Trunk, you can begin scanning for issues in your repo, and decide whether to fix them up front, fix them incrementally as you code, or ignore irrelevant suggestions. This page walks through the process of linting locally and fixing existing issues.
 
-If you **only want to prevent new issues** from new code changes, skip to [prevent-new-issues.md](prevent-new-issues.md "mention").
+If you **only want to prevent new issues** from new code changes, skip to [prevent-new-issues](prevent-new-issues/ "mention").
 
-### Check for Existing Issues
+### Running for the First Time
 
-After initializing Trunk Code Quality, you can run linters and formatters to look for existing issues. You can run Trunk on **all files** in your repo with this command. This will output all issues detected by every linter enabled in your project.
+After initializing Trunk Code Quality, you can run **all tools** on **all files** to look for existing issues. You can run Trunk on **all files** in your repo with this command. This will output all issues detected by every linter enabled in your project.
 
 ```bash
 trunk check --all
@@ -27,7 +27,7 @@ There are different approaches to dealing with existing issues, such as running 
 
 You don't need to fix all issues upfront. Trunk lets you fix linter errors incrementally with hold-the-line.
 
-Lean more about [hold-the-line](deal-with-existing-issues.md#hold-the-line).
+Learn more about [hold-the-line](deal-with-existing-issues.md#hold-the-line).
 {% endhint %}
 
 #### Running Formatters and Applying Fixes
@@ -107,10 +107,18 @@ MD033: false
 MD034: false
 ```
 
+#### Issues in PRs
+
+You can reproduce issues discovered in CI by running `trunk check` and addressing issues.
+
+If `trunk check` continues to identify new Code Quality issues on your PR, first try merging the latest changes from your base branch. Trunk will rebase your changes on top of the current `HEAD` in main to ensure it catches all issues before merging.
+
+If this continues to fail, then run `git checkout refs/pull/<PR number>/merge && trunk check`. This is a reference to the merge commit GitHub creates.
+
 ### Hold-the-line
 
 You don't need to fix all the issues. Trunk Code Quality has the ability to _**Hold The Line**_, which means it only lints your git diffs; only what you changed on your branch gets linted. The pre-existing issues can be managed later.
 
 This allows you to clean up as you go, preventing new issues and letting your team leave each file with better code quality than before.
 
-When you've fixed the existing issues you want to fix, you can skip to [prevent-new-issues.md](prevent-new-issues.md "mention") directly.
+When you've fixed the existing issues you want to fix, you can skip to [prevent-new-issues](prevent-new-issues/ "mention") directly.
