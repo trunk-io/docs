@@ -17,7 +17,7 @@ layout:
 
 ### Your AI DevEx Agent
 
-Trunk is a DevEx (Developer Experience) platform using autonomous, agentic AI to help you detect and root cause problems – before they block you team.
+Trunk is a DevEx (Developer Experience) platform that uses autonomous, agentic AI to help you detect and root cause problems – before they block your team.
 
 By collecting insights from your CI jobs and test results, Trunk can automatically detect problems in your CI, detect the root cause, alert developers, and help you take action through the Trunk MCP server.
 
@@ -49,7 +49,7 @@ Sign up for the waitlist in the [Trunk Web App](https://app.trunk.io/login), and
 
 An autonomous agent continuously detects and quarantines flaky or broken tests before they block developers.
 
-[Learn more about Detection](welcome.md#flaky-and-broken-test-detection)
+[Learn more about Detection](https://docs.trunk.io/flaky-tests/detection)
 
 #### Root-cause analysis
 
