@@ -4,9 +4,7 @@ description: Configure Flaky Tests detection using a GitHub Action
 
 # GitHub Actions
 
-Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing Trunk-compatible reports for your test runner.
-
-To upload test results to Trunk, you'll need to pass a **Trunk Organization Slug** to the upload command. To get your organization slug, In [app.trunk.io](https://app.trunk.io/login?intent=flaky%20tests), navigate to:
+Before you start these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing Trunk-compatible reports for your test runner.
 
 Trunk Flaky Tests integrates with your CI by adding a step in your GitHub Action workflow to upload tests with the [Trunk Uploader CLI](../../uploader.md).
 
@@ -17,8 +15,8 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 By the end of this guide, you should achieve the following.
 
 * [ ] Get your Trunk organization slug and token
-* [ ] Set your slug and token as a variable in CI
-* [ ] Configure your CI to upload to Trunk
+* [ ] Set your slug and token as secrets in GitHub Actions
+* [ ] Configure GitHub Actions to upload to Trunk
 * [ ] Validate your uploads in Trunk
 
 After completing these checklist items, you'll be integrated with Trunk.&#x20;
@@ -35,16 +33,16 @@ You can find your organization slug under **Settings > Organization > Manage > O
 
 You can find your token under **Settings > Organization > Manage > Organization API Token > View Organization API Token > View**. Since this is a secret, do not leak it publicly. Ensure you get your _organization token_, not your project/repo token.
 
-### Add the Trunk Token as a Secret
+### Add Your Trunk Token and Organization Slug as Secrets
 
-Store the Trunk slug and API token obtained in the previous step in your as [GitHub secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
+Store the Trunk slug and API token obtained in the previous step in your repo as [GitHub secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_ORG_URL_SLUG` and `TRUNK_API_TOKEN` respectively.
 
 ### Upload to Trunk
 
-Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should minimally include all jobs that run on pull requests, as well as jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
 {% hint style="danger" %}
-You must upload tests from both PR and [**stable branches**](https://docs.trunk.io/flaky-tests/detection#stable-branches), such as `main`, `master`, or `develop` in CI for Trunk to detect flaky tests. Trunk will not detect flaky tests without uploads from both PR and stable branches.&#x20;
+You must upload tests from both PR and [**stable branches**](https://docs.trunk.io/flaky-tests/detection#stable-branches), such as `main`, `master`, or `develop` , in CI for Trunk to detect flaky tests. Trunk will not detect flaky tests without uploads from both PR and stable branches.&#x20;
 
 [Learn more about detection](../../detection.md)
 {% endhint %}
