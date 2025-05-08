@@ -29,25 +29,49 @@ By the end of this guide, you should achieve the following before proceeding to 
 
 After correctly generating reports following the above steps, you'll be ready to move on to the next steps to [configure uploads in CI](../ci-providers/).
 
-### Generating Reports
+### Generating Reports&#x20;
 
-To generate compatible test reports, we will use `gotestsum`. Download `gotestsum` from [releases](https://github.com/gotestyourself/gotestsum/releases), or build from source with `go install gotest.tools/gotestsum@latest`.&#x20;
+Before integrating with Trunk, you need to generate a Trunk-compatible report. For Go, `go test`  does not output JUnit XML by default, so you must use a tool to format it.&#x20;
 
-You can now run your tests using the `gotestsum`, which runs the test with `go test` under-the-hood before formatting the test results into a test report.&#x20;
+#### Generating Reports Using gotestsum
+
+In this guide, we will use `gotestsum`  to generate Trunk-compatible test reports. Download a binary from [releases](https://github.com/gotestyourself/gotestsum/releases), or build from source with `go install gotest.tools/gotestsum@latest`.&#x20;
+
+`gotestsum` runs tests using `go test -json`,  and prints formatted test output and a test run summary. When the `--junitfile` flag is set to a file path, `gotestsum` writes a JUnit XML test report to the file.
 
 ```bash
 gotestsum --junitfile ./junit.xml
 ```
 
+#### Generating Reports Using go-junit-report
+
+Alternatively, if you already have standard Go testing being output, [**go-junit-report**](https://github.com/jstemmer/go-junit-report) can convert your standard Go testing output (`go test`) into JUnit XML.
+
+First install `go-junit-report`:
+
+```
+go install github.com/jstemmer/go-junit-report/v2@latest
+```
+
+Go to the root of your Go project:
+
+```
+cd flaky-factory/go/src
+```
+
+Then pipe `go test` into the `go-junit-report` program:
+
+```
+go test -v 2>&1 | go-junit-report -out junit.xml
+```
+
 #### Report File Path
 
-`gotestsum` will write a JUnit test report to the file specified by the `--junitfile` argument. In the example above, the JUnit report would be written to `junit.xml`. You'll need this path later when configuring automatic uploads to Trunk.
+In the examples above, the JUnit report would be written to `junit.xml`. You'll need this path later when configuring automatic uploads to Trunk.
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.\
-\
-If you're using a package like [**retry**](https://pkg.go.dev/github.com/hashicorp/consul/sdk/testutil/retry), disable it to get more accurate results from Trunk.
+If you have automatic retries enabled, disable them. Retries negatively impact the detection accuracy of flaky tests. If you're using a package like [**retry**](https://pkg.go.dev/github.com/hashicorp/consul/sdk/testutil/retry), disable it to get more accurate results from Trunk.
 
 ### Try It Locally
 
