@@ -31,39 +31,35 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports&#x20;
 
-Before integrating with Trunk, you need to generate a Trunk-compatible report. For Go, `go test`  does not output JUnit XML by default, so you must use a tool to format it.&#x20;
+Before integrating with Trunk, you need to generate a Trunk-compatible report. For Go, `go test`  does not output JUnit XML by default, so you must use secondary tools to generate them.&#x20;
 
-#### Generating Reports Using gotestsum
-
-In this guide, we will use `gotestsum`  to generate Trunk-compatible test reports. Download a binary from [releases](https://github.com/gotestyourself/gotestsum/releases), or build from source with `go install gotest.tools/gotestsum@latest`.&#x20;
-
-`gotestsum` runs tests using `go test -json`,  and prints formatted test output and a test run summary. When the `--junitfile` flag is set to a file path, `gotestsum` writes a JUnit XML test report to the file.
-
-```bash
-gotestsum --junitfile ./junit.xml
-```
-
-#### Generating Reports Using go-junit-report
-
-Alternatively, if you already have standard Go testing being output, [**go-junit-report**](https://github.com/jstemmer/go-junit-report) can convert your standard Go testing output (`go test`) into JUnit XML.
-
-First install `go-junit-report`:
+{% tabs %}
+{% tab title="go test + go-junit-report" %}
+Update your existing `go test` usage to generate json and use [**go-junit-report**](https://github.com/jstemmer/go-junit-report) to convert your standard Go testing output into JUnit XML.
 
 ```
 go install github.com/jstemmer/go-junit-report/v2@latest
 ```
 
-Go to the root of your Go project:
+Then pipe `go test` into the `go-junit-report`:
 
 ```
-cd flaky-factory/go/src
+go test -json 2>&1 | go-junit-report -parser gojson -out junt_report.xml
 ```
+{% endtab %}
 
-Then pipe `go test` into the `go-junit-report` program:
+{% tab title="gotestsum" %}
+Install gotestsum into your project:\
+\
+`go install gotest.tools/gotestsum@latest` \
+\
+Call `gotestsum` to both execute your tests and generate the junit.xml file
 
 ```
-go test -v 2>&1 | go-junit-report -out junit.xml
+gotestsum [path-to-tests-to-run] --junitfile ./junit.xml
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Report File Path
 
