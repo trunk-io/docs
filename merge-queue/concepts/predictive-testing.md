@@ -19,9 +19,9 @@ Test your pull request with the changes ahead of it in the queue
 
 **What's the point of predictive testing?**
 
-Normally pull requests are tested against a snapshot of the head of `main` when the pull request is posted to your source control provider. This can mean that by the time the pull request is actually merged - the results of the automated testing are stale. \
+Normally, pull requests are tested against a snapshot of the head of `main` when the pull request is posted to your source control provider. This can mean that by the time the pull request is actually merged - the results of the automated testing are stale. \
 \
-When you merge a pull request with stale results you are effectively merging in un-tested code. The changes to the protected branch since the test was run create a blind spot in your testing regimen. With predictive testing, you no longer have a blind spot because the merge queue ensures that the pull request is tested against the state of `main` that will exist when your pull request is merged. \
+When you merge a pull request with stale results, you are effectively merging in un-tested code. The changes to the protected branch since the test was run create a blind spot in your testing regimen. With predictive testing, you no longer have a blind spot because the merge queue ensures that the pull request is tested against the state of `main` that will exist when your pull request is merged. \
 \
 No blind spots === no build breakages.
 

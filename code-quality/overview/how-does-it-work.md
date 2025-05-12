@@ -54,10 +54,4 @@ This can be overridden by defining your own plugin repo to import, overriding in
 
 Trunk works in CI. Trunk Code Quality provides [GitHub integration](../ci-setup/github-integration.md) and can run in any other CI environment. This lets you check Code Quality in every PR with consistent config and consistent results.
 
-[Learn more about Code Quality in CI.](../ci-setup/)
-
-### Nightly reports
-
-Trunk Code Quality allows you to [upload results](../ci-setup/manual-setup.md#other-providers) to the [Trunk Web App](https://app.trunk.io/login?intent=code%20quality), which provides a dashboard to view your current code base issues and track code base health over time.
-
-[Learn more about nightly reporting.](how-does-it-work.md#nightly-reports)
+[Learn more about Code Quality in CI.](../setup-and-installation/prevent-new-issues.md)

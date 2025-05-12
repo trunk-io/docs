@@ -1,6 +1,6 @@
 ---
 description: >-
-  Merge Queue's create predictive branches to verify that the future state of
+  Merge Queue creates predictive branches to verify that the future state of
   your protected branch will remain green when the contents of the queue merge
   into it.
 ---
@@ -9,10 +9,10 @@ description: >-
 
 ### **How does a merge queue work?**
 
-1. Instead of merging your pull requests directly through GitHub, engineers submit their pull requests to the merge queues service. A pull request can be submitted to the queue before passing CI or code review is complete. Once the prerequisites for the queue have been met - the pull request will formally enter the queue.
-2. Trunk Merge Queue will test your pull request against the changes ahead of it in the queue so that the changes are tested against the predicted view of the branch, assuming everything ahead of it merges successfully. This process is called [**predictive testing** ](concepts-and-optimizations/predictive-testing.md)and is illustrated in the video below.
+1. Instead of merging your pull requests directly through GitHub, engineers submit their pull requests to the merge queues service. A pull request can be submitted to the queue before passing CI or code review is complete. Once the prerequisites for the queue have been met, the pull request will formally enter the queue.
+2. Trunk Merge Queue will test your pull request against the changes ahead of it in the queue so that the changes are tested against the predicted view of the branch, assuming everything ahead of it merges successfully. This process is called [**predictive testing** ](concepts/predictive-testing.md)and is illustrated in the video below.
 3. When all the required tests are passed, Trunk will **squash merge** your pull request into the protected branch automatically.
-4. If your pull requests fails testing - it will either be retested or removed from the queue for further inspection by the author.
+4. If your pull requests fail tests, they will either be retested or removed from the queue for further inspection by the author.
 
 {% embed url="https://share.vidyard.com/watch/31gaLwGNSYTn2ec2BSQjkn" %}
 predictive testing // test pull requests ahead of you in the queue with your changes
@@ -27,7 +27,7 @@ predictive testing // test pull requests ahead of you in the queue with your cha
 
 ### Key Concepts
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="concepts-and-optimizations/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="concepts-and-optimizations/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="concepts-and-optimizations/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="concepts-and-optimizations/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
 
 {% embed url="https://youtu.be/V74t41-uV7I" %}
 

@@ -4,7 +4,7 @@ description: Create dynamic parallel queues to reduce queue time
 
 # Parallel Queues
 
-Normally, a merge queue behaves by enqueueing all submitted pull requests into a single line. Under this mode of operation, every pull request is [predictively tested ](../predictive-testing.md)against the pull requests ahead of it. While this guarantees the correctness of the protected branch at all times, under a high submission load, the wait time for an item in the queue can be negatively impacted.\
+Normally, a merge queue behaves by enqueueing all submitted pull requests into a single line. Under this mode of operation, every pull request is [predictively tested ](../../concepts/predictive-testing.md)against the pull requests ahead of it. While this guarantees the correctness of the protected branch at all times, under a high submission load, the wait time for an item in the queue can be negatively impacted.\
 \
 A regular merge queue operates like a grocery store with only a single checkout lane. When a lot of folks are trying to checkout at the same time - the line will grow (sometimes intolerably). With a dynamic parallel queue, trunk merge creates additional checkout lanes in real-time while still guaranteeing that the protected branch doesn't break.​ &#x20;
 

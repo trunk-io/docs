@@ -36,11 +36,11 @@ If a batch fails, Trunk Merge Queue will move it to a separate queue for bisecti
 
 ### Batching + Optimistic Merging and Pending Failure Depth
 
-By enabling batching along with [pending failure depth](pending-failure-depth.md) and [optimistic merging](optimistic-merging.md) you can realize the major cost savings of batching while still reaping the [anti-flake ](anti-flake-protection.md)protection of optimistic merging and pending failure depth.
+Enabling batching along with Pending Failure Depth and Optimistic Merging can help you realize the major cost savings of batching while still reaping the [anti-flake ](anti-flake-protection.md)protection of optimistic merging and pending failure depth.
 
 <table><thead><tr><th width="331">event</th><th>queue</th></tr></thead><tbody><tr><td>Enqueue <strong>A</strong>, <strong>B</strong>, <strong>C, D, E, F, G</strong></td><td><code>main</code> &#x3C;- <strong>ABC</strong> &#x3C;- <strong>DEF</strong> +abc</td></tr><tr><td>Batch ABC fails</td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark></td></tr><tr><td>pending failure depth keeps <strong>ABC</strong> from being evicted while <strong>DEF</strong></td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark> (hold) &#x3C;- <strong>DEF</strong>+abc</td></tr><tr><td><strong>DEF</strong> passes</td><td><code>main</code> &#x3C;- <mark style="color:red;"><strong>ABC</strong></mark> &#x3C;- <mark style="color:green;"><strong>DEF</strong>+abc</mark></td></tr><tr><td>optimistic merging allows <strong>ABC</strong> and <strong>DEF</strong> to merge</td><td><code>merge</code> <strong>ABC</strong>, <strong>DEF</strong></td></tr></tbody></table>
 
-Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly improve your CI performance because now Merge can optimistically merge whole batches of PRs, with far less wasted testing.
+Combined, Pending Failure Depth, Optimistic Merging, and Batching can greatly improve your CI performance because now Merge can optimistically merge whole batches of PRs with far less wasted testing.
 
 ### **What are the risks of batching?**
 

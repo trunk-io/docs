@@ -1,5 +1,5 @@
 ---
-description: Your AI DevEx Agent.
+description: Trunk is a DevEx platform to check, test, merge, and monitor your code.
 layout:
   title:
     visible: true
