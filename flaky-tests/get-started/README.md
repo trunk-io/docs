@@ -40,7 +40,7 @@ Once you've updated your CI configuration to upload to Trunk, run a test job and
 
 In [app.trunk.io](https://app.trunk.io/login?intent=flaky%20tests), select the repo you've just updated and navigate to **Flaky Tests** > **Uploads**. Confirm that you see the upload(s) from the previous step.
 
-<figure><picture><source srcset="../../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption><p>The uploads tab</p></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption><p>The uploads tab</p></figcaption></figure>
 
 Trunk needs to ingest a large amount of test data from many different pull request branches and [stable branches](../detection.md#stable-branches), `main` for example, before it can detect flaky tests accurately. This may happen quickly if you have a very high-velocity repo and run test jobs hundreds of times a day.
 

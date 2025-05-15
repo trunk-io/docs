@@ -20,7 +20,7 @@ Trunk detects flaky tests by analyzing the test results uploaded from your CI jo
 \
 **This is an asynchronous process, and it may take up to an hour for an upload's results to be reflected in** [**the dashboard**](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard)**.**
 
-<figure><picture><source srcset="../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption><p>The uploads tab contains results received from past CI jobs.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption><p>The uploads tab contains results received from past CI jobs.</p></figcaption></figure>
 
 ### How We Detect Flakiness
 

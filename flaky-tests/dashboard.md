@@ -46,7 +46,7 @@ This is in addition to information like ticket status and the current codeowner.
 
 If you have a codeowners file configured in your repos, you will see who owns each flaky test in the test details view. We support code owners for [GitHub](https://docs.gitlab.com/ee/user/project/codeowners/) and [GitLabs](https://docs.gitlab.com/ee/user/project/codeowners/) repos.
 
-<figure><picture><source srcset="../.gitbook/assets/details-code-owners-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/details-code-owners-light (1).png" alt=""></picture><figcaption><p>You can find the code owners of each test on the top right of the test details screen.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/details-code-owners-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/details-code-owners-light.png" alt=""></picture><figcaption><p>You can find the code owners of each test on the top right of the test details screen.</p></figcaption></figure>
 
 This information will also be provided when creating a ticket with the [Jira integration](ticketing-integrations/jira-integration.md) or [webhooks](webhooks/).
 
@@ -62,7 +62,7 @@ The Failure Type is a summary of the stack trace of the test run. You can click 
 
 You can click on any of these test runs to see the detailed stack trace:
 
-<figure><picture><source srcset="../.gitbook/assets/test-run-detail-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-run-detail-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/run-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/run-details-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 You can flip through the stack traces of similar failures across different test runs by clicking the left and right arrow buttons. You can also see other similar failures on this and other tests.
 

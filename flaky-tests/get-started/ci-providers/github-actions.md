@@ -51,7 +51,7 @@ You must upload tests from both PR and [**stable branches**](https://docs.trunk.
 
 The following is an example of a GitHub Actions workflow step to upload test results after your tests using Trunk's [**Analytics Uploader Action**](https://github.com/trunk-io/analytics-uploader).
 
-To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
+To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [**Test Frameworks**](../frameworks/) docs.
 
 {% tabs %}
 {% tab title="JUnit XML" %}
@@ -122,77 +122,7 @@ jobs:
 {% endtab %}
 {% endtabs %}
 
-See the [GitHub Actions Reference page](https://github.com/trunk-io/analytics-uploader) for all available command line arguments and usage.
-
-{% tabs %}
-{% tab title="XML" %}
-```yaml
-jobs:
-  test:
-    name: Upload Tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Run Tests
-        run: ...
-
-      - name: Upload Test Results to Trunk.io
-        if: "!cancelled()" # Upload the results even if the tests fail
-        continue-on-error: true # don't fail this job if the upload fails
-        uses: trunk-io/analytics-uploader@main
-        with:
-          junit-paths: "<XML_GLOB_PATH>"       
-          org-slug: <TRUNK_ORG_SLUG>
-          token: ${{ secrets.TRUNK_TOKEN }}
-```
-{% endtab %}
-
-{% tab title="Bazel" %}
-```yaml
-jobs:
-  test:
-    name: Upload Tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Run Tests
-        run: ...
-
-      - name: Upload Test Results to Trunk.io
-        if: "!cancelled()" # Upload the results even if the tests fail
-        continue-on-error: true # don't fail this job if the upload fails
-        uses: trunk-io/analytics-uploader@main
-        with:
-          bazel-bep-path: "<BEP_JSON_PATH>"       
-          org-slug: <TRUNK_ORG_SLUG>
-          token: ${{ secrets.TRUNK_TOKEN }}
-```
-{% endtab %}
-
-{% tab title="XCode" %}
-```yaml
-jobs:
-  test:
-    name: Upload Tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Run Tests
-        run: ...
-
-      - name: Upload Test Results to Trunk.io
-        if: "!cancelled()" # Upload the results even if the tests fail
-        continue-on-error: true # don't fail this job if the upload fails
-        uses: trunk-io/analytics-uploader@main
-        with:
-          xcresults-path: "<XCRESULT_PATH>"       
-          org-slug: <TRUNK_ORG_SLUG>
-          token: ${{ secrets.TRUNK_TOKEN }}
-```
-{% endtab %}
-{% endtabs %}
-
-See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
+See the [GitHub Actions Reference page](https://github.com/trunk-io/analytics-uploader) for all available CLI arguments and usage.
 
 #### Stale files
 
