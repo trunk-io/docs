@@ -68,7 +68,7 @@ jobs:
       - name: Upload Test Results to Trunk.io
         if: "!cancelled()" # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
-        uses: trunk-io/analytics-uploader@main
+        uses: trunk-io/analytics-uploader@v1
         with:
           junit-paths: "**/junit.xml"        
           org-slug: <TRUNK_ORG_SLUG>
@@ -91,7 +91,7 @@ jobs:
       - name: Upload Test Results to Trunk.io
         if: "!cancelled()" # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
-        uses: trunk-io/analytics-uploader@main
+        uses: trunk-io/analytics-uploader@v1
         with:
           xcresult-path: "./test-results.xcresult"        
           org-slug: <TRUNK_ORG_SLUG>
@@ -113,7 +113,7 @@ jobs:
       - name: Upload Test Results to Trunk.io
         if: "!cancelled()" # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
-        uses: trunk-io/analytics-uploader@main
+        uses: trunk-io/analytics-uploader@v1
         with:
           bazel-bep-path: "./build_events.json"        
           org-slug: <TRUNK_ORG_SLUG>
