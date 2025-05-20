@@ -70,7 +70,7 @@ jobs:
         
     - name: Upload test results
       if: always()
-      uses: trunk-io/analytics-uploader@main
+      uses: trunk-io/analytics-uploader@v1
       with:
         junit-paths: &#x3C;TEST OUTPUT PATH>
         org-slug: my-trunk-org-slug
@@ -93,7 +93,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run tests and upload results
-        uses: trunk-io/analytics-uploader@main
+        uses: trunk-io/analytics-uploader@v1
         with:
           junit-paths: <TEST OUTPUT PATH>
           run: <COMMAND TO RUN TESTS>
