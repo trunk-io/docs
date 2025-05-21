@@ -155,6 +155,12 @@ jobs:
       # ... other CI steps
 ```
 
+#### Turn off web app services after migrating
+
+After you have migrated off the web app, you can manually turn off **Check for issues in pull requests** in your repo settings in the web app.
+
+If you do not turn these off, you will continue to get warnings in your PRs until the services are shut down.
+
 ### Caching
 
 You can cache Trunk’s binary and install tools to speed up your CI runs. Trunk caches the version of `trunk` itself, linters, formatters, and lint results in the `~/.cache/trunk` folder. Consult the documentation for your CI provider to learn about caching this folder.
