@@ -38,7 +38,7 @@ Trunk detects flaky tests with the assumption that automated tests should be pas
 Stable branches are sometimes referred to as _protected_ or _default_ branches.
 {% endhint %}
 
-Flaky Tests will look for `main` to use as a stable branch by default. You can override the default selection and set a custom stable branch, for example, `master` or`develop`.
+Flaky Tests will use `main` as a stable branch by default. You can override the default selection and set a custom stable branch, for example, `master` or`develop`.
 
 #### Overriding Stable Branch Defaults
 
@@ -51,16 +51,16 @@ Flaky Test users with the administrator role can update the current stable branc
 3. Update the **Override Default Stable Branch** setting with the name of your stable branch.
 
 {% hint style="warning" %}
-Changing the stable branch will not re-build your test history, a stable branch change will only be applied to new test runs.&#x20;
+Changing the stable branch will not rebuild your test history, a stable branch change will only be applied to new test runs.&#x20;
 
 Flaky Tests will require additional CI runs on the updated stable branch to detect test flakes.
 {% endhint %}
 
 #### Pull Requests
 
-Tests run on pull requests are expected to fail, so these PR failures are not directly used to detect flaky tests.
+Flaky tests are only detected on pull requests (PRs) when a test produces different results on the same git commit. This often occurs when a PR is opened, the tests initially fail, and then pass when re-run.
 
-Flaky tests will produce inconsistent results even when run on the same code with the same input. Pull requests are where we see this behavior the most often: an engineer opens a pull request, sees a test fail, re-runs the code, and sees the test pass. If a test is detected to produce different results on the same git commit, which means different results on the same code, we consider that test to be flaky.
+Tests failing on different git commits in PRs are not used as a signal of flakiness. This is because code changes in PRs can lead to expected test failures that will be fixed before the PR is merged.
 
 #### Merge Queue
 
