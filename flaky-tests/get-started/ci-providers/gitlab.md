@@ -117,6 +117,20 @@ upload_test_results: # This job uploads tests results run in the last stage to T
     - ./trunk flakytests upload --xcresults-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+image: node:latest
+
+stages:         # List of stages for jobs, and their order of execution
+  - test
+
+unit_test_job:   # This job runs the tests and uploads the results to Trunk.io
+  stage: test    
+  script:
+    - TRUNK_ORG_URL_SLUG=$TRUNK_ORG_SLUG TRUNK_API_TOKEN=$TRUNK_TOKEN bundle exec rspec
+```
+{% endtab %}
 {% endtabs %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.

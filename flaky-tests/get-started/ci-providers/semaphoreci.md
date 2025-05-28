@@ -151,6 +151,34 @@ blocks:
             - ./trunk flakytests upload --xcresults-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token ${TRUNK_TOKEN}
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```
+version: v1.0
+name: Semaphore JavaScript Example Pipeline
+blocks:
+  - name: Tests
+    task:
+      secrets:
+        - name: TRUNK_TOKEN
+        - name: TRUNK_ORG_SLUG
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: "true"
+      prologue:
+        commands:
+          - checkout
+          - nvm use
+          - node --version
+          - npm --version
+      jobs:
+        - name: Run Tests
+          commands: 
+            - TRUNK_ORG_URL_SLUG=${TRUNK_ORG_SLUG} TRUNK_API_TOKEN=${TRUNK_TOKEN} bundle exec rspec
+```
+{% endtab %}
 {% endtabs %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.

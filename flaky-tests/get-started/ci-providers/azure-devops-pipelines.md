@@ -117,6 +117,25 @@ steps:
   displayName: Upload test results to Trunk.io
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+# ... Omitted steps
+
+- script: |
+    TRUNK_ORG_URL_SLUG=$(TRUNK_ORG_SLUG) \
+    TRUNK_API_TOKEN=$(TRUNK_TOKEN) \
+    bundle exec rspec
+  displayName: Run RSpec tests and upload results to Trunk.io
+```
+{% endtab %}
 {% endtabs %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.

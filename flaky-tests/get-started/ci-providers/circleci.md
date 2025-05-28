@@ -112,6 +112,19 @@ jobs:
             ./trunk flakytests upload --xcresults-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token ${TRUNK_TOKEN}
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+jobs:
+  test-node:
+    # Install node dependencies and run tests
+    executor: node/default
+    steps:
+      - run:
+          name: Run Tests and Upload Results to Trunk.io
+          command: TRUNK_ORG_URL_SLUG=${TRUNK_ORG_SLUG} TRUNK_API_TOKEN=${TRUNK_TOKEN} bundle exec rspec
+```
+{% endtab %}
 {% endtabs %}
 
 See the [Uploader CLI Reference](https://docs.trunk.io/flaky-tests/uploader) for all available command line arguments and usage.

@@ -121,6 +121,24 @@ steps:
       - ./trunk flakytests upload --xcresults-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+kind: pipeline
+type: docker
+name: test
+
+steps:
+  - name: Run Tests and Upload Results to Trunk.io
+    environment:
+      TRUNK_ORG_SLUG:
+        from_secret: TRUNK_ORG_SLUG
+      TRUNK_TOKEN:
+        from_secret: TRUNK_TOKEN
+    commands:
+      - TRUNK_ORG_URL_SLUG=$TRUNK_ORG_SLUG TRUNK_API_TOKEN=$TRUNK_TOKEN bundle exec rspec
+```
+{% endtab %}
 {% endtabs %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.

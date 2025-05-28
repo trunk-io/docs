@@ -106,6 +106,15 @@ steps:
       - tests
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+steps:
+  - label: Run Tests and Upload Results to Trunk.io
+    command: TRUNK_ORG_URL_SLUG=$TRUNK_ORG_SLUG TRUNK_API_TOKEN=$TRUNK_TOKEN bundle exec rspec
+    key: tests
+```
+{% endtab %}
 {% endtabs %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.

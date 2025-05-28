@@ -112,6 +112,22 @@ pipeline {
 }
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```groovy
+pipeline {
+  environment {
+    TRUNK_ORG_SLUG = credentials('TRUNK_ORG_SLUG')
+    TRUNK_TOKEN = credentials('TRUNK_TOKEN')
+  }
+  stages {
+    stage('Run Tests and Upload Results to Trunk.io'){
+      sh 'TRUNK_ORG_URL_SLUG=$TRUNK_ORG_SLUG TRUNK_API_TOKEN=$TRUNK_TOKEN bundle exec rspec'
+    }
+  }
+}
+```
+{% endtab %}
 {% endtabs %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.

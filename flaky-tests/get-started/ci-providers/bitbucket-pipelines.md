@@ -53,9 +53,8 @@ To find out how to produce the JUnit XML files the uploader needs, see the instr
 
 {% tabs %}
 {% tab title="XML" %}
-```yaml
-image: <BITBUCKET_IMAGE>
-
+<pre class="language-yaml"><code class="lang-yaml"><strong>image: &#x3C;BITBUCKET_IMAGE>
+</strong>
 pipelines:
   default:
     - step:
@@ -63,7 +62,7 @@ pipelines:
     - step:
         name: Run Tests and Upload Results
         script:
-          - <COMMAND TO RUN TESTS>
+          - &#x3C;COMMAND TO RUN TESTS>
         after-script:
           # This ensures trunk upload runs even if the test script fails
           - |
@@ -72,7 +71,7 @@ pipelines:
             ./trunk flakytests upload --junit-paths "**/junit.xml" \
               --org-url-slug $TRUNK_ORG_SLUG \
               --token $TRUNK_TOKEN
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Bazel" %}
@@ -118,6 +117,24 @@ pipelines:
             ./trunk flakytests upload --xcresults-path <XCRESULT_PATH> \
               --org-url-slug $TRUNK_ORG_SLUG \
               --token $TRUNK_TOKEN
+```
+{% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+image: <BITBUCKET_IMAGE>
+
+pipelines:
+  default:
+    - step:
+       # ... omitted setup and build steps 
+    - step:
+        name: Run Tests and Upload Results
+        script:
+          - |
+            TRUNK_ORG_URL_SLUG=$TRUNK_ORG_SLUG \
+            TRUNK_API_TOKEN=$TRUNK_TOKEN \
+            bundle exec rspec
 ```
 {% endtab %}
 {% endtabs %}

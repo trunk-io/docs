@@ -122,6 +122,20 @@ jobs:
           token: ${{ secrets.TRUNK_TOKEN }}
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+jobs:
+  test:
+    name: Run and Upload Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Tests and Upload Results to Trunk.io
+        run: TRUNK_ORG_URL_SLUG=${{ secrets.TRUNK_ORG_SLUG }} TRUNK_API_TOKEN=${{ secrets.TRUNK_TOKEN }} bundle exec rspec
+
+```
+{% endtab %}
 {% endtabs %}
 
 See the [GitHub Actions Reference page](https://github.com/trunk-io/analytics-uploader) for all available CLI arguments and usage.

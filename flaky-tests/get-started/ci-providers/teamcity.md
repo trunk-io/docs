@@ -79,6 +79,14 @@ chmod +x ./trunk
     --token $TRUNK_TOKEN
 ```
 {% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+TRUNK_ORG_URL_SLUG=$TRUNK_ORG_SLUG \
+TRUNK_API_TOKEN=$TRUNK_TOKEN \
+bundle exec rspec
+```
+{% endtab %}
 {% endtabs %}
 
 In your build step settings under the **Show advanced options** toggle, find the **Execute step settings** and select `Always, even if build stop command was issued` to ensure that the Upload step will still run if tests have failed.
