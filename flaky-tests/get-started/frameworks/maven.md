@@ -58,6 +58,21 @@ You can change the report file path by configuring the `maven-surefire-plugin` p
 
 The example above will output JUnit XML reports that can be located with the `/target/junit/*.xml` glob.
 
+#### Using Kotlin and Kotest
+
+If you have a Kotlin project and are using the Kotest test framework, you also need to include `kotest-extensions-junitxml` in your project's `pom.xml`. This allows Kotest to generate JUnit XML reports.
+
+{% code title="pom.xml" %}
+```xml
+<dependency>
+    <groupId>io.kotest</groupId>
+    <artifactId>kotest-extensions-junitxml-jvm</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+```
+{% endcode %}
+
 #### Disable Retries
 
 You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
