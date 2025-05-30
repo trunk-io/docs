@@ -114,6 +114,7 @@
   * [Linting in CI](code-quality/setup-and-installation/prevent-new-issues.md)
     * [Migration Guide](code-quality/setup-and-installation/prevent-new-issues/migration-guide.md)
   * [Nightly Report (Deprecated)](code-quality/ci-setup/github-integration.md)
+  * [OpenAI Codex Support](code-quality/setup-and-installation/openai-codex-support.md)
 * [IDE Integration](code-quality/ide-integration/README.md)
   * [VSCode](code-quality/ide-integration/vscode.md)
   * [Neovim](code-quality/ide-integration/neovim.md)
