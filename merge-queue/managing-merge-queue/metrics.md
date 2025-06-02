@@ -9,9 +9,7 @@ Your merge experience directly impacts the velocity and productivity of your dev
 You can access the metrics in your Trunk Merge Queue by navigating to the Trunk Web App > **Merge Queue** > **Health**.&#x20;
 
 {% hint style="info" %}
-#### Enabling CI Time and CI Jobs Triggered
-
-[Pushing data to CI Analytics](https://docs.trunk.io/ci-analytics/setup) is required to enable CI Time and CI Jobs Triggered charts if you're **not using GitHub Actions**.
+CI Time and CI Jobs Triggered charts are only available for **GitHub Actions**.
 {% endhint %}
 
 ### Time Buckets
@@ -57,7 +55,7 @@ The time in queue can be displayed as different statistical measures. You can sh
 CI Time measures the time it takes to test each pull request in the merge queue. Specifically, how long CI jobs have to run to test PRs. This measures **only CI steps relevant to the merge queue**, other CI steps like build or deploy or any workflows outside of the merge queue will not be measured.
 
 {% hint style="info" %}
-[Pushing data to CI Analytics](https://docs.trunk.io/ci-analytics/setup) is required to enable CI Time and CI Jobs Triggered charts if you're **not using GitHub Actions**.
+CI Time and CI Jobs Triggered charts are only available for **GitHub Actions**.
 {% endhint %}
 
 Monitoring the amount of time it takes for CI workflows to test PRs is important for making sure PRs can move through the queue quickly. The more time it takes to test PRs, the more time a PR will be in the queue. Large spikes signal that work should be devoted to reducing the length of bottlenecking CI jobs, or more CI resources are needed.
@@ -79,5 +77,5 @@ The count of Individual CI jobs that are triggered to test PRs in the merge queu
 Each job will require a CI runner. A spike or large number of requested jobs can result in PRs waiting longer to begin testing.&#x20;
 
 {% hint style="info" %}
-[Pushing data to CI Analytics](https://docs.trunk.io/ci-analytics/setup) is required to enable CI Time and CI Jobs Triggered charts if you're **not using GitHub Actions**.
+CI Time and CI Jobs Triggered charts are only available for **GitHub Actions**.
 {% endhint %}

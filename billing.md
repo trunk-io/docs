@@ -12,13 +12,13 @@ Trunk offers a free plan to experiment with each of our features. Each feature h
 
 Similar to [calculating user counts](billing.md#calculating-user-counts), our free tier limits are calculated based on a 30-day rolling window.
 
-<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>5 commiters per month, unlimited on public repos</td></tr><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Up to 100k issues uploaded</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>100 PRs merged per month</td></tr><tr><td>CI Analytics</td><td>Real-time ingestion of data</td><td>14 days per repo</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td>5 committers and 5M test spans per month</td></tr><tr><td></td><td>Data backfilling</td><td>Up to 30 days</td></tr></tbody></table>
+<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>5 commiters per month, unlimited on public repos</td></tr><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Up to 100k issues uploaded</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>100 PRs merged per month</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td>5 committers and 5M test spans per month</td></tr><tr><td></td><td>Data backfilling</td><td>Up to 30 days</td></tr></tbody></table>
 
 #### Team Plans
 
 Trunk Team Plans offers a monthly subscription plan using a per-seat model. At the end of every billing period, we calculate the number of users using Trunk and update the next month’s invoice to reflect the latest user count. Each seat has access to all of Trunk's features.
 
-<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Limits</th></tr></thead><tbody><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Unlimited</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>Unlimited</td></tr><tr><td>CI Analytics</td><td>Real-time ingestion of data</td><td>Unlimited</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td><p>1 million test spans per seat per month.</p><p>$3 for each additional 1 million test spans.</p></td></tr></tbody></table>
+<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Limits</th></tr></thead><tbody><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Unlimited</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>Unlimited</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td><p>1 million test spans per seat per month.</p><p>$3 for each additional 1 million test spans.</p></td></tr></tbody></table>
 
 #### **Enterprise Plans**
 

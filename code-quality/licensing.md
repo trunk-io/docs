@@ -11,7 +11,6 @@ Trunk Code Quality is composed of a closed-source core complemented by open-sour
 #### Closed-Source Components
 
 * Trunk CLI: The core command-line tool is closed-source but free to use under specific conditions.
-* Trunk Web App: Provides reporting, analytics, and a dashboard to view codebase issues and track health over time.
 * VS Code Extension: Integrates Trunk Code Quality directly into your development environment. Under the hood, all code-checking by the VS Code extension is completed via the Trunk CLI, which drives the VS Code extension.
 
 #### Open-Source Components

@@ -20,10 +20,6 @@ There is an additional state `Switching Modes` that functions exactly like `Drai
 
 Configure how long a PR's test can run before auto-cancelling while testing in the Merge Queue. If a long-running test is detected, Merge will automatically cancel the test.
 
-{% hint style="info" %}
-If you're unsure about what timeout to set, you can use our [CI Analytics](https://trunk.io/ci-analytics) to analyze the runtime of your CI.
-{% endhint %}
-
 For example, assuming a timeout of 4 hours:
 
 * At 3:00, Bob submits PR 456 to the Merge Queue.
