@@ -24,4 +24,3 @@ jobs:
         uses: trunk-io/trunk-action@v1
         with:
           check-run-id: 1
-
