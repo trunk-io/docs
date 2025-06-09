@@ -92,7 +92,7 @@ node_js:
   - 20
 script:
   - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-  - ./trunk flakytests upload --xcresults-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+  - ./trunk flakytests upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
 
