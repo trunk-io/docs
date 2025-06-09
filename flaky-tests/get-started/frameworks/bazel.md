@@ -50,6 +50,14 @@ bazel test <TARGETS> \
 
 Trunk can parse the `build_events.json` file to locate your test reports. You will still need to **configure your test runners to output compatible reports**, and you can refer to the guides for [individual test frameworks](./).
 
+#### Build Without the Bytes
+
+If your CI environment is set up to [build without the bytes](https://blog.bazel.build/2023/10/06/bwob-in-bazel-7.html), you will need the following flag to pull the reports from the remote execution engine:
+
+```sh
+--remote_download_regex='.*/test.xml'
+```
+
 #### Disable Retries
 
 You need to disable automatic retries if you previously enabled them for more accurate detection results.
