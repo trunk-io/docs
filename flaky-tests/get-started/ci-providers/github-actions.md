@@ -79,7 +79,7 @@ jobs:
 ```
 {% endtab %}
 
-{% tab title="XCResults Path" %}
+{% tab title="XCResult Path" %}
 ```yaml
 jobs:
   test:

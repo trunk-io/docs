@@ -78,10 +78,10 @@ Trunk can accept Bazel through the `--bazel-bep-path` argument:
 {% endtab %}
 
 {% tab title="XCode" %}
-Trunk can accept XCode through the `--xcresults-path` argument:
+Trunk can accept XCode through the `--xcresult-path` argument:
 
 ```
-./trunk flakytests upload --xcresults-path <BEP_JSON_PATH> \
+./trunk flakytests upload --xcresult-path <BEP_JSON_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```

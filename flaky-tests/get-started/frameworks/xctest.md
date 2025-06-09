@@ -40,6 +40,10 @@ xcodebuild test -scheme <YOUR_SCHEME> \
 
 You can upload `.xcresult` directories directly to Trunk Flaky Tests.&#x20;
 
+{% hint style="warning" %}
+Only XCode versions 16 or higher are supported.
+{% endhint %}
+
 #### Report File Path
 
 The test reports will be written to the `./test-results.xcresult` directory when running tests with the `-resultBundlePath ./test-results.xcresult`option. You will need this path when uploading results to Trunk in CI.
@@ -58,7 +62,7 @@ You make an upload to Trunk using the following command:
 
 ```sh
 curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
-./trunk flakytests upload --xcresults-path "./test-results.xcresult" \
+./trunk flakytests upload --xcresult-path "./test-results.xcresult" \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```
