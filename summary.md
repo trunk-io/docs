@@ -31,6 +31,7 @@
     * [Jasmine](flaky-tests/get-started/frameworks/jasmine.md)
     * [Jest](flaky-tests/get-started/frameworks/jest.md)
     * [Karma](flaky-tests/get-started/frameworks/karma.md)
+    * [Kotest](flaky-tests/get-started/frameworks/kotest.md)
     * [Maven](flaky-tests/get-started/frameworks/maven.md)
     * [minitest](flaky-tests/get-started/frameworks/minitest.md)
     * [Mocha](flaky-tests/get-started/frameworks/mocha.md)
