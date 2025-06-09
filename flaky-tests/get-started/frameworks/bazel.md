@@ -52,7 +52,7 @@ Trunk can parse the `build_events.json` file to locate your test reports. You wi
 
 #### Build Without the Bytes
 
-If your CI environment is setup to [build without the bytes](https://blog.bazel.build/2023/10/06/bwob-in-bazel-7.html), you will need the following flag to pull the reports from the remote execution engine:
+If your CI environment is set up to [build without the bytes](https://blog.bazel.build/2023/10/06/bwob-in-bazel-7.html), you will need the following flag to pull the reports from the remote execution engine:
 
 ```sh
 --remote_download_regex='.*/test.xml'
