@@ -85,6 +85,9 @@ function summarizeTestCase(payload) {
         ? "This test is currently quarantined." 
         : "This test is not quarantined.";
 
+    // most_common_failures is a beta feature currently being tested
+    // If you are not on the beta it will be an empty array
+    // Want to try it out? Ask in slack.trunk.io
     const failureSummary = most_common_failures.map(failure =>
         `- ${failure.summary} (${failure.occurrence_count || 0} occurrences, `
         + `last seen: ${failure.last_occurrence ? new Date(failure.last_occurrence).toLocaleString() : "Unknown"})`
