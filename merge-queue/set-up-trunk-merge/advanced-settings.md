@@ -12,9 +12,17 @@ We offer some knobs and dials when configuring Merge. All of the following setti
 
 You can change the state of your Merge Queue, which will affect behavior around PRs entering the queue and merging. PRs will always continue testing no matter what state the Merge Queue is in. Below are the possible different states:
 
-<table><thead><tr><th width="149">State</th><th>Will PRs Enter the Queue?</th><th>Will PRs Merge After Testing?</th></tr></thead><tbody><tr><td><code>Running</code></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr><tr><td><code>Paused</code></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td></tr><tr><td><code>Draining</code></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td></tr></tbody></table>
+<table><thead><tr><th width="110.44140625">State</th><th>Will PRs Enter the Queue?</th><th>Will PRs Merge After Testing?</th><th>Example use case</th></tr></thead><tbody><tr><td><code>Running</code></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td>Everyday merging: Protect your mainline and merges successful PRs.</td></tr><tr><td><code>Paused</code></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td><strong>CI failure recovery</strong>: stop merges and testing in the queue until failure is resolved.</td></tr><tr><td><code>Draining</code></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td><strong>Code freeze</strong>: merge PRs currently in the queue but don't start testing additional PRs.</td></tr></tbody></table>
 
 There is an additional state `Switching Modes` that functions exactly like `Draining`. The Merge Queue enters this state when you switch the queue mode while PRs are still being tested.
+
+### When to change merge queue state?
+
+The `Running` state is the default state of your merge queue, and will be the normal, day-to-day state of your queue.
+
+`Paused` is useful for CI incident response and failure recovery. For example, if there is a test infrastructure outage, a queue can be `Paused` until recovery is complete. The ordering of PRs in the queue is preserved, but no PRs are tested or merged.
+
+`Draining` is useful for managing events like code freezes. PRs currently in the queue will be tested and merged, but no new PRs will start testing.
 
 ## Timeout for Tests to Complete
 
