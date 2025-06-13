@@ -50,8 +50,8 @@ An example transformation script is provided below and you can customize your Sl
  * @param webhook.cancel whether to cancel dispatch of the given webhook
  */
 function handler(webhook) {
-  const payload = {"text": summarizeTestCase(webhook.payload)}
-  
+  const payload = summarizeTestCase(webhook.payload)
+
   webhook.payload = payload
   return webhook
 }
@@ -81,8 +81,8 @@ function summarizeTestCase(payload) {
         + `(Reason: ${status.reason?.trim() || "N/A"}, `
         + `Updated: ${status.timestamp ? new Date(status.timestamp).toLocaleString() : "Unknown"})`;
 
-    const quarantineStatus = quarantine 
-        ? "This test is currently quarantined." 
+    const quarantineStatus = quarantine
+        ? "This test is currently quarantined."
         : "This test is not quarantined.";
 
     // most_common_failures is a beta feature currently being tested
@@ -100,19 +100,35 @@ function summarizeTestCase(payload) {
     const statsSummary = `Failure rate (last 7 days): ${(failure_rate_last_7d * 100).toFixed(1)}% `
         + `| PRs Impacted: ${pull_requests_impacted_last_7d}`;
 
-    return [
-        `Test Name: \`${name}\``,
-        `File Path: \`${file_path}\``,
-        statusSummary,
-        quarantineStatus,
-        `Most Common Failures:\n${failureSummary}`,
-        ownerSummary,
-        statsSummary,
-        repoLink,
-        testLink,
-        ticketLink
-    ].join("\n");
-}
+  return {
+    blocks: [
+      {
+        type: "header",
+        text: {
+          type: "plain_text",
+          text: `Test Name: ${name}`
+        }
+      },
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: [
+              `File Path: \`${file_path}\``,
+              statusSummary,
+              quarantineStatus,
+              `Most Common Failures:\n${failureSummary}`,
+              ownerSummary,
+              statsSummary,
+              repoLink,
+              testLink,
+              ticketLink
+          ].join("\n"),
+        },
+      },
+    ],
+  };
+};
 ```
 
 ### 3. Test Your Webhook
