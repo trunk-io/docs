@@ -8,11 +8,18 @@ description: Trunk Subscription Plans
 
 #### **Free Plans**
 
-Trunk offers a free plan to experiment with each of our features. Each feature has a free-tier limit; after exceeding this limit, we prompt you to upgrade to a paid subscription.
+Trunk offers a free tier for small teams and open-source projects to experiment with each of our features. You can use Trunk at no cost if:
+
+* You have 5 or fewer monthly active committers on private repositories, **and**
+* Your monthly test span usage is under the greater of 5 million or 1 million per private committer.
+
+Public repositories are always free for up to 5 million test spans per month.
+
+If you exceed these limits, you'll be prompted to upgrade based on the number of private committers and additional test span usage.
 
 Similar to [calculating user counts](billing.md#calculating-user-counts), our free tier limits are calculated based on a 30-day rolling window.
 
-<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>5 commiters per month, unlimited on public repos</td></tr><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Up to 100k issues uploaded</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>100 PRs merged per month</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td>5 committers and 5M test spans per month</td></tr><tr><td></td><td>Data backfilling</td><td>Up to 30 days</td></tr></tbody></table>
+<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>Up to 5 private repo committers; unlimited on public repos</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td>5 committers and 5M test spans per month</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>Unlimited usage; pricing begins if >5 private repo committers</td></tr><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Unlimited usage</td></tr><tr><td></td><td>Data backfilling</td><td>Up to 30 days</td></tr></tbody></table>
 
 #### Team Plans
 
