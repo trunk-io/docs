@@ -44,7 +44,7 @@ go install github.com/jstemmer/go-junit-report/v2@latest
 Then pipe `go test` into the `go-junit-report`:
 
 ```
-go test -json 2>&1 | go-junit-report -parser gojson -out junt_report.xml
+go test -json 2>&1 | go-junit-report -parser gojson -out junit_report.xml
 ```
 {% endtab %}
 
