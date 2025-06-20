@@ -14,7 +14,7 @@
 
 * [Integration with Slack](integration-for-slack.md)
 
-## Flaky Tests (Beta) <a href="#flaky-tests" id="flaky-tests"></a>
+## Flaky Tests
 
 * [Overview](flaky-tests/overview.md)
 * [Get Started](flaky-tests/get-started/README.md)
@@ -75,6 +75,10 @@
   * [GitHub Issues Integration](flaky-tests/webhooks/github-issues-integration.md)
   * [Linear Integration](flaky-tests/webhooks/linear-integration.md)
 * [Uploader CLI Reference](flaky-tests/uploader.md)
+
+## AI DevOps Agent (beta) <a href="#ai-devops-agent" id="ai-devops-agent"></a>
+
+* [Overview](ai-devops-agent/overview.md)
 
 ## Merge Queue
 
