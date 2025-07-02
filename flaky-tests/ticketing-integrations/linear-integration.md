@@ -18,10 +18,19 @@ To connect a Linear project:
 
 1. Navigate to **Settings** > **Repositories** > **Ticketing Integration.**
 2. Select **Linear** as your Ticketing System.
-3. Add a Linear API key
+3. Add a [Linear API key](linear-integration.md#api-token-permissions)
 4. Select a Team and **Connect to Linear**.
 
-After connecting to Linear, you can specify a default project and a default assignee for new tickets.&#x20;
+After connecting to Linear, you can specify a default project and a default assignee for new tickets.
+
+#### API Key Permissions
+
+The following project permissions must be granted to your Linear API key so Trunk can read, create, and assign tickets automatically:
+
+* _Read_
+* _Create issues_
+
+Selecting _Full Access_ will also grant the required permissions.
 
 ### Create a New Ticket
 
