@@ -1,16 +1,5 @@
 ---
 description: Trunk is a DevEx platform to check, test, merge, and monitor your code.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: false
-  pagination:
-    visible: false
 ---
 
 # Welcome
@@ -39,7 +28,7 @@ An autonomous agent continuously detects and quarantines flaky or broken tests b
 
 Finds and explains the root cause of failed tests or CI jobs using AI, in GitHub, Slack, and even Cursor via the Trunk MCP Server.
 
-[Sign up for the waitlist](https://trunk.io/agent)
+[Sign up for the waitlist](https://trunk.io/insights)
 
 #### Automated developer notifications
 
