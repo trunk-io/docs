@@ -61,6 +61,7 @@
     * [TeamCity](flaky-tests/get-started/ci-providers/teamcity.md)
     * [Travis CI](flaky-tests/get-started/ci-providers/travisci.md)
     * [Other CI Providers](flaky-tests/get-started/ci-providers/otherci.md)
+* [Managing Detected Flaky Tests](flaky-tests/managing-detected-flaky-tests.md)
 * [Dashboard](flaky-tests/dashboard.md)
 * [Flaky Test Detection](flaky-tests/detection.md)
 * [Quarantining](flaky-tests/quarantining.md)
