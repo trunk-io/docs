@@ -4,8 +4,6 @@ description: AI root cause analysis and fixes for test and CI failures
 
 # Overview
 
-
-
 {% hint style="success" %}
 ## CI Autopilot is currently invite-only in private beta.
 
