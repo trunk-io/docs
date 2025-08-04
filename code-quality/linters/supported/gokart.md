@@ -1,17 +1,6 @@
 ---
 title: Trunk | How to run gokart
 description: gokart is a linter for Go
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # gokart

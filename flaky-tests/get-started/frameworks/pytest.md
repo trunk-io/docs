@@ -1,17 +1,6 @@
 ---
 title: Configuring pytest
 description: A guide for generating Trunk-compatible test reports for Pytest
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Pytest

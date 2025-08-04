@@ -1,17 +1,6 @@
 ---
 title: Configuring cargo-nextest
 description: A guide for generating Trunk-compatible test reports for Rust
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # cargo-nextest

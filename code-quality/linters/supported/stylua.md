@@ -1,17 +1,6 @@
 ---
 title: Trunk | How to run stylua
 description: stylua is a linter for Lua
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # stylua

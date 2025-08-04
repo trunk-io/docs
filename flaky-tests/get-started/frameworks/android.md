@@ -1,17 +1,6 @@
 ---
 title: Configuring android
 description: A guide for generating Trunk-compatible test reports for Android projects
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Android

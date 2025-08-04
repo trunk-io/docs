@@ -1,17 +1,6 @@
 ---
 title: Configuring minitest
 description: A guide for generating Trunk-compatible test reports for minitest
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # minitest

@@ -1,17 +1,6 @@
 ---
 title: Configuring xctest
 description: A guide for generating Trunk-compatible test reports for XCode and xcodebuild
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # XCTest

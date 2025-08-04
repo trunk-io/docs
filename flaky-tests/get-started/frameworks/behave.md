@@ -1,16 +1,5 @@
 ---
 description: A guide for generating Trunk-compatible test reports for Behave
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Behave

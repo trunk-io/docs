@@ -1,17 +1,6 @@
 ---
-description: golines is a linter for Go
 title: Trunk | How to run golines
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: golines is a linter for Go
 ---
 
 # golines
@@ -28,12 +17,8 @@ trunk check enable golines
 
 golines will never be auto-enabled. It must be enabled manually.
 
-
-
-
-
 ## Links
 
-- [golines site](https://pkg.go.dev/github.com/segmentio/golines)
-- golines Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/golines)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [golines site](https://pkg.go.dev/github.com/segmentio/golines)
+* golines Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/golines)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

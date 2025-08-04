@@ -3,17 +3,6 @@ title: Trunk | How to run rustfmt
 description: >-
   Rustfmt is a code formatting tool for Rust that helps ensure your code adheres
   to the community-driven coding standards and style guidelines.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # rustfmt

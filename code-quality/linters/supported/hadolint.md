@@ -1,17 +1,6 @@
 ---
 title: Trunk | How to run hadolint
 description: hadolint is a linter for Docker
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # hadolint

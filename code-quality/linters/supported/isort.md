@@ -3,17 +3,6 @@ title: Trunk | How to run isort
 description: >-
   isort is a Python utility for sorting imports alphabetically and automatically
   separating them into sections and by type.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # isort

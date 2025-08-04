@@ -1,17 +1,6 @@
 ---
 title: Trunk | How to run djlint
 description: djlint is a linter for HTML Templates
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # djlint

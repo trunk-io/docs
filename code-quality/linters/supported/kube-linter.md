@@ -1,17 +1,6 @@
 ---
-description: kube-linter is a linter for Kubernetes
 title: Trunk | How to run kube-linter
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: kube-linter is a linter for Kubernetes
 ---
 
 # kube-linter
@@ -28,12 +17,8 @@ trunk check enable kube-linter
 
 kube-linter will never be auto-enabled. It must be enabled manually.
 
-
-
-
-
 ## Links
 
-- [kube-linter site](https://github.com/stackrox/kube-linter#readme)
-- kube-linter Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/kube-linter)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [kube-linter site](https://github.com/stackrox/kube-linter#readme)
+* kube-linter Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/kube-linter)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

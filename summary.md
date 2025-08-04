@@ -77,9 +77,9 @@
   * [Linear Integration](flaky-tests/webhooks/linear-integration.md)
 * [Uploader CLI Reference](flaky-tests/uploader.md)
 
-## CI Autopilot (private beta)
+## CI Autopilot (private beta) <a href="#ci-autopilot" id="ci-autopilot"></a>
 
-* [Overview](ci-autopilot-private-beta/overview.md)
+* [Overview](ci-autopilot/overview.md)
 
 ## AI DevOps Assistant (upcoming) <a href="#ai-devops-agent" id="ai-devops-agent"></a>
 

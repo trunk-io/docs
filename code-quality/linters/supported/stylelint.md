@@ -1,17 +1,6 @@
 ---
-description: stylelint is a linter for CSS, SCSS
 title: Trunk | How to run stylelint
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: stylelint is a linter for CSS, SCSS
 ---
 
 # stylelint
@@ -26,11 +15,12 @@ trunk check enable stylelint
 
 ## Auto Enabling
 
-stylelint will be auto-enabled if any of its config files are present: *`stylelint.config.js`, `.stylelintrc.js`, `stylelint.config.mjs`*.
+stylelint will be auto-enabled if any of its config files are present: _`stylelint.config.js`, `.stylelintrc.js`, `stylelint.config.mjs`_.
 
 ## Settings
 
 stylelint supports the following config files:
+
 * `stylelint.config.js`
 * `.stylelintrc.js`
 * `stylelint.config.mjs`
@@ -44,11 +34,8 @@ stylelint supports the following config files:
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info.
 
-
-
-
 ## Links
 
-- [stylelint site](https://github.com/stylelint/stylelint#readme)
-- stylelint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stylelint)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [stylelint site](https://github.com/stylelint/stylelint#readme)
+* stylelint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/stylelint)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

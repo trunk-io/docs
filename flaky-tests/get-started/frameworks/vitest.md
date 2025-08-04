@@ -1,17 +1,6 @@
 ---
 title: Configuring vitest
 description: A guide for generating Trunk-compatible test reports with Vitest
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Vitest
