@@ -81,9 +81,9 @@
 
 * [Overview](ci-autopilot/overview.md)
 
-## AI DevOps Assistant (upcoming) <a href="#ai-devops-agent" id="ai-devops-agent"></a>
+## AI DevOps Assistant (upcoming) <a href="#ai-devops-assistant" id="ai-devops-assistant"></a>
 
-* [Overview](ai-devops-agent/overview.md)
+* [Overview](ai-devops-assistant/overview.md)
 
 ## Merge Queue
 

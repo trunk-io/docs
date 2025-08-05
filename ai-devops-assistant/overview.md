@@ -16,7 +16,7 @@ It can answer questions about your CI pipeline and tests, send notifications on 
 Sign up for the [waitlist](https://trunk.io/agent), and we'll reach out when we're ready to onboard you.
 {% endhint %}
 
-{% code title="How the agent works" %}
+{% code title="How the assistant works" %}
 ```
                                            ╔═ trunk ═══════════════════════════════════╗ 
 ╔════════════╗      ╔═══════════╗          ║                         ┏━━━━━━━━━━━━━━┓  ║░
@@ -38,7 +38,7 @@ The AI DevOps Assistant connects your codebase, CI data, and existing chat and t
 
 #### Schedule async tasks
 
-The agent can run repetitive async tasks using cron jobs and webhooks as triggers. Some examples of tasks you can schedule include:
+The assistant can run repetitive async tasks using cron jobs and webhooks as triggers. Some examples of tasks you can schedule include:
 
 * Create weekly reports and send them to the product team.
 * Run daily checks and send a notification to developers if any issues are found.
@@ -46,14 +46,14 @@ The agent can run repetitive async tasks using cron jobs and webhooks as trigger
 
 #### Debug CI failures and slowdowns
 
-Instead of manually digging through CI logs and stack trace info, the agent can root cause CI and test failures and tell you exactly what is wrong and how to fix it.
+Instead of manually digging through CI logs and stack trace info, the assistant can root cause CI and test failures and tell you exactly what is wrong and how to fix it.
 
 #### Ask questions about your pipelines
 
 Dig into CI trends and analytics without hunting through dashboards. Find out what CI job is slowing down the pipeline over the past two weeks, or how the current CI process could be parallelized to improve time to merge.
 
 {% embed url="https://play.vidyard.com/tkbBdXyHJR98Ek9ZWg3aef.jpg" %}
-Some of the capabilities of the AI DevOps Agent
+Some of the capabilities of the AI DevOps Assistant
 {% endembed %}
 
 {% hint style="success" %}

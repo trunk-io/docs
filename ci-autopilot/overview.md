@@ -14,7 +14,7 @@ Sign up for the [waitlist](https://trunk.io/insights) to be the next to get acce
 
 Trunk's CI Autopilot monitors your CI jobs and tests, rapidly identifying root causes of failures and providing fixes far quicker than manual debugging.
 
-It integrates seamlessly with GitHub Actions and your [test execution framework](../flaky-tests/get-started/frameworks/). Whenever a failure occurs, Trunk's specialized [AI DevOps Agent](../ai-devops-agent/overview.md):
+It integrates seamlessly with GitHub Actions and your [test execution framework](../flaky-tests/get-started/frameworks/). Whenever a failure occurs, Trunk's specialized [AI DevOps Assistant](broken-reference):
 
 * Investigates the failure and identifies the root cause
 * Posts detailed explanations and fixes directly as GitHub comments
@@ -44,7 +44,7 @@ Trunk integrates directly into your existing developer workflow, enhancing effic
 
 #### AI-Powered Debugging and Fixes
 
-The AI DevOps Agent continuously loops, analyzing:
+The CI Autopilot continuously loops, analyzing:
 
 * Your repository files (search and read capabilities).
 * CI output and historical data.
