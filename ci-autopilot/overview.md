@@ -7,14 +7,14 @@ description: AI root cause analysis and fixes for test and CI failures
 {% hint style="success" %}
 ## CI Autopilot is currently invite-only in private beta.
 
-Sign up for the [waitlist](https://trunk-staging.io/insights) to be the next to get access. We'll reach out when we're ready to onboard you.
+Sign up for the [waitlist](https://trunk.io/insights) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}
 
 ### How CI Autopilot works
 
 Trunk's CI Autopilot monitors your CI jobs and tests, rapidly identifying root causes of failures and providing fixes far quicker than manual debugging.
 
-It integrates seamlessly with GitHub Actions and your test execution framework. Whenever a failure occurs, Trunk's specialized AI DevOps Agent:
+It integrates seamlessly with GitHub Actions and your [test execution framework](../flaky-tests/get-started/frameworks/). Whenever a failure occurs, Trunk's specialized [AI DevOps Agent](../ai-devops-agent/overview.md):
 
 * Investigates the failure and identifies the root cause
 * Posts detailed explanations and fixes directly as GitHub comments
@@ -72,5 +72,5 @@ Immediate detection and automated PR creation to swiftly fix CI job failures occ
 {% hint style="success" %}
 ## CI Autopilot is currently invite-only in private beta.
 
-Sign up for the [waitlist](https://trunk-staging.io/insights) to be the next to get access. We'll reach out when we're ready to onboard you.
+Sign up for the [waitlist](https://trunk.io/insights) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}
