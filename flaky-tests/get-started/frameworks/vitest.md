@@ -48,7 +48,53 @@ You need to disable automatic retries if you previously enabled them. Retries co
 
 If you've enabled retries, you can disable them following the [Vitest docs](https://vitest.dev/api/) for more accurate results.
 
+{% hint style="info" %}
+**Note**: Configuration errors can sometimes mask themselves as consistent test failures. If you're seeing file-level test entries instead of individual test cases, resolve configuration issues first before adjusting retry settings. A properly configured test suite should show individual test case names in the JUnit output, not file names.
+{% endhint %}
+
+### Troubleshooting
+
+**Configuration Errors and File-Level Test Failures**
+
+**Issue**: You might see Trunk identifying flaky tests with names that match your test file names (e.g., `auth.test.ts` instead of `should login successfully`) rather than individual test case names.
+
+**Root Cause**: This typically occurs when Vitest encounters configuration errors that prevent it from properly parsing or running the tests in a file. Common scenarios include:
+
+* TypeScript configuration errors in `tsconfig.json`
+* Missing dependencies or import resolution failures
+* Syntax errors in test setup files
+* Invalid Vitest configuration options
+
+**What Happens**: When Vitest cannot execute the individual tests within a file due to configuration issues, it generates a single JUnit test case entry named after the file itself, regardless of how many actual test cases exist in that file.
+
+**How to Diagnose**:
+
+1. Run your tests locally with verbose output: `vitest --reporter=verbose`
+2. Check for configuration warnings or errors in the test output
+3. Look for test files that show as single entries in your JUnit report when they should contain multiple test cases
+
+**How to Fix**:
+
+1. **Check TypeScript Configuration**: Ensure your `tsconfig.json` is valid and includes all necessary paths
+2. **Verify Dependencies**: Make sure all imported modules are properly installed and accessible
+3. **Review Setup Files**: Check any test setup files referenced in your Vitest config for errors
+4. **Validate Vitest Config**: Ensure your `vitest.config.ts` doesn't contain invalid options
+
 ### Try It Locally
+
+#### Validate Test Execution First
+
+Before validating your JUnit reports with Trunk, ensure Vitest can properly execute your tests:
+
+```bash
+# Run tests with detailed output to catch configuration issues
+vitest run --reporter=verbose
+
+# Check that individual test cases appear in output, not just file names
+vitest run --reporter=json | jq '.testResults[].assertionResults'
+```
+
+If you see test files listed as single entries rather than individual test cases, you likely have configuration issues that need to be resolved before proceeding.
 
 You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
