@@ -7,7 +7,7 @@ description: AI root cause analysis and fixes for test and CI failures
 {% hint style="success" %}
 ## CI Autopilot is currently invite-only in private beta.
 
-Sign up for the [waitlist](https://trunk.io/insights) to be the next to get access. We'll reach out when we're ready to onboard you.
+Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}
 
 ### How CI Autopilot works
@@ -72,5 +72,5 @@ Immediate detection and automated PR creation to swiftly fix CI job failures occ
 {% hint style="success" %}
 ## CI Autopilot is currently invite-only in private beta.
 
-Sign up for the [waitlist](https://trunk.io/insights) to be the next to get access. We'll reach out when we're ready to onboard you.
+Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}

@@ -13,7 +13,7 @@ It can answer questions about your CI pipeline and tests, send notifications on 
 {% hint style="success" %}
 ## The AI DevOps Assistant is upcoming
 
-Sign up for the [waitlist](https://trunk.io/agent), and we'll reach out when we're ready to onboard you.
+Sign up for the [waitlist](https://trunk.io/assistant), and we'll reach out when we're ready to onboard you.
 {% endhint %}
 
 {% code title="How the assistant works" %}
@@ -59,5 +59,5 @@ Some of the capabilities of the AI DevOps Assistant
 {% hint style="success" %}
 ## The AI DevOps Assistant is currently in beta
 
-Sign up for the [waitlist](https://trunk.io/agent), and we'll reach out when we're ready to onboard you.
+Sign up for the [waitlist](https://trunk.io/assistant), and we'll reach out when we're ready to onboard you.
 {% endhint %}
