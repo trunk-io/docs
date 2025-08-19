@@ -4,14 +4,14 @@ description: Trunk is a DevEx platform to check, test, merge, and monitor your c
 
 # Welcome
 
-### Your AI DevOps Agent
+### Your AI DevOps Assistant
 
-Trunk is a DevOps/DevEx (Developer Operations/Developer Experience) platform that uses autonomous AI agents to help you detect and root cause problems before they block your team.
+Trunk is a DevOps/DevEx (Developer Operations/Developer Experience) platform that uses an autonomous AI assistant to help you detect and root cause problems before they block your team.
 
 By collecting insights from your CI jobs and test results, Trunk can automatically detect problems in your CI, detect the root cause, alert developers, and help you take action through the Trunk MCP server.
 
 {% hint style="success" %}
-Sign up for [the waitlist](https://trunk.io/agent), and we'll reach out when we're ready to onboard you.
+Sign up for [the waitlist](https://trunk.io/assistant), and we'll reach out when we're ready to onboard you.
 {% endhint %}
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Connect to Trunk</strong></td><td><a href="setup-and-configuration/connecting-to-trunk.md">connecting-to-trunk.md</a></td></tr><tr><td><strong>Configure Flaky Tests</strong></td><td><a href="flaky-tests/get-started/">get-started</a></td></tr><tr><td><strong>Install the CLI</strong></td><td><a href="references/cli/install.md">install.md</a></td></tr></tbody></table>
@@ -20,7 +20,7 @@ Sign up for [the waitlist](https://trunk.io/agent), and we'll reach out when we'
 
 #### Flaky & broken test detection
 
-An autonomous agent continuously detects and quarantines flaky or broken tests before they block developers.
+An autonomous assistant continuously detects and quarantines flaky or broken tests before they block developers.
 
 [Learn more about Detection](https://docs.trunk.io/flaky-tests/detection)
 
@@ -28,7 +28,7 @@ An autonomous agent continuously detects and quarantines flaky or broken tests b
 
 Finds and explains the root cause of failed tests or CI jobs using AI, in GitHub, Slack, and even Cursor via the Trunk MCP Server.
 
-[Sign up for the waitlist](https://trunk.io/insights)
+[Sign up for the waitlist](https://trunk.io/ci-autopilot)
 
 #### Automated developer notifications
 
