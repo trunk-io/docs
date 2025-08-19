@@ -20,7 +20,11 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports
 
-Playwright has multiple built-in reporters, including JUnit XML which Trunk can ingest. To get XML reports, add the following to your Playwright config:
+Playwright has multiple built-in reporters, including JUnit XML, but we recommend using the [@trunkio/trunk-playwright-reporter](https://www.npmjs.com/package/@trunkio/trunk-playwright-reporter) reporter, which is purpose-built for Trunk and offers better integration. To get started, install the package from npm:
+
+```
+npm install @trunkio/trunk-playwright-reporter --save-dev
+```
 
 {% code title="playwright.config.ts" %}
 ```typescript
@@ -28,7 +32,7 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   reporter: [
-    ['junit', { outputFile: 'junit.xml' }]
+    [['@trunkio/trunk-playwright-reporter']]
   ],
 });
 ```
@@ -37,7 +41,7 @@ export default defineConfig({
 Alternatively, you can specify reporting behavior inline in your CI:
 
 ```sh
-npx playwright test --reporter=junit
+npx playwright test --reporter=@trunkio/trunk-playwright-reporter
 ```
 
 #### Report File Path
