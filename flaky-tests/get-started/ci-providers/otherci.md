@@ -62,6 +62,21 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
+#### Environment Variables
+
+Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
+
+#### Required Variables
+
+**`JOB_URL`** - Direct link to the CI job/build page\
+&#xNAN;**`JOB_NAME`** - Name of the CI job or test suite\
+&#xNAN;**`AUTHOR_EMAIL`** - Email address of the commit author\
+&#xNAN;**`AUTHOR_NAME`** - Full name of the commit author\
+&#xNAN;**`COMMIT_BRANCH`** - Git branch being tested\
+&#xNAN;**`COMMIT_MESSAGE`** - Commit message for the tested commit\
+&#xNAN;**`PR_NUMBER`** - Pull request number (if applicable)\
+&#xNAN;**`PR_TITLE`** - Pull request title (if applicable)
+
 #### Stale files
 
 Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
