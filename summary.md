@@ -58,7 +58,6 @@
     * [GitLab](flaky-tests/get-started/ci-providers/gitlab.md)
     * [Jenkins](flaky-tests/get-started/ci-providers/jenkins.md)
     * [Semaphore CI](flaky-tests/get-started/ci-providers/semaphoreci.md)
-    * [TeamCity](flaky-tests/get-started/ci-providers/teamcity.md)
     * [Travis CI](flaky-tests/get-started/ci-providers/travisci.md)
     * [Other CI Providers](flaky-tests/get-started/ci-providers/otherci.md)
 * [Managing Detected Flaky Tests](flaky-tests/managing-detected-flaky-tests.md)
