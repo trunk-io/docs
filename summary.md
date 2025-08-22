@@ -81,10 +81,6 @@
 
 * [Overview](ci-autopilot/overview.md)
 
-## AI DevOps Assistant (coming soon) <a href="#ai-devops-assistant" id="ai-devops-assistant"></a>
-
-* [Overview](ai-devops-assistant/overview.md)
-
 ## Merge Queue
 
 * [Overview](merge-queue/merge-queue.md)
@@ -245,6 +241,10 @@
 * [Debugging](code-quality/debugging.md)
 * [Licensing](code-quality/licensing.md)
 
+## AI DevOps Assistant (coming soon) <a href="#ai-devops-assistant" id="ai-devops-assistant"></a>
+
+* [Overview](ai-devops-assistant/overview.md)
+
 ## CLI & API References <a href="#references" id="references"></a>
 
 * [CLI Reference](references/cli/README.md)
@@ -288,14 +288,11 @@
   * [Merge Queue](references/apis/merge.md)
   * [Webhooks Reference](references/apis/webhooks.md)
 
-## Pricing & Security
+## Administration
 
-* [Security](pricing-and-security/security.md)
-
-***
-
-* [Billing](billing.md)
-* [Community & Support](community.md)
+* [Security](administration/security.md)
+* [Billing & Plans](administration/billing.md)
+* [Community & Support](administration/community.md)
 
 ## Links
 
