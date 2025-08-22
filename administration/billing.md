@@ -13,7 +13,7 @@ Trunk offers a **Free**, **Team**, and **Enterprise** plan for access to any/all
 Trunk offers a free tier for small teams and open-source projects to experiment with each of our features. You can use Trunk at no cost if:
 
 * You have 5 or fewer monthly active committers on private repositories, **and**
-* Your monthly test span usage is under the greater of 5 million or 1 million per private committer.
+* Your monthly test span usage is under 5 million
 
 Public repositories are always free for up to 5 million test spans per month.
 
