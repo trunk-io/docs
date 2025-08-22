@@ -292,7 +292,7 @@
 
 * [Security](administration/security.md)
 * [Billing & Plans](administration/billing.md)
-* [Community & Support](administration/community.md)
+* [Support](administration/community.md)
 
 ## Links
 

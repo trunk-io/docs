@@ -2,13 +2,13 @@
 description: Need help with Trunk?
 ---
 
-# Community & Support
+# Support
 
 ### How to reach us
 
 <table><thead><tr><th width="239">Contact Method</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://slack.trunk.io">Slack</a></td><td>We offer near real-time support in our <a href="https://slack.trunk.io">Slack community</a>. Post your questions in #getting-started, #bugs, or #general for quick answers. Want to discuss something privately? Simply drop a note in any channel and we'll continue in DMs.</td></tr><tr><td><a href="https://calendly.com/trunk/demo">Meeting or Demo</a></td><td>For sales-related matters, you can email us at <a href="mailto:sales@trunk.io">sales@trunk.io</a> or <a href="https://calendly.com/trunk/demo">schedule a meeting here</a>.</td></tr><tr><td><a href="https://github.com/orgs/trunk-io/discussions/">GitHub Discussions</a></td><td>If there's something you want us to build, you can post on Slack in #feature-requests or start a discussion on <a href="https://github.com/orgs/trunk-io/discussions/">GitHub Discussions</a>.</td></tr><tr><td><a href="mailto:support@trunk.io">Email</a></td><td>Email us at <a href="mailto:support@trunk.io">support@trunk.io</a>. We'll get back to you within 48 hours, though for fastest support, we recommend our <a href="https://slack.trunk.io/">Slack community</a>!</td></tr></tbody></table>
 
-### Trunk Enterprise Support
+### Enterprise Support
 
 #### Support Availability
 
