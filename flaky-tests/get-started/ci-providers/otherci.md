@@ -66,14 +66,16 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 
 Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
 
-**`JOB_URL`** - Direct link to the CI job/build page\
-&#xNAN;**`JOB_NAME`** - Name of the CI job or test suite\
-&#xNAN;**`AUTHOR_EMAIL`** - Email address of the commit author\
-&#xNAN;**`AUTHOR_NAME`** - Full name of the commit author\
-&#xNAN;**`COMMIT_BRANCH`** - Git branch being tested\
-&#xNAN;**`COMMIT_MESSAGE`** - Commit message for the tested commit\
-&#xNAN;**`PR_NUMBER`** - Pull request number (if applicable)\
-&#xNAN;**`PR_TITLE`** - Pull request title (if applicable)
+| Environment Variable |                                      |
+| -------------------- | ------------------------------------ |
+| **`JOB_URL`**        | Direct link to the CI job/build page |
+| **`JOB_NAME`**       | Name of the CI job or test suite     |
+| **`AUTHOR_EMAIL`**   | Email address of the commit author   |
+| **`AUTHOR_NAME`**    | Full name of the commit author       |
+| **`COMMIT_BRANCH`**  | Git branch being tested              |
+| **`COMMIT_MESSAGE`** | Commit message for the tested commit |
+| **`PR_NUMBER`**      | Pull request number (if applicable)  |
+| **`PR_TITLE`**       | Pull request title (if applicable)   |
 
 #### Stale files
 
