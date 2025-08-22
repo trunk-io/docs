@@ -4,6 +4,8 @@ description: Trunk Subscription Plans
 
 # Billing & Plans
 
+Trunk offers a **Free**, **Team**, and **Enterprise** plan for access to any/all of our features. The team plan is available for organizations of up to 50 active committers.
+
 ## Plans
 
 ### **Free Plan**
@@ -19,7 +21,7 @@ If you exceed these limits, you'll be prompted to upgrade based on the number of
 
 Similar to [calculating user counts](billing.md#calculating-user-counts), our free tier limits are calculated based on a 30-day rolling window.
 
-<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>Up to 5 private repo committers; unlimited on public repos</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td>5 committers and 5M test spans per month</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>Unlimited usage; pricing begins if >5 private repo committers</td></tr><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Unlimited usage</td></tr><tr><td></td><td>Data backfilling</td><td>Up to 30 days</td></tr></tbody></table>
+<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>Up to 5 private repo committers; unlimited on public repos</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td>5 committers and 5M test spans per month</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>Unlimited usage; pricing begins if >5 private repo committers</td></tr><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Unlimited usage</td></tr></tbody></table>
 
 ### Team Plan
 
