@@ -55,10 +55,9 @@ The following is an example of a script to upload test results after your tests 
 
 To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
 
-```sh
-curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
-./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug <TRUNK_ORG_SLUG> --token "${TRUNK_TOKEN}"
-```
+<pre class="language-sh"><code class="lang-sh">curl -fsSLO --retry 3 https://trunk.io/releases/trunk &#x26;&#x26; chmod +x trunk
+<strong>./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug &#x3C;TRUNK_ORG_SLUG> --token "${TRUNK_TOKEN}"
+</strong></code></pre>
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
@@ -66,7 +65,7 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 
 Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
 
-| Environment Variable |                                      |
+| Environment Variable | Description                          |
 | -------------------- | ------------------------------------ |
 | **`JOB_URL`**        | Direct link to the CI job/build page |
 | **`JOB_NAME`**       | Name of the CI job or test suite     |
