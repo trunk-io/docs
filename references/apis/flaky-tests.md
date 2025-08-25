@@ -4,14 +4,14 @@ The Trunk Flaky Tests API provides access to check the status of Trunk services 
 
 All requests must be [authenticated](./#authentication) by providing the `x-api-token` header.
 
-{% openapi-operation spec="trunk-api" path="/flaky-tests/list-quarantined-tests" method="post" %}
-[Broken link](broken-reference)
+{% openapi-operation spec="trunk-api" path="/flaky-tests/list-unhealthy-tests" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
 
 {% openapi-operation spec="trunk-api" path="/flaky-tests/list-quarantined-tests" method="post" %}
-[Broken link](broken-reference)
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
 
 {% openapi-operation spec="trunk-api" path="/flaky-tests/link-ticket-to-test-case" method="post" %}
-[Broken link](broken-reference)
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
