@@ -38,7 +38,7 @@ Trunk detects flaky tests with the assumption that automated tests should be pas
 Stable branches are sometimes referred to as _protected_ or _default_ branches.
 {% endhint %}
 
-Flaky Tests will use `main` as a stable branch by default. You can override the default selection and set a custom stable branch, for example, `master` or`develop`.
+Flaky Tests will use `main` as a stable branch by default. You can override the default selection and set a custom stable branch, for example, `master` or `develop`.
 
 #### Overriding Stable Branch Defaults
 
