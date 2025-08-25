@@ -166,14 +166,3 @@ chmod +x trunk \
 `--ci-progress` will print out the tool's progress every 30 seconds, whereas `--no-progress` will suppress any progress reporting.
 
 You can also explicitly set the upstream branch if needed via `--upstream`, but we do detect your main branch by default.
-
-### Caching and Persistence
-
-* Trunk caches the version of `trunk` itself, linters, formatters, and lint results in `~/.cache/trunk`
-* If your build machines are persistent, make sure this directory is not wiped out between CI jobs for best performance. If Trunk has to re-download every linter for every job because this directory is wiped out, it will be very slow.
-* If your build machines are ephemeral, there are a few options for caching:
-  * CI systems have support for caching between CI jobs on ephemeral runners:
-    * [GitHub Actions](https://github.com/actions/cache)
-    * [CircleCI](https://circleci.com/docs/caching/)
-    * [Travis CI](https://docs.travis-ci.com/user/caching/)
-  * You can include a seeded trunk cache in a regularly updated image used for CI by running `trunk check download`, which will download all requirements to `~/.cache/trunk`
