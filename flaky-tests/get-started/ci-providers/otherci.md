@@ -65,16 +65,17 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 
 Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
 
-| Environment Variable | Description                          |
-| -------------------- | ------------------------------------ |
-| **`JOB_URL`**        | Direct link to the CI job/build page |
-| **`JOB_NAME`**       | Name of the CI job or test suite     |
-| **`AUTHOR_EMAIL`**   | Email address of the commit author   |
-| **`AUTHOR_NAME`**    | Full name of the commit author       |
-| **`COMMIT_BRANCH`**  | Git branch being tested              |
-| **`COMMIT_MESSAGE`** | Commit message for the tested commit |
-| **`PR_NUMBER`**      | Pull request number (if applicable)  |
-| **`PR_TITLE`**       | Pull request title (if applicable)   |
+| Environment Variable | Description                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------- |
+| **`CUSTOM=true`**    | Set `CUSTOM` to `true` to indicate this CI system is not one of our first party supported ones |
+| **`JOB_URL`**        | Direct link to the CI job/build page                                                           |
+| **`JOB_NAME`**       | Name of the CI job or test suite                                                               |
+| **`AUTHOR_EMAIL`**   | Email address of the commit author                                                             |
+| **`AUTHOR_NAME`**    | Full name of the commit author                                                                 |
+| **`COMMIT_BRANCH`**  | Git branch being tested                                                                        |
+| **`COMMIT_MESSAGE`** | Commit message for the tested commit                                                           |
+| **`PR_NUMBER`**      | Pull request number (if applicable)                                                            |
+| **`PR_TITLE`**       | Pull request title (if applicable)                                                             |
 
 #### Stale files
 
