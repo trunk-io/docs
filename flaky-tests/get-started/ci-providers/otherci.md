@@ -65,6 +65,10 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 
 Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
 
+{% hint style="info" %}
+Config Requirement: `CUSTOM` must be set to `true` for environment varaibles to take effect and override the auto-detection of CI. &#x20;
+{% endhint %}
+
 | Environment Variable | Description                                                                                    |
 | -------------------- | ---------------------------------------------------------------------------------------------- |
 | **`CUSTOM=true`**    | Set `CUSTOM` to `true` to indicate this CI system is not one of our first party supported ones |
