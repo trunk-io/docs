@@ -24,11 +24,19 @@ These numbers are important for understanding the overall health of your repo’
 
 You can view a table of all your test cases and their current status in Trunk Flaky Tests.
 
-Filters can also be set on the table to narrow test results down by test status, quarantine setting, ticket status, or by the name, file, or suite name of the test case.&#x20;
+Filters can also be set on the table to narrow test results down by test status, quarantine setting, ticket status, or by the name, file, or suite name of the test case.
 
 The table is sorted by default by the number of PRs impacted by the case, which is the best way to measure the impact of a flaky test. You can click on each test case to view [the test case’s details](dashboard.md#test-case-details).
 
 <table><thead><tr><th width="188">Column</th><th>Description</th></tr></thead><tbody><tr><td>Tests</td><td>The variant, file path, and name of the test case.</td></tr><tr><td>Status</td><td>The health status of the test case.</td></tr><tr><td>Failure Rate</td><td>The percentage of CI runs failed due to this broken or flaky test case.</td></tr><tr><td>PRs Impacted</td><td>The number of PRs that have been affected by this test case failing in CI.</td></tr><tr><td>Last Run</td><td>The most recent timestamp for an upload test run.</td></tr></tbody></table>
+
+{% hint style="info" %}
+Test Deletion & History
+
+* Inactive tests disappear from the dashboard automatically after 30 days and are fully removed after 45 days. Tests cannot be manually deleted.
+* Changing test identifiers (e.g., adding file paths) creates new test entries — merging with old history isn’t supported.
+* To reduce noise, mark old or unused tests as Healthy while waiting for them to expire.
+{% endhint %}
 
 ### Test Case Details
 
@@ -56,7 +64,7 @@ This information will also be provided when creating a ticket with the [Jira int
 
 The Failure Types table shows the history of past test runs grouped by unique failure types.
 
-The Failure Type is a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, duration, and time.&#x20;
+The Failure Type is a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, duration, and time.
 
 ### Failure Details
 
