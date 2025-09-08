@@ -54,6 +54,14 @@ You need to disable automatic retries if you previously enabled them. Retries co
 
 If you have a step in CI to rerun failed tests with the `--only-failures` option, or you're using a package like [rspec-retry](https://github.com/NoRedInk/rspec-retry), remember to disable them.
 
+#### Versions and Updating the Plugin
+
+You can find the Gem for `rspec_trunk_flaky_tests` [here](https://rubygems.org/gems/rspec_trunk_flaky_tests), along with its version history. This plugin is periodically updated for more robust support and bug fixes, and if you're encountering something unexpected, we first encourage you to:
+
+```
+bundle update rspec_trunk_flaky_tests
+```
+
 ### Try It Locally
 
 #### Test Upload
