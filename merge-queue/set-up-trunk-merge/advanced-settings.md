@@ -53,6 +53,10 @@ For example, assuming a concurrency of 3:
 
 Trunk Merge Queue, since it will eventually merge your PR on GitHub, is still **bound by any protection rules set in GitHub** that affect the branch Trunk Merge Queue will merge into or that affect your Trunk Merge Queue branch. For example, if a PR requires at least one review to merge, then Trunk Merge Queue would display `'not mergable GitHub yet'` until that PR has a review.
 
+{% hint style="info" %}
+Trunk Merge Queue does not work with GitHub's new [Rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets) and must be configured using "Classic branch protection rules"
+{% endhint %}
+
 If you have trouble with merge queueing PRs, check if there is any kind of additional branch protection set up on your repo. Existing branch protection rules must be changed in order to **not** protect branches in the form of `trunk-temp/*` and `trunk-merge/*` . If either of those branches is considered protected in any way according to GitHub (e.g., if there is a `*/*` branch protection rule), then Merge will not be able to run tests properly due to GitHub permission errors.
 
 If there are any questions or help is needed, reach out on our questions or help is needed, reach out on our [community Slack](https://slack.trunk.io/)!
@@ -103,7 +107,7 @@ jobs:
     # Add more steps here..    
 ```
 
-#### Define Required Status Checks For Testing
+### Define Required Status Checks For Testing
 
 Trunk needs to know which _status checks_ must pass while testing pull requests in the queue before it can merge a PR into your branch. Merge can pick up this list of required statuses in one of two ways:
 
@@ -139,3 +143,13 @@ Use custom when the status checks you want to enforce before merging do not matc
 Custom `required_statuses` defined in the `.trunk/trunk.yaml` file take precedence over the GitHub required status checks from branch protection.
 {% endtab %}
 {% endtabs %}
+
+### Restricting Push permissions
+
+Trunk needs access to push to protected branches, and works best alone. Add protections to restrict who can push to matching branches. In most cases, permissions should be restricted to Organization admins, repository admins and the `trunk-io` bot.
+
+To update this configuration selecting your repository, navigate to **Settings** **> Branches >** your branch rule **> Edit >** toggle **Restrict who can push to matching branches and toggle  Restrict pushes that create matching branches**
+
+Remove any existing configurations or special permissions for roles or groups and add an exception for the `trunk-io` bot only. Be sure to click **Save changes** to confirm the settings.
+
+<figure><img src="../../.gitbook/assets/docs-mq-restrict-push.png" alt=""><figcaption></figcaption></figure>

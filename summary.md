@@ -88,6 +88,7 @@
   * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
   * [Settings](merge-queue/set-up-trunk-merge/advanced-settings.md)
   * [Integration for Slack](merge-queue/set-up-trunk-merge/integration-for-slack.md)
+* [Migrating From GitHub Merge Queue](merge-queue/migrating-from-github-merge-queue.md)
 * [Concepts and Optimizations](merge-queue/concepts-and-optimizations/README.md)
   * [Predictive Testing](merge-queue/concepts/predictive-testing.md)
   * [Optimistic Merging](merge-queue/concepts/optimistic-merging.md)
