@@ -12,25 +12,25 @@ Quarantining flaky tests lets you mitigate the negative effects of flaky tests w
 
 ### What Does Quarantined Mean?
 
-When a test is quarantined, it will still be run in your CI jobs, and results will be uploaded to Trunk Flaky Tests. This allows you to track any changes to flaky tests as CI jobs are run. The [Flaky Tests Uploader](uploader.md) will check if the test is a known flaky or broken test. If the test has been failing on other PRs before yours, the results will be overridden. If all failures in a CI job are overridden by quarantining because they're known flaky or broken tests, the CI job will be overridden as passing.&#x20;
+When a test is quarantined, it will still be run in your CI jobs, and results will be uploaded to Trunk Flaky Tests. This allows you to track any changes to flaky tests as CI jobs are run. The [Flaky Tests Uploader](uploader.md) will check if the test is a known flaky test. If the test has been failing on other PRs before yours, the results will be overridden. If all failures in a CI job are overridden by quarantining because they're known flaky tests, the CI job will be overridden as passing.&#x20;
 
 ### What's Affected?
 
-When quarantining is enabled, tests that are _known_ to be flaky or broken will be quarantined. This means tests that have already been failing and not broken by your PR will be quarantined. You can see which tests are flaky or broken by seeing the tests's status in the overview dashboard, or each test's status history.
+When quarantining is enabled, tests that are _known_ to be flaky will be quarantined. This means tests that have already been failing will be quarantined. You can see which tests are flaky by seeing the tests's status in the overview dashboard, or each test's status history.
 
 <figure><picture><source srcset="../.gitbook/assets/labelled-flaky-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/labelled-flaky-light.png" alt=""></picture><figcaption><p>Status history showing a test to be flaky.</p></figcaption></figure>
 
-Tests that are overridden to always quarantine will also be quarantined, even if the test breaks for the first time. [Learn more about overriding.](quarantining.md#overriding-individual-tests)
+Tests that are overridden to always quarantine will also be quarantined, even if the test breaks for the first time. [Learn more about overriding.](quarantining.md#overriding-individual-tests)&#x20;
 
 ### Enable Quarantining
 
 {% hint style="warning" %}
-Enabling quarantining will drastically affect the results of CI jobs. Only new test failures introduced by your PR will fail CI jobs, known **flaky and broken** tests will no longer fail CI jobs. [Learn more about the effects of quarantining](quarantining.md#whats-affected).
+Enabling quarantining will drastically affect the results of CI jobs. Only new test failures introduced by your PR will fail CI jobs, known **flaky** tests will no longer fail CI jobs. [Learn more about the effects of quarantining](quarantining.md#whats-affected).
 {% endhint %}
 
 Before tests can be quarantined on a CI job, quarantining needs to be enabled for your Analytics Uploader.
 
-With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky or broken, it will be quarantined. If all failed tests are flaky, the exit code of the test command will be overridden to return 0 and the CI job will pass.
+With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are flaky, the exit code of the test command will be overridden to return 0 and the CI job will pass.
 
 #### Update Flaky Test Settings
 
@@ -40,7 +40,7 @@ You can enable quarantining by navigating to **Settings** > **Repositories** > *
 
 Here's what each of these options does when enabled:
 
-<table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>When enabled, tests will be quarantined if the <a href="quarantining.md#updates-in-ci">necessary configurations</a> are made in CI.</td></tr><tr><td>Auto-Quarantine</td><td>When enabled, flaky and broken tests are automatically quarantined.</td></tr><tr><td>Summary Test Reports</td><td>When enabled, PRs will generate a report covering test results, test health, and quarantine status. This will be accessible in the web app and as a GitHub comment. Learn more about <a href="github-pull-request-comments.md">PR Test Summaries</a>.</td></tr><tr><td>Public Dashboard Access</td><td>When enabled, unauthenticated users will get read-only access to your Flaky Tests dashboard, which is particularly useful for open-source projects.</td></tr></tbody></table>
+<table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>When enabled, tests will be quarantined if the <a href="quarantining.md#updates-in-ci">necessary configurations</a> are made in CI.</td></tr><tr><td>Auto-Quarantine</td><td>When enabled, flaky tests are automatically quarantined.</td></tr><tr><td>Summary Test Reports</td><td>When enabled, PRs will generate a report covering test results, test health, and quarantine status. This will be accessible in the web app and as a GitHub comment. Learn more about <a href="github-pull-request-comments.md">PR Test Summaries</a>.</td></tr><tr><td>Public Dashboard Access</td><td>When enabled, unauthenticated users will get read-only access to your Flaky Tests dashboard, which is particularly useful for open-source projects.</td></tr></tbody></table>
 
 #### Updates In CI
 
@@ -144,7 +144,7 @@ You can update the overriding settings on each test by navigating to the details
 
 You can choose to Always Quarantine or Never Quarantine:
 
-<table><thead><tr><th width="244">Setting</th><th>Behavior</th></tr></thead><tbody><tr><td>Always Quarantine</td><td>Quarantine a test failure even if the health status is healthy.</td></tr><tr><td>Never Quarantine</td><td>Never quarantine failures, even if the health status is flaky or broken, and quarantining is enabled for the repo.</td></tr></tbody></table>
+<table><thead><tr><th width="244">Setting</th><th>Behavior</th></tr></thead><tbody><tr><td>Always Quarantine</td><td>Quarantine a test failure even if the health status is healthy.</td></tr><tr><td>Never Quarantine</td><td>Never quarantine failures, even if the health status is flaky, and quarantining is enabled for the repo.</td></tr></tbody></table>
 
 Any comments added will appear in the Test History timeline on that test's details page.
 
