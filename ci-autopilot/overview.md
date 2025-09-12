@@ -1,5 +1,7 @@
 ---
-description: AI root cause analysis and fixes for test and CI failures
+description: >-
+  Trunk's CI Autopilot offers AI root cause analysis and fixes for test and CI
+  failures
 ---
 
 # Overview
@@ -10,19 +12,13 @@ description: AI root cause analysis and fixes for test and CI failures
 Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}
 
-### How CI Autopilot works
 
-Trunk's CI Autopilot monitors your CI jobs and tests, rapidly identifying root causes of failures and providing fixes far quicker than manual debugging.
 
-It integrates seamlessly with GitHub Actions and your [test execution framework](../flaky-tests/get-started/frameworks/). Whenever a failure occurs, Trunk's specialized [AI DevOps Assistant](broken-reference):
+**Stop debugging CI failures manually.** CI Autopilot's AI investigates every test failure, identifies root causes, and provides ready-to-apply fixes in minutes - not hours.
 
-* Investigates the failure and identifies the root cause
-* Posts detailed explanations and fixes directly as GitHub comments
-* Opens stacked PRs with fixes
 
-If you like the suggested fixes, simply merge them into your PR. You can also further modify them by checking out the stacked PR branch before merging.
 
-When failures happen on your `main` branch, CI Autopilot detects these immediately and proactively opens PRs to resolve the root issues.
+### How It Works
 
 ```
                                            ╔═ trunk ═══════════════════════════════════╗ 
@@ -38,39 +34,61 @@ When failures happen on your `main` branch, CI Autopilot detects these immediate
                                             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-### Features
-
-Trunk integrates directly into your existing developer workflow, enhancing efficiency, accuracy, and speed in resolving CI and test failures.
-
-#### AI-Powered Debugging and Fixes
-
-The CI Autopilot continuously loops, analyzing:
-
-* Your repository files (search and read capabilities).
-* CI output and historical data.
-* Test results and historical data.
-* PR details and diffs.
-* Git history.
-* Web searches for external outages.
-
-This extensive analysis accurately determines the true root causes of CI and test failures.
-
-#### GitHub Comments
-
-Receive clear GitHub comments pinpointing exactly why tests and CI jobs failed and how to fix them.
-
-#### Stacked PRs
-
-Automatically opened PRs stacked on your existing PR, containing ready-to-merge fixes for your failing tests.
-
-#### Main Branch Protection
-
-Immediate detection and automated PR creation to swiftly fix CI job failures occurring on your `main` branch.
+CI Autopilot monitors your CI jobs and tests, rapidly identifying root causes of failures and providing fixes far quicker than manual debugging.
 
 
+
+**It integrates seamlessly with GitHub Actions and your** [**test execution framework**](../flaky-tests/get-started/frameworks/)**.**&#x20;
+
+
+
+When your CI fails, CI Autopilot:
+
+* **Investigates failures** by analyzing code, logs, test results, and git history
+* **Posts detailed explanations** as GitHub comments with precise root cause analysis
+* **Provides instant fixes** via stacked pull requests or direct AI assistant integration
+* **Groups related failures** to resolve multiple issues with a single fix
+
+
+
+### Two Ways to Get Fixes
+
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Stacked Pull Requests</strong></td><td>Perfect for team workflows and code review processes. CI Autopilot creates separate PRs with proposed fixes that you can review and merge.</td><td><a href="../use-ci-autopilot/request-fixes-on-prs.md">request-fixes-on-prs.md</a></td></tr><tr><td><strong>AI Assistant Integration</strong> <strong>(MCP)</strong></td><td>Work with Cursor, GitHub Copilot, Claude Code or other AI coding tools. Your assistant accesses the root cause analysis and applies fixes directly in your IDE.</td><td><a href="../use-ci-autopilot/apply-fixes-with-mcp.md">apply-fixes-with-mcp.md</a></td></tr></tbody></table>
+
+
+
+### Key Features
+
+**AI-Powered Root Cause Analysis** Analyzes repository files, CI logs, test results, PR diffs, git history, and even checks for external outages to pinpoint exact failure causes.
+
+**Intelligent Fix Application**\
+Choose between automated stacked pull requests for team workflows or direct AI assistant integration for immediate fixes in your IDE.
+
+**Seamless GitHub Integration** Works within your existing development workflow—no new tools to learn or processes to change.
+
+
+
+### Get Started Now!
 
 {% hint style="success" %}
 ## CI Autopilot is currently invite-only in private beta.
 
 Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}
+
+#### [Basic Setup (5 minutes)](get-started/connect-to-github.md)
+
+Connect CI Autopilot to GitHub for immediate failure analysis from CI logs.
+
+* ✅ Instant root cause identification
+* ✅ Fix recommendations in GitHub comments
+* ✅ Works with any test framework
+
+#### [Enhanced Setup (+10 minutes)](get-started/upload-test-reports.md)
+
+Add structured test reports for precise, test-level analysis.
+
+* ✅ Test-specific, targeted fixes
+* ✅ Better accuracy and detail
+* ✅ Enhanced failure grouping
+
