@@ -34,10 +34,6 @@ or
 trunk merge <pr-number> -p <level>
 ```
 {% endtab %}
-
-{% tab title="Web UI" %}
-The priority can also be specified from the [Merge Web UI](managing-merge-queue/using-the-webapp.md).
-{% endtab %}
 {% endtabs %}
 
 Valid values for the priority level:
