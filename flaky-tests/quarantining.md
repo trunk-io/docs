@@ -4,8 +4,6 @@ description: Mitigate impact of known flaky tests by isolating them at run time
 
 # Quarantining
 
-<figure><img src="../.gitbook/assets/flaky-fullscreen.png" alt=""><figcaption></figcaption></figure>
-
 **Quarantining** isolates known flaky tests to prevent them from blocking CI jobs while continuing to run and track their results. The system identifies flaky tests at runtime and overrides their exit codes when they fail, allowing your CI pipeline to pass without requiring code changes to disable problematic tests.
 
 **Why use quarantining:** It eliminates the disruption flaky tests cause to your development workflow without losing visibility into test behavior. Quarantined test results are still uploaded to Trunk Flaky Tests and displayed in PR summaries, so you can continue monitoring for real issues while preventing false failures from blocking deployments.
@@ -161,6 +159,17 @@ When a manual override is active, a banner shows who set it and when.
 <figure><img src="../.gitbook/assets/qurantine-individual-tests-revert.png" alt=""><figcaption></figcaption></figure>
 
 To review a history of all quarantine changes on a test, use the **Quarantine Events** filter within the **Test History** section. This will show every override, setting change, and comment, along with the author and timestamp for each entry.
+
+### Tracking Quarantined Jobs in the Dashboard
+
+Once quarantining is active, the **Quarantining** tab provides a central hub for monitoring its impact and effectiveness. This tab serves as a complete audit log of every CI job saved by the feature, allowing you to:
+
+* **Visualize Trends:** A 30-day chart shows the number of jobs quarantined per day.
+* **Inspect Individual Jobs:** A detailed table lists every quarantined job. Click any entry to see the specific tests that were quarantined.
+* **Isolate Critical Workflows:** Use the filter to see how quarantining impacts specific branches, such as preventing flaky failures in your Merge Queue.
+* **Measure ROI:** Use the data to quantify the number of builds saved and developer time reclaimed for your organization.
+
+<figure><img src="../.gitbook/assets/flaky-fullscreen.png" alt=""><figcaption></figcaption></figure>
 
 ### Audit Logs
 
