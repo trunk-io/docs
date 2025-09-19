@@ -178,3 +178,11 @@ Once quarantining is active, the **Quarantining** tab provides a central hub for
 Trunk provides audit logs for all setting changes and overwrites for individual tests. You can access the audit log by navigating to **Settings** > **Repositories** **>** repository **>** **Flaky Tests** > **Audit logs** under the Enable Test Quarantining heading.
 
 <figure><img src="../.gitbook/assets/qurantine-audit-logs.png" alt=""><figcaption></figcaption></figure>
+
+### Quarantining API and Webhooks
+
+For advanced use cases, you can interact with quarantining features programmatically.
+
+* API: Use the [Flaky Tests API](../references/apis/flaky-tests.md) to fetch a list of all currently quarantined tests in your project.
+* Webhooks: Subscribe to the `test_case.quarantining_setting_changed` event to trigger automated workflows whenever a test's quarantine override is modified. Learn more about [Webhooks](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed).
+
