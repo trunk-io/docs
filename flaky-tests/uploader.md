@@ -1,6 +1,6 @@
-# Uploader CLI Reference
+# Trunk Analytics CLI Reference
 
-Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Uploader CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.&#x20;
+Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Trunk Analytics CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.&#x20;
 
 ### Guides
 
@@ -19,10 +19,10 @@ The CLI is preconfigured to work with a set [ci-providers](get-started/ci-provid
 The CLI should be **downloaded as part of your test workflow** in your CI system. The launcher is platform agnostic and will download the latest version of the uploader for your platform.&#x20;
 
 {% hint style="success" %}
-You should **always use the latest version** of the uploader CLI by downloading it fresh in your CI jobs for the best detection results.
+You should **always use the latest version** of the Trunk Analytics CLI by downloading it fresh in your CI jobs for the best detection results.
 {% endhint %}
 
-You can download the uploader CLI and mark it executable with the following command:
+You can download the Trunk Analytics CLI and mark it executable with the following command:
 
 ```bash
 curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk

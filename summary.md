@@ -74,7 +74,7 @@
   * [Microsoft Teams Integration](flaky-tests/webhooks/microsoft-teams-integration.md)
   * [GitHub Issues Integration](flaky-tests/webhooks/github-issues-integration.md)
   * [Linear Integration](flaky-tests/webhooks/linear-integration.md)
-* [Uploader CLI Reference](flaky-tests/uploader.md)
+* [Trunk Analytics CLI Reference](flaky-tests/uploader.md)
 
 ## CI Autopilot (beta) <a href="#ci-autopilot" id="ci-autopilot"></a>
 
