@@ -4,7 +4,7 @@ description: Mitigate impact of known flaky tests by isolating them at run time
 
 # Quarantining
 
-<figure><img src="../.gitbook/assets/quarantined test.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/quarantined test1.png" alt=""><figcaption></figcaption></figure>
 
 **Quarantining** isolates known flaky tests to prevent them from blocking CI jobs while continuing to run and track their results. The system identifies flaky tests at runtime and overrides their exit codes when they fail, allowing your CI pipeline to pass without requiring code changes to disable problematic tests.
 
