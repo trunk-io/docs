@@ -37,15 +37,15 @@ Actively quarantining tests will significantly change CI results, as failures fr
 
 With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are quarantined, the exit code of the test command will be overridden to return 0 and the CI job will pass.
 
-#### Update Flaky Test Settings
+#### Quarantining Settings
 
-You can enable quarantining by navigating to **Settings** > **Repositories** > repository > **Flaky Tests** > toggle **on** **Enable Test Quarantining**.
+To enable quarantining, navigate to **Settings** > **Repositories** > repository > **Flaky Tests** > toggle **on** **Enable Test Quarantining**.
 
-<figure><img src="../.gitbook/assets/qurantine-enable-settings (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/enable test quarantining.png" alt=""><figcaption></figcaption></figure>
 
 Here's what each of these options does when enabled:
 
-<table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Override Default Stable Branch</td><td>Flaky Test needs a stable branch, and defaults to <code>main</code> you can specify your stable branch here, ex. <code>dev</code>, <code>deploy</code>, <code>prod</code></td></tr><tr><td>Enable Test Quarantining</td><td>When enabled, tests will be quarantined if the <a href="quarantining.md#updates-in-ci">necessary configurations</a> are made in CI.</td></tr><tr><td>Auto-Quarantine</td><td>When enabled, flaky tests are automatically quarantined.</td></tr><tr><td>Summary Reports</td><td>When enabled, PRs will generate a report covering test results, test health, and quarantine status. This will be accessible in the web app and as a GitHub comment. Learn more about <a href="github-pull-request-comments.md">PR Test Summaries</a>.</td></tr></tbody></table>
+<table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>This primary toggle activates the quarantining feature set, unlocking both manual override options and the ability to enable auto-quarantining. For any quarantining to work, the <a href="quarantining.md#updates-in-ci">necessary configurations</a> must also be made in your CI pipeline.</td></tr><tr><td>Auto-Quarantine</td><td>When enabled, any test already identified by Trunk as "flaky" will be automatically quarantined. This saves you from having to manually quarantine each flaky test as it's discovered.</td></tr></tbody></table>
 
 ### Updates In CI
 
