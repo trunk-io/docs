@@ -8,7 +8,7 @@ description: Mitigate impact of known flaky tests by isolating them at run time
 
 **Quarantining** isolates known flaky tests to prevent them from blocking CI jobs while continuing to run and track their results. The system identifies flaky tests at runtime and overrides their exit codes when they fail, allowing your CI pipeline to pass without requiring code changes to disable problematic tests.
 
-**Why use quarantining:** It eliminates the disruption flaky tests cause to your development workflow without losing visibility into test behavior. Quarantined test results are still uploaded to Trunk Flaky Tests and displayed in PR summaries, so you can continue monitoring for real issues while preventing false failures from blocking deployments.
+**Why use quarantining:** It acts as a crucial stopgap, minimizing the disruption from known flaky tests while your team works on fixing them. By quarantining flaky tests, you unblock critical CI pipelines—**especially your merge queue**—and regain development velocity without losing visibility, as these tests continue to run and upload results. This constant stream of data allows you to prioritize fixing the worst offenders based on their ongoing impact.
 
 ### What does "Quarantined" Mean?
 
