@@ -35,7 +35,7 @@ A test failure will only be ignored by CI if the test is already manually quaran
 Actively quarantining tests will significantly change CI results, as failures from quarantined tests no longer cause builds to fail. [Learn more about the effects of quarantining](quarantining.md#whats-affected).
 {% endhint %}
 
-With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are flaky, the exit code of the test command will be overridden to return 0 and the CI job will pass.
+With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are quarantined, the exit code of the test command will be overridden to return 0 and the CI job will pass.
 
 #### Update Flaky Test Settings
 
@@ -149,20 +149,21 @@ If you have tests that should never be quarantined or should always be quarantin
 
 <figure><img src="../.gitbook/assets/qurantine-individual-tests.png" alt=""><figcaption><p>overriding</p></figcaption></figure>
 
-You can update the overriding settings on each test by navigating to the details page for a specific test and clicking the **Override** drop down and selecting to **Always** Quarantine or **Never** Quarantine:
+You can manually control a test's quarantine status from its details page.
+
+* To set an override: Click the **Quarantine** (or **Override**) button, then select either Always Quarantine or Never Quarantine.
+* To remove an override: Click the **Remove Override** button.
+
+When a manual override is active, a banner shows who set it and when.
 
 <table><thead><tr><th width="244">Setting</th><th>Behavior</th></tr></thead><tbody><tr><td>Always Quarantine</td><td>Quarantine a test failure even if the health status is healthy.</td></tr><tr><td>Never Quarantine</td><td>Never quarantine failures, even if the health status is flaky, and quarantining is enabled for the repo.</td></tr></tbody></table>
 
-Any comments added will appear in the Test History timeline on that test's details page.
-
 <figure><img src="../.gitbook/assets/qurantine-individual-tests-revert.png" alt=""><figcaption></figcaption></figure>
 
-To remove an override and return to the repo's default quarantine setting, click on the **Clear Status** button.
+To review a history of all quarantine changes on a test, use the **Quarantine Events** filter within the **Test History** section. This will show every override, setting change, and comment, along with the author and timestamp for each entry.
 
 ### Audit Logs
 
-Trunk provides audit logs for all setting changes and overwrites for individual tests. You can access the audit log by navigating to **Settings** > **Repositories** **>** repository **>** **Flaky Tests** > **Flaky Tests Settings** > **Audit logs** under the Enable Test Quarantining heading.
+Trunk provides audit logs for all setting changes and overwrites for individual tests. You can access the audit log by navigating to **Settings** > **Repositories** **>** repository **>** **Flaky Tests** > **Audit logs** under the Enable Test Quarantining heading.
 
 <figure><img src="../.gitbook/assets/qurantine-audit-logs.png" alt=""><figcaption></figcaption></figure>
-
-You will also see a record of changes in the override settings in the **Status History** tab in each test's details screen.
