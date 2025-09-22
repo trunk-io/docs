@@ -54,7 +54,7 @@ android {
         unitTests {
             all {
                 reports {
-                    junitXml.outputLocation.set(file(./junit-reports"))
+                    junitXml.outputLocation.set(file("./junit-reports"))
                 }
             }
         }

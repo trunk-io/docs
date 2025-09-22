@@ -21,7 +21,7 @@ After correctly generating reports following the above steps, you'll be ready to
 
 Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. You can do this by generating Trunk-compatible XML reports from your test runs.
 
-To output compatible repports, add the `--xunit` argument to your `robot` command:
+To output compatible reports, add the `--xunit` argument to your `robot` command:
 
 ```shell
 robot --xunit=junit.xml TestSuite.robot
