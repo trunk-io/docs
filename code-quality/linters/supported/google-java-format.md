@@ -1,17 +1,6 @@
 ---
-description: google-java-format is a linter for Java
 title: Trunk | How to run google-java-format
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: google-java-format is a linter for Java
 ---
 
 # google-java-format
@@ -28,12 +17,8 @@ trunk check enable google-java-format
 
 google-java-format will never be auto-enabled. It must be enabled manually.
 
-
-
-
-
 ## Links
 
-- [google-java-format site](https://github.com/google/google-java-format#readme)
-- google-java-format Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/google-java-format)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [google-java-format site](https://github.com/google/google-java-format#readme)
+* google-java-format Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/google-java-format)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

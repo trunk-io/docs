@@ -4,17 +4,6 @@ description: >-
   SVGO, or Scalable Vector Graphics Optimizer, is a tool designed to optimize
   SVG files, making them smaller and more efficient without compromising on
   quality.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # SVGO

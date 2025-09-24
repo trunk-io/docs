@@ -3,17 +3,6 @@ title: Trunk | How to run cspell
 description: >-
   CSpell is a linter for identifying and fixing spelling errors in source code,
   documentation, and configuration files, enhancing overall project quality.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # cspell

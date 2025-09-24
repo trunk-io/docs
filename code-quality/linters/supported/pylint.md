@@ -1,17 +1,8 @@
 ---
-description: Learn about Pylint, the versatile Python linter for error detection, code smell elimination, and PEP 8 enforcement.
 title: Trunk | How to run Pylint
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: >-
+  Learn about Pylint, the versatile Python linter for error detection, code
+  smell elimination, and PEP 8 enforcement.
 ---
 
 # Pylint
@@ -23,19 +14,21 @@ You can enable the Pylint linter with:
 ```shell
 trunk check enable pylint
 ```
-![pylint example output](/.gitbook/assets/pylint.gif)
+
+![pylint example output](../../../.gitbook/assets/pylint.gif)
+
 ## Auto Enabling
 
-Pylint will be auto-enabled if any of its config files are present: *`pylintrc`, `.pylintrc`*.
+Pylint will be auto-enabled if any of its config files are present: _`pylintrc`, `.pylintrc`_.
 
 ## Settings
 
 Pylint supports the following config files:
+
 * `pylintrc`
 * `.pylintrc`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info.
-
 
 ## Usage Notes
 
@@ -50,15 +43,8 @@ If you want to run the plugin `pylint-django` as part of your setup, you would a
 
 ```
 
-
-
-
-
-
-
-
 ## Links
 
-- [Pylint site](https://pypi.org/project/pylint/)
-- Pylint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pylint)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [Pylint site](https://pypi.org/project/pylint/)
+* Pylint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/pylint)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

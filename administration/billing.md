@@ -2,16 +2,18 @@
 description: Trunk Subscription Plans
 ---
 
-# Billing
+# Billing & Plans
 
-### Plans
+Trunk offers a **Free**, **Team**, and **Enterprise** plan for access to any/all of our features. The team plan is available for organizations of up to 50 active committers.
 
-#### **Free Plans**
+## Plans
+
+### **Free Plan**
 
 Trunk offers a free tier for small teams and open-source projects to experiment with each of our features. You can use Trunk at no cost if:
 
 * You have 5 or fewer monthly active committers on private repositories, **and**
-* Your monthly test span usage is under the greater of 5 million or 1 million per private committer.
+* Your monthly test span usage is under 5 million
 
 Public repositories are always free for up to 5 million test spans per month.
 
@@ -19,15 +21,15 @@ If you exceed these limits, you'll be prompted to upgrade based on the number of
 
 Similar to [calculating user counts](billing.md#calculating-user-counts), our free tier limits are calculated based on a 30-day rolling window.
 
-<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>Up to 5 private repo committers; unlimited on public repos</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td>5 committers and 5M test spans per month</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>Unlimited usage; pricing begins if >5 private repo committers</td></tr><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Unlimited usage</td></tr><tr><td></td><td>Data backfilling</td><td>Up to 30 days</td></tr></tbody></table>
+<table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Free Tier Limit</th></tr></thead><tbody><tr><td>All</td><td>Users</td><td>Up to 5 private repo committers; unlimited on public repos</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td>5 committers and 5M test spans per month</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>Unlimited usage; pricing begins if >5 private repo committers</td></tr><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Unlimited usage</td></tr></tbody></table>
 
-#### Team Plans
+### Team Plan
 
 Trunk Team Plans offers a monthly subscription plan using a per-seat model. At the end of every billing period, we calculate the number of users using Trunk and update the next month’s invoice to reflect the latest user count. Each seat has access to all of Trunk's features.
 
 <table><thead><tr><th width="155">Feature</th><th width="257">Metric</th><th>Limits</th></tr></thead><tbody><tr><td>Code Quality</td><td>Quality &#x26; security metrics</td><td>Unlimited</td></tr><tr><td>Merge Queue</td><td>PRs merged per month</td><td>Unlimited</td></tr><tr><td>Flaky Tests</td><td>Number of <a data-footnote-ref href="#user-content-fn-1">test spans</a></td><td><p>1 million test spans per seat per month.</p><p>$3 for each additional 1 million test spans.</p></td></tr></tbody></table>
 
-#### **Enterprise Plans**
+### **Enterprise Plan**
 
 Trunk Enterprise offers powerful admin controls, dedicated support, access to custom billing or terms, and features like SSO. If your team is interested in an enterprise plan, please contact [sales@trunk.io](mailto:sales@trunk.io).
 
@@ -39,7 +41,7 @@ You and your team can trial Trunk before signing up for an Enterprise or Team pl
 
 A user is a non-bot user who has made a commit to a private repo with Trunk enabled in the last 30 days. Specifically, we look at their username; if someone changes their username on Git, _we would consider that a separate user_. We do not count contributions to public (open source) repos. Contributor counts are displayed on **Settings** > **Billing**.
 
-{% hint style="danger" %}
+{% hint style="info" %}
 Trunk requires the [Trunk GitHub App](https://github.com/apps/trunk-io) to be installed in your repo to count seats.
 {% endhint %}
 
@@ -69,8 +71,8 @@ You can edit your payment details by navigating to **Settings** > **Billing** an
 
 You can cancel an active Trunk subscription by navigating to **Settings** > **Billing** and clicking the **Cancel Subscription** button. Your plan will transition back into the [free tier](billing.md#free-plans-and-trials); if you want to re-enable this plan, please contact us at [sales@trunk.io](mailto:sales@trunk.io).
 
-{% hint style="danger" %}
-Cancelling a Trunk Plan may result in a degraded product experience. Please contact us at [sales@trunk.io](mailto:sales@trunk.io) to re-enable any canceled plan.
+{% hint style="info" %}
+Cancelling a Trunk Plan and then re-enabling it will degrade the product experience and may lose data. Please contact us at [sales@trunk.io](mailto:sales@trunk.io) to re-enable any canceled plan.
 {% endhint %}
 
 ### A Note on Security

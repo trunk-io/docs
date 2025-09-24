@@ -1,17 +1,6 @@
 ---
-description: txtpbfmt is a linter for Textproto
 title: Trunk | How to run txtpbfmt
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: txtpbfmt is a linter for Textproto
 ---
 
 # txtpbfmt
@@ -26,14 +15,10 @@ trunk check enable txtpbfmt
 
 ## Auto Enabling
 
-txtpbfmt will be auto-enabled if any *Textproto* files are present.
-
-
-
-
+txtpbfmt will be auto-enabled if any _Textproto_ files are present.
 
 ## Links
 
-- [txtpbfmt site](https://github.com/protocolbuffers/txtpbfmt/)
-- txtpbfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/txtpbfmt)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [txtpbfmt site](https://github.com/protocolbuffers/txtpbfmt/)
+* txtpbfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/txtpbfmt)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

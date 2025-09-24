@@ -3,17 +3,6 @@ title: Trunk | How to run OSV-Scanner
 description: >-
   OSV-Scanner is an open-source tool created by Google to detect vulnerabilities
   in projects by scanning dependencies against the OSV database.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # OSV-Scanner

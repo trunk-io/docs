@@ -1,17 +1,6 @@
 ---
 title: Trunk | How to run vale
 description: vale is a linter for prose
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # vale

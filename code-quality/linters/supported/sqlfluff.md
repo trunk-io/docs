@@ -1,17 +1,6 @@
 ---
 title: Trunk | How to run SQLFluff
 description: SQLFluff is a dialect-flexible and configurable SQL linter.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # SQLFluff
