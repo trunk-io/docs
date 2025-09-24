@@ -66,7 +66,7 @@ module.exports = defineConfig({
 
 Before modifying your CI jobs to automatically upload test results to Trunk, try uploading a single test run manually.
 
-You make a upload to Trunk using the following command:
+You make an upload to Trunk using the following command:
 
 ```sh
 curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
