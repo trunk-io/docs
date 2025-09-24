@@ -1,17 +1,6 @@
 ---
-description: terragrunt is a linter for Terragrunt
 title: Trunk | How to run terragrunt
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: terragrunt is a linter for Terragrunt
 ---
 
 # terragrunt
@@ -28,12 +17,8 @@ trunk check enable terragrunt
 
 terragrunt will never be auto-enabled. It must be enabled manually.
 
-
-
-
-
 ## Links
 
-- [terragrunt site](https://terragrunt.gruntwork.io/docs/getting-started/quick-start/)
-- terragrunt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terragrunt)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [terragrunt site](https://terragrunt.gruntwork.io/docs/getting-started/quick-start/)
+* terragrunt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/terragrunt)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

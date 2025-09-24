@@ -1,17 +1,6 @@
 ---
 title: Trunk | How to run remark-lint
 description: remark-lint is a linter for Markdown
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # remark-lint

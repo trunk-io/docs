@@ -3,17 +3,6 @@ title: Trunk | How to run Markdownlint
 description: >-
   Markdownlint is a tool designed to enforce consistency for Markdown files. It
   can include checks for headings, lists, line length, and syntax preferences.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Markdownlint

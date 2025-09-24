@@ -4,17 +4,6 @@ description: >-
   A clang-based C++ linter tool to provide an extensible framework for
   diagnosing and fixing programming errors that can be deduced via static
   analysis.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # clang-tidy

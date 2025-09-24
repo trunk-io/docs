@@ -34,5 +34,7 @@ All requests must be [authenticated](./#authentication) by providing the `x-api-
 [mergeapi.json](../../.gitbook/assets/mergeapi.json)
 {% endopenapi %}
 
-
+{% openapi-operation spec="manual-merge-api" path="/updateQueue" method="post" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
 

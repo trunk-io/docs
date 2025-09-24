@@ -3,17 +3,6 @@ title: Trunk | How to run ShellCheck
 description: >-
   ShellCheck is a static analysis tool designed to identify and report syntax
   errors and potential issues in shell scripts
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # ShellCheck

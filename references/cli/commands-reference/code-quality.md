@@ -23,9 +23,6 @@ trunk check [options]
 
 #### **CI** Options
 
-* `--replace`: Overwrite previously uploaded check run if one exists
-* `--series`: Series name for this upload (usually the branch)
-* `--upload`: Upload lint results to the trunk web app
 * `--ci`: Run in non-interactive mode designed for CI environments
 * `-j`, `--jobs`: Number of concurrent jobs
 

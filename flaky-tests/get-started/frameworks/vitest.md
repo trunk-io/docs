@@ -1,17 +1,6 @@
 ---
 title: Configuring vitest
 description: A guide for generating Trunk-compatible test reports with Vitest
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Vitest
@@ -59,7 +48,53 @@ You need to disable automatic retries if you previously enabled them. Retries co
 
 If you've enabled retries, you can disable them following the [Vitest docs](https://vitest.dev/api/) for more accurate results.
 
+{% hint style="info" %}
+**Note**: Configuration errors can sometimes mask themselves as consistent test failures. If you're seeing file-level test entries instead of individual test cases, resolve configuration issues first before adjusting retry settings. A properly configured test suite should show individual test case names in the JUnit output, not file names.
+{% endhint %}
+
+### Troubleshooting
+
+**Configuration Errors and File-Level Test Failures**
+
+**Issue**: You might see Trunk identifying flaky tests with names that match your test file names (e.g., `auth.test.ts` instead of `should login successfully`) rather than individual test case names.
+
+**Root Cause**: This typically occurs when Vitest encounters configuration errors that prevent it from properly parsing or running the tests in a file. Common scenarios include:
+
+* TypeScript configuration errors in `tsconfig.json`
+* Missing dependencies or import resolution failures
+* Syntax errors in test setup files
+* Invalid Vitest configuration options
+
+**What Happens**: When Vitest cannot execute the individual tests within a file due to configuration issues, it generates a single JUnit test case entry named after the file itself, regardless of how many actual test cases exist in that file.
+
+**How to Diagnose**:
+
+1. Run your tests locally with verbose output: `vitest --reporter=verbose`
+2. Check for configuration warnings or errors in the test output
+3. Look for test files that show as single entries in your JUnit report when they should contain multiple test cases
+
+**How to Fix**:
+
+1. **Check TypeScript Configuration**: Ensure your `tsconfig.json` is valid and includes all necessary paths
+2. **Verify Dependencies**: Make sure all imported modules are properly installed and accessible
+3. **Review Setup Files**: Check any test setup files referenced in your Vitest config for errors
+4. **Validate Vitest Config**: Ensure your `vitest.config.ts` doesn't contain invalid options
+
 ### Try It Locally
+
+#### Validate Test Execution First
+
+Before validating your JUnit reports with Trunk, ensure Vitest can properly execute your tests:
+
+```bash
+# Run tests with detailed output to catch configuration issues
+vitest run --reporter=verbose
+
+# Check that individual test cases appear in output, not just file names
+vitest run --reporter=json | jq '.testResults[].assertionResults'
+```
+
+If you see test files listed as single entries rather than individual test cases, you likely have configuration issues that need to be resolved before proceeding.
 
 You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
@@ -87,10 +122,10 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 
 You can find your Trunk organization slug and token in the settings or by following these [instructions](https://docs.trunk.io/flaky-tests/get-started/ci-providers/otherci#id-1.-store-a-trunk_token-secret-in-your-ci-system). After your upload, you can verify that Trunk has received and processed it successfully in the **Uploads** tab. Warnings will be displayed if the report has issues.
 
-<figure><picture><source srcset="../../../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 ### Next Step
 
 Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Azure DevOps Pipelines</strong></td><td></td><td><a href="../ci-providers/azure-devops-pipelines.md">azure-devops-pipelines.md</a></td><td><a href="../../../.gitbook/assets/azure.png">azure.png</a></td></tr><tr><td><strong>BitBucket Pipelines</strong></td><td></td><td><a href="../ci-providers/bitbucket-pipelines.md">bitbucket-pipelines.md</a></td><td><a href="../../../.gitbook/assets/bitbucket.png">bitbucket.png</a></td></tr><tr><td><strong>BuildKite</strong></td><td></td><td><a href="../ci-providers/buildkite.md">buildkite.md</a></td><td><a href="../../../.gitbook/assets/buildkite.png">buildkite.png</a></td></tr><tr><td><strong>CircleCI</strong></td><td></td><td><a href="../ci-providers/circleci.md">circleci.md</a></td><td><a href="../../../.gitbook/assets/circle-ci.png">circle-ci.png</a></td></tr><tr><td><strong>Drone CI</strong></td><td></td><td><a href="../ci-providers/droneci.md">droneci.md</a></td><td><a href="../../../.gitbook/assets/drone.png">drone.png</a></td></tr><tr><td><strong>GitHub Actions</strong></td><td></td><td><a href="../ci-providers/github-actions.md">github-actions.md</a></td><td><a href="../../../.gitbook/assets/github.png">github.png</a></td></tr><tr><td><strong>Gitlab</strong></td><td></td><td><a href="../ci-providers/gitlab.md">gitlab.md</a></td><td><a href="../../../.gitbook/assets/gitlab.png">gitlab.png</a></td></tr><tr><td><strong>Jenkins</strong></td><td></td><td><a href="../ci-providers/jenkins.md">jenkins.md</a></td><td><a href="../../../.gitbook/assets/jenkins.png">jenkins.png</a></td></tr><tr><td><strong>Semaphore</strong></td><td></td><td><a href="../ci-providers/semaphoreci.md">semaphoreci.md</a></td><td><a href="../../../.gitbook/assets/semaphore.png">semaphore.png</a></td></tr><tr><td><strong>TeamCity</strong></td><td></td><td><a href="../ci-providers/teamcity.md">teamcity.md</a></td><td><a href="../../../.gitbook/assets/teamcity.png">teamcity.png</a></td></tr><tr><td><strong>Travis CI</strong></td><td></td><td><a href="../ci-providers/travisci.md">travisci.md</a></td><td><a href="../../../.gitbook/assets/travis.png">travis.png</a></td></tr><tr><td><strong>Other CI Providers</strong></td><td></td><td><a href="../ci-providers/otherci.md">otherci.md</a></td><td><a href="../../../.gitbook/assets/other.png">other.png</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Azure DevOps Pipelines</strong></td><td></td><td><a href="../ci-providers/azure-devops-pipelines.md">azure-devops-pipelines.md</a></td><td><a href="../../../.gitbook/assets/azure.png">azure.png</a></td></tr><tr><td><strong>BitBucket Pipelines</strong></td><td></td><td><a href="../ci-providers/bitbucket-pipelines.md">bitbucket-pipelines.md</a></td><td><a href="../../../.gitbook/assets/bitbucket.png">bitbucket.png</a></td></tr><tr><td><strong>BuildKite</strong></td><td></td><td><a href="../ci-providers/buildkite.md">buildkite.md</a></td><td><a href="../../../.gitbook/assets/buildkite.png">buildkite.png</a></td></tr><tr><td><strong>CircleCI</strong></td><td></td><td><a href="../ci-providers/circleci.md">circleci.md</a></td><td><a href="../../../.gitbook/assets/circle-ci.png">circle-ci.png</a></td></tr><tr><td><strong>Drone CI</strong></td><td></td><td><a href="../ci-providers/droneci.md">droneci.md</a></td><td><a href="../../../.gitbook/assets/drone.png">drone.png</a></td></tr><tr><td><strong>GitHub Actions</strong></td><td></td><td><a href="../ci-providers/github-actions.md">github-actions.md</a></td><td><a href="../../../.gitbook/assets/github.png">github.png</a></td></tr><tr><td><strong>Gitlab</strong></td><td></td><td><a href="../ci-providers/gitlab.md">gitlab.md</a></td><td><a href="../../../.gitbook/assets/gitlab.png">gitlab.png</a></td></tr><tr><td><strong>Jenkins</strong></td><td></td><td><a href="../ci-providers/jenkins.md">jenkins.md</a></td><td><a href="../../../.gitbook/assets/jenkins.png">jenkins.png</a></td></tr><tr><td><strong>Semaphore</strong></td><td></td><td><a href="../ci-providers/semaphoreci.md">semaphoreci.md</a></td><td><a href="../../../.gitbook/assets/semaphore.png">semaphore.png</a></td></tr><tr><td><strong>TeamCity</strong></td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href="../../../.gitbook/assets/teamcity.png">teamcity.png</a></td></tr><tr><td><strong>Travis CI</strong></td><td></td><td><a href="../ci-providers/travisci.md">travisci.md</a></td><td><a href="../../../.gitbook/assets/travis.png">travis.png</a></td></tr><tr><td><strong>Other CI Providers</strong></td><td></td><td><a href="../ci-providers/otherci.md">otherci.md</a></td><td><a href="../../../.gitbook/assets/other.png">other.png</a></td></tr></tbody></table>

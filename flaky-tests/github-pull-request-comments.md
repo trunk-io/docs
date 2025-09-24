@@ -42,7 +42,7 @@ You should see comments posted by your service account on your next PR.
 
 ## Disable commenting
 
-Pull Request comments are enabled by default. If you wish to disable the comments, you can do so by navigating to the Trunk App > click on your profile > **Settings** > **RepoName**.  In the **Flakey Tests** heading, toggle the **Summary Flaky Tests Reports** setting.
+Pull Request comments are enabled by default. If you wish to disable the comments, you can do so by navigating to the Trunk App > click on your profile > **Settings** > **RepoName**. In the **Flaky Tests** heading, toggle the **Summary Flaky Tests Reports** setting.
 
 ## Troubleshooting
 

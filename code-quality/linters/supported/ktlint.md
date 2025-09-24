@@ -1,17 +1,6 @@
 ---
-description: ktlint is a linter for Kotlin
 title: Trunk | How to run ktlint
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: ktlint is a linter for Kotlin
 ---
 
 # ktlint
@@ -26,14 +15,10 @@ trunk check enable ktlint
 
 ## Auto Enabling
 
-ktlint will be auto-enabled if any *Kotlin* files are present.
-
-
-
-
+ktlint will be auto-enabled if any _Kotlin_ files are present.
 
 ## Links
 
-- [ktlint site](https://github.com/pinterest/ktlint#readme)
-- ktlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ktlint)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [ktlint site](https://github.com/pinterest/ktlint#readme)
+* ktlint Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/ktlint)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

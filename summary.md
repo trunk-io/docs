@@ -14,7 +14,7 @@
 
 * [Integration with Slack](integration-for-slack.md)
 
-## Flaky Tests (Beta) <a href="#flaky-tests" id="flaky-tests"></a>
+## Flaky Tests
 
 * [Overview](flaky-tests/overview.md)
 * [Get Started](flaky-tests/get-started/README.md)
@@ -31,6 +31,7 @@
     * [Jasmine](flaky-tests/get-started/frameworks/jasmine.md)
     * [Jest](flaky-tests/get-started/frameworks/jest.md)
     * [Karma](flaky-tests/get-started/frameworks/karma.md)
+    * [Kotest](flaky-tests/get-started/frameworks/kotest.md)
     * [Maven](flaky-tests/get-started/frameworks/maven.md)
     * [minitest](flaky-tests/get-started/frameworks/minitest.md)
     * [Mocha](flaky-tests/get-started/frameworks/mocha.md)
@@ -41,7 +42,8 @@
     * [Playwright](flaky-tests/get-started/frameworks/playwright.md)
     * [Pytest](flaky-tests/get-started/frameworks/pytest.md)
     * [Robot Framework](flaky-tests/get-started/frameworks/robot-framework.md)
-    * [RSpec](flaky-tests/get-started/frameworks/rspec.md)
+    * [RSpec](flaky-tests/get-started/frameworks/rspec/README.md)
+      * [RSpec (Manual Uploads)](flaky-tests/get-started/frameworks/rspec/manual-uploads.md)
     * [Swift Testing](flaky-tests/get-started/frameworks/swift-testing.md)
     * [Vitest](flaky-tests/get-started/frameworks/vitest.md)
     * [XCTest](flaky-tests/get-started/frameworks/xctest.md)
@@ -56,9 +58,9 @@
     * [GitLab](flaky-tests/get-started/ci-providers/gitlab.md)
     * [Jenkins](flaky-tests/get-started/ci-providers/jenkins.md)
     * [Semaphore CI](flaky-tests/get-started/ci-providers/semaphoreci.md)
-    * [TeamCity](flaky-tests/get-started/ci-providers/teamcity.md)
     * [Travis CI](flaky-tests/get-started/ci-providers/travisci.md)
     * [Other CI Providers](flaky-tests/get-started/ci-providers/otherci.md)
+* [Managing Detected Flaky Tests](flaky-tests/managing-detected-flaky-tests.md)
 * [Dashboard](flaky-tests/dashboard.md)
 * [Flaky Test Detection](flaky-tests/detection.md)
 * [Quarantining](flaky-tests/quarantining.md)
@@ -72,7 +74,63 @@
   * [Microsoft Teams Integration](flaky-tests/webhooks/microsoft-teams-integration.md)
   * [GitHub Issues Integration](flaky-tests/webhooks/github-issues-integration.md)
   * [Linear Integration](flaky-tests/webhooks/linear-integration.md)
-* [Uploader CLI Reference](flaky-tests/uploader.md)
+* [Trunk Analytics CLI Reference](flaky-tests/uploader.md)
+
+## CI Autopilot (beta) <a href="#ci-autopilot" id="ci-autopilot"></a>
+
+* [Overview](ci-autopilot/overview.md)
+* [Get Started](ci-autopilot/get-started/README.md)
+  * [Connect to GitHub](ci-autopilot/get-started/connect-to-github.md)
+  * [Upload test reports](ci-autopilot/get-started/upload-test-reports.md)
+
+***
+
+* [Use CI Autopilot](use-ci-autopilot/README.md)
+  * [Understand root cause analysis](use-ci-autopilot/understand-root-cause-analysis.md)
+  * [Request fixes on PRs](use-ci-autopilot/request-fixes-on-prs.md)
+  * [Apply fixes with MCP](use-ci-autopilot/apply-fixes-with-mcp.md)
+* [Use MCP Server](use-mcp-server/README.md)
+  * [Configuration](use-mcp-server/configuration/README.md)
+    * [Cursor (IDE)](use-mcp-server/configuration/cursor-ide.md)
+    * [GitHub Copilot (IDE)](use-mcp-server/configuration/github-copilot-ide.md)
+    * [Claude Code (CLI)](use-mcp-server/configuration/claude-code-cli.md)
+    * [Gemini (CLI)](use-mcp-server/configuration/gemini-cli.md)
+  * [MCP Tool Reference](use-mcp-server/mcp-tool-reference/README.md)
+    * [Get root cause analysis](use-mcp-server/mcp-tool-reference/get-root-cause-analysis.md)
+    * [Set up test uploads](use-mcp-server/mcp-tool-reference/set-up-test-uploads.md)
+* [Use Dashboard](use-dashboard/README.md)
+  * [Review activity](use-dashboard/review-activity.md)
+  * [Test Uploads](use-dashboard/test-uploads.md)
+  * [Change settings](use-dashboard/change-settings.md)
+* [FAQs](faqs.md)
+
+## Merge Queue
+
+* [Overview](merge-queue/merge-queue.md)
+* [How does it work?](merge-queue/how-does-it-work.md)
+* [Setup](merge-queue/set-up-trunk-merge/readme.md)
+  * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
+  * [Settings](merge-queue/set-up-trunk-merge/advanced-settings.md)
+  * [Integration for Slack](merge-queue/set-up-trunk-merge/integration-for-slack.md)
+* [Migrating From GitHub Merge Queue](merge-queue/migrating-from-github-merge-queue.md)
+* [Concepts and Optimizations](merge-queue/concepts-and-optimizations/README.md)
+  * [Predictive Testing](merge-queue/concepts/predictive-testing.md)
+  * [Optimistic Merging](merge-queue/concepts/optimistic-merging.md)
+  * [Pending Failure Depth](merge-queue/concepts/pending-failure-depth.md)
+  * [Anti-Flake Protection](merge-queue/concepts/anti-flake-protection.md)
+  * [Batching](merge-queue/concepts/batching.md)
+  * [Parallel Queues](merge-queue/concepts-and-optimizations/parallel-queues/README.md)
+    * [Bazel](merge-queue/concepts-and-optimizations/parallel-queues/bazel.md)
+    * [Nx](merge-queue/concepts-and-optimizations/parallel-queues/nx.md)
+    * [API](merge-queue/concepts-and-optimizations/parallel-queues/api.md)
+  * [FAQ](merge-queue/concepts/common-problems.md)
+* [Priority](merge-queue/pr-prioritization.md)
+* [Managing Merge Queue](merge-queue/managing-merge-queue/README.md)
+  * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
+  * [Metrics](merge-queue/managing-merge-queue/metrics.md)
+  * [Command Line](merge-queue/managing-merge-queue/command-line.md)
+* [Webhooks](merge-queue/webhooks.md)
+* [Reference](merge-queue/reference.md)
 
 ## Code Quality
 
@@ -83,9 +141,10 @@
 * [Setup & Installation](code-quality/setup-and-installation/README.md)
   * [Initialize Trunk](code-quality/setup-and-installation/initialize-trunk.md)
   * [Local Linting](code-quality/setup-and-installation/deal-with-existing-issues.md)
-  * [Linting in CI](code-quality/setup-and-installation/prevent-new-issues/README.md)
+  * [Linting in CI](code-quality/setup-and-installation/prevent-new-issues.md)
     * [Migration Guide](code-quality/setup-and-installation/prevent-new-issues/migration-guide.md)
   * [Nightly Report (Deprecated)](code-quality/ci-setup/github-integration.md)
+  * [OpenAI Codex Support](code-quality/setup-and-installation/openai-codex-support.md)
 * [IDE Integration](code-quality/ide-integration/README.md)
   * [VSCode](code-quality/ide-integration/vscode.md)
   * [Neovim](code-quality/ide-integration/neovim.md)
@@ -203,38 +262,8 @@
   * [Custom Linters](code-quality/linters/custom-linters.md)
   * [Shared Configs](code-quality/linters/shared-configs.md)
   * [Upgrades](cli/upgrades.md)
-* [CI Setup](code-quality/ci-setup/README.md)
-  * [GitHub Integration](code-quality/ci-setup/github-integration.md)
-  * [Manual Setup](code-quality/ci-setup/manual-setup.md)
 * [Debugging](code-quality/debugging.md)
 * [Licensing](code-quality/licensing.md)
-
-## Merge Queue
-
-* [Overview](merge-queue/merge-queue.md)
-* [How does it work?](merge-queue/how-does-it-work.md)
-* [Setup](merge-queue/set-up-trunk-merge/readme.md)
-  * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
-  * [Settings](merge-queue/set-up-trunk-merge/advanced-settings.md)
-  * [Integration for Slack](merge-queue/set-up-trunk-merge/integration-for-slack.md)
-* [Concepts and Optimizations](merge-queue/concepts-and-optimizations/README.md)
-  * [Predictive Testing](merge-queue/concepts-and-optimizations/predictive-testing.md)
-  * [Optimistic Merging](merge-queue/concepts-and-optimizations/optimistic-merging.md)
-  * [Pending Failure Depth](merge-queue/concepts-and-optimizations/pending-failure-depth.md)
-  * [Anti-Flake Protection](merge-queue/concepts-and-optimizations/anti-flake-protection.md)
-  * [Batching](merge-queue/concepts-and-optimizations/batching.md)
-  * [Parallel Queues](merge-queue/concepts-and-optimizations/parallel-queues/README.md)
-    * [Bazel](merge-queue/concepts-and-optimizations/parallel-queues/bazel.md)
-    * [Nx](merge-queue/concepts-and-optimizations/parallel-queues/nx.md)
-    * [API](merge-queue/concepts-and-optimizations/parallel-queues/api.md)
-  * [FAQ](merge-queue/concepts-and-optimizations/common-problems.md)
-* [Priority](merge-queue/pr-prioritization.md)
-* [Managing Merge Queue](merge-queue/managing-merge-queue/README.md)
-  * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
-  * [Metrics](merge-queue/managing-merge-queue/metrics.md)
-  * [Command Line](merge-queue/managing-merge-queue/command-line.md)
-* [Webhooks](merge-queue/webhooks.md)
-* [Reference](merge-queue/reference.md)
 
 ## CLI & API References <a href="#references" id="references"></a>
 
@@ -279,14 +308,14 @@
   * [Merge Queue](references/apis/merge.md)
   * [Webhooks Reference](references/apis/webhooks.md)
 
-## Pricing & Security
+## Administration
 
-* [Security](pricing-and-security/security.md)
+* [Security](administration/security.md)
+* [Billing & Plans](administration/billing.md)
 
 ***
 
-* [Billing](billing.md)
-* [Community & Support](community.md)
+* [Support](support.md)
 
 ## Links
 

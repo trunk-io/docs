@@ -14,7 +14,7 @@ Trunk Flaky Tests detect flaky tests by analyzing test results. The health of yo
 
 Trunk Flaky Test provides key repo metrics based on the detected health status of your tests. You'll find metrics for the following information at the top of the Flaky Test dashboard.
 
-<table><thead><tr><th width="209">Metric</th><th>Description</th></tr></thead><tbody><tr><td>Flaky tests</td><td>Number of flaky test cases in your repo.</td></tr><tr><td>Broken tests</td><td>Number of broken test cases in your repo.</td></tr><tr><td>PRs blocked by failed tests</td><td>PRs that have been blocked by failed tests in CI.</td></tr><tr><td>PRs rescued by quarantining</td><td>This figure is available if you have <a href="quarantining.md#enable-quarantining">quarantining enabled</a>. This shows the PRs with CI jobs containing quarantined flaky tests that would have failed if all flaky tests had not been quarantined.</td></tr><tr><td>Engineering hours saved</td><td>Estimated engineering hours saved based on the study <a href="https://ics.uci.edu/~gmark/chi08-mark.pdf">The Cost of Interrupted Work</a>, where each context switch to debug a flaky test costs 23 minutes of focused productivity.</td></tr></tbody></table>
+<table><thead><tr><th width="209">Metric</th><th>Description</th></tr></thead><tbody><tr><td>Flaky tests</td><td>Number of flaky test cases in your repo.</td></tr><tr><td>Broken tests</td><td>Number of broken test cases in your repo.</td></tr><tr><td>PRs blocked by failed tests</td><td>PRs that have been blocked by failed tests in CI.</td></tr></tbody></table>
 
 These numbers are important for understanding the overall health of your repo’s tests, how flaky and broken tests impact your developer productivity, and the developer hours saved from quarantining tests. You can also view the trends in these numbers in the trend charts.
 
@@ -24,15 +24,23 @@ These numbers are important for understanding the overall health of your repo’
 
 You can view a table of all your test cases and their current status in Trunk Flaky Tests.
 
-Filters can also be set on the table to narrow test results down by test status, quarantine setting, ticket status, or by the name, file, or suite name of the test case.&#x20;
+Filters can also be set on the table to narrow test results down by test status, quarantine setting, ticket status, or by the name, file, or suite name of the test case.
 
 The table is sorted by default by the number of PRs impacted by the case, which is the best way to measure the impact of a flaky test. You can click on each test case to view [the test case’s details](dashboard.md#test-case-details).
 
 <table><thead><tr><th width="188">Column</th><th>Description</th></tr></thead><tbody><tr><td>Tests</td><td>The variant, file path, and name of the test case.</td></tr><tr><td>Status</td><td>The health status of the test case.</td></tr><tr><td>Failure Rate</td><td>The percentage of CI runs failed due to this broken or flaky test case.</td></tr><tr><td>PRs Impacted</td><td>The number of PRs that have been affected by this test case failing in CI.</td></tr><tr><td>Last Run</td><td>The most recent timestamp for an upload test run.</td></tr></tbody></table>
 
+{% hint style="info" %}
+Test Deletion & History
+
+* Inactive tests disappear from the dashboard automatically after 30 days and are fully removed after 45 days. Tests cannot be manually deleted.
+* Changing test identifiers (e.g., adding file paths) creates new test entries — merging with old history isn’t supported.
+* To reduce noise, mark old or unused tests as Healthy while waiting for them to expire.
+{% endhint %}
+
 ### Test Case Details
 
-<figure><picture><source srcset="../.gitbook/assets/flaky-tests-details-v2-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-details-v2-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/flaky-tests-failure-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-failure-details-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 You can _click_ on any of the test cases listed on the Flaky Test dashboard to access the test case’s details. On a test's details page, you can find:
 
@@ -44,9 +52,9 @@ This is in addition to information like ticket status and the current codeowner.
 
 ### **Code Owners**
 
-If you have a codeowners file configured in your repos, you will see who owns each flaky test in the test details view. We support code owners for [GitHub](https://docs.gitlab.com/ee/user/project/codeowners/) and [GitLabs](https://docs.gitlab.com/ee/user/project/codeowners/) repos.
+If you have a codeowners file configured in your repos, you will see who owns each flaky test in the test details view. We support code owners for [GitHub](https://docs.gitlab.com/ee/user/project/codeowners/) and [GitLab](https://docs.gitlab.com/ee/user/project/codeowners/) repos.
 
-<figure><picture><source srcset="../.gitbook/assets/details-code-owners-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/details-code-owners-light (1).png" alt=""></picture><figcaption><p>You can find the code owners of each test on the top right of the test details screen.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/details-code-owners-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/details-code-owners-light.png" alt=""></picture><figcaption><p>You can find the code owners of each test on the top right of the test details screen.</p></figcaption></figure>
 
 This information will also be provided when creating a ticket with the [Jira integration](ticketing-integrations/jira-integration.md) or [webhooks](webhooks/).
 
@@ -56,15 +64,21 @@ This information will also be provided when creating a ticket with the [Jira int
 
 The Failure Types table shows the history of past test runs grouped by unique failure types.
 
-The Failure Type is a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, commit hash, duration, and time.&#x20;
+The Failure Type is a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, duration, and time.
 
 ### Failure Details
 
 You can click on any of these test runs to see the detailed stack trace:
 
-<figure><picture><source srcset="../.gitbook/assets/test-run-detail-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-run-detail-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/run-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/run-details-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 You can flip through the stack traces of similar failures across different test runs by clicking the left and right arrow buttons. You can also see other similar failures on this and other tests.
+
+#### Go to the CI Job Logs
+
+If you want to see full logging of the original CI job for an individual test failure, you can click **Logs** in the expanded failure details panel to go to the job's page in your CI provider.
+
+<figure><picture><source srcset="../.gitbook/assets/failure-logs-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/failure-logs-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 ### **Test History**
 

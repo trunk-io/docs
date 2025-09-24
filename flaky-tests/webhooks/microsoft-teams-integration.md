@@ -98,6 +98,9 @@ function summarizeTestCase(payload) {
         ? new Date(status.timestamp).toLocaleString()
         : "Unknown";
 
+    // most_common_failures is a beta feature currently being tested
+    // If you are not on the beta it will be an empty array
+    // Want to try it out? Ask in slack.trunk.io
     const failureBlocks = most_common_failures.map(failure => ({
         type: "TextBlock",
         text: `• ${failure.summary}`,

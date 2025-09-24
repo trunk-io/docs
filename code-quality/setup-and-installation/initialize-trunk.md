@@ -10,49 +10,9 @@ The Trunk CLI can be installed in many different ways depending on your use case
 We recommend installing the CLI via **NPM** if you’re already using NPM, or using **cURL** and **committing the launcher to Git** for all other projects. Both methods allow your teammates to use Trunk without needing an additional install step.
 {% endhint %}
 
-#### Using NPM
+#### The Trunk Launcher
 
-If your project uses a `package.json`, you can specify the Trunk Launcher as a dependency so your developers can start using Trunk after installing Node dependencies.
-
-{% tabs %}
-{% tab title="npm" %}
-```sh
-npm install -D @trunkio/launcher
-```
-{% endtab %}
-
-{% tab title="pnpm" %}
-```sh
-pnpm add -D @trunkio/launcher
-```
-{% endtab %}
-
-{% tab title="yarn" %}
-```sh
-yarn add -D @trunkio/launcher
-```
-{% endtab %}
-
-{% tab title="bun" %}
-```sh
-bun install -D @trunkio/launcher
-```
-{% endtab %}
-{% endtabs %}
-
-Then add Trunk Launcher in your `package.json` as a script:
-
-```json
-{
-  "scripts": {
-    "trunk": "trunk",
-    "lint": "trunk check",
-    "fmt": "trunk fmt"
-  }
-}
-```
-
-#### Using cURL
+The easiest way to give everyone access to Trunk is to use the Trunk launcher. The Trunk launcher is a small script that will automatically install and run Trunk when invoked for the first time, similar to other command line tools like the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
 
 You can install the [Trunk Launcher](../../references/cli/install.md#the-trunk-launcher) script directly by downloading it through cURL. The launcher script supports both macOS and Linux environments.
 
@@ -73,14 +33,43 @@ curl https://get.trunk.io -fsSL | bash -s -- -y
 To allow your teammates to use `trunk` without installing anything, the launcher can be committed directly into your repo:
 
 ```
-curl -LO https://trunk.io/releases/trunk
+curl -fsSLO --retry 3 https://trunk.io/releases/trunk
 chmod +x ./trunk
 git commit ./trunk -m "Commit Trunk to our repo"
 ```
 
-When the launcher is called for the first time by your teammates, the Trunk Launcher will download, manage, and run the appropriate binary for the environment.
+#### Other ways to install
 
-#### Other Environments
+<details>
+
+<summary>NPM</summary>
+
+If your project uses a `package.json`, you can specify the Trunk Launcher as a dependency so your developers can start using Trunk after installing Node dependencies.
+
+```sh
+# npm
+npm install -D @trunkio/launcher
+# pnpm
+pnpm add -D @trunkio/launcher
+# yarn
+yarn add -D @trunkio/launcher
+# bun
+bun install -D @trunkio/launcher
+```
+
+Then add Trunk Launcher in your `package.json` as a script:
+
+```json
+{
+  "scripts": {
+    "trunk": "trunk",
+    "lint": "trunk check",
+    "fmt": "trunk fmt"
+  }
+}
+```
+
+</details>
 
 <details>
 
@@ -130,21 +119,13 @@ You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17
 
 Before you can use Trunk, you need to initialize Trunk in your repo. Initializing Trunk will generate the necessary config files, recommend linters based on your project files, and configure githooks.
 
-#### NPM installs
-
-If you installed `trunk` via NPM, you will need to run it by using `npm exec`. In the rest of the documentation, all commands will be shown as `trunk <subcommand>` for brevity.
-
-```sh
-npm exec trunk init
-```
-
-#### Other installs
+Initialize Trunk by running the `init` command.
 
 ```bash
-trunk init
+./trunk init
 ```
 
-Follow the wizard, you'll be prompted with the following options:
+Follow the wizard. You'll be prompted with the following options:
 
 1. `Sign up or log in`: Connect the CLI with your Trunk account to enable all of Trunk's features.
 2. Trunk will automatically [enable the most useful linters](https://docs.trunk.io/code-quality/setup-and-installation/initialize-trunk#recommended-linters) based on the files in your repo.
@@ -166,6 +147,16 @@ repo:
 ... rest of configs
 ```
 {% endhint %}
+
+### Run Linters
+
+After initialization, you can run the [recommended set of linters](initialize-trunk.md#recommended-linters) by running:
+
+```
+./trunk check
+```
+
+:tada: And just like that, you're ready to start using Trunk Code Quality.
 
 ### The .trunk Directory
 

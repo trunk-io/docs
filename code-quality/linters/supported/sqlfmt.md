@@ -1,17 +1,6 @@
 ---
-description: sqlfmt is a linter for SQL
 title: Trunk | How to run sqlfmt
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: sqlfmt is a linter for SQL
 ---
 
 # sqlfmt
@@ -28,12 +17,8 @@ trunk check enable sqlfmt
 
 sqlfmt will never be auto-enabled. It must be enabled manually.
 
-
-
-
-
 ## Links
 
-- [sqlfmt site](https://github.com/tconbeer/sqlfmt#readme)
-- sqlfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfmt)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [sqlfmt site](https://github.com/tconbeer/sqlfmt#readme)
+* sqlfmt Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sqlfmt)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

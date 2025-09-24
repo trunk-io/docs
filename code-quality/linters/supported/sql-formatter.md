@@ -1,17 +1,6 @@
 ---
-description: sql-formatter is a linter for SQL
 title: Trunk | How to run sql-formatter
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: sql-formatter is a linter for SQL
 ---
 
 # sql-formatter
@@ -28,12 +17,8 @@ trunk check enable sql-formatter
 
 sql-formatter will never be auto-enabled. It must be enabled manually.
 
-
-
-
-
 ## Links
 
-- [sql-formatter site](https://github.com/sql-formatter-org/sql-formatter#readme)
-- sql-formatter Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sql-formatter)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [sql-formatter site](https://github.com/sql-formatter-org/sql-formatter#readme)
+* sql-formatter Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/sql-formatter)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)

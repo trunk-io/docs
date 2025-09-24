@@ -6,19 +6,26 @@ hidden: true
 
 ### What's deprecated
 
-The Code Quality dashboard on the Trunk Web App will be deprecated. Along with it, CI workflows configured and managed by the Trunk Web App will also be deprecated.
+The Code Quality dashboard in the Trunk web app has been deprecated, along with the ability to configure and manage CI workflows in the web app.
 
-This means the Code Quality tab in the Trunk Web App will be deprecated.
+This means the Code Quality tab in the Trunk web app has been deprecated.
 
 <figure><img src="../../../.gitbook/assets/CQ Deprecation (2).png" alt=""><figcaption><p>The Code Quality tab in the Trunk Web App.</p></figcaption></figure>
 
-This also means checking for issues nightly, and pull requests will be deprecated. You can check if you’re using these features in the Code Quality section of your repo settings. You can still run Code Quality in CI. Instructions for a replacement workflow will be provided later in this guide.
+This deprecation impacts the following Code Quality features configured in the web app:
+
+* Checking for issues nightly.
+* Checking for issues on pull requests.
+
+**You can still run Code Quality in CI and on PRs.** See the [guide below](migration-guide.md#migrating-nightly-and-pr-jobs) for step-by-step migration instructions.
+
+You only need to migrate if you have configured these features with the web app. You can check if you use these features through the web app in the Code Quality section of your repo settings.
 
 <figure><img src="../../../.gitbook/assets/CQ Nightly Deprecation.png" alt=""><figcaption><p>You can check in the Code Quality settings of your repo to see if you're currently using deprecated features.</p></figcaption></figure>
 
-Lastly, Trunk will no longer collect your linting issues. This means the \`--upload\` flag will no longer work. You will also stop receiving Slack notifications about new issues discovered by linters.
+Lastly, Trunk will no longer collect your linting issues. You will also stop receiving Slack notifications about new issues discovered by linters.
 
-This means if you're using these flags on your `trunk check` command, they will no longer work.
+If you're using the `--upload` flag on your `trunk check` command, it will no longer work:
 
 ```
 trunk check --upload --series=main
@@ -30,11 +37,11 @@ From both usage data and community feedback, we know the core value of Code Qual
 
 ### Migrating nightly and PR jobs
 
-Nightly and PR jobs configured through the Trunk Web App will no longer be supported. You can migrate these workflows to run as a step in your existing CI pipelines.
+Nightly and PR jobs configured through the Trunk web app will no longer be supported. However, you can still run these checks by migrating these workflows to run as a step in your existing CI pipelines.
 
-#### Run on PRs using GitHub Actions
+#### Run on PRs on GitHub Actions
 
-Trunk provides a [GitHub Action](https://github.com/trunk-io/trunk-action) to help you lint your code in CI. You add it as a step to your workflows. To run on pull requests or on a schedule, you can configure the appropriate triggers for your workflow.&#x20;
+Trunk provides a [GitHub action](https://github.com/trunk-io/trunk-action) to help you lint your code in CI. You add it as a step to your workflows. To run on pull requests or on a schedule, you can configure the appropriate triggers for your workflow.&#x20;
 
 ```yaml
 name: Trunk Code Quality
@@ -59,7 +66,9 @@ You will still receive inline comments about your errors if you run the action w
 
 <figure><img src="../../../.gitbook/assets/CQ Deprecation (1).png" alt=""><figcaption><p>Inline linter errors and warnings as you review PRs. </p></figcaption></figure>
 
-You can also set up checks on PR without using the provided GitHub Action. Download the CLI in line and run the Code Quality CLI in CI mode to check a PR. Note that you will not receive inline arguments with this approach.
+#### Run on PRs using other CI providers
+
+You can also set up checks on PR without using the provided GitHub action. Download the CLI in line and run the Code Quality CLI in CI mode to check a PR. Note that you will not receive inline arguments with this approach.
 
 ```sh
 curl -fsSLO --retry 3 https://trunk.io/releases/trunk 
@@ -90,9 +99,9 @@ jobs:
       # ... other CI steps
 ```
 
-#### Run nightly using GitHub Action
+#### Run nightly on GitHub Actions
 
-To run Trunk’s [GitHub Action](https://github.com/trunk-io/trunk-action) to lint your entire code base nightly or on a schedule, you can specify the \`check-mode: all\` argument when running the action.
+To run Trunk’s [GitHub action](https://github.com/trunk-io/trunk-action) to lint your entire code base nightly or on a schedule, you can specify the \`check-mode: all\` argument when running the action.
 
 ```yaml
 name: Trunk Code Quality
@@ -146,6 +155,12 @@ jobs:
       # ... other CI steps
 ```
 
+#### Turn off web app services after migrating
+
+After you have migrated off the web app, you can manually turn off **Check for issues in pull requests** in your repo settings in the web app.
+
+If you do not turn these off, you will continue to get warnings in your PRs until the services are shut down.
+
 ### Caching
 
 You can cache Trunk’s binary and install tools to speed up your CI runs. Trunk caches the version of `trunk` itself, linters, formatters, and lint results in the `~/.cache/trunk` folder. Consult the documentation for your CI provider to learn about caching this folder.
@@ -154,6 +169,6 @@ You can cache Trunk’s binary and install tools to speed up your CI runs. Trunk
 
 Uploads and web reports based on Code Quality issues are no longer supported after this deprecation. These less-used features are deprecated so we can better maintain the core metalinter features of Code Quality. While an online report is no longer available, Trunk still produces standardized output by reformatting each linter’s output.
 
-You will also stop receiving Slack notifications about new issues in your repo. Since Trunk is no longer able to receive uploads about your linter runs, it can’t send Slack notifications about them.
+You will also stop receiving Slack notifications about new issues in your repo. Since Trunk no longer ingests uploads about your linter runs, it can’t send Slack notifications about them.
 
 If you have additional questions or concerns, please reach out to us on [Slack](https://slack.trunk.io/).

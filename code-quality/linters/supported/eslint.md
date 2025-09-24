@@ -1,17 +1,6 @@
 ---
 title: Trunk | How to run ESLint
 description: ESLint statically analyzes your code to quickly find problems.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # ESLint
@@ -59,7 +48,7 @@ Most ESLint users use several plugins, custom parsers, etc. Trunk has turned off
 
 We recommend you disable all Prettier rules in your ESLint config and let Trunk run Prettier automatically on your files. It's much nicer to just autoformat a file than to see a lint error for every missing space.
 
-You can easily do this by:&#x20;
+You can easily do this by:
 
 * adding the `eslint-config-prettier` package
 * adding `prettier` as the last element to the `extends` property in your ESLint config

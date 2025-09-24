@@ -1,5 +1,5 @@
 ---
-description: 'Metalinter for over 100 code checking tools: CLI, IDE, and on the web.'
+description: Metalinter for over 100 code checking tools.
 ---
 
 # Overview
@@ -24,7 +24,7 @@ Maintaining consistency in open-source repos is hard. That's why Trunk Code Qual
 
 {% hint style="danger" %}
 **Deprecation Warning**\
-The Trunk Code Quality web app, Code Quality on PRs, and Code Quality Nightly will soon be deprecated. Follow the instructions on the [Linting in CI](setup-and-installation/prevent-new-issues/) page to migrate off these features.
+The Trunk Code Quality web app, Code Quality on PRs, and Code Quality Nightly will soon be deprecated. Follow the instructions on the [Linting in CI](setup-and-installation/prevent-new-issues.md) page to migrate off these features.
 {% endhint %}
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Trunk CLI</strong></td><td>Initialize Code Quality in your projects using the Trunk CLI.</td><td></td><td><a href="setup-and-installation/initialize-trunk.md">initialize-trunk.md</a></td></tr><tr><td><strong>IDE Integration</strong></td><td>Initialize Code Quality in your projects using a VSCode extension.</td><td></td><td><a href="ide-integration/">ide-integration</a></td></tr></tbody></table>

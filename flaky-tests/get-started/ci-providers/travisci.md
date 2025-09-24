@@ -42,7 +42,9 @@ Store the Trunk slug and API token obtained in the previous step as new secrets 
 Add a script step after running tests in each of your CI jobs that run tests. This should be run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
 {% hint style="danger" %}
-You must upload tests from both PR and [**stable branches**](https://docs.trunk.io/flaky-tests/detection#stable-branches), such as `main`, `master`, or `develop` in CI for Trunk to detect flaky tests. Trunk will not detect flaky tests without uploads from both PR and stable branches.&#x20;
+It is important to upload test results from CI runs on [**stable branches**](../../detection.md#stable-branches), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
+
+Trunk can also detect test flakes on PR and merge branches. To best detect flaky tests, it is recommended to upload test results from stable, PR, and merge branch CI runs.
 
 [Learn more about detection](../../detection.md)
 {% endhint %}
@@ -90,7 +92,18 @@ node_js:
   - 20
 script:
   - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-  - ./trunk flakytests upload --xcresults-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+  - ./trunk flakytests upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+```
+{% endtab %}
+
+{% tab title="RSpec plugin" %}
+```yaml
+language: node_js
+dist: jammy
+node_js:
+  - 20
+script:
+  - TRUNK_ORG_URL_SLUG=$TRUNK_ORG_SLUG TRUNK_API_TOKEN=$TRUNK_TOKEN bundle exec rspec
 ```
 {% endtab %}
 {% endtabs %}

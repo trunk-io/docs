@@ -44,7 +44,7 @@ Flaky Tests creates detailed reports for individual test failures so you can deb
 
 Test details will summarize all the unique ways a flaky test fails and let you flip through the relevant stack traces in the Trunk app.
 
-<figure><picture><source srcset="../.gitbook/assets/test-run-detail-dark (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-run-detail-light (1).png" alt=""></picture><figcaption><p>Full failure stack traces</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/run-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/run-details-light.png" alt=""></picture><figcaption><p>Full failure stack traces</p></figcaption></figure>
 
 To learn more, [see our docs about the detection of flaky tests](detection.md#test-case-details).
 

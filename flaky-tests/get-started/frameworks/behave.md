@@ -1,16 +1,5 @@
 ---
 description: A guide for generating Trunk-compatible test reports for Behave
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Behave
@@ -69,7 +58,7 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 
 Before modifying your CI jobs to automatically upload test results to Trunk, try uploading a single test run manually.
 
-You make a upload to Trunk using the following command:
+You make an upload to Trunk using the following command:
 
 ```sh
 curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
@@ -80,7 +69,7 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 
 You can find your Trunk organization slug and token in the settings or by following these [instructions](https://docs.trunk.io/flaky-tests/get-started/ci-providers/otherci#id-1.-store-a-trunk_token-secret-in-your-ci-system). After your upload, you can verify that Trunk has received and processed it successfully in the **Uploads** tab. Warnings will be displayed if the report has issues.
 
-<figure><picture><source srcset="../../../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 ### Next Steps
 

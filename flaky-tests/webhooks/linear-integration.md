@@ -270,6 +270,9 @@ ___
 __The  most common failure reason (out of ${most_common_failures.length} identified failure reason) are:__
 
 ${
+  // most_common_failures is a beta feature currently being tested
+  // If you are not on the beta it will be an empty array
+  // Want to try it out? Ask in slack.trunk.io
   most_common_failures.map((failure, index) => {
     return `**Reason #${index + 1}**: "${failure.summary}" \n`
   })

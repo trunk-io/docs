@@ -4,7 +4,7 @@ description: Learn how Trunk detects and labels flaky tests
 
 # Flaky Test Detection
 
-Trunk detects flaky tests by analyzing test results uploaded from your CI jobs. This page covers how flaky tests are detected and how they're labeled after Trunk receives uploaded test results.&#x20;
+Trunk detects flaky tests by analyzing test results uploaded from your CI jobs. This page covers how flaky tests are detected and how they're labeled after Trunk receives uploaded test results.
 
 <figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -16,11 +16,11 @@ You can learn more about how tests are uploaded to Trunk before they're labeled 
 Trunk typically requires 10+ runs per test on CI to start accurately detecting flaky tests. For example, detecting a flaky test that fails 25% of the time takes 9 runs to achieve 90% confidence in having seen it flake. Depending on the repository’s velocity, this could take hours or days.
 {% endhint %}
 
-Trunk detects flaky tests by analyzing the test results uploaded from your CI jobs. Each new upload is processed and compared with historical test results to detect flaky tests. Trunk emphasizes each result differently depending on which branch it's run on. \
+Trunk detects flaky tests by analyzing the test results uploaded from your CI jobs. Each new upload is processed and compared with historical test results to detect flaky tests. Trunk emphasizes each result differently depending on which branch it's run on.\
 \
 **This is an asynchronous process, and it may take up to an hour for an upload's results to be reflected in** [**the dashboard**](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard)**.**
 
-<figure><picture><source srcset="../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption><p>The uploads tab contains results received from past CI jobs.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption><p>The uploads tab contains results received from past CI jobs.</p></figcaption></figure>
 
 ### How We Detect Flakiness
 
@@ -32,13 +32,13 @@ Uploading all test results from your repository will result in the fastest and m
 
 ### Stable Branches
 
-Trunk detects flaky tests with the assumption that automated tests should be passing before being merged into stable branches like `main`. This means failures on `main` are unexpected and indicate flakiness or a broken test.&#x20;
+Trunk detects flaky tests with the assumption that automated tests should be passing before being merged into stable branches like `main`. This means failures on `main` are unexpected and indicate flakiness or a broken test.
 
 {% hint style="info" %}
 Stable branches are sometimes referred to as _protected_ or _default_ branches.
 {% endhint %}
 
-Flaky Tests will look for `main` to use as a stable branch by default. You can override the default selection and set a custom stable branch, for example, `master` or`develop`.
+Flaky Tests will use `main` as a stable branch by default. You can override the default selection and set a custom stable branch, for example, `master` or `develop`.
 
 #### Overriding Stable Branch Defaults
 
@@ -51,16 +51,16 @@ Flaky Test users with the administrator role can update the current stable branc
 3. Update the **Override Default Stable Branch** setting with the name of your stable branch.
 
 {% hint style="warning" %}
-Changing the stable branch will not re-build your test history, a stable branch change will only be applied to new test runs.&#x20;
+Changing the stable branch will not rebuild your test history, a stable branch change will only be applied to new test runs.
 
 Flaky Tests will require additional CI runs on the updated stable branch to detect test flakes.
 {% endhint %}
 
 #### Pull Requests
 
-Tests run on pull requests are expected to fail, so these PR failures are not directly used to detect flaky tests.
+Flaky tests are only detected on pull requests (PRs) when a test produces different results on the same git commit. This often occurs when a PR is opened, the tests initially fail, and then pass when re-run.
 
-Flaky tests will produce inconsistent results even when run on the same code with the same input. Pull requests are where we see this behavior the most often: an engineer opens a pull request, sees a test fail, re-runs the code, and sees the test pass. If a test is detected to produce different results on the same git commit, which means different results on the same code, we consider that test to be flaky.
+Tests failing on different git commits in PRs are not used as a signal of flakiness. This is because code changes in PRs can lead to expected test failures that will be fixed before the PR is merged.
 
 #### Merge Queue
 
@@ -104,6 +104,16 @@ Variant names are displayed in brackets next to test names in your dashboard:
 Trunk classifies all tests into one of three categories based on the history of each test:
 
 <table><thead><tr><th width="178">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
+
+### Override Test Status
+
+If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status.  Tests can be manually marked as "Flaky" or "Healthy"&#x20;
+
+<figure><img src="../.gitbook/assets/manual-test-mark.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+Be sure to include a meaningful description when overriding the test status to help your team track any issues.
+{% endhint %}
 
 ### Next Steps
 

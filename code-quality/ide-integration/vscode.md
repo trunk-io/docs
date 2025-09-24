@@ -10,12 +10,6 @@ If Trunk has not initialized itself in single-player mode, then you will need to
 
 ![initialize trunk](https://static.trunk.io/assets/vscode_init_trunk.png)
 
-or via the command line: just install the CLI and run `trunk init` in your repo.
-
-* Install Trunk → `curl https://get.trunk.io -fsSL | bash`
-* Setup Trunk in your repo → `trunk init`
-* See and fix issues as you code in VSCode → **You're in the right place 👍**
-
 ### Features
 
 #### Discovery

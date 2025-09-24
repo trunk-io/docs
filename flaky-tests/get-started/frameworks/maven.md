@@ -1,17 +1,6 @@
 ---
 title: Configuring maven
 description: A guide for generating Trunk-compatible test reports for Maven
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Maven
@@ -58,6 +47,21 @@ You can change the report file path by configuring the `maven-surefire-plugin` p
 
 The example above will output JUnit XML reports that can be located with the `/target/junit/*.xml` glob.
 
+#### Using Kotlin and Kotest
+
+If you have a Kotlin project and are using the Kotest test framework, you also need to include `kotest-extensions-junitxml` in your project's `pom.xml`. This allows Kotest to generate JUnit XML reports.
+
+{% code title="pom.xml" %}
+```xml
+<dependency>
+    <groupId>io.kotest</groupId>
+    <artifactId>kotest-extensions-junitxml-jvm</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+```
+{% endcode %}
+
 #### Disable Retries
 
 You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
@@ -96,7 +100,7 @@ curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
 
 You can find your Trunk organization slug and token in the settings or by following these [instructions](https://docs.trunk.io/flaky-tests/get-started/ci-providers/otherci#id-1.-store-a-trunk_token-secret-in-your-ci-system). After your upload, you can verify that Trunk has received and processed it successfully in the **Uploads** tab. Warnings will be displayed if the report has issues.
 
-<figure><picture><source srcset="../../../.gitbook/assets/uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 ### Next Steps
 

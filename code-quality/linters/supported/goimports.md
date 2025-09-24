@@ -1,17 +1,6 @@
 ---
-description: goimports is a linter for Go
 title: Trunk | How to run goimports
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: goimports is a linter for Go
 ---
 
 # goimports
@@ -28,12 +17,8 @@ trunk check enable goimports
 
 goimports will never be auto-enabled. It must be enabled manually.
 
-
-
-
-
 ## Links
 
-- [goimports site](https://pkg.go.dev/golang.org/x/tools/cmd/goimports)
-- goimports Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/goimports)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+* [goimports site](https://pkg.go.dev/golang.org/x/tools/cmd/goimports)
+* goimports Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/goimports)
+* Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
