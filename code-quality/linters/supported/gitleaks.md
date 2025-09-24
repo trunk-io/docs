@@ -25,9 +25,9 @@ Gitleaks will be auto-enabled if any of its config files are present: _`.gitleak
 
 Gitleaks supports the following config files:
 
-- `.gitleaks.config`
-- `.gitleaks.toml`
-- `.gitleaksignore`
+- * `.gitleaks.config`
+- * `.gitleaks.toml`
+- * `.gitleaksignore`
 
 You can move these files to `.trunk/configs` and `trunk check` will still find them. See [Moving Linters](../configure-linters.md#moving-linters) for more info.
 
@@ -45,6 +45,6 @@ Again, this is not recommended. Just use Gitleaks v8 or later with go 1.18 or la
 
 ## Links
 
-- [Gitleaks site](https://gitleaks.io/)
-- Gitleaks Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks)
-- Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
+- * [Gitleaks site](https://gitleaks.io/)
+- * Gitleaks Trunk Code Quality [integration source](https://github.com/trunk-io/plugins/tree/main/linters/gitleaks)
+- * Trunk Code Quality's [open source plugins repo](https://github.com/trunk-io/plugins/tree/main)
