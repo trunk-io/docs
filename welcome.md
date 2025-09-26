@@ -1,17 +1,17 @@
 ---
-description: Trunk is a DevEx platform to check, test, merge, and monitor your code.
+description: Trunk is an AI DevOps platform for reliable testing and CI.
 ---
 
 # Welcome
 
-### Your AI DevOps Assistant
+### Your AI DevOps Platform
 
-Trunk is a DevOps/DevEx (Developer Operations/Developer Experience) platform that uses an autonomous AI assistant to help you detect and root cause problems before they block your team.
+Trunk is an AI DevOps platform that uses a specialized async AI agent to help you detect and root cause problems before they block your team.
 
 By collecting insights from your CI jobs and test results, Trunk can automatically detect problems in your CI, detect the root cause, alert developers, and help you take action through the Trunk MCP server.
 
 {% hint style="success" %}
-Sign up for [the waitlist](https://trunk.io/assistant), and we'll reach out when we're ready to onboard you.
+Sign up for the [CI Autopilot waitlist](https://trunk.io/ci-autopilot), and we'll reach out when we're ready to onboard you.
 {% endhint %}
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Connect to Trunk</strong></td><td><a href="setup-and-configuration/connecting-to-trunk.md">connecting-to-trunk.md</a></td></tr><tr><td><strong>Configure Flaky Tests</strong></td><td><a href="flaky-tests/get-started/">get-started</a></td></tr><tr><td><strong>Install the CLI</strong></td><td><a href="references/cli/install.md">install.md</a></td></tr></tbody></table>
@@ -22,7 +22,7 @@ Sign up for [the waitlist](https://trunk.io/assistant), and we'll reach out when
 
 An autonomous assistant continuously detects and quarantines flaky or broken tests before they block developers.
 
-[Learn more about Detection](https://docs.trunk.io/flaky-tests/detection)
+[Learn more about flaky test detection](https://docs.trunk.io/flaky-tests/detection)
 
 #### Root-cause analysis
 
@@ -32,17 +32,17 @@ Finds and explains the root cause of failed tests or CI jobs using AI, in GitHub
 
 #### Automated developer notifications
 
-Slack DMs, GitHub comments, and GitHub PR annotations with root cause analysis, classification, impact, and suggestions of CI and test failures.
+GitHub comments with root cause analysis, classification, impact, and suggestions of fixes for CI and test failures.
 
 [Learn more about Automated Notifications](flaky-tests/webhooks/)
 
-#### CI health dashboard
+#### Advanced Merge Queue
 
-Unified dashboard showing current and historical CI and test suite health with status classification.
+Enterprise-scale merge queue to merge pull requests quickly while protecting your main branch. Suited for the increased PR velocity of big monorepos in the AI-era with advanced features for handling flakiness and colocating distinct projects in the same repo.
 
-[Learn more about CI health dashboard](flaky-tests/dashboard.md)
+Learn more about [Trunk Merge Queue](broken-reference)
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="flaky-tests/overview.md">overview.md</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="merge-queue/merge-queue.md">merge-queue.md</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>Code Quality</strong></td><td>An extensible superlinter with a builtin language server and pre-existing issue detection</td><td></td><td><a href="code-quality/code-quality.md">code-quality.md</a></td><td><a href=".gitbook/assets/CodeQuality.png">CodeQuality.png</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="flaky-tests/overview.md">overview.md</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="merge-queue/merge-queue.md">merge-queue.md</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr><tr><td><strong>Code Quality</strong></td><td>An extensible superlinter with a builtin language server and pre-existing issue detection</td><td></td><td><a href="code-quality/code-quality.md">code-quality.md</a></td><td><a href=".gitbook/assets/CodeQuality.png">CodeQuality.png</a></td></tr></tbody></table>
 
 ### Join Our Community
 
