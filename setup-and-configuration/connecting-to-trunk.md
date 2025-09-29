@@ -27,12 +27,10 @@ If your team is already on Trunk and you're looking to join an existing organiza
 
 ### Start Using Trunk
 
-After connecting to Trunk, you're ready to get started. Following the [guided onboarding](https://app.trunk.io/onboarding) experience for the feature you'd like to try first.
-
-<figure><picture><source srcset="../.gitbook/assets/onboarding-pick-product-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/onboarding-pick-product-light.png" alt=""></picture><figcaption></figcaption></figure>
+After connecting to Trunk, you're ready to get started.&#x20;
 
 ### Next Steps
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Flaky Tests</h4></td><td><a href="../.gitbook/assets/FlakyTests.png">FlakyTests.png</a></td><td><a href="../flaky-tests/overview.md">overview.md</a></td></tr><tr><td><h4>Code Quality</h4></td><td><a href="../.gitbook/assets/CodeQuality.png">CodeQuality.png</a></td><td><a href="../code-quality/overview/">overview</a></td></tr><tr><td><h4>Merge Queue</h4></td><td><a href="../.gitbook/assets/Merge.png">Merge.png</a></td><td><a href="../merge-queue/merge-queue.md">merge-queue.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Flaky Tests</h4></td><td><a href="../.gitbook/assets/FlakyTests.png">FlakyTests.png</a></td><td><a href="../flaky-tests/overview.md">overview.md</a></td></tr><tr><td><h4>Merge Queue</h4></td><td><a href="../.gitbook/assets/Merge.png">Merge.png</a></td><td><a href="../merge-queue/merge-queue.md">merge-queue.md</a></td></tr></tbody></table>
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-type="content-ref"></th><th data-hidden data-type="content-ref"></th></tr></thead><tbody><tr><td>Manage your Organization</td><td><a href="managing-your-organization/">managing-your-organization</a></td><td></td></tr><tr><td>Install the CLI</td><td></td><td><a href="../references/cli/">cli</a></td></tr></tbody></table>
