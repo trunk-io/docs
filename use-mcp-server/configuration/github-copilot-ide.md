@@ -4,6 +4,12 @@ description: Add Trunk's MCP Server to Github Copilot
 
 # GitHub Copilot (IDE)
 
+## One-click setup
+
+Use the "Add to VS Code" action to add the Trunk MCP server
+
+<p align="center"><a href="vscode:mcp/install?%7B%22name%22%3A%22trunk%22%2C%22url%22%3A%22https%3A//mcp.trunk.io/mcp%22%7D"><img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&#x26;logo=visual-studio-code&#x26;logoColor=white" alt="Add trunk MCP server to VS Code"></a></p>
+
 ### Command Palette setup
 
 Run `CMD+Shift+P` to open the Command Palette and choose `MCP: Add Server`. Choose `HTTP` and input `https://mcp.trunk.io/mcp`. Set the name to `trunk`.
