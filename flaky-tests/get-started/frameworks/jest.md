@@ -39,7 +39,8 @@ Update your Jest config to add `jest-junit` as a reporter:
       {
         "outputDirectory": "./",
         "outputName": "junit.xml",
-        "addFileAttribute": "true"
+        "addFileAttribute": "true",
+        "reportTestSuiteErrors": "true"
       }
     ]
   ]
