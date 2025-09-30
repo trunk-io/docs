@@ -38,4 +38,4 @@ Trunk Merge Queue works with any CI provider as long as you use GitHub for your 
 
 ### **Next Steps**
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Talk to a Developer</td><td></td><td><a href="https://calendly.com/trunk/demo">https://calendly.com/trunk/demo</a></td></tr><tr><td></td><td>Get Started on Your Own</td><td></td><td><a href="set-up-trunk-merge/">set-up-trunk-merge</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Book a Demo</td><td></td><td><a href="https://calendly.com/trunk/demo">https://calendly.com/trunk/demo</a></td></tr><tr><td></td><td>Get Started on Your Own</td><td></td><td><a href="set-up-trunk-merge/">set-up-trunk-merge</a></td></tr></tbody></table>

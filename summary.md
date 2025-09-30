@@ -7,8 +7,8 @@
 ## Setup & Configuration
 
 * [Connecting to Trunk](setup-and-configuration/connecting-to-trunk.md)
-* [Managing Your Organization](setup-and-configuration/managing-your-organization/README.md)
-  * [GitHub App Permissions](setup-and-configuration/managing-your-organization/github-app-permissions.md)
+* [Managing Your Organization](setup-and-configuration/managing-your-organization.md)
+* [Trunk GitHub App](setup-and-configuration/github-app-permissions.md)
 * [Integration with Slack](integration-for-slack.md)
 
 ## CI Autopilot (beta) <a href="#ci-autopilot" id="ci-autopilot"></a>
@@ -105,6 +105,7 @@
 * [Setup](merge-queue/set-up-trunk-merge/readme.md)
   * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
   * [Settings](merge-queue/set-up-trunk-merge/advanced-settings.md)
+  * [Branch Protection & Required Status Checks](merge-queue/set-up-trunk-merge/branch-protection-and-required-status-checks.md)
   * [Integration for Slack](merge-queue/set-up-trunk-merge/integration-for-slack.md)
 * [Migrating From GitHub Merge Queue](merge-queue/migrating-from-github-merge-queue.md)
 * [Concepts and Optimizations](merge-queue/concepts-and-optimizations/README.md)

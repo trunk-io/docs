@@ -28,7 +28,7 @@ Optimistic Merging only works when the [Pending Failure Depth](anti-flake-protec
 
 To protect your merge queue from flakes, enable anti-flake protection by enabling [**Optimistic Merge**](optimistic-merging.md) and setting [**Pending Failure Depth**](pending-failure-depth.md) to an integer greater than 0 in the [Merge UI](../managing-merge-queue/using-the-webapp.md) settings:
 
-<figure><img src="../../.gitbook/assets/pika-1715033350907-2x.png" alt=""><figcaption><p>Setting to enable anti-flake protection</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-anti-flake-protection.png" alt=""><figcaption><p>Settings to enable anti-flake protection.</p></figcaption></figure>
 
 #### What are the tradeoffs?
 

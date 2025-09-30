@@ -10,11 +10,15 @@ The web app can be found at [app.trunk.io](https://app.trunk.io/login?intent=mer
 
 ## Queue Overview
 
-The queue tab provides an overview of the work done by Merge. Merged, testing, and pending PRs should all appear here. Clicking on a row will show the history of that item: click "view more history" to get a better understanding of the item.
+The queue tab provides an overview of the work done by Merge and the work queued to be merged.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>The "view more history" link navigates you to the details page.</p></figcaption></figure>
+&#x20;Merged, testing, and pending PRs should all appear here.&#x20;
 
-### Pull Request Details
+Clicking on an item will show the history to get a better understanding of the item.
+
+<figure><img src="../../.gitbook/assets/merge-queue-screen.png" alt=""><figcaption><p>Clicking on a queue item navigates you to the details page.</p></figcaption></figure>
+
+## Pull Request Details
 
 The PR details show information about a PR, including a link to the PR in GitHub, the history of the PR within Trunk Merge Queue, and what must be done before a PR can be admitted to the queue for PRs that have not entered the queue yet.
 
@@ -24,25 +28,16 @@ When a PR has not been admitted to the queue yet, Trunk Merge Queue waits for:
 2. The PR to be mergeable according to GitHub. If the PR is not mergeable yet, this most likely means that the PR is not meeting all branch protection rules you have set (for example, not all required status checks have passed yet) or has a merge conflict with the target branch
 3. The target branch of the pull request to match the branch that merge queue merges into
 
-<figure><img src="../../.gitbook/assets/image (2) (2).png" alt="" width="510"><figcaption><p>PR readiness details for a PR that has been submitted but has not yet entered the merge queue. In this example, the queue is waiting for impacted targets to be uploaded for the PR and is also waiting for the PR to be mergeable according to GitHub.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-details (1).png" alt=""><figcaption><p>PR readiness details for a PR that has been submitted but has not yet entered the merge queue.</p></figcaption></figure>
 
-In the screenshot above the PR's base branch matches the Merge branch, but the impacted targets are not yet uploaded, but it is not mergable on GitHub yet.
+In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflics with the target branch.
 
-The PR Details panel has a dropdown menu (labeled "**..."**) with actions. From this menu, you can:
+The PR Details panel has a dropdown "**Actions"** menu, where you can:
 
-1. Remove a PR from the queue. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it
-2. Re-queue a PR if it is currently not in the queue
-3. Download any impacted targets that have been uploaded for the PR (uploading impacted targets is only required for [Parallel](../concepts-and-optimizations/parallel-queues/) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
-
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
-
-The "Remove from queue" action will remove the PR from the merge queue. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it:
-
-1. **PR Details**
-
-A PR details page will display a complete history of a PR - state transitions, associated test runs, a visual of what's currently in the Merge Queue, etc. The same dropdown menu described above (labeled "...") is on this page as well.
-
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+1. **Restart tests.** Use this to manually restart testing of this PR.
+2. **Remove from queue**. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it.
+3. **Retry.** Re-queue a PR if it is currently not in the queue that has failed or been cancelled.
+4. **Download impacted targets**. that have been uploaded for the PR (uploading impacted targets is only required for [Parallel](../concepts-and-optimizations/parallel-queues/) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
 
 ## Failures
 

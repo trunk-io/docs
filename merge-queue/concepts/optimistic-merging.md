@@ -14,7 +14,7 @@ Optimistic merging to merge faster
 
 You can enable optimistic merging through the [Merge UI](../managing-merge-queue/using-the-webapp.md) settings as shown below:
 
-<figure><img src="../../.gitbook/assets/pika-1715033350907-2x.png" alt=""><figcaption><p>Setting to enable anti-flake protection</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/optimistic-merge-toggle.png" alt=""><figcaption><p>Optimistic Merge is <strong>Off</strong> by default</p></figcaption></figure>
 
 **What are the risks of optimistic merging?**
 

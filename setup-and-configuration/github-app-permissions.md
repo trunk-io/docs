@@ -4,7 +4,13 @@ description: >-
   needs them.
 ---
 
-# GitHub App Permissions
+# Trunk GitHub App
+
+The Trunk GitHub app lets you integrate various Code Quality, Merge Queue, and Flaky Test features with your GitHub repos. It can help you[ lint commits and PRs](../code-quality/ci-setup/github-integration.md), manage [merge queue branches](../merge-queue/set-up-trunk-merge/), and post [PR comments about your test results](../flaky-tests/github-pull-request-comments.md).
+
+You can install the Trunk GitHub App by going to **Settings** > **Manage** > **Connect GitHub** and clicking **Connect**. You'll be redirected to GitHub to select the repositories where the GitHub app will be installed.
+
+You can also [read more about the required permissions for the Trunk GitHub App](github-app-permissions.md).
 
 The Trunk GitHub App enables functionality for all of Trunk's tools. Not every permission is required for every feature of Trunk, and if you have only enabled one of our tools, we will only access the permissions pertaining to that tool. For complete documentation of the individual permissions the Trunk GitHub App requires, see the [GitHub developer docs](https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps). Below, find an explanation of every permission the Trunk GitHub App requires and what Trunk uses it for.
 
@@ -38,7 +44,7 @@ Trunk uses this permission to examine the status of your commits, branches, and 
 
 ### Contents (Read and write)
 
-This permission includes access to repository contents, commits, branches, downloads, releases, and merges.&#x20;
+This permission includes access to repository contents, commits, branches, downloads, releases, and merges.
 
 Trunk uses this permission to read the `trunk.yaml` configuration file if you’ve added it to your repository. Trunk also uses write permissions to create, update, and delete the branches created and managed by Merge.
 

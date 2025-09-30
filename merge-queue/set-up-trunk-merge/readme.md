@@ -14,19 +14,13 @@ You must be a GitHub admin to complete the following steps. If you are not a Git
 
 Sign up at [app.trunk.io](https://app.trunk.io/signup?intent=merge%20queue\&tr_s=mergesetup\&tr_l=1), create a Trunk organization, and connect it to your GitHub repositories. If your repository is already connected to your Trunk organization, you can skip this step.
 
-Select the repository you would like to use and click **Get Started.**
-
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+Once signed in, navigate to the **Merge Queue** tab and click the **New Queue** button to get started.
 
 ### Set Up Trunk Merge Queue
 
-Go to the Merge tab. You will see the "Set Up Trunk Merge Queue" page. From there, you can specify:
+<figure><img src="../../.gitbook/assets/merge-add-repo (1).png" alt=""><figcaption></figcaption></figure>
 
-1. The name of the branch that Trunk Merge Queue should help manage merging PRs into.
-2. The [number](advanced-settings.md#concurrency) of Pull Requests that Merge can test at the same time.
-3. The [mode](../concepts-and-optimizations/parallel-queues/) that Trunk Merge Queue Queues will start in.
-
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="414"><figcaption></figcaption></figure>
+From there, select a repository from the dropdown and enter the target branch to merge into and click **Create Queue**.
 
 ### Testing PRs In the Queue
 
@@ -35,7 +29,7 @@ Trunk will automatically create Draft PRs when PRs begin testing in the queue. T
 By using draft PRs, Trunk will leverage your existing status checks that gate your PRs already with tests and linters. When the new draft PRs are created, Trunk will wait for your existing status checks to run, and merge PRs when they pass.
 
 {% hint style="info" %}
-If you do not want every check that runs when a PR is opened to also run when Trunk Merge Queue tests PRs, you can disable draft PR creation and run tests on branches instead. See [#draft-prs](advanced-settings.md#draft-prs "mention").
+If you do not want every check that runs when a PR is opened to also run when Trunk Merge Queue tests PRs, you can disable draft PR creation and run tests on branches instead. See [Draft PRs](branch-protection-and-required-status-checks.md#draft-prs).
 {% endhint %}
 
 Trunk Merge Queue syncs with GitHub's branch protection rules, and will require the same status checks that need to pass in order to merge a PR to also pass when testing the PR in the queue.
@@ -50,7 +44,7 @@ Now trigger Trunk Merge Queue to process this PR using either a comment on the P
 {% tab title="GitHub Pull Request View" %}
 Comment `/trunk merge` on a pull request
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-github-comment.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Trunk CLI" %}
