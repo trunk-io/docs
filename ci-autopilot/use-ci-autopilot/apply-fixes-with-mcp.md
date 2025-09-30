@@ -23,7 +23,7 @@ description: Learn about how to apply fix recommendations with MCP
 
 ### Prerequisites
 
-* [CI Autopilot enabled for your GitHub repository](../ci-autopilot/get-started/)
+* [CI Autopilot enabled for your GitHub repository](../get-started/)
 * CI Autopilot provided a root cause analysis on your pull request
 * Completed the [MCP server configuration](../use-mcp-server/configuration/) with your preferred AI application
 
@@ -51,7 +51,7 @@ When using Trunk's MCP to apply fixes you will go through the following steps:
 
 Every pull request comment from the CI Autopilot will include instructions on how to request a fix.
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-12 at 10.32.44 AM.png" alt=""><figcaption><p>Autofix Options section of the CI Autopilot comment</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-09-12 at 10.32.44 AM.png" alt=""><figcaption><p>Autofix Options section of the CI Autopilot comment</p></figcaption></figure>
 
 In this example, the following MCP prompt is suggested. `duhe5h21` represents the ID of the fix recommendation.
 

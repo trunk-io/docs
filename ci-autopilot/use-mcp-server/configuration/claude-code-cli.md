@@ -47,7 +47,7 @@ In your terminal, run `claude` .
 
 Claude Code should recognize that auth is required. Run `/mcp` to authenticate, select trunk, and hit Enter:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-10 at 12.02.48 PM.png" alt="" width="370"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-09-10 at 12.02.48 PM.png" alt="" width="370"><figcaption></figcaption></figure>
 
 &#x20;
 

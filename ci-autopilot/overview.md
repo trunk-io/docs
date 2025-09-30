@@ -53,7 +53,7 @@ When your CI fails, CI Autopilot:
 
 ### Two Ways to Get Fixes
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Stacked Pull Requests</strong></td><td>Perfect for team workflows and code review processes. CI Autopilot creates separate PRs with proposed fixes that you can review and merge.</td><td><a href="../use-ci-autopilot/request-fixes-on-prs.md">request-fixes-on-prs.md</a></td></tr><tr><td><strong>AI Assistant Integration</strong> <strong>(MCP)</strong></td><td>Work with Cursor, GitHub Copilot, Claude Code or other AI coding tools. Your assistant accesses the root cause analysis and applies fixes directly in your IDE.</td><td><a href="../use-ci-autopilot/apply-fixes-with-mcp.md">apply-fixes-with-mcp.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Stacked Pull Requests</strong></td><td>Perfect for team workflows and code review processes. CI Autopilot creates separate PRs with proposed fixes that you can review and merge.</td><td><a href="use-ci-autopilot/request-fixes-on-prs.md">request-fixes-on-prs.md</a></td></tr><tr><td><strong>AI Assistant Integration</strong> <strong>(MCP)</strong></td><td>Work with Cursor, GitHub Copilot, Claude Code or other AI coding tools. Your assistant accesses the root cause analysis and applies fixes directly in your IDE.</td><td><a href="use-ci-autopilot/apply-fixes-with-mcp.md">apply-fixes-with-mcp.md</a></td></tr></tbody></table>
 
 
 

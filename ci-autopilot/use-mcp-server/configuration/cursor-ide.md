@@ -14,7 +14,7 @@ Use the "Add to Cursor" action to add the Trunk MCP server:
 
 Once clicked, follow instructions to open the MCP configuration in Cursor. A new settings window to confirm the installation of the MCP server will be shown. Click on "Install" to proceed.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-10 at 11.28.24 AM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-09-10 at 11.28.24 AM.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Alternative: Update MCP configuration
 
@@ -48,7 +48,7 @@ Run `CMD+Shift+P` to open the command palette and choose `View: Open MCP Setting
 
 A "Needs authentication" status will be shown:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-10 at 11.28.34 AM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-09-10 at 11.28.34 AM.png" alt="" width="375"><figcaption></figcaption></figure>
 
 
 
@@ -62,5 +62,5 @@ A new webpage will be opened. Login with your Trunk account and follow insturcti
 
 Follow instructions to get back to Cursor. With auth completed, Cursor will be able to fetch the tools exposed by Trunk's MCP server:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-10 at 11.29.00 AM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-09-10 at 11.29.00 AM.png" alt="" width="375"><figcaption></figcaption></figure>
 

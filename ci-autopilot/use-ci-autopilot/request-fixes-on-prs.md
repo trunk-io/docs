@@ -8,7 +8,7 @@ When CI Autopilot identifies the root cause of a test failure, you can request a
 
 
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-12 at 11.03.01 AM copy.png" alt=""><figcaption><p>Pull request interactions for fix requests</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-09-12 at 11.03.01 AM copy.png" alt=""><figcaption><p>Pull request interactions for fix requests</p></figcaption></figure>
 
 {% hint style="info" %}
 A stacked pull request is based on a fork of the base pull request branch. Suggested fixes are applied to the forked branch and submitted as a new pull request against the base pull request branch.
@@ -31,7 +31,7 @@ When using CI Autopilot to apply fixes on your pull requests, you will go throug
 
 Every pull request comment from the CI Autopilot will include instructions on how to request a fix. Look for the "Autofix Options" section:
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-12 at 10.32.44 AM.png" alt=""><figcaption><p>The Autofix Options section in the CI Autopilot comment</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-09-12 at 10.32.44 AM.png" alt=""><figcaption><p>The Autofix Options section in the CI Autopilot comment</p></figcaption></figure>
 
 
 
@@ -57,7 +57,7 @@ As soon as the fix is created, **a new pull request will be created** in your re
 
 ### Experimental: Adding context to the fix
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-12 at 11.21.11 AM.png" alt=""><figcaption><p>Adding context to a fix request</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-09-12 at 11.21.11 AM.png" alt=""><figcaption><p>Adding context to a fix request</p></figcaption></figure>
 
 Sometimes, users want to provide additional context to the CI Autopilot so the fix complies with expectations, coding guidelines or team conventions. For example, users can request different variable names, methods, or implementation patterns. To accomplish that, just add your requests to the fix command:
 

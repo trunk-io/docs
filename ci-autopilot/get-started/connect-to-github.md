@@ -72,7 +72,7 @@ CI Autopilot will start investigations whenever a CI workflow fails. Create a fa
 
 In the meantime, learn about how to use the CI Autopilot:
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Understanding PR comments</td><td><a href="../../use-ci-autopilot/understand-root-cause-analysis.md">understand-root-cause-analysis.md</a></td></tr><tr><td>Requesting fixes</td><td><a href="../../use-ci-autopilot/request-fixes-on-prs.md">request-fixes-on-prs.md</a></td></tr><tr><td>Applying fixes locally</td><td><a href="../../use-ci-autopilot/apply-fixes-with-mcp.md">apply-fixes-with-mcp.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Understanding PR comments</td><td><a href="../use-ci-autopilot/understand-root-cause-analysis.md">understand-root-cause-analysis.md</a></td></tr><tr><td>Requesting fixes</td><td><a href="../use-ci-autopilot/request-fixes-on-prs.md">request-fixes-on-prs.md</a></td></tr><tr><td>Applying fixes locally</td><td><a href="../use-ci-autopilot/apply-fixes-with-mcp.md">apply-fixes-with-mcp.md</a></td></tr></tbody></table>
 
 
 

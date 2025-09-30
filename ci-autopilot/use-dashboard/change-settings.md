@@ -13,7 +13,7 @@ To open CI Autopilot settings:
 
 You should see the following screen:
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-11 at 2.46.39 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-09-11 at 2.46.39 PM.png" alt=""><figcaption></figcaption></figure>
 
 The CI Autopilot settings currently support the following options:
 
