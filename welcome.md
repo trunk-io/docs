@@ -1,5 +1,5 @@
 ---
-description: Trunk is an AI DevOps platform for reliable testing and CI.
+description: Trunk is a DevEx platform to check, test, merge, and monitor your code.
 ---
 
 # Welcome
@@ -42,7 +42,7 @@ Enterprise-scale merge queue to merge pull requests quickly while protecting you
 
 Learn more about [Trunk Merge Queue](broken-reference)
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="flaky-tests/overview.md">overview.md</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="merge-queue/merge-queue.md">merge-queue.md</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr><tr><td><strong>Code Quality</strong></td><td>An extensible superlinter with a builtin language server and pre-existing issue detection</td><td></td><td><a href="code-quality/code-quality.md">code-quality.md</a></td><td><a href=".gitbook/assets/CodeQuality.png">CodeQuality.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="flaky-tests/overview.md">overview.md</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="merge-queue/merge-queue.md">merge-queue.md</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>Code Quality</strong></td><td>An extensible superlinter with a builtin language server and pre-existing issue detection</td><td></td><td><a href="code-quality/code-quality.md">code-quality.md</a></td><td><a href=".gitbook/assets/CodeQuality.png">CodeQuality.png</a></td></tr></tbody></table>
 
 ### Join Our Community
 
