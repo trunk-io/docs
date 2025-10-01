@@ -32,33 +32,41 @@ When a PR has not been admitted to the queue yet, Trunk Merge Queue waits for:
 
 In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflics with the target branch.
 
+### Manually Restarting Failed PRs
+
 The PR Details panel has a dropdown "**Actions"** menu, where you can:
 
 1. **Restart tests.** Use this to manually restart testing of this PR.
 2. **Remove from queue**. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it.
-3. **Retry.** Re-queue a PR if it is currently not in the queue that has failed or been cancelled.
-4. **Download impacted targets**. that have been uploaded for the PR (uploading impacted targets is only required for [Parallel](../concepts-and-optimizations/parallel-queues/) mode, but this option will still show regardless of mode if impacted targets have been uploaded for the PR)
+
+Trunk Merge Queue will automatically restart failed PRs when it can under certain conditions (see PR states). Since the restart is usually from a failed PR being removed from the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click thee **Actions** dropdown, and select **Restart**
+
+<figure><img src="../../.gitbook/assets/merge-pr-details-action (1).png" alt=""><figcaption></figcaption></figure>
+
+There are a couple of reasons you might want to manually retry a PR. First, if a PR ends up in the `PENDING_FAILURE` state because of something transient like a CI runner disconnecting or flakey tests, you can retry the PR right away instead of waiting for PRs in front of it to pass or fail.
+
+Another reason to restart a PR is if the proper tests don't get kicked off due to a failure in the CI system. For example, if GitHub has an outage and is not triggering workflows or actions properly.
+
+***
 
 ## Failures
 
 A tabulated view of all the items that have failed in the Merge Queue, e.g. due to testing.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-failures.png" alt=""><figcaption></figcaption></figure>
 
-## Manually Restarting Failed PRs
+### Retry Failed PRs
 
-Trunk Merge Queue will automatically restart failed PRs when it can under certain conditions (see PR states). Since the restart is usually from a failed PR being removed from the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ using the **Restart tests** option of the PR dropdown (labeled "...")
+When a PR has been dropped from the queue, you can manually retry the PR by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click thee **Actions** dropdown, and select **Retry**
 
-<figure><img src="../../.gitbook/assets/pr-restart-menu.png" alt=""><figcaption><p>PR actions menu</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-failure-retry.png" alt=""><figcaption><p>Re-queue a PR if it is currently not in the queue that has failed or been cancelled.</p></figcaption></figure>
 
-There are a couple of reasons you might want to manually restart a PR. First, if a PR ends up in the PENDING\_FAILURE state because of something transient like a CI runner disconnecting or flakey tests, you can restart the PR right away instead of waiting for PRs in front of it to pass or fail.
-
-Another reason to restart a PR is if the proper tests don't get kicked off due to a failure in the CI system. For example, if GitHub has an outage and is not triggering workflows or actions properly.
+***
 
 ## Queue Visualization
 
 The view of all current PRs being tested by Trunk Merge Queue and their respective queues. Each node shown is a pull request, and each edge indicates that the pull request is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, this will be a single line showing the testing and merging process.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-graph.png" alt=""><figcaption></figcaption></figure>
 
 You can click on any shown PR to navigate to the details page for that PR.

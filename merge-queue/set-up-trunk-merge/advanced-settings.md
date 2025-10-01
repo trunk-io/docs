@@ -109,6 +109,8 @@ For example, assuming a timeout of 4 hours:
 
 Whether or not GitHub comments are enabled for this merge queue.
 
+<figure><img src="../../.gitbook/assets/merge-github-comment (1).png" alt=""><figcaption></figcaption></figure>
+
 ***
 
 ## GitHub Commands

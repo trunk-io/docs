@@ -2,11 +2,11 @@
 
 Your merge experience directly impacts the velocity and productivity of your development team. Merge Queue Metrics provides observability for the **health** of your Trunk Merge Queue, so you can discover issues early and make informed optimizations.
 
-<figure><img src="../../.gitbook/assets/Trunk Merge Queue Metrics.png" alt=""><figcaption><p>The Health tab showing metrics in the Trunk Web App.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-health.png" alt=""><figcaption><p>The Health tab showing metrics in the Trunk Web App.</p></figcaption></figure>
 
 ### Access Metrics
 
-You can access the metrics in your Trunk Merge Queue by navigating to the Trunk Web App > **Merge Queue** > **Health**.&#x20;
+You can access the metrics in your Trunk Merge Queue by navigating to the **Merge Queue** > **Health** tab.&#x20;
 
 {% hint style="info" %}
 CI Time and CI Jobs Triggered charts are only available for **GitHub Actions**.
@@ -50,32 +50,3 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
 
-### CI Time to Test PRs
-
-CI Time measures the time it takes to test each pull request in the merge queue. Specifically, how long CI jobs have to run to test PRs. This measures **only CI steps relevant to the merge queue**, other CI steps like build or deploy or any workflows outside of the merge queue will not be measured.
-
-{% hint style="info" %}
-CI Time and CI Jobs Triggered charts are only available for **GitHub Actions**.
-{% endhint %}
-
-Monitoring the amount of time it takes for CI workflows to test PRs is important for making sure PRs can move through the queue quickly. The more time it takes to test PRs, the more time a PR will be in the queue. Large spikes signal that work should be devoted to reducing the length of bottlenecking CI jobs, or more CI resources are needed.
-
-\
-CI Time to Test PRs can be shown as different statistical measures by pressing the **+ Add** button
-
-| Measure                    | Explanation                                                                                                                                                                                                                                                                     |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sum                        | The total time it has taken to run all CI jobs for all PRs in the queue                                                                                                                                                                                                         |
-| Average Per Test Run       | The average amount of total CI time it takes to test a PR or batch of PRs in the queue.                                                                                                                                                                                         |
-| Average Per Individual PR  | <p>The average amount of total CI time it takes to test an individual PR. This specifically accounts for <strong>batching</strong>.</p><p></p><p>For example, if a batch of 5 PRs takes 50 minutes of CI time to test, this would be 50 / 5 = 10 minutes on average per PR.</p> |
-| Average Per Individual Job | The average amount of time it takes for an individual job to complete when testing a PR. There are usually multiple jobs launched when testing a PR.                                                                                                                            |
-
-### **CI Jobs Triggered To Test PRs**
-
-The count of Individual CI jobs that are triggered to test PRs in the merge queue. There could be multiple jobs triggered per PR - this metric captures all of them.
-
-Each job will require a CI runner. A spike or large number of requested jobs can result in PRs waiting longer to begin testing.&#x20;
-
-{% hint style="info" %}
-CI Time and CI Jobs Triggered charts are only available for **GitHub Actions**.
-{% endhint %}
