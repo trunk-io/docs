@@ -7,17 +7,9 @@ description: How to set up Trunk Merge Queue for your project
 Minimal set up is required to get started with Trunk Merge Queue, as it syncs with GitHub in order to run the same tests you're already running on PRs and require the same Status Checks to pass before merging.
 
 {% hint style="warning" %}
-### Trunk GitHub App
+**The Trunk GitHub App is required for Merge Queue to function.**&#x20;
 
-The Trunk GitHub App enables Merge Queue to automate your PR merging workflow.\
-The app needs to:
-
-* Create temporary test branches (`trunk-merge/*)` to validate changes
-* Read your CI status checks to determine when PRs are ready
-* Merge pull requests automatically when tests pass
-* Post status updates and comments on your pull requests
-
-View [detailed permissions and what Trunk uses them for](../../setup-and-configuration/managing-your-organization/github-app-permissions.md).&#x20;
+It grants Trunk Merge Queue the necessary permissions to create test branches, read CI results, and merge PRs in your repository. View [detailed permissions and what Trunk uses them for](../../setup-and-configuration/managing-your-organization/github-app-permissions.md).&#x20;
 {% endhint %}
 
 #### Installation and Setup
@@ -29,7 +21,7 @@ View [detailed permissions and what Trunk uses them for](../../setup-and-configu
 If the GitHub App is already installed, step 3 will be skipped automatically.
 {% endhint %}
 
-3. If the Trunk GitHub App is not already installed on your GitHub organization, you'll be prompted to install it.&#x20;
+3. If the Trunk GitHub App is not already installed, you'll be prompted to install it.&#x20;
 
 {% hint style="warning" %}
 **You must be a GitHub admin to complete the following steps.** If you are not a GitHub admin in your organization, go to `Settings` → `Team Members` to invite a GitHub admin to your Trunk organization so they can complete the following.
@@ -42,11 +34,10 @@ The GitHub App installation must be initiated from the Trunk web app to properly
   * Review and approve the required permissions
   * Complete the installation
   * After the GitHub App installation is complete, you'll be returned to the Trunk dashboard.
+  * In the Merge Queue tab click the "New Queue" button.&#x20;
 
-4. **In the Merge Queue tab click the "New Queue" button.**&#x20;
-   * Select a repository from the dropdown and enter the target\
-     branch to merge into
-   * Click **Create Queue**
+4. Select a repository from the dropdown and enter the target\
+   branch to merge into. Click **Create New Queue.**
 
 <figure><img src="../../.gitbook/assets/merge-add-repo (1).png" alt=""><figcaption></figcaption></figure>
 
