@@ -6,7 +6,7 @@ description: How to set up Trunk Merge Queue for your project
 
 Minimal set up is required to get started with Trunk Merge Queue, as it syncs with GitHub in order to run the same tests you're already running on PRs and require the same Status Checks to pass before merging.
 
-{% hint style="warning" %}
+{% hint style="success" %}
 **The Trunk GitHub App is required for Merge Queue to function.**&#x20;
 
 It grants Trunk Merge Queue the necessary permissions to create test branches, read CI results, and merge PRs in your repository. View [detailed permissions and what Trunk uses them for](../../setup-and-configuration/managing-your-organization/github-app-permissions.md).&#x20;
@@ -17,7 +17,7 @@ It grants Trunk Merge Queue the necessary permissions to create test branches, r
 1. [Sign in to app.trunk.io](https://app.trunk.io/login) and navigate to the **Merge Queue** tab. If this is the first time you are signing in you'll be asked to [create organization](../../setup-and-configuration/connecting-to-trunk.md).
 2. Click the **Create New Queue** button.
 
-{% hint style="info" %}
+{% hint style="success" %}
 If the GitHub App is already installed, step 3 will be skipped automatically.
 {% endhint %}
 
