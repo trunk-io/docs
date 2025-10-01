@@ -14,7 +14,7 @@ It grants Trunk Merge Queue the necessary permissions to create test branches, r
 
 #### Installation and Setup
 
-1. [Sign in to app.trunk.io](https://app.trunk.io/login) and navigate to the **Merge Queue** tab (or click **Get started** on the Merge Queue card from the main dashboard). If this is the first time you are signing in you'll be asked to [create organization](../../setup-and-configuration/connecting-to-trunk.md).
+1. [Sign in to app.trunk.io](https://app.trunk.io/login) and navigate to the **Merge Queue** tab. If this is the first time you are signing in you'll be asked to [create organization](../../setup-and-configuration/connecting-to-trunk.md).
 2. Click the **Create New Queue** button.
 
 {% hint style="info" %}
@@ -36,8 +36,7 @@ The GitHub App installation must be initiated from the Trunk web app to properly
   * After the GitHub App installation is complete, you'll be returned to the Trunk dashboard.
   * In the Merge Queue tab click the "New Queue" button.&#x20;
 
-4. Select a repository from the dropdown and enter the target\
-   branch to merge into. Click **Create New Queue.**
+4. Select a repository from the dropdown and enter the target branch to merge into. Click **Create Queue.**
 
 <figure><img src="../../.gitbook/assets/merge-add-repo (1).png" alt=""><figcaption></figcaption></figure>
 
