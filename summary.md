@@ -104,7 +104,7 @@
 * [How does it work?](merge-queue/how-does-it-work.md)
 * [Setup](merge-queue/set-up-trunk-merge/readme.md)
   * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
-  * [Settings](merge-queue/set-up-trunk-merge/advanced-settings.md)
+  * [Settings & Configurations](merge-queue/set-up-trunk-merge/advanced-settings.md)
   * [Branch Protection & Required Status Checks](merge-queue/set-up-trunk-merge/branch-protection-and-required-status-checks.md)
   * [Integration for Slack](merge-queue/set-up-trunk-merge/integration-for-slack.md)
 * [Migrating From GitHub Merge Queue](merge-queue/migrating-from-github-merge-queue.md)
