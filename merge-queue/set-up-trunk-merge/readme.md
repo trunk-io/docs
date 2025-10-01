@@ -9,10 +9,15 @@ Minimal set up is required to get started with Trunk Merge Queue, as it syncs wi
 {% hint style="warning" %}
 ### Trunk GitHub App
 
-Trunk Merge Queue uses the GitHub App to create test branches, monitor your\
-CI checks, and automatically merge PRs when they're ready.
+The Trunk GitHub App enables Merge Queue to automate your PR merging workflow.\
+The app needs to:
 
-View [GitHub App permissions](../../setup-and-configuration/managing-your-organization/github-app-permissions.md)
+* Create temporary test branches (`trunk-merge/*)` to validate changes
+* Read your CI status checks to determine when PRs are ready
+* Merge pull requests automatically when tests pass
+* Post status updates and comments on your pull requests
+
+View [detailed permissions and what Trunk uses them for](../../setup-and-configuration/managing-your-organization/github-app-permissions.md).&#x20;
 {% endhint %}
 
 #### Installation and Setup
