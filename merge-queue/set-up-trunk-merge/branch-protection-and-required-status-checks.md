@@ -132,11 +132,9 @@ Trunk needs to know which _status checks_ must pass while testing pull requests 
 {% tab title="Automatic (default)" %}
 In automatic mode, the status checks specified in your branch's [GitHub branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging) rule will be used.
 
-Trunk Merge Queue does not work with GitHub's new Rulesets. Make sure to click the **Add classic branch protection rule** link when configuring new rules.
+Required status checks can be configured using either Classic branch protection rules or Rulesets. Both work with Trunk Merge Queue through GitHub's rule layering system.
 
-<figure><img src="../../.gitbook/assets/cubesGreen (3).png" alt=""><figcaption></figcaption></figure>
-
-See GitHub's doc for more information on configuring [required status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
+See GitHub's documentation for more information on configuring required status checks using [Classic rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging) or [Rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets).
 {% endtab %}
 
 {% tab title="Custom (trunk.yaml)" %}
