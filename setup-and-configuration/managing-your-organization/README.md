@@ -2,11 +2,11 @@
 
 ## Organization Slug and Token
 
-Integrating with Trunk through [Webhooks](../flaky-tests/webhooks/), [APIs](../references/apis/), or [CLI](../references/cli/) will require authentication using your organization's slug and token.
+Integrating with Trunk through [Webhooks](../../flaky-tests/webhooks/), [APIs](../../references/apis/), or [CLI](../../references/cli/) will require authentication using your organization's slug and token.
 
 You can find your organization slug and token by going to **Settings** > **Organization** > **General**.&#x20;
 
-<figure><img src="../.gitbook/assets/org-slug-and-token.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-slug-and-token.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -14,7 +14,7 @@ You can find your organization slug and token by going to **Settings** > **Organ
 
 You can manage a team member's role and remove team members by navigating to **Settings** > **Organization** > **Team** > **Members** and clicking on the name of a team member. You can change the role of a team member between user and admin, as well as removing the user from your organization.
 
-<figure><img src="../.gitbook/assets/org-team-members.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-team-members.png" alt=""><figcaption></figcaption></figure>
 
 ### Inviting Team Members
 
@@ -27,7 +27,7 @@ Available Roles are:
 * **Member**: Full access with limited permissions (default)
 * **Admin**: Full administrative access
 
-<figure><img src="../.gitbook/assets/org-team-members-invite.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-team-members-invite.png" alt=""><figcaption></figcaption></figure>
 
 ### Pending Invites
 
@@ -35,7 +35,7 @@ You can view and manage pending email invites by navigating to **Settings** > **
 
 From this page you can copy the member invite link or revoke the invite using the **three dots** menu.
 
-<figure><img src="../.gitbook/assets/org-team-pending-invites.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-team-pending-invites.png" alt=""><figcaption></figcaption></figure>
 
 ### Team Domains
 
@@ -45,11 +45,11 @@ You can enable team domains under **Settings** > **Organization** > **Team > Dom
 
 {% tabs %}
 {% tab title="Add First Domain" %}
-<figure><img src="../.gitbook/assets/org-team.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-team.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Manage Domains" %}
-<figure><img src="../.gitbook/assets/org-team-manage-domain (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/org-team-manage-domain (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 

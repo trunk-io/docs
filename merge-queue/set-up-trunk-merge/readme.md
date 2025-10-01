@@ -8,13 +8,24 @@ Minimal set up is required to get started with Trunk Merge Queue, as it syncs wi
 
 ### Connect your Trunk Organization to GitHub
 
-{% hint style="info" %}
+1. Sign up at [app.trunk.io](https://app.trunk.io/signup?intent=merge%20queue\&tr_s=mergesetup\&tr_l=1), create a Trunk organization.
+2. Navigate to the **Merge Queue** tab (or click **Get started** on the Merge Queue card from the main dashboard).
+3. Click the **Create New Queue** button.
+4. If the Trunk GitHub App is not already installed on your GitHub organization, you'll be prompted to install it. Click **Install GitHub App** and follow the installation flow:
+
+{% hint style="warning" %}
 You must be a GitHub admin to complete the following steps. If you are not a GitHub admin in your organization, go to `Settings` → `Team Members` to invite a GitHub admin to your Trunk organization so they can complete the following.
+
+The GitHub App installation must be initiated from the Trunk web app to properly associate your Trunk organization with the GitHub App. If you have previously installed the Trunk GitHub App directly through GitHub, you'll need to uninstall it first and then reinstall it by starting the installation process from the Trunk web app as described below.
 {% endhint %}
 
-Sign up at [app.trunk.io](https://app.trunk.io/signup?intent=merge%20queue\&tr_s=mergesetup\&tr_l=1), create a Trunk organization, and connect it to your GitHub repositories. If your repository is already connected to your Trunk organization, you can skip this step.
+* Select whether to install on all repositories or only specific ones
+* Review and approve the required permissions
+* Complete the installation
 
-Once signed in, navigate to the **Merge Queue** tab and click the **New Queue** button to get started.
+If the GitHub App is already installed, this step will be skipped automatically.
+
+4. After the GitHub App installation is complete (or if it was already installed), you'll be returned to the Trunk dashboard. **Navigate back to the Merge Queue tab and click the "New Queue" button.**&#x20;
 
 ### Set Up Trunk Merge Queue
 

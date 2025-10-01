@@ -7,8 +7,8 @@
 ## Setup & Configuration
 
 * [Connecting to Trunk](setup-and-configuration/connecting-to-trunk.md)
-* [Managing Your Organization](setup-and-configuration/managing-your-organization.md)
-* [Trunk GitHub App](setup-and-configuration/github-app-permissions.md)
+* [Managing Your Organization](setup-and-configuration/managing-your-organization/README.md)
+* [Trunk GitHub App](setup-and-configuration/managing-your-organization/github-app-permissions.md)
 * [Integration with Slack](integration-for-slack.md)
 
 ## CI Autopilot (beta) <a href="#ci-autopilot" id="ci-autopilot"></a>
