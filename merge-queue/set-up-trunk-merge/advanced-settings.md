@@ -22,7 +22,79 @@ Note that you must be an Organization admin to adjust any of these settings.
 
 You can change the state of your Merge Queue, which will affect behavior around PRs entering the queue and merging. PRs will always continue testing no matter what state the Merge Queue is in. Below are the possible different states:
 
-<table data-full-width="true"><thead><tr><th width="99.6484375">State</th><th width="99.6796875">Will PRs Enter the Queue?</th><th width="99.7734375">Will PRs Merge After Testing?</th><th width="220.0390625">Example use case</th></tr></thead><tbody><tr><td><code>Running</code></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td>Everyday merging: Protect your mainline and merges successful PRs.</td></tr><tr><td><code>Paused</code></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td><strong>CI failure recovery</strong>: stop merges and testing in the queue until failure is resolved.</td></tr><tr><td><code>Draining</code></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td><strong>Code freeze</strong>: merge PRs currently in the queue but don't start testing additional PRs.</td></tr></tbody></table>
+{% columns %}
+{% column %}
+**State**
+{% endcolumn %}
+
+{% column %}
+**Will PRs Enter the Queue?**
+{% endcolumn %}
+
+{% column %}
+**Will PRs Merge After Testing?**
+{% endcolumn %}
+
+{% column %}
+**Example use case**
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column width="25%" %}
+`Running`
+{% endcolumn %}
+
+{% column width="25%" %}
+Yes :white\_check\_mark:
+{% endcolumn %}
+
+{% column %}
+Yes :white\_check\_mark:
+{% endcolumn %}
+
+{% column %}
+Everyday merging: Protect your mainline and merges successful PRs.
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column %}
+`Paused`
+{% endcolumn %}
+
+{% column %}
+No :x:
+{% endcolumn %}
+
+{% column %}
+No :x:
+{% endcolumn %}
+
+{% column %}
+**CI failure recovery**: stop merges and testing in the queue until failure is resolved.
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column %}
+`Draining`
+{% endcolumn %}
+
+{% column %}
+No :x:
+{% endcolumn %}
+
+{% column %}
+Yes :white\_check\_mark:
+{% endcolumn %}
+
+{% column %}
+**Code freeze**: merge PRs currently in the queue but don't start testing additional PRs.
+{% endcolumn %}
+{% endcolumns %}
+
+<table data-full-width="true"><thead><tr><th width="99.6484375">State</th><th>Will PRs Enter the Queue?</th><th>Will PRs Merge After Testing?</th><th>Example use case</th></tr></thead><tbody><tr><td><code>Running</code></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td>Everyday merging: Protect your mainline and merges successful PRs.</td></tr><tr><td><code>Paused</code></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td><strong>CI failure recovery</strong>: stop merges and testing in the queue until failure is resolved.</td></tr><tr><td><code>Draining</code></td><td>No <span data-gb-custom-inline data-tag="emoji" data-code="274c">❌</span></td><td>Yes <span data-gb-custom-inline data-tag="emoji" data-code="2705">✅</span></td><td><strong>Code freeze</strong>: merge PRs currently in the queue but don't start testing additional PRs.</td></tr></tbody></table>
 
 There is an additional state `Switching Modes` that functions exactly like `Draining`. The Merge Queue enters this state when you switch the queue mode while PRs are still being tested.
 
