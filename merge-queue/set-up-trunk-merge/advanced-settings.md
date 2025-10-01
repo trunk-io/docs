@@ -19,7 +19,7 @@ Note that you must be an Organization admin to adjust any of these settings.
 
 ## Merge Queue State
 
-You can change the state of your Merge Queue, which will affect behavior around PRs entering the queue and merging. PRs will always continue testing no matter what state the Merge Queue is in. Below are the possible different states:
+You can change the state of your Merge Queue to control whether new PRs can enter the queue and whether tested PRs will merge. PRs already testing will always complete their tests regardless of state. Below are the possible states:
 
 {% columns %}
 {% column %}
@@ -93,7 +93,7 @@ Yes :white\_check\_mark:
 {% endcolumn %}
 {% endcolumns %}
 
-There is an additional state `Switching Modes` that functions exactly like `Draining`. The Merge Queue enters this state when you switch the queue mode while PRs are still being tested.
+**Note:** The Merge Queue may automatically enter a `Switching Modes` state, which functions exactly like `Draining`. This occurs when you switch the queue mode while PRs are still being tested.
 
 ### When to change merge queue state?
 
