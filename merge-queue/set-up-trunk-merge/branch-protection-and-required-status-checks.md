@@ -17,9 +17,11 @@ You can use GitHub's newer Rulesets feature alongside Classic branch protection 
 
 {% hint style="danger" %}
 **Configure push permission restrictions using Classic branch protection rules only.**
+
+GitHub's API does not expose push restriction settings from Rulesets, preventing Trunk Merge Queue from detecting or respecting these restrictions.
 {% endhint %}
 
-Trunk Merge Queue cannot programmatically detect push restrictions configured in Rulesets due to GitHub API limitations. To ensure Merge Queue can properly respect push permissions:
+To ensure Merge Queue can properly respect push permissions:
 
 1. Go to **Settings** > **Branches** in your repository
 2. Edit or create a Classic branch protection rule for your target branch
