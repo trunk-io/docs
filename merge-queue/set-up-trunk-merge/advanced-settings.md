@@ -107,11 +107,19 @@ The `Running` state is the default state of your merge queue, and will be the no
 
 ## Merge Queue Mode
 
-> Merge Queues operate in one of two modes, **Single** or [**Parallel**](../concepts-and-optimizations/parallel-queues/)**.**&#x20;
+> Merge Queues operate in one of two modes, **Single** (default) or [**Parallel**](../concepts-and-optimizations/parallel-queues/)**.**&#x20;
 
-**Single Queue** processes all pull requests in one line, testing each PR predictively against all changes ahead of it. This guarantees branch correctness but can increase wait times during high submission loads.
+**Single Queue** processes all pull requests in one line, testing each PR predictively against all changes ahead of it. Multiple PRs can be tested and merged simultaneously based on your [Testing Concurrency](advanced-settings.md#testing-concurrency) and [Batching](advanced-settings.md#batching) settings.
 
-**Parallel Queues** dynamically creates multiple testing lanes based on each PR's impacted targets (the parts of the codebase it changes). PRs affecting different parts of the code can be tested simultaneously, reducing queue time while still preventing branch breaks. Requires PRs to report their impacted targets before processing. Read more about Trunks implementation of [Parallel merge queues](../concepts-and-optimizations/parallel-queues/).
+**Parallel Queues** dynamically creates multiple independent testing lanes based on each PR's impacted targets (the parts of the codebase it changes). PRs affecting different parts of the code can be tested in completely separate queues, reducing wait times for repositories with distinct, independently-testable components.
+
+**Requirements for Parallel mode:**
+
+* PRs must upload impacted targets before processing begins
+* The queue will wait for impacted targets to be uploaded before starting tests
+* Requires configuring a workflow to calculate and upload impacted targets
+
+Read more about [Trunk's implementation of Parallel merge queues](../concepts-and-optimizations/parallel-queues/), supported build systems ([Bazel](../../flaky-tests/get-started/frameworks/bazel.md), [Nx](../concepts-and-optimizations/parallel-queues/nx.md), or [custom AP](../concepts-and-optimizations/parallel-queues/api.md)I), and [what impacted targets are](../concepts-and-optimizations/parallel-queues/#what-are-impacted-targets).
 
 ***
 
