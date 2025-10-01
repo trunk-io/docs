@@ -165,9 +165,11 @@ For example, assuming a timeout of 4 hours:
 
 ## Pending Failure Depth
 
-> Pending Failure Depth can be set to any value, options are **0**, **1**, **2**, **3**, and **Custom**.
+> Pending Failure Depth can be set to any value, options are **0** (default), **1**, **2**, **3**, and **Custom**.
 
 [**Pending Failure Depth**](../concepts/pending-failure-depth.md) allows a failed PR to remain in the queue temporarily while a configurable number of PRs behind it complete testing. Since predictive testing means the failed PR's code is retested as part of later PRs, this gives flaky tests multiple chances to pass before the PR is evicted from the queue.
+
+When set to **0** (default), failed PRs are immediately evicted from the queue. Any PRs behind the failed PR that were already testing will be restarted, since they were testing against a predicted future state of the branch that is no longer accurate.
 
 ***
 
@@ -183,7 +185,12 @@ For example, assuming a timeout of 4 hours:
 
 > Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
-Whether or not GitHub comments are enabled for this merge queue.
+When enabled, Trunk posts comments on pull requests with merge queue status updates and instructions (e.g., "To merge this pull request, check the box to the left or comment `/trunk merge`").
+
+**When to disable:**
+
+* **Testing and evaluation** - Validate the merge queue works with your CI setup without notifying your development team. Once configured and ready, re-enable comments to roll out to developers.
+* **Custom tooling** - You're building your own bot or integration that will provide merge queue instructions to developers, making Trunk's default comments redundant.
 
 <figure><img src="../../.gitbook/assets/merge-github-comment (1).png" alt=""><figcaption></figcaption></figure>
 
