@@ -7,15 +7,51 @@ description: >-
 
 # Branch Protection & Required Status Checks
 
-## Branch Protection
+## Branch Protection & Required Status Checks
 
-Trunk Merge Queue, since it will eventually merge your PR on GitHub, is still **bound by any protection rules set in GitHub** that affect the branch Trunk Merge Queue will merge into or that affect your Trunk Merge Queue branch. For example, if a PR requires at least one review to merge, then Trunk Merge Queue would display `'not mergable GitHub yet'` until that PR has a review.
+Trunk Merge Queue respects GitHub's branch protection rules and works with both Classic branch protection rules and Rulesets. Since Merge Queue ultimately merges PRs through GitHub, any protection rules on your target branch (like required code reviews or status checks) will still apply before PRs can enter the queue.
 
-{% hint style="info" %}
-Trunk Merge Queue does not work with GitHub's new [Rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets) and must be configured using "Classic branch protection rules"
+### Using Rulesets vs. Classic Rules
+
+You can use GitHub's newer Rulesets feature alongside Classic branch protection rules—both systems work together through GitHub's rule layering. However, there's one important requirement:
+
+{% hint style="danger" %}
+Configure push permission restrictions using Classic branch protection rules only.
 {% endhint %}
 
-If you have trouble with merge queueing PRs, check if there is any kind of additional branch protection set up on your repo. Existing branch protection rules must be changed in order to **not** protect branches in the form of `trunk-temp/*` and `trunk-merge/*` . If either of those branches is considered protected in any way according to GitHub (e.g., if there is a `*/*` branch protection rule), then Merge will not be able to run tests properly due to GitHub permission errors.
+Trunk Merge Queue cannot programmatically detect push restrictions configured in Rulesets due to GitHub API limitations. To ensure Merge Queue can properly respect push permissions:
+
+1. Go to **Settings** > **Branches** in your repository
+2. Edit or create a Classic branch protection rule for your target branch
+3. Under "Rules applied to everyone including administrators," select:
+   * **Restrict who can push to matching branches**
+   * **Restrict pushes that create matching branches**
+4. **Add the `trunk-io` bot** to the list of allowed actors (required for Trunk Merge Queue to merge PRs)
+5. (Optional) Add Organization admins and repository admins who need the ability to perform emergency merges outside the queue
+
+**For urgent PRs:** Regular users should use [PR Prioritization](../pr-prioritization.md) with `--priority=urgent` or `--priority=high` to fast-track PRs through the queue while still maintaining validation. Direct push access is only needed for rare situations where the queue itself must be bypassed entirely.
+
+All other branch protection settings (required reviews, status checks, signed commits, etc.) can be configured using either Classic rules or Rulesets.
+
+#### Critical: Exclude Trunk Branches from Protection
+
+Trunk Merge Queue creates temporary branches (`trunk-temp/*` and `trunk-merge/*`) to test PRs before merging them. Trunk needs unrestricted access to create, push to, and delete these branches. If they're protected by branch rules, Merge Queue cannot function.
+
+**Ensure your branch protection rules do NOT apply to:**
+
+* `trunk-temp/*`
+* `trunk-merge/*`
+
+If these branches are protected (for example, by a wildcard rule like `*/*`), Merge Queue will encounter GitHub permission errors and cannot function properly.
+
+**To verify this:**
+
+1. Go to **Settings** > **Branches** in your repository
+2. Review all Classic branch protection rules
+3. Check that no rules use wildcard patterns that would match `trunk-temp/*` or `trunk-merge/*`&#x20;
+4. If you have rules using wildcards like `*/*`, `**/*`, or similar patterns, you'll need to either:
+   * Remove those wildcard rules and create more specific rules, or
+   * Ensure those rules have the `trunk-io` bot in the bypass list
 
 {% hint style="info" %}
 If there are any questions or help is needed, reach out on our questions or help is needed, reach out on our [community Slack](https://slack.trunk.io/)!
@@ -23,19 +59,38 @@ If there are any questions or help is needed, reach out on our questions or help
 
 ## Draft PRs
 
-In some cases, you might not want every check that gets triggered when a PR gets created to run when testing PRs in the merge queue (e.g., you deploy your frontend on every PR so that reviewers can interact with it). In that case, if you prefer to use Trunk Merge Queue without Draft PRs, you can disable it by navigating to **Settings > Repositories >** selecting your repository **> Merge >** toggle **Trunk Draft PR Creation.**\
-\
-When draft PR creation is disabled, you will need to configure push-triggered workflows to run on branches to test each merge request. You can also configure custom gating for your PRs if you want to gate on a different set of checks for Trunk Merge Queue.
+By default, Trunk Merge Queue creates **draft pull requests** when testing PRs in the queue. This allows Trunk to leverage your existing PR-triggered CI workflows—the same status checks that run when you open a regular PR will automatically run when Trunk tests changes in the queue.
 
-### Configure a Push Triggered Workflow For Required Status Checks
+#### When to Disable Draft PR Creation
 
-When creating Draft PRs is disabled, Trunk Merge Queue creates branches with the prefix `trunk-merge/` in order to test PRs. To ensure the required statuses Merge should gate on get triggered when it tests PRs, your CI provider must be configured to run the status checks you care about whenever a branch with that prefix is pushed to.
+In some cases, you may not want every check triggered by PR creation to run during queue testing. For example:
 
-{% hint style="info" %}
-If you already have tests that trigger on new PRs, you can use the [Draft PR Creation](https://docs.trunk.io/merge-queue/set-up-trunk-merge/advanced-settings#draft-prs) feature to let Trunk Merge Queue create draft PRs instead of setting up a push-triggered workflow.
+* You deploy preview environments for every PR that reviewers interact with
+* You run expensive integration tests or security scans only for review purposes
+* You have PR-triggered workflows that are unnecessary for merge validation
+
+If you need different CI behavior for queue testing versus PR review, you can disable draft PR creation by navigating to **Settings > Repositories >** select your repository **> Merge >** toggle off **Trunk Draft PR Creation.**
+
+#### What Happens When Draft PRs are Disabled
+
+When draft PR creation is disabled, Trunk Merge Queue creates `trunk-merge/*` branches instead of draft PRs to test changes. You'll need to:
+
+1. Configure push-triggered workflows in your CI provider to run on `trunk-merge/*` branches
+2. Define which status checks Trunk should wait for before merging (see Define Required Status Checks below)
+
+This gives you complete control over which CI jobs run during merge queue testing versus during PR review.
+
+#### Configure a Push Triggered Workflow For Required Status Checks
+
+{% hint style="warning" %}
+**This section only applies if you've disabled Draft PR creation.** If Draft PRs are enabled (the default), Trunk automatically triggers your existing PR-based CI workflows and you can skip this section.
 {% endhint %}
 
-For GitHub Actions, that'll mean setting up a `push`-triggered workflow, filtered to `trunk-merge/**` branches, like so:
+When Draft PR creation is disabled, Trunk Merge Queue creates branches with the prefix `trunk-merge/` to test PRs. You need to configure your CI provider to run status checks whenever branches matching this pattern are pushed.
+
+**For GitHub Actions**
+
+Set up a `push`-triggered workflow filtered to `trunk-merge/**` branches:
 
 ```yaml
 name: Run Required Checks
