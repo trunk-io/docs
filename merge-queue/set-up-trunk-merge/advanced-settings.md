@@ -6,11 +6,10 @@ description: >-
 
 # Settings
 
-All of the following settings are specific to individual Merge Queues and can be applied at [app.trunk.io](https://app.trunk.io/login?intent=merge%20queue) in the `Settings > Repositories > Repo-Name` page.
+All of the following settings are specific to individual Merge Queues and can be accessed in two ways:
 
-All of the following settings ar specific to individual Merge Queues and can be applied in the **Settings** tab.
-
-<figure><img src="../../.gitbook/assets/merge-settings-tab.png" alt=""><figcaption><p>Settings are also avilable under the <code>Settings > Repositories > Repo-Name</code> page.</p></figcaption></figure>
+* From the **Settings** menu: Navigate to `Settings > Repositories > Repo-Name > Merge Queue`&#x20;
+* From the **Merge Queue** tab: Select your repository, then click the **Settings** tab
 
 {% hint style="info" %}
 Note that you must be an Organization admin to adjust any of these settings.
