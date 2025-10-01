@@ -111,13 +111,12 @@ The `Running` state is the default state of your merge queue, and will be the no
 
 **Single Queue** processes all pull requests in one line, testing each PR predictively against all changes ahead of it. Multiple PRs can be tested and merged simultaneously based on your [Testing Concurrency](advanced-settings.md#testing-concurrency) and [Batching](advanced-settings.md#batching) settings.
 
-**Parallel Queues** dynamically creates multiple independent testing lanes based on each PR's impacted targets (the parts of the codebase it changes). PRs affecting different parts of the code can be tested in completely separate queues, reducing wait times for repositories with distinct, independently-testable components.
+**Parallel Queues** dynamically creates multiple independent testing lanes based on each PR's impacted targets (the parts of the codebase it changes). PRs affecting different parts of the code can be tested in separate lanes, reducing wait times for repositories with distinct, independently-testable components.
 
 **Requirements for Parallel mode:**
 
-* PRs must upload impacted targets before processing begins
-* The queue will wait for impacted targets to be uploaded before starting tests
-* Requires configuring a workflow to calculate and upload impacted targets
+* Requires configuring a workflow to calculate and upload impacted targets for each PR
+* The queue will wait for impacted targets before processing PRs
 
 Read more about [Trunk's implementation of Parallel merge queues](../concepts-and-optimizations/parallel-queues/), supported build systems ([Bazel](../../flaky-tests/get-started/frameworks/bazel.md), [Nx](../concepts-and-optimizations/parallel-queues/nx.md), or [custom AP](../concepts-and-optimizations/parallel-queues/api.md)I), and [what impacted targets are](../concepts-and-optimizations/parallel-queues/#what-are-impacted-targets).
 
