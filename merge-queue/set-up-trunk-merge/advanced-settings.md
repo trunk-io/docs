@@ -54,7 +54,7 @@ Yes :white\_check\_mark:
 {% endcolumn %}
 
 {% column %}
-Everyday merging: Protect your mainline and merges successful PRs.
+**Everyday merging:** protect your mainline and merges successful PRs.
 {% endcolumn %}
 {% endcolumns %}
 
