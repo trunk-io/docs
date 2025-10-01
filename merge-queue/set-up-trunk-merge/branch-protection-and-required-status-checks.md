@@ -15,7 +15,7 @@ Trunk Merge Queue respects GitHub's branch protection rules and works with both 
 
 You can use GitHub's newer Rulesets feature alongside Classic branch protection rules—both systems work together through GitHub's rule layering. However, there's one important requirement:
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 **Configure push permission restrictions using Classic branch protection rules only.**
 
 GitHub's API does not expose push restriction settings from Rulesets, preventing Trunk Merge Queue from detecting or respecting these restrictions.
