@@ -10,8 +10,6 @@ The Trunk GitHub app lets you integrate Merge Queue and Flaky Test features with
 
 You can install the Trunk GitHub App by going to **Settings** > **Organization** > **GitHub** and clicking **Install GitHub App**. You'll be redirected to GitHub to select the repositories where the GitHub app will be installed.
 
-You can also [read more about the required permissions for the Trunk GitHub App](github-app-permissions.md).
-
 The Trunk GitHub App enables functionality for all of Trunk's tools. Not every permission is required for every feature of Trunk, and if you have only enabled one of our tools, we will only access the permissions pertaining to that tool. For complete documentation of the individual permissions the Trunk GitHub App requires, see the [GitHub developer docs](https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps). Below, find an explanation of every permission the Trunk GitHub App requires and what Trunk uses it for.
 
 ## **Repository permissions**
