@@ -158,9 +158,9 @@ For example, assuming a timeout of 4 hours:
 
 ## Optimistic Merge Queue
 
-> Toggle this feature **On** or **Off**.
+> Toggle this feature **Enabled** or **Disabled**. Default is **Disabled**.
 
-[**Optimistic Merging**](../concepts/optimistic-merging.md) allows multiple PRs to merge together when a later PR in the queue finishes testing first. Since that later PR's tests include all the changes ahead of it, the system can safely merge all verified PRs at once instead of waiting for each one individually, significantly reducing merge time.
+[**Optimistic Merging**](../concepts/optimistic-merging.md) allows multiple PRs to merge together at once when testing completes out of order. When [Testing Concurrency](advanced-settings.md#testing-concurrency) allows multiple PRs to test simultaneously, a PR later in the queue may finish before PRs ahead of it. Since that PR's tests include all the changes ahead of it, the system can safely merge all verified PRs together instead of waiting for each one individually, reducing merge time.
 
 ***
 
@@ -174,7 +174,7 @@ For example, assuming a timeout of 4 hours:
 
 ## Draft PR Creation
 
-> Toggle this feature **On** or **Off**.
+> Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
 [**Draft PR Creation**](branch-protection-and-required-status-checks.md#draft-prs) determines whether Trunk Merge Queue creates draft PRs or push-triggered branches when testing changes. When enabled (default), the queue creates draft PRs to trigger your existing PR-based CI checks. When disabled, the queue creates `trunk-merge/` branches instead, requiring you to configure push-triggered workflows to run your required status checks.
 
@@ -182,7 +182,7 @@ For example, assuming a timeout of 4 hours:
 
 ## GitHub Comments
 
-> Toggle this feature **On** or **Off**.
+> Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
 Whether or not GitHub comments are enabled for this merge queue.
 
@@ -192,7 +192,7 @@ Whether or not GitHub comments are enabled for this merge queue.
 
 ## GitHub Commands
 
-> Toggle this feature **On** or **Off**.
+> Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
 Whether or not GitHub slash commands like `/trunk merge` are enabled for this merge queue.
 
@@ -211,7 +211,7 @@ Customize which events trigger notifications, such as testing completion, failur
 
 ## Batching
 
-> Toggle this feature **On** or **Off**.
+> Toggle this feature **Enabled** or **Disabled**. Default is **Disabled**.
 
 [**Batching**](../concepts/batching.md) tests multiple pull requests as a single unit instead of individually, dramatically reducing CI costs.&#x20;
 
