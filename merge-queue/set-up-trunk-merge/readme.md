@@ -68,7 +68,17 @@ Now that branch protection is configured, test that the merge queue works correc
 You can submit a PR to the merge queue at any time, even before CI checks pass or code review is complete. The PR will remain in "**Queued**" state until all required conditions are met, then automatically begin testing.
 {% endhint %}
 
-3. Monitor the PR in the [Trunk Dashboard](https://app.trunk.io/). It should automatically progress from "Queued" to "Testing" to "Merged"
+3. You can check the PR in the [Trunk Dashboard](https://app.trunk.io/) - once your PR passes all required checks, it will move from 'Queued' to 'Testing'. The merge queue will then test it again with changes ahead of it in the queue. When those tests pass, it will automatically merge.
+
+#### Troubleshooting Common Issues
+
+If your test PR doesn't merge automatically:
+
+* **Check the status comments for the PR in** the [Trunk Dashboard](https://app.trunk.io/) to see what it's waiting for
+* **Stuck in "Queued"**: Usually means branch protection rules haven't passed (missing required status checks or code review) or there are merge conflicts. If the status looks correct but the PR still won't enter the queue, try [removing](../managing-merge-queue/using-the-webapp.md#manually-restarting-failed-prs) and re-adding by commenting `/trunk merge` again on the PR.
+* **Fails when attempting to merge**: Check that squash merges are enabled for your repository in GitHub settings (`Settings > General > Allow squash merging`). Trunk Merge Queue requires squash merges to be enabled.
+* **"Permission denied" errors**: Review the [Branch Protection](branch-protection-and-required-status-checks.md#configure-branch-protection-rules) guide to ensure `trunk-temp/*` and `trunk-merge/*` branches aren't protected by wildcard rules like `*/*`.
+* **Status checks not running**: Verify your CI is configured to run on draft PRs (or `trunk-merge/**` branches if using push-triggered mode). See the [Branch Protection](branch-protection-and-required-status-checks.md#configure-branch-protection-rules) guide for details.
 
 ### Step 4: Configure Advanced Features (Optional)
 
