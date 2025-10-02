@@ -46,7 +46,7 @@ The merge queue needs specific GitHub permissions to function. Follow the [Branc
 2. **Exclude Trunk's temporary branches** - Ensure `trunk-temp/*` and `trunk-merge/*` branches are not protected
 
 {% hint style="warning" %}
-**Without proper branch protection configuration, the merge queue will not work.** You may see errors like "Permission denied on `trunk-merge/*` branch" or PRs will remain stuck in "Not Ready" state.
+**Without proper branch protection configuration, the merge queue will not work.** You may see errors like "Permission denied on `trunk-merge/*` branch" or PRs will remain stuck in "Queued" state.
 {% endhint %}
 
 {% hint style="info" %}
