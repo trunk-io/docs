@@ -37,7 +37,7 @@ In the screenshot above, the PR has been submitted to Merge but has not yet been
 The PR Details panel has a dropdown "**Actions"** menu, where you can:
 
 1. **Restart tests.** Use this to manually restart testing of this PR.
-2. **Remove from queue**. If the PR is "Not Ready", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it.
+2. **Remove from queue**. If the PR is "Queued", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it.
 
 Trunk Merge Queue will automatically restart failed PRs when it can under certain conditions (see PR states). Since the restart is usually from a failed PR being removed from the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click thee **Actions** dropdown, and select **Restart**
 
