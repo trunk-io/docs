@@ -195,7 +195,7 @@ After completing configuration, verify your setup:
 1. Create a test pull request
 2. Add the merge queue label or comment `/trunk merge` on the pull request
 3. Check the [Trunk Dashboard](https://app.trunk.io/) to monitor your pull request status
-4. The pull request should appear in the queue as "Not ready" until all checks complete
+4. The pull request should appear in the queue as "Queued" until all checks complete
 5. Click on the pull request in the dashboard to see detailed status of what it's waiting for
 6. You'll also see status updates in the comments on your pull request
 
@@ -215,7 +215,7 @@ After completing configuration, verify your setup:
 
 <details>
 
-<summary>Pull request stuck as "Not ready" in the queue</summary>
+<summary>Pull request stuck as "Queued" in the queue</summary>
 
 **Cause:** Required status checks are not completing or not configured correctly.
 
