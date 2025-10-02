@@ -22,10 +22,6 @@ Most likely, you have a branch protection rule that affects merge branches. For 
 
 The two most likely problems are that you are restricting **who can merge** or that you have **disabled squash merges** into your repo. Trunk Merge Queue needs to use squash merges. To fix this, turn on `'allow squash merges'` for this repo in your GitHub setup.
 
-## How do I know if I'm running a legacy merge queue?
-
-Look for the 'Graph' tab in the UI. If you can see it, then you are using the new version.
-
 ## Why do Dependabot and Renovate PRs keep getting kicked from the Merge Queue?
 
 By default, both [dependabot](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/managing-pull-requests-for-dependency-updates#changing-the-rebase-strategy-for-dependabot-pull-requests) and [renovate](https://docs.renovatebot.com/updating-rebasing/#updating-and-rebasing-branches) both will rebase their PRs whenever other PRs merge into their base branch. If that rebase happens when those PRs are in the queue, they will get kicked since they were updated. There are two ways to mitigate this:
@@ -35,6 +31,12 @@ By default, both [dependabot](https://docs.github.com/en/code-security/dependabo
 
 ## I have an emergency PR that needs to merge right now. How can I do that?
 
-To merge a PR in an emergency, you can just merge the PR directly through GitHub as you normally would. The merge queue will restart everything it is currently testing to account for the new head of the merge branch.
+**Recommended approach:** Use [PR Prioritization](../pr-prioritization.md) to fast-track your PR through the queue while still validating it:
 
-We currently have other features planned to help with this, so stay tuned!
+```
+/trunk merge --priority=urgent
+```
+
+The `urgent` priority is the only level that will interrupt currently testing PRs. Your PR will immediately begin testing, and other PRs will restart after yours completes.
+
+**Emergency bypass:** If you need to completely bypass the merge queue, you can merge the PR directly through GitHub as you normally would. The merge queue will restart everything currently testing to account for the new head of the merge branch. However, this means your emergency PR won't be validated by the merge queue's predictive testing.
