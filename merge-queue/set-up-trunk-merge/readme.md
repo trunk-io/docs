@@ -72,6 +72,10 @@ You can submit a PR to the merge queue at any time, even before CI checks pass o
 
 #### Troubleshooting Common Issues
 
+{% hint style="info" %}
+Visit [Trunk Support](../../support.md) for additional assistance or to contact the support team.
+{% endhint %}
+
 If your test PR doesn't merge automatically:
 
 * **Check the status comments for the PR in** the [Trunk Dashboard](https://app.trunk.io/) to see what it's waiting for
