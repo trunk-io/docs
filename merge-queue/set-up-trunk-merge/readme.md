@@ -4,13 +4,13 @@ description: How to set up Trunk Merge Queue for your project
 
 # Setup
 
-Minimal set up is required to get started with Trunk Merge Queue, as it syncs with GitHub in order to run the same tests you're already running on PRs and require the same Status Checks to pass before merging.
+This guide walks you through setting up Trunk Merge Queue for your repository. The setup process involves installing the GitHub App, creating a queue, and configuring branch protection rules to allow the merge queue to function properly.
+
+#### Step 1: Install the GitHub App and Create a Queue
 
 {% hint style="info" %}
 **The Trunk GitHub App is required for Merge Queue to function.** It grants Trunk Merge Queue the necessary permissions to create test branches, read CI results, and merge PRs in your repository. View [detailed permissions and what Trunk uses them for](../../setup-and-configuration/managing-your-organization/github-app-permissions.md).&#x20;
 {% endhint %}
-
-#### Installation and Setup
 
 1. [Sign in to app.trunk.io](https://app.trunk.io/login) and navigate to the **Merge Queue** tab. (First-time users will [create an organization](../../setup-and-configuration/connecting-to-trunk.md) before accessing Merge Queue.)
 2. Click the **Create New Queue** button.
@@ -38,53 +38,40 @@ The GitHub App installation must be initiated from the Trunk web app to properly
 
 <figure><img src="../../.gitbook/assets/merge-add-repo (1).png" alt=""><figcaption></figcaption></figure>
 
-### Testing PRs In the Queue
+### Step 2: Configure Branch Protection (Required)
 
-Trunk will automatically create Draft PRs when PRs begin testing in the queue. The draft PR will contain the tip of the branch you're merging into, the change in the PR, and changes in any PRs in front of this one in the queue
+The merge queue needs specific GitHub permissions to function. Follow the [Branch Protection & Required Status Checks](branch-protection-and-required-status-checks.md) guide to:
 
-By using draft PRs, Trunk will leverage your existing status checks that gate your PRs already with tests and linters. When the new draft PRs are created, Trunk will wait for your existing status checks to run, and merge PRs when they pass.
+1. **Configure push restrictions** - Allow the `trunk-io` bot to push to your protected branch
+2. **Exclude Trunk's temporary branches** - Ensure `trunk-temp/*` and `trunk-merge/*` branches are not protected
+
+{% hint style="warning" %}
+**Without proper branch protection configuration, the merge queue will not work.** You may see errors like "Permission denied on `trunk-merge/*` branch" or PRs will remain stuck in "Not Ready" state.
+{% endhint %}
 
 {% hint style="info" %}
 If you do not want every check that runs when a PR is opened to also run when Trunk Merge Queue tests PRs, you can disable draft PR creation and run tests on branches instead. See [Draft PRs](branch-protection-and-required-status-checks.md#draft-prs).
 {% endhint %}
 
-Trunk Merge Queue syncs with GitHub's branch protection rules, and will require the same status checks that need to pass in order to merge a PR to also pass when testing the PR in the queue.
+### Step 3: Test Your Setup
 
-### Submit Pull Requests
+Now that branch protection is configured, test that the merge queue works correctly:
 
-Try making a simple change on a branch and submit it as PR in GitHub.
-
-Now trigger Trunk Merge Queue to process this PR using either a comment on the PR in GitHub or using the Trunk CLI.
-
-{% tabs %}
-{% tab title="GitHub Pull Request View" %}
-Comment `/trunk merge` on a pull request
+1. Create a test pull request in your repository
+2. Submit it to the merge queue using one of these methods:
+   * **Checking the box** in the Trunk bot comment on your PR, or
+   * **Commenting** `/trunk merge` on the pull request
 
 <figure><img src="../../.gitbook/assets/merge-github-comment.png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
 
-{% tab title="Trunk CLI" %}
-```bash
-# Authenticate with trunk service
-$ trunk login
-# Queue pull request for merge
-$ trunk merge {pr-number}
-```
-{% endtab %}
-{% endtabs %}
+{% hint style="info" %}
+You can submit a PR to the merge queue at any time, even before CI checks pass or code review is complete. The PR will remain in "**Queued**" state until all required conditions are met, then automatically begin testing.
+{% endhint %}
 
-If you have any problems with merge queueing PRs, take a look at the [branch protection](advanced-settings.md#branch-protection) docs.
+3. Monitor the PR in the [Trunk Dashboard](https://app.trunk.io/). It should automatically progress from "Queued" to "Testing" to "Merged"
 
-### Pull Request Processing
+### Step 4: Configure Advanced Features (Optional)
 
-Once a PR is submitted to the Merge queue, it will start as _Not Ready_ until all of the required conditions to submit it are met. Once ready, the Merge Queue will pick it up and run the tests. Once the tests pass, the PR may still need to wait for upstream PRs in the queue to finish their testing. Once the remaining upstream PRs are complete, the PR will be merged and then removed from the Merge Queue. If a PR fails or is canceled then it will go to the failed or canceled state. Read more about [PR States](../reference.md#pr-states).
+Once the basic merge queue is working, you can enable optimizations to improve performance:&#x20;
 
-## Success!
-
-Now Trunk Merge Queue is setup with your repo. Whenever a PR is pushed to your merge branch it will be safely tested and automatically merged when all tests pass, regardless of the order they were pushed in.
-
-### Next Steps
-
-Now that you have the Merge Queue setup and running you can explore the knobs you can enable that will give you the most performant Merge solution. Explore the features powering Trunk Merge Queue here:
-
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Settings &#x26; Configurations</td><td><a href="advanced-settings.md">advanced-settings.md</a></td></tr><tr><td align="center">Branch Protection &#x26; Required Status Checks</td><td><a href="branch-protection-and-required-status-checks.md">branch-protection-and-required-status-checks.md</a></td></tr><tr><td align="center">Migrate from GitHub merge queue</td><td><a href="../migrating-from-github-merge-queue.md">migrating-from-github-merge-queue.md</a></td></tr><tr><td align="center">Batching</td><td><a href="../concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="../concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="../concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="../concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="../pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="../concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Settings &#x26; Configurations</td><td><a href="advanced-settings.md">advanced-settings.md</a></td></tr><tr><td align="center">Branch Protection &#x26; Required Status Checks</td><td><a href="branch-protection-and-required-status-checks.md">branch-protection-and-required-status-checks.md</a></td></tr><tr><td align="center">Migrate from GitHub merge queue</td><td><a href="../migrating-from-github-merge-queue.md">migrating-from-github-merge-queue.md</a></td></tr><tr><td align="center">Batching</td><td><a href="../concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="../pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="../concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="../concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="../concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="../concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr></tbody></table>
