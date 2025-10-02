@@ -50,7 +50,7 @@ The merge queue needs specific GitHub permissions to function. Follow the [Branc
 {% endhint %}
 
 {% hint style="info" %}
-If you do not want every check that runs when a PR is opened to also run when Trunk Merge Queue tests PRs, you can disable draft PR creation and run tests on branches instead. See [Draft PRs](branch-protection-and-required-status-checks.md#draft-prs).
+If you do not want every check that runs when a PR is opened to also run when Trunk Merge Queue tests PRs, you can disable draft PR creation and run tests on branches instead. See [Choose Your Testing Approach](branch-protection-and-required-status-checks.md#choose-your-testing-approach).
 {% endhint %}
 
 ### Step 3: Test Your Setup
