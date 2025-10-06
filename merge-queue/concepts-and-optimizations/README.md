@@ -19,14 +19,16 @@ This section explains each of these key concepts:
 * [**Anti-Flake Protection**](../concepts/anti-flake-protection.md): Combining Optimistic Merging and Pending Failure Depth makes the queue more resilient to flaky tests. This inherent outcome allows the successful test of a later pull request to retroactively validate an earlier one that failed due to a transient issue.
 * [**Flaky Test Quarantining**](../../flaky-tests/quarantining.md) (via [Flaky Tests](../../flaky-tests/overview.md)): Automatically detects and quarantines flaky tests to prevent their failures from blocking the merge queue. Quarantined tests continue running and uploading results for visibility, allowing your team to identify and fix them while eliminating false-negative blockages. This foundation of clean test signals is essential for achieving maximum queue throughput.
 
-{% hint style="info" %}
+{% hint style="success" %}
 **Note on flaky tests**
 
-While Pending Failure Depth and Optimistic Merging provide resilience to flaky tests through queue mechanics, they still delay merges. [Trunk Flaky Tests](../../flaky-tests/overview.md) eliminates the need for these reruns entirely by quarantining detected flaky tests at the source. For maximum throughput, configure both approaches together.
+While Pending Failure Depth and Optimistic Merging provide resilience to flaky tests through queue mechanics, they still delay merges. Trunk Flaky Tests addresses the root cause by automatically [detecting](../../flaky-tests/detection.md) and [quarantining](../../flaky-tests/quarantining.md) flaky tests at runtime while maintaining test visibility. For maximum throughput, [integrate Flaky Tests](../../flaky-tests/get-started/) to work alongside queue-level resilience features.
 {% endhint %}
 
 #### Prioritization
 
 * [**Priority Merging**](pr-prioritization.md): Provides the ability to prioritize certain pull requests, allowing urgent changes or hotfixes to bypass the standard queue order and be tested and merged more quickly.
+
+
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Predictive Testing</strong></td><td><a href="../concepts/predictive-testing.md">predictive-testing.md</a></td></tr><tr><td><strong>Batching</strong></td><td><a href="../concepts/batching.md">batching.md</a></td></tr><tr><td> <strong>Priority</strong></td><td><a href="pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td><strong>Optimistic Merging</strong></td><td><a href="../concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td><strong>Pending Failure Depth</strong></td><td><a href="../concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td><strong>Anti-Flake Protection</strong></td><td><a href="../concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr><tr><td><strong>Parallel Queues</strong></td><td><a href="parallel-queues/">parallel-queues</a></td></tr><tr><td><strong>Parallel Queues with Bazel</strong></td><td><a href="parallel-queues/bazel.md">bazel.md</a></td></tr><tr><td><strong>Parallel Queues with Nx</strong></td><td><a href="parallel-queues/nx.md">nx.md</a></td></tr></tbody></table>
