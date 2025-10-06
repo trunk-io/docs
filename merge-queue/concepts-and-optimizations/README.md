@@ -21,7 +21,7 @@ This section explains each of these key concepts:
 {% hint style="success" %}
 **Note on flaky tests**
 
-While Pending Failure Depth and Optimistic Merging provide resilience to flaky tests through queue mechanics, they still delay merges. Trunk Flaky Tests addresses the root cause by automatically [detecting](../../flaky-tests/detection.md) and [quarantining](../../flaky-tests/quarantining.md) flaky tests at runtime while maintaining test visibility. For maximum throughput, [integrate Flaky Tests](../../flaky-tests/get-started/) to work alongside queue-level resilience features.
+While Anti-Flake Protection provide resilience to flaky tests through queue mechanics, they still delay merges. Trunk Flaky Tests addresses the root cause by automatically [detecting](../../flaky-tests/detection.md) and [quarantining](../../flaky-tests/quarantining.md) flaky tests at runtime while maintaining test visibility. For maximum throughput, [integrate Flaky Tests](../../flaky-tests/get-started/) to work alongside Anti-Flake Protection.
 {% endhint %}
 
 * [**Flaky Test Quarantining**](../../flaky-tests/quarantining.md) (via [Flaky Tests](../../flaky-tests/overview.md)): Automatically detects and quarantines flaky tests to prevent their failures from blocking the merge queue. Quarantined tests continue running and uploading results for visibility, allowing your team to identify and fix them while eliminating false-negative blockages. This foundation of clean test signals is essential for achieving maximum queue throughput.
