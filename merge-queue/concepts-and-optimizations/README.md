@@ -1,6 +1,6 @@
 # Concepts and Optimizations
 
-The core concept of any merge queue is **predictive testing**: testing your pull request against the head of the `main` branch, including all pull requests ahead of it in the queue.
+The core concept of any merge queue is [**Predictive Testing**](../concepts/predictive-testing.md): testing your pull request against the head of the `main` branch, including all pull requests ahead of it in the queue.
 
 While this is the foundation, achieving the scale necessary to merge thousands of PRs per day requires more advanced strategies. Trunk Merge Queue introduces a suite of powerful concepts designed to maximize throughput and maintain velocity, even in complex, high-traffic repositories. In fact, hitting a high scale is nearly impossible without leveraging features like optimistic merging, pending failure depth, and batching.
 
@@ -10,6 +10,7 @@ This section explains each of these key concepts:
 
 * [**Batching**](../concepts/batching.md): Groups multiple compatible pull requests together into a single test run. This significantly increases merge throughput and can dramatically reduce CI costs by validating an entire batch with a single test run instead of one for each individual pull request. It is an essential feature for achieving high throughput.
 * [**Parallel Queues**](parallel-queues/): Allows for the creation of multiple independent queues that test and merge PRs in parallel. This feature is necessary for high-scale simulations and transforms the queue from a simple "line" into a more complex and efficient "graph".
+* [**Testing Concurrency**](../managing-merge-queue/advanced-settings.md#testing-concurrency): A setting that defines the maximum number of pull requests that can be tested simultaneously. Fine-tuning this number is a powerful way to maximize merge velocity. It ensures a continuous flow of validated pull requests by keeping your CI runners fully utilized. Once this limit is reached, new PRs are queued and begin testing as soon as a slot becomes available.
 
 #### Resilience & Flake Handling
 
