@@ -1,8 +1,12 @@
+---
+hidden: true
+---
+
 # Merge
 
 ### Trunk Merge
 
-`trunk merge`: Submit a pull request to merge at `https://app.trunk.io/merge`.&#x20;
+`trunk merge`: Submit a pull request to merge at `https://app.trunk.io/merge`.
 
 #### **Usage** **example**
 
@@ -25,7 +29,7 @@ trunk merge [options] [subcommand]
 
 ### Trunk Merge Status
 
-`trunk merge status`: Check the status of a submitted merge request.&#x20;
+`trunk merge status`: Check the status of a submitted merge request.
 
 #### **Usage** **example**
 
@@ -35,7 +39,7 @@ trunk merge status [pr] [options]
 
 ### Trunk Merge Cancel
 
-`trunk merge cancel`: Cancel a pull request from merging.&#x20;
+`trunk merge cancel`: Cancel a pull request from merging.
 
 #### **Usage** **example**
 
@@ -45,7 +49,7 @@ trunk merge cancel [pr] [options]
 
 ### Trunk Merge Pause
 
-`trunk merge pause`: \[admin only] Pauses the queue from merging pull requests.&#x20;
+`trunk merge pause`: \[admin only] Pauses the queue from merging pull requests.
 
 #### **Usage** **example**
 
@@ -55,7 +59,7 @@ trunk merge cancel [pr] [options]
 
 ### Trunk Merge Resume
 
-`trunk merge resume`: \[admin only] Resumes merging pull requests in the queue.&#x20;
+`trunk merge resume`: \[admin only] Resumes merging pull requests in the queue.
 
 #### **Usage** **example**
 
