@@ -59,7 +59,7 @@ trunk merge <pr-number> [flags]
 * `200` (Low) Tests after default priority PRs
 * `255` ( Lowest) Lowest possible priority
 
-If multiple PRs have the same priority, they are processed in the order they were submitted. See [Priority Levels](pr-prioritization.md).
+If multiple PRs have the same priority, they are processed in the order they were submitted. See [Priority Levels](../concepts-and-optimizations/pr-prioritization.md).
 
 **Examples**
 

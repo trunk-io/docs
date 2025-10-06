@@ -2,11 +2,11 @@
 description: Troubleshooting and FAQ
 ---
 
-# FAQ
+# Merge Queue FAQ
 
 ## My PR is testing in my Merge Queue, but it doesn't look like my required status checks are being triggered.
 
-Most likely, you did not set up the required status checks to trigger for `trunk-merge/` branches. It is also possible that your CI provider just randomly never started testing on the Trunk Merge Queue branch, even after setting the required status checks to trigger. To assist with this, you can [configure a testing timeout](../set-up-trunk-merge/advanced-settings.md#timeout-for-tests-to-complete).
+Most likely, you did not set up the required status checks to trigger for `trunk-merge/` branches. It is also possible that your CI provider just randomly never started testing on the Trunk Merge Queue branch, even after setting the required status checks to trigger. To assist with this, you can [configure a testing timeout](advanced-settings.md#timeout-for-tests-to-complete).
 
 ## My PR appears to be ready but isn't entering the Merge Queue.
 
@@ -31,7 +31,7 @@ By default, both [dependabot](https://docs.github.com/en/code-security/dependabo
 
 ## I have an emergency PR that needs to merge right now. How can I do that?
 
-**Recommended approach:** Use [PR Prioritization](../pr-prioritization.md) to fast-track your PR through the queue while still validating it:
+**Recommended approach:** Use [PR Prioritization](../concepts-and-optimizations/pr-prioritization.md) to fast-track your PR through the queue while still validating it:
 
 ```
 /trunk merge --priority=urgent

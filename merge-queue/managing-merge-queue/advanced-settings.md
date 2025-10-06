@@ -4,7 +4,7 @@ description: >-
   protection.
 ---
 
-# Settings
+# Settings & Configurations
 
 All of the following settings are specific to individual Merge Queues and can be accessed in two ways:
 
@@ -177,7 +177,7 @@ When set to **0** (default), failed PRs are immediately evicted from the queue. 
 
 > Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
-[**Draft PR Creation**](branch-protection-and-required-status-checks.md#draft-prs) determines whether Trunk Merge Queue creates draft PRs or push-triggered branches when testing changes. When enabled (default), the queue creates draft PRs to trigger your existing PR-based CI checks. When disabled, the queue creates `trunk-merge/` branches instead, requiring you to configure push-triggered workflows to run your required status checks.
+[**Draft PR Creation**](../set-up-trunk-merge/branch-protection-and-required-status-checks.md#draft-prs) determines whether Trunk Merge Queue creates draft PRs or push-triggered branches when testing changes. When enabled (default), the queue creates draft PRs to trigger your existing PR-based CI checks. When disabled, the queue creates `trunk-merge/` branches instead, requiring you to configure push-triggered workflows to run your required status checks.
 
 ***
 

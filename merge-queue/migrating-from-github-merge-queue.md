@@ -27,9 +27,7 @@ Note that only users with admin permissions can manage merge queues for pull req
 
 ### Enable Trunk Merge Queue
 
-Follow the [Quickstart guide](set-up-trunk-merge/) to setup your repo with Trunk Merge Queue and configure the [settings](set-up-trunk-merge/advanced-settings.md) for your repository.
-
-
+Follow the [Quickstart guide](set-up-trunk-merge/) to setup your repo with Trunk Merge Queue and configure the [settings](managing-merge-queue/advanced-settings.md) for your repository.
 
 ***
 
@@ -47,7 +45,7 @@ This setting is found under **Merge Queue** tab **>** repository **> Settings >*
 
 #### Make the Switch
 
-Once you have [configured settings](set-up-trunk-merge/advanced-settings.md) and tested out the workflow quietly, turn off other merge tools (like [GitHub merge queue](migrating-from-github-merge-queue.md#turn-off-github-merge-queue)), re-enable GitHub comments in the Trunk web app under the **Merge Queue** tab **>** repository **> Settings >** toggle **on GitHub Comments**
+Once you have [configured settings](managing-merge-queue/advanced-settings.md) and tested out the workflow quietly, turn off other merge tools (like [GitHub merge queue](migrating-from-github-merge-queue.md#turn-off-github-merge-queue)), re-enable GitHub comments in the Trunk web app under the **Merge Queue** tab **>** repository **> Settings >** toggle **on GitHub Comments**
 
 {% hint style="info" %}
 It is important that a repository is configured to use ONLY Trunk Merge Queue and no other merge queue tools for best results.
