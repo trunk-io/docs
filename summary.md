@@ -123,7 +123,7 @@
   * [Integration for Slack](merge-queue/managing-merge-queue/integration-for-slack.md)
   * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
   * [Metrics](merge-queue/managing-merge-queue/metrics.md)
-  * [Reference](merge-queue/managing-merge-queue/reference.md)
+  * [Pull Request Lifecycle](merge-queue/managing-merge-queue/reference.md)
   * [Merge Queue FAQ](merge-queue/managing-merge-queue/common-problems.md)
   * [Merge Queue CLI Reference](merge-queue/managing-merge-queue/merge-queue-cli-reference.md)
 * [Merge Queue Webhooks](merge-queue/webhooks.md)

@@ -1,8 +1,10 @@
 ---
-description: Common reference points about Trunk Merge Queue
+description: >-
+  Covers the journey of a PR from submission through various states to
+  completion
 ---
 
-# Reference
+# Pull Request Lifecycle
 
 ## Submitting and Cancelling Pull Requests
 
