@@ -118,7 +118,7 @@
     * [Bazel](merge-queue/concepts-and-optimizations/parallel-queues/bazel.md)
     * [Nx](merge-queue/concepts-and-optimizations/parallel-queues/nx.md)
     * [API](merge-queue/concepts-and-optimizations/parallel-queues/api.md)
-* [Queue Configuration and Administration](merge-queue/managing-merge-queue/README.md)
+* [Configuration and Administration](merge-queue/managing-merge-queue/README.md)
   * [Settings & Configurations](merge-queue/managing-merge-queue/advanced-settings.md)
   * [Integration for Slack](merge-queue/managing-merge-queue/integration-for-slack.md)
   * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
