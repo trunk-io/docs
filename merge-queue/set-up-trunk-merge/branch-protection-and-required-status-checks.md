@@ -71,6 +71,8 @@ All other branch protection settings (required reviews, status checks, signed co
 
 Trunk Merge Queue needs permission to push to your protected branch. Configure these settings using Classic branch protection rules:
 
+<figure><img src="../../.gitbook/assets/merge-github-classic-branch-rules.png" alt=""><figcaption></figcaption></figure>
+
 1. Go to **Settings > Branches** in your repository
 2. Edit or create a Classic branch protection rule for your target branch (e.g., `main`)
 3. Under "Rules applied to everyone including administrators," select:
