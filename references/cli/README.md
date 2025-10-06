@@ -1,8 +1,12 @@
 # CLI Reference
 
-You can use the Trunk CLI to interact with Trunk during local development and automate tasks in CI.
+Trunk provides command-line tools for different products. Choose your product below:
 
-### What can it do?
+### Trunk Merge Queue
+
+Submit and manage pull requests in your merge queue from the command line.
+
+* [Trunk Merge Queue CLI Commands](../../merge-queue/managing-merge-queue/command-line.md)
 
 The Trunk CLI can be used for:
 

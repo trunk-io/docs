@@ -124,6 +124,7 @@
   * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
   * [Metrics](merge-queue/managing-merge-queue/metrics.md)
   * [Command Line](merge-queue/managing-merge-queue/command-line.md)
+* [Merge Queue CLI Reference](merge-queue/merge-queue-cli-reference.md)
 * [Webhooks](merge-queue/webhooks.md)
 * [Reference](merge-queue/reference.md)
 
