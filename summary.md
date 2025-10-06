@@ -105,7 +105,7 @@
 * [Setup](merge-queue/set-up-trunk-merge/readme.md)
   * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
   * [Branch Protection & Required Status Checks](merge-queue/set-up-trunk-merge/branch-protection-and-required-status-checks.md)
-* [Migrating From GitHub Merge Queue](merge-queue/migrating-from-github-merge-queue.md)
+  * [Migrating From GitHub Merge Queue](merge-queue/set-up-trunk-merge/migrating-from-github-merge-queue.md)
 * [Concepts and Optimizations](merge-queue/concepts-and-optimizations/README.md)
   * [Batching](merge-queue/concepts/batching.md)
   * [Priority](merge-queue/concepts-and-optimizations/pr-prioritization.md)
