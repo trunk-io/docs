@@ -1,5 +1,6 @@
 ---
 description: Interacting with your merge queue from the command line
+hidden: true
 ---
 
 # Command Line
