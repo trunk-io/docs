@@ -16,9 +16,8 @@ Submit and manage pull requests in your merge queue from the command line.
 
 #### Trunk Code Quality CLI
 
-* [Trunk Code Quality CLI Install](install.md)
-* [Trunk Code Quality CLI Compatibility](compatibility.md)
-* [Trunk Code Quality CLI Commands ](commands-reference/)
-* [Trunk Code Quality CLI Configuration](configuration/)&#x20;
+* [Trunk Launcher Install](install.md): Trunk uses a launcher to automatically install the appropriate CLI for your platform
+* [Trunk Code Quality CLI](commands-reference/): commands reference
+* [Trunk Code Quality CLI Configuration](configuration/): the Trunk CLI has its top-level config defined in `.trunk/trunk.yaml`
 * [Trunk Tools CLI](getting-started/tools.md): manage tools used by your repo
 * [Trunk Actions](getting-started/actions/): local workflow automation and githooks manager
