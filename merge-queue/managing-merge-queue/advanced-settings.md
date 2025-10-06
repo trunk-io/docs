@@ -202,6 +202,11 @@ When enabled, Trunk posts comments on pull requests with merge queue status upda
 
 Whether or not GitHub slash commands like `/trunk merge` are enabled for this merge queue.
 
+**When to disable:**
+
+* **API-only workflows** - You want all queue submissions to go through the public API (e.g., via a bot or custom automation) rather than individual developer commands.
+* **Holding pattern** - You're temporarily restricting queue submissions while investigating issues, performing maintenance, or coordinating with your team. (Note: Consider using the Paused or Draining queue state if you want to stop all new PRs from entering the queue.)
+
 ***
 
 ## Notifications
