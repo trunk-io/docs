@@ -9,7 +9,7 @@ This section explains each of these key concepts:
 #### Throughput & Speed
 
 * [**Batching**](../concepts/batching.md): Groups multiple compatible pull requests together into a single test run, significantly increasing the number of PRs that can be processed and merged at once.
-* [**Parallel Queues**](parallel-queues/): Allows for the creation of multiple independent queues that test and merge PRs in parallel. This feature is necessary for high-scale simulations and transforms the queue from a simple "line" into a more complex and efficient "graph".
+* [**Parallel Queues**](parallel-queues/): Groups multiple compatible pull requests together into a single test run. This significantly increases merge throughput and can dramatically reduce CI costs by validating an entire batch with a single test run instead of one for each individual pull request. It is an essential feature for achieving high throughput.
 
 #### Resilience & Flake Handling
 
