@@ -26,9 +26,9 @@ If you want to override a repo-wide setting just for your Windows machine, you c
 
 We intend to bring full feature support to Windows for Trunk. Currently, the following features are supported:
 
-* [Trunk Code Quality](../../../code-quality/code-quality.md)
-* Non-interactive [Trunk Actions](actions/) and [git-hooks](actions/git-hooks.md)
-* [VSCode](../../../code-quality/ide-integration/vscode.md)
+* [Trunk Code Quality](../../code-quality/code-quality.md)
+* Non-interactive [Trunk Actions](getting-started/actions/) and [git-hooks](getting-started/actions/git-hooks.md)
+* [VSCode](../../code-quality/ide-integration/vscode.md)
 
 ### Plugin Compatibility
 

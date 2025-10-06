@@ -55,7 +55,7 @@ definitions:
 
 #### Linter Definition Reference
 
-You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find references for these fields on the [Linter Definitions](../../references/cli/getting-started/configuration/lint/definitions.md) page.
+You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find references for these fields on the [Linter Definitions](../../references/cli/configuration/lint/definitions.md) page.
 
 ### Overriding Default Linter Definitions
 

@@ -9,7 +9,7 @@ trunk init
 This will scan your repository and create a `.trunk/trunk.yaml` file which enables all the linters, formatters, and security analyzers that [Trunk C](../../../code-quality/code-quality.md)[ode Quality ](../../../code-quality/code-quality.md)recommends.
 
 {% hint style="info" %}
-Security-conscious users may want to also record the signature of the CLI, which the [Trunk Launcher](install.md#the-trunk-launcher) will use to verify the CLI's provenance:
+Security-conscious users may want to also record the signature of the CLI, which the [Trunk Launcher](../install.md#the-trunk-launcher) will use to verify the CLI's provenance:
 
 ```
 trunk init --lock
@@ -18,13 +18,13 @@ trunk init --lock
 
 ### Discover CLI Use Cases
 
-<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><a href="../../../code-quality/code-quality.md">code-quality.md</a></td><td></td><td></td><td></td></tr><tr><td><a href="broken-reference">Broken link</a></td><td></td><td></td><td></td></tr><tr><td><a href="tools.md">tools.md</a></td><td></td><td></td><td></td></tr><tr><td><a href="actions/">actions</a></td><td></td><td></td><td></td></tr><tr><td><a href="announce.md">announce.md</a></td><td></td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th data-hidden></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
 
 ### Tweak the Configuration
 
 Trunk is completely controlled through the `trunk.yaml` file. If for example you are not using the `check` tool you can safely remove the `lint` section from the file.
 
-[Learn more about CLI configuration](configuration/)
+[Learn more about CLI configuration](../configuration/)
 
 ### Single-player Mode
 

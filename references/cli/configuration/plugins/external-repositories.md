@@ -8,7 +8,7 @@ To standardize Trunk configuration across an organization, you can create and pu
 
 Once you've created your plugin repository, you can source it in other repositories to adopt shared configuration across your organization. For an example of how we do this in our own org, check out our [configs repo](https://github.com/trunk-io/configs).
 
-Note that in order to keep linters and tools up to date in your plugin configs repo, you'll need to run `trunk upgrade --apply-to=plugin.yaml` to apply [upgrades](../../../../../cli/upgrades.md). After making a public GitHub release with your plugin changes, other dependent repos will pick up these changes automatically when running `trunk upgrade`.
+Note that in order to keep linters and tools up to date in your plugin configs repo, you'll need to run `trunk upgrade --apply-to=plugin.yaml` to apply [upgrades](../../../../cli/upgrades.md). After making a public GitHub release with your plugin changes, other dependent repos will pick up these changes automatically when running `trunk upgrade`.
 
 ### Get started
 
@@ -110,7 +110,7 @@ lint:
           success_codes: [0]
 ```
 
-See our documentation on [custom linters](../../../../../code-quality/linters/custom-linters.md) and [custom parsers](../lint/output-parsing.md) for more on what you can do, such as writing your parser in Javascript or Python!
+See our documentation on [custom linters](../../../../code-quality/linters/custom-linters.md) and [custom parsers](../lint/output-parsing.md) for more on what you can do, such as writing your parser in Javascript or Python!
 
 ### Publishing your plugin
 

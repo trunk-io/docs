@@ -34,7 +34,7 @@ And you can verify that it's been downloaded properly by running:
 ./trunk flakytests -V
 ```
 
-Under-the-hood, this downloads the [Trunk CLI Launcher](../references/cli/getting-started/install.md#the-trunk-launcher) which will download the appropriate binaries for your environment.&#x20;
+Under-the-hood, this downloads the [Trunk CLI Launcher](../references/cli/install.md#the-trunk-launcher) which will download the appropriate binaries for your environment.&#x20;
 
 ### Organization Slug and Token
 

@@ -18,7 +18,7 @@ Use Trunk Code Quality [GitHub Integrations](../ci-setup/github-integration.md) 
 
 #### Run and manage a long list of linters
 
-Trunk will install, manage, and run tools like linters and formatters for you. Trunk uses [hermetic installs](how-does-it-work.md#hermetic-tools-and-runtime-management) to manage both the static analysis [tools](../../references/cli/getting-started/tools.md) themselves and the [runtimes they depend](../../references/cli/getting-started/configuration/runtimes.md) on. No more conflicts because a linter requires `python 3.11` while your projects require `python 3.7`.
+Trunk will install, manage, and run tools like linters and formatters for you. Trunk uses [hermetic installs](how-does-it-work.md#hermetic-tools-and-runtime-management) to manage both the static analysis [tools](../../references/cli/getting-started/tools.md) themselves and the [runtimes they depend](../../references/cli/configuration/runtimes.md) on. No more conflicts because a linter requires `python 3.11` while your projects require `python 3.7`.
 
 #### Incrementally adopt new linters
 
@@ -36,7 +36,7 @@ Many linters don't install neatly through a package manager, and for those that 
 
 #### Consistent linter configs and versions
 
-Trunk Code Quality uses an extensible [plugin system](../../references/cli/getting-started/configuration/plugins/), so you can define linters to [auto-enable](../../references/cli/getting-started/configuration/lint/auto-enable.md) and [share linter configurations](../linters/shared-configs.md) to standardize across code bases.
+Trunk Code Quality uses an extensible [plugin system](../../references/cli/configuration/plugins/), so you can define linters to [auto-enable](../../references/cli/configuration/lint/auto-enable.md) and [share linter configurations](../linters/shared-configs.md) to standardize across code bases.
 
 ### Features
 

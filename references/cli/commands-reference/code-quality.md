@@ -99,7 +99,7 @@ trunk fmt [options]
 * `--scope`: Scope of checks to run {all | security}
 * `--ignore`: Glob pattern to exclude files from linting
 * `--force`: Run on all files, even if ignored
-* `--show-existing`: Show existing issues otherwise hidden by [hold-the-line](../../../../code-quality/overview/how-does-it-work.md#hold-the-line)
+* `--show-existing`: Show existing issues otherwise hidden by [hold-the-line](../../../code-quality/overview/how-does-it-work.md#hold-the-line)
 * `--ignore-git-state`: Run linters even if a merge, rebase, or revert is in progress
 
 #### Git Hooks Options

@@ -88,7 +88,7 @@ tools:
 
 The version of the primary package (in this case, `mypy`) is specified in the `tools.enabled`. So to enable the `mypy` tool at `1.4.0`, list it as `- mypy@1.4.0`.
 
-If you don't want to include additional packages in the tool definition, you can instead make them explicit in the enabled section of your `.trunk/trunk.yaml` as you would for [linters](../../../../code-quality/linters/), for example:
+If you don't want to include additional packages in the tool definition, you can instead make them explicit in the enabled section of your `.trunk/trunk.yaml` as you would for [linters](../../../code-quality/linters/), for example:
 
 ```yaml
 tools:
