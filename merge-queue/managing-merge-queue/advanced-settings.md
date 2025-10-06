@@ -235,3 +235,9 @@ CAUTION: Any queued merge requests will not be merged and all data will be lost
 {% endhint %}
 
 This setting will delete the Merge Queue configuration and any queued merge requests will not be merged and all data will be lost.
+
+**When to use this:**
+
+* **Switching target branches** - If you need to change which branch the queue merges into (e.g., switching from a test branch during POC to `main` for production use), you must delete the current queue and create a new one pointing to your desired branch.
+* **Removing Merge Queue** - You're decommissioning Merge Queue for this repository entirely.
+* **Starting fresh** - You want to reset all configuration.
