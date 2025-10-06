@@ -1,4 +1,8 @@
-# Webhooks
+---
+description: Merge Queue > Webhooks
+---
+
+# Merge Queue Webhooks
 
 Trunk provides a variety of webhooks to allow responding to various events from Trunk. Each event corresponds to a Trunk feature and an action within that feature (for example, a Pull Request being submitted to Trunk Merge).
 
@@ -13,4 +17,3 @@ You can learn about the Svix event catalog in the [Svix docs](https://docs.svix.
 {% hint style="info" %}
 If you don't currently have an endpoint ready to receive webhooks, you can quickly set up a URL for testing by clicking the "use Svix Play" link - you'll be able to inspect all webhook events sent there.
 {% endhint %}
-

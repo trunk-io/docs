@@ -125,7 +125,8 @@
   * [Reference](merge-queue/managing-merge-queue/reference.md)
   * [Merge Queue FAQ](merge-queue/managing-merge-queue/common-problems.md)
   * [Merge Queue CLI Reference](merge-queue/managing-merge-queue/merge-queue-cli-reference.md)
-* [Webhooks](merge-queue/webhooks.md)
+* [Merge Queue Webhooks](merge-queue/webhooks.md)
+* [Merge Queue API](references/apis/merge.md)
 
 ## Code Quality
 
