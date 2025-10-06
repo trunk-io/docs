@@ -12,7 +12,7 @@ The Trunk Analytics CLI is a command-line tool used in CI environments to upload
 
 Submit and manage pull requests in your merge queue from the command line.
 
-* [Trunk Merge Queue CLI Commands](../../merge-queue/merge-queue-cli-reference.md)
+* [Trunk Merge Queue CLI Reference](../../merge-queue/merge-queue-cli-reference.md)
 
 #### Trunk Code Quality CLI
 
