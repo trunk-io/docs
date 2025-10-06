@@ -226,7 +226,7 @@ lint:
 
 ## `is_security`
 
-`is_security`: _optional boolean_. Whether findings from this command should be considered "security" or not. Allows this linter to be run with `--scope==security`. [See Command Line Options](../../../../merge-queue/managing-merge-queue/reference.md)
+`is_security`: _optional boolean_. Whether findings from this command should be considered "security" or not. Allows this linter to be run with `--scope==security`. [See Command Line Options](../../../../../merge-queue/managing-merge-queue/reference.md)
 
 ## `maximum_file_size`
 

@@ -14,7 +14,7 @@ By collecting insights from your CI jobs and test results, Trunk can automatical
 Sign up for the [CI Autopilot waitlist](https://trunk.io/ci-autopilot), and we'll reach out when we're ready to onboard you.
 {% endhint %}
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Connect to Trunk</strong></td><td><a href="setup-and-configuration/connecting-to-trunk.md">connecting-to-trunk.md</a></td></tr><tr><td><strong>Configure Flaky Tests</strong></td><td><a href="flaky-tests/get-started/">get-started</a></td></tr><tr><td><strong>Install the CLI</strong></td><td><a href="references/cli/install.md">install.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Connect to Trunk</strong></td><td><a href="setup-and-configuration/connecting-to-trunk.md">connecting-to-trunk.md</a></td></tr><tr><td><strong>Configure Flaky Tests</strong></td><td><a href="flaky-tests/get-started/">get-started</a></td></tr><tr><td><strong>Install the CLI</strong></td><td><a href="references/cli/getting-started/install.md">install.md</a></td></tr></tbody></table>
 
 ### Features
 

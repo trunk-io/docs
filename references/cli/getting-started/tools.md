@@ -78,7 +78,7 @@ You can run your tools by referring to the path `<path-to-workspace>/.trunk/tool
 
 Tools enable you to run your linter binaries on the command line independent of `trunk check` and test and troubleshoot your integrations more easily.
 
-Tools are configured in the `tools` section of `trunk.yaml`. As with other settings, you can override these values in your [User YAML](../configuration/per-user-overrides.md).
+Tools are configured in the `tools` section of `trunk.yaml`. As with other settings, you can override these values in your [User YAML](configuration/per-user-overrides.md).
 
 ```yaml
 tools:

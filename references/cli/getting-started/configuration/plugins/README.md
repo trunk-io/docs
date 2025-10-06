@@ -36,7 +36,7 @@ Any configuration used in `trunk.yaml` can also be used in a plugin repository, 
 
 The most common use for a plugin repository is to define custom linters, actions, or tools. But they can also be used to define a common set of shared tools across an organization. For more info, see [organization configs](external-repositories.md).
 
-The root `plugin.yaml` file may also have a `required_trunk_version` field which governs compatibility when [upgrading](../../../../cli/upgrades.md) between CLI versions.
+The root `plugin.yaml` file may also have a `required_trunk_version` field which governs compatibility when [upgrading](../../../../../cli/upgrades.md) between CLI versions.
 
 #### Add a plugin to your `trunk.yaml` file
 

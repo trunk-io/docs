@@ -1,4 +1,4 @@
-# Getting Started
+# Code Quality CLI Getting Started
 
 Initializing Trunk in a git repo is as simple as running:
 
@@ -9,7 +9,7 @@ trunk init
 This will scan your repository and create a `.trunk/trunk.yaml` file which enables all the linters, formatters, and security analyzers that [Trunk C](../../../code-quality/code-quality.md)[ode Quality ](../../../code-quality/code-quality.md)recommends.
 
 {% hint style="info" %}
-Security-conscious users may want to also record the signature of the CLI, which the [Trunk Launcher](../install.md#the-trunk-launcher) will use to verify the CLI's provenance:
+Security-conscious users may want to also record the signature of the CLI, which the [Trunk Launcher](install.md#the-trunk-launcher) will use to verify the CLI's provenance:
 
 ```
 trunk init --lock
@@ -24,7 +24,7 @@ trunk init --lock
 
 Trunk is completely controlled through the `trunk.yaml` file. If for example you are not using the `check` tool you can safely remove the `lint` section from the file.
 
-[Learn more about CLI configuration](../configuration/)
+[Learn more about CLI configuration](configuration/)
 
 ### Single-player Mode
 

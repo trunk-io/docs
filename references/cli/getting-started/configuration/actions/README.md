@@ -148,7 +148,7 @@ If you do a bulk file modification, the `${target}` template may resolve to a sp
 
 #### Git hooks
 
-You can also configure Trunk to manage your git hooks. More detail is provided on this in our [git hooks reference](../../getting-started/actions/git-hooks.md).
+You can also configure Trunk to manage your git hooks. More detail is provided on this in our [git hooks reference](../../actions/git-hooks.md).
 
 ### Interactivity
 
