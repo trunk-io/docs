@@ -231,7 +231,9 @@ Customize which events trigger notifications, such as testing completion, failur
 ## Delete Merge Integration
 
 {% hint style="warning" %}
-CAUTION: Any queued merge requests will not be merged and all data will be lost
+CAUTION: Any queued merge requests will not be merged and all data will be lost.
+
+**Before deleting:** Ensure all important PRs in the queue are either merged manually or that you're prepared to resubmit them to a new queue.
 {% endhint %}
 
 This setting will delete the Merge Queue configuration and any queued merge requests will not be merged and all data will be lost.
@@ -241,3 +243,4 @@ This setting will delete the Merge Queue configuration and any queued merge requ
 * **Switching target branches** - If you need to change which branch the queue merges into (e.g., switching from a test branch during POC to `main` for production use), you must delete the current queue and create a new one pointing to your desired branch.
 * **Removing Merge Queue** - You're decommissioning Merge Queue for this repository entirely.
 * **Starting fresh** - You want to reset all configuration.
+
