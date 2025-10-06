@@ -6,7 +6,7 @@ Trunk provides command-line tools for different products. Choose your product be
 
 Submit and manage pull requests in your merge queue from the command line.
 
-* [Trunk Merge Queue CLI Commands](../../merge-queue/managing-merge-queue/command-line.md)
+* [Trunk Merge Queue CLI Commands](broken-reference)
 
 The Trunk CLI can be used for:
 

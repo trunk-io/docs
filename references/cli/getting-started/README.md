@@ -18,7 +18,7 @@ trunk init --lock
 
 ### Discover CLI Use Cases
 
-<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><a href="../../../code-quality/code-quality.md">code-quality.md</a></td><td></td><td></td><td></td></tr><tr><td><a href="../../../merge-queue/managing-merge-queue/command-line.md">command-line.md</a></td><td></td><td></td><td></td></tr><tr><td><a href="tools.md">tools.md</a></td><td></td><td></td><td></td></tr><tr><td><a href="actions/">actions</a></td><td></td><td></td><td></td></tr><tr><td><a href="announce.md">announce.md</a></td><td></td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><a href="../../../code-quality/code-quality.md">code-quality.md</a></td><td></td><td></td><td></td></tr><tr><td><a href="broken-reference">Broken link</a></td><td></td><td></td><td></td></tr><tr><td><a href="tools.md">tools.md</a></td><td></td><td></td><td></td></tr><tr><td><a href="actions/">actions</a></td><td></td><td></td><td></td></tr><tr><td><a href="announce.md">announce.md</a></td><td></td><td></td><td></td></tr></tbody></table>
 
 ### Tweak the Configuration
 
