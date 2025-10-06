@@ -6,7 +6,7 @@ Trunk provides command-line tools for different products. Choose your product be
 
 The Trunk Analytics CLI is a command-line tool used in CI environments to upload test reports to the Trunk Flaky Tests service for detection and tracking.
 
-* [Trunk Analytics CLI Reference](./#trunk-analytics-cli-reference)
+* [Trunk Analytics CLI Reference](../../flaky-tests/uploader.md)
 
 #### Trunk Merge Queue CLI
 
