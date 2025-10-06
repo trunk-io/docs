@@ -17,6 +17,13 @@ This section explains each of these key concepts:
 * [**Pending Failure Depth**](../concepts/pending-failure-depth.md): Allows the queue to continue testing subsequent pull requests even if an earlier one fails. Because predictive testing re-tests the failed PR's code along with the subsequent PRs, this feature gives the failed PR additional chances to pass. This prevents a single flaky test from halting all forward progress and makes the queue more resilient to intermittent failures.
 * [**Optimistic Merging**](../concepts/optimistic-merging.md): Increases merge speed by leveraging test results from pull requests that are later in the queue. When a pull request (e.g., pull request 'c') passes testing, its success also verifies the changes from the pull requests ahead of it ('a' and 'b'). This allows the entire group of pull requests to be safely merged at once.
 * [**Anti-Flake Protection**](../concepts/anti-flake-protection.md): Combining Optimistic Merging and Pending Failure Depth makes the queue more resilient to flaky tests. This inherent outcome allows the successful test of a later pull request to retroactively validate an earlier one that failed due to a transient issue.
+* [**Flaky Test Quarantining**](../../flaky-tests/quarantining.md) (via [Flaky Tests](../../flaky-tests/overview.md)): Automatically detects and quarantines flaky tests to prevent their failures from blocking the merge queue. Quarantined tests continue running and uploading results for visibility, allowing your team to identify and fix them while eliminating false-negative blockages. This foundation of clean test signals is essential for achieving maximum queue throughput.
+
+{% hint style="info" %}
+**Note on flaky tests**
+
+While Pending Failure Depth and Optimistic Merging provide resilience to flaky tests through queue mechanics, they still delay merges. [Trunk Flaky Tests](../../flaky-tests/overview.md) eliminates the need for these reruns entirely by quarantining detected flaky tests at the source. For maximum throughput, configure both approaches together.
+{% endhint %}
 
 #### Prioritization
 
