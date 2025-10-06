@@ -118,14 +118,14 @@
     * [Bazel](merge-queue/concepts-and-optimizations/parallel-queues/bazel.md)
     * [Nx](merge-queue/concepts-and-optimizations/parallel-queues/nx.md)
     * [API](merge-queue/concepts-and-optimizations/parallel-queues/api.md)
-  * [FAQ](merge-queue/concepts/common-problems.md)
 * [Priority](merge-queue/pr-prioritization.md)
 * [Managing Merge Queue](merge-queue/managing-merge-queue/README.md)
   * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
   * [Metrics](merge-queue/managing-merge-queue/metrics.md)
+  * [Reference](merge-queue/managing-merge-queue/reference.md)
+  * [Merge Queue FAQ](merge-queue/managing-merge-queue/common-problems.md)
 * [Merge Queue CLI Reference](merge-queue/merge-queue-cli-reference.md)
 * [Webhooks](merge-queue/webhooks.md)
-* [Reference](merge-queue/reference.md)
 
 ## Code Quality
 
