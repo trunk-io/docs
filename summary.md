@@ -96,7 +96,7 @@
   * [Microsoft Teams Integration](flaky-tests/webhooks/microsoft-teams-integration.md)
   * [GitHub Issues Integration](flaky-tests/webhooks/github-issues-integration.md)
   * [Linear Integration](flaky-tests/webhooks/linear-integration.md)
-  * [Flaky Tests API](flaky-tests/webhooks/flaky-tests.md)
+* [Flaky Tests API](flaky-tests/flaky-tests.md)
 * [Trunk Analytics CLI Reference](flaky-tests/uploader.md)
 
 ## Merge Queue
@@ -127,7 +127,7 @@
   * [Merge Queue FAQ](merge-queue/managing-merge-queue/common-problems.md)
   * [Merge Queue CLI Reference](merge-queue/managing-merge-queue/merge-queue-cli-reference.md)
 * [Merge Queue Webhooks](merge-queue/webhooks.md)
-* [Merge Queue API](merge-queue/merge.md)
+* [Merge Queue API](references/apis/merge.md)
 
 ## Code Quality
 
@@ -298,8 +298,8 @@
       * [Telemetry](references/cli/configuration/telemetry.md)
       * [Per User Overrides](references/cli/configuration/per-user-overrides.md)
 * [API Reference](references/apis/README.md)
-  * [Flaky Tests](flaky-tests/webhooks/flaky-tests.md)
-  * [Merge Queue](merge-queue/merge.md)
+  * [Flaky Tests](flaky-tests/flaky-tests.md)
+  * [Merge Queue](references/apis/merge.md)
   * [Webhooks Reference](references/apis/webhooks.md)
 
 ## Administration

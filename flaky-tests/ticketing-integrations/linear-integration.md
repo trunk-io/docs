@@ -56,4 +56,4 @@ Note: You can use [Flaky Tests webhooks](../webhooks/linear-integration.md) to a
 
 #### Link existing tickets to tests
 
-If you already have a ticket in Linear that you want to link to a test in the dashboard, you can use the [Link Ticket to Test Case API](../webhooks/flaky-tests.md#post-flaky-tests-link-ticket-to-test-case).
+If you already have a ticket in Linear that you want to link to a test in the dashboard, you can use the [Link Ticket to Test Case API](../flaky-tests.md#post-flaky-tests-link-ticket-to-test-case).

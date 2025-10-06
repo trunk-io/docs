@@ -88,4 +88,4 @@ If you are connected to Jira, you can click the **Create Jira Ticket** button at
 
 #### Link existing tickets to tests
 
-If you already have a ticket in Jira that you want to link to a test in the dashboard, you can use the [Link Ticket to Test Case API](../webhooks/flaky-tests.md#post-flaky-tests-link-ticket-to-test-case).
+If you already have a ticket in Jira that you want to link to a test in the dashboard, you can use the [Link Ticket to Test Case API](../flaky-tests.md#post-flaky-tests-link-ticket-to-test-case).

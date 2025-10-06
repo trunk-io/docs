@@ -46,7 +46,7 @@ After quarantining a test, Trunk will ignore the test result (pass/fail) on CI r
 
 ### Step 4: Automation
 
-Trunk has [webhooks](webhooks/) and [Flaky Tests APIs](webhooks/flaky-tests.md) that can be used to build custom workflows around ticket creation, linking existing tickets to Trunk, sending notifications, and dealing with quarantined tests.
+Trunk has [webhooks](webhooks/) and [Flaky Tests APIs](flaky-tests.md) that can be used to build custom workflows around ticket creation, linking existing tickets to Trunk, sending notifications, and dealing with quarantined tests.
 
 There is also built-in automation support that handles tasks such as assigning flaky test ownership, ticket creation, and quarantining (so that unblocking CI is not a manual process).&#x20;
 
