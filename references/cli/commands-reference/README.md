@@ -1,4 +1,4 @@
-# Commands Reference
+# Commands reference
 
 ### trunk init
 
@@ -14,7 +14,7 @@ trunk init
 
 `trunk version`: Output the version.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk version
@@ -42,7 +42,7 @@ trunk upgrade [options]
 
 `trunk login`: Login to trunk.io.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk login
@@ -52,7 +52,7 @@ trunk login
 
 `trunk logout`: Logout from trunk.io.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk logout
@@ -62,7 +62,7 @@ trunk logout
 
 `trunk plugins add`: Add a plugin by URI.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk plugins [uri] [ref] [options]
@@ -72,7 +72,7 @@ trunk plugins [uri] [ref] [options]
 
 `trunk tools`: Universal tool manager.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk tools [options]
@@ -82,7 +82,7 @@ trunk tools [options]
 
 Report the status of the daemon.
 
-#### **Usage Example**
+#### **Usage** example
 
 ```
 trunk daemon status
@@ -92,7 +92,7 @@ trunk daemon status
 
 Start the trunk daemon in the background if it’s not already running.
 
-#### **Usage Example**
+#### **Usage** example
 
 <pre><code><strong>trunk daemon start
 </strong></code></pre>
@@ -101,7 +101,7 @@ Start the trunk daemon in the background if it’s not already running.
 
 `trunk daemon shutdown`: Shutdown the trunk daemon if it is running.
 
-#### **Usage Example**
+#### **Usage** example
 
 ```
 trunk daemon shutdown
@@ -111,7 +111,7 @@ trunk daemon shutdown
 
 `trunk daemon launch`: Start the trunk daemon in the foreground if it’s not already running.
 
-#### **Usage Example**
+#### **Usage** example
 
 ```
 trunk daemon launch
@@ -121,7 +121,7 @@ trunk daemon launch
 
 `trunk whoami`: print who you're logged in as
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk whoami
@@ -131,7 +131,7 @@ trunk whoami
 
 `trunk deinit`: Deinitialize Trunk in your repo
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk deinit [options]
@@ -147,7 +147,7 @@ trunk deinit [options]
 
 `trunk config share`: Remove Trunk config files from your local git ignores.
 
-#### **Usage Example**
+#### **Usage** example
 
 ```
 trunk config share 
@@ -157,7 +157,7 @@ trunk config share
 
 `trunk config hide`: Add Trunk config files to your local git ignores.
 
-#### **Usage Example**
+#### **Usage** example
 
 ```
 trunk config hide
@@ -167,7 +167,7 @@ trunk config hide
 
 `trunk config print`: Print the resolved trunk config.
 
-#### **Usage Example**
+#### **Usage** example
 
 ```
 trunk config print
@@ -187,7 +187,7 @@ trunk cache clean
 
 `trunk cache prune`: Prune unused cached files.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk cache clean
@@ -197,7 +197,7 @@ trunk cache clean
 
 `trunk install`: Download & install enabled runtimes/linters.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk install [options]

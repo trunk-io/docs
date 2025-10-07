@@ -4,9 +4,9 @@ description: >-
   completion
 ---
 
-# Pull Request Lifecycle
+# Pull request lifecycle
 
-## Submitting and Cancelling Pull Requests
+## Submitting and cancelling pull requests
 
 We offer a few mechanisms for submitting a PR to the Merge Graph:
 
@@ -34,11 +34,11 @@ trunk login
 trunk merge cancel <pr-number>
 ```
 
-## Pull Request Processing
+## Pull request processing
 
 Once a PR is submitted to the merge queue it goes through several states. First, it starts as _Queued_ until all of the required conditions to submit it are met. Once ready, the PR moves to the _Pending_ state, waiting for a Merge Queue to pick it up, and then enters the _Testing_ state. Once the tests pass the PR may still need to wait for upstream PRs. Once any upstream PRs are complete the PR will be merged and then removed from the Merge Queue. If a PR fails or is canceled then it will go to the failed or canceled state.
 
-## PR States
+## Pull request states
 
 A PR's lifecycle in the Merge Queue goes through the following states:
 
@@ -53,7 +53,7 @@ A PR's lifecycle in the Merge Queue goes through the following states:
 | Failed          | The PR caused a testing failure. It will be removed from the queue.                                                                                                                                                                                                                                                                                                            |
 | Cancelled       | The PR was cancelled, e.g. `/trunk cancel`. It will be removed from the queue.                                                                                                                                                                                                                                                                                                 |
 
-## Stacked PR Support
+## Stacked pull request support
 
 Trunk Merge Queue supports workflows that use stacked pull requests with minimal configuration required.
 

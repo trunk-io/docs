@@ -1,4 +1,4 @@
-# Manage Linters
+# Manage linters
 
 ### Using the CLI
 
@@ -20,7 +20,7 @@ Disable a single linter
 trunk check disable <linter name>
 ```
 
-### Using Trunk Config Files
+### Using Trunk config files
 
 Trunk only runs linters listed in the `enabled` section; linters which are defined in `lint.definitions` but are not listed in `enabled` are not run.
 
@@ -38,7 +38,7 @@ lint:
 
 Custom linters are slightly different; see [those docs](custom-linters.md) to learn more.
 
-### Disable Linters
+### Disable linters
 
 Trunk will continuously monitor your repository and make recommendations of additional new tools to run on your codebase. You can tell Trunk not to recommend a specific linter by adding it to the disabled list.
 
@@ -50,6 +50,6 @@ lint:
     - tflint
 ```
 
-### Upgrading Linters
+### Upgrading linters
 
 Run `trunk upgrade` to update the Trunk CLI and all your plugins, linters, tools, and runtimes.

@@ -36,6 +36,6 @@ A merge queue's purpose is to give you the guarantee of all code being tested ag
 
 Trunk Merge Queue works with any CI provider as long as you use GitHub for your repo hosting.
 
-### **Next Steps**
+### **Next steps**
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Book a Demo</td><td></td><td><a href="https://calendly.com/trunk/demo">https://calendly.com/trunk/demo</a></td></tr><tr><td></td><td>Get Started on Your Own</td><td></td><td><a href="set-up-trunk-merge/">set-up-trunk-merge</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Book a demo</td><td></td><td><a href="https://calendly.com/trunk/demo">https://calendly.com/trunk/demo</a></td></tr><tr><td></td><td>Get started on your own</td><td></td><td><a href="set-up-trunk-merge/">set-up-trunk-merge</a></td></tr></tbody></table>

@@ -6,7 +6,7 @@ Real-world code bases are complicated. Every project has many different types of
 
 A metalinter helps you lint **every file** in a modern code base by installing, managing, running, and reporting from individual static analysis tools with a **single tool**.
 
-### Use Cases
+### Use cases
 
 There are many reasons for you to want to use a metalinter like Trunk Code Quality.
 
@@ -56,7 +56,7 @@ These all have linters you could be running, but they don't all install through 
 
 Trunk Code Quality speeds up static analysis by using a background daemon to check code as you modify files in your repo, run linters in batches, and cache the results. Since Code Quality is git-aware, it knows what you've changed, and by adding batched execution and caching, you end up with a much faster and smoother way to run these tools.
 
-#### **Time-consuming PR iteration and triage**
+#### **Time-consuming** pull request **iteration and triage**
 
 Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](../setup-and-installation/prevent-new-issues.md), improving PR triage. It can optionally also function as a [githooks manager](../../references/cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`.
 

@@ -1,4 +1,4 @@
-# Pending Failure Depth
+# Pending failure depth
 
 By default, a PR that fails testing will be evicted from the queue. The **Pending Failure Depth** feature allows a failed PR to remain in the queue for pull requests behind it so that testing can be finished before this eviction occurs. The number of PRs that the queue will wait for is the _Pending Failure Depth._ This depth is configurable and reflects the number of pull requests behind this one that should complete testing before eviction is assessed. \
 \
@@ -17,8 +17,8 @@ The code in A is actually being tested when both **B** and **C** are being teste
 \
 That means that if pull request **A** fails because of a flaky test, it doesn't have to be immediately rejected and can leverage the test coverage it receives during the testing of **B** and **C**. By combining pending failure depth with optimistic merging - we can create a merge queue better [protected from flaky failures](anti-flake-protection.md).&#x20;
 
-#### Configure Pending Merge Depth
+#### Configure Pending Failure Depth
 
-You can configure pendign merge depth through the [Merge UI](../managing-merge-queue/using-the-webapp.md) settings as shown below:
+You can configure pending failure depth through the [Merge UI](../managing-merge-queue/using-the-webapp.md) settings as shown below:
 
 <figure><img src="../../.gitbook/assets/merge-pending-failure-depth-setting.png" alt=""><figcaption><p>Pending Failure Depth is <strong>Zero</strong> by default</p></figcaption></figure>

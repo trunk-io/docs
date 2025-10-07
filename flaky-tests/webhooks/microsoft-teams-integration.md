@@ -1,4 +1,4 @@
-# Microsoft Teams Integration
+# Microsoft Teams integration
 
 Trunk allows you to create custom workflows to send customized messages to Microsoft Teams channels through webhooks.
 
@@ -6,7 +6,7 @@ Trunk allows you to create custom workflows to send customized messages to Micro
 
 This guide will walk you through sending Microsoft Teams messages using event-triggered webhooks. By the end of this tutorial, you'll receive Microsoft Teams messages for test status changes. This guide should take 10 minutes to complete.
 
-### 1. Configure Incoming Webhooks For Your Team
+### 1. Configure incoming webhooks for your team
 
 Microsoft has two different concepts for accepting incoming webhooks. **Connectors** that are being deprecated and **Workflows** that are for newly created teams. This guide is for the newer **Workflows**. The workflow for configuring webhooks is similar, but you may see small differences. You can find more about the soon to be deprecated connectors in [Microsoft's documentation](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=newteams%2Cdotnet).
 
@@ -16,7 +16,7 @@ Microsoft has two different concepts for accepting incoming webhooks. **Connecto
 4. Configure the workflow's **Microsoft Teams Team** and **Microsoft Teams Channel**, then click **Add workflow**.
 5. When the workflow is added correctly, you can copy the URL displayed, then click **Done.**
 
-### 2. Add a New Webhook
+### 2. Add a new webhook
 
 Trunk uses Svix to integrate with other services, such as Microsoft Teams messages through webhooks.
 
@@ -31,7 +31,7 @@ You can create a new endpoint by:
 5. Review the transformation code automatically generated for Teams messages. You can customize this transformation at any time. Learn more about [customizing transformations](microsoft-teams-integration.md#id-3.-customize-your-transformation).
 6. Create the new endpoint. You will be redirected to the endpoint configuration view.
 
-### 3. Customize Your Transformation
+### 3. Customize your transformation
 
 Transformations are custom code snippets you can write to customize the Microsoft Teams messages created by the webhook. A working template transformation will be added automatically for your webhook, but you can further customize the behavior of this webhook.
 
@@ -193,7 +193,7 @@ function summarizeTestCase(payload) {
 }
 ```
 
-### 4. Test Your Webhook
+### 4. Test your webhook
 
 You can send test messages to your Microsoft Teams channels as you make updates. You can do this by:
 
@@ -201,7 +201,7 @@ You can send test messages to your Microsoft Teams channels as you make updates.
 2. Under **Subscribed events,** select `test_case.status_changed`as the event type to send.
 3. Click **Send Example** to test your webhook
 
-### 5. Monitoring Webhooks
+### 5. Monitoring webhooks
 
 You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
 

@@ -9,7 +9,7 @@ description: Trunk supports triggering actions on all githooks
 * Seamlessly bring `git-hooks` under version control. `git-hooks` can be a major headache for organizations - they require manual installation and are not easily versioned along with the rest of your code.
 * Take advantage of Trunk's powerful sandboxing and environment management to write and execute hooks using the programming language and runtime of your choice, as opposed to dealing with complicated bash scripts.
 
-### Manual Installation
+### Manual installation
 
 ```bash
 trunk git-hooks sync

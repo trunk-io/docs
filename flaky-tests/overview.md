@@ -12,7 +12,7 @@ You can see an overview of Trunk Flaky Tests in this video.
 
 {% embed url="https://youtu.be/ORE30UUvOJk" %}
 
-### Understand The Impact
+### Understand the impact
 
 Your dashboard shows a comprehensive overview of your test suite's health at a glance. It lets you see important impact metrics like the number of flaky tests, broken tests, PRs impacted by flaky tests, and PRs rescued by quarantining flaky tests.
 
@@ -20,7 +20,7 @@ Your dashboard shows a comprehensive overview of your test suite's health at a g
 
 To learn more, [see how Flaky Tests does detection](https://docs.trunk.io/flaky-tests/detection).
 
-### Track Every Flaky Test
+### Track every flaky test
 
 You can find a list of known flaky tests complete with important information like their impact on PRs and if someone's working on a fix. For more granularity, you can also inspect individual tests for their execution history, results, and status changes.
 
@@ -28,7 +28,7 @@ You can find a list of known flaky tests complete with important information lik
 
 To learn more, [see how Flaky Tests does detection](https://docs.trunk.io/flaky-tests/detection).
 
-### Stay in Sync
+### Stay in sync
 
 <figure><picture><source srcset="../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/github-comment-light.png" alt="PR comment linking to PR Test Summary"></picture><figcaption><p>PR comment linking to PR Test Summary</p></figcaption></figure>
 
@@ -36,7 +36,7 @@ Flaky Tests helps everyone in your team stay in sync about flaky test failures w
 
 To learn more, [see our docs about GitHub Comments and Test Summaries](github-pull-request-comments.md).
 
-### Investigate Flaky Failures
+### Investigate flaky failures
 
 Flaky Tests creates detailed reports for individual test failures so you can debug faster.
 
@@ -48,7 +48,7 @@ Test details will summarize all the unique ways a flaky test fails and let you f
 
 To learn more, [see our docs about the detection of flaky tests](detection.md#test-case-details).
 
-### **Quarantine Flaky Failures**
+### **Quarantine flaky failures**
 
 Flaky Tests allows you to [quarantine](https://docs.trunk.io/flaky-tests/quarantining) detected flaky tests, stopping them from failing your CI jobs. This prevents failed flaky tests from impacting your CI pipelines, so you won’t have to disable tests and won’t be slowed down by flaky CI jobs.
 
@@ -56,7 +56,7 @@ Flaky Tests allows you to [quarantine](https://docs.trunk.io/flaky-tests/quarant
 
 To learn more, [see our docs about quarantining tests](quarantining.md).
 
-### Manage Tickets
+### Manage tickets
 
 <figure><picture><source srcset="../.gitbook/assets/jira-ticket-creation-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/jira-ticket-creation-light.png" alt=""></picture><figcaption><p>Creating a Jira ticket for a flaky test</p></figcaption></figure>
 
@@ -64,8 +64,8 @@ Trunk enables the automation of quickly creating and assigning tickets through i
 
 To learn more, [learn about our ticketing integrations](ticketing-integrations/jira-integration.md).
 
-### **Next Steps**
+### **Next steps**
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td></td><td><a href="get-started/">get-started</a></td></tr><tr><td><strong>Join Trunk</strong></td><td></td><td><a href="https://app.trunk.io/signup?intent=flaky+tests">https://app.trunk.io/signup?intent=flaky+tests</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting started</strong></td><td></td><td><a href="get-started/">get-started</a></td></tr><tr><td><strong>Create an account</strong></td><td></td><td><a href="https://app.trunk.io/signup?intent=flaky+tests">https://app.trunk.io/signup?intent=flaky+tests</a></td></tr></tbody></table>
 
 Start finding flaky tests today by [signing up for Trunk](https://app.trunk.io/signup?intent=flaky%20tests) or reading our [Getting Started guides](get-started/).

@@ -1,8 +1,8 @@
-# Local Linting
+# Local linting
 
 After initializing Trunk, you can begin scanning for issues in your repo, and decide whether to fix them up front, fix them incrementally as you code, or ignore irrelevant suggestions. This page walks through the process of linting locally and fixing existing issues.
 
-### Running for the First Time
+### Running for the first time
 
 After initializing Trunk Code Quality, you can run **all tools** on **all files** to look for existing issues. You can run Trunk on **all files** in your repo with this command. This will output all issues detected by every linter enabled in your project.
 
@@ -14,7 +14,7 @@ You don't need to fix all issues upfront. Trunk lets you fix linter errors incre
 Learn more about [hold-the-line](deal-with-existing-issues.md#hold-the-line).
 {% endhint %}
 
-#### Issues in PRs
+#### Issues in pull requests
 
 You can reproduce issues discovered in CI by running `trunk check` and addressing issues.
 
@@ -28,7 +28,7 @@ After initializing Trunk, you can begin scanning for issues in your repo, and de
 
 If you **only want to prevent new issues** from new code changes, skip to [prevent-new-issues.md](prevent-new-issues.md "mention").
 
-### Running for the First Time
+### Running for the first time
 
 After initializing Trunk Code Quality, you can run **all tools** on **all files** to look for existing issues. You can run Trunk on **all files** in your repo with this command. This will output all issues detected by every linter enabled in your project.
 
@@ -42,7 +42,7 @@ trunk check --all
 When you run `trunk check` without specifying `--all`, it will **only run on files you've modified according to git**. Remember to [specify a base branch](initialize-trunk.md#initializing-trunk) if you're using something other than `main` or `master`.
 {% endhint %}
 
-### Fixing Existing Issues
+### Fixing existing issues
 
 There are different approaches to dealing with existing issues, such as running `format` and applying automatic fixes, ignoring irrelevant issues, and sampling linters/files. This section walks you through the process to make fixing issues easier.
 
@@ -54,7 +54,7 @@ You don't need to fix all issues upfront. Trunk lets you fix linter errors incre
 Learn more about [hold-the-line](deal-with-existing-issues.md#hold-the-line).
 {% endhint %}
 
-#### Running Formatters and Applying Fixes
+#### Running formatters and applying fixes
 
 Some issues can be fixed automatically. You can apply fixes by running the following command.
 
@@ -62,7 +62,7 @@ Some issues can be fixed automatically. You can apply fixes by running the follo
 trunk check --all --fix
 ```
 
-#### Overwhelmed by Existing Issues?
+#### Overwhelmed by existing issues?
 
 You can also focus on the issues revealed by 1 linter at a time.
 
@@ -84,7 +84,7 @@ trunk check --all --filter=<linter> --sample=5 <dir/filename>
 
 If you're still overwhelmed by the results, you can fix them incrementally as you change files. See the [hold-the-line](deal-with-existing-issues.md#hold-the-line) section.
 
-#### Disabling Linters
+#### Disabling linters
 
 Some recommended linters could be unnecessary for your project. You can disable and enable linters with these commands:
 
@@ -93,7 +93,7 @@ trunk check enable <linter>
 trunk check disable <linter>
 ```
 
-#### Ignore Issues
+#### Ignore issues
 
 If there are warnings that don't apply to your project, you can ignore them by line, by file, or by class of warnings in each linter's config file.
 
@@ -131,7 +131,7 @@ MD033: false
 MD034: false
 ```
 
-#### Issues in PRs
+#### Issues in pull requests
 
 You can reproduce issues discovered in CI by running `trunk check` and addressing issues.
 

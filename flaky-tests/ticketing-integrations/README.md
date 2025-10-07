@@ -4,11 +4,11 @@ description: >-
   tickets in your ticketing system
 ---
 
-# Ticketing Integrations
+# Ticketing integrations
 
 You can integrate directly with your ticketing systems to automatically create tickets when Trunk [detects a broken or flaky test](../detection.md).
 
-### Ticket Content
+### Ticket content
 
 Flaky Tests automatically generates tickets complete with a title and description. If you’re connected to Linear or Jira, you can also assign default issue types, teams, or assignees.
 
@@ -23,7 +23,7 @@ The ticket description contains the following information:
 * Most common failure reasons
 * Code owners, according to the [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) file in your repository
 
-### Integration Setup
+### Integration setup
 
 Currently, Ticket Creation supports integrations with Linear and Jira. However, the automatically generated ticket content is formatted in Markdown and can be copied to other platforms like Asana or GitHub issues.
 

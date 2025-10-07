@@ -4,7 +4,7 @@ description: >-
   protection.
 ---
 
-# Settings & Configurations
+# Settings and configurations
 
 All of the following settings are specific to individual Merge Queues and can be accessed in two ways:
 
@@ -17,7 +17,7 @@ Note that you must be an Organization admin to adjust any of these settings.
 
 ***
 
-## Merge Queue State
+## Merge Queue state
 
 You can change the state of your Merge Queue to control whether new PRs can enter the queue and whether tested PRs will merge. PRs already testing will always complete their tests regardless of state. Below are the possible states:
 
@@ -105,7 +105,7 @@ The `Running` state is the default state of your merge queue, and will be the no
 
 ***
 
-## Merge Queue Mode
+## Merge Queue mode
 
 > Merge Queues operate in one of two modes, **Single** (default) or [**Parallel**](../concepts-and-optimizations/parallel-queues/)**.**&#x20;
 
@@ -122,7 +122,7 @@ Read more about [Trunk's implementation of Parallel merge queues](../concepts-an
 
 ***
 
-## Testing Concurrency
+## Testing concurrency
 
 > Testing concurrency can be set to any value, options are **5 (average)**, **25 (high)**, **50 (very high),** and **Custom**.
 
@@ -141,7 +141,7 @@ For example, assuming a concurrency of 3:
 
 ***
 
-## Timeout for Tests to Complete
+## Timeout for tests to complete
 
 > Select the number of hours from the dropdown, default is **5 hours**.
 
@@ -173,7 +173,7 @@ When set to **0** (default), failed PRs are immediately evicted from the queue. 
 
 ***
 
-## Draft PR Creation
+## Draft pull request creation
 
 > Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
@@ -181,7 +181,7 @@ When set to **0** (default), failed PRs are immediately evicted from the queue. 
 
 ***
 
-## GitHub Comments
+## GitHub comments
 
 > Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
@@ -196,7 +196,7 @@ When enabled, Trunk posts comments on pull requests with merge queue status upda
 
 ***
 
-## GitHub Commands
+## GitHub commands
 
 > Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
@@ -230,7 +230,7 @@ Customize which events trigger notifications, such as testing completion, failur
 
 ## Delete Merge Integration
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 CAUTION: Any queued merge requests will not be merged and all data will be lost.
 
 **Before deleting:** Ensure all important PRs in the queue are either merged manually or that you're prepared to resubmit them to a new queue.

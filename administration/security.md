@@ -15,11 +15,11 @@ Whether invoked directly by developers on their local machines, triggered automa
 * Limited usage telemetry data is collected. This data never includes your source code, and it is possible to opt out. For more details on telemetry, please refer to our[ telemetry documentation](https://docs.trunk.io/cli/configuration/telemetry).
 * See below for the properties of setting up uploads to the Trunk web application.
 
-### VS Code Extension
+### VS Code extension
 
 The Trunk VS Code extension has the same privacy properties as the Trunk CLI. Under the hood, all code-checking by the VS Code extension is completed via the Trunk CLI, which drives the VS Code extension.
 
-### Web App ([app.trunk.io](https://app.trunk.io/signup?intent=code%20quality))
+### Web app ([app.trunk.io](https://app.trunk.io/signup?intent=code%20quality))
 
 The Trunk Code Quality web app is powered via running nightly scans in your repo’s own CI system which uploads results to the Trunk backend. This feature is optional, but it enables you to audit the issues in your repo and prioritize fixes. Here's how it works:
 

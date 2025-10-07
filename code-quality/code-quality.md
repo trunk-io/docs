@@ -22,5 +22,5 @@ Maintaining consistency in open-source repos is hard. That's why Trunk Code Qual
 
 ### How do I get started?
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Trunk CLI</strong></td><td>Initialize Code Quality in your projects using the Trunk CLI.</td><td></td><td><a href="setup-and-installation/initialize-trunk.md">initialize-trunk.md</a></td></tr><tr><td><strong>IDE Integration</strong></td><td>Initialize Code Quality in your projects using a VSCode extension.</td><td></td><td><a href="ide-integration/">ide-integration</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Trunk CLI</strong></td><td>Initialize Code Quality in your projects using the Trunk CLI.</td><td></td><td><a href="setup-and-installation/initialize-trunk.md">initialize-trunk.md</a></td></tr><tr><td><strong>IDE Integration</strong></td><td>Initialize Code Quality in your projects using a VSCode extension.</td><td></td><td><a href="ide-integration/">ide-integration</a></td></tr></tbody></table>
 

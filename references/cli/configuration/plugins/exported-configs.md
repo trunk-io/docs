@@ -2,7 +2,7 @@
 description: Reusing linter configs across projects.
 ---
 
-# Exporting Linter Configs
+# Exporting linter configs
 
 Plugin repositories can also export their own linter config files to keep configuration synced across an organization. Simply add an `exported_configs` section to a `plugin.yaml`, with paths to all of the config files you want to export, relative to the repository root. For example:
 
@@ -23,7 +23,7 @@ Note that if you're using an IDE Extension like clangd with an LSP that relies o
 
 For an example of a plugin repo with config files, see our own [configs](https://github.com/trunk-io/configs) repo.
 
-### Importing Configs
+### Importing configs
 
 This process can also be reversed to import config files from a plugins repository which\
 does not explicitly export them. Given a plugin sourced with id `trunk`, the sourcing repository can\

@@ -21,7 +21,7 @@ trunk actions [options] [subcommand]
 * `-v`, `--verbose`: Output details about what's happening under the hood
 * `--color`: Enable/disable color output
 
-### Trunk Actions Run
+### Trunk Actions run
 
 `trunk actions run`: Run a specified trunk action. **Usage** **bash**
 
@@ -44,11 +44,11 @@ trunk actions run [options]
 * `--branch <branch_name>`: Run the action on a specific branch
 * `--retry <number>`: Number of times to retry the action on failure
 
-### Trunk Actions History
+### Trunk Actions history
 
 `trunk actions history`: View the history of Trunk actions.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk actions history [options]
@@ -66,11 +66,11 @@ trunk actions history [options]
 * `-v`, `--verbose`: Output details about what's happening under the hood
 * `--color`: Enable/disable color output
 
-### Trunk Actions List
+### Trunk Actions list
 
 `trunk actions list`: List all Trunk actions.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk actions list [options]
@@ -87,11 +87,11 @@ trunk actions list [options]
 * `-v`, `--verbose`: Output details about what's happening under the hood
 * `--color`: Enable/disable color output
 
-### Trunk Actions Enable
+### Trunk Actions enable
 
 `trunk actions enable`: Enable a specified Trunk action.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk actions enable [options]
@@ -108,11 +108,11 @@ trunk actions enable [options]
 * `-v`, `--verbose`: Output details about what's happening under the hood
 * `--color`: Enable/disable color output
 
-### Trunk Actions Disable
+### Trunk Actions disable
 
 `trunk actions disable`: Disable a specified Trunk action.
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk actions disable [options]
@@ -133,7 +133,7 @@ trunk actions disable [options]
 
 `trunk shellhooks`: Let Trunk manage your shell hooks similar to `direnvs` trunk shellhooks install \<shell\_name>
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk shellhooks install <shell_name> [options]
@@ -143,7 +143,7 @@ trunk shellhooks install <shell_name> [options]
 
 `trunk git-hooks sync`: Sync githooks with what's defined in `trunk.yaml`
 
-#### **Usage** Example
+#### **Usage** example
 
 ```
 trunk git-hook sync [options]
@@ -153,7 +153,7 @@ trunk git-hook sync [options]
 
 **`trunk show-announcements since`**: Show announcements since a specified commit
 
-#### **Example Usage**:
+#### **Usage** example:
 
 ```sh
 trunk show-announcements since --commit abc123
@@ -174,7 +174,7 @@ trunk show-announcements since --commit abc123
 
 **`trunk show-announcements post-merge`**: Run on git pull/merge, usually run by a git-hook and not directly.
 
-**Example Usage**:
+**Usage Example**:
 
 ```sh
 trunk show-announcements post-merge --verbose
@@ -184,7 +184,7 @@ trunk show-announcements post-merge --verbose
 
 **`trunk show-announcements pre-rebase`**: Run on git pre-rebase, usually run by a git-hook and not directly.
 
-#### **Example Usage**:
+#### **Usage** example:
 
 ```sh
 trunk show-announcements pre-rebase [options] [branch-refs...]
@@ -194,7 +194,7 @@ trunk show-announcements pre-rebase [options] [branch-refs...]
 
 **`trunk show-announcements post-checkout`**: Run on git checkout/switch, usually run by a git-hook and not directly.
 
-#### **Example Usage**:
+#### **Usage** example::
 
 ```sh
 trunk show-announcements post-checkout [options] [branch-refs...]

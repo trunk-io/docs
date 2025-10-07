@@ -2,7 +2,7 @@
 description: Learn how Trunk detects and labels flaky tests
 ---
 
-# Flaky Test Detection
+# Flaky test detection
 
 Trunk detects flaky tests by analyzing test results uploaded from your CI jobs. This page covers how flaky tests are detected and how they're labeled after Trunk receives uploaded test results.
 
@@ -22,7 +22,7 @@ Trunk detects flaky tests by analyzing the test results uploaded from your CI jo
 
 <figure><picture><source srcset="../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption><p>The uploads tab contains results received from past CI jobs.</p></figcaption></figure>
 
-### How We Detect Flakiness
+### How Trunk detects flakiness
 
 Trunk analyzes test failures based on the context in which they are run. A test failing on `main` has a different impact on flake detection than a test failing on a pull request. After tests are uploaded to Trunk, they're analyzed based on different rules depending on which branch they were run on.
 
@@ -30,7 +30,7 @@ Trunk analyzes test failures based on the context in which they are run. A test 
 Uploading all test results from your repository will result in the fastest and most accurate detection. Trunk relies on test results from `main`, pull requests, and (if you use one) merge queues.
 {% endhint %}
 
-### Stable Branches
+### Stable branches
 
 Trunk detects flaky tests with the assumption that automated tests should be passing before being merged into stable branches like `main`. This means failures on `main` are unexpected and indicate flakiness or a broken test.
 
@@ -40,7 +40,7 @@ Stable branches are sometimes referred to as _protected_ or _default_ branches.
 
 Flaky Tests will use `main` as a stable branch by default. You can override the default selection and set a custom stable branch, for example, `master` or `develop`.
 
-#### Overriding Stable Branch Defaults
+#### Overriding stable branch defaults
 
 It is important to set your stable branch correctly to ensure fast and accurate detection of flaky tests.
 
@@ -56,13 +56,13 @@ Changing the stable branch will not rebuild your test history, a stable branch c
 Flaky Tests will require additional CI runs on the updated stable branch to detect test flakes.
 {% endhint %}
 
-#### Pull Requests
+#### Pull requests
 
 Flaky tests are only detected on pull requests (PRs) when a test produces different results on the same git commit. This often occurs when a PR is opened, the tests initially fail, and then pass when re-run.
 
 Tests failing on different git commits in PRs are not used as a signal of flakiness. This is because code changes in PRs can lead to expected test failures that will be fixed before the PR is merged.
 
-#### Merge Queue
+#### Merge queue
 
 Merge queues use temporary branches to test changes again before merging into `main`. Failures on merge queue branches are unexpected and are used as a signal when detecting flaky tests. Trunk currently auto-detects merge queue CI jobs from Trunk Merge Queues, GitHub Merge Queues, GitLab Merge Trains, and Graphite Merge Queues.
 
@@ -78,7 +78,7 @@ To help illustrate the implications of these rules, consider the following scena
 Expect test results for individual PRs to be up-to-date for [PR Test Summaries](github-pull-request-comments.md) within 15 minutes post-upload and all other metrics to be up-to-date within an hour.
 {% endhint %}
 
-### Use Variants to Track Environment-Specific Flakes
+### Use variants to track environment-specific flakes
 
 If you run the same tests across different environments or architectures, you can use variants to separate these runs into distinct test cases. This allows Flaky Tests to detect environment-specific flakes.
 
@@ -99,13 +99,13 @@ Variant names are displayed in brackets next to test names in your dashboard:
 
 <figure><picture><source srcset="../.gitbook/assets/variants-dark-border.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/variants-light-border.png" alt=""></picture><figcaption><p>The same test, but the first is a macOS variant.</p></figcaption></figure>
 
-### Test Status
+### Test status
 
 Trunk classifies all tests into one of three categories based on the history of each test:
 
 <table><thead><tr><th width="178">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
 
-### Override Test Status
+### Override test status
 
 If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status.  Tests can be manually marked as "Flaky" or "Healthy"&#x20;
 
@@ -115,7 +115,7 @@ If you need to manually edit the status of a test, use the pencil drop down on t
 Be sure to include a meaningful description when overriding the test status to help your team track any issues.
 {% endhint %}
 
-### Next Steps
+### Next steps
 
 If you have not set up your CI jobs to upload results to Trunk, follow the [Get Started docs](get-started/) to start uploading test results to Trunk.
 

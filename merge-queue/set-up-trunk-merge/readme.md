@@ -6,7 +6,7 @@ description: How to set up Trunk Merge Queue for your project
 
 This guide walks you through setting up Trunk Merge Queue for your repository. The setup process involves installing the GitHub App, creating a queue, and configuring branch protection rules to allow the merge queue to function properly.
 
-#### Step 1: Install the GitHub App and Create a Queue
+#### Step 1: Install the GitHub App and create a Queue
 
 {% hint style="info" %}
 **The Trunk GitHub App is required for Merge Queue to function.** It grants Trunk Merge Queue the necessary permissions to create test branches, read CI results, and merge PRs in your repository. View [detailed permissions and what Trunk uses them for](../../setup-and-configuration/managing-your-organization/github-app-permissions.md).&#x20;
@@ -38,7 +38,7 @@ The GitHub App installation must be initiated from the Trunk web app to properly
 
 <figure><img src="../../.gitbook/assets/merge-add-repo (1).png" alt=""><figcaption></figcaption></figure>
 
-### Step 2: Configure Branch Protection (Required)
+### Step 2: Configure Branch Protection
 
 The merge queue needs specific GitHub permissions to function. Follow the [Branch Protection & Required Status Checks](branch-protection-and-required-status-checks.md) guide to:
 
@@ -53,7 +53,7 @@ The merge queue needs specific GitHub permissions to function. Follow the [Branc
 If you do not want every check that runs when a PR is opened to also run when Trunk Merge Queue tests PRs, you can disable draft PR creation and run tests on branches instead. See [Choose Your Testing Approach](branch-protection-and-required-status-checks.md#choose-your-testing-approach).
 {% endhint %}
 
-### Step 3: Test Your Setup
+### Step 3: Test your setup
 
 Now that branch protection is configured, test that the merge queue works correctly:
 
@@ -70,7 +70,7 @@ You can submit a PR to the merge queue at any time, even before CI checks pass o
 
 3. You can check the PR in the [Trunk Dashboard](https://app.trunk.io/) - once your PR passes all required checks, it will move from 'Queued' to 'Testing'. The merge queue will then test it again with changes ahead of it in the queue. When those tests pass, it will automatically merge.
 
-#### Troubleshooting Common Issues
+#### Troubleshooting common issues
 
 {% hint style="info" %}
 Visit [Trunk Support](../../support.md) for additional assistance or to contact the support team.
@@ -84,7 +84,7 @@ If your test PR doesn't merge automatically:
 * **"Permission denied" errors**: Review the [Branch Protection](branch-protection-and-required-status-checks.md#configure-branch-protection-rules) guide to ensure `trunk-temp/*` and `trunk-merge/*` branches aren't protected by wildcard rules like `*/*`.
 * **Status checks not running**: Verify your CI is configured to run on draft PRs (or `trunk-merge/**` branches if using push-triggered mode). See the [Branch Protection](branch-protection-and-required-status-checks.md#configure-branch-protection-rules) guide for details.
 
-### Step 4: Configure Advanced Features (Optional)
+### Step 4: Configure advanced features
 
 Once the basic merge queue is working, you can enable optimizations to improve performance:&#x20;
 

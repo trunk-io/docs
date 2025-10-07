@@ -4,11 +4,11 @@ description: >-
   markdown
 ---
 
-# Other Ticketing Platforms
+# Other ticketing platforms
 
 If you have not set up an integration, Trunk Flaky Tests can still generate a ticket title and description so you can copy and paste the details into your project management software.
 
-### Create a New Ticket
+### Create a new ticket
 
 You can create a new ticket for any test listed in Trunk Flaky Tests.&#x20;
 

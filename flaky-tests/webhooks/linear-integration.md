@@ -2,7 +2,7 @@
 description: Learn how to automatically create Linear issues with Flaky Test webhooks
 ---
 
-# Linear Integration
+# Linear integration
 
 Trunk allows you to automate Linear Issue creation through webhooks. This will allow you to create Linear issues and auto-assign according to [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 
@@ -20,7 +20,7 @@ Before you can create a webhook to automate GitHub Issue creation, you need to c
 2. Under **Account** > **Security & Access** > **Personal API Keys**, Click **New API Key** to create a new access token.
 3. Copy the new API key and save it in a secure location. You'll need to use this later.
 
-### 2. Add a New Webhook In Trunk <a href="#id-2.-add-a-webhook-url-to-the-github-issues-api-in-trunk" id="id-2.-add-a-webhook-url-to-the-github-issues-api-in-trunk"></a>
+### 2. Add a new webhook in Trunk <a href="#id-2.-add-a-webhook-url-to-the-github-issues-api-in-trunk" id="id-2.-add-a-webhook-url-to-the-github-issues-api-in-trunk"></a>
 
 Trunk uses Svix to integrate with other services, such as creating Linear Issues through webhooks.
 
@@ -37,7 +37,7 @@ You can create a new endpoint by:
 
 If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).
 
-### **3. Add Custom Headers**
+### **3. Add custom headers**
 
 The Linear GraphQL API requires some custom headers. You can configure custom headers in the endpoint configuration:
 
@@ -50,7 +50,7 @@ You'll need to configure the following headers.
 | --------------- | ------------------ |
 | `Authorization` | `<YOUR_API_TOKEN>` |
 
-### 4. Find Your Linear Team, Project, and Label IDs
+### 4. Find your Linear Team, Project, and Label IDs
 
 You need to find your Linear team, project, and label IDs to create issues with the appropriate labeling. You can do this by querying your Linear project using cURL.
 
@@ -163,7 +163,7 @@ You'll receive a response that contains your labels and their IDs, for example:
 }
 ```
 
-### 5. Customize Your Transformation
+### 5. Customize your transformation
 
 Transformations are custom code snippets you can write to customize the Linear issues created by the webhook. A working template transformation will be added automatically for your webhook, but you can further customize the behavior of this webhook.
 
@@ -284,7 +284,7 @@ View the full stack trace on the [Test Detail page](${html_url})
 }
 ```
 
-#### (Optional) Automatic Issue Assignment
+#### (Optional) Automatic issue assignment
 
 If you have CODEOWNERS configured in your repo, it will be reported by Trunk in the webhook payload. You can use this to map different CODEOWNERS to Linear assignees. You can access CODEOWNERS in the payload like this: `webhook.payload.test_case.codeowners`.
 
@@ -314,7 +314,7 @@ webhook.payload = {query: `mutation IssueCreate {
   } ` };
 ```
 
-### 6. Test Your Webhook
+### 6. Test your webhook
 
 You can create test issues by delivering a mock webhook. You can do this by:
 
@@ -322,7 +322,7 @@ You can create test issues by delivering a mock webhook. You can do this by:
 2. Under **Subscribed events,** select `test_case.status_changed`as the event type to send
 3. Click **Send Example** to test your webhook
 
-### 7. Monitoring Webhooks
+### 7. Monitoring webhooks
 
 You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
 

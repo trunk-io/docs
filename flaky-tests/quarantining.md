@@ -10,13 +10,13 @@ description: Mitigate impact of known flaky tests by isolating them at run time
 
 **Why use quarantining:** It acts as a crucial stopgap, minimizing the disruption from known flaky tests while your team works on fixing them. By quarantining flaky tests, you unblock critical CI pipelines—**especially your merge queue**—and regain development velocity without losing visibility, as these tests continue to run and upload results. This constant stream of data allows you to prioritize fixing the worst offenders based on their ongoing impact.
 
-### What does "Quarantined" Mean?
+### What does "Quarantined" mean?
 
 A quarantined test continues running in CI and uploading results to Trunk Flaky Tests, but its failures won't block your pipeline. The [Trunk Analytics CLI](uploader.md) checks with Trunk's backend to determine if failed tests are quarantined, then overrides the exit code for those failures. When all failures in a CI job come from quarantined tests, the entire job passes.
 
 **Why this matters:** You maintain complete test coverage and historical data while preventing known problematic tests from disrupting your development cycle.
 
-### **How Tests Get Quarantined**
+### **How tests get quarantined**
 
 Tests can be quarantined through two methods:
 
@@ -25,7 +25,7 @@ Tests can be quarantined through two methods:
 
 Tests are auto-quarantined only if detected as flaky or manually marked as flaky. For [manually quarantined tests](quarantining.md#overriding-individual-tests), all failures are quarantined regardless of test state.&#x20;
 
-### Enable Quarantining
+### Enable quarantining
 
 {% hint style="warning" %}
 Toggling the **Enable Test Quarantining** switch makes quarantining possible but does not quarantine any tests on its own.
@@ -37,7 +37,7 @@ Actively quarantining tests will significantly change CI results, as failures fr
 
 With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are quarantined, the exit code of the test command will be overridden to return 0 and the CI job will pass.
 
-#### Quarantining Settings
+#### Quarantining settings
 
 To enable quarantining, navigate to **Settings** > **Repositories** > repository > **Flaky Tests** > toggle **on** **Enable Test Quarantining**.
 
@@ -47,7 +47,7 @@ Here's what each of these options does when enabled:
 
 <table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>This primary toggle activates the quarantining feature set, unlocking both manual override options and the ability to enable auto-quarantining. For any quarantining to work, the <a href="quarantining.md#updates-in-ci">necessary configurations</a> must also be made in your CI pipeline.</td></tr><tr><td>Auto-Quarantine Flaky Tests</td><td>When enabled, any test already identified by Trunk as "flaky" will be automatically quarantined. This saves you from having to manually quarantine each flaky test as it's discovered.</td></tr></tbody></table>
 
-### Updates In CI
+### Updates in CI
 
 If you're using the provided [GitHub Actions workflow](get-started/ci-providers/) to upload test results to Flaky Test, you can quarantine flaky tests by wrapping the test command or as a follow-up step.
 
@@ -143,7 +143,7 @@ You can also wrap the test command with the Trunk CLI. When wrapping the command
 {% endtab %}
 {% endtabs %}
 
-## Quarantining with Sharded or Parallelized Tests
+## Quarantining with sharded or parallelized tests
 
 If your CI runs multiple Playwright shards, wrap each `npx playwright test` invocation with Trunk’s quarantine support. The shard’s post-quarantine exit code becomes the source of truth.
 
@@ -205,7 +205,7 @@ Aggregate the stored `shard-status.txt` files and fail if any is non-zero; other
 
 </details>
 
-### Overriding Individual Tests
+### Overriding individual tests
 
 If you have tests that should never be quarantined or should always be quarantined regardless of their current health status, you can do this by overriding individual tests.
 
@@ -224,7 +224,7 @@ When a manual override is active, a banner shows who set it and when.
 
 To review a history of all quarantine changes on a test, use the **Quarantine Events** filter within the **Test History** section. This will show every override, setting change, and comment, along with the author and timestamp for each entry.
 
-### Tracking Quarantined Jobs in the Dashboard
+### Tracking quarantined jobs in the dashboard
 
 Once quarantining is active, the **Quarantining** tab provides a central hub for monitoring its impact and effectiveness. This tab serves as a complete audit log of every CI job saved by the feature, allowing you to:
 
@@ -235,13 +235,13 @@ Once quarantining is active, the **Quarantining** tab provides a central hub for
 
 <figure><img src="../.gitbook/assets/flaky-fullscreen.png" alt=""><figcaption></figcaption></figure>
 
-### Audit Logs
+### Audit logs
 
 Trunk provides audit logs for all setting changes and overwrites for individual tests. You can access the audit log by navigating to **Settings** > **Repositories** **>** repository **>** **Flaky Tests** > **Audit logs** under the Enable Test Quarantining heading.
 
 <figure><img src="../.gitbook/assets/qurantine-audit-logs.png" alt=""><figcaption></figcaption></figure>
 
-### Quarantining API and Webhooks
+### Quarantining API and webhooks
 
 For advanced use cases, you can interact with quarantining features programmatically.
 

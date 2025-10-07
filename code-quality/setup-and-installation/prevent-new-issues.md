@@ -2,7 +2,7 @@
 
 Trunk Code Quality can be run in CI to prevent new issues form being introduced by PRs and on a nightly/scheduled cadence to report on existing issues.
 
-### Configuring Base Branch
+### Configuring base branch
 
 Trunk operates in **hold-the-line** mode by default. This means Trunk will run linters only on the **files that have changed** according to Git, by comparing it to the appropriate upstream branch.
 
@@ -17,7 +17,7 @@ repo:
   trunk_branch: develop
 ```
 
-### Linting on PRs
+### Linting on pull requests
 
 ```yaml
 name: Trunk Code Quality
@@ -50,7 +50,7 @@ If you want to run the `trunk check` command directly in your workflow, or you'r
 
 Trunk Code Quality can be run in CI to prevent new issues form being introduced by PRs and on a nightly/scheduled cadence to report on existing issues.
 
-### Configuring Base Branch
+### Configuring base branch
 
 Trunk operates in **hold-the-line** mode by default. This means Trunk will run linters only on the **files that have changed** according to Git, by comparing it to the appropriate upstream branch.
 
@@ -65,7 +65,7 @@ repo:
   trunk_branch: develop
 ```
 
-### Linting on PRs
+### Linting on pull requests
 
 #### GitHub Actions Workflows
 
@@ -97,7 +97,7 @@ When `post-annotations` is set to `true` Code Quality will also **annotate** the
 
 <figure><img src="../../.gitbook/assets/Annotations.png" alt=""><figcaption><p>Example of inline annotations</p></figcaption></figure>
 
-#### Manual Configuration and Non-GitHub CI
+#### Manual configuration and Non-GitHub CI
 
 If you want to run the `trunk check` command directly in your workflow, or you're not using GitHub, you can run the following commands:
 
@@ -107,7 +107,7 @@ chmod +x trunk \
 ./trunk check --ci
 ```
 
-#### Skipping Trunk Code Quality on PRs
+#### Skipping Trunk Code Quality on pull requests
 
 You can include `/trunk skip-check` in the body of a PR description (i.e. the first comment on a given PR) to mark Trunk Code Quality as "skipped". Trunk Code Quality will still run on your PR and report issues, but this will allow the PR to pass a GitHub-required status check on `Trunk Check`.
 
@@ -117,7 +117,7 @@ This can be helpful if Code Quality is flagging known issues in a given PR that 
 If you use GitHub, we recommend you follow the GitHub Integration guide. If you don't use GitHub or cannot install the Trunk GitHub app, you can still run Trunk Code Quality using these manual setup steps.
 {% endhint %}
 
-### Caching and Persistence
+### Caching and persistence
 
 * Trunk caches the version of `trunk` itself, linters, formatters, and lint results in `~/.cache/trunk`
 * If your build machines are persistent, make sure this directory is not wiped out between CI jobs for best performance. If Trunk has to re-download every linter for every job because this directory is wiped out, it will be very slow.
@@ -132,7 +132,7 @@ If you use GitHub, we recommend you follow the GitHub Integration guide. If you 
 If you use GitHub, we recommend you follow the GitHub Integration guide. If you don't use GitHub or cannot install the Trunk GitHub app, you can still run Trunk Code Quality using these manual setup steps.
 {% endhint %}
 
-### Hourly/Nightly Builds
+### Hourly and nightly builds
 
 If you'd like to set Code Quality to run on an hourly/nightly CI, you can run
 

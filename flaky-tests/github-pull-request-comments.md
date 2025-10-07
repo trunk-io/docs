@@ -2,7 +2,7 @@
 description: Flaky Tests provides summary analytics about tests running on Pull Requests
 ---
 
-# PR Comments
+# Pull request comments
 
 Flaky Tests can post comments on GitHub pull requests to provide a summary of all the tests run on this PR, across multiple CI jobs or even CI systems, as well as whether those failures are due to flakiness, the history of the failures of that test, and more.
 
@@ -46,7 +46,7 @@ Pull Request comments are enabled by default. If you wish to disable the comment
 
 ## Troubleshooting
 
-#### **GitHub Org Ownership**
+#### **GitHub Organization ownership**
 
 If you wish to set the resource owner to be a GitHub Organization, you should double check that this is allowed by navigating to your **GitHub Organization** > **Settings** > **Personal access tokens** > **Settings**. Make sure under "_Fine-grained personal access tokens_", you have _"Allow access via fine-grained personal access tokens"_ selected.
 

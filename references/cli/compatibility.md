@@ -22,7 +22,7 @@ Thank you for being a beta tester of Trunk Check on Windows! We are actively wor
 
 If you want to override a repo-wide setting just for your Windows machine, you can modify your [`.trunk/user.yaml`](configuration/per-user-overrides.md).
 
-#### Supported Features
+#### Supported features
 
 We intend to bring full feature support to Windows for Trunk. Currently, the following features are supported:
 
@@ -30,7 +30,7 @@ We intend to bring full feature support to Windows for Trunk. Currently, the fol
 * Non-interactive [Trunk Actions](getting-started/actions/) and [git-hooks](getting-started/actions/git-hooks.md)
 * [VSCode](../../code-quality/ide-integration/vscode.md)
 
-### Plugin Compatibility
+### Plugin compatibility
 
 {% hint style="info" %}
 This section was last updated for Plugins v1.2.0
@@ -40,6 +40,6 @@ Trunk runs most linters on all platforms. However, some linters are not yet supp
 
 <table data-full-width="false"><thead><tr><th>Linter</th><th>Plans for Support</th></tr></thead><tbody><tr><td>ansible-lint</td><td>Only supported on WSL</td></tr><tr><td>clang-format</td><td>Long-term plans for LLVM linter support</td></tr><tr><td>clang-tidy</td><td>Long-term plans for LLVM linter support</td></tr><tr><td>detekt-gradle</td><td>Long-term plans for support</td></tr><tr><td>include-what-you-use</td><td>Long-term plans for LLVM linter support</td></tr><tr><td>nixpkgs-fmt</td><td>Long-term plans for support</td></tr><tr><td>perlcritic</td><td>No immediate plans for support</td></tr><tr><td>perltidy</td><td>No immediate plans for support</td></tr><tr><td>scalafmt</td><td>No download available for Windows</td></tr><tr><td>semgrep</td><td>No download available for Windows</td></tr><tr><td>shellcheck</td><td>No download available for Windows</td></tr><tr><td>stringslint</td><td>Only supported on MacOS</td></tr><tr><td>swiftformat</td><td>Only supported on MacOS</td></tr><tr><td>swiftlint</td><td>Only supported on MacOS</td></tr><tr><td>taplo</td><td>No download available for Windows</td></tr></tbody></table>
 
-### Backward Compatibility
+### Backward compatibility
 
 We generally strive to maintain backward compatibility between the [Trunk Launcher](install.md#the-trunk-launcher) and the Trunk binary, but you may need to occasionally upgrade the launcher to support the newest version of Trunk.

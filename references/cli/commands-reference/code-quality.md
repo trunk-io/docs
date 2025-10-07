@@ -10,7 +10,7 @@
 trunk check [options]
 ```
 
-#### Filtering Options
+#### Filtering options
 
 * `-a, --all`: Check all files instead of only changed files
 * `--sample`: Run each linter on N files
@@ -21,19 +21,19 @@ trunk check [options]
 * `--force`: Run on all files, even if ignored
 * `--include-existing-autofixes`: Include existing issues that can be autofixed
 
-#### **CI** Options
+#### **CI** options
 
 * `--ci`: Run in non-interactive mode designed for CI environments
 * `-j`, `--jobs`: Number of concurrent jobs
 
-#### Git Hooks Options
+#### Git Hooks options
 
 * `--index`: Run linter on git-indexed files
 * `--index-file`: Run linter on git-indexed files based on specified index
 * `--commit-ref`: Commit ref to lint (instead of current working tree)
 * `--commit-ref-from-pre-push`: Commit ref to lint from the stdin of a pre-push git hook (instead of the current working tree)
 
-#### Output Options
+#### Output options
 
 * `--show-existing`: Show existing issues otherwise hidden by
 * `--print-failures`: Print any failures that occur
@@ -41,7 +41,7 @@ trunk check [options]
 * `-v, --verbose`: Show verbose output for debugging purposes
 * `--debug`: Show debug output
 
-#### Behavior Options
+#### Behavior options
 
 * `-y, --fix`: Automatically apply all fixes without prompting
 * `-n, --no-fix`: Don't automatically apply fixes
@@ -91,7 +91,7 @@ trunk fmt [options]
 
 #### **Options**
 
-#### Filtering Options
+#### Filtering options
 
 * `-a, --all`: Check all files instead of only changed files
 * `--filter`: Comma-separated list of linters and/or issue codes to include or exclude
@@ -102,14 +102,14 @@ trunk fmt [options]
 * `--show-existing`: Show existing issues otherwise hidden by [hold-the-line](../../../code-quality/overview/how-does-it-work.md#hold-the-line)
 * `--ignore-git-state`: Run linters even if a merge, rebase, or revert is in progress
 
-#### Git Hooks Options
+#### Git Hooks options
 
 * `--index`: Run linter on git-indexed files
 * `--index-file`: Run linter on git-indexed files based on specified index
 * `--commit-ref`: Commit ref to lint (instead of current working tree)
 * `--commit-ref-from-pre-push`: Commit ref to lint from the stdin of a pre-push git hook (instead of the current working tree)
 
-#### Output Options
+#### Output options
 
 * `--show-existing`: Show existing issues otherwise hidden by
 * `--print-failures`: Print any failures that occur
@@ -117,7 +117,7 @@ trunk fmt [options]
 * `-v, --verbose`: Show verbose output for debugging purposes
 * `--debug`: Show debug output
 
-#### Behavior Options
+#### Behavior options
 
 * `-y, --fix`: Automatically apply all fixes without prompting
 * `-n, --no-fix`: Don't automatically apply fixes
@@ -126,7 +126,7 @@ trunk fmt [options]
 * `--upstream`: Upstream branch used to compute changed files
 * `-j`, `--jobs`: Number of concurrent jobs
 
-## Advanced Trunk Check Features
+## Advanced Trunk Check features
 
 | Options & Flags      | Explanation                                                                                                                                                              |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

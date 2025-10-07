@@ -4,7 +4,7 @@ description: >-
   tickets with the Jira integration
 ---
 
-# Jira Integration
+# Jira integration
 
 When Trunk Flaky Tests [detects a broken or flaky test](../detection.md), you can create an automatically generated Jira ticket for your team to pick up and fix the test.
 
@@ -22,7 +22,7 @@ Then complete the form and click Connect to Jira Cloud with the following inform
 
 After connecting to Jira, you can specify a default issue type for new tickets and a default assignee for new tickets.
 
-#### API Token Permissions
+#### API Token permissions
 
 Your Jira user account must have the following project permissions to create a Jira API token that allows Trunk to read, create, and assign tickets automatically:&#x20;
 
@@ -66,7 +66,7 @@ You need to create an API token with the following scopes:
 Jira tokens cannot last longer than 365 days. Once the token expires, you will need to generate a new API token.
 {% endhint %}
 
-### Create a New Ticket
+### Create a new ticket
 
 You can create a new ticket for any test listed in Trunk Flaky Tests.&#x20;
 

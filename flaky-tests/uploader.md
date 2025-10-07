@@ -1,4 +1,4 @@
-# Trunk Analytics CLI Reference
+# Trunk Analytics CLI reference
 
 Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Trunk Analytics CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.&#x20;
 
@@ -8,7 +8,7 @@ If you're setting up Trunk Flaky Tests for the first time, you can follow the gu
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guides by Test Frameworks</td><td></td><td></td><td><a href="get-started/frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="get-started/ci-providers/">ci-providers</a></td></tr></tbody></table>
 
-### Using Unsupported CI Systems
+### Using unsupported CI systems
 
 The CLI is preconfigured to work with a set [ci-providers](get-started/ci-providers/ "mention") and can be used with other systems by setting up and passing [#environment-variables](get-started/ci-providers/otherci.md#environment-variables "mention")  to the uploader.&#x20;
 
@@ -54,7 +54,7 @@ You can find your organization slug and token by going to **Settings** > **Manag
 {% endtab %}
 {% endtabs %}
 
-### Uploading Using the CLI
+### Uploading using the CLI
 
 {% hint style="info" %}
 The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as broken or flaky.
@@ -94,7 +94,7 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 {% endtab %}
 {% endtabs %}
 
-### Testing Using the CLI
+### Testing using the CLI
 
 You can also execute tests and upload results to Trunk in a single step using the `./trunk flakytest test` command to **wrap** your test command.&#x20;
 
@@ -143,7 +143,7 @@ If you use the `test` command and tests fail without the failures being quaranti
 
 If you use the `upload` command, we return exit code `FAILURE` or the exit code provided with the `--test_process_exit_code` argument.
 
-### Validating Reports Locally
+### Validating reports locally
 
 You can validate the test reports produced by your test frameworks before you set up Trunk in your CI jobs. This is currently **only available for XML reports**.
 
@@ -175,7 +175,7 @@ If you're using the `flakytests` CLI subcommand with the Trunk CLI locally, you 
 <pre class="language-bash"><code class="lang-bash"><strong>./trunk flakytests --upgrade
 </strong></code></pre>
 
-### Full Command Reference
+### Full command reference
 
 The `trunk` command-line tool can upload and analyze test results. The `trunk flakytests` command accepts the following subcommands:
 

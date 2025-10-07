@@ -14,15 +14,15 @@ Before configuring branch protection, ensure you have:
 * **Installed the Trunk GitHub App** in your repository. The `trunk-io` bot must have the necessary permissions to create branches, merge pull requests, and post status checks. See [GitHub App Permissions](https://docs.trunk.io/setup-and-configuration/github-app-permissions) for details.
 * **Admin access** to your repository's settings to configure branch protection rules.
 
-### How Trunk Merge Queue Works
+### How Trunk Merge Queue works
 
 Trunk Merge Queue respects GitHub's branch protection rules and works with both Classic branch protection rules and Rulesets. Since Merge Queue ultimately merges pull requests through GitHub, any protection rules on your target branch (like required code reviews or status checks) will still apply.
 
-### Choose Your Testing Approach <a href="#choose-your-testing-approach" id="choose-your-testing-approach"></a>
+### Choose your testing approach <a href="#choose-your-testing-approach" id="choose-your-testing-approach"></a>
 
 Trunk Merge Queue can test pull requests in two ways. Choose the approach that fits your CI setup:
 
-#### Draft PR Mode (Recommended - Default) <a href="#draft-pr-mode-recommended---default" id="draft-pr-mode-recommended---default"></a>
+#### Draft PR mode (Recommended - Default) <a href="#draft-pr-mode-recommended---default" id="draft-pr-mode-recommended---default"></a>
 
 {% hint style="info" %}
 **Best for:** Most teams who want the simplest setup with no additional configuration.
@@ -38,7 +38,7 @@ When a pull request enters the queue, Trunk creates a draft pull request to test
 
 **When to use a different approach:** If you have expensive preview deployments, review-only workflows, or security scans that you don't want running during merge queue testing, consider Push-triggered mode instead.
 
-#### Push-Triggered Mode (Advanced) <a href="#push-triggered-mode-advanced" id="push-triggered-mode-advanced"></a>
+#### Push-Triggered mode (Advanced) <a href="#push-triggered-mode-advanced" id="push-triggered-mode-advanced"></a>
 
 {% hint style="info" %}
 **Best for:** Teams who need different CI behavior for merge queue testing versus pull request review.
@@ -86,7 +86,7 @@ Trunk Merge Queue needs permission to push to your protected branch. Configure t
 **Important:** Regular users should use [pull request prioritization](https://file+.vscode-resource.vscode-cdn.net/merge-queue/pr-prioritization) with `--priority=urgent` or `--priority=high` to fast-track pull requests through the queue while maintaining validation. Direct push access is only needed for rare emergencies where the queue itself must be bypassed.
 {% endhint %}
 
-#### Exclude Trunk's Temporary Branches (Critical) <a href="#exclude-trunks-temporary-branches-critical" id="exclude-trunks-temporary-branches-critical"></a>
+#### Exclude Trunk's temporary branches (Critical) <a href="#exclude-trunks-temporary-branches-critical" id="exclude-trunks-temporary-branches-critical"></a>
 
 Trunk Merge Queue creates temporary branches to test pull requests before merging them:
 
@@ -108,9 +108,9 @@ Trunk Merge Queue creates temporary branches to test pull requests before mergin
 
 **What happens if these branches are protected:** Merge Queue will encounter GitHub permission errors and display messages like "Permission denied on trunk-merge/\* branch."
 
-### Configure CI Status Checks <a href="#configure-ci-status-checks" id="configure-ci-status-checks"></a>
+### Configure CI status checks <a href="#configure-ci-status-checks" id="configure-ci-status-checks"></a>
 
-#### If Using Draft PR Mode (Default) <a href="#if-using-draft-pr-mode-default" id="if-using-draft-pr-mode-default"></a>
+#### If using Draft PR mode (Default) <a href="#if-using-draft-pr-mode-default" id="if-using-draft-pr-mode-default"></a>
 
 Your existing pull request-triggered CI workflows will automatically run when Trunk creates draft pull requests to test changes. **No additional configuration is required.**
 
@@ -123,7 +123,7 @@ See GitHub's documentation for configuring required status checks:
 
 **You're done!** Skip to the Verification section below.
 
-#### If Using Push-Triggered Mode <a href="#if-using-push-triggered-mode" id="if-using-push-triggered-mode"></a>
+#### If using Push-Triggered mode <a href="#if-using-push-triggered-mode" id="if-using-push-triggered-mode"></a>
 
 You need to complete two additional steps:
 
@@ -181,7 +181,7 @@ merge:
 
 **Important:** The status check names in `.trunk/trunk.yaml` must exactly match the job names from your CI workflows.
 
-### Verification Checklist
+### Verification checklist
 
 After completing configuration, verify your setup:
 
@@ -192,7 +192,7 @@ After completing configuration, verify your setup:
   * [ ] CI workflows trigger on `trunk-merge/**` branches
   * [ ] `merge.required_statuses` is defined in `trunk.yaml`
 
-#### **Test Your Configuration**
+#### **Test your configuration**
 
 1. Create a test pull request
 2. Add the merge queue label or comment `/trunk merge` on the pull request

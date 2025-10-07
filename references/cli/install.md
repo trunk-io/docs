@@ -1,10 +1,10 @@
 # Install
 
-### The Trunk Launcher
+### The Trunk launcher
 
 Trunk uses a launcher to automatically install the appropriate CLI for your platform. The launcher is a bash script that downloads the appropriate Trunk CLI version and runs it. The launcher invisibly runs the Trunk CLI version specified in a project's `.trunk/trunk.yaml` file. The actual Trunk CLI is a single binary that is cached locally in `~/.cache/trunk` and is updated automatically.
 
-### Install the Launcher
+### Install the launcher
 
 The Trunk CLI can be installed in many different ways, depending on your use case.
 

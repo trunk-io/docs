@@ -1,4 +1,4 @@
-# Ignoring Issues and Files
+# Ignoring issues and files
 
 ## Ignoring parts of a file
 
@@ -122,7 +122,7 @@ The syntax of a trunk-ignore directive is as follows:
 <optional-comment>  ::= ": " <comment>
 ```
 
-## Ignoring Multiple Files
+## Ignoring multiple files
 
 Some files are never meant to be checked, such as generated code. To ignore them, use the `ignore` key to your `.trunk/trunk.yaml` file:
 
@@ -146,7 +146,7 @@ Every entry in `ignore` defines both a set of linters and a set of paths to igno
 Trunk is `git`-aware, which means it ignores `gitignore'd` files by default.
 {% endhint %}
 
-### Known Issues
+### Known issues
 
 `trunk-ignore` does not currently support:
 

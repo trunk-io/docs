@@ -1,4 +1,4 @@
-# Concepts and Optimizations
+# Concepts and optimizations
 
 The core concept of any merge queue is [**Predictive Testing**](../concepts/predictive-testing.md): testing your pull request against the head of the `main` branch, including all pull requests ahead of it in the queue.
 
@@ -6,13 +6,13 @@ While this is the foundation, achieving the scale necessary to merge thousands o
 
 This section explains each of these key concepts:
 
-#### Throughput & Speed
+#### Throughput and speed
 
 * [**Batching**](../concepts/batching.md): Groups multiple compatible pull requests together into a single test run. This significantly increases merge throughput and can dramatically reduce CI costs by validating an entire batch with a single test run instead of one for each individual pull request. It is an essential feature for achieving high throughput.
 * [**Parallel Queues**](parallel-queues/): Allows for the creation of multiple independent queues that test and merge PRs in parallel. This feature is necessary for large monorepos and transforms the queue from a simple "line" into a more complex and efficient "graph".
 * [**Testing Concurrency**](../managing-merge-queue/advanced-settings.md#testing-concurrency): A setting that defines the maximum number of pull requests that can be tested simultaneously. Fine-tuning this number is a powerful way to maximize merge velocity. It ensures a continuous flow of validated pull requests by keeping your CI runners fully utilized.
 
-#### Resilience & Flake Handling
+#### Resilience and flake handling
 
 * [**Optimistic Merging**](../concepts/optimistic-merging.md): Increases merge speed by leveraging test results from pull requests that are later in the queue. When a pull request (e.g., pull request 'c') passes testing, its success also verifies the changes from the pull requests ahead of it ('a' and 'b'). This allows the entire group of pull requests to be safely merged at once.
 * [**Pending Failure Depth**](../concepts/pending-failure-depth.md): Allows the queue to continue testing subsequent pull requests even if an earlier one fails. Because predictive testing re-tests the failed PR's code along with the subsequent PRs, this feature gives the failed PR additional chances to pass. This prevents a single flaky test from halting all forward progress and makes the queue more resilient to intermittent failures.

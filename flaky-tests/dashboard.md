@@ -8,7 +8,7 @@ description: >-
 
 Trunk Flaky Tests detect flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard.
 
-### Key Repo Metrics
+### Key repository metrics
 
 <figure><picture><source srcset="../.gitbook/assets/key-metrics-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/key-metrics-light.png" alt=""></picture><figcaption><p>Key repo metrics</p></figcaption></figure>
 
@@ -18,7 +18,7 @@ Trunk Flaky Test provides key repo metrics based on the detected health status o
 
 These numbers are important for understanding the overall health of your repo’s tests, how flaky and broken tests impact your developer productivity, and the developer hours saved from quarantining tests. You can also view the trends in these numbers in the trend charts.
 
-### Tests Cases Overview
+### Tests cases overview
 
 <figure><picture><source srcset="../.gitbook/assets/flaky-tests-overview-table-v2-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-overview-table-v2-light.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -38,7 +38,7 @@ Test Deletion & History
 * To reduce noise, mark old or unused tests as Healthy while waiting for them to expire.
 {% endhint %}
 
-### Test Case Details
+### Test case details
 
 <figure><picture><source srcset="../.gitbook/assets/flaky-tests-failure-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-failure-details-light.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -50,7 +50,7 @@ You can _click_ on any of the test cases listed on the Flaky Test dashboard to a
 
 This is in addition to information like ticket status and the current codeowner.
 
-### **Code Owners**
+### **Code owners**
 
 If you have a codeowners file configured in your repos, you will see who owns each flaky test in the test details view. We support code owners for [GitHub](https://docs.gitlab.com/ee/user/project/codeowners/) and [GitLab](https://docs.gitlab.com/ee/user/project/codeowners/) repos.
 
@@ -58,7 +58,7 @@ If you have a codeowners file configured in your repos, you will see who owns ea
 
 This information will also be provided when creating a ticket with the [Jira integration](ticketing-integrations/jira-integration.md) or [webhooks](webhooks/).
 
-### **Failure Types**
+### **Failure types**
 
 <figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -66,7 +66,7 @@ The Failure Types table shows the history of past test runs grouped by unique fa
 
 The Failure Type is a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, duration, and time.
 
-### Failure Details
+### Failure details
 
 You can click on any of these test runs to see the detailed stack trace:
 
@@ -74,13 +74,13 @@ You can click on any of these test runs to see the detailed stack trace:
 
 You can flip through the stack traces of similar failures across different test runs by clicking the left and right arrow buttons. You can also see other similar failures on this and other tests.
 
-#### Go to the CI Job Logs
+#### Go to the CI job logs
 
 If you want to see full logging of the original CI job for an individual test failure, you can click **Logs** in the expanded failure details panel to go to the job's page in your CI provider.
 
 <figure><picture><source srcset="../.gitbook/assets/failure-logs-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/failure-logs-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-### **Test History**
+### **Test history**
 
 <figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
 

@@ -1,4 +1,4 @@
-# Code Quality CLI Getting Started
+# Code Quality CLI getting started
 
 Initializing Trunk in a git repo is as simple as running:
 
@@ -16,17 +16,17 @@ trunk init --lock
 ```
 {% endhint %}
 
-### Discover CLI Use Cases
+### Discover CLI use cases
 
 <table data-view="cards"><thead><tr><th data-hidden></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
 
-### Tweak the Configuration
+### Tweak the configuration
 
 Trunk is completely controlled through the `trunk.yaml` file. If for example you are not using the `check` tool you can safely remove the `lint` section from the file.
 
 [Learn more about CLI configuration](../configuration/)
 
-### Single-player Mode
+### Single-player mode
 
 If you want to run `trunk` inside your repository but are not ready to roll it out team-wide, you can run `trunk` in what we call single-player mode.
 

@@ -1,12 +1,12 @@
-# Custom Linters
+# Custom linters
 
 Trunk Code Quality allows you to define custom linters. If a linter is not within the [list of supported linters](supported/) or you have a bespoke solution, you can define a custom linter.
 
-### Defining a Custom Linter
+### Defining a custom linter
 
 You can define linters right in your `.trunk/trunk.yaml` file in your repo. These definitions have the same configurable parameters as in our [public plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) or [your own plugins repo](../../references/cli/configuration/plugins/external-repositories.md).
 
-#### Pass-Fail Linter Script Example
+#### Pass-Fail linter script example
 
 For example, you can define a simple [pass-fail linter](custom-linters.md#pass-fail-linter-script-example) that runs a custom script file. The linter passes or fails based on the status code returned.
 
@@ -27,7 +27,7 @@ lint:
           success_codes: [0, 1]
 ```
 
-#### Inline Grep Command Example
+#### Inline grep command example
 
 You can also define simple linters inline using tools like `grep`. This linter will grep against your custom regex pattern, format the output using sed, and then parse the output into pattern groups using a [regex output](../../references/cli/configuration/lint/output.md#regex) for Trunk Code Quality to report.
 
@@ -56,6 +56,6 @@ lint:
 
 To see the configurable fields available [Linter Definition Reference](../../references/cli/configuration/lint/definitions.md).
 
-### Contributing a New Linter
+### Contributing a new linter
 
 The [Trunk Code Quality plugins repo](https://github.com/trunk-io/plugins/blob/main/CONTRIBUTING.md) is public and welcomes contributions. Feel free to open a PR if the new custom linter you defined could be useful to others. You can reach out to us [on Slack](https://slack.trunk.io/) if you need a hand.

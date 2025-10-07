@@ -25,7 +25,7 @@ predictive testing // test pull requests ahead of you in the queue with your cha
 2. Once the pre-requisites are met, Trunk Merge Queue will create a temporary branch with the naming convention `trunk-merge/***`. This branch will be based on the head of `main` and will include the changes in your pull request and the changes from pull requests ahead of your pull request in the queue. This is the predictive branch described above and is used to guarantee the correctness of your system.
 3. The same tests that are required for your pull request will now be run on this predictive branch. When those tests pass - your original pull request will be merged into `main`.
 
-### Key Concepts
+### Key concepts
 
 <table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="concepts-and-optimizations/pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
 
@@ -35,6 +35,6 @@ predictive testing // test pull requests ahead of you in the queue with your cha
 
 Trunk Merge Queue works with any CI provider as long as you use GitHub for your repo hosting.
 
-### **Next Steps**
+### **Next steps**
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Talk to a developer</td><td></td><td><a href="https://calendly.com/trunk/demo">https://calendly.com/trunk/demo</a></td></tr><tr><td></td><td>Get started on your own</td><td></td><td><a href="set-up-trunk-merge/">set-up-trunk-merge</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Talk to a developer</td><td></td><td><a href="https://calendly.com/trunk/demo">https://calendly.com/trunk/demo</a></td></tr><tr><td></td><td>Get started on your own</td><td></td><td><a href="set-up-trunk-merge/">set-up-trunk-merge</a></td></tr></tbody></table>

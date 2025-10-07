@@ -50,7 +50,7 @@ This can be overridden by defining your own plugin repo to import, overriding in
 
 [Learn more about the plugin system.](../../references/cli/configuration/plugins/)
 
-### Run on every PR
+### Run on every pull request
 
 Trunk works in CI. Trunk Code Quality provides [GitHub integration](../ci-setup/github-integration.md) and can run in any other CI environment. This lets you check Code Quality in every PR with consistent config and consistent results.
 

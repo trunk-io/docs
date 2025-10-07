@@ -4,23 +4,23 @@
 
 Trunk Code Quality is a powerful metalinter that simplifies linting, formatting, and static analysis across your entire codebase. By integrating over 100 supported tools like ESLint, Prettier, Ruff, and more, it enables you to manage code quality with unified configuration and consistent reporting. Trunk Code Quality helps you install tools hermetically, run them efficiently, and integrate seamlessly with pull requests and CI pipelines.
 
-### Licensing Overview
+### Licensing overview
 
 Trunk Code Quality is composed of a closed-source core complemented by open-source components that enhance extensibility and integration. Understanding the licensing terms for each part ensures compliance and optimal use.
 
-#### Closed-Source Components
+#### Closed-Source components
 
 * Trunk CLI: The core command-line tool is closed-source but free to use under specific conditions.
 * VS Code Extension: Integrates Trunk Code Quality directly into your development environment. Under the hood, all code-checking by the VS Code extension is completed via the Trunk CLI, which drives the VS Code extension.
 
-#### Open-Source Components
+#### Open-Source components
 
 * Plugin System and Configurations: An extensible plugin system that allows you to define, extend, and share linter configurations. These plugins are open-source under the MIT License, enabling you to modify them or create new ones to integrate additional tools or customize behavior.
 * GitHub Action:  Scripts that automate Trunk Code Quality checks in your GitHub workflows. GitHub Actions require the source code to be visible for transparency and security. Our GitHub Action is open-source under the MIT License, allowing you to review, modify, and ensure it meets your needs.
 
 By open-sourcing these components, we promote transparency, extensibility, and community collaboration. This approach encourages our community and customers to contribute to the ecosystem, enhancing Trunk Code Quality for everyone.
 
-#### Free Usage
+#### Free usage
 
 You can use the Trunk CLI and access core functionalities for free under the following conditions:
 
@@ -29,7 +29,7 @@ You can use the Trunk CLI and access core functionalities for free under the fol
   * Free for teams with up to 5 active non-bot committers.
   * An active committer is a non-bot user who has committed in the last 30 days.
 
-#### Paid Licensing
+#### Paid licensing
 
 For private repositories with over 5 active committers, a paid license is required to comply with Trunk Code Quality’s licensing agreement. While all features remain accessible, payment is necessary to meet licensing obligations and support the continued development of the product.
 
@@ -38,7 +38,7 @@ Compliance and Support
 * Licensing Compliance: Payment ensures your use of Trunk Code Quality aligns with the licensing terms for larger teams.
 * Dedicated Support: Paid customers receive prioritized support to help with integration, troubleshooting, and maximizing the benefits of Trunk Code Quality.
 
-#### How Billing Works
+#### How billing works
 
 Trunk Code Quality offers two billing options for paid licenses:
 
@@ -112,6 +112,6 @@ Yes, the open-source components are designed to work with the Trunk CLI. They en
 * GitHub Action: Modify or fork our GitHub Action to better suit your CI workflows. The source code is available at [github.com/trunk-io/trunk-action](https://github.com/trunk-io/trunk-action).
 * Community Engagement: Join our community Slack channel at [slack.trunk.io](https://slack.trunk.io) to collaborate with other users and our development team.
 
-#### Contact Us
+#### Contact us
 
 For licensing inquiries, to obtain a paid license, or to discuss which billing option is best for your organization, please contact [sales@trunk.io](mailto:sales@trunk.io). We’re here to help you ensure compliance and get the most out of Trunk Code Quality.

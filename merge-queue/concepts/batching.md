@@ -14,13 +14,13 @@ example of testing pull requests in batches of 3
 
 <table><thead><tr><th data-type="number">Batch Size</th><th width="323">Pull Requests</th><th>Testing Cost</th><th>Savings</th></tr></thead><tbody><tr><td>1</td><td><strong>A</strong>, <strong>B</strong>, <strong>C</strong>, <strong>D</strong>, <strong>E</strong>, <strong>F</strong>, <strong>G</strong>, <strong>H, I, J, K, L</strong></td><td><code>12x</code></td><td>0%</td></tr><tr><td>2</td><td><strong>AB, CD, EF, GH, IJ</strong></td><td><code>6x</code></td><td>50%</td></tr><tr><td>4</td><td><strong>ABCD</strong>, <strong>EFGH, IJKL</strong></td><td><code>3x</code></td><td>75%</td></tr><tr><td>8</td><td><strong>ABCDEFGH, IJKL</strong></td><td><code>1.5x</code></td><td>87.5%</td></tr><tr><td>12</td><td><strong>ABCDEFGHIJKL</strong></td><td><code>1x</code></td><td>92%</td></tr></tbody></table>
 
-## Enable Batching
+## Enable batching
 
 Batching is enabled in the Merge Settings of your repo in the [Trunk web app](https://app.trunk.io/login?intent=merge%20queue).
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-### Configuring Batching
+### Configuring batching
 
 The behavior of batching is controlled by two settings in the Merge Queue:\
 \

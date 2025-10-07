@@ -4,7 +4,7 @@ description: >-
   tickets with the Linear integration
 ---
 
-# Linear Integration
+# Linear integration
 
 When Trunk Flaky Tests [detects a broken or flaky test](../detection.md), you can create an automatically generated Linear ticket for your team to pick up and fix the test.
 
@@ -23,7 +23,7 @@ To connect a Linear project:
 
 After connecting to Linear, you can specify a default project and a default assignee for new tickets.
 
-#### API Key Permissions
+#### API Key permissions
 
 The following project permissions must be granted to your Linear API key so Trunk can read, create, and assign tickets automatically:
 
@@ -32,7 +32,7 @@ The following project permissions must be granted to your Linear API key so Trun
 
 Selecting _Full Access_ will also grant the required permissions.
 
-### Create a New Ticket
+### Create a new ticket
 
 You can create a new ticket for any test listed in Flaky Tests.&#x20;
 

@@ -1,10 +1,10 @@
-# Configure Linters
+# Configure linters
 
 Trunk Code Quality's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](../overview/how-does-it-work.md#hold-the-line) solution with your own custom linters.
 
 Here's an overview of the ways you can configure linters.
 
-### Config Hierarchy
+### Config hierarchy
 
 Linters can be configured at different places:
 
@@ -29,7 +29,7 @@ plugins:
       uri: https://github.com/trunk-io/plugins
 ```
 
-### Linter Definitions <a href="#lint-config-definitions" id="lint-config-definitions"></a>
+### Linter definitions <a href="#lint-config-definitions" id="lint-config-definitions"></a>
 
 Each linter implemented in the Plugin Repo has its own linter definition. Let's take clang-tidy as an example, which ships with the following default configuration:
 
@@ -53,11 +53,11 @@ definitions:
   ...
 ```
 
-#### Linter Definition Reference
+#### Linter definition reference
 
 You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find references for these fields on the [Linter Definitions](../../references/cli/configuration/lint/definitions.md) page.
 
-### Overriding Default Linter Definitions
+### Overriding default linter definitions
 
 You may find while using Trunk that you want to modify one of these defaults: perhaps you want `clang-tidy` to not run on the upstream, or maybe you want the `node` runtime to include another environment variable. In these cases, you can specify the field in your `trunk.yaml` to override the default value.
 
@@ -74,7 +74,7 @@ If you wanted to flip the value of `disable_upstream` to `false`, you could, in 
 Overriding definitions in your `trunk.yaml` file doesn't require you to specify the entire definition again. You only need to specify what's being overridden.
 {% endhint %}
 
-#### Configure Linter Commands
+#### Configure linter commands
 
 Some linters have multiple commands, such as [Ruff](supported/ruff.md), which can run in different ways. By default, Ruff is configured to only run as a linter:
 
@@ -94,7 +94,7 @@ lint:
         commands: [lint, format]
 ```
 
-#### Configure Linter Platforms
+#### Configure linter platforms
 
 Similarly, some linters are configured to run differently on different platforms or at different versions. When overriding a command definition, overrides are applied on the tuple `[name, version, platforms]`.
 
@@ -175,7 +175,7 @@ runtimes:
         list: ["${home}/my/special/node/path", "${runtime}/bin"]
 ```
 
-### Blocking Thresholds
+### Blocking thresholds
 
 All issue severities low-high are considered blocking by default. In cases where you might want to slowly try out a new linter, we provide a mechanism to set specific thresholds for each linter.
 
@@ -220,7 +220,7 @@ Triggered linters will also be run when executing trunk check with `--all` so lo
 
 You may use `.` as a target to run on the entire repo instead of an isolated directory.
 
-### File Size
+### File size
 
 By default, Trunk only lints files up to 4 MiB in size. To override this globally, specify a `default_max_file_size` in `lint`:
 
@@ -253,13 +253,13 @@ lint:
 
 The `run_timeout` value can be specified in seconds (`s`), minutes (`m`), or hours (`h`).
 
-### Local Linter Overrides
+### Local linter overrides
 
 Trunk can also be managed by the `.trunk/user.yaml` file in your repository. This file is optional, but it allows individual developers to customize how they want `trunk` to run on their machines.
 
 Simply configure `.trunk/user.yaml` as you would for `.trunk/trunk.yaml`. Be mindful that `.trunk/user.yaml` takes precedence over `.trunk/trunk.yaml`, so substantial modifications could violate hermeticity.
 
-### Per Linter Definitions
+### Per linter definitions
 
 Trunk allows you to keep using your existing linter configs, and new linters recommended by Trunk will have their configs added in the `.trunk/configs` folder. These config files will be symlinked in during any `trunk check` run.
 
@@ -267,7 +267,7 @@ Trunk allows you to keep using your existing linter configs, and new linters rec
 If you're using an IDE Extension like clangd with an LSP that relies on those configs being in the root, you will need to create an additional symlink from the hidden config to the workspace root.
 {% endhint %}
 
-#### Moving Linters
+#### Moving linters
 
 You can move existing linter config files into the `.trunk/config` folder. You can check which files are automatically symlinked by looking for the `direct_configs` of [each plugin's definition](https://github.com/trunk-io/plugins/). If there are config files not listed, you can add them by overriding the definition like this:
 

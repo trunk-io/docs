@@ -2,7 +2,7 @@
 description: Learn how to automatically create GitHub Issues with Flaky Test webhooks
 ---
 
-# GitHub Issues Integration
+# GitHub Issues integration
 
 Trunk allows you to automate GitHub Issue creation through webhooks. This will allow you to create GitHub issues and auto-assign them to [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) using Webhooks.
 
@@ -23,7 +23,7 @@ Before you can create a webhook to automate GitHub Issue creation, you need to c
     <figure><picture><source srcset="../../.gitbook/assets/example-webhook-github-permissions-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-github-permissions-light.png" alt=""></picture><figcaption></figcaption></figure>
 6. Click **Generate Token** and copy your API token.
 
-### 2. Add a New Webhook
+### 2. Add a new webhook
 
 Trunk uses Svix to integrate with other services, such as GitHub Issues through webhooks.
 
@@ -40,7 +40,7 @@ You can create a new endpoint by:
 
 If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).
 
-### **3. Add Custom Headers**
+### **3. Add custom headers**
 
 The GitHub Issues API requires some custom headers. You can configure custom headers in the endpoint configuration:
 
@@ -55,7 +55,7 @@ You'll need to configure the following headers.
 | `Authorization`        | `Bearer <YOUR_API_TOKEN>`     |
 | `X-GitHub-Api-Version` | `2022-11-28`                  |
 
-### 4. Customize Your Transformation
+### 4. Customize your transformation
 
 Transformations are custom code snippets you can write to customize the GitHub issues created by the webhook. A working template transformation will be added automatically for your webhook, but you can further customize the behavior of this webhook.
 
@@ -170,13 +170,15 @@ You can uncomment the code block on lines 31-35 or use a snippet similar to:
      })
 ```
 
+{% hint style="info" %}
 #### Limitations of CODEOWNERS
 
 1. CODEOWNERS supports assigning files to teams, but GitHub doesn't support assigning issues to teams. **If you have team owners in your CODEOWNERS file, the requests will fail**.
 2. If your code owners do not map 1:1 with GitHub users, you will need to provide your own mapping, or webhooks will fail.
 3. The example payload provided for testing has the CODEOWNERS assigned to `@backend`. If you're testing following the instructions in [step 5](github-issues-integration.md#id-5.-test-your-webhook), the delivery attempt can fail.
+{% endhint %}
 
-### 5. Test Your Webhook
+### 5. Test your webhook
 
 You can create test issues by delivering a mock webhook. You can do this by:
 
@@ -184,7 +186,7 @@ You can create test issues by delivering a mock webhook. You can do this by:
 2. Under **Subscribed events,** select `test_case.status_changed`as the event type to send.
 3. Click **Send Example** to test your webhook
 
-### 6. Monitoring Webhooks
+### 6. Monitoring webhooks
 
 You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
 

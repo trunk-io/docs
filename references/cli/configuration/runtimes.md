@@ -60,7 +60,7 @@ For most runtimes, this is as simple as executing the runtime's package manager 
 
 Once `prettier` is installed, we combine its runtime's `linter_environment` with any other environment variables that might be defined in a given `lint.definitions` entry (in this case there are none), and then use that as the environment when we execute the command for a given linter.
 
-## Specifying a Runtime Version
+## Specifying a runtime version
 
 If you would like to use the system-installed runtime instead of the Trunk managed version you can always use the `runtimes.definitions.system_version` property in your `trunk.yaml` file.
 

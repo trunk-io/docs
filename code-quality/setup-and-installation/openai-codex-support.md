@@ -25,7 +25,7 @@ trunk install
 
 It's important to pre-install all trunk dependencies during the setup because codex environments are network-isolated post-setup.
 
-#### Debugging Installation
+#### Debugging installation
 
 If the environment setup is slow, run the following to diagnose:
 
@@ -35,7 +35,7 @@ trunk install --debug
 
 This command will detail installation timings and potential bottlenecks.
 
-### Handling Network Isolation
+### Handling network isolation
 
 Codex environments are network-isolated post-setup. Linters requiring network access must be excluded from running explicitly:
 

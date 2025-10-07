@@ -8,7 +8,7 @@ description: >-
 
 The web app can be found at [app.trunk.io](https://app.trunk.io/login?intent=merge%20queue).
 
-## Queue Overview
+## Queue overview
 
 The queue tab provides an overview of the work done by Merge and the work queued to be merged.
 
@@ -18,7 +18,7 @@ Clicking on an item will show the history to get a better understanding of the i
 
 <figure><img src="../../.gitbook/assets/merge-queue-screen.png" alt=""><figcaption><p>Clicking on a queue item navigates you to the details page.</p></figcaption></figure>
 
-## Pull Request Details
+## Pull request details
 
 The PR details show information about a PR, including a link to the PR in GitHub, the history of the PR within Trunk Merge Queue, and what must be done before a PR can be admitted to the queue for PRs that have not entered the queue yet.
 
@@ -32,7 +32,7 @@ When a PR has not been admitted to the queue yet, Trunk Merge Queue waits for:
 
 In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflics with the target branch.
 
-### Manually Restarting Failed PRs
+### Manually restarting failed pull requests
 
 The PR Details panel has a dropdown "**Actions"** menu, where you can:
 
@@ -55,7 +55,7 @@ A tabulated view of all the items that have failed in the Merge Queue, e.g. due 
 
 <figure><img src="../../.gitbook/assets/merge-failures.png" alt=""><figcaption></figcaption></figure>
 
-### Retry Failed PRs
+### Retry failed pull requests
 
 When a PR has been dropped from the queue, you can manually retry the PR by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click thee **Actions** dropdown, and select **Retry**
 
@@ -63,7 +63,7 @@ When a PR has been dropped from the queue, you can manually retry the PR by clic
 
 ***
 
-## Queue Visualization
+## Queue visualization
 
 The view of all current PRs being tested by Trunk Merge Queue and their respective queues. Each node shown is a pull request, and each edge indicates that the pull request is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, this will be a single line showing the testing and merging process.
 

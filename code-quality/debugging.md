@@ -1,6 +1,6 @@
 # Debugging
 
-## Why Aren't Issues Showing up Anymore?
+## Why aren't issues showing up anymore?
 
 If you aren’t seeing any issues the likely cause is that your local repo is clean. By default Trunk Code Quality only processes new changes to your codebase (read about [hold-the-line](overview/how-does-it-work.md#hold-the-line)).
 
@@ -20,13 +20,13 @@ trunk check --all
 
 [Read our docs for more information on CLI options](setup-and-installation/deal-with-existing-issues.md#fixing-existing-issues).
 
-## My Linters Are Failing or Not Running as Expected
+## My linters are failing or not running as expected
 
 When your linters aren’t working the way you expect, first check their configuration. Trunk’s [list of supported linters](linters/supported/) provides some specific tips for certain linters. You can see the full default configuration of every linter in [Trunk’s public plugin repo](https://github.com/trunk-io/plugins/tree/main).
 
 You can also try running `trunk check --verbose` to see what’s going on under the hood. If that still doesn’t work then please reach out to us on [our community Slack](https://trunkcommunity.slack.com/ssb/redirect) with the output of `trunk check --verbose`.
 
-## Why Does Trunk Take up So Much Disk Space?
+## Why does Trunk take up so much disk space?
 
 Trunk Code Quality uses hermetically versioned tools, which means it downloads a separate copy of the tools and runtime for each tool version. Over time, as tools are upgraded, this can leave a lot of unnecessary files in the cache directory. Trunk is working on a way to automatically remove unneeded files from the cache. In the meantime, you can safely clear your cache with
 
@@ -36,7 +36,7 @@ trunk cache clean --all
 
 then run `trunk install` again in your repos.
 
-## How do I Make a Linter Work with a Different File Type?
+## How do I make a linter work with a different file type?
 
 Every linter defines a set of file types that it wants to work with in a section of the YAML called `files`. To change this you need to override the files section of that linter’s definition. [More linter application file types](../references/cli/configuration/lint/files-and-caching.md#applicable-filetypes).
 
@@ -73,7 +73,7 @@ lint:
           - bar
 ```
 
-## How can I Disable Trunk on a Commit for just Me, but Keep it on for the Rest of my Team?
+## How can I disable trunk on a commit for just me, but keep it on for the rest of my team?
 
 If you prefer to never run Trunk on commit and push you can disable it just for you. Edit or create the `.trunk/user.yaml` file and change the `actions.disabled` section to look like this:
 
@@ -88,7 +88,7 @@ actions:
 
 This will disable the checks for just the current user. The `.trunk/user.yaml` file is specifically gitignored but will be loaded locally if present.
 
-## What Should I do if a Linter Process Seems to Take Longer than Expected During a Trunk Check?
+## What should I do if a linter process seems to take longer than expected during a Trunk check?
 
 There are two main strategies to address this issue: **configuring timeouts** and **ignoring certain files**.
 

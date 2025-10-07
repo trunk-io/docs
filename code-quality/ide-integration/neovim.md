@@ -15,7 +15,7 @@ The Neovim Plugin needs the following prerequisites:
 | CLI    | 1.17.0                   |
 | Neovim | v0.9.2                   |
 
-### Get Started
+### Get started
 
 Using the [lazy.nvim](https://github.com/folke/lazy.nvim#readme) plugin manager:
 

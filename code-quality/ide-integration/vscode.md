@@ -2,7 +2,7 @@
 
 Trunk Code Quality is available as a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=trunk.io) that you can use to streamline your linting and formatting experience.
 
-### Get Started
+### Get started
 
 By default, Trunk will try to automatically initialize itself in single-player mode. This means that it'll create a Trunk configuration that is hidden from git, which allows you to try it out [without Trunk's versioning powers](vscode.md#single-player-mode).
 
@@ -28,7 +28,7 @@ Trunk also shows Trunk Code Quality Issues in a panel in the File Explorer, but 
 
 ![hide explorer panel](https://static.trunk.io/assets/vscode_hide_explorer_panel.jpg)
 
-#### Single-player Mode
+#### Single-player mode
 
 In single-player mode, Trunk creates a [configuration file](../linters/configure-linters.md) and hides it from Git, so that you can test out Trunk on your own and get familiar with how it works, without committing this file.
 
@@ -75,6 +75,6 @@ Check out how to [install the CLI](../setup-and-installation/), [set it up in CI
 
 If you look at the "Window" output for the extension, you may find useful error logs.
 
-### Feature Requests & Bug Reports
+### Feature requests and bug reports
 
 Looking for another feature? Hit a bug? 🐛 [Let us know!](https://slack.trunk.io/)

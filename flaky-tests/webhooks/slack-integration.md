@@ -2,7 +2,7 @@
 description: Learn how to use flaky test webhooks to power Slack notifications
 ---
 
-# Slack Integration
+# Slack integration
 
 Trunk allows you to create custom workflows to send customized messages to Slack through webhooks.
 
@@ -10,7 +10,7 @@ Trunk allows you to create custom workflows to send customized messages to Slack
 
 This guide will walk you through sending Slack messages using event-triggered webhooks. By the end of this tutorial, you'll receive Slack messages for test status changes. This guide should take 10 minutes to complete.
 
-### 1. Configure Slack Webhooks
+### 1. Configure Slack webhooks
 
 Trunk uses Svix to integrate with other services, such as Slack, through webhooks.
 
@@ -30,7 +30,7 @@ You can add the new Slack Webhook URL to Svix by following these steps:
 
 If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).
 
-### 2. Customize Your Transformation
+### 2. Customize your transformation
 
 Transformations are custom code snippets you can write to customize the Slack messages sent by the webhook. A working template transformation will be added automatically for your webhook, but you can further customize the behavior of this webhook.
 
@@ -131,7 +131,7 @@ function summarizeTestCase(payload) {
 };
 ```
 
-### 3. Test Your Webhook
+### 3. Test your webhook
 
 You can send test messages to your Slack channels as you make updates. You can do this by:
 
@@ -139,7 +139,7 @@ You can send test messages to your Slack channels as you make updates. You can d
 2. Under **Subscribed events,** select `test_case.status_changed`as the event type to send.
 3. Click **Send Example** to test your webhook
 
-### 4. Monitoring Webhooks
+### 4. Monitoring webhooks
 
 You can monitor the events and the webhook's delivery logs in the **Overview** tab of an endpoint configuration view.
 

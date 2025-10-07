@@ -2,11 +2,11 @@
 description: Merge Queue > Webhooks
 ---
 
-# Merge Queue Webhooks
+# Merge Queue webhooks
 
 Trunk provides a variety of webhooks to allow responding to various events from Trunk. Each event corresponds to a Trunk feature and an action within that feature (for example, a Pull Request being submitted to Trunk Merge).
 
-### Supported Events
+### Supported events
 
 Trunk provides various webhooks to respond to events from Trunk Flaky Tests. Flaky Test events are named with a `pull_request` prefix, you can find the events you can respond to in the Webhook Events reference from Svix.&#x20;
 

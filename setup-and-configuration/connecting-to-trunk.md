@@ -1,6 +1,6 @@
 # Connecting to Trunk
 
-### Create a Trunk Account
+### Create a Trunk account
 
 Welcome to Trunk! Before you can access Trunk's toolkit to ship faster, you must [create a Trunk account](https://app.trunk.io/signup). You can connect to Trunk in two ways:
 
@@ -24,11 +24,11 @@ To create your organization, you need the following:
 If your team is already on Trunk and you're looking to join an existing organization, see the docs on[ inviting team members](managing-your-organization/#inviting-team-members) and contact an organization admin.&#x20;
 {% endhint %}
 
-### Start Using Trunk
+### Start using Trunk
 
 After connecting to Trunk, you're ready to get started.&#x20;
 
-### Next Steps
+### Next steps
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Flaky Tests</h4></td><td><a href="../.gitbook/assets/FlakyTests.png">FlakyTests.png</a></td><td><a href="../flaky-tests/overview.md">overview.md</a></td></tr><tr><td><h4>Merge Queue</h4></td><td><a href="../.gitbook/assets/Merge.png">Merge.png</a></td><td><a href="../merge-queue/merge-queue.md">merge-queue.md</a></td></tr></tbody></table>
 

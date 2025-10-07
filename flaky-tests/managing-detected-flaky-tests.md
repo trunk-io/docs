@@ -4,7 +4,7 @@ description: >-
   flaky tests.
 ---
 
-# Managing Detected Flaky Tests
+# Managing detected flaky tests
 
 It is important to have a follow-up process in place to manage detected flaky tests. A good process ensures that flaky tests do not slow down CI for your development team and prevents flakes from accumulating over time.&#x20;
 
@@ -19,7 +19,7 @@ Flaky tests will be [automatically detected](detection.md) by Trunk after you:
 Go through these guides first to start detecting flaky tests.
 {% endhint %}
 
-### Step 1: Create tickets for Flaky Tests
+### Step 1: Create tickets for flaky tests
 
 Creating Linear or Jira tickets for detected flaky tests helps to integrate flaky test fixes into your existing workflows.
 
@@ -27,7 +27,7 @@ Creating Linear or Jira tickets for detected flaky tests helps to integrate flak
 * Once connected, you can click **Create Ticket** on a test detail page in Trunk. Trunk will create the ticket with context, including the test ID, flake rate, and the last failure stack trace and reason.
 * The ticket status and assignee will be visible on the test details page in Trunk, and these details will stay in sync with changes to the ticket.
 
-### Step 2: Broadcast Flakes
+### Step 2: Broadcast flakes
 
 It is important to keep the team informed on all status changes for flaky tests . This allows for fast follow-up when a test is marked as flaky.
 
@@ -35,7 +35,7 @@ It is important to keep the team informed on all status changes for flaky tests 
 * Trunk's built-in templates help you get started and test the connection.
 * You can then customize the transformation to update the message format and content, including @-mentioning test owners so they can follow up right away.
 
-### Step 3: Start Quarantining Manually
+### Step 3: Start quarantining manually
 
 Flaky tests slow down CI and have a high negative impact on merge queue throughput. You can minimize or eliminate this CI slowdown by [quarantining](quarantining.md) flaky tests at runtime.
 
@@ -56,7 +56,7 @@ There is also built-in automation support that handles tasks such as assigning f
 
 You can customize how flaky and quarantined tests are handled to suit your team and organization best.
 
-### Step 5: Review Existing Flakes
+### Step 5: Review existing flakes
 
 It is important to track and triage existing flaky tests over time. Trunk collects historical failure logs and stack traces for flaky tests, providing developers as much information as possible for debugging high-impact flaky tests.
 
@@ -64,7 +64,7 @@ It is important to track and triage existing flaky tests over time. Trunk collec
 * Review existing quarantined tests regularly to decide which tests should be fixed and which tests should be deleted from your test suite.
 * Trunk can send weekly email reports with information such as your total number of flaky tests and the number of PRs blocked, and how those numbers have changed week over week. Frequently failing tests will also be highlighted in the report. Reach out on [Slack](https://slack.trunk.io/) to ask about enabling weekly reports for your organization.
 
-## In Summary: Build a Process Around Managing Flaky Tests
+## In summary: Build a process around managing flaky tests
 
 Building processes for dealing with flaky tests helps decrease or eliminate their impact on CI and reduce the amount of developer time lost to debugging flakes and CI reruns.
 

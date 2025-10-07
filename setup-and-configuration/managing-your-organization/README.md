@@ -1,4 +1,4 @@
-# Managing Your Organization
+# Managing your Organization
 
 ## Organization Slug and Token
 
@@ -41,7 +41,7 @@ From this page you can copy the member invite link or revoke the invite using th
 
 If your team uses emails managed by Google or Microsoft under a common domain, you can grant access to your team using **Team Domains**. When a team member creates a Trunk account with an email under you configured team domain, they will be granted access to your Trunk organization and repositories.
 
-You can enable team domains under **Settings** > **Organization** > **Team > Domains** and clicking **Add Domain**.
+You can enable team domains under **Settings > Organization > Team > Domains** and clicking **Add Domain**.
 
 {% tabs %}
 {% tab title="Add First Domain" %}

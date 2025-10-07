@@ -38,7 +38,7 @@ This agent needs to be called **once per test framework** used in your repositor
 
 
 
-### Supported Values
+### Supported values
 
 #### Test Frameworks
 
@@ -74,9 +74,9 @@ This agent needs to be called **once per test framework** used in your repositor
 
 
 
-### Usage Examples
+### Usage examples
 
-#### Basic Setup
+#### Basic setup
 
 ```
 Use the setup-trunk-uploads tool with testFramework="jest" and ciProvider="github"
@@ -97,7 +97,7 @@ Use the setup-trunk-uploads tool with testFramework="playwright" and ciProvider=
 
 
 
-### Sample Response
+### Sample response
 
 The tool returns detailed setup instructions as plain text:
 
@@ -125,7 +125,7 @@ Add a step to your GitHub Actions workflow to automatically upload test results 
 
 
 
-### Error Handling
+### Error handling
 
 | Error                                      | Cause                                         | Resolution                                             |
 | ------------------------------------------ | --------------------------------------------- | ------------------------------------------------------ |

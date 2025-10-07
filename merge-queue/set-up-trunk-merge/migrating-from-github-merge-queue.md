@@ -1,4 +1,4 @@
-# Migrating From GitHub Merge Queue
+# Migrating from GitHub Merge Queue
 
 For teams switching from [GitHub Merge Queues](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue) to Trunk Merge Queue, the process is straight forward.&#x20;
 
@@ -31,19 +31,19 @@ Follow the [Quickstart guide](./) to setup your repo with Trunk Merge Queue and 
 
 ***
 
-### Pre Migration
+### Pre migration
 
 Before migrating fully, it may be useful to evaluate the workflows "quiety" and confirm settings before conveting your repository to an entirly new workflow.
 
 Here are some useful steps to get you familiar with the Trunk Merge Queue workflow without disrupting engineers.
 
-#### Enable trunk merge for testing but with the automatic comments disabled
+#### Enable Trunk Merge for testing but with the automatic comments disabled
 
 While evaluating and testing Trunk Merge Queue for your team, we suggest disabling automatic comments on PRs.  This can be done by toggling off GitHub Comments in the Trunk web app.
 
 This setting is found under **Merge Queue** tab **>** repository **> Settings >** toggle **off GitHub Comments.**
 
-#### Make the Switch
+#### Make the switch
 
 Once you have [configured settings](../managing-merge-queue/advanced-settings.md) and tested out the workflow quietly, turn off other merge tools (like [GitHub merge queue](migrating-from-github-merge-queue.md#turn-off-github-merge-queue)), re-enable GitHub comments in the Trunk web app under the **Merge Queue** tab **>** repository **> Settings >** toggle **on GitHub Comments**
 
@@ -51,12 +51,12 @@ Once you have [configured settings](../managing-merge-queue/advanced-settings.md
 It is important that a repository is configured to use ONLY Trunk Merge Queue and no other merge queue tools for best results.
 {% endhint %}
 
-#### Share the News
+#### Share the news
 
 Now that you have migrated to Trunk Merge Queue, be sure to share the workflow with your team, using [Broken link](broken-reference "mention") as a great place to start.
 
 ***
 
-### Getting Help
+### Getting help
 
 If you or your team are running into issues be sure to join the [Trunk Slack community](https://slack.trunk.io/) for assistance.

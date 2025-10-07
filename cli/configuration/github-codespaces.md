@@ -4,7 +4,7 @@ We provide support for running `trunk` in GitHub Codespaces.
 
 [Github Codespaces](https://github.com/features/codespaces) are fully configured virtual containers for developing your GitHub repositories.
 
-## Installing the Trunk Feature
+## Installing the Trunk feature
 
 You can install the Trunk Launcher in your codespace by including the following line in your `devcontainer.json` file under `features`:
 
@@ -28,7 +28,7 @@ Note: You should only add `trunk install` if you have a Trunk-configured reposit
 
 You can then [configure pre-builds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/configuring-prebuilds) to run from GitHub workflows, ensuring the `trunk` CLI and needed linters are available and ready to go when you need to boot up your codespace.
 
-## Installing the Trunk Extension
+## Installing the Trunk extension
 
 If you are using the Trunk feature, we will automatically install the Trunk extension on your behalf.&#x20;
 
