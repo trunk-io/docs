@@ -174,7 +174,7 @@ Create or edit your `trunk.yaml` file in a directory named `.trunk` at the root 
 ```yaml
 version: 0.1
 merge:
-  required_status:
+  required_statuses:
     - Unit Tests
     - Integration Tests
 ```
@@ -190,7 +190,7 @@ After completing configuration, verify your setup:
 * [ ] If using Draft PR mode: Required status checks are configured in GitHub branch protection
 * [ ] If using Push-triggered mode:
   * [ ] CI workflows trigger on `trunk-merge/**` branches
-  * [ ] `merge.required_status` is defined in `trunk.yaml`
+  * [ ] `merge.required_statuses` is defined in `trunk.yaml`
 
 #### **Test Your Configuration**
 
