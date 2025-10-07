@@ -55,7 +55,7 @@ When a pull request enters the queue, Trunk creates a `trunk-merge/*` branch and
 **Requirements:**
 
 * Configure push-triggered workflows in your CI provider for `trunk-merge/**` branches
-* Define required status checks in your `trunk.yaml` configuration file
+* Define required status checks in your `.trunk/trunk.yaml` configuration file
 
 **To enable:** Go to Settings > Repositories > select your repository > Merge > toggle off **Trunk Draft PR Creation**.
 
@@ -167,9 +167,9 @@ jobs:
 
 **For other CI providers:** Configure workflows triggered by pushes to branches matching `trunk-merge/**`.
 
-**Step 2: Define Required Status Checks in trunk.yaml**
+**Step 2: Define Required Status Checks in .trunk/trunk.yaml**
 
-Create or edit your `trunk.yaml` file in the root of your repository to specify which status checks Trunk should wait for before merging:
+Create or edit your `trunk.yaml` file in a directory named `.trunk` at the root of your repository (so, `.trunk/trunk.yaml`)  to specify which status checks Trunk should wait for before merging:
 
 ```yaml
 version: 0.1
@@ -179,7 +179,7 @@ merge:
     - Integration Tests
 ```
 
-**Important:** The status check names in `trunk.yaml` must exactly match the job names from your CI workflows.
+**Important:** The status check names in `.trunk/trunk.yaml` must exactly match the job names from your CI workflows.
 
 ### Verification Checklist
 
