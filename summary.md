@@ -110,7 +110,7 @@
 * [Concepts and Optimizations](merge-queue/concepts-and-optimizations/README.md)
   * [Predictive Testing](merge-queue/concepts/predictive-testing.md)
   * [Batching](merge-queue/concepts/batching.md)
-  * [Priority](merge-queue/concepts-and-optimizations/pr-prioritization.md)
+  * [Priority Merging](merge-queue/concepts-and-optimizations/pr-prioritization.md)
   * [Optimistic Merging](merge-queue/concepts/optimistic-merging.md)
   * [Pending Failure Depth](merge-queue/concepts/pending-failure-depth.md)
   * [Anti-Flake Protection](merge-queue/concepts/anti-flake-protection.md)
