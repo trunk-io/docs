@@ -8,6 +8,15 @@ description: Troubleshooting and FAQ
 
 Yes. A pull request can be submitted to the queue at any time, even if it's not yet ready to merge. The pull request will enter the queue in a "Queued" state and wait for all branch protection rules (like passing status checks and required reviews) to be met. Once the PR is ready, Trunk Merge Queue will automatically move it into the testing phase.
 
+### Do settings like "Optimistic Merging" or "Batching" cause multiple pull requests to be merged into a single commit?
+
+No. Pull requests are always merged individually, and each PR will result in a separate commit in your `main` branch's history, regardless of your configuration.
+
+Features like Optimistic Merging and Batching are validation and testing strategies, not merging strategies.
+
+* [Optimistic Merging](../concepts/optimistic-merging.md) uses the successful test of a pull request later in the queue to validate all the PRs ahead of it in the queue, allowing the entire sequence to be merged without waiting for the earlier PRs to finish testing.
+* [Batching](../concepts/batching.md) allows the queue to _test_ multiple PRs in a single CI job to save time and resources. After the test passes, the PRs in the batch are still merged one by one.
+
 ### How am I notified if my pull request fails in the merge queue?
 
 When a pull request is removed from the queue due to a failure, the Trunk bot updates its comment on the original PR. This update includes direct links to the specific workflows that failed, allowing you to quickly investigate and resolve the issue. Example below.
