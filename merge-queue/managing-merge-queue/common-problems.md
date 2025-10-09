@@ -8,6 +8,14 @@ description: Troubleshooting and FAQ
 
 Yes. A pull request can be submitted to the queue at any time, even if it's not yet ready to merge. The pull request will enter the queue in a "Queued" state and wait for all branch protection rules (like passing status checks and required reviews) to be met. Once the PR is ready, Trunk Merge Queue will automatically move it into the testing phase.
 
+### Can I choose the merge strategy (e.g., squash, rebase, or merge commit) for my pull requests?
+
+No, Trunk Merge Queue exclusively uses a **squash merge** for all pull requests. It is not currently possible to select a different merge strategy like rebase or a standard merge commit on a per-PR basis.
+
+### When a pull request is squash merged, how is the commit message determined?
+
+The commit message for the squashed commit is automatically generated from the **pull request's title and description**, which is the default behavior provided by GitHub.
+
 ### Do settings like "Optimistic Merging" or "Batching" cause multiple pull requests to be merged into a single commit?
 
 No. Pull requests are always merged individually, and each PR will result in a separate commit in your `main` branch's history, regardless of your configuration.
