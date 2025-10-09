@@ -85,6 +85,7 @@
 * [Managing detected flaky tests](flaky-tests/managing-detected-flaky-tests.md)
 * [Dashboard](flaky-tests/dashboard.md)
 * [Flaky test detection](flaky-tests/detection.md)
+* [The Importance of PR Test Results](flaky-tests/the-importance-of-pr-test-results.md)
 * [Quarantining](flaky-tests/quarantining.md)
 * [Pull request comments](flaky-tests/github-pull-request-comments.md)
 * [Ticketing integrations](flaky-tests/ticketing-integrations/README.md)
