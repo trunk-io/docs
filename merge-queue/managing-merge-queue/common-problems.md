@@ -21,7 +21,7 @@ Features like Optimistic Merging and Batching are validation and testing strateg
 
 When a pull request is removed from the queue due to a failure, the Trunk bot updates its comment on the original PR. This update includes direct links to the specific workflows that failed, allowing you to quickly investigate and resolve the issue. Example below.
 
-<div align="left" data-full-width="true" data-with-frame="true"><figure><img src="../../.gitbook/assets/Screenshot 2025-10-09 at 3.28.03 PM.png" alt="Example of a Trunk bot PR comment, detailing a failed status check that caused the PR to be removed from the merge queue."><figcaption></figcaption></figure></div>
+<div align="left" data-full-width="false"><figure><img src="../../.gitbook/assets/Screenshot 2025-10-09 at 3.28.03 PM.png" alt="Example of a Trunk bot PR comment, detailing a failed status check that caused the PR to be removed from the merge queue."><figcaption></figcaption></figure></div>
 
 ### Can I create multiple merge queues for a single repository? For example, can I have a separate 'test' queue for validating CI changes?
 
