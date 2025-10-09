@@ -55,6 +55,12 @@ Most likely, you have a branch protection rule that affects merge branches. For 
 
 The two most likely problems are that you are restricting **who can merge** or that you have **disabled squash merges** into your repo. Trunk Merge Queue needs to use squash merges. To fix this, turn on `'allow squash merges'` for this repo in your GitHub setup.
 
+### What is the purpose of `trunk-temp/*` branches, and should we configure our CI to run on them?
+
+No, you should configure your CI to completely ignore `trunk-temp/*` branches. Running workflows on them will only create unnecessary or canceled builds.
+
+The `trunk-temp/*` branch is a temporary, intermediate branch that the merge queue uses to assemble the necessary commits for a test run. Once the build is prepared, this branch is immediately renamed to a `trunk-merge/*` branch.
+
 ### Why do Dependabot and Renovate pull requests keep getting kicked from the Merge Queue?
 
 By default, both [dependabot](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/managing-pull-requests-for-dependency-updates#changing-the-rebase-strategy-for-dependabot-pull-requests) and [renovate](https://docs.renovatebot.com/updating-rebasing/#updating-and-rebasing-branches) both will rebase their PRs whenever other PRs merge into their base branch. If that rebase happens when those PRs are in the queue, they will get kicked since they were updated. There are two ways to mitigate this:
