@@ -125,6 +125,7 @@
   * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
   * [Metrics](merge-queue/managing-merge-queue/metrics.md)
   * [Pull request lifecycle](merge-queue/managing-merge-queue/reference.md)
+  * [Stacked pull requests](merge-queue/managing-merge-queue/stacked-pull-requests.md)
   * [Merge Queue FAQ](merge-queue/managing-merge-queue/common-problems.md)
   * [Merge Queue CLI reference](merge-queue/managing-merge-queue/merge-queue-cli-reference.md)
 * [Merge Queue webhooks](merge-queue/webhooks.md)
