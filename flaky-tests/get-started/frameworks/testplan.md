@@ -59,13 +59,9 @@ task = Task(target='make_multitest', module='tasks', rerun=2)  # REMOVE OR SET R
 plan.schedule(task, resource='MyPool')
 
 # Instead, use:
-task = Task(target='make_multitest', module='tasks')  # No rerun parameter
+task = Task(target='make_multitest', module='tasks')  # NO REREUN PARAMETER
 plan.schedule(task, resource='MyPool')
 ```
-
-#### Worker-Level Retries
-
-Testplan's pools have a built-in fault tolerance mechanism that retries tasks if a worker dies (up to 2 times by default). This is different from test retries and is designed for system failures. For flaky test detection, ensure you're not manually implementing retry logic in your test code or test wrappers.
 
 ### Try It Locally
 
