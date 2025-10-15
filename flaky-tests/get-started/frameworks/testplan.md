@@ -72,7 +72,7 @@ If you're using ThreadPools, tasks retries can be disabled at the pool level, to
 pool = ThreadPool(name="MyPool", allow_task_rerun=True) 
 
 # Instead, use:
-pool = ThreadPool(name="MyPool", allow_task_rerun=False)  # NO REREUN PARAMETER
+pool = ThreadPool(name="MyPool", allow_task_rerun=False)
 ```
 
 ### Try It Locally
