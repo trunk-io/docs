@@ -55,12 +55,24 @@ If you're using execution pools (ThreadPool, ProcessPool) and have configured ta
 
 ```python
 # Remove or set rerun=0
-task = Task(target='make_multitest', module='tasks', rerun=2)  # REMOVE OR SET RERUN=0
+task = Task(target='make_multitest', module='tasks', rerun=2) 
 plan.schedule(task, resource='MyPool')
 
 # Instead, use:
-task = Task(target='make_multitest', module='tasks')  # NO REREUN PARAMETER
+task = Task(target='make_multitest', module='tasks')
 plan.schedule(task, resource='MyPool')
+```
+
+#### Thread Pool Retries
+
+If you're using ThreadPools, tasks retries can be disabled at the pool level, tou should remove this configuration:
+
+```python
+# Set allow_task_rerun=FALSE
+pool = ThreadPool(name="MyPool", allow_task_rerun=True) 
+
+# Instead, use:
+pool = ThreadPool(name="MyPool", allow_task_rerun=False)  # NO REREUN PARAMETER
 ```
 
 ### Try It Locally
