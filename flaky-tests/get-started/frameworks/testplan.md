@@ -65,7 +65,7 @@ plan.schedule(task, resource='MyPool')
 
 #### Thread Pool Retries
 
-If you're using ThreadPools, tasks retries can be disabled at the pool level, tou should remove this configuration:
+If you're using ThreadPools, tasks retries can be disabled at the pool level, you should remove this configuration:
 
 ```python
 # Set allow_task_rerun=FALSE
