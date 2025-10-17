@@ -22,7 +22,7 @@ Learn more about [Merge Queue](broken-reference)
 
 Trunk Flaky Tests automatically detects flaky tests and quarantines them to prevent CI failures. Track, manage, and fix flaky tests across any language, environment, or test framework.
 
-Learn more about [Flaky Tests](https://docs.trunk.io/flaky-tests/detection)
+Learn more about [Flaky Tests](flaky-tests/detection.md)
 
 #### Agent-Powered Root Cause Analysis (beta)
 
