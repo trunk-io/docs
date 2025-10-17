@@ -8,8 +8,6 @@ description: Enterprise CI Reliability at Scale
 
 Trunk is a platform for CI reliability that eliminates pipeline bottlenecks with intelligent merge queue management, automated flaky test detection, and agent-powered failure analysis.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Create a Trunk account</strong></td><td><a href="setup-and-configuration/connecting-to-trunk.md">connecting-to-trunk.md</a></td></tr><tr><td><strong>Integrate Flaky Tests</strong></td><td><a href="flaky-tests/get-started/">get-started</a></td></tr><tr><td><strong>Integrate Merge Queue</strong></td><td><a href="merge-queue/set-up-trunk-merge/">set-up-trunk-merge</a></td></tr></tbody></table>
-
 ### Features
 
 #### Advanced Merge Queue
