@@ -30,6 +30,8 @@ Automatically identifies and explains the root cause of test and CI failures usi
 
 {% hint style="info" %}
 CI Autopilot is currently in private beta. Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access.
+
+Learn more about [CI Autopilot](broken-reference)
 {% endhint %}
 
 ### Get Started
