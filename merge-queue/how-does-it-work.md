@@ -3,6 +3,7 @@ description: >-
   Merge Queue creates predictive branches to verify that the future state of
   your protected branch will remain green when the contents of the queue merge
   into it.
+hidden: true
 ---
 
 # How does it work?
