@@ -1,14 +1,12 @@
 ---
-description: Trunk is a DevEx platform to check, test, merge, and monitor your code.
+description: The Trunk Platform for CI Reliability
 ---
 
 # Welcome
 
-### Your AI DevOps Platform
+### Your CI Reliability Platform
 
-Trunk is an AI DevOps platform that uses a specialized async AI agent to help you detect and root cause problems before they block your team.
-
-By collecting insights from your CI jobs and test results, Trunk can automatically detect problems in your CI, detect the root cause, alert developers, and help you take action through the Trunk MCP server.
+Trunk is a Platform for CI reliability that helps teams keep CI green with an intelligent merge queue, automated flaky test management, and AI-powered CI failure analysis.
 
 {% hint style="success" %}
 Sign up for the [CI Autopilot waitlist](https://trunk.io/ci-autopilot), and we'll reach out when we're ready to onboard you.
@@ -24,9 +22,9 @@ Enterprise-scale merge queue to merge pull requests quickly while protecting you
 
 Learn more about [Trunk Merge Queue](broken-reference)
 
-#### Flaky & broken test detection
+#### Automated Flaky Test Management
 
-An autonomous assistant continuously detects and quarantines flaky or broken tests before they block developers.
+Trunk Flaky Tests automatically detects flaky tests and quarantines them to prevent CI failures. Track, manage, and fix flaky tests across any language, environment, or test framework.
 
 [Learn more about flaky test detection](https://docs.trunk.io/flaky-tests/detection)
 
