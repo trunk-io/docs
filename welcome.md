@@ -28,7 +28,9 @@ Learn more about [Flaky Tests](flaky-tests/detection.md)
 
 Automatically identifies and explains the root cause of test and CI failures using autonomous AI agents. Delivers actionable insights directly in GitHub PR comments and Slack, including failure classification, impact assessment, and suggested fixes. Also available in Cursor and VSCode via the Trunk MCP Server.
 
-[Sign up for the waitlist](https://trunk.io/ci-autopilot)
+{% hint style="info" %}
+CI Autopilot is currently in private beta. Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access.
+{% endhint %}
 
 ### Get Started
 

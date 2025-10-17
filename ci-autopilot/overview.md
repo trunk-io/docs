@@ -7,7 +7,7 @@ description: >-
 # Overview
 
 {% hint style="success" %}
-## CI Autopilot is currently invite-only in private beta.
+## CI Autopilot is currently in private beta.
 
 Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}
