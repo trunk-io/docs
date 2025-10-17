@@ -1,20 +1,16 @@
 ---
-description: Metalinter for over 100 code checking tools.
+description: CLI Metalinter and VSCode extension for over 100 code checking tools.
 ---
 
 # Overview
 
-<figure><img src="../.gitbook/assets/check.png" alt=""><figcaption></figcaption></figure>
+{% hint style="warning" %}
+Available as a CLI tool and VSCode extension, Code Quality is a separate from the Trunk Platform for CI Stability, which includes [Merge Queue](broken-reference) and [Flaky Tests](broken-reference). Code Quality runs entirely locally and does not require access to the Trunk web app or platform services.
+{% endhint %}
 
 Trunk Code Quality is a **metalinter** that lets you lint every language and every file in your project with a single tool using 100+ supported idiomatic code-checking tools, such as ESLint, Prettier, Ruff, and more for every language and project.
 
 Trunk Code Quality is trusted by popular open-source projects like [**ESLint**](https://eslint.org/) to improve their developer experience. [Learn more about how ESLint leverages Code Quality in their repos](https://trunk.io/blog/improving-linting-experience-in-eslint-s-open-source-repo-with-trunk-code-quality).
-
-{% hint style="success" %}
-**Trunk Code Quality is free for Open-Source.**
-
-Maintaining consistency in open-source repos is hard. That's why Trunk Code Quality is free for repos like [ESLint](https://github.com/eslint/eslint), which leverages Code Quality to overcome linting challenges in their repos. [Learn more about pricing](https://trunk.io/pricing)
-{% endhint %}
 
 ### What is Code Quality?
 
