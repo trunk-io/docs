@@ -105,8 +105,7 @@
 
 * [Overview](merge-queue/merge-queue.md)
 * [How does it work?](merge-queue/how-does-it-work.md)
-* [Setup](merge-queue/set-up-trunk-merge/readme.md)
-  * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
+* [Getting Started](merge-queue/set-up-trunk-merge/readme.md)
   * [Branch Protection & Required Status Checks](merge-queue/set-up-trunk-merge/branch-protection-and-required-status-checks.md)
   * [Migrating from GitHub Merge Queue](merge-queue/set-up-trunk-merge/migrating-from-github-merge-queue.md)
 * [Concepts and optimizations](merge-queue/concepts-and-optimizations/README.md)
