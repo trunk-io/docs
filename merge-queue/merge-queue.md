@@ -39,13 +39,11 @@ Testing every PR serially against the predicted state guarantees correctness but
 
 The result: guaranteed branch stability with throughput that scales to thousands of PRs per day.
 
-### **What is unique about Trunk Merge Queue?**
-
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Intelligent Batching</td><td><a href="concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="concepts-and-optimizations/pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Anti-Flake Protection</td><td><a href="concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
-
+{% hint style="info" %}
 ### **Requirements**
 
-Trunk Merge Queue works with any CI provider as long as you use GitHub for your repo hosting.
+Trunk Merge Queue is CI-agnostic and works with your existing pipeline infrastructure (Jenkins, CircleCI, GitHub Actions, Buildkite, etc.). GitHub repository hosting is required.
+{% endhint %}
 
 ### **Next steps**
 
