@@ -35,13 +35,13 @@ Testing every PR serially against the predicted state guarantees correctness but
 
 * **Intelligent Batching** runs one CI test for multiple PRs together instead of testing each separately, reducing costs up to 90% with automated bisection when batches fail
 * **Dynamic Parallel Queues** analyze which code each PR touches and create independent test lanes for non-overlapping changes—eliminating queue bottlenecks from unrelated PRs in large monorepos
-* **Flaky Test Protection** uses results from later PRs in the queue to validate earlier ones—if a PR fails but subsequent PRs that include its code pass, the failure was likely transient and all PRs merge together
+* **Anti-Flake protection** uses results from later PRs in the queue to validate earlier ones—if a PR fails but subsequent PRs that include its code pass, the failure was likely transient and all PRs merge together
 
 The result: guaranteed branch stability with throughput that scales to thousands of PRs per day.
 
 ### **What is unique about Trunk Merge Queue?**
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Intelligent Batching</td><td><a href="concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="concepts-and-optimizations/pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Intelligent Batching</td><td><a href="concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="concepts-and-optimizations/pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Anti-Flake protection</td><td><a href="concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
 
 ### **Requirements**
 
