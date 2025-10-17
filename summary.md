@@ -2,7 +2,7 @@
 
 ## Overview
 
-* [Welcome](welcome.md)
+* [Trunk Platform](welcome.md)
 
 ## Setup & Configuration
 

@@ -1,16 +1,12 @@
 ---
-description: The Trunk Platform for CI Reliability
+description: Enterprise CI Reliability at Scale
 ---
 
-# Welcome
+# Trunk Platform
 
-### Your CI Reliability Platform
+### Eliminate CI Bottlenecks and Ship Faster
 
-Trunk is a Platform for CI reliability that helps teams keep CI green with an intelligent merge queue, automated flaky test management, and AI-powered CI failure analysis.
-
-{% hint style="success" %}
-Sign up for the [CI Autopilot waitlist](https://trunk.io/ci-autopilot), and we'll reach out when we're ready to onboard you.
-{% endhint %}
+Trunk is a platform for CI reliability that eliminates pipeline bottlenecks with intelligent merge queue management, automated flaky test detection, and AI-powered failure analysis.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Create a Trunk account</strong></td><td><a href="setup-and-configuration/connecting-to-trunk.md">connecting-to-trunk.md</a></td></tr><tr><td><strong>Integrate Flaky Tests</strong></td><td><a href="flaky-tests/get-started/">get-started</a></td></tr><tr><td><strong>Integrate Merge Queue</strong></td><td><a href="merge-queue/set-up-trunk-merge/">set-up-trunk-merge</a></td></tr></tbody></table>
 
@@ -18,27 +14,21 @@ Sign up for the [CI Autopilot waitlist](https://trunk.io/ci-autopilot), and we'l
 
 #### Advanced Merge Queue
 
-Enterprise-scale merge queue to merge pull requests quickly while protecting your main branch. Suited for the increased PR velocity of big monorepos in the AI-era with advanced features for handling flakiness and colocating distinct projects in the same repo.
+Enterprise-grade merge queue that accelerates PR throughput while protecting your main branch. Purpose-built for high-velocity monorepos with intelligent batching to reduce CI costs by up to 90%, parallel queues for testing independent code changes simultaneously, and anti-flake protection to prevent transient failures from blocking merges.
 
-Learn more about [Trunk Merge Queue](broken-reference)
+Learn more about [Merge Queue](broken-reference)
 
 #### Automated Flaky Test Management
 
 Trunk Flaky Tests automatically detects flaky tests and quarantines them to prevent CI failures. Track, manage, and fix flaky tests across any language, environment, or test framework.
 
-[Learn more about flaky test detection](https://docs.trunk.io/flaky-tests/detection)
+Learn more about [Flaky Tests](https://docs.trunk.io/flaky-tests/detection)
 
-#### Root-cause analysis
+#### Agent-Powered Root Cause Analysis (beta)
 
-Finds and explains the root cause of failed tests or CI jobs using AI, in GitHub, Slack, and even Cursor via the Trunk MCP Server.
+Automatically identifies and explains the root cause of test and CI failures using autonomous AI agents. Delivers actionable insights directly in GitHub PR comments and Slack, including failure classification, impact assessment, and suggested fixes. Also available in Cursor and VSCode via the Trunk MCP Server.
 
 [Sign up for the waitlist](https://trunk.io/ci-autopilot)
-
-#### Automated developer notifications
-
-GitHub comments with root cause analysis, classification, impact, and suggestions of fixes for CI and test failures.
-
-[Learn more about Automated Notifications](flaky-tests/webhooks/)
 
 <table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="merge-queue/merge-queue.md">merge-queue.md</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="flaky-tests/overview.md">overview.md</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr></tbody></table>
 
