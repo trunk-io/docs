@@ -1,36 +1,47 @@
 ---
 description: >-
-  Enterprise-scale merge queue to merge pull requests quickly while protecting
-  your main branch.
+  Merge queue that guarantees branch stability and accelerates development at
+  enterprise scale
 ---
 
-# Overview
+# Introduction
 
-**Trunk Merge Queue** is a hosted merge queue service. It manages and controls the order in which enqueued pull requests are merged into the `main` branch of your repository. Trunk Merge Queue enables large teams working in a monorepo to reduce merge conflicts and maintain a green, healthy main branch.
+**Trunk Merge Queue** is a hosted service that manages and controls how pull requests are merged into your `main` branch. It ensures incompatible changes never break the branch while maximizing merge throughput—essential for high-velocity teams working in monorepos.
 
 {% embed url="https://youtu.be/qFCXVkx3pbo" %}
 
-### **Why use a merge queue?**
+### The Problem: Traditional Merge Workflows Break at Scale
 
-Merge queues automate PR merges into your repo's `main` branch, ensuring incompatible changes never break the branch. They are a best practice for trunk-based development in repos with 10-1000+ active engineers.
+Traditional workflows fail at high velocity because of the fundamental race condition between testing and merging:
 
-### **Why do teams adopt a merge queue?**
+* **"Merge when green" breaks `main`:** PRs pass CI on their own branches and merge—but those test results are stale the moment another PR lands. At high velocity, this guarantees eventual `main` breakage.
+* **"Require up-to-date branch" has a race condition:** Even GitHub's safeguard (rebase before merge + retest) fails at scale. While a PR's CI runs after rebasing, other PRs can merge, making the rebase stale by merge time.
 
-As the number of concurrent changes to a repository grows, the likelihood that your pull request has stale/invalid test results increases. The only way to guarantee that your `main` branch does not become "broken" is to make sure that all code changes are tested against the head of `main`.
+**The result:** At high velocity, `main` breaks regularly. Deployments halt while teams investigate which recent commits caused the failure—pulling senior engineers away from feature work to review logs and coordinate reverts.
 
-As an example:
+The only way to guarantee branch stability is predictive testing: validating that PRs will pass when combined with the future state of `main`.
 
-1. Jack opens pull request **A**, which renames the function `foo()` to `bar()` and updates all the call sites to the new name.
-2. Jill opens pull request **B**, which adds a new file that uses the existing function `foo().`
-3. Jack and Jill are unaware of each other's PRs, and the automated build and tests for each of these independent pull requests both pass.
-4. Regardless of order, when pull requests **A** and **B** both merge, there is code in the system calling the function `foo()` that no longer exists.
-5. The build is now broken.
+### How Trunk Merge Queue Solves This
 
-A merge queue's purpose is to give you the guarantee of all code being tested against `main` without needing to do that work serially or in reaction to code merging into main. The merge queue service predicts the future state of `main` and tests against that. ([see predictive testing](concepts/predictive-testing.md)). Returning to our example - pull requests A and B would both be submitted to the merge queue, which would then perform the predictive testing to ensure that A and B, when combined, do not break the build.
+**Predictive testing eliminates the race condition**
+
+Trunk Merge Queue tests each PR against the predicted future state of `main`—the state after all PRs ahead of it in the queue have merged. This eliminates the race condition: by the time a PR merges, it has already been validated against the exact state it will merge into.
+
+When PR A and PR B both enter the queue, Trunk tests B against `main` + A, guaranteeing that the merged result will be stable. No stale test results, no post-merge failures, no broken `main`.
+
+**But predictive testing at scale requires optimization**
+
+Testing every PR serially against the predicted state guarantees correctness but creates new bottlenecks: queue wait times and CI costs scale linearly with PR volume. Trunk solves this with enterprise-grade optimizations:
+
+* **Intelligent Batching** runs one CI test for multiple PRs together instead of testing each separately, reducing costs up to 90% with automated bisection when batches fail
+* **Dynamic Parallel Queues** analyze which code each PR touches and create independent test lanes for non-overlapping changes—eliminating queue bottlenecks from unrelated PRs in large monorepos
+* **Flaky Test Protection** uses results from later PRs in the queue to validate earlier ones—if a PR fails but subsequent PRs that include its code pass, the failure was likely transient and all PRs merge together
+
+The result: guaranteed branch stability with throughput that scales to thousands of PRs per day.
 
 ### **What is unique about Trunk Merge Queue?**
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Batching</td><td><a href="concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="concepts-and-optimizations/pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Intelligent Batching</td><td><a href="concepts/batching.md">batching.md</a></td></tr><tr><td align="center">Dynamic Parallel Queues</td><td><a href="concepts-and-optimizations/parallel-queues/">parallel-queues</a></td></tr><tr><td align="center">Optimistic Merging</td><td><a href="concepts/optimistic-merging.md">optimistic-merging.md</a></td></tr><tr><td align="center">Pending Failure Depth</td><td><a href="concepts/pending-failure-depth.md">pending-failure-depth.md</a></td></tr><tr><td align="center">Prioritization</td><td><a href="concepts-and-optimizations/pr-prioritization.md">pr-prioritization.md</a></td></tr><tr><td align="center">Flaky Test Protection</td><td><a href="concepts/anti-flake-protection.md">anti-flake-protection.md</a></td></tr></tbody></table>
 
 ### **Requirements**
 
