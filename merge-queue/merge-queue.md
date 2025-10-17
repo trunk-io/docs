@@ -42,7 +42,7 @@ The result: guaranteed branch stability with throughput that scales to thousands
 {% hint style="info" %}
 **Integration Requirements**
 
-Trunk Merge Queue is CI-agnostic and works with your existing pipeline infrastructure (Jenkins, CircleCI, GitHub Actions, Buildkite, etc.). GitHub repository hosting is required.
+Trunk Merge Queue is CI-agnostic and works with your existing pipeline infrastructure (Jenkins, CircleCI, GitHub Actions, Buildkite, etc.). Currently supports GitHub for repository hosting. Interested in GitLab support? [Contact us](https://emailto:support@trunk.io).
 {% endhint %}
 
 ### **Next steps**
