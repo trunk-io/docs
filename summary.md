@@ -130,9 +130,9 @@
 * [Managing your Organization](setup-and-administration/managing-your-organization.md)
 * [Trunk GitHub App](setup-and-administration/github-app-permissions.md)
 * [Integration with Slack](setup-and-administration/integration-for-slack.md)
-* [Security](setup-and-administration/security.md)
-* [Billing and plans](setup-and-administration/billing.md)
 * [Support](setup-and-administration/support.md)
+* [Billing and plans](setup-and-administration/billing.md)
+* [Security](setup-and-administration/security.md)
 
 ## CLI & API References <a href="#references" id="references"></a>
 
