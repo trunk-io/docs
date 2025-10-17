@@ -103,7 +103,7 @@
 
 ## Merge Queue
 
-* [Introduction](merge-queue/merge-queue.md)
+* [Overview](merge-queue/merge-queue.md)
 * [How does it work?](merge-queue/how-does-it-work.md)
 * [Setup](merge-queue/set-up-trunk-merge/readme.md)
   * [Quick Start](merge-queue/set-up-trunk-merge/readme.md)
