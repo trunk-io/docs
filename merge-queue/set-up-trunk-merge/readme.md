@@ -9,10 +9,10 @@ This guide walks you through setting up Trunk Merge Queue for your repository. T
 #### Step 1: Install the GitHub App and create a Queue
 
 {% hint style="info" %}
-**The Trunk GitHub App is required for Merge Queue to function.** It grants Trunk Merge Queue the necessary permissions to create test branches, read CI results, and merge PRs in your repository. View [detailed permissions and what Trunk uses them for](../../setup-and-configuration/managing-your-organization/github-app-permissions.md).&#x20;
+**The Trunk GitHub App is required for Merge Queue to function.** It grants Trunk Merge Queue the necessary permissions to create test branches, read CI results, and merge PRs in your repository. View [detailed permissions and what Trunk uses them for](../../setup-and-administration/github-app-permissions.md).&#x20;
 {% endhint %}
 
-1. [Sign in to app.trunk.io](https://app.trunk.io/login) and navigate to the **Merge Queue** tab. (First-time users will [create an organization](../../setup-and-configuration/connecting-to-trunk.md) before accessing Merge Queue.)
+1. [Sign in to app.trunk.io](https://app.trunk.io/login) and navigate to the **Merge Queue** tab. (First-time users will [create an organization](../../setup-and-administration/connecting-to-trunk.md) before accessing Merge Queue.)
 2. Click the **Create New Queue** button.
 
 {% hint style="info" %}
@@ -73,7 +73,7 @@ You can submit a PR to the merge queue at any time, even before CI checks pass o
 #### Troubleshooting common issues
 
 {% hint style="info" %}
-Visit [Trunk Support](../../administration/support.md) for additional assistance or to contact the support team.
+Visit [Trunk Support](../../setup-and-administration/support.md) for additional assistance or to contact the support team.
 {% endhint %}
 
 If your test PR doesn't merge automatically:

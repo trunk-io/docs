@@ -124,18 +124,15 @@
   * [Change settings](ci-autopilot/use-dashboard/change-settings.md)
 * [FAQs](ci-autopilot/faqs.md)
 
-## Setup & Configuration
+## Setup & Administration
 
-* [Connecting to Trunk](setup-and-configuration/connecting-to-trunk.md)
-* [Managing your Organization](setup-and-configuration/managing-your-organization/README.md)
-* [Trunk GitHub App](setup-and-configuration/managing-your-organization/github-app-permissions.md)
-* [Integration with Slack](integration-for-slack.md)
-
-## Administration
-
-* [Security](administration/security.md)
-* [Billing and plans](administration/billing.md)
-* [Support](administration/support.md)
+* [Account Setup](setup-and-administration/connecting-to-trunk.md)
+* [Managing your Organization](setup-and-administration/managing-your-organization.md)
+* [Trunk GitHub App](setup-and-administration/github-app-permissions.md)
+* [Integration with Slack](setup-and-administration/integration-for-slack.md)
+* [Security](setup-and-administration/security.md)
+* [Billing and plans](setup-and-administration/billing.md)
+* [Support](setup-and-administration/support.md)
 
 ## CLI & API References <a href="#references" id="references"></a>
 
