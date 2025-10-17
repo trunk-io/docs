@@ -245,4 +245,4 @@ After completing configuration, verify your setup:
 
 #### Need help? <a href="#need-help" id="need-help"></a>
 
-Visit [Trunk Support](../../support.md) for additional assistance or to contact the support team.
+Visit [Trunk Support](../../administration/support.md) for additional assistance or to contact the support team.

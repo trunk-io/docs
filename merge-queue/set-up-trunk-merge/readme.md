@@ -2,7 +2,7 @@
 description: How to set up Trunk Merge Queue for your project
 ---
 
-# Setup
+# Getting Started
 
 This guide walks you through setting up Trunk Merge Queue for your repository. The setup process involves installing the GitHub App, creating a queue, and configuring branch protection rules to allow the merge queue to function properly.
 
@@ -73,7 +73,7 @@ You can submit a PR to the merge queue at any time, even before CI checks pass o
 #### Troubleshooting common issues
 
 {% hint style="info" %}
-Visit [Trunk Support](../../support.md) for additional assistance or to contact the support team.
+Visit [Trunk Support](../../administration/support.md) for additional assistance or to contact the support team.
 {% endhint %}
 
 If your test PR doesn't merge automatically:
