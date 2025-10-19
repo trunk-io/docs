@@ -25,7 +25,7 @@ Traditional workflows fail at high velocity because of the fundamental race cond
 
 **Predictive testing eliminates the race condition**
 
-Trunk Merge Queue [tests each PR against the predicted future state of `main`](concepts/predictive-testing.md)—the state after all PRs ahead of it in the queue have merged. This eliminates the race condition: by the time a PR merges, it has already been validated against the exact state it will merge into.
+Trunk Merge Queue [**tests each PR against the predicted future state of `main`**](concepts/predictive-testing.md)—the state after all PRs ahead of it in the queue have merged. This eliminates the race condition: by the time a PR merges, it has already been validated against the exact state it will merge into.
 
 When PR A and PR B both enter the queue, Trunk tests B against `main` + A, guaranteeing that the merged result will be stable. No stale test results, no post-merge failures, no broken `main`.
 
