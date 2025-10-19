@@ -42,13 +42,13 @@ The result: guaranteed branch stability with throughput that scales to thousands
 {% hint style="success" %}
 **Performance Guarantee**&#x20;
 
-We stress test our merge queue to consistently merge **250+ PRs/hour** over 12-hour periods—supporting **3,000+ PRs per day**. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume. [Contact us](https://emailto:support@trunk.io).
+We stress test our merge queue to consistently merge **250+ PRs/hour** over 12-hour periods—supporting **3,000+ PRs per day**. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume. [Contact us](mailto:support@trunk.io).
 {% endhint %}
 
 {% hint style="info" %}
 **Integration Requirements**
 
-Trunk Merge Queue is CI-agnostic and works with your existing pipeline infrastructure (Jenkins, CircleCI, GitHub Actions, Buildkite, etc.). Currently supports GitHub for repository hosting. Interested in GitLab support? [Contact us](https://emailto:support@trunk.io).
+Trunk Merge Queue is CI-agnostic and works with your existing pipeline infrastructure (Jenkins, CircleCI, GitHub Actions, Buildkite, etc.). Currently supports GitHub for repository hosting. Interested in GitLab support? [Contact us](mailto:support@trunk.io).
 {% endhint %}
 
 ### **Next steps**
