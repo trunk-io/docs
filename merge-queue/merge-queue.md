@@ -40,7 +40,9 @@ Testing every PR serially against the predicted state guarantees correctness but
 The result: guaranteed branch stability with throughput that scales to thousands of PRs per day.
 
 {% hint style="success" %}
-**Performance guarantee:** We stress test our merge queue to consistently merge **250+ PRs/hour** over 12-hour periods—supporting **3,000+ PRs per day**. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume.
+**Performance Guarantee**&#x20;
+
+We stress test our merge queue to consistently merge **250+ PRs/hour** over 12-hour periods—supporting **3,000+ PRs per day**. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume.
 {% endhint %}
 
 {% hint style="info" %}
