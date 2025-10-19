@@ -25,9 +25,13 @@ Traditional workflows fail at high velocity because of the fundamental race cond
 
 **Predictive testing eliminates the race condition**
 
-Trunk Merge Queue [tests each PR against the predicted future state of `main`](concepts/predictive-testing.md)—the state after all PRs ahead of it in the queue have merged. This eliminates the race condition: by the time a PR merges, it has already been validated against the exact state it will merge into.
+Trunk Merge Queue [**tests each PR against the predicted future state of `main`**](concepts/predictive-testing.md)—the state after all PRs ahead of it in the queue have merged. This eliminates the race condition: by the time a PR merges, it has already been validated against the exact state it will merge into.
 
 When PR A and PR B both enter the queue, Trunk tests B against `main` + A, guaranteeing that the merged result will be stable. No stale test results, no post-merge failures, no broken `main`.
+
+{% hint style="success" %}
+**Performance guarantee:** We stress test our merge queue to consistently merge 250+ PRs/hour over 12-hour periods—supporting 3,000+ PRs per day. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume.
+{% endhint %}
 
 **But predictive testing at scale requires optimization**
 
