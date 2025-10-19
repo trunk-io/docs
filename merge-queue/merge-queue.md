@@ -29,10 +29,6 @@ Trunk Merge Queue [**tests each PR against the predicted future state of `main`*
 
 When PR A and PR B both enter the queue, Trunk tests B against `main` + A, guaranteeing that the merged result will be stable. No stale test results, no post-merge failures, no broken `main`.
 
-{% hint style="success" %}
-**Performance guarantee:** We stress test our merge queue to consistently merge **250+ PRs/hour** over 12-hour periods—supporting **3,000+ PRs per day**. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume.
-{% endhint %}
-
 **But predictive testing at scale requires optimization**
 
 Testing every PR serially against the predicted state guarantees correctness but creates new bottlenecks: queue wait times and CI costs scale linearly with PR volume. Trunk solves this with enterprise-grade optimizations:
@@ -42,6 +38,10 @@ Testing every PR serially against the predicted state guarantees correctness but
 * [**Anti-Flake Protection**](concepts/anti-flake-protection.md) uses results from later PRs in the queue to validate earlier ones—if a PR fails but subsequent PRs that include its code pass, the failure was likely transient and all PRs merge together
 
 The result: guaranteed branch stability with throughput that scales to thousands of PRs per day.
+
+{% hint style="success" %}
+**Performance guarantee:** We stress test our merge queue to consistently merge **250+ PRs/hour** over 12-hour periods—supporting **3,000+ PRs per day**. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume.
+{% endhint %}
 
 {% hint style="info" %}
 **Integration Requirements**
