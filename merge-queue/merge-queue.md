@@ -42,7 +42,7 @@ The result: guaranteed branch stability with throughput that scales to thousands
 {% hint style="success" %}
 **Performance Guarantee**&#x20;
 
-We stress test our merge queue to consistently merge **250+ PRs/hour** over 12-hour periods—supporting **3,000+ PRs per day**. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume.
+We stress test our merge queue to consistently merge **250+ PRs/hour** over 12-hour periods—supporting **3,000+ PRs per day**. This is our validated performance floor, not a ceiling. If your team requires higher throughput, we’ll work with you to validate support for your specific volume. [Contact us](https://emailto:support@trunk.io).
 {% endhint %}
 
 {% hint style="info" %}
