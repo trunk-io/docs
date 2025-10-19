@@ -4,7 +4,7 @@ description: >-
   enterprise scale
 ---
 
-# Introduction
+# Overview
 
 **Trunk Merge Queue** is a hosted service that manages and controls how pull requests are merged into your `main` branch. It ensures incompatible changes never break the branch while maximizing merge throughput—essential for high-velocity teams working in monorepos.
 
@@ -14,12 +14,12 @@ description: >-
 
 Traditional workflows fail at high velocity because of the fundamental race condition between testing and merging:
 
-* **"Merge when green" breaks `main`:** PRs pass CI on their own branches and merge—but those test results are stale the moment another PR lands. At high velocity, this guarantees eventual `main` breakage.
-* **"Require up-to-date branch" has a race condition:** Even GitHub's safeguard (rebase before merge + retest) fails at scale. While a PR's CI runs after rebasing, other PRs can merge, making the rebase stale by merge time.
+* **"Merge when green" breaks `main`:** PRs pass CI on their own branches but never test integration. At high velocity, this guarantees eventual `main` breakage when independently-passing PRs conflict.
+* **"Require up-to-date branch" prevents merges:** GitHub's safeguard (rebase + retest) creates a race condition. While a PR's CI runs after rebasing, other PRs merge, making it stale again. At high velocity, PRs get stuck in endless rebase-retest loops and can't land.
 
-**The result:** At high velocity, `main` breaks regularly. Deployments halt while teams investigate which recent commits caused the failure—pulling senior engineers away from feature work to review logs and coordinate reverts.
+**The result: At high velocity, teams can't deploy reliably.** Either `main` breaks regularly—forcing engineers to investigate failures and coordinate reverts—or PRs get stuck in endless rebase-retest loops, starving the pipeline.
 
-The only way to guarantee branch stability is predictive testing: validating that PRs will pass when combined with the future state of `main`.
+**The solution is predictive testing:** validating that PRs will pass when combined with the future state of `main`. This eliminates the race condition—ensuring both branch stability and that PRs can actually land.
 
 ### How Trunk Merge Queue Solves This
 
