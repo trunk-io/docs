@@ -1,30 +1,27 @@
 ---
 description: >-
-  Push updates about your queue status to a slack channel to keep your team
-  informed.
+  Push updates about your merge queue status to a Slack channel to keep your
+  team informed.
 ---
 
-# Integration for Slack
+# Slack Integration
 
-Trunk Merge Queue integrates with Slack to push relevant information to a specified slack channel so you can stay up to date with the status of your pull requests.
+Trunk Merge Queue integrates with Slack to send real-time notifications about queue activity and pull request state changes to a designated channel.
 
 ## Setup integration with Slack
 
-After you have Merge Queue set up and running in your repository, you can set up Slack notifications to get alerts on a variety of actions.
+After you have Merge Queue set up and running in your repository, you can configure Slack notifications to receive alerts for various queue events.
 
-### Merge Queue specific notifications
+### Enable Merge Queue Notifications
 
-After you have Merge set up and running in your repository, you can set up your integration with Slack in `Settings > Repositories > the specific repository > Merge Queue`&#x20;
+1. Navigate to `Settings > Repositories > [your repository] > Merge Queue`
+2. Find the **Connect with Slack** setting and click **Connect** to install the Trunk Slack application
+3. Authorize the app to post to your desired channel
+4. You'll be redirected back to your settings page once authorization is complete
 
-<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+### Configuring Notification Preferences
 
-Click **Connect** to install the Trunk Slack application and receive Merge Queue notifications in a specific channel. Once you have authorized the app to post to a channel, you will be redirected to your settings page.
-
-<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
-
-## Configuring your integration with Slack
-
-After you have connected to a Slack channel, you can select which notifications you would like to receive. By default, all Merge notifications are enabled.
+After connecting to a Slack channel, you can customize which notifications you want to receive. By default, all Merge Queue notifications are enabled.
 
 | Notification                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
