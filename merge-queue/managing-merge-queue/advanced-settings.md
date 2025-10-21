@@ -209,14 +209,17 @@ Whether or not GitHub slash commands like `/trunk merge` are enabled for this me
 
 ***
 
-## Notifications
+## Connect with Slack
 
-[Integrate Trunk Merge Queue with Slack ](integration-for-slack.md)to deliver real-time updates about your pull requests and queue status. You can configure notifications at two levels:&#x20;
+[Connect Trunk Merge Queue to Slack](integration-for-slack.md) to receive real-time notifications about queue activity in a designated channel. After connecting, you can choose which events trigger notifications.
 
-* per-queue notifications sent to a Slack channel, or&#x20;
-* per-user notifications sent as direct messages for PRs you authored.&#x20;
+**Available notifications include:**
 
-Customize which events trigger notifications, such as testing completion, failures, queue configuration changes, and successful merges.
+* Pull requests submitted to or removed from the queue
+* Testing status updates (ready, in progress, passed, failed)
+* Successful merges
+* Queue configuration changes (pausing, mode changes, concurrency adjustments)
+* Pull request cancellations
 
 ***
 
