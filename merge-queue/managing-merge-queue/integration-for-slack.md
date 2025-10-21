@@ -8,6 +8,8 @@ description: >-
 
 Trunk Merge Queue integrates with Slack to send real-time notifications about queue activity and pull request state changes to a designated channel.
 
+<figure><img src="../../.gitbook/assets/Screenshot 2025-10-21 at 4.32.54 PM.png" alt=""><figcaption></figcaption></figure>
+
 ## Setup integration with Slack
 
 After you have Merge Queue set up and running in your repository, you can configure Slack notifications to receive alerts for various queue events.
@@ -35,3 +37,4 @@ After connecting to a Slack channel, you can customize which notifications you w
 | Pull request is canceled                          | A pull request has been canceled, either manually or due to it [reaching a configured testing timeout](https://docs.trunk.io/merge-queue/set-up-trunk-merge/advanced-settings#timeout-for-tests-to-complete)                                                                                                                                                                                                                                                                  |
 | Pull request is waiting for earlier pull requests | <p>A pull request failed testing, but the pull request is currently waiting before being kicked. This can happen for one of two reasons:<br>1. The pull request is not at the head of the queue, so it is waiting to determine if it is the source of the failure or if a PR it depends on is<br>2. <a href="https://docs.trunk.io/merge-queue/pending-failure-depth">Pending Failure Depth is enabled</a> and the PR is waiting for other PRs below it to finish testing</p> |
 |                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+
