@@ -1,24 +1,26 @@
 ---
-description: Push updates about your queue status to Slack to keep your team informed.
+description: >-
+  Push updates about your queue status to a slack channel to keep your team
+  informed.
 ---
 
 # Integration for Slack
 
-Trunk Merge Queue integrates with Slack to push relevant information to your team so you can stay up to date with the status of your pull requests.
+Trunk Merge Queue integrates with Slack to push relevant information to a specified slack channel so you can stay up to date with the status of your pull requests.
 
 ## Setup integration with Slack
 
-After you have Merge set up and running in your repository you can set up Slack notifications. There are two ways to configure where notifications are delivered: per queue and per user. You can have all notifications from a specific Merge Queue sent to a Slack channel. You can also have notifications for PRs authored by you, regardless of which queue they are going through, sent as a DM to you.
+After you have Merge Queue set up and running in your repository, you can set up Slack notifications to get alerts on a variety of actions.
 
 ### Merge Queue specific notifications
 
-After you have Merge set up and running in your repository, you can set up your integration with Slack in `Settings > Repositories > the specific repository` with the Merge Queue.
+After you have Merge set up and running in your repository, you can set up your integration with Slack in `Settings > Repositories > the specific repository > Merge Queue`&#x20;
 
-<figure><img src="../../.gitbook/assets/enable-parallel-mode" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
-Click **Connect** to install the Trunk Slack application and receive Merge notifications in a specific channel. Once you have authorized the app to post to a channel, you will be redirected to your settings page.
+Click **Connect** to install the Trunk Slack application and receive Merge Queue notifications in a specific channel. Once you have authorized the app to post to a channel, you will be redirected to your settings page.
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
 ## Configuring your integration with Slack
 
