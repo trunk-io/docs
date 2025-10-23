@@ -143,68 +143,6 @@ You can also wrap the test command with the Trunk CLI. When wrapping the command
 {% endtab %}
 {% endtabs %}
 
-## Quarantining with sharded or parallelized tests
-
-If your CI runs multiple Playwright shards, wrap each `npx playwright test` invocation with Trunk’s quarantine support. The shard’s post-quarantine exit code becomes the source of truth.
-
-#### 1. Wrap each shard run
-
-```sh
-# Example per-shard step (args come from your CI; not shown here)
-./trunk-quarantine -- npx playwright test <your usual args> --output=./pw-report-$SHARD_ID
-echo $? > shard-status.txt
-```
-
-#### 2. Use merge for reporting only
-
-Run `npx playwright merge-reports` unconditionally to produce a single report, but do not use its result to gate CI.
-
-#### 3. Gate on wrapped shard codes
-
-Aggregate the stored `shard-status.txt` files and fail if any is non-zero; otherwise succeed.
-
-
-
-<details>
-
-<summary>Minimal Playwright + GitHub Actions CI Pattern</summary>
-
-```yaml
-# Shards are created however you already do it (matrix, Playwright, etc.)
-- name: Run Playwright (wrapped with Trunk quarantine)
-  run: |
-    set +e
-    ./trunk-quarantine -- npx playwright test $PLAYWRIGHT_ARGS --output=pw-report-$SHARD_ID
-    echo $? > shard-status.txt
-  continue-on-error: true
-
-- name: Upload shard artifacts
-  if: always()
-  uses: actions/upload-artifact@v4
-  with:
-    name: pw-$SHARD_ID
-    path: |
-      pw-report-$SHARD_ID/
-      shard-status.txt
-
-# Merge reports for reporting-only
-- uses: actions/download-artifact@v4
-  with: { path: ./artifacts }
-- name: Merge reports (reporting-only)
-  if: always()
-  run: |
-    reports=$(find ./artifacts -type d -name 'pw-report-*' -maxdepth 2)
-    npx playwright merge-reports --reporter html $reports
-- name: Set final status from wrapped shard codes
-  if: always()
-  run: |
-    bad=0
-    for f in $(find ./artifacts -name shard-status.txt); do c=$(cat "$f"); [ "$c" -ne 0 ] && bad=1; done
-    exit $bad
-```
-
-</details>
-
 ### Overriding individual tests
 
 If you have tests that should never be quarantined or should always be quarantined regardless of their current health status, you can do this by overriding individual tests.
