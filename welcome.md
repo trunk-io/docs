@@ -1,12 +1,26 @@
 ---
-description: Enterprise CI Reliability at Scale
+description: Eliminate merge bottlenecks and flaky test failures at scale
 ---
 
 # Trunk Platform
 
-### Eliminate CI Bottlenecks and Ship Faster
+### Modern CI is fast. But scale breaks everything else.
 
-Trunk is a platform for CI reliability that eliminates pipeline bottlenecks with intelligent merge queue management, automated flaky test detection, and agent-powered failure analysis.
+Your build system (Bazel, Nx, Gradle) gives you massive parallelization and smart caching. But at high velocity, two critical reliability problems emerge:
+
+#### **Merge queue bottlenecks**
+
+Without a merge queue, PRs break `main` when independently-passing changes conflict.
+
+With a traditional merge queue, you've solved stability—but created a serial processing bottleneck. PRs test one-at-a-time in a single queue, so frontend changes wait behind unrelated backend tests. Queue wait times grow linearly with PR volume.
+
+#### **Flaky test multiplication**
+
+At tens of thousands of tests, even 1% flake rates mean false failures on every test run. In merge queues, each flaky failure blocks multiple PRs—turning minor issues into major bottlenecks.
+
+Worse, flaky tests erode trust: When developers know there's a chance a re-run will pass, they stop trusting test failures altogether.
+
+**Trunk eliminates both bottlenecks:** Graph-based parallel merge lanes that test non-overlapping changes simultaneously (while guaranteeing `main` stability), plus automated flaky test quarantine that prevents false failures from blocking your pipeline.
 
 #### Trusted by
 
