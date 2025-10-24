@@ -8,7 +8,7 @@ description: >-
 
 The core concept of any merge queue solution is **predictive testing**. The idea here is to test your pull request against the head of your protected branch (e.g. `main` , `master`, `dev`) and all the pull requests ahead of your own in the queue. &#x20;
 
-#### What's Happening? The "Happy Path"
+### What's Happening? The "Happy Path"
 
 This example shows how pull requests (PRs) are tested in a queue. PR `B` is tested with the changes from `A`, and `C` is tested with the changes from both `A` and `B`.
 
@@ -24,7 +24,7 @@ Normally, pull requests are tested against a snapshot of the head of `main` when
 \
 When you merge a pull request with stale results, you are effectively merging in **un-tested code**. The changes to the protected branch since the test was run create a blind spot in your testing regimen. With predictive testing, you no longer have a blind spot because the merge queue ensures that the pull request is tested against the state of `main` that will exist when your pull request is merged.&#x20;
 
-#### The "Unhappy Path": How the Queue Handles Test Failures
+### The "Unhappy Path": How the Queue Handles Test Failures
 
 Predictive testing is powerful, but it creates a new challenge: **failure cascades**.
 
