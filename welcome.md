@@ -19,12 +19,30 @@ Trunk is a platform for CI reliability that eliminates pipeline bottlenecks with
 <figure><img src=".gitbook/assets/Zillow Logo_Primary_RGB (1).png" alt="" width="375"><figcaption></figcaption></figure>
 {% endcolumn %}
 
-{% column valign="middle" %}
+{% column width="25%" valign="middle" %}
 <figure><img src=".gitbook/assets/idQDcTgM6U_1761333212059.png" alt="" width="375"><figcaption></figcaption></figure>
 {% endcolumn %}
 
-{% column valign="middle" %}
+{% column width="25%" valign="middle" %}
 <figure><img src=".gitbook/assets/Faire_logo_cropped.svg" alt=""><figcaption></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column valign="middle" %}
+<figure><img src=".gitbook/assets/Glydways-horizontal-black.png" alt="" width="375"><figcaption></figcaption></figure>
+{% endcolumn %}
+
+{% column valign="middle" %}
+<figure><img src=".gitbook/assets/logo-with-wordmark.svg" alt=""><figcaption></figcaption></figure>
+{% endcolumn %}
+
+{% column width="25%" valign="middle" %}
+<figure><img src=".gitbook/assets/Handshake_Wordmark_Lime_RGB.png" alt="" width="375"><figcaption></figcaption></figure>
+{% endcolumn %}
+
+{% column width="25%" valign="middle" %}
+<figure><img src=".gitbook/assets/99d3bf4f-9035-4cb6-9d7c-51c8ad9412a8-1757943910265.png" alt="" width="375"><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
