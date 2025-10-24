@@ -8,7 +8,7 @@ description: Enterprise CI Reliability at Scale
 
 Trunk is a platform for CI reliability that eliminates pipeline bottlenecks with intelligent merge queue management, automated flaky test detection, and agent-powered failure analysis.
 
-#### Keeping CI Green At
+#### Trusted by
 
 {% columns %}
 {% column width="25%" valign="middle" %}
@@ -20,7 +20,7 @@ Trunk is a platform for CI reliability that eliminates pipeline bottlenecks with
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/idQDcTgM6U_1761333212059.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/images.png" alt="" width="231"><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
