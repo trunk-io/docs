@@ -24,7 +24,7 @@ Trunk is a platform for CI reliability that eliminates pipeline bottlenecks with
 {% endcolumn %}
 
 {% column valign="middle" %}
-<figure><img src=".gitbook/assets/Faire logo.svg" alt="" width="134"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Faire_logo_cropped.svg" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
