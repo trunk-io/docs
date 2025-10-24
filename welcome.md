@@ -8,6 +8,26 @@ description: Enterprise CI Reliability at Scale
 
 Trunk is a platform for CI reliability that eliminates pipeline bottlenecks with intelligent merge queue management, automated flaky test detection, and agent-powered failure analysis.
 
+#### Keeping CI Green At
+
+{% columns %}
+{% column width="25%" valign="middle" %}
+<figure><img src=".gitbook/assets/Brex-logo-ink.svg" alt="" width="150"><figcaption></figcaption></figure>
+{% endcolumn %}
+
+{% column width="25%" valign="middle" %}
+<figure><img src=".gitbook/assets/Zillow Logo_Primary_RGB (1).png" alt="" width="375"><figcaption></figcaption></figure>
+{% endcolumn %}
+
+{% column valign="middle" %}
+<figure><img src=".gitbook/assets/idQDcTgM6U_1761333212059.png" alt="" width="375"><figcaption></figcaption></figure>
+{% endcolumn %}
+
+{% column valign="middle" %}
+<figure><img src=".gitbook/assets/Faire logo.svg" alt="" width="134"><figcaption></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+
 ### Features
 
 #### Advanced Merge Queue
