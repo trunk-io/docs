@@ -44,7 +44,7 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 
 {% columns %}
 {% column valign="middle" %}
-<figure><img src=".gitbook/assets/Glydways-horizontal-black.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Handshake_Wordmark_White_RGB1 (1).png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Handshake_Wordmark_Nori_RGB.png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column valign="middle" %}
@@ -52,7 +52,7 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/Handshake_Wordmark_Nori_RGB.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Glydways-horizontal-logos-white2.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Glydways-horizontal-black (1).png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
