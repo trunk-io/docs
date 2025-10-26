@@ -38,7 +38,7 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/af94be48d630815efd4882614036e1b9 copy.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/descript.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/descript-logo-png_seeklogo-448113 (2).png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/descript-logo-png_seeklogo-448113.png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
