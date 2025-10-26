@@ -34,11 +34,11 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/descript.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Faire logo white.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Faire logo (1).png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/Faire logo white.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Faire logo (1).png" alt=""></picture><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/descript.png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
