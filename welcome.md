@@ -26,11 +26,11 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 
 {% columns %}
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/brex-logo-png_seeklogo-618025.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Brex_Inc_White.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Brex_Inc._Corporate_Logo.png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/Zillow Logo_Primary_RGB (2).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Zillow Logo_Secondary_RGB (1).png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Zillow Logo_Primary_RGB (2).png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
@@ -38,7 +38,7 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/descript.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/af94be48d630815efd4882614036e1b9 copy.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/descript.png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
