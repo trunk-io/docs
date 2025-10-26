@@ -48,7 +48,7 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 {% endcolumn %}
 
 {% column valign="middle" %}
-<figure><img src=".gitbook/assets/logo-with-wordmark.svg" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Metabase copy.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Metabase.png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
