@@ -56,7 +56,7 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/99d3bf4f-9035-4cb6-9d7c-51c8ad9412a8-1757943910265.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/waabi-logo-rev copy.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/waabi-logo.png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
