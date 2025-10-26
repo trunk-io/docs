@@ -26,19 +26,19 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 
 {% columns %}
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/Brex-logo-ink.svg" alt="" width="150"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/brex-logo-png_seeklogo-618025.png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/Zillow Logo_Primary_RGB (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Zillow Logo_Primary_RGB (2).png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/images.png" alt="" width="231"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/descript.png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column width="25%" valign="middle" %}
-<figure><img src=".gitbook/assets/Faire_logo_cropped.svg" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/Faire logo white.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Faire logo (1).png" alt=""></picture><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
