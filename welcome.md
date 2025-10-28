@@ -94,15 +94,15 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 #### Integration Points
 
-* **Merge Queue API**: Submit PRs with custom priorities (0-255), cancel PRs, restart tests, set impacted targets for parallel queues, query queue state—build custom merge bots and automation workflows
-* **Flaky Tests API**: Fetch quarantined or unhealthy tests, check service status—integrate quarantine status into local dev environments or custom dashboards
-* **Webhooks**: Subscribe to events like `pull_request.merged`, `pull_request.failed`, `test_case.quarantining_setting_changed`—trigger custom workflows, notifications, or ticket creation (powered by Svix)
-* **CLI**: Platform-agnostic `trunk` CLI that uploads test results (JUnit XML, Bazel BEP, XCResult), validates reports locally, wraps test commands to override exit codes for quarantined tests, and manages merge queue operations (submit/cancel/status/pause)
-* **Native integrations**: Slack notifications for queue status and flaky test alerts, Jira & Linear ticket creation for flaky tests
+* **Merge Queue API**: Submit PRs with custom priorities, cancel/restart tests, set impacted targets for parallel queues, query queue state and PR readiness, update queue state (RUNNING/PAUSED/DRAINING)—build custom merge bots and automation workflows
+* **Flaky Tests API**: List quarantined/unhealthy tests (filter by FLAKY/BROKEN), link Jira/Linear tickets to test cases, fetch test metadata (failure rates, common failures, codeowners, PR impact)—integrate into local dev environments, dashboards, or CI/CD pipelines
+* **Webhooks**: Subscribe to PR events (`submitted`, `queued`, `testing`, `merged`, `failed`, `canceled`), batch events (`pull_request_batch.merged`), and test events (`status_changed`, `quarantining_setting_changed`)—trigger custom workflows with Svix transformations (filter by PR impact, format for Slack/Teams/GitHub Issues, auto-assign via CODEOWNERS)
+* **CLI**: Platform-agnostic `trunk` CLI uploads test results (JUnit XML, Bazel BEP, XCResult), validates reports locally, wraps test commands to override exit codes for quarantined tests, manages merge queue operations (submit/cancel/status/pause)
+* **Native integrations**: Slack notifications for Merge Queue events (PR state changes, queue updates) and Flaky Test webhooks; Jira & Linear ticket creation with auto-generated descriptions, configurable labels/assignees, and API linking for existing tickets
 
 ### Why Teams Choose Trunk Over Alternatives
 
-**s. Basic Merge Queues (GitHub native, Bors)**
+**vs. Basic Merge Queues (GitHub native, Bors)**
 
 * **Sequential bottlenecks**: Basic queues test PRs one-at-a-time. At 100+ PRs/day, frontend changes wait hours behind unrelated backend tests. Trunk's parallel processing tests independent changes simultaneously.
 * **No flake protection**: One flaky test blocks multiple PRs in the queue. Trunk's anti-flake protection prevents false failures from cascading.
