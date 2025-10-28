@@ -1,26 +1,49 @@
 ---
-description: Eliminate merge bottlenecks and flaky test failures at scale
+description: CI reliability platform for high-velocity engineering teams
 ---
 
 # Trunk Platform
 
 ### Modern CI is fast. But scale breaks everything else.
 
-Your build system (Bazel, Nx, Gradle) gives you massive parallelization and smart caching. But at high velocity, two critical reliability problems emerge:
+Modern build systems (Bazel, Nx, Gradle) give you parallelization and caching. But at scale, two critical bottlenecks emerge that break everything else:
 
-#### **Merge queue bottlenecks**
+### The Problems We Solve
 
-Without a merge queue, PRs break `main` when independently-passing changes conflict.
+#### 1. Merge Queue Bottlenecks
 
-With a traditional merge queue, you've solved stability—but created a serial processing bottleneck. PRs test one-at-a-time in a single queue, so frontend changes wait behind unrelated backend tests. Queue wait times grow linearly with PR volume.
+**Without a merge queue:** Independently-passing PRs break `main` when they conflict.
 
-#### **Flaky test multiplication**
+**With a traditional merge queue:** You've solved stability but created a serial processing bottleneck. PRs test one-at-a-time in a single queue, so frontend changes wait behind unrelated backend tests. Queue wait times grow linearly with PR volume.
 
-At tens of thousands of tests, even 1% flake rates mean false failures on every test run. In merge queues, each flaky failure blocks multiple PRs—turning minor issues into major bottlenecks.
+At 150+ PRs/day, this becomes a disaster. At 3,000 PRs/day, it's completely unworkable.
 
-Worse, flaky tests erode trust: When developers know there's a chance a re-run will pass, they stop trusting test failures altogether.
+#### 2. Flaky Test Multiplication
 
-**Trunk eliminates both bottlenecks:** Graph-based parallel merge lanes that test non-overlapping changes simultaneously (while guaranteeing `main` stability), plus automated flaky test quarantine that prevents false failures from blocking your pipeline.
+At tens of thousands of tests, even a 1% flake rate means false failures on every test run.
+
+In merge queues, each flaky failure blocks multiple PRs—turning minor issues into major bottlenecks. Worse, when developers know there's a chance a re-run will pass, they stop trusting test failures altogether.
+
+### Our Solution
+
+**Graph-based parallel merge lanes** that test non-overlapping changes simultaneously while guaranteeing `main` stability, plus **automated flaky test detection and quarantine** that prevents false failures from blocking your pipeline.
+
+#### Merge Queue
+
+* **Parallel queues**: Analyzes which code each PR touches to create independent test lanes for non-overlapping changes—transforming queue bottlenecks in large monorepos from a single line into an efficient graph where unrelated PRs test simultaneously
+* **Intelligent batching with bisection**: Test multiple PRs together in a single CI run (reducing costs up to 90%), with automatic bisection to isolate failures without ejecting entire batches—Caseware processes 4-8 PRs per batch with zero manual intervention
+* **Anti-flake protection**: Combines Optimistic Merging and Pending Failure Depth so failed PRs get additional chances to pass as later PRs retest their code—if subsequent PRs (that include the failed code) pass, all merge together without blocking the queue
+* **Scale-tested**: Validated performance floor of 250+ PRs/hour over 12-hour periods (3,000+ PRs/day)—Caseware reduced median merge time from 6 hours to 90 minutes while handling 50-60 daily PRs at peak
+* **Predictive testing eliminates race conditions**: Tests each PR against the predicted future state of main (including all PRs ahead of it in queue), guaranteeing branch stability without endless rebase-retest loops—prevented 20% of Faire's main branch failures from green-green conflicts
+* **API & webhook integrations**: Submit PRs programmatically with custom priorities, build merge bots, or trigger workflows on queue events (submitted, testing, merged, failed)—Faire built custom Chrome extensions and automation services using the API to handle their unique deployment workflows
+
+#### Flaky Tests
+
+* **Branch-aware detection**: Analyzes test failures differently on main, PRs, and merge queues—a test showing inconsistent results on the same commit gets flagged as flaky, while expected failures during PR development don't trigger false positives
+* **No-code quarantine**: Quarantine flaky tests through the dashboard without touching source code or navigating merge queues—with auto-quarantine enabled, tests flagged as flaky are automatically isolated while continuing to run and collect data for prioritization
+* **Continuous analysis**: Analyzes every pipeline execution (not just periodic sampling) to detect patterns across your entire organization—see whether a test flaked once or 45 times today, preventing developers from questioning if failures are their fault
+* **AI-powered debugging**: Summarizes errors and identifies patterns across aggregated failures to drastically reduce diagnostic time, especially for issues that can't be reproduced locally due to CI environment differences
+* **Webhook & API integrations**: Automate custom workflows like creating Linear/Jira tickets when tests become flaky, or sync quarantined tests to local dev environments—build integrations for your specific needs beyond out-of-the-box options
 
 #### Trusted by
 
@@ -60,30 +83,76 @@ Worse, flaky tests erode trust: When developers know there's a chance a re-run w
 {% endcolumn %}
 {% endcolumns %}
 
-### Features
+### Technical Details
 
-#### Advanced Merge Queue
+#### Works With Your Stack
 
-Enterprise-grade merge queue that accelerates PR throughput while protecting your main branch. Purpose-built for high-velocity monorepos with intelligent batching to reduce CI costs by up to 90%, parallel queues for testing independent code changes simultaneously, and anti-flake protection to prevent transient failures from blocking merges.
+* **CI-agnostic**: GitHub Actions, GitLab CI, Jenkins, BuildKite, CircleCI, Azure DevOps, and any other CI provider—integrates via CLI that uploads test results from your existing pipelines
+* **Language-agnostic**: Go, TypeScript, Python, Swift, Java, Kotlin, Ruby, Solidity, Rust, and any other language—works by analyzing test output formats (JUnit XML, XCTest, etc.), not your source code
+* **Test framework-agnostic**: Jest, Pytest, XCTest, Cypress, Playwright, RSpec, JUnit, GoogleTest, and 25+ other frameworks—if your test runner can produce structured output, Trunk can analyze it
+* **Build system support**: Native integrations for Bazel, Nx, and Gradle to calculate impacted targets for parallel merge queues, with API for custom build systems
 
-Learn more about [Merge Queue](broken-reference)
+#### Integration Points
 
-#### Automated Flaky Test Management
+* **Merge Queue API**: Submit PRs with custom priorities (0-255), cancel PRs, restart tests, set impacted targets for parallel queues, query queue state—build custom merge bots and automation workflows
+* **Flaky Tests API**: Fetch quarantined or unhealthy tests, check service status—integrate quarantine status into local dev environments or custom dashboards
+* **Webhooks**: Subscribe to events like `pull_request.merged`, `pull_request.failed`, `test_case.quarantining_setting_changed`—trigger custom workflows, notifications, or ticket creation (powered by Svix)
+* **CLI**: Platform-agnostic `trunk` CLI that uploads test results (JUnit XML, Bazel BEP, XCResult), validates reports locally, wraps test commands to override exit codes for quarantined tests, and manages merge queue operations (submit/cancel/status/pause)
+* **Native integrations**: Slack notifications for queue status and flaky test alerts, Jira & Linear ticket creation for flaky tests
 
-Trunk Flaky Tests automatically detects flaky tests and quarantines them to prevent CI failures. Track, manage, and fix flaky tests across any language, environment, or test framework.
+### Why Teams Choose Trunk Over Alternatives
 
-Learn more about [Flaky Tests](flaky-tests/detection.md)
+**s. Basic Merge Queues (GitHub native, Bors)**
 
-#### Agent-Powered Root Cause Analysis (beta)
+* **Sequential bottlenecks**: Basic queues test PRs one-at-a-time. At 100+ PRs/day, frontend changes wait hours behind unrelated backend tests. Trunk's parallel processing tests independent changes simultaneously.
+* **No flake protection**: One flaky test blocks multiple PRs in the queue. Trunk's anti-flake protection prevents false failures from cascading.
+* **Missing cost optimization**: Running full CI for every PR combination is expensive. Trunk's intelligent batching reduces CI costs by up to 90%.
 
-Automatically identifies and explains the root cause of test and CI failures using autonomous AI agents. Delivers actionable insights directly in GitHub PR comments and Slack, including failure classification, impact assessment, and suggested fixes. Also available in Cursor and VSCode via the Trunk MCP Server.
+**vs. Observability Platforms (Datadog, etc.)**
 
-{% hint style="info" %}
-CI Autopilot is currently in private beta. Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access.
+* **Flaky test detection isn't their core focus**: General observability tools bolt on test analytics. Trunk is purpose-built for CI reliability with transparent detection showing exactly why each test is classified as flaky.
+* **Black-box vs. active analysis**: Observability platforms stop running quarantined tests, hiding the problem. Trunk continues running them for root cause analysis—you see the data you need to actually fix issues.
+* **Disconnected tools**: Using separate vendors for flaky tests, merge queues, and CI debugging means integration overhead and finger-pointing.
 
-Learn more about [CI Autopilot](broken-reference)
-{% endhint %}
+**vs. Building In-House**
 
-### Get Started
+* **Data engineering at scale**: Processing 50k-100k tests per run requires real-time ETL pipelines, specialized storage, and classification algorithms to identify flaky vs. broken tests—then surfacing that data in high-performance UIs engineers actually use.
+* **Complex coordination problems**: At 100+ PRs/day, you need parallel graph computation, bisection algorithms to isolate failures in batched PRs, intelligent restarts to recompute predicted main state, and robust GitHub API orchestration. These aren't one-time problems to solve.
+* **Operational risk on mission-critical infrastructure**: Merge queues block your entire team when they fail. If the engineers who built your system leave, you're maintaining complex infrastructure in your deployment path without the knowledge to fix it.
+* **Opportunity cost**: Every sprint on merge queue or flaky test tooling is a sprint not building features that differentiate your product.
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="merge-queue/set-up-trunk-merge/">set-up-trunk-merge</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="flaky-tests/get-started/">get-started</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="ci-autopilot/get-started/">get-started</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr></tbody></table>
+### Getting Started
+
+Trunk is a hosted service. Start by creating an account, then integrate the product that solves your most urgent problem.
+
+#### 1. Sign Up
+
+* [Create a Trunk account →](https://app.trunk.io/signup)
+
+#### 2. Integrate
+
+**Start with Flaky Tests** if you're dealing with unreliable tests blocking CI:
+
+* [Flaky Tests Integration Guide](https://docs.trunk.io/flaky-tests/get-started)
+
+**Start with Merge Queue** if you're dealing with merge bottlenecks:
+
+* [Merge Queue Setup Guide](https://docs.trunk.io/merge-queue/set-up-trunk-merge)
+
+#### Support
+
+* **Direct engineering support**: We maintain Slack Connect or MS Teams channels with most of our customers. This direct line of communication with our engineers is one of the key benefits of working with Trunk—whether you're debugging a production issue or need help optimizing your setup. Email [support@trunk.io](mailto:support@trunk.io) to get started.
+
+#### Security & Compliance
+
+* **SOC 2 Type II Certified**: Independently audited controls for security, availability, and confidentiality—[request report](mailto:security@trunk.io)
+* **Encryption**: TLS/HSTS for data in transit, AES-256 for data at rest
+* **Infrastructure**: AWS-hosted in secure U.S. data centers with network isolation (private VPCs, no direct internet access)
+* **Access Control**: MFA required for sensitive systems, principle of least privilege, access logging and monitoring
+* **Security Testing**: Quarterly vulnerability scans, annual third-party penetration tests
+* **Data Retention**: Test results retained for 45 days for historical flakiness analysis
+* **What we don't access**: Source code (only test results and CI metadata), secrets, environment variables, customer data
+
+### Learn More
+
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="merge-queue/merge-queue.md">merge-queue.md</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr></tbody></table>
