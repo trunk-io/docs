@@ -12,10 +12,6 @@ description: CI reliability platform for high-velocity engineering teams
 
 </details>
 
-{% hint style="info" %}
-Want to see how it works? Have questions? [Schedule time here](https://calendly.com/trunk/demo) or email [support@trunk.io](mailto:support@trunk.io)
-{% endhint %}
-
 ### Modern CI is fast. But scale breaks everything else.
 
 Modern build systems (Bazel, Nx, Gradle) give you parallelization and caching. But at scale, two critical bottlenecks emerge that break everything else:
