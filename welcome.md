@@ -4,8 +4,16 @@ description: CI reliability platform for high-velocity engineering teams
 
 # Trunk Platform
 
+<details>
+
+<summary>Want to see how it works? Have questions? </summary>
+
+[Schedule time here](https://calendly.com/trunk/demo) or email [support@trunk.io](mailto:support@trunk.io)
+
+</details>
+
 {% hint style="info" %}
-### **Want to see how it works? Have questions?** [Schedule time here](https://calendly.com/trunk/demo) or email [support@trunk.io](mailto:support@trunk.io)
+Want to see how it works? Have questions? [Schedule time here](https://calendly.com/trunk/demo) or email [support@trunk.io](mailto:support@trunk.io)
 {% endhint %}
 
 ### Modern CI is fast. But scale breaks everything else.
