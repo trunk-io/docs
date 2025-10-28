@@ -30,20 +30,20 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 #### Merge Queue
 
-* **Parallel queues**: Analyzes which code each PR touches to create independent test lanes for non-overlapping changes—transforming queue bottlenecks in large monorepos from a single line into an efficient graph where unrelated PRs test simultaneously
-* **Intelligent batching with bisection**: Test multiple PRs together in a single CI run (reducing costs up to 90%), with automatic bisection to isolate failures without ejecting entire batches—Caseware processes 4-8 PRs per batch with zero manual intervention
-* **Anti-flake protection**: Combines Optimistic Merging and Pending Failure Depth so failed PRs get additional chances to pass as later PRs retest their code—if subsequent PRs (that include the failed code) pass, all merge together without blocking the queue
-* **Scale-tested**: Validated performance floor of 250+ PRs/hour over 12-hour periods (3,000+ PRs/day)—Caseware reduced median merge time from 6 hours to 90 minutes while handling 50-60 daily PRs at peak
-* **Predictive testing eliminates race conditions**: Tests each PR against the predicted future state of main (including all PRs ahead of it in queue), guaranteeing branch stability without endless rebase-retest loops—prevented 20% of Faire's main branch failures from green-green conflicts
-* **API & webhook integrations**: Submit PRs programmatically with custom priorities, build merge bots, or trigger workflows on queue events (submitted, testing, merged, failed)—Faire built custom Chrome extensions and automation services using the API to handle their unique deployment workflows
+* **Parallel queues**: Analyzes which code each PR touches to create independent test lanes for non-overlapping changes—transforming queue bottlenecks from a single line into an efficient graph where unrelated PRs test simultaneously
+* **Intelligent batching with bisection**: Test multiple PRs together in a single CI run (reducing costs up to 90%), with automatic bisection to isolate failures without ejecting entire batches. Caseware processes 4-8 PRs per batch with zero manual intervention, reducing their median merge time from 6 hours to 90 minutes
+* **Scale-tested reliability**: Validated at 250+ PRs/hour over 24-hour periods (6,000+ PRs/day)&#x20;
+* **Anti-flake protection**: Failed PRs get additional chances to pass as later PRs retest their code—if subsequent PRs (that include the failed code) pass, all merge together without blocking the queue. Combines Optimistic Merging and Pending Failure Depth
+* **Predictive testing**: Tests each PR against the predicted future state of main (including all PRs ahead in queue), guaranteeing branch stability without endless rebase-retest loops. Faire prevented 20% of main branch failures from green-green conflicts
+* **API & webhook integrations**: Submit PRs programmatically, build custom merge bot, or trigger workflows on queue events. Faire built custom Chrome extensions and automation services using the API to handle unique deployment workflows
 
 #### Flaky Tests
 
 * **Branch-aware detection**: Analyzes test failures differently on main, PRs, and merge queues—a test showing inconsistent results on the same commit gets flagged as flaky, while expected failures during PR development don't trigger false positives
-* **No-code quarantine**: Quarantine flaky tests through the dashboard without touching source code or navigating merge queues—with auto-quarantine enabled, tests flagged as flaky are automatically isolated while continuing to run and collect data for prioritization
-* **Continuous analysis**: Analyzes every pipeline execution (not just periodic sampling) to detect patterns across your entire organization—see whether a test flaked once or 45 times today, preventing developers from questioning if failures are their fault
+* **No-code quarantine**: Quarantine flaky tests through the dashboard without touching source code or navigating merge queues—eliminating the recursive nightmare of merging test fixes through an already-broken pipeline. With auto-quarantine enabled, tests flagged as flaky are automatically isolated while continuing to run and collect data for prioritization. Zillow achieved zero pipeline blockages from known flaky tests
+* **Continuous analysis**: Analyzes every pipeline execution (not just periodic sampling) to detect patterns across your entire organization—see whether a test flaked once or 45 times today, preventing developers from "gaslighting themselves" about whether failures are related to their code
 * **AI-powered debugging**: Summarizes errors and identifies patterns across aggregated failures to drastically reduce diagnostic time, especially for issues that can't be reproduced locally due to CI environment differences
-* **Webhook & API integrations**: Automate custom workflows like creating Linear/Jira tickets when tests become flaky, or sync quarantined tests to local dev environments—build integrations for your specific needs beyond out-of-the-box options
+* **In-PR visibility**: Flaky test information surfaces directly in pull request comments, providing immediate feedback without leaving your code review workflow. Metabase uses this alongside webhook integrations to automatically create Linear tickets for tracking and prioritization
 
 #### Trusted by
 
