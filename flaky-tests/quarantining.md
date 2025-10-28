@@ -45,7 +45,48 @@ To enable quarantining, navigate to **Settings** > **Repositories** > repository
 
 Here's what each of these options does when enabled:
 
-<table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>This primary toggle activates the quarantining feature set, unlocking both manual override options and the ability to enable auto-quarantining. For any quarantining to work, the <a href="quarantining.md#updates-in-ci">necessary configurations</a> must also be made in your CI pipeline.</td></tr><tr><td>Auto-Quarantine Flaky Tests</td><td>When enabled, any test already identified by Trunk as "flaky" will be automatically quarantined. This saves you from having to manually quarantine each flaky test as it's discovered.</td></tr></tbody></table>
+<table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>This primary toggle activates the quarantining feature set, unlocking both manual override options and the ability to enable auto-quarantining. For any quarantining to work, the <a href="quarantining.md#updates-in-ci">necessary configurations</a> must also be made in your CI pipeline.</td></tr><tr><td>Auto-Quarantine Flaky Tests</td><td>When enabled, any test already identified by Trunk as "flaky" will be automatically quarantined. This saves you from having to manually quarantine each flaky test as it's discovered.</td></tr><tr><td></td><td></td></tr></tbody></table>
+
+### **Quarantining with Sharded or Parallelized Tests**
+
+There are two options for handling quarantining.
+
+**Option 1: Wrapping each test invocation**
+
+Wrap each command and specify its JUnit output path. Trunk captures the exit code and automatically uploads results.
+
+**Example**
+
+```bash
+# run test 1
+trunk flakytests test --org-url-slug=[org] --token=[token] --junit-paths=test1_output/*.xml -- npm run test1
+# run test 2
+trunk flakytests test --org-url-slug=[org] --token=[token] --junit-paths=test2_output/*.xml -- npm run test2
+```
+
+**Option 2: Handling quarantining during upload**
+
+For complex setups where Trunk can’t wrap test commands, run tests first and let the upload step be the final gate. When quarantining is enabled, the upload inspects the provided JUnit results and decides whether to return exit code `0` or `1` based on the outcomes.
+
+**Advanced: Handling  build errors outside test runs**
+
+To handle build issues that occur outside test runs, use the --test-process-exit-code option. This provides a fallback exit code if the upload runs without detecting any Junit results.
+
+**Example**
+
+```sh
+./trunk flakytests test --junit-paths "test_output.xml" \
+   --org-url-slug <TRUNK_ORG_SLUG> \
+   --token $TRUNK_API_TOKEN \
+   --junit-paths="**/results/*.xml" \
+   --test-process-exit-code=1
+   <YOUR_TEST_COMMAND>
+```
+
+The CLI only recognizes tests defined in JUnit. If multiple test executions occur and one fails due to a build error, Flaky Tests won’t detect it and will assume the exit code came from test failures. If those failures are quarantined, the job may incorrectly be reported as successful. To prevent this:
+
+* Upload results for each test execution separately, or
+* Generate a JUnit that records build errors.
 
 ### Updates in CI
 
