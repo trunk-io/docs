@@ -4,6 +4,15 @@ description: CI reliability platform for high-velocity engineering teams
 
 # Trunk Platform
 
+### What is Trunk?
+
+Trunk is a CI reliability platform that solves the two bottlenecks killing velocity at scale: merge queue serialization and flaky test multiplication.
+
+* **Trunk Merge Queue** parallelizes your merge queue by testing non-overlapping changes simultaneously—so frontend PRs don't wait behind unrelated backend tests.
+* **Trunk Flaky Tests** automatically detects and quarantines unreliable tests—so false failures stop blocking your pipeline.
+
+Teams typically start with whichever problem is more urgent, then expand as their CI scales. Caseware cut merge time from 6 hours to 90 minutes. Zillow eliminated all pipeline blockages from flaky tests.
+
 <details>
 
 <summary>Want to see how it works? Have questions? </summary>
@@ -12,11 +21,9 @@ description: CI reliability platform for high-velocity engineering teams
 
 </details>
 
-### Modern CI is fast. But scale breaks everything else.
+### The Problems We Solve
 
 Modern build systems (Bazel, Nx, Gradle) give you parallelization and caching. But at scale, two critical bottlenecks emerge that break everything else:
-
-### The Problems We Solve
 
 #### 1. Merge Queue Bottlenecks
 
