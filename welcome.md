@@ -4,10 +4,8 @@ description: CI reliability platform for high-velocity engineering teams
 
 # Trunk Platform
 
-{% hint style="success" %}
-### **Want to see how it works? Have questions?**&#x20;
-
-[**Schedule time here** ](https://calendly.com/trunk/demo)**or email** [**support@trunk.io**](mailto:support@trunk.io)
+{% hint style="info" %}
+### **Want to see how it works? Have questions?** [Schedule time here](https://calendly.com/trunk/demo) or email [support@trunk.io](mailto:support@trunk.io)
 {% endhint %}
 
 ### Modern CI is fast. But scale breaks everything else.
@@ -159,10 +157,8 @@ Trunk is a hosted service. Start by creating an account, then integrate the prod
 * **Data Retention**: Test results retained for 45 days for historical flakiness analysis
 * **What we don't access**: Source code (only test results and CI metadata), secrets, environment variables, customer data
 
-{% hint style="success" %}
-### **Want to see how it works? Have questions?**&#x20;
-
-[**Schedule time here** ](https://calendly.com/trunk/demo)**or email** [**support@trunk.io**](mailto:support@trunk.io)
+{% hint style="info" %}
+### **Want to see how it works? Have questions?** [**Schedule time here**](https://calendly.com/trunk/demo) **or email** [**support@trunk.io**](mailto:support@trunk.io)
 {% endhint %}
 
 ### Learn More
