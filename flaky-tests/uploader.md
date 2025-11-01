@@ -135,6 +135,25 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 {% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
+#### Memory Overhead
+
+Running tests via `trunk flakytests test` adds negligible memory overhead.
+
+This subcommand is a thin wrapper around your existing test command and doesn't modify or parallelize test execution.
+
+
+
+During execution, it simply:
+
+* Runs your provided test command directly.
+* Records start and end times.
+* Captures the exit code for quarantine decisions.
+
+\
+You can safely run `trunk flakytests test,` even with large or memory-intensive suites, without risking additional OOMs in your CI agents.
+{% endhint %}
+
 #### Upload failure vs test failure
 
 We use the `SOFTWARE` exit code (70) if the upload fails.
