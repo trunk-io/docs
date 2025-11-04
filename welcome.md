@@ -62,41 +62,7 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 #### Trusted by
 
-{% columns %}
-{% column width="25%" valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/Brex_Inc_White.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Brex_Inc._Corporate_Logo.png" alt=""></picture><figcaption></figcaption></figure>
-{% endcolumn %}
-
-{% column width="25%" valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/Zillow Logo_Secondary_RGB (1).png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Zillow Logo_Primary_RGB (2).png" alt=""></picture><figcaption></figcaption></figure>
-{% endcolumn %}
-
-{% column width="25%" valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/Faire logo white.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Faire logo (1).png" alt=""></picture><figcaption></figcaption></figure>
-{% endcolumn %}
-
-{% column width="25%" valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/descript-logo-png_seeklogo-448113 (2).png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/descript-logo-png_seeklogo-448113.png" alt=""></picture><figcaption></figcaption></figure>
-{% endcolumn %}
-{% endcolumns %}
-
-{% columns %}
-{% column valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/Handshake_Wordmark_White_RGB1 (1).png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Handshake_Wordmark_Nori_RGB.png" alt=""></picture><figcaption></figcaption></figure>
-{% endcolumn %}
-
-{% column valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/Metabase copy.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Metabase.png" alt=""></picture><figcaption></figcaption></figure>
-{% endcolumn %}
-
-{% column width="25%" valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/Glydways-horizontal-logos-white2.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/Glydways-horizontal-black (1).png" alt=""></picture><figcaption></figcaption></figure>
-{% endcolumn %}
-
-{% column width="25%" valign="middle" %}
-<figure><picture><source srcset=".gitbook/assets/waabi-logo-rev copy.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/waabi-logo.png" alt=""></picture><figcaption></figcaption></figure>
-{% endcolumn %}
-{% endcolumns %}
+<figure><img src=".gitbook/assets/4x2 Logos (Light-NoBG).png" alt=""><figcaption></figcaption></figure>
 
 ### Technical Details
 
