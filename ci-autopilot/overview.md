@@ -8,15 +8,9 @@ description: >-
 
 {% hint style="success" %}
 ## CI Autopilot is currently in private beta.
-
-Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}
 
-
-
 **Stop debugging CI failures manually.** CI Autopilot's AI investigates every test failure, identifies root causes, and provides ready-to-apply fixes in minutes - not hours.
-
-
 
 ### How it works
 
@@ -72,8 +66,6 @@ Choose between automated stacked pull requests for team workflows or direct AI a
 
 {% hint style="success" %}
 ## CI Autopilot is currently invite-only in private beta.
-
-Sign up for the [waitlist](https://trunk.io/ci-autopilot) to be the next to get access. We'll reach out when we're ready to onboard you.
 {% endhint %}
 
 #### [Basic Setup (5 minutes)](get-started/connect-to-github.md)
