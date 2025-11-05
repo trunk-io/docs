@@ -57,45 +57,13 @@ Trunk operates in **hold-the-line** mode by default. This means Trunk will run l
 If you're not using `main` or `master` as the base branch, make sure it's specified in `.trunk/trunk.yaml`.
 
 ```yaml
-version: 0.1
+version: 0.
 cli:
   version: 1.22.2
 repo:
   # specify the base branch for hold-the-line
   trunk_branch: develop
 ```
-
-### Linting on pull requests
-
-#### GitHub Actions Workflows
-
-If you're already running linters on your PRs, you can replace your lint step with the [Trunk Code Quality action](https://github.com/trunk-io/trunk-action) step. For example:
-
-```yaml
-name: Trunk Code Quality
-on:
-  push:
-    branches: main
-  pull_request:
-    branches: main
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      # ... other setup steps
-      - name: Trunk Code Quality
-        uses: trunk-io/trunk-action@v1
-        with:
-          post-annotations: true 
-      # ... other CI steps
-```
-
-This step will automatically run Trunk Code Quality to reveal problems found when comparing the branch to `main` or another base branch you configured.
-
-When `post-annotations` is set to `true` Code Quality will also **annotate** the PR with comments for where lint issues are found.
-
-<figure><img src="../../.gitbook/assets/Annotations.png" alt=""><figcaption><p>Example of inline annotations</p></figcaption></figure>
 
 #### Manual configuration and Non-GitHub CI
 
