@@ -81,10 +81,6 @@ You can include `/trunk skip-check` in the body of a PR description (i.e. the fi
 
 This can be helpful if Code Quality is flagging known issues in a given PR that you don't want to ignore, which can come in handy if you're doing a large refactor.
 
-{% hint style="warning" %}
-If you use GitHub, we recommend you follow the GitHub Integration guide. If you don't use GitHub or cannot install the Trunk GitHub app, you can still run Trunk Code Quality using these manual setup steps.
-{% endhint %}
-
 ### Caching and persistence
 
 * Trunk caches the version of `trunk` itself, linters, formatters, and lint results in `~/.cache/trunk`
@@ -95,10 +91,6 @@ If you use GitHub, we recommend you follow the GitHub Integration guide. If you 
     * [CircleCI](https://circleci.com/docs/caching/)
     * [Travis CI](https://docs.travis-ci.com/user/caching/)
   * You can include a seeded trunk cache in a regularly updated image used for CI by running `trunk check download`, which will download all requirements to `~/.cache/trunk`
-
-{% hint style="warning" %}
-If you use GitHub, we recommend you follow the GitHub Integration guide. If you don't use GitHub or cannot install the Trunk GitHub app, you can still run Trunk Code Quality using these manual setup steps.
-{% endhint %}
 
 ### Hourly and nightly builds
 
