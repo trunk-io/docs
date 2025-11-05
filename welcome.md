@@ -62,7 +62,7 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 #### Trusted by
 
-<figure><img src=".gitbook/assets/4x2 Logos (Light-NoBG).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/4x2 Logos (Dark-NoBG).png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/4x2 Logos (Light-NoBG).png" alt=""></picture><figcaption></figcaption></figure>
 
 ### Technical Details
 
