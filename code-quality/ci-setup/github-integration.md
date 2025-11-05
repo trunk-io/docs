@@ -1,4 +1,8 @@
-# Nightly Report (Deprecated)
+---
+hidden: true
+---
+
+# Nightly report (Deprecated)
 
 {% hint style="danger" %}
 **Deprecation Warning**\
