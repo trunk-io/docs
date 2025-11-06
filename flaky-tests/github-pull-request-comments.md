@@ -4,23 +4,23 @@ description: Flaky Tests provides summary analytics about tests running on Pull 
 
 # Pull request comments
 
-Flaky Tests can post comments on GitHub pull requests to provide a summary of all the tests run on this PR, across multiple CI jobs or even CI systems, as well as whether those failures are due to flakiness, the history of the failures of that test, and more.
+Flaky Tests can post comments on GitHub pull requests that summarize test results across CI jobs. These comments indicate which failures are flaky and include the test’s failure history and related context.
+
+**Note:** Flaky Tests will only post a comment when there are failing tests.
 
 <figure><picture><source srcset="../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/github-comment-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-Each GitHub comment has a full summary report, containing all tests that passed, failed, flaked, skipped, and quarantined on this PR.
+Each GitHub comment includes a summary report showing all tests that passed, failed, flaked, were skipped, or were quarantined on the PR.
 
 <figure><picture><source srcset="../.gitbook/assets/pr-test-summary (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/pr-test-summary.png" alt=""></picture><figcaption></figcaption></figure>
 
-Each test case also contains the full stack trace attached when opened. You can also click on the **Job run** link which will take you to the full CI logs.
+Each test case includes the full stack trace when expanded, and the job run link takes you to the complete CI logs.
 
 ## Configuration
 
 If you have the [Trunk GitHub App installed](https://docs.trunk.io/administration/github-app-permissions) and are [uploading JUnit XML](get-started/frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App, you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
 
-{% hint style="info" %}
-Flaky Tests will only post a comment when there are failing tests.
-{% endhint %}
+
 
 <details>
 
