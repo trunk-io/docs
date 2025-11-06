@@ -18,6 +18,10 @@ Each test case also contains the full stack trace attached when opened. You can 
 
 If you have the [Trunk GitHub App installed](https://docs.trunk.io/administration/github-app-permissions) and are [uploading JUnit XML](get-started/frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App, you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
 
+{% hint style="info" %}
+Flaky Tests will only post a comment when there are failing tests.
+{% endhint %}
+
 <details>
 
 <summary>Without Trunk GitHub App</summary>
