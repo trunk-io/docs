@@ -1,12 +1,8 @@
-# Get Started
+# Get started
 
 ### Introduction
 
 Trunk Flaky Tests works by changing all of your CI jobs that run tests to upload their test results to Trunk. This setup looks slightly different depending on which CI system and test framework(s) you use, but we have guides for all the popular systems.
-
-If you prefer to see an example onboarding flow, watch a video here:
-
-{% embed url="https://youtu.be/p6YC4vow804" %}
 
 ### 1. Sign up for [app.trunk.io](https://app.trunk.io/signup?intent=flaky%20tests)
 
