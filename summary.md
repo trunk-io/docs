@@ -97,7 +97,7 @@
   * [GitHub Issues integration](flaky-tests/webhooks/github-issues-integration.md)
   * [Linear integration](flaky-tests/webhooks/linear-integration.md)
 * [Flaky Tests API](flaky-tests/flaky-tests.md)
-* [Trunk Analytics CLI reference](flaky-tests/uploader.md)
+* [Trunk Analytics CLI](flaky-tests/uploader.md)
 
 ## CI Autopilot (beta) <a href="#ci-autopilot" id="ci-autopilot"></a>
 
