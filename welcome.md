@@ -135,7 +135,7 @@ Trunk is a hosted service. Start by creating an account, then integrate the prod
 * **What we don't access**: Source code (only test results and CI metadata), secrets, environment variables, customer data
 
 {% hint style="info" %}
-### **Want to see how it works? Have questions?** [**Schedule time here**](https://calendly.com/trunk/demo) **or email** [**support@trunk.io**](mailto:support@trunk.io)
+**Want to see how it works? Have questions?** [**Schedule time here**](https://calendly.com/trunk/demo) **or email** [**support@trunk.io**](mailto:support@trunk.io)
 {% endhint %}
 
 ### Learn More
