@@ -29,7 +29,7 @@ To keep the configuration usable by both Trunk and any locally bundled or extern
 
 ### Customization
 
-By default, Trunk uses the `standardrb` integration shipped from the [`trunk-io/plugins`](https://github.com/trunk-io/plugins) repository. If you need to control how `standardrb` is installed (for example, to add additional Ruby plugins such as `standard-rails`, `standard-performance`, or `rubocop-capybara`), you can override the tool definition in your `.trunk/trunk.yaml`.
+By default, Trunk uses the `standardrb` integration shipped from the [`trunk-io/plugins`](https://github.com/trunk-io/plugins) repository. If you need to control how `standardrb` is installed (for example, to add additional Ruby plugins such as `standard-rails` or `standard-performance`), you can override the tool definition in your `.trunk/trunk.yaml`.
 
 The example below configures `standardrb` as a Ruby runtime-based tool, installs the `standard` gem, exposes the `standardrb` shim, and asks Trunk to install a set of extra plugin gems into the same hermetic runtime. Trunk will manage these dependencies for you, independent of your system Ruby.
 
@@ -45,7 +45,6 @@ tools:
       extra_packages:
         - standard-rails
         - standard-performance
-        - rubocop-capybara
 lint:
   enabled:
     - standardrb
@@ -74,7 +73,6 @@ format: progress
 plugins:
   - standard-rails
   - standard-performance
-  - rubocop-capybara
 
 ignore:
   - bin/**/*
