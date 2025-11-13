@@ -62,7 +62,7 @@ lint:
         - uploads/**
 ```
 
-The `lint.ignore` block tells Trunk not to run `standardrb` on generated or vendored code. These ignore patterns are evaluated by Trunk and live alongside any ignores you configure directly for `standardrb`.
+The `lint.ignore` block tells Trunk not to run `standardrb` on third-party or cached code. These ignore patterns are evaluated by Trunk and live alongside any ignores you configure directly for `standardrb`.
 
 `.standard.yml`
 
