@@ -37,7 +37,7 @@
 ## Flaky Tests
 
 * [Overview](flaky-tests/overview.md)
-* [Get started](flaky-tests/get-started/README.md)
+* [Getting Started](flaky-tests/get-started/README.md)
   * [Test frameworks](flaky-tests/get-started/frameworks/README.md)
     * [Android](flaky-tests/get-started/frameworks/android.md)
     * [Bazel](flaky-tests/get-started/frameworks/bazel.md)
@@ -81,6 +81,7 @@
     * [Semaphore CI](flaky-tests/get-started/ci-providers/semaphoreci.md)
     * [Travis CI](flaky-tests/get-started/ci-providers/travisci.md)
     * [Other CI Providers](flaky-tests/get-started/ci-providers/otherci.md)
+* [Copy of Get started](flaky-tests/get-started-1.md)
 * [Managing detected flaky tests](flaky-tests/managing-detected-flaky-tests.md)
 * [Dashboard](flaky-tests/dashboard.md)
 * [Flaky test detection](flaky-tests/detection.md)
