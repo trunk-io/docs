@@ -104,13 +104,19 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 ### Getting Started
 
-Trunk is a hosted service. Start by creating an account, then integrate the product that solves your most urgent problem.
+Most teams schedule a 30-minute call before integrating—we'll help you plan for security reviews, understand your CI architecture, and avoid common implementation gotcas. We'll also set up a direct Slack Connect, MS Teams, or email channel for ongoing engineering support.
 
-#### 1. Sign Up
+#### [**Schedule a call**](https://calendly.com/trunk/trunk-integration-planning) ← Recommended for most teams
+
+**Prefer to explore on your own first?**&#x20;
+
+You can create an account and follow the integration guides below. Note that GitHub app installation typically requires security approval at most companies, and integration complexity varies significantly based on your CI setup.
 
 * [Create a Trunk account →](https://app.trunk.io/signup)
 
-#### 2. Integrate
+#### **Integration Guides**
+
+Start with whichever problem is more urgent:
 
 **Start with Flaky Tests** if you're dealing with unreliable tests blocking CI:
 
