@@ -106,7 +106,7 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 Most teams schedule a 30-minute call before integrating—we'll help you plan for security reviews, understand your CI architecture, and avoid common implementation gotcas. We'll also set up a direct Slack Connect, MS Teams, or email channel for ongoing engineering support.
 
-#### [**Schedule a call**](https://calendly.com/trunk/trunk-integration-planning) ← Recommended for most teams
+* [**Schedule a call**](https://calendly.com/trunk/trunk-integration-planning) ← Recommended for most teams
 
 **Prefer to explore on your own first?**&#x20;
 
