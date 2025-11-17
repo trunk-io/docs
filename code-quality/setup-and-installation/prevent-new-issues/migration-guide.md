@@ -28,9 +28,11 @@ Trunk provides a [GitHub action](https://github.com/trunk-io/trunk-action) to he
 name: Trunk Code Quality
 on:
   push:
-    branches: main
+    branches:
+      - main
   pull_request:
-    branches: main
+    branches:
+      - main
 	
 jobs:
   test:
@@ -61,9 +63,11 @@ Here’s an example of the commands in a GitHub Actions workflow, but you can do
 name: Trunk Code Quality
 on:
   push:
-    branches: main
+    branches:
+      - main
   pull_request:
-    branches: main
+    branches:
+      - main
 
 jobs:
   test:
