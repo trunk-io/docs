@@ -175,7 +175,7 @@
 
 ## Code Quality
 
-* [Overview](code-quality/code-quality.md)
+*
 * [Why Metalinters?](code-quality/overview/README.md)
   * [How does it work?](code-quality/overview/how-does-it-work.md)
   * [Why Code Quality?](code-quality/overview/why-code-quality.md)
