@@ -17,9 +17,9 @@ By the end of this guide, you should achieve the following before proceeding to 
 * [ ] Test uploads locally
 
 {% hint style="info" %}
-Using the plugin is the best way to accurately detect flaky RSpec tests.&#x20;
+Using the plugin is the best way to accurately detect flaky RSpec tests.
 
-You can also [manually generate and upload](manual-uploads.md) test results in RSpec, however, **manual RSpec uploads are not recommended.**&#x20;
+You can also [manually generate and upload](manual-uploads.md) test results in RSpec, however, **manual RSpec uploads are not recommended.**
 {% endhint %}
 
 ### Installing the plugin
@@ -50,7 +50,7 @@ require "trunk_spec_helper"
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.&#x20;
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
 
 If you have a step in CI to rerun failed tests with the `--only-failures` option, or you're using a package like [rspec-retry](https://github.com/NoRedInk/rspec-retry), remember to disable them.
 
@@ -61,6 +61,34 @@ You can find the Gem for `rspec_trunk_flaky_tests` [here](https://rubygems.org/g
 ```
 bundle update rspec_trunk_flaky_tests
 ```
+
+### Environment Variables
+
+These optoinal environment variables can be set in your project to change the behavior of the RSpec plugin.
+
+#### Repository metadata variables:
+
+| Argument                       | Description                                            |
+| ------------------------------ | ------------------------------------------------------ |
+| `TRUNK_REPO_ROOT`              | Path to repository root                                |
+| `TRUNK_REPO_URL`               | Repository URL (e.g., https://github.com/org/repo.git) |
+| `TRUNK_REPO_HEAD_SHA`          | HEAD commit SHA                                        |
+| `TRUNK_REPO_HEAD_BRANCH`       | HEAD branch name                                       |
+| `TRUNK_REPO_HEAD_COMMIT_EPOCH` | HEAD commit timestamp (seconds since epoch)            |
+| `TRUNK_REPO_HEAD_AUTHOR_NAME`  | HEAD commit author name                                |
+
+#### Configuration variables:
+
+| Argument                         | Description                                               |
+| -------------------------------- | --------------------------------------------------------- |
+| `TRUNK_CODEOWNERS_PATH`          | Path to CODEOWNERS file                                   |
+| `TRUNK_VARIANT`                  | Variant name for test results (e.g., 'linux', 'pr-123')   |
+| `TRUNK_DISABLE_QUARANTINING`     | Set to 'true' to disable quarantining                     |
+| `TRUNK_ALLOW_EMPTY_TEST_RESULTS` | Set to 'true' to allow empty results                      |
+| `TRUNK_DRY_RUN`                  | Set to 'true' to save bundle locally instead of uploading |
+| `TRUNK_USE_UNCLONED_REPO`        | Set to 'true' for uncloned repo mode                      |
+| `TRUNK_LOCAL_UPLOAD_DIR`         | Directory to save test results locally (disables upload)  |
+| `DISABLE_RPSEC_TRUNK_FLAY_TESTS` | Set to 'true' to completely disable Trunk                 |
 
 ### Try It Locally
 
@@ -87,6 +115,3 @@ After your upload, you can verify that Trunk has received and processed it succe
 Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:
 
 {% include "../../../../.gitbook/includes/ci-providers.md" %}
-
-
-
