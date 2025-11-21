@@ -1,7 +1,5 @@
 ---
-description: >-
-  Push updates about your merge queue status to a Slack channel to keep your
-  team informed.
+description: Push updates about your queue status to Slack to keep your team informed.
 ---
 
 # Slack Integration
@@ -16,6 +14,10 @@ After you have Merge Queue set up and running in your repository, you can config
 
 ### Enable Merge Queue Notifications
 
+After you have Merge set up and running in your repository, you can set up your integration with Slack under **Merge Queue** tab **>** repository **> Settings >** **Connect with Slack**.
+
+<figure><img src="../../.gitbook/assets/merge-slack-connect.png" alt=""><figcaption></figcaption></figure>
+
 1. Navigate to `Settings > Repositories > [your repository] > Merge Queue`
 2. Find the **Connect with Slack** setting and click **Connect** to install the Trunk Slack application
 3. Authorize the app to post to your desired channel
@@ -24,6 +26,8 @@ After you have Merge Queue set up and running in your repository, you can config
 ### Configuring Notification Preferences
 
 After connecting to a Slack channel, you can customize which notifications you want to receive. By default, all Merge Queue notifications are enabled.
+
+<figure><img src="../../.gitbook/assets/merge-slack-settings.png" alt=""><figcaption></figcaption></figure>
 
 | Notification                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -37,4 +41,3 @@ After connecting to a Slack channel, you can customize which notifications you w
 | Pull request is canceled                          | A pull request has been canceled, either manually or due to it [reaching a configured testing timeout](https://docs.trunk.io/merge-queue/set-up-trunk-merge/advanced-settings#timeout-for-tests-to-complete)                                                                                                                                                                                                                                                                  |
 | Pull request is waiting for earlier pull requests | <p>A pull request failed testing, but the pull request is currently waiting before being kicked. This can happen for one of two reasons:<br>1. The pull request is not at the head of the queue, so it is waiting to determine if it is the source of the failure or if a PR it depends on is<br>2. <a href="https://docs.trunk.io/merge-queue/pending-failure-depth">Pending Failure Depth is enabled</a> and the PR is waiting for other PRs below it to finish testing</p> |
 |                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-

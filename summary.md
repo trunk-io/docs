@@ -24,7 +24,7 @@
     * [API](merge-queue/concepts-and-optimizations/parallel-queues/api.md)
 * [Configuration and administration](merge-queue/managing-merge-queue/README.md)
   * [Settings and configurations](merge-queue/managing-merge-queue/advanced-settings.md)
-  * [Slack Integration](merge-queue/managing-merge-queue/integration-for-slack.md)
+  * [Slack Integration](merge-queue/set-up-trunk-merge/integration-for-slack.md)
   * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
   * [Metrics](merge-queue/managing-merge-queue/metrics.md)
   * [Pull request lifecycle](merge-queue/managing-merge-queue/reference.md)
