@@ -8,7 +8,7 @@ description: >-
 
 All of the following settings are specific to individual Merge Queues and can be accessed in two ways:
 
-* From the **Settings** menu: Navigate to `Settings > Repositories > Repo-Name > Merge Queue`&#x20;
+* From the **Settings** menu: Navigate to `Settings > Repositories > Repo-Name > Merge Queue`
 * From the **Merge Queue** tab: Select your repository, then click the **Settings** tab
 
 {% hint style="info" %}
@@ -107,7 +107,7 @@ The `Running` state is the default state of your merge queue, and will be the no
 
 ## Merge Queue mode
 
-> Merge Queues operate in one of two modes, **Single** (default) or [**Parallel**](../concepts-and-optimizations/parallel-queues/)**.**&#x20;
+> Merge Queues operate in one of two modes, **Single** (default) or [**Parallel**](../concepts-and-optimizations/parallel-queues/)**.**
 
 **Single Queue** processes all pull requests in one line, testing each PR predictively against all changes ahead of it. Multiple PRs can be tested and merged simultaneously based on your [Testing Concurrency](advanced-settings.md#testing-concurrency) and [Batching](advanced-settings.md#batching) settings.
 
@@ -211,7 +211,7 @@ Whether or not GitHub slash commands like `/trunk merge` are enabled for this me
 
 ## Connect with Slack
 
-[Connect Trunk Merge Queue to Slack](integration-for-slack.md) to receive real-time notifications about queue activity in a designated channel. After connecting, you can choose which events trigger notifications.
+[Connect Trunk Merge Queue to Slack](../set-up-trunk-merge/integration-for-slack.md) to receive real-time notifications about queue activity in a designated channel. After connecting, you can choose which events trigger notifications.
 
 **Available notifications include:**
 
@@ -227,7 +227,7 @@ Whether or not GitHub slash commands like `/trunk merge` are enabled for this me
 
 > Toggle this feature **Enabled** or **Disabled**. Default is **Disabled**.
 
-[**Batching**](../concepts/batching.md) tests multiple pull requests as a single unit instead of individually, dramatically reducing CI costs.&#x20;
+[**Batching**](../concepts/batching.md) tests multiple pull requests as a single unit instead of individually, dramatically reducing CI costs.
 
 ***
 
@@ -246,4 +246,3 @@ This setting will delete the Merge Queue configuration and any queued merge requ
 * **Switching target branches** - If you need to change which branch the queue merges into (e.g., switching from a test branch during POC to `main` for production use), you must delete the current queue and create a new one pointing to your desired branch.
 * **Removing Merge Queue** - You're decommissioning Merge Queue for this repository entirely.
 * **Starting fresh** - You want to reset all configuration.
-

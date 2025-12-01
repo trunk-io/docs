@@ -8,6 +8,14 @@ hidden: true
 
 The Code Quality dashboard in the Trunk web app has been deprecated, along with the ability to configure and manage CI workflows in the web app.
 
+### Breaking Changes
+
+⚠️ **The `--upload` flag has been removed from the Trunk CLI**
+
+If you're using `--upload` in your scripts or CI configurations, you must remove it. This flag was previously used to send data to our backend for the deprecated Code Quality dashboard but is no longer supported.
+
+**Action required:** Remove `--upload` from any `trunk check` commands in your CI pipelines or scripts.
+
 ### Migrating nightly and PR jobs
 
 Nightly and PR jobs configured through the Trunk web app will no longer be supported. However, you can still run these checks by migrating these workflows to run as a step in your existing CI pipelines.
@@ -20,9 +28,11 @@ Trunk provides a [GitHub action](https://github.com/trunk-io/trunk-action) to he
 name: Trunk Code Quality
 on:
   push:
-    branches: main
+    branches:
+      - main
   pull_request:
-    branches: main
+    branches:
+      - main
 	
 jobs:
   test:
@@ -53,9 +63,11 @@ Here’s an example of the commands in a GitHub Actions workflow, but you can do
 name: Trunk Code Quality
 on:
   push:
-    branches: main
+    branches:
+      - main
   pull_request:
-    branches: main
+    branches:
+      - main
 
 jobs:
   test:

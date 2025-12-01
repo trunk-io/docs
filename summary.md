@@ -24,7 +24,7 @@
     * [API](merge-queue/concepts-and-optimizations/parallel-queues/api.md)
 * [Configuration and administration](merge-queue/managing-merge-queue/README.md)
   * [Settings and configurations](merge-queue/managing-merge-queue/advanced-settings.md)
-  * [Slack Integration](merge-queue/managing-merge-queue/integration-for-slack.md)
+  * [Slack Integration](merge-queue/set-up-trunk-merge/integration-for-slack.md)
   * [Using the Merge UI](merge-queue/managing-merge-queue/using-the-webapp.md)
   * [Metrics](merge-queue/managing-merge-queue/metrics.md)
   * [Pull request lifecycle](merge-queue/managing-merge-queue/reference.md)
@@ -37,7 +37,7 @@
 ## Flaky Tests
 
 * [Overview](flaky-tests/overview.md)
-* [Get started](flaky-tests/get-started/README.md)
+* [Getting Started](flaky-tests/get-started/README.md)
   * [Test frameworks](flaky-tests/get-started/frameworks/README.md)
     * [Android](flaky-tests/get-started/frameworks/android.md)
     * [Bazel](flaky-tests/get-started/frameworks/bazel.md)
@@ -175,7 +175,7 @@
 
 ## Code Quality
 
-* [Overview](code-quality/code-quality.md)
+*
 * [Why Metalinters?](code-quality/overview/README.md)
   * [How does it work?](code-quality/overview/how-does-it-work.md)
   * [Why Code Quality?](code-quality/overview/why-code-quality.md)

@@ -15,7 +15,7 @@ Teams typically start with whichever problem is more urgent, then expand as thei
 
 <details>
 
-<summary>Want to see how it works? Have questions? </summary>
+<summary>Want to see how it works? Have questions?</summary>
 
 [Schedule time here](https://calendly.com/trunk/demo) or email [support@trunk.io](mailto:support@trunk.io)
 
@@ -47,7 +47,7 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 * **Parallel queues**: Analyzes which code each PR touches to create independent test lanes for non-overlapping changes—transforming queue bottlenecks from a single line into an efficient graph where unrelated PRs test simultaneously
 * **Intelligent batching with bisection**: Test multiple PRs together in a single CI run (reducing costs up to 90%), with automatic bisection to isolate failures without ejecting entire batches. Caseware processes 4-8 PRs per batch with zero manual intervention, reducing their median merge time from 6 hours to 90 minutes
-* **Scale-tested reliability**: Validated at 250+ PRs/hour over 24-hour periods (6,000+ PRs/day)&#x20;
+* **Scale-tested reliability**: Validated at 250+ PRs/hour over 24-hour periods (6,000+ PRs/day)
 * **Anti-flake protection**: Failed PRs get additional chances to pass as later PRs retest their code—if subsequent PRs (that include the failed code) pass, all merge together without blocking the queue. Combines Optimistic Merging and Pending Failure Depth
 * **Predictive testing**: Tests each PR against the predicted future state of main (including all PRs ahead in queue), guaranteeing branch stability without endless rebase-retest loops. Faire prevented 20% of main branch failures from green-green conflicts
 * **API & webhook integrations**: Submit PRs programmatically, build custom merge bot, or trigger workflows on queue events. Faire built custom Chrome extensions and automation services using the API to handle unique deployment workflows
@@ -104,13 +104,19 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 ### Getting Started
 
-Trunk is a hosted service. Start by creating an account, then integrate the product that solves your most urgent problem.
+Most teams schedule a 30-minute call before integrating—we'll help you plan for security reviews, understand your CI architecture, and avoid common implementation gotcas. We'll also set up a direct Slack Connect, MS Teams, or email channel for ongoing engineering support.
 
-#### 1. Sign Up
+* [**Schedule a call**](https://calendly.com/trunk/trunk-integration-planning) ← Recommended for most teams
+
+**Prefer to explore on your own first?**
+
+You can create an account and follow the integration guides below. Note that GitHub app installation typically requires security approval at most companies, and integration complexity varies significantly based on your CI setup.
 
 * [Create a Trunk account →](https://app.trunk.io/signup)
 
-#### 2. Integrate
+#### **Integration Guides**
+
+Start with whichever problem is more urgent:
 
 **Start with Flaky Tests** if you're dealing with unreliable tests blocking CI:
 
@@ -140,4 +146,4 @@ Trunk is a hosted service. Start by creating an account, then integrate the prod
 
 ### Learn More
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="merge-queue/merge-queue.md">merge-queue.md</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Merge Queue</strong></td><td>A merge queue to make merging code in GitHub safer and easier</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/Merge.png">Merge.png</a></td></tr><tr><td><strong>Flaky Tests</strong></td><td>Detect, quarantine, and eliminates flaky tests from your codebase</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/FlakyTests.png">FlakyTests.png</a></td></tr><tr><td><strong>CI Autopilot (beta)</strong></td><td>AI root cause analysis and fixes for test and CI failures</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/CIAnalytics.png">CIAnalytics.png</a></td></tr></tbody></table>
