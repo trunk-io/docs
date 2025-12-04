@@ -21,15 +21,15 @@ To create your organization, you need the following:
 {% hint style="success" %}
 **Trying to join your team?**
 
-If your team is already on Trunk and you're looking to join an existing organization, see the docs on[ inviting team members](managing-your-organization.md#inviting-team-members) and contact an organization admin.&#x20;
+If your team is already on Trunk and you're looking to join an existing organization, see the docs on[ inviting team members](managing-your-organization.md#inviting-team-members) and contact an organization admin.
 {% endhint %}
 
 ### Start using Trunk
 
-After connecting to Trunk, you're ready to get started.&#x20;
+After connecting to Trunk, you're ready to get started.
 
 ### Next steps
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Flaky Tests</h4></td><td><a href="../.gitbook/assets/FlakyTests.png">FlakyTests.png</a></td><td><a href="../flaky-tests/overview.md">overview.md</a></td></tr><tr><td><h4>Merge Queue</h4></td><td><a href="../.gitbook/assets/Merge.png">Merge.png</a></td><td><a href="../merge-queue/merge-queue.md">merge-queue.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Flaky Tests</strong></td><td><a href="../.gitbook/assets/FlakyTests.png">FlakyTests.png</a></td><td><a href="../flaky-tests/overview.md">overview.md</a></td></tr><tr><td><strong>Merge Queue</strong></td><td><a href="../.gitbook/assets/Merge.png">Merge.png</a></td><td><a href="../merge-queue/merge-queue.md">merge-queue.md</a></td></tr></tbody></table>
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-type="content-ref"></th><th data-hidden data-type="content-ref"></th></tr></thead><tbody><tr><td>Manage your Organization</td><td><a href="managing-your-organization.md">managing-your-organization.md</a></td><td></td></tr><tr><td>Install the CLI</td><td></td><td><a href="../references/cli/">cli</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-type="content-ref"></th><th data-hidden data-type="content-ref"></th></tr></thead><tbody><tr><td>Manage your Organization</td><td><a href="managing-your-organization.md">managing-your-organization.md</a></td><td></td></tr><tr><td>Install the CLI</td><td></td><td><a href="../code-quality/overview/cli/">cli</a></td></tr></tbody></table>

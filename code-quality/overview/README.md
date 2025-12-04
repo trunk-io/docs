@@ -12,19 +12,19 @@ There are many reasons for you to want to use a metalinter like Trunk Code Quali
 
 #### You don't want to think about linting
 
-Trunk Code Quality is easy to adopt. [Running `trunk init`](../setup-and-installation/initialize-trunk.md) will [recommend linters and formatters](../linters/supported/) for your project with reasonable default configuration. Hold off on fixing existing issues using [hold-the-line](how-does-it-work.md#hold-the-line) and only get warnings for new issues introduced in each commit or PR.
+Trunk Code Quality is easy to adopt. [Running `trunk init`](setup-and-installation/initialize-trunk.md) will [recommend linters and formatters](linters/supported/) for your project with reasonable default configuration. Hold off on fixing existing issues using [hold-the-line](how-does-it-work.md#hold-the-line) and only get warnings for new issues introduced in each commit or PR.
 
-Use Trunk Code Quality [GitHub Integrations](../ci-setup/github-integration.md) to set up nightly runs and linter checks on PRs.
+Use Trunk Code Quality [GitHub Integrations](setup-and-installation/github-integration.md) to set up nightly runs and linter checks on PRs.
 
 #### Run and manage a long list of linters
 
-Trunk will install, manage, and run tools like linters and formatters for you. Trunk uses [hermetic installs](how-does-it-work.md#hermetic-tools-and-runtime-management) to manage both the static analysis [tools](../../references/cli/getting-started/tools.md) themselves and the [runtimes they depend](../../references/cli/configuration/runtimes.md) on. No more conflicts because a linter requires `python 3.11` while your projects require `python 3.7`.
+Trunk will install, manage, and run tools like linters and formatters for you. Trunk uses [hermetic installs](how-does-it-work.md#hermetic-tools-and-runtime-management) to manage both the static analysis [tools](cli/getting-started/tools.md) themselves and the [runtimes they depend](cli/getting-started/configuration/runtimes.md) on. No more conflicts because a linter requires `python 3.11` while your projects require `python 3.7`.
 
 #### Incrementally adopt new linters
 
 [Adopting new linters is a pain](https://trunk.io/blog/reasons-developers-hate-linters) because of the large amount of upfront configuration and fixes needed. Enabling a new linter or formatter in an old repo will yield thousands of issues, most of which might not have auto fixes.
 
-Trunk supports [hold-the-line](how-does-it-work.md#hold-the-line) to lint only new issues introduced with a commit or PR, to let developers adopt new linters fast, focus on preventing new issues first, and[ report on existing issues nightly](../ci-setup/github-integration.md) to fix later. Waiting will only accumulate debt; stop debt accumulation immediately and fix as you code.
+Trunk supports [hold-the-line](how-does-it-work.md#hold-the-line) to lint only new issues introduced with a commit or PR, to let developers adopt new linters fast, focus on preventing new issues first, and[ report on existing issues nightly](setup-and-installation/github-integration.md) to fix later. Waiting will only accumulate debt; stop debt accumulation immediately and fix as you code.
 
 #### Linters take too long to run
 
@@ -32,11 +32,11 @@ Do you have a giant code base? Maybe even a giant monorepo with many languages t
 
 #### Installing many linters individually on everyone's machine
 
-Many linters don't install neatly through a package manager, and for those that do, they depend on your system's runtime environment. Dodge repetitive setup by using a single tool to lint **every language in your organization** using any of the [100+ supported linters](../linters/supported/).
+Many linters don't install neatly through a package manager, and for those that do, they depend on your system's runtime environment. Dodge repetitive setup by using a single tool to lint **every language in your organization** using any of the [100+ supported linters](linters/supported/).
 
 #### Consistent linter configs and versions
 
-Trunk Code Quality uses an extensible [plugin system](../../references/cli/configuration/plugins/), so you can define linters to [auto-enable](../../references/cli/configuration/lint/auto-enable.md) and [share linter configurations](../linters/shared-configs.md) to standardize across code bases.
+Trunk Code Quality uses an extensible [plugin system](cli/getting-started/configuration/plugins/), so you can define linters to [auto-enable](cli/getting-started/configuration/lint/auto-enable.md) and [share linter configurations](linters/shared-configs.md) to standardize across code bases.
 
 ### Features
 
@@ -58,13 +58,13 @@ Trunk Code Quality speeds up static analysis by using a background daemon to che
 
 #### **Time-consuming** pull request **iteration and triage**
 
-Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](../setup-and-installation/prevent-new-issues.md), improving PR triage. It can optionally also function as a [githooks manager](../../references/cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`.
+Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](setup-and-installation/prevent-new-issues/), improving PR triage. It can optionally also function as a [githooks manager](cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`.
 
 ### Components
 
 Trunk Code Quality has many components that fit into different stages of your development workflow.
 
-* **During local development:** Get realtime annotations using the [Trunk CLI](../setup-and-installation/initialize-trunk.md), [VSCode Extension](../ide-integration/vscode.md), or [Neovim plugin](../ide-integration/neovim.md).
-* **In cloud development environments:** Trunk can be used in [GitHub Codespaces](../../cli/configuration/github-codespaces.md).
+* **During local development:** Get realtime annotations using the [Trunk CLI](setup-and-installation/initialize-trunk.md), [VSCode Extension](ide-integration/vscode.md), or [Neovim plugin](ide-integration/neovim.md).
+* **In cloud development environments:** Trunk can be used in [GitHub Codespaces](ide-integration/github-codespaces.md).
 * **Before committing and pushing,** Trunk can automatically run linters and formatters using Git hooks.
 * **On PRs and in CI:** Using our GitHub integration, setting up your own GitHub workflows, or in your own CI environments.

@@ -6,7 +6,7 @@ description: >-
 
 # Trunk GitHub App
 
-The Trunk GitHub app lets you integrate Merge Queue and Flaky Test features with your GitHub repos. It can help you[ ](../../code-quality/ci-setup/github-integration.md)manage [merge queue branches](../../merge-queue/set-up-trunk-merge/), and post [PR comments about your test results](../../flaky-tests/github-pull-request-comments.md).
+The Trunk GitHub app lets you integrate Merge Queue and Flaky Test features with your GitHub repos. It can help you[ ](../code-quality/overview/setup-and-installation/github-integration.md)manage [merge queue branches](../merge-queue/set-up-trunk-merge/), and post [PR comments about your test results](../flaky-tests/github-pull-request-comments.md).
 
 You can install the Trunk GitHub App by going to **Settings** > **Organization** > **GitHub** and clicking **Install GitHub App**. You'll be redirected to GitHub to select the repositories where the GitHub app will be installed.
 

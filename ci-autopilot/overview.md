@@ -7,7 +7,7 @@ description: >-
 # Overview
 
 {% hint style="success" %}
-### CI Autopilot is currently in private beta.
+#### CI Autopilot is currently in private beta.
 {% endhint %}
 
 **Stop debugging CI failures manually.** CI Autopilot's AI investigates every test failure, identifies root causes, and provides ready-to-apply fixes in minutes - not hours.
@@ -55,7 +55,7 @@ Choose between automated stacked pull requests for team workflows or direct AI a
 ### Get started now!
 
 {% hint style="success" %}
-### CI Autopilot is currently invite-only in private beta.
+#### CI Autopilot is currently invite-only in private beta.
 {% endhint %}
 
 #### [Basic Setup (5 minutes)](get-started/connect-to-github.md)
