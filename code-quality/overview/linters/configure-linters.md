@@ -1,6 +1,6 @@
 # Configure linters
 
-Trunk Code Quality's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](../how-does-it-work.md#hold-the-line) solution with your own custom linters.
+Trunk Code Quality's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](/broken/pages/U4nTQBazaodt2vJadyRw#hold-the-line) solution with your own custom linters.
 
 Here's an overview of the ways you can configure linters.
 
@@ -55,7 +55,7 @@ definitions:
 
 #### Linter definition reference
 
-You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find references for these fields on the [Linter Definitions](../cli/getting-started/configuration/lint/definitions.md) page.
+You can find the default definitions for linters in the [Plugin Repo](https://github.com/trunk-io/plugins/tree/main/linters) and find references for these fields on the [Linter Definitions](../getting-started/configuration/lint/definitions.md) page.
 
 ### Overriding default linter definitions
 

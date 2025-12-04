@@ -28,7 +28,7 @@ We intend to bring full feature support to Windows for Trunk. Currently, the fol
 
 * [Trunk Code Quality](code-quality.md)
 * Non-interactive [Trunk Actions](actions/) and [git-hooks](actions/git-hooks.md)
-* [VSCode](../../ide-integration/vscode.md)
+* [VSCode](../ide-integration/vscode.md)
 
 ### Plugin compatibility
 

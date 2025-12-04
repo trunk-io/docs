@@ -4,7 +4,7 @@ Code Quality helps you shorten the feedback loop by integrating with your favori
 
 ### How it works
 
-Code Quality runs [a daemon](../how-does-it-work.md#daemon) that looks for files that change in real time and lints the changes using the same tools and configuration as running `trunk check`. With LSP support, you will get instant feedback on your code changes as you write.
+Code Quality runs [a daemon](/broken/pages/U4nTQBazaodt2vJadyRw#daemon) that looks for files that change in real time and lints the changes using the same tools and configuration as running `trunk check`. With LSP support, you will get instant feedback on your code changes as you write.
 
 ### Supported IDEs
 

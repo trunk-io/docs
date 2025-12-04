@@ -20,7 +20,7 @@ Find and enable the linters you need to keep your code base healthy. Trunk helps
 
 ### Configure Linters
 
-Trunk Code Quality's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](../how-does-it-work.md#hold-the-line) solution with your custom linters.
+Trunk Code Quality's linter integrations are fully configurable. This means that you can easily tune existing linters or leverage our caching and [hold-the-line](/broken/pages/U4nTQBazaodt2vJadyRw#hold-the-line) solution with your custom linters.
 
 [Learn to configure your linters](configure-linters.md) to get the most out of Trunk Code Quality.
 
@@ -32,7 +32,7 @@ Trunk Code Quality lets you configure flexible ignore for your linters. You can 
 
 ### Custom Linters
 
-Trunk lets you turn simple scripts into fully-powered linters by running these linters and giving them support for features like ignores, [hold-the-line,](../how-does-it-work.md#hold-the-line) and other powerful configurable features,
+Trunk lets you turn simple scripts into fully-powered linters by running these linters and giving them support for features like ignores, [hold-the-line,](/broken/pages/U4nTQBazaodt2vJadyRw#hold-the-line) and other powerful configurable features,
 
 [Learn to create your own Custom Linters.](custom-linters.md)
 

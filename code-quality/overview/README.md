@@ -1,70 +1,80 @@
-# Why Metalinters?
+# Overview
 
-### Why metalinters?
+Trunk Code Quality is a metalinter and static analysis manager designed to unify linting, formatting, and security scanning across polyglot repositories. It consolidates tool management, runtime isolation, and execution logic into a single CLI and daemon.
 
-Real-world code bases are complicated. Every project has many different types of files. There are your main programming language files, Markdown docs, infrastructure as code (IaC), dependency files, YAML config files, images, and so much more. All of these files need to be linted, formatted, optimized, and scanned.
+### Architecture
 
-A metalinter helps you lint **every file** in a modern code base by installing, managing, running, and reporting from individual static analysis tools with a **single tool**.
+Trunk consists of a C++ CLI that orchestrates the download, installation, and execution of third-party static analysis tools.
 
-### Use cases
+#### Hermetic Tool Management
 
-There are many reasons for you to want to use a metalinter like Trunk Code Quality.
+Trunk manages tools and their runtimes hermetically. Instead of relying on the host system’s environment (e.g., `/usr/bin/python` or global `npm` packages), Trunk downloads and caches specific versions of runtimes required by the linters.
 
-#### You don't want to think about linting
+* Isolation: A project requiring Python 3.10 for a specific linter will not conflict with a system installed Python 3.7.
+* Consistency: All engineers and CI runners execute the exact same version of the linter and its runtime dependencies.
+* Scope: Covers primary languages, Infrastructure as Code (IaC), build scripts, CI configurations (YAML), and documentation.
 
-Trunk Code Quality is easy to adopt. [Running `trunk init`](setup-and-installation/initialize-trunk.md) will [recommend linters and formatters](linters/supported/) for your project with reasonable default configuration. Hold off on fixing existing issues using [hold-the-line](how-does-it-work.md#hold-the-line) and only get warnings for new issues introduced in each commit or PR.
+#### The Trunk Daemon
 
-Use Trunk Code Quality [GitHub Integrations](setup-and-installation/github-integration.md) to set up nightly runs and linter checks on PRs.
+The CLI (`trunk check`) launches a background daemon. This process:
 
-#### Run and manage a long list of linters
+1. Monitors file system events.
+2. Triggers jobs to precompute linting results in the background.
+3. Caches results to speed up subsequent checks.
+4. Serves real-time annotations to IDE extensions (VSCode, Neovim).
 
-Trunk will install, manage, and run tools like linters and formatters for you. Trunk uses [hermetic installs](how-does-it-work.md#hermetic-tools-and-runtime-management) to manage both the static analysis [tools](cli/getting-started/tools.md) themselves and the [runtimes they depend](cli/getting-started/configuration/runtimes.md) on. No more conflicts because a linter requires `python 3.11` while your projects require `python 3.7`.
+Users can override background execution behavior by modifying the `run_when` configuration for specific tools if they are too compute-intensive.
 
-#### Incrementally adopt new linters
+### Execution Model
 
-[Adopting new linters is a pain](https://trunk.io/blog/reasons-developers-hate-linters) because of the large amount of upfront configuration and fixes needed. Enabling a new linter or formatter in an old repo will yield thousands of issues, most of which might not have auto fixes.
+#### Git-Aware Scanning
 
-Trunk supports [hold-the-line](how-does-it-work.md#hold-the-line) to lint only new issues introduced with a commit or PR, to let developers adopt new linters fast, focus on preventing new issues first, and[ report on existing issues nightly](setup-and-installation/github-integration.md) to fix later. Waiting will only accumulate debt; stop debt accumulation immediately and fix as you code.
+Trunk optimizes execution by checking only modified files or lines. It relies on git diffs to determine the scope of analysis, preventing full-repo scans during standard development workflows.
 
-#### Linters take too long to run
+### Hold-the-line
 
-Do you have a giant code base? Maybe even a giant monorepo with many languages to lint? Most linters are not Git-aware, which makes them slow to run on large repos. Trunk Code Quality [can lint what's changed](how-does-it-work.md#hold-the-line), so you won't be stuck linting 20 million lines of code when you've changed just 1 word.
+**Hold The Line** (HTL) is the principle that Trunk Code Quality will _only run on new changes_ in your codebase rather than every file in the whole repo. This allows you to use Check to improve your codebase **incrementally** rather than having to address all of the issues at once. HTL also runs checks much faster than scanning the entire codebase would.
 
-#### Installing many linters individually on everyone's machine
+_Hold The Line_ **works at the line level** of your source code. For example, if a single line has multiple pre-existing issues and a new linter is added, which reports the new issue, then Trunk Code Quality will report just the new issue and not the previous ones.
 
-Many linters don't install neatly through a package manager, and for those that do, they depend on your system's runtime environment. Dodge repetitive setup by using a single tool to lint **every language in your organization** using any of the [100+ supported linters](linters/supported/).
+By default, Trunk runs in hold-the-line mode:
 
-#### Consistent linter configs and versions
+```
+trunk check foo.file
+```
 
-Trunk Code Quality uses an extensible [plugin system](cli/getting-started/configuration/plugins/), so you can define linters to [auto-enable](cli/getting-started/configuration/lint/auto-enable.md) and [share linter configurations](linters/shared-configs.md) to standardize across code bases.
+You can still run on all files.
 
-### Features
+```
+trunk check --all
+```
 
-Trunk Code Quality helps address these issues by:
+_**Hold the Line**_ is built into Trunk Code Quality itself. This means existing linters that do not support line-by-line functionality will still work with _Hold the Line_. Even [custom linters](linters/custom-linters.md) you write yourself.
 
-#### Hold-the-line
+### Daemon
 
-Linters are slow to run for large codebases with numerous issues and many linters. Trunk Code Quality solves this problem by _**only scanning new code**_ by default, allowing you to handle the backlog when you are ready while preventing new issues. This is the #1 reason people use Trunk Code Quality.
+The Trunk CLI, specifically `trunk check`, runs a daemon that monitors relevant file changes and triggers jobs to precompute in the background while you work. The daemon is used both to support real-time background checking in supported extensions such as [VSCode](ide-integration/vscode.md) and [Neovim](ide-integration/neovim.md), and to precompute check results for faster commits/pushes.
 
-#### **Inconsistent tooling for different file types**
+Some native linters are more compute/memory intensive and `check` allows you to disable background linting for those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](getting-started/configuration/lint/commands.md#run_when) configuration for a tool.
 
-Trunk Code Quality provides a single way to check _everything_ in your codebase, including config and script files, as well as the main language(s) for your codebase. If you are already using ESLint for a JavaScript repo, you probably also have some bash scripts, CI yaml, Kube config, and other files for your workflow.
+### Hermetic tools and runtime management
 
-These all have linters you could be running, but they don't all install through npm. Trunk Code Quality simplifies this process by detecting and configuring the right tools for the files in your repo.
+Trunk hermetically installs the static analysis tools you run and their required runtimes. This means these tools are installed and managed by the Trunk CLI, and are unaffected by your systems environment.
 
-#### **Slow static analysis affecting development speed**
+If a tool requires `python 3.10` but the projects you're working on require `python 3.7`, Trunk will manage that tool and its `python 3.10` runtime automatically and not affect the `python 3.7` environment. This means Trunk will not modify or pollute your machine.
 
-Trunk Code Quality speeds up static analysis by using a background daemon to check code as you modify files in your repo, run linters in batches, and cache the results. Since Code Quality is git-aware, it knows what you've changed, and by adding batched execution and caching, you end up with a much faster and smoother way to run these tools.
+Trunk manages the hermetic installation of all required runtimes. You can also specifically pin a version of a runtime you'd like Trunk to use, or tell Trunk to re-use an already-installed runtime on the system.
 
-#### **Time-consuming** pull request **iteration and triage**
+### Plugin system
 
-Trunk Code Quality speeds up PR iteration by showing the _same_ results locally and [on CI](setup-and-installation/prevent-new-issues/), improving PR triage. It can optionally also function as a [githooks manager](cli/getting-started/actions/git-hooks.md) to reject `git push`es unless they're passing `trunk check`.
+Trunk is fully extensible and configurable through the [Trunk Plugins Repo](https://github.com/trunk-io/plugins/). When installing a plugin through Trunk, the definition of a plugin's behavior, including install, run, and report instructions, is defined in the Plugins Repo.
 
-### Components
+This can be overridden by defining your own plugin repo to import, overriding individual linter definitions locally, and even writing your own custom linters.
 
-Trunk Code Quality has many components that fit into different stages of your development workflow.
+[Learn more about the plugin system.](getting-started/configuration/plugins/)
 
-* **During local development:** Get realtime annotations using the [Trunk CLI](setup-and-installation/initialize-trunk.md), [VSCode Extension](ide-integration/vscode.md), or [Neovim plugin](ide-integration/neovim.md).
-* **In cloud development environments:** Trunk can be used in [GitHub Codespaces](ide-integration/github-codespaces.md).
-* **Before committing and pushing,** Trunk can automatically run linters and formatters using Git hooks.
-* **On PRs and in CI:** Using our GitHub integration, setting up your own GitHub workflows, or in your own CI environments.
+### Run on every pull request
+
+Trunk works in CI. Trunk Code Quality provides [GitHub integration](setup-and-installation/github-integration.md) and can run in any other CI environment. This lets you check Code Quality in every PR with consistent config and consistent results.
+
+[Learn more about Code Quality in CI.](setup-and-installation/prevent-new-issues/)

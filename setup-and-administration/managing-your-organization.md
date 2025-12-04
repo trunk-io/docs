@@ -2,7 +2,7 @@
 
 ## Organization Slug and Token
 
-Integrating with Trunk through [Webhooks](../flaky-tests/webhooks/), [APIs](apis/), or [CLI](../code-quality/overview/cli/) will require authentication using your organization's slug and token.
+Integrating with Trunk through [Webhooks](../flaky-tests/webhooks/), [APIs](apis/), or [CLI](/broken/pages/OJc6wVrAfc2SLQZlJ2m1) will require authentication using your organization's slug and token.
 
 You can find your organization slug and token by going to **Settings** > **Organization** > **General**.
 

@@ -56,7 +56,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `hold_the_line`
 
-`hold_the_line`: _optional boolean_. Whether [hold-the-line will](../../../../how-does-it-work.md#hold-the-line) be done for this linter or not.
+`hold_the_line`: _optional boolean_. Whether [hold-the-line will](/broken/pages/U4nTQBazaodt2vJadyRw#hold-the-line) be done for this linter or not.
 
 ## `include_lfs`
 
@@ -112,7 +112,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `run_timeout`
 
-`run_timeout`: _duration string_. Describes how long a linter can run before timing out. [See timeouts](../../../../linters/configure-linters.md#timeout).
+`run_timeout`: _duration string_. Describes how long a linter can run before timing out. [See timeouts](../../../linters/configure-linters.md#timeout).
 
 ## `suggest_if`
 

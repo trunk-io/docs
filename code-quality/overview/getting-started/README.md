@@ -1,6 +1,14 @@
-# Code Quality CLI getting started
+# Code Quality CLI
 
-Initializing Trunk in a git repo is as simple as running:
+Trunk provides command-line tools for different products. Choose your product below:
+
+* [Trunk Launcher Install](install.md): Trunk uses a launcher to automatically install the appropriate CLI for your platform
+* [Trunk Code Quality CLI](commands-reference/): commands reference
+* [Trunk Code Quality CLI Configuration](configuration/): the Trunk CLI has its top-level config defined in `.trunk/trunk.yaml`
+* [Trunk Tools CLI](tools.md): manage tools used by your repo
+* [Trunk Actions](actions/): local workflow automation and githooks manager
+
+## Initializing Trunk in a git repo is as simple as running:
 
 ```bash
 trunk init

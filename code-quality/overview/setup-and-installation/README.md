@@ -1,10 +1,5 @@
 # Setup and installation
 
-{% hint style="danger" %}
-**Deprecation Warning**\
-The Trunk Code Quality web app, Code Quality on PRs, and Code Quality Nightly will soon be deprecated. Follow the instructions on the [Linting in CI](prevent-new-issues/) page to migrate off these features.
-{% endhint %}
-
 Trunk Code Quality is easy to adopt for new and legacy projects alike. You can run Trunk Code Quality using your existing linter configurations, incrementally address existing problems, and prevent new issues from being committed to your repo.
 
 You can start using Code Quality in your repos in 4 steps.
