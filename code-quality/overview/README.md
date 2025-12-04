@@ -82,3 +82,5 @@ This can be overridden by defining your own plugin repo to import, overriding in
 Trunk works in CI. Trunk Code Quality provides [GitHub integration](setup-and-installation/github-integration.md) and can run in any other CI environment. This lets you check Code Quality in every PR with consistent config and consistent results.
 
 [Learn more about Code Quality in CI.](setup-and-installation/prevent-new-issues/)
+
+## [Next: Setup and installation](setup-and-installation/)
