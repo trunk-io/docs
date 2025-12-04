@@ -82,13 +82,13 @@ curl https://get.trunk.io -fsSL | bash
 
 From **`powershell`**, download the powershell launcher:
 
-```Text
+```
 Invoke-RestMethod -Uri https://trunk.io/releases/trunk.ps1 -OutFile trunk.ps1
 ```
 
 Ensure you can execute powershell scripts:
 
-```Text
+```
 Set-ExecutionPolicy Bypass -Scope CurrentUser
 ```
 

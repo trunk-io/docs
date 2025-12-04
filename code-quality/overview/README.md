@@ -1,3 +1,7 @@
+---
+noRobotsIndex: true
+---
+
 # Overview
 
 Trunk Code Quality is a metalinter and static analysis manager designed to unify linting, formatting, and security scanning across polyglot repositories. It consolidates tool management, runtime isolation, and execution logic into a single CLI and daemon.
@@ -55,7 +59,7 @@ _**Hold the Line**_ is built into Trunk Code Quality itself. This means existing
 
 The Trunk CLI, specifically `trunk check`, runs a daemon that monitors relevant file changes and triggers jobs to precompute in the background while you work. The daemon is used both to support real-time background checking in supported extensions such as [VSCode](ide-integration/vscode.md) and [Neovim](ide-integration/neovim.md), and to precompute check results for faster commits/pushes.
 
-Some native linters are more compute/memory intensive and `check` allows you to disable background linting for those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](getting-started/configuration/lint/commands.md#run_when) configuration for a tool.
+Some native linters are more compute/memory intensive and `check` allows you to disable background linting for those tools. By default, linters run whenever a file is modified in the background. You can override this behavior by editing the [`run_when`](cli/getting-started/configuration/lint/commands.md#run_when) configuration for a tool.
 
 ### Hermetic tools and runtime management
 
@@ -71,7 +75,7 @@ Trunk is fully extensible and configurable through the [Trunk Plugins Repo](http
 
 This can be overridden by defining your own plugin repo to import, overriding individual linter definitions locally, and even writing your own custom linters.
 
-[Learn more about the plugin system.](getting-started/configuration/plugins/)
+[Learn more about the plugin system.](cli/getting-started/configuration/plugins/)
 
 ### Run on every pull request
 

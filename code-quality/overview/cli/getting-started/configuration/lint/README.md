@@ -14,7 +14,7 @@ The `lint` section of `.trunk/trunk.yaml` represents the configuration of all li
 
 `bazel`: bazel configuration
 
-* `paths` locations to look for Bazel binary. [Example](../../../linters/supported/clang-tidy.md#using-bazel).
+* `paths` locations to look for Bazel binary. [Example](../../../../linters/supported/clang-tidy.md#using-bazel).
 
 ### `comment_formats`
 
@@ -69,7 +69,7 @@ lint:
 
 ### `exported_configs`
 
-`exported_configs`: Linter configs to export when another project is [importing this plugin](../../../linters/shared-configs.md)
+`exported_configs`: Linter configs to export when another project is [importing this plugin](../../../../linters/shared-configs.md)
 
 ### `extra_compilation_flags`
 
@@ -117,7 +117,7 @@ lint:
 
 ### `threshold`
 
-`threshold`: where you specify the blocking behavior of linters. The [threshold](../../../linters/configure-linters.md#blocking-thresholds) for whether an error from a linter should block commits or not.
+`threshold`: where you specify the blocking behavior of linters. The [threshold](../../../../linters/configure-linters.md#blocking-thresholds) for whether an error from a linter should block commits or not.
 
 ### `upstream_mode`
 

@@ -112,7 +112,7 @@ The definition of a particular linter is put under `lint.definitions`. The follo
 
 ## `run_timeout`
 
-`run_timeout`: _duration string_. Describes how long a linter can run before timing out. [See timeouts](../../../linters/configure-linters.md#timeout).
+`run_timeout`: _duration string_. Describes how long a linter can run before timing out. [See timeouts](../../../../linters/configure-linters.md#timeout).
 
 ## `suggest_if`
 
