@@ -137,7 +137,7 @@
     * [Change settings](ci-autopilot/overview/use-dashboard/change-settings.md)
 * [FAQs](ci-autopilot/faqs.md)
 
-## Code Quality
+## Code Quality CLI <a href="#code-quality" id="code-quality"></a>
 
 * [Overview](code-quality/overview/README.md)
   * [Setup and installation](code-quality/overview/setup-and-installation/README.md)
