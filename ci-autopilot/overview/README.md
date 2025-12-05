@@ -30,7 +30,7 @@ description: >-
 
 CI Autopilot monitors your CI jobs and tests, rapidly identifying root causes of failures and providing fixes far quicker than manual debugging.
 
-**It integrates seamlessly with GitHub Actions and your** [**test execution framework**](../flaky-tests/get-started/frameworks/)**.**
+**It integrates seamlessly with GitHub Actions and your** [**test execution framework**](../../flaky-tests/get-started/frameworks/)**.**
 
 When your CI fails, CI Autopilot:
 

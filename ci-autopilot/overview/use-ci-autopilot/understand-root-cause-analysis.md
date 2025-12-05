@@ -8,13 +8,9 @@ description: >-
 
 When your pull request's CI fails, CI Autopilot automatically investigates the failure and posts a detailed analysis as a comment within a few minutes. This analysis helps you quickly understand what went wrong and how to fix it.
 
-
-
 You'll know the analysis is complete when you see a comment from the `trunk-io` bot:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-12 at 10.22.02 AM.png" alt=""><figcaption><p>CI Autopilot PR Comment</p></figcaption></figure>
-
-
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-09-12 at 10.22.02 AM.png" alt=""><figcaption><p>CI Autopilot PR Comment</p></figcaption></figure>
 
 Each comment includes the following details:
 
@@ -24,13 +20,9 @@ Each comment includes the following details:
 * **Proposed fixes:** Suggested code changes to fix the issue
 * **Autofix options:** Instructions on how to apply the fix - either as a stacked pull request
 
-
-
 ### Why failure grouping matters
 
 Instead of getting 15 separate comments for 15 related test failures, CI Autopilot groups them into a single comment when they share the same root cause. This means one fix can resolve multiple test failures.
-
-
 
 ### What's next?
 

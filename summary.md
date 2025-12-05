@@ -99,31 +99,6 @@
 * [Flaky Tests API](flaky-tests/flaky-tests.md)
 * [Trunk Analytics CLI](flaky-tests/uploader.md)
 
-## CI Autopilot (beta) <a href="#ci-autopilot" id="ci-autopilot"></a>
-
-* [Overview](ci-autopilot/overview.md)
-* [Get Started](ci-autopilot/get-started/README.md)
-  * [Connect to GitHub](ci-autopilot/get-started/connect-to-github.md)
-  * [Upload test reports](ci-autopilot/get-started/upload-test-reports.md)
-* [Use CI Autopilot](ci-autopilot/use-ci-autopilot/README.md)
-  * [Understand root cause analysis](ci-autopilot/use-ci-autopilot/understand-root-cause-analysis.md)
-  * [Request fixes on PRs](ci-autopilot/use-ci-autopilot/request-fixes-on-prs.md)
-  * [Apply fixes with MCP](ci-autopilot/use-ci-autopilot/apply-fixes-with-mcp.md)
-* [Use MCP Server](ci-autopilot/use-mcp-server/README.md)
-  * [Configuration](ci-autopilot/use-mcp-server/configuration/README.md)
-    * [Cursor (IDE)](ci-autopilot/use-mcp-server/configuration/cursor-ide.md)
-    * [GitHub Copilot (IDE)](ci-autopilot/use-mcp-server/configuration/github-copilot-ide.md)
-    * [Claude Code (CLI)](ci-autopilot/use-mcp-server/configuration/claude-code-cli.md)
-    * [Gemini (CLI)](ci-autopilot/use-mcp-server/configuration/gemini-cli.md)
-  * [MCP Tool Reference](ci-autopilot/use-mcp-server/mcp-tool-reference/README.md)
-    * [Get root cause analysis](ci-autopilot/use-mcp-server/mcp-tool-reference/get-root-cause-analysis.md)
-    * [Set up test uploads](ci-autopilot/use-mcp-server/mcp-tool-reference/set-up-test-uploads.md)
-* [Use Dashboard](ci-autopilot/use-dashboard/README.md)
-  * [Review activity](ci-autopilot/use-dashboard/review-activity.md)
-  * [Test Uploads](ci-autopilot/use-dashboard/test-uploads.md)
-  * [Change settings](ci-autopilot/use-dashboard/change-settings.md)
-* [FAQs](ci-autopilot/faqs.md)
-
 ## Setup & Administration
 
 * [Account Setup](setup-and-administration/connecting-to-trunk.md)
@@ -136,6 +111,31 @@
   * [Flaky Tests](flaky-tests/flaky-tests.md)
   * [Merge Queue](references/apis/merge.md)
   * [Webhooks Reference](setup-and-administration/apis/webhooks.md)
+
+## CI Autopilot (beta) <a href="#ci-autopilot" id="ci-autopilot"></a>
+
+* [Overview](ci-autopilot/overview/README.md)
+  * [Get Started](ci-autopilot/overview/get-started/README.md)
+    * [Connect to GitHub](ci-autopilot/overview/get-started/connect-to-github.md)
+    * [Upload test reports](ci-autopilot/overview/get-started/upload-test-reports.md)
+  * [Use CI Autopilot](ci-autopilot/overview/use-ci-autopilot/README.md)
+    * [Understand root cause analysis](ci-autopilot/overview/use-ci-autopilot/understand-root-cause-analysis.md)
+    * [Request fixes on PRs](ci-autopilot/overview/use-ci-autopilot/request-fixes-on-prs.md)
+    * [Apply fixes with MCP](ci-autopilot/overview/use-ci-autopilot/apply-fixes-with-mcp.md)
+  * [Use MCP Server](ci-autopilot/overview/use-mcp-server/README.md)
+    * [Configuration](ci-autopilot/overview/use-mcp-server/configuration/README.md)
+      * [Cursor (IDE)](ci-autopilot/overview/use-mcp-server/configuration/cursor-ide.md)
+      * [GitHub Copilot (IDE)](ci-autopilot/overview/use-mcp-server/configuration/github-copilot-ide.md)
+      * [Claude Code (CLI)](ci-autopilot/overview/use-mcp-server/configuration/claude-code-cli.md)
+      * [Gemini (CLI)](ci-autopilot/overview/use-mcp-server/configuration/gemini-cli.md)
+    * [MCP Tool Reference](ci-autopilot/overview/use-mcp-server/mcp-tool-reference/README.md)
+      * [Get root cause analysis](ci-autopilot/overview/use-mcp-server/mcp-tool-reference/get-root-cause-analysis.md)
+      * [Set up test uploads](ci-autopilot/overview/use-mcp-server/mcp-tool-reference/set-up-test-uploads.md)
+  * [Use Dashboard](ci-autopilot/overview/use-dashboard/README.md)
+    * [Review activity](ci-autopilot/overview/use-dashboard/review-activity.md)
+    * [Test Uploads](ci-autopilot/overview/use-dashboard/test-uploads.md)
+    * [Change settings](ci-autopilot/overview/use-dashboard/change-settings.md)
+* [FAQs](ci-autopilot/faqs.md)
 
 ## Code Quality
 
