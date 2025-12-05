@@ -6,7 +6,7 @@ hidden: true
 
 {% hint style="danger" %}
 **Deprecation Warning**\
-The Trunk Code Quality web app, Code Quality on PRs, and Code Quality Nightly will soon be deprecated. Follow our [migration guide](../setup-and-installation/prevent-new-issues/migration-guide.md) to migrate off these features.
+The Trunk Code Quality web app, Code Quality on PRs, and Code Quality Nightly will soon be deprecated. Follow our [migration guide](../prevent-new-issues/migration-guide.md) to migrate off these features.
 {% endhint %}
 
 Trunk Code Quality can post its results to the [Trunk Code Quality web app](https://app.trunk.io/login?intent=code%20quality). This allows you to view your repository's Code Quality history over time, track quality trends, and browse issues to help prioritize fixes.

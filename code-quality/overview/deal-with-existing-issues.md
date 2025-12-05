@@ -106,7 +106,7 @@ struct FooBar {
 };
 ```
 
-The comment should contain the name of the linter you want to ignore the following line, in this case `clang-tidy` For more complex ignore commands, see [Ignoring Issues](../linters/ignoring-issues-and-files.md).
+The comment should contain the name of the linter you want to ignore the following line, in this case `clang-tidy` For more complex ignore commands, see [Ignoring Issues](linters/ignoring-issues-and-files.md).
 
 Sometimes you may want to ignore entire files or groups of files, such as generated code. To ignore them, use the `ignore` key to your `.trunk/trunk.yaml` file:
 

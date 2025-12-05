@@ -18,7 +18,7 @@ You can also scan all files using `--all`:
 trunk check --all
 ```
 
-[Read our docs for more information on CLI options](setup-and-installation/deal-with-existing-issues.md#fixing-existing-issues).
+[Read our docs for more information on CLI options](deal-with-existing-issues.md#fixing-existing-issues).
 
 ## My linters are failing or not running as expected
 

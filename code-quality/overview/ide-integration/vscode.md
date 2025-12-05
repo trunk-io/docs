@@ -60,7 +60,7 @@ For manual formatting, open the command palette and use `Format Document With...
 
 ### Learn more
 
-Check out how to [install the CLI](../setup-and-installation/), [set it up in CI](../setup-and-installation/initialize-trunk.md), [ignore issues](../linters/ignoring-issues-and-files.md), and set up [Custom Linters](../linters/custom-linters.md).
+Check out how to [install the CLI](../setup-and-installation/), [set it up in CI](../initialize-trunk.md), [ignore issues](../linters/ignoring-issues-and-files.md), and set up [Custom Linters](../linters/custom-linters.md).
 
 ![linter code docs](https://static.trunk.io/assets/vscode_doc_links.png)
 

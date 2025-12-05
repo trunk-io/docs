@@ -14,7 +14,7 @@ We recommend installing the CLI via **NPM** if you’re already using NPM, or us
 
 The easiest way to give everyone access to Trunk is to use the Trunk launcher. The Trunk launcher is a small script that will automatically install and run Trunk when invoked for the first time, similar to other command line tools like the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
 
-You can install the [Trunk Launcher](../cli/getting-started/install.md#the-trunk-launcher) script directly by downloading it through cURL. The launcher script supports both macOS and Linux environments.
+You can install the [Trunk Launcher](cli/getting-started/install.md#the-trunk-launcher) script directly by downloading it through cURL. The launcher script supports both macOS and Linux environments.
 
 {% tabs %}
 {% tab title="bash" %}
@@ -109,7 +109,7 @@ You can then execute trunk as `.\trunk.ps1`.
 
 **Compatibility**
 
-Only some versions of Trunk are compatible with Windows. See the compatibility page for [Windows](../cli/getting-started/compatibility.md) to learn more.
+Only some versions of Trunk are compatible with Windows. See the compatibility page for [Windows](cli/getting-started/compatibility.md) to learn more.
 
 You will also need to install [C and C++ runtime libraries](https://aka.ms/vs/17/release/vc_redist.x64.exe) in order to run some linters.
 
@@ -178,7 +178,7 @@ You will spend most of your time configuring Trunk Code Quality's linter definit
 
 ### Recommended Linters
 
-During initialization, Trunk Code Quality will recommend some linters based on files found in your project. Trunk Code Quality will recommend common linters for your language, but the [full list of supported linters can be found here](../linters/supported/).
+During initialization, Trunk Code Quality will recommend some linters based on files found in your project. Trunk Code Quality will recommend common linters for your language, but the [full list of supported linters can be found here](linters/supported/).
 
 You can enable and disable individual linters by running:
 
@@ -195,7 +195,7 @@ trunk check list
 
 ### IDE Integration
 
-Trunk Code Quality supports [VSCode](../ide-integration/vscode.md) and [Neovim](../ide-integration/neovim.md) through extensions. Using VSCode and Neovim will provide inline linter annotations as you code.
+Trunk Code Quality supports [VSCode](ide-integration/vscode.md) and [Neovim](ide-integration/neovim.md) through extensions. Using VSCode and Neovim will provide inline linter annotations as you code.
 
 ### Move Existing Configs
 
