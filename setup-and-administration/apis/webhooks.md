@@ -14,7 +14,4 @@ Svix generates a reference for all the exposed webhook events. You can find all 
 
 The documentation of each Trunk product contains guides and examples for using webhooks.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Webhooks for Flaky Tests</td><td></td><td></td><td><a href="../../flaky-tests/webhooks/">webhooks</a></td></tr><tr><td>Merge Queue Webhooks</td><td></td><td></td><td><a href="../../merge-queue/webhooks.md">webhooks.md</a></td></tr></tbody></table>
-
-
-
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Webhooks for Flaky Tests</td><td></td><td></td><td><a href="../../flaky-tests/webhooks/">webhooks</a></td></tr><tr><td>Merge Queue Webhooks</td><td></td><td></td><td><a href="../../merge-queue/administration/webhooks.md">webhooks.md</a></td></tr></tbody></table>

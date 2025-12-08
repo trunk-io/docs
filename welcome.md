@@ -45,10 +45,10 @@ In merge queues, each flaky failure blocks multiple PRs—turning minor issues i
 
 #### Merge Queue
 
-* **Parallel queues**: Analyzes which code each PR touches to create independent test lanes for non-overlapping changes—transforming queue bottlenecks from a single line into an efficient graph where unrelated PRs test simultaneously
-* **Intelligent batching with bisection**: Test multiple PRs together in a single CI run (reducing costs up to 90%), with automatic bisection to isolate failures without ejecting entire batches. Caseware processes 4-8 PRs per batch with zero manual intervention, reducing their median merge time from 6 hours to 90 minutes
-* **Scale-tested reliability**: Validated at 250+ PRs/hour over 24-hour periods (6,000+ PRs/day)
 * **Anti-flake protection**: Failed PRs get additional chances to pass as later PRs retest their code—if subsequent PRs (that include the failed code) pass, all merge together without blocking the queue. Combines Optimistic Merging and Pending Failure Depth
+* **Intelligent batching with bisection**: Test multiple PRs together in a single CI run (reducing costs up to 90%), with automatic bisection to isolate failures without ejecting entire batches. Caseware processes 4-8 PRs per batch with zero manual intervention, reducing their median merge time from 6 hours to 90 minutes
+* **Parallel queues**: Analyzes which code each PR touches to create independent test lanes for non-overlapping changes—transforming queue bottlenecks from a single line into an efficient graph where unrelated PRs test simultaneously
+* **Scale-tested reliability**: Validated at 250+ PRs/hour over 24-hour periods (6,000+ PRs/day)
 * **Predictive testing**: Tests each PR against the predicted future state of main (including all PRs ahead in queue), guaranteeing branch stability without endless rebase-retest loops. Faire prevented 20% of main branch failures from green-green conflicts
 * **API & webhook integrations**: Submit PRs programmatically, build custom merge bot, or trigger workflows on queue events. Faire built custom Chrome extensions and automation services using the API to handle unique deployment workflows
 
