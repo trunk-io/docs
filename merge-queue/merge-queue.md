@@ -6,7 +6,7 @@ description: >-
 
 # Overview
 
-If you've hit the limits of GitHub's serial merge queue - master turning red, CI costs spiraling, chaos at scale - Trunk Merge Queue is the enterprise upgrade built for reliability at any scale. Handle your noisiest pipelines, cut CI costs up to 90%, and fire and forget.
+If you've hit the limits of GitHub's serial merge queue - main turning red, CI costs spiraling, chaos at scale - Trunk Merge Queue is the enterprise upgrade built for reliability at any scale. Handle your noisiest pipelines, cut CI costs up to 90%, and fire and forget.
 
 ***
 
@@ -61,34 +61,6 @@ Trunk Merge Queue solves three critical problems that break traditional workflow
 * Priority merging
 
 → Explore [parallel queues](optimizations/parallel-queues/)
-
-***
-
-### Key capabilities - confirm these are in secitons above
-
-#### Core functionality
-
-* **Predictive testing** - Test against future state of main (always on)
-* **Automatic merging** - No manual intervention required
-* **Failure isolation** - Bad PRs caught before reaching main
-
-#### Performance optimizations
-
-* **Batching** - Test multiple PRs together (60-80% faster, up to 90% less CI cost)
-* **Parallel queues** - Test non-overlapping changes simultaneously (monorepos)
-* **Optimistic merging** - Start next PR before current completes (20-30% faster)
-* **Priority merging** - Fast-track urgent PRs
-
-#### Quality features
-
-* **Anti-flake protection** - Automatically retry flaky test failures
-* **Pending failure depth** - Continue testing other PRs when failures occur
-
-#### Integrations
-
-* **Slack** - Real-time notifications
-* **Webhooks** - Integrate with any tool
-* **Metrics** - Track performance and ROI
 
 ***
 
