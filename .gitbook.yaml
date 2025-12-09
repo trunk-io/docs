@@ -249,3 +249,31 @@ redirects:
   code-quality/overview: code-quality/code-quality.md
   code-quality: code-quality/code-quality.md
   flaky-tests: flaky-tests/flaky-tests.md
+
+  merge-queue/set-up-trunk-merge: merge-queue/getting-started.md
+
+  merge-queue/concepts-and-optimizations: merge-queue/optimizations/README.md
+  merge-queue/concepts-and-optimizations/parallel-queues: merge-queue/optimizations/parallel-queues/README.md
+  merge-queue/concepts-and-optimizations/optimistic-merging: merge-queue/optimizations/optimistic-merging.md
+  merge-queue/concepts-and-optimizations/batch-merging: merge-queue/optimizations/batching.md
+  merge-queue/concepts-and-optimizations/pending-failure-depth: merge-queue/optimizations/pending-failure-depth.md
+  merge-queue/concepts-and-optimizations/predictive-testing: merge-queue/optimizations/predictive-testing.md
+
+  merge-queue/concepts/parallel-queues: merge-queue/optimizations/parallel-queues/README.md
+  merge-queue/concepts/optimistic-merging: merge-queue/optimizations/optimistic-merging.md
+  merge-queue/concepts/batch-merging: merge-queue/optimizations/batching.md
+  merge-queue/concepts/pending-failure-depth: merge-queue/optimizations/pending-failure-depth.md
+  merge-queue/concepts/predictive-testing: merge-queue/optimizations/predictive-testing.md
+
+  merge-queue/managing-merge-queue/advanced-settings: /merge-queue/optimizations/README.md
+  merge-queue/managing-merge-queue/reference: merge-queue/using-the-queue/reference.md
+  merge-queue/set-up-trunk-merge/branch-protection-and-required-status-checks: merge-queue/getting-started/configure-branch-protection.md
+  merge-queue/set-up-trunk-merge/integration-for-slack: merge-queue/administration/integration-for-slack.md
+
+  merge-queue/managing-merge-queue/metrics: merge-queue/administration/metrics.md
+  merge-queue/webhooks: merge-queue/administration/webhooks.md
+  merge-queue/concepts-and-optimizations/pr-prioritization: merge-queue/optimizations/priority-merging.md
+  merge-queue/managing-merge-queue: merge-queue/using-the-queue/reference.md
+  merge-queue/managing-merge-queue/using-the-webapp: merge-queue/using-the-queue/reference.md
+
+  merge-queue/references/apis/merge: merge-queue/administration/merge.md
