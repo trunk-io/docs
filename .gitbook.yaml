@@ -256,6 +256,7 @@ redirects:
   merge-queue/concepts-and-optimizations/parallel-queues: merge-queue/optimizations/parallel-queues/README.md
   merge-queue/concepts-and-optimizations/optimistic-merging: merge-queue/optimizations/optimistic-merging.md
   merge-queue/concepts-and-optimizations/batch-merging: merge-queue/optimizations/batching.md
+  merge-queue/concepts-and-optimizations/batching: /merge-queue/optimizations/batching.md
   merge-queue/concepts-and-optimizations/pending-failure-depth: merge-queue/optimizations/pending-failure-depth.md
   merge-queue/concepts-and-optimizations/predictive-testing: merge-queue/optimizations/predictive-testing.md
 
@@ -277,3 +278,4 @@ redirects:
   merge-queue/managing-merge-queue/using-the-webapp: merge-queue/using-the-queue/reference.md
 
   merge-queue/references/apis/merge: merge-queue/administration/merge.md
+  
