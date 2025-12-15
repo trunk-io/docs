@@ -250,7 +250,7 @@ redirects:
   code-quality: code-quality/code-quality.md
   flaky-tests: flaky-tests/flaky-tests.md
 
-  merge-queue/set-up-trunk-merge: merge-queue/getting-started.md
+  merge-queue/set-up-trunk-merge: merge-queue/getting-started/README.md
 
   merge-queue/concepts-and-optimizations: merge-queue/optimizations/README.md
   merge-queue/concepts-and-optimizations/parallel-queues: merge-queue/optimizations/parallel-queues/README.md
