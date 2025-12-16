@@ -4,7 +4,7 @@ description: A guide for generating Trunk-compatible test reports for Testplan
 
 # Testplan
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your projects running  Testplan by integrating with Trunk. This document explains how to configure Testplan to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection.md) in your projects running Testplan by integrating with Trunk. This document explains how to configure Testplan to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
@@ -81,10 +81,55 @@ pool = ThreadPool(name="MyPool", allow_task_rerun=False)
 
 You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
-```sh
-curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
-./trunk flakytests validate --junit-paths "junit-reports/*.xml"
+{% tabs %}
+{% tab title="Linux (x64)" %}
+```bash
+SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
+curl -fL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+  | tar -xz
+
+chmod +x trunk-analytics-cli
+./trunk-analytics-cli validate --junit-paths "junit-reports/*.xml"
 ```
+{% endtab %}
+
+{% tab title="Linux (arm64)" %}
+```bash
+SKU="trunk-analytics-cli-aarch64-unknown-linux.tar.gz"
+curl -fL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+  | tar -xz
+
+chmod +x trunk-analytics-cli
+./trunk-analytics-cli validate --junit-paths "junit-reports/*.xml"
+```
+{% endtab %}
+
+{% tab title="macOS (arm64)" %}
+```bash
+SKU="trunk-analytics-cli-aarch64-apple-darwin.tar.gz"
+curl -fL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+  | tar -xz
+
+chmod +x trunk-analytics-cli
+./trunk-analytics-cli validate --junit-paths "junit-reports/*.xml"
+```
+{% endtab %}
+
+{% tab title="macOS (x64)" %}
+```bash
+SKU="trunk-analytics-cli-x86_64-apple-darwin.tar.gz"
+curl -fL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+  | tar -xz
+
+chmod +x trunk-analytics-cli
+./trunk-analytics-cli validate --junit-paths "junit-reports/*.xml"
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 **This will not upload anything to Trunk**. To improve detection accuracy, you should **address all errors and warnings** before proceeding to the next steps.
@@ -97,7 +142,7 @@ Before modifying your CI jobs to automatically upload test results to Trunk, try
 You make an upload to Trunk using the following command:
 
 ```sh
-./trunk flakytests upload --junit-paths "junit-reports/*.xml" \
+./trunk-analytics-cli upload --junit-paths "junit-reports/*.xml" \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```

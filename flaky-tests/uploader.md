@@ -1,6 +1,6 @@
 # Trunk Analytics CLI
 
-Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Trunk Analytics CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.&#x20;
+Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Trunk Analytics CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.
 
 ### Guides
 
@@ -8,14 +8,11 @@ If you're setting up Trunk Flaky Tests for the first time, you can follow the gu
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guides by Test Frameworks</td><td></td><td></td><td><a href="get-started/frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="get-started/ci-providers/">ci-providers</a></td></tr></tbody></table>
 
-
-
-The CLI should be **downloaded as part of your test workflow** in your CI system. The automatic launcher is platform agnostic and will download the latest version of the uploader for your platform.&#x20;
+The CLI should be **downloaded as part of your test workflow** in your CI system. The automatic launcher is platform agnostic and will download the latest version of the uploader for your platform.
 
 ### Manual Download
 
-You can find the list of releases on [the GitHub release page](https://github.com/trunk-io/analytics-cli/releases). We provide executables for Linux and OS X. It’s a single file inside a tar and upon downloading the tar you will find a single binary - `trunk-analytics-cli` to use.\
-
+You can find the list of releases on [the GitHub release page](https://github.com/trunk-io/analytics-cli/releases). We provide executables for Linux and OS X. It’s a single file inside a tar and upon downloading the tar you will find a single binary - `trunk-analytics-cli` to use.
 
 {% tabs %}
 {% tab title="Linux (x64)" %}
@@ -65,9 +62,9 @@ chmod +x trunk-analytics-cli
 
 ### Organization Slug and Token
 
-The CLI requires your Trunk organization slug and token passed through `--org-url-slug` and `--token` to upload results to the correct organzation.&#x20;
+The CLI requires your Trunk organization slug and token passed through `--org-url-slug` and `--token` to upload results to the correct organzation.
 
-You can find your organization slug and token by going to **Settings** > **Manage** > **Organization**.&#x20;
+You can find your organization slug and token by going to **Settings** > **Manage** > **Organization**.
 
 {% tabs %}
 {% tab title="Slug" %}
@@ -76,8 +73,6 @@ You can find your organization slug and token by going to **Settings** > **Manag
 
 {% tab title="Token" %}
 <figure><picture><source srcset="../.gitbook/assets/org-token-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/org-token-light.png" alt=""></picture><figcaption><p>Ensure you get your <em>Organization API Token</em>, <em><strong>not your repo token</strong></em>.</p></figcaption></figure>
-
-
 {% endtab %}
 {% endtabs %}
 
@@ -123,7 +118,7 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 
 ### Running and Quarantining Tests
 
-You can also execute tests and upload results to Trunk in a single step using the `test` command to **wrap** your test command.&#x20;
+You can also execute tests and upload results to Trunk in a single step using the `test` command to **wrap** your test command.
 
 This is especially useful for [Quarantining](quarantining.md), where the Trunk CLI will **override the exit code** of the test command if all failures can be quarantined, **preventing** flaky tests from failing your builds in CI.
 
@@ -195,7 +190,7 @@ Navigate to https://app.trunk.io/onboarding?intent=flaky+tests to continue using
 
 ### Using custom CI systems
 
-The CLI is preconfigured to work with a set [ci-providers](get-started/ci-providers/ "mention") but can be used with any CI system by passing [#environment-variables](get-started/ci-providers/otherci.md#environment-variables "mention")  to the uploader.&#x20;
+The CLI is preconfigured to work with a set [ci-providers](get-started/ci-providers/ "mention") but can be used with any CI system by passing [#environment-variables](get-started/ci-providers/otherci.md#environment-variables "mention") to the uploader.
 
 > More information on using [otherci.md](get-started/ci-providers/otherci.md "mention") is documented here.
 
@@ -206,7 +201,7 @@ The `trunk` command-line tool can upload and analyze test results. The `trunk-an
 | Command                              | Description                                                                                                                                                                                         |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `trunk-analytics-cli upload`         | Upload data to Trunk Flaky Tests.                                                                                                                                                                   |
-|  `trunk-analytics-cli validate`      | Validates if the provided JUnit XML files and prints any errors.                                                                                                                                    |
+| `trunk-analytics-cli validate`       | Validates if the provided JUnit XML files and prints any errors.                                                                                                                                    |
 | `trunk-analytics-cli test <COMMAND>` | Runs tests using the provided command, uploads results, checks whether the failures are [quarantined](quarantining.md#using-the-trunk-cli-directly) tests, and correct the exit code based on that. |
 
 The `upload` and `test` commands accept the following options:
@@ -214,13 +209,11 @@ The `upload` and `test` commands accept the following options:
 <table><thead><tr><th width="265">Argument</th><th>Description</th></tr></thead><tbody><tr><td><code>--junit-paths &#x3C;JUNIT_PATHS></code></td><td>Path to the test output files. File globs are supported. Remember to wrap globs in <code>""</code> quotes</td></tr><tr><td><code>--bazel-bep-path &#x3C;BEP_JSON_PATH></code></td><td>Path to a JSON serialized <a href="https://bazel.build/remote/bep">Bazel Build Event Protocol</a>. Trunk will use the BEP file to locate test reports. Your test frameworks must still output <a href="get-started/frameworks/">compatible report formats</a>.</td></tr><tr><td><code>--xcresult-path &#x3C;XCRESULT_PATH></code></td><td>Path to a <code>.xcresult</code> directory, which contains test reports from <code>xcodebuild</code>.</td></tr><tr><td><code>--org-url-slug &#x3C;ORG_URL_SLUG></code></td><td>Trunk Organization slug, from the Settings page.</td></tr><tr><td><code>--token &#x3C;TOKEN></code></td><td>Trunk Organization (not repo) token, from the Settings page. Defaults to the <code>TRUNK_API_TOKEN</code> variable.</td></tr><tr><td><code>-h, --help</code></td><td>Additional detailed description of the <code>upload</code> command.</td></tr><tr><td><code>--repo-root</code></td><td>Path to the repository root. Defaults to the current directory.</td></tr><tr><td><code>--repo-url &#x3C;REPO_URL></code></td><td>Value to override URL of repository. <strong>Optional</strong>.</td></tr><tr><td><code>--repo-head-sha</code> <code>&#x3C;REPO_HEAD_SHA></code></td><td>Value to override SHA of repository head. <strong>Optional</strong>.</td></tr><tr><td><code>--repo-head-branch &#x3C;REPO_HEAD_BRANCH></code></td><td>Value to override branch of repository head. <strong>Optional</strong>.</td></tr><tr><td><code>--repo-head-commit-epoch &#x3C;REPO_HEAD_COMMIT_EPOCH></code></td><td>Value to override commit epoch of repository head. <strong>Optional</strong>.</td></tr><tr><td><code>--codeowners-path &#x3C;CODEOWNERS_PATH></code></td><td>Value to override CODEOWNERS file or directory path. <strong>Optional</strong>.</td></tr><tr><td><code>--allow-empty-test-results</code></td><td>Don't fail commands if test results are empty or missing. Use it when you sometimes skip all tests for certain CI jobs. Defaults to <code>true</code>.</td></tr><tr><td><code>--variant &#x3C;VARIANT_NAME></code></td><td>Upload tests to a specific variant group. <strong>Optional</strong>.</td></tr><tr><td><code>--test-process-exit-code</code> <code>&#x3C;EXIT_CODE></code></td><td>Specify the exit code of the test previously run. This is used by the upload command to identify errors that happen outside of the context of the test execution (such as build errors).</td></tr></tbody></table>
 
 {% hint style="info" %}
-#### Memory Overhead
+**Memory Overhead**
 
 Running tests via `trunk-analytics-cli test` adds negligible memory overhead.
 
 This subcommand is a thin wrapper around your existing test command and doesn't modify or parallelize test execution.
-
-
 
 During execution, it simply:
 
