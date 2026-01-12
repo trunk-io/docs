@@ -211,7 +211,7 @@ Whether or not GitHub slash commands like `/trunk merge` are enabled for this me
 
 ## Connect with Slack
 
-[Connect Trunk Merge Queue to Slack](integration-for-slack.md) to receive real-time notifications about queue activity in a designated channel. After connecting, you can choose which events trigger notifications.
+[Connect Trunk Merge Queue to Slack](../integration-for-slack.md) to receive real-time notifications about queue activity in a designated channel. After connecting, you can choose which events trigger notifications.
 
 **Available notifications include:**
 
