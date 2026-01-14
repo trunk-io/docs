@@ -19,7 +19,7 @@ By the end of this guide, you should achieve the following.
 * [ ] Configure GitHub Actions to upload to Trunk
 * [ ] Validate your uploads in Trunk
 
-After completing these checklist items, you'll be integrated with Trunk.&#x20;
+After completing these checklist items, you'll be integrated with Trunk.
 
 ### Trunk Organization Slug and Token
 
@@ -68,14 +68,13 @@ jobs:
         run: ...
 
       - name: Upload Test Results to Trunk.io
-        if: \${{ !cancelled() }} # Upload the results even if the tests fail
+        if: ${{ !cancelled() }} # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
         uses: trunk-io/analytics-uploader@v1
         with:
           junit-paths: **/junit.xml        
           org-slug: <TRUNK_ORG_SLUG>
           token: ${{ secrets.TRUNK_TOKEN }}
-
 ```
 {% endtab %}
 
@@ -91,7 +90,7 @@ jobs:
         run: ...
 
       - name: Upload Test Results to Trunk.io
-        if: \${{ !cancelled() }} # Upload the results even if the tests fail
+        if: ${{ !cancelled() }} # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
         uses: trunk-io/analytics-uploader@v1
         with:
@@ -113,7 +112,7 @@ jobs:
         run: ...
 
       - name: Upload Test Results to Trunk.io
-        if: \${{ !cancelled() }} # Upload the results even if the tests fail
+        if: ${{ !cancelled() }} # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
         uses: trunk-io/analytics-uploader@v1
         with:
@@ -139,6 +138,102 @@ jobs:
 {% endtabs %}
 
 See the [GitHub Actions Reference page](https://github.com/trunk-io/analytics-uploader) for all available CLI arguments and usage.
+
+#### Enable quarantining
+
+You can quarantine flaky tests by wrapping the test command or as a follow-up step.
+
+{% tabs %}
+{% tab title="GitHub Actions Workflow" %}
+{% hint style="warning" %}
+Using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, may need modifications to your workflow files to support quarantining.
+
+If you upload your test results as a second step after you run your tests, **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures.
+{% endhint %}
+
+Here's an example file.
+
+<pre class="language-yaml" data-line-numbers><code class="lang-yaml">name: Run Tests And Upload Results
+on:
+  workflow_dispatch:
+jobs:
+  upload-test-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:   
+    - name: Run Tests
+      id: unit_tests
+      shell: bash
+<strong>      run: &#x3C;COMMAND TO RUN TESTS> # command to run tests goes here
+</strong><strong>      continue-on-error: true # ensure CI job continues to upload step on errors
+</strong>        
+    - name: Upload test results
+      if: always()
+      uses: trunk-io/analytics-uploader@v1
+      with:
+        junit-paths: &#x3C;TEST OUTPUT PATH>
+        org-slug: my-trunk-org-slug
+        token: ${{ secrets.TRUNK_API_TOKEN }}
+</code></pre>
+
+If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter.
+
+This will override the response code of the test command. Make sure to set `continue-on-error: false` so un-quarantined tests are blocking.
+
+<pre class="language-yaml" data-line-numbers><code class="lang-yaml">name: Run Tests And Upload Results
+on:
+  workflow_dispatch:
+jobs:
+  upload-test-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run tests and upload results
+        uses: trunk-io/analytics-uploader@v1
+        with:
+          junit-paths: &#x3C;TEST OUTPUT PATH>
+<strong>          run: &#x3C;COMMAND TO RUN TESTS> # command to run tests goes here
+</strong>          org-slug: my-trunk-org-slug
+          token: ${{ secrets.TRUNK_API_TOKEN }}
+</code></pre>
+{% endtab %}
+
+{% tab title="Using The Trunk CLI Directly" %}
+**Using Flaky Tests as a separate step**
+
+{% hint style="warning" %}
+If you upload your test results as a second step after you run your tests, you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests.&#x20;
+
+When quarantining is enabled, the `flakytests upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
+{% endhint %}
+
+<pre class="language-bash"><code class="lang-bash"><strong>&#x3C;run my tests> || true # doesn't fail job on failure
+</strong>|
+    ./trunk flakytests upload \
+        --org-url-slug $TRUNK_ORG_SLUG \
+        --token $TRUNK_API_TOKEN \
+        --junit-paths $JUNIT_PATH
+</code></pre>
+
+**Using Flaky Tests as a single step**
+
+You can also wrap the test command with the Trunk CLI. When wrapping the command with the Trunk CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code `0`.
+
+{% code overflow="wrap" %}
+```bash
+./trunk flakytests test \
+    --org-url-slug <TRUNK_ORG_SLUG> \
+    --token $TRUNK_API_TOKEN \
+    --junit-paths $JUNIT_PATH \
+    --allow-empty-test-results \
+    <Test Command>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 #### Stale files
 
