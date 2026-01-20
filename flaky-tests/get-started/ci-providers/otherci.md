@@ -56,7 +56,7 @@ The following is an example of a script to upload test results after your tests 
 To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
 
 <pre class="language-sh"><code class="lang-sh">curl -fsSLO --retry 3 https://trunk.io/releases/trunk &#x26;&#x26; chmod +x trunk
-<strong>./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug &#x3C;TRUNK_ORG_SLUG> --token "${TRUNK_TOKEN}"
+<strong>./trunk-analytics-cli upload --junit-paths "**/report.xml" --org-url-slug &#x3C;TRUNK_ORG_SLUG> --token "${TRUNK_TOKEN}"
 </strong></code></pre>
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.

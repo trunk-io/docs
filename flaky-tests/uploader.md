@@ -99,7 +99,7 @@ Trunk can accept JUnit XMLs through the `--junit-paths` argument:
 Trunk can accept Bazel through the `--bazel-bep-path` argument:
 
 ```
-./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> \
+./trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -109,7 +109,7 @@ Trunk can accept Bazel through the `--bazel-bep-path` argument:
 Trunk can accept XCode through the `--xcresult-path` argument:
 
 ```
-./trunk flakytests upload --xcresult-path <XCRESULT_PATH> \
+./trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
