@@ -94,6 +94,7 @@
 * [Flaky test detection](flaky-tests/detection.md)
 * [The Importance of PR Test Results](flaky-tests/the-importance-of-pr-test-results.md)
 * [Quarantining](flaky-tests/quarantining.md)
+* [Quarantine Service Availability](flaky-tests/quarantine-service-availability.md)
 * [Pull request comments](flaky-tests/github-pull-request-comments.md)
 * [Ticketing integrations](flaky-tests/ticketing-integrations/README.md)
   * [Jira integration](flaky-tests/ticketing-integrations/jira-integration.md)
@@ -106,7 +107,6 @@
   * [Linear integration](flaky-tests/webhooks/linear-integration.md)
 * [Flaky Tests API](flaky-tests/flaky-tests.md)
 * [Trunk Analytics CLI](flaky-tests/uploader.md)
-* [Service Availability](flaky-tests/service-availability.md)
 
 ## Setup & Administration
 

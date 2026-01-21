@@ -1,18 +1,16 @@
-# Service Availability
+# Quarantine Service Availability
 
 ### Service Availability and Graceful Degradation
 
-Trunk's CLI is designed to fail safe when our quarantine service is unavailable. Your CI pipeline's integrity is never compromised by Trunk outages.
+[Trunk Analytics CLI](uploader.md) is designed to fail safe when our quarantine service is unavailable. Your CI pipeline's integrity is never compromised by Trunk outages.
 
 #### What happens if Trunk is unreachable?
 
-When the CLI cannot fetch quarantine configuration from Trunk's API:
-
-
+When Trunk Analytics CLI cannot fetch quarantine configuration from Trunk's API:
 
 1. **Your original test exit code is preserved** — if tests fail, your CI fails
 2. **No tests are quarantined** — failed tests are reported as failures, not suppressed
-3. **A warning is displayed** in the CLI output:
+3. **A warning is displayed** in Trunk Analytics CLI output:
 
 > We were unable to determine the quarantine status for tests. Any failing tests will be reported as failures.
 
@@ -30,4 +28,4 @@ We prioritize avoiding false positives over convenience. If Trunk is down, we'd 
 
 #### Caching behavior
 
-The CLI does not cache quarantine configuration locally. Each invocation requires a successful API call to apply quarantining. This ensures you're always operating on the freshest quarantine state rather than potentially stale data.
+Trunk Analytics CLI does not cache quarantine configuration locally. Each invocation requires a successful API call to apply quarantining. This ensures you're always operating on the freshest quarantine state rather than potentially stale data.
