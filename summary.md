@@ -106,6 +106,7 @@
   * [Linear integration](flaky-tests/webhooks/linear-integration.md)
 * [Flaky Tests API](flaky-tests/flaky-tests.md)
 * [Trunk Analytics CLI](flaky-tests/uploader.md)
+* [Service Availability](flaky-tests/service-availability.md)
 
 ## Setup & Administration
 
@@ -113,7 +114,6 @@
 * [Managing your Organization](setup-and-administration/managing-your-organization.md)
 * [Trunk GitHub App](setup-and-administration/github-app-permissions.md)
 * [Support](setup-and-administration/support.md)
-* [Service Availability](setup-and-administration/service-availability.md)
 * [Billing and plans](setup-and-administration/billing.md)
 * [Security](setup-and-administration/security.md)
 * [API Reference](setup-and-administration/apis/README.md)
