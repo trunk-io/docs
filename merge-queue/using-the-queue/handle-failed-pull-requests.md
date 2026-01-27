@@ -47,7 +47,7 @@ The PR Details panel has a dropdown "**Actions"** menu, where you can:
 1. **Restart tests.** Use this to manually restart testing of this PR.
 2. **Remove from queue**. If the PR is "Queued", then it will cancel it, preventing it from going into the queue until it is re-queued. If the PR is currently in the queue, it will be removed from the queue, which will restart all PRs that depended on it.
 
-Trunk Merge Queue will automatically restart failed PRs when it can under certain conditions (see PR states). Since the restart is usually from a failed PR being removed from the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click thee **Actions** dropdown, and select **Restart**
+Trunk Merge Queue will automatically restart failed PRs when it can under certain conditions (see PR states). Since the restart is usually from a failed PR being removed from the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click the **Actions** dropdown, and select **Restart**
 
 <figure><img src="../../.gitbook/assets/merge-pr-details-action (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -65,6 +65,6 @@ A tabulated view of all the items that have failed in the Merge Queue, e.g. due 
 
 ### Retry failed pull requests
 
-When a PR has been dropped from the queue, you can manually retry the PR by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click thee **Actions** dropdown, and select **Retry**
+When a PR has been dropped from the queue, you can manually retry the PR by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click the **Actions** dropdown, and select **Retry**
 
 <figure><img src="../../.gitbook/assets/merge-failure-retry.png" alt=""><figcaption><p>Re-queue a PR if it is currently not in the queue that has failed or been cancelled.</p></figcaption></figure>
