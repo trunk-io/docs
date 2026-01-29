@@ -12,7 +12,7 @@ description: Need help with Trunk?
 
 #### Support availability
 
-* Business Hours: 9:00 AM - 5:00 PM PST, Monday through Friday
+* Business Hours: 6:00 AM - 6:00 PM PST, Monday through Friday
 * Critical Issue Monitoring: 24/7 coverage for production-impacting incidents
 
 #### Response time commitments
