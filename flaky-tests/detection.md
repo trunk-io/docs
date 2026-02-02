@@ -103,11 +103,11 @@ Variant names are displayed in brackets next to test names in your dashboard:
 
 Trunk classifies all tests into one of three categories based on the history of each test:
 
-<table><thead><tr><th width="178">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
+<table><thead><tr><th width="178">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr><tr><td>Skipped</td><td>With <a href="infrastructure-failure-protection.md">Infrastructure Failure Detection</a> enabled, this tests did not pass threshold of failed tests.</td></tr></tbody></table>
 
 ### Override test status
 
-If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status.  Tests can be manually marked as "Flaky" or "Healthy"&#x20;
+If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status. Tests can be manually marked as "Flaky" or "Healthy"
 
 <figure><img src="../.gitbook/assets/manual-test-mark.png" alt=""><figcaption></figcaption></figure>
 

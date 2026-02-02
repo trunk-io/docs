@@ -92,6 +92,7 @@
 * [Managing detected flaky tests](flaky-tests/managing-detected-flaky-tests.md)
 * [Dashboard](flaky-tests/dashboard.md)
 * [Flaky test detection](flaky-tests/detection.md)
+* [Infrastructure Failure Protection](flaky-tests/infrastructure-failure-protection.md)
 * [The Importance of PR Test Results](flaky-tests/the-importance-of-pr-test-results.md)
 * [Quarantining](flaky-tests/quarantining.md)
 * [Quarantine Service Availability](flaky-tests/quarantine-service-availability.md)
