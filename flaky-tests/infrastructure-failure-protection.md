@@ -38,7 +38,7 @@ When a test upload is excluded due to infrastructure failure protection:
 
 **Uploads are still recorded:**
 
-* The upload appears in the Uploads tab with "Upload Skipped Due to Infrastructure Error" [status](detection.md#test-status)
+* The upload appears in the Uploads tab with "Upload Skipped Due to Infrastructure Error" status
 
 **Failures are excluded from analysis:**
 
