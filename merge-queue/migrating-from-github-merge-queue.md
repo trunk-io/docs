@@ -20,7 +20,7 @@ Note that only users with admin permissions can manage merge queues for pull req
 
 ### Enable Trunk Merge Queue
 
-Follow the [Quickstart guide](set-up-trunk-merge/) to setup your repo with Trunk Merge Queue and configure the [settings](administration/advanced-settings.md) for your repository.
+Follow the [Getting Started](getting-started/) to setup your repo with Trunk Merge Queue and configure the [settings](administration/advanced-settings.md) for your repository.
 
 ***
 
