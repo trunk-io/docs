@@ -122,6 +122,61 @@ Read more about [Trunk's implementation of Parallel merge queues](../optimizatio
 
 ***
 
+## Merge Method
+
+Choose how your PRs get merged into the target branch. Options are Squash (default), Merge Commit, or Rebase.
+
+<figure><img src="../../.gitbook/assets/SCR-20260202-obcl.png" alt=""><figcaption></figcaption></figure>
+
+### Available Methods
+
+**Squash** (default)
+
+* Combines all commits from the PR into a single commit on the target branch
+* Creates a clean, linear history with one commit per feature
+* The commit message is generated from the PR's title and description
+* Best for: Teams that prefer a clean history with one commit per logical change
+
+**Merge Commit**
+
+* Preserves all individual commits from the PR
+* Creates an additional merge commit to mark the integration
+* Maintains complete commit history from feature branches
+* Best for: Teams that want to preserve detailed development history and commit attribution
+
+**Rebase**
+
+* Replays all commits from the PR on top of the target branch
+* Creates a linear history without merge commits
+* Each commit from the PR appears individually in the target branch's history
+* Best for: Teams that want a linear history while preserving individual commits
+
+### Changing the Merge Method
+
+You can change your merge method at any time:
+
+1. Navigate to **Merge Queue** tab **>** repository **> Settings**
+2. Find the **Merge Method** dropdown
+3. Select your preferred method: Squash, Merge Commit, or Rebase
+4. The new method will apply to all PRs merged after the change
+
+{% hint style="info" %}
+**Note:** Changing the merge method only affects future merges. PRs already merged will retain their original merge method.
+{% endhint %}
+
+### Considerations
+
+* **Commit History Style**: Choose the method that matches your team's Git workflow preferences
+* **Traceability**: Merge commits and rebase preserve more commit-level detail than squash
+* **Repository Size**: Squash merging can help keep repository history more concise
+* **Existing Workflows**: Match your existing GitHub merge button preferences for consistency across your team
+
+The merge method is configured per repository, so different repositories in your organization can use different methods based on their needs.
+
+
+
+***
+
 ## Testing concurrency
 
 > Testing concurrency can be set to any value, options are **5 (average)**, **25 (high)**, **50 (very high),** and **Custom**.

@@ -38,15 +38,31 @@ Most likely, you did not set up the required status checks to trigger for `trunk
 
 <summary>Can I choose the merge strategy for my pull requests?</summary>
 
-No, Trunk Merge Queue exclusively uses a **squash merge** for all pull requests. It is not currently possible to select a different merge strategy like rebase or a standard merge commit on a per-PR basis.
+Yes! Trunk Merge Queue supports three merge methods:
+
+* **Squash** (default) - Combines all commits into a single commit
+* **Merge Commit** - Preserves all individual commits and creates a merge commit
+* **Rebase** - Replays commits on top of main for a linear history
+
+The merge method is configured at the repository level in Settings > Repositories > \[your repository] > Merge Queue. All PRs merged through the queue will use the selected method.
+
+{% hint style="info" %}
+**Note:** The merge method applies to the entire repository, not on a per-PR basis. See [Merge Method documentation](https://docs.trunk.io/merge-queue/administration/advanced-settings#merge-method) for detailed information on each option and how to configure your preference.
+{% endhint %}
 
 </details>
 
 <details>
 
-<summary>How is the squash-merge commit message determined?</summary>
+<summary>How does Trunk handle commit messages</summary>
 
-The commit message for the squashed commit is automatically generated from the **pull request's title and description**, which is the default behavior provided by GitHub.
+Commit messages depend on your configured merge method:
+
+* **Squash** (default): The commit message is automatically generated from the pull request's title and description, following GitHub's default behavior
+* **Merge Commit**: Preserves all individual commit messages from the PR and creates an additional merge commit message
+* **Rebase**: Preserves all individual commit messages from the PR as they are replayed onto the target branch
+
+You can configure your preferred merge method in [Advanced Settings](../administration/advanced-settings.md#merge-method).
 
 </details>
 
