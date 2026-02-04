@@ -36,7 +36,7 @@ A good place to start is with the defaults, Maximum wait time set to 0 (zero) an
 
 When a batch fails, Trunk automatically splits it apart (bisects) to identify which PR caused the failure. You can configure a separate, higher concurrency limit specifically for these bisection tests to isolate failures faster without impacting your main queue.
 
-!\[Screenshot showing bisection testing concurrency settings]
+<figure><img src="../../.gitbook/assets/1768426960-batching-settings.avif" alt=""><figcaption></figcaption></figure>
 
 #### Why Separate Bisection Concurrency?
 
