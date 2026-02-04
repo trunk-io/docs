@@ -239,8 +239,106 @@ You can also wrap the test command with the Trunk CLI. When wrapping the command
 
 Ensure you report every test run in CI and **clean up stale files** produced by your test framework. If you're reusing test runners and using a glob like `**/junit.xml` to upload tests, stale files not cleaned up will be included in the current test run, throwing off detection of flakiness. You should clean up all your results files after every upload step.
 
-{% hint style="success" %}
-**Have questions?**
+### Getting Direct Links to Job Logs
 
-Join us and 1500+ fellow engineers [on Slack](https://slack.trunk.io/) to get help with Trunk.
+{% hint style="info" %}
+**Direct Links to Job Logs is an optional configuration, and relies on a** [**third-party actions dependency**](https://github.com/marketplace/actions/get-action-job-id)**.**
 {% endhint %}
+
+By default, Trunk Flaky Tests links to your overall workflow run when you click "Logs" on a test failure. However, GitHub Actions makes it difficult to get a direct link to the specific job where the test ran.
+
+If you want **direct links to individual job logs** instead of the workflow run, you can manually set the `JOB_URL` environment variable using a third-party action to extract the job ID.
+
+#### Setup
+
+1. **Add the job ID extraction step** to your workflow using a community action:
+
+<pre class="language-yaml"><code class="lang-yaml">jobs:  
+  run_tests:
+    runs-on: ubuntu-latest
+    name: Run Tests  # This name is important - use it in the next step
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+<strong>      # Extract the job ID
+</strong><strong>      - name: Get Job ID
+</strong><strong>        id: get-job-id
+</strong><strong>        uses: ayachensiyuan/get-action-job-id@v1.6
+</strong><strong>        env:
+</strong><strong>          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+</strong><strong>        with:
+</strong><strong>          job-name: Run Tests  # Must match the job 'name' above
+</strong></code></pre>
+
+2. **Pass the job URL** when uploading test results:
+
+<pre class="language-yaml"><code class="lang-yaml">      - name: Run Tests
+        id: unit_tests
+        run: &#x3C;COMMAND TO RUN TESTS>
+        continue-on-error: true
+        
+      - name: Upload test results
+        if: always()
+        uses: trunk-io/analytics-uploader@v1
+        with:
+          junit-paths: &#x3C;TEST OUTPUT PATH>
+          org-slug: my-trunk-org-slug
+          token: ${{ secrets.TRUNK_API_TOKEN }}
+<strong>        env:
+</strong><strong>          JOB_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ steps.get-job-id.outputs.jobId }}
+</strong></code></pre>
+
+#### Complete Example
+
+Here's a full workflow example with direct job linking:
+
+```yaml
+name: Run Tests And Upload Results
+on:
+  push:
+  pull_request:
+
+jobs:  
+  test-suite:
+    runs-on: ubuntu-latest
+    name: Test Suite
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Get Job ID
+        id: get-job-id
+        uses: ayachensiyuan/get-action-job-id@v1.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          job-name: Test Suite
+        
+      - name: Run Tests
+        run: npm test
+        continue-on-error: true
+        
+      - name: Upload test results
+        if: always()
+        uses: trunk-io/analytics-uploader@v1
+        with:
+          junit-paths: junit.xml
+          org-slug: my-trunk-org-slug
+          token: ${{ secrets.TRUNK_API_TOKEN }}
+        env:
+          JOB_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ steps.get-job-id.outputs.jobId }}
+```
+
+#### How It Works
+
+* The `ayachensiyuan/get-action-job-id` [action](https://github.com/marketplace/actions/get-action-job-id) extracts the GitHub Actions job ID
+* We construct the full job URL using: `https://github.com/{repo}/actions/runs/{run_id}/job/{job_id}`
+* This URL is passed to Trunk via the `JOB_URL` environment variable
+* When you click "Logs" on a test failure in Trunk, you'll go directly to that job's logs instead of the workflow overview
+
+#### Notes
+
+* The `job-name` parameter must **exactly match** your job's `name` field
+* The `GITHUB_TOKEN` must have appropriate permissions to read workflow job information
+* If the job ID extraction fails, Trunk will fall back to linking to the workflow run

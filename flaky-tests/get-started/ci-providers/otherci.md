@@ -19,7 +19,7 @@ By the end of this guide, you should achieve the following.
 * [ ] Configure your CI to upload to Trunk
 * [ ] Validate your uploads in Trunk
 
-After completing these checklist items, you'll be integrated with Trunk.&#x20;
+After completing these checklist items, you'll be integrated with Trunk.
 
 ### Trunk Organization Slug and Token
 
@@ -66,20 +66,36 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
 
 {% hint style="info" %}
-Config Requirement: `CUSTOM` must be set to `true` for environment varaibles to take effect and override the auto-detection of CI. &#x20;
+**Config Requirement:** `CUSTOM` must be set to `true` for environment varaibles to take effect and override the auto-detection of CI.
+
+All other variables are optional but recommended.
 {% endhint %}
 
-| Environment Variable | Description                                                                                    |
-| -------------------- | ---------------------------------------------------------------------------------------------- |
-| **`CUSTOM=true`**    | Set `CUSTOM` to `true` to indicate this CI system is not one of our first party supported ones |
-| **`JOB_URL`**        | Direct link to the CI job/build page                                                           |
-| **`JOB_NAME`**       | Name of the CI job or test suite                                                               |
-| **`AUTHOR_EMAIL`**   | Email address of the commit author                                                             |
-| **`AUTHOR_NAME`**    | Full name of the commit author                                                                 |
-| **`COMMIT_BRANCH`**  | Git branch being tested                                                                        |
-| **`COMMIT_MESSAGE`** | Commit message for the tested commit                                                           |
-| **`PR_NUMBER`**      | Pull request number (if applicable)                                                            |
-| **`PR_TITLE`**       | Pull request title (if applicable)                                                             |
+| Variable         | Description                                                                                                      | Example                               |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `CUSTOM`         | Set to `true` to indicate this CI system is not one of our supported providers                                   | `CUSTOM=true`                         |
+| `JOB_URL`        | Direct link to the CI job/build page. This is the link users will click when viewing test failure logs in Trunk. | `https://ci.example.com/builds/12345` |
+| `JOB_NAME`       | Name of the CI job or test suite                                                                                 | `unit-tests`                          |
+| `AUTHOR_EMAIL`   | Email address of the commit author                                                                               | `dev@example.com`                     |
+| `AUTHOR_NAME`    | Full name of the commit author                                                                                   | `Jane Developer`                      |
+| `COMMIT_BRANCH`  | Git branch being tested                                                                                          | `main`                                |
+| `COMMIT_MESSAGE` | Commit message for the tested commit                                                                             | `Fix authentication bug`              |
+| `PR_NUMBER`      | Pull request number (if applicable)                                                                              | `123`                                 |
+| `PR_TITLE`       | Pull request title (if applicable)                                                                               | `Add new feature`                     |
+
+#### About JOB\_URL
+
+The `JOB_URL` variable controls where the "Logs" link in Trunk Flaky Tests points to. When users click "Logs" on a test failure, they'll be taken to this URL to view the complete CI job output.
+
+**Best practice:** Provide the most specific link possible:
+
+* ✅ Direct link to the specific job/build where the test ran
+* ✅ Link that shows the full logs and test output
+* ❌ Link to a dashboard or workflow overview (less helpful for debugging)
+
+{% hint style="info" %}
+**For GitHub Actions users:** While GitHub Actions is auto-detected, you can override the default workflow URL with a direct job URL. See [GitHub Actions - Getting Direct Links to Job Logs](github-actions.md#getting-direct-links-to-job-logs) for instructions.
+{% endhint %}
 
 #### Stale files
 
