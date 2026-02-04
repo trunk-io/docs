@@ -24,6 +24,7 @@
   * [Priority merging](merge-queue/optimizations/priority-merging.md)
   * [Optimistic merging](merge-queue/optimizations/optimistic-merging.md)
   * [Pending failure depth](merge-queue/optimizations/pending-failure-depth.md)
+  * [Direct merge to main](merge-queue/optimizations/direct-merge-to-main.md)
 * [Using the Queue](merge-queue/using-the-queue/README.md)
   * [Submit and cancel pull requests](merge-queue/using-the-queue/reference.md)
   * [Monitor queue status](merge-queue/using-the-queue/monitor-queue-status.md)

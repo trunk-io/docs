@@ -218,6 +218,19 @@ For example, assuming a timeout of 4 hours:
 
 ***
 
+## Direct Merge to Main
+
+Merge PRs immediately when they're already based on the tip of main and the queue is empty, skipping redundant testing.
+
+* **Default:** Enabled
+* **Trigger conditions:** PR is up-to-date with main + queue is empty + tests passed
+* **Benefit:** Eliminates 5-30 minutes of wait time for up-to-date PRs
+* **Best for:** Teams that keep PRs current with main before merging
+
+Toggle this setting in **Settings** > **Repositories** > your repository > **Merge Queue**. Learn more in [Direct Merge to Main](../optimizations/direct-merge-to-main.md).
+
+***
+
 ## Pending Failure Depth
 
 > Pending Failure Depth can be set to any value, options are **0** (default), **1**, **2**, **3**, and **Custom**.
