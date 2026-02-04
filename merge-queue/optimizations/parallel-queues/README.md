@@ -55,3 +55,18 @@ Switching modes can be done from the `Merge Queue Mode` section of the `Settings
 #### Store your Organization Token as a GitHub Secret
 
 {% @supademo/embed url="https://app.supademo.com/demo/2UWXR9ccwhP4ng5-orZPG" demoId="2UWXR9ccwhP4ng5-orZPG" %}
+
+### Monitoring Parallel Queue Performance
+
+Once you've enabled parallel mode and configured impacted targets, you can analyze how well the parallel workflow performs for different parts of your codebase.
+
+The Health dashboard allows you to filter all metrics by impacted targets, so you can:
+
+* Compare merge times between different targets (e.g., frontend vs backend)
+* Identify which targets experience the most failures
+* Optimize queue configuration for your highest-priority code paths
+* Demonstrate the value of parallel mode to engineering leadership
+
+{% hint style="info" %}
+See [Filter Metrics by Impacted Targets ](../../administration/metrics.md#filter-metrics-by-impacted-targets)for detailed guidance on using this feature.
+{% endhint %}
