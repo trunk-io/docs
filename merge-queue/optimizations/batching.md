@@ -21,7 +21,7 @@ Batching is **disabled by default** and must be explicitly enabled.
 
 Batching is enabled in the Merge Settings of your repo at **Settings** > **Repositories** > your repository > **Merge Queue** > **Batching** and toggle batching **On**.
 
-### Configuration options
+#### Configuration options
 
 With Batching enabled, you can configure two options:
 
@@ -31,6 +31,111 @@ With Batching enabled, you can configure two options:
 {% hint style="info" %}
 A good place to start is with the defaults, Maximum wait time set to 0 (zero) and Target batch size set to 5.
 {% endhint %}
+
+### Bisection Testing Concurrency
+
+When a batch fails, Trunk automatically splits it apart (bisects) to identify which PR caused the failure. You can configure a separate, higher concurrency limit specifically for these bisection tests to isolate failures faster without impacting your main queue.
+
+!\[Screenshot showing bisection testing concurrency settings]
+
+#### Why Separate Bisection Concurrency?
+
+By default, bisection tests use the same concurrency limit as your main queue. This means:
+
+* Bisection can slow down other PRs waiting to merge
+* Developers wait longer to learn which PR broke the batch
+* Your main queue's throughput decreases during failure investigation
+
+With independent bisection concurrency, you can:
+
+* **Speed up failure isolation** - Run bisection tests at higher concurrency to identify problems faster
+* **Maintain queue throughput** - Keep your main queue running at optimal capacity during bisection
+* **Optimize each workflow independently** - Be aggressive about isolating failures without impacting successful PR flow
+
+#### How It Works
+
+When you set a higher bisection concurrency:
+
+1. **Main queue concurrency** controls how many PRs test simultaneously in the normal queue
+2. **Bisection concurrency** controls how many PRs test simultaneously during failure isolation
+3. Both run independently - bisection tests don't count against your main queue limit
+
+<details>
+
+<summary><strong>Example scenario:</strong></summary>
+
+* Main queue concurrency: 5
+* Bisection concurrency: 15
+* Batch `ABCD` fails and needs to be split
+
+The bisection process can spin up 15 test runners to quickly isolate which PR failed, while your main queue continues processing 5 PRs normally. Developers get faster feedback about failures without slowing down successful merges.
+
+</details>
+
+#### Configuring Bisection Concurrency
+
+Navigate to **Settings** > **Repositories** > your repository > **Merge Queue** > **Batching**:
+
+1. Enable **Batching** (if not already enabled)
+2. Find the **Bisection Testing Concurrency** setting
+3. Set a value higher than your main **Testing Concurrency** for faster failure isolation
+4. Monitor your CI resource usage and adjust as needed
+
+#### Recommended Settings
+
+{% tabs %}
+{% tab title="Conservative approach" %}
+* Main queue concurrency: 5
+* Bisection concurrency: 10
+* Good for: Teams managing CI costs carefully
+{% endtab %}
+
+{% tab title="Balanced approach" %}
+* Main queue concurrency: 10
+* Bisection concurrency: 25
+* Good for: Teams with moderate CI capacity
+{% endtab %}
+
+{% tab title="Aggressive approach" %}
+* Main queue concurrency: 25
+* Bisection concurrency: 50
+* Good for: Teams prioritizing fast feedback over CI costs
+{% endtab %}
+{% endtabs %}
+
+#### When to Use Higher Bisection Concurrency
+
+Consider increasing bisection concurrency if:
+
+* Developers frequently wait for bisection results to know what to fix
+* Your CI system has spare capacity during failure investigation
+* Large batches fail and take a long time to isolate the culprit
+* Fast feedback on failures is critical to your workflow
+
+#### Monitoring and Optimization
+
+Track these metrics to optimize your bisection concurrency:
+
+* **Time to isolate failures** - How long it takes to identify which PR broke a batch
+* **CI resource usage during bisection** - Are you maxing out your runners?
+* **Developer wait time** - How long developers wait for failure feedback
+* **Main queue throughput during bisection** - Is bisection slowing down other PRs?
+
+Start with bisection concurrency 2x your main queue concurrency, monitor the impact, and adjust based on your team's priorities and CI capacity.
+
+#### Best Practices
+
+✅ **Set bisection concurrency higher than main queue** - This is the whole point of the feature
+
+✅ **Monitor CI costs** - Higher bisection concurrency means more runners during failures
+
+✅ **Start conservative** - Begin with 2x main concurrency and increase gradually
+
+✅ **Combine with other optimizations** - Works best alongside Pending Failure Depth and Anti-flake Protection
+
+❌ **Don't set too high** - Extremely high bisection concurrency can overwhelm CI systems
+
+❌ **Don't set lower than main queue** - This defeats the purpose and slows down bisection
 
 ### Fine tuning batch sizes
 

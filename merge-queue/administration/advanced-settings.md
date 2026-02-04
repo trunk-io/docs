@@ -284,6 +284,23 @@ Whether or not GitHub slash commands like `/trunk merge` are enabled for this me
 
 [**Batching**](../optimizations/batching.md) tests multiple pull requests as a single unit instead of individually, dramatically reducing CI costs.
 
+### Bisection Testing Concurrency
+
+Configure how many PRs can be tested simultaneously during batch failure isolation (bisection). This setting is independent from the main Testing Concurrency and only applies when batches fail and need to be split to identify the failing PR.
+
+**Default:** Same as Testing Concurrency (automatically mirrors your main concurrency setting)
+
+**Recommended:** Set 2-5x higher than your main Testing Concurrency for faster failure isolation
+
+#### How to Configure
+
+1. Navigate to **Settings** > **Repositories** > your repository > **Merge Queue** > **Batching**
+2. Ensure **Batching** is enabled
+3. Set **Bisection Testing Concurrency** to your desired value
+4. Monitor CI resource usage and adjust as needed
+
+For detailed guidance on using this setting effectively, see [Bisection Testing Concurrency in the Batching](../optimizations/batching.md#bisection-testing-concurrency) documentation.
+
 ***
 
 ## Delete Merge Integration
