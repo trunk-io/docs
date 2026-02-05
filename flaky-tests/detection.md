@@ -88,7 +88,7 @@ You can specify a variant during upload using the [`--variant` option](uploader.
 
 {% code title="Upload an iOS variant " %}
 ```
-./trunk flakytests upload --junit-paths "test_output.xml" \
+./trunk-analytics-cli upload --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN \
    --variant ios

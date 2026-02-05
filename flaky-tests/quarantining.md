@@ -75,7 +75,7 @@ To handle build issues that occur outside test runs, use the --test-process-exit
 **Example**
 
 ```sh
-./trunk flakytests test --junit-paths "test_output.xml" \
+./trunk-analytics-cli test --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN \
    --junit-paths="**/results/*.xml" \
@@ -161,7 +161,7 @@ If you upload your test results as a second step after you run your tests, you n
 ```bash
 <run my tests> || true # doesn't fail job on failure
 |
-    ./trunk flakytests upload \
+    ./trunk-analytics-cli upload \
         --org-url-slug $TRUNK_ORG_SLUG \
         --token $TRUNK_API_TOKEN \
         --junit-paths $JUNIT_PATH
@@ -173,7 +173,7 @@ You can also wrap the test command with the Trunk CLI. When wrapping the command
 
 {% code overflow="wrap" %}
 ```bash
-./trunk flakytests test \
+./trunk-analytics-cli test \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token $TRUNK_API_TOKEN \
     --junit-paths $JUNIT_PATH \

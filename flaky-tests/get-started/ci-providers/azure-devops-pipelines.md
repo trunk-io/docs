@@ -66,7 +66,7 @@ steps:
 - script: |
     curl -fsSLO --retry 3 https://trunk.io/releases/trunk
     chmod +x ./trunk
-    ./trunk flakytests upload --junit-paths "<XML_GLOB_PATH>" \
+    ./trunk-analytics-cli upload --junit-paths "<XML_GLOB_PATH>" \
     --org-url-slug $(TRUNK_ORG_SLUG) \
     --token $(TRUNK_TOKEN)
   condition: always() # this should always run
@@ -88,7 +88,7 @@ steps:
 - script: |
     curl -fsSLO --retry 3 https://trunk.io/releases/trunk
     chmod +x ./trunk
-    ./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> \
+    ./trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> \
     --org-url-slug $(TRUNK_ORG_SLUG) \
     --token $(TRUNK_TOKEN)
   condition: always() # this should always run
@@ -110,7 +110,7 @@ steps:
 - script: |
     curl -fsSLO --retry 3 https://trunk.io/releases/trunk
     chmod +x ./trunk
-    ./trunk flakytests upload --xcresult-path <XCRESULT_PATH> \
+    ./trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> \
     --org-url-slug $(TRUNK_ORG_SLUG) \
     --token $(TRUNK_TOKEN)
   condition: always() # this should always run
