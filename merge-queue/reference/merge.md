@@ -8,38 +8,38 @@ The Trunk Merge Queue API provides access to submit PRs for testing and merging,
 
 All requests must be [authenticated](../../setup-and-administration/apis/#authentication) by providing the `x-api-token` header.
 
-{% openapi src="../../.gitbook/assets/mergeapi.json" path="/submitPullRequest" method="post" %}
-[mergeapi.json](../../.gitbook/assets/mergeapi.json)
-{% endopenapi %}
-
-{% openapi src="../../.gitbook/assets/mergeapi.json" path="/getSubmittedPullRequest" method="post" %}
-[mergeapi.json](../../.gitbook/assets/mergeapi.json)
-{% endopenapi %}
-
-{% openapi src="../../.gitbook/assets/mergeapi.json" path="/restartTestsOnPullRequest" method="post" %}
-[mergeapi.json](../../.gitbook/assets/mergeapi.json)
-{% endopenapi %}
-
-{% openapi src="../../.gitbook/assets/mergeapi.json" path="/cancelPullRequest" method="post" %}
-[mergeapi.json](../../.gitbook/assets/mergeapi.json)
-{% endopenapi %}
-
-{% openapi src="../../.gitbook/assets/mergeapi.json" path="/getQueue" method="post" %}
-[mergeapi.json](../../.gitbook/assets/mergeapi.json)
-{% endopenapi %}
-
-{% openapi src="../../.gitbook/assets/mergeapi.json" path="/setImpactedTargets" method="post" %}
-[mergeapi.json](../../.gitbook/assets/mergeapi.json)
-{% endopenapi %}
-
-{% openapi-operation spec="trunk-api" path="/updateQueue" method="post" %}
-[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
-{% endopenapi-operation %}
-
 {% openapi-operation spec="trunk-api" path="/createQueue" method="post" %}
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
 
 {% openapi-operation spec="trunk-api" path="/deleteQueue" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
+{% endopenapi-operation %}
+
+{% openapi-operation spec="trunk-api" path="/getSubmittedPullRequest" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
+{% endopenapi-operation %}
+
+{% openapi-operation spec="trunk-api" path="/submitPullRequest" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
+{% endopenapi-operation %}
+
+{% openapi-operation spec="trunk-api" path="/restartTestsOnPullRequest" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
+{% endopenapi-operation %}
+
+{% openapi-operation spec="trunk-api" path="/cancelPullRequest" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
+{% endopenapi-operation %}
+
+{% openapi-operation spec="trunk-api" path="/getQueue" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
+{% endopenapi-operation %}
+
+{% openapi-operation spec="trunk-api" path="/setImpactedTargets" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
+{% endopenapi-operation %}
+
+{% openapi-operation spec="trunk-api" path="/updateQueue" method="post" %}
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
