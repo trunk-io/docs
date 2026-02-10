@@ -30,6 +30,10 @@ All requests must be [authenticated](../../setup-and-administration/apis/#authen
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
 
+{% openapi-operation spec="trunk-api" path="/getMergeQueueTestingDetails" method="post" %}
+[OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
+{% endopenapi-operation %}
+
 ## Queue Endpoints
 
 {% openapi-operation spec="trunk-api" path="/createQueue" method="post" %}
