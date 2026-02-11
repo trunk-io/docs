@@ -55,9 +55,59 @@ The following is an example of a script to upload test results after your tests 
 
 To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
 
-<pre class="language-sh"><code class="lang-sh">curl -fsSLO --retry 3 https://trunk.io/releases/trunk &#x26;&#x26; chmod +x trunk
-<strong>./trunk flakytests upload --junit-paths "**/report.xml" --org-url-slug &#x3C;TRUNK_ORG_SLUG> --token "${TRUNK_TOKEN}"
-</strong></code></pre>
+You can install the Trunk CLI locally like this:
+
+{% tabs %}
+{% tab title="Linux (x64)" %}
+```bash
+SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
+curl -fL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+  | tar -xz
+
+chmod +x trunk-analytics-cli
+```
+{% endtab %}
+
+{% tab title="Linux (arm64)" %}
+```bash
+SKU="trunk-analytics-cli-aarch64-unknown-linux.tar.gz"
+curl -fL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+  | tar -xz
+
+chmod +x trunk-analytics-cli
+```
+{% endtab %}
+
+{% tab title="macOS (arm64)" %}
+```bash
+SKU="trunk-analytics-cli-aarch64-apple-darwin.tar.gz"
+curl -fL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+  | tar -xz
+
+chmod +x trunk-analytics-cli
+```
+{% endtab %}
+
+{% tab title="macOS (x64)" %}
+```bash
+SKU="trunk-analytics-cli-x86_64-apple-darwin.tar.gz"
+curl -fL --retry 3 \
+  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+  | tar -xz
+
+chmod +x trunk-analytics-cli
+```
+{% endtab %}
+{% endtabs %}
+
+Then, you can validate the results using the `trunk flakytests validate` command like this:
+
+```bash
+./trunk-analytics-cli validate --junit-paths <PATH_TO_REPORTS>
+```
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
