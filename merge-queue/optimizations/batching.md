@@ -29,7 +29,7 @@ With Batching enabled, you can configure two options:
 * **Target batch size** - The largest number of entries in the queue that will be tested in a single batch. A larger target batch size will help reduce CI cost per pull request but require more work to be performed when progressive failures necessitate bisection.
 
 {% hint style="info" %}
-A good place to start is with the defaults, Maximum wait time set to 0 (zero) and Target batch size set to 5.
+A good place to start is with the defaults, Maximum wait time set to 5 (minutes) and Target batch size set to 4 (PRs).
 {% endhint %}
 
 ### Bisection Testing Concurrency
