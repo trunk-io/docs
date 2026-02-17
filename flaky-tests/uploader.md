@@ -82,7 +82,7 @@ You can find your organization slug and token by going to **Settings** > **Manag
 The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as broken or flaky.
 {% endhint %}
 
-Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `./trunk flakytest upload` command like this:
+Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `./trunk-analytics-cli upload` command like this:
 
 {% tabs %}
 {% tab title="XML" %}
@@ -99,7 +99,7 @@ Trunk can accept JUnit XMLs through the `--junit-paths` argument:
 Trunk can accept Bazel through the `--bazel-bep-path` argument:
 
 ```
-./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> \
+./trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -109,7 +109,7 @@ Trunk can accept Bazel through the `--bazel-bep-path` argument:
 Trunk can accept XCode through the `--xcresult-path` argument:
 
 ```
-./trunk flakytests upload --xcresult-path <XCRESULT_PATH> \
+./trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
