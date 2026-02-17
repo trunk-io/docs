@@ -31,7 +31,7 @@ Trunk Team Plans offers a monthly subscription plan using a per-seat model. At t
 
 ### **Enterprise plan**
 
-Trunk Enterprise offers powerful admin controls, dedicated support, access to custom billing or terms, and features like SSO. If your team is interested in an enterprise plan, please contact [sales@trunk.io](mailto:sales@trunk.io).
+Trunk Enterprise offers powerful admin controls, dedicated support, access to custom billing or terms, and features like [SSO](sso-and-authentication.md). If your team is interested in an enterprise plan, please contact [sales@trunk.io](mailto:sales@trunk.io).
 
 **Trials**
 
