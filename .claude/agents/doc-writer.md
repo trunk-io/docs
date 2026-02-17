@@ -25,6 +25,15 @@ You will receive some combination of:
 3. **Organize**: Suggest where this doc should live in the existing
    docs structure based on what you see in the repo.
 
+## Sources File
+Before drafting, write a `.sources.md` file alongside any notes file
+you were given (same directory, same name with `.sources.md` suffix).
+If no notes file path was given, include a `### Sources` section in
+your output instead. This should list every Linear ticket, GitHub PR,
+existing doc file, code snippet, and external reference you used as
+input, with links and brief descriptions. Use `gh pr view <url>` to
+read GitHub PR details. This lets reviewers verify accuracy.
+
 ## Required Outputs
 Produce a single markdown file with these clearly labeled sections:
 

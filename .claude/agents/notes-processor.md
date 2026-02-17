@@ -41,7 +41,53 @@ may contain any combination of:
 3. Search GitBook docs MCP for published content on the topic
 4. Identify gaps between what exists and what the notes describe
 
-### Phase 3: Draft Documentation
+### Phase 2.5: Generate Sources File
+Write a sources file alongside the notes file at the same path with a
+`.sources.md` suffix (e.g., `.claude/drafts/my-feature.sources.md`).
+This file is a human-readable manifest of everything the agent found
+and used as input. It should be easy to scan for accuracy and
+cross-referencing.
+
+Format:
+
+```markdown
+# Sources: [Feature Name]
+Generated: [date]
+
+## Linear Tickets
+For each ticket found:
+- **[TRUNK-XXXXX](linear-url)** — [title]
+  - Status: [status] | Assignee: [name]
+  - Summary: [1-2 sentence description from ticket]
+
+## GitHub PRs
+For each PR found (from notes file, Linear tickets, or discovered):
+- **[PR title](github-url)** — [repo] #[number]
+  - Status: [merged/open/closed] | Author: [name]
+  - Summary: [1-2 sentence description from PR body]
+  - Key changes: [list of notable files or areas changed]
+
+## Existing Docs
+Files in the repo that are relevant to this change:
+- `[file path]` — [brief description of what it covers and its relevance]
+
+## Key Code References
+Any code snippets, config examples, API schemas, or technical details
+extracted from PRs, tickets, or Slack context that informed the docs:
+- Source: [where it came from]
+  ```
+  [the relevant snippet]
+  ```
+
+## External References
+Any external URLs, docs, or resources referenced:
+- [title](url) — [why it's relevant]
+```
+
+This file serves as an audit trail so reviewers can verify where
+information came from and check accuracy against primary sources.
+
+
 Based on everything gathered, write the documentation changes:
 - Match the tone and structure of existing Trunk docs (read nearby files)
 - For **new pages**: write the full page content
