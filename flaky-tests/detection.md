@@ -107,30 +107,38 @@ Trunk classifies all tests into one of three categories based on the history of 
 
 ### Override test status
 
-If Trunk's automated detection does not reflect the current state of a test, you can manually override its status. This is useful when a test is stuck in a status that no longer matches its actual behavior, for example, a test that is marked as Flaky but has been passing consistently and should be Healthy.
+You can manually override the detected status of a test case if Trunk's automated classification does not reflect the true state of a test. This is useful when a test is stuck in a status that no longer matches its actual behavior, for example, a test that has been marked Flaky for an extended period but is now consistently passing.
 
-To override a test's status, use the pencil dropdown on the **Tests** tab. Tests can be manually set to **Healthy** or **Flaky**.
+To override a test's status, use the pencil dropdown on the **Tests** tab. You can set the status to **Healthy**, **Flaky**, or **Broken**, and provide a description explaining the reason for the change.
 
 <figure><img src="../.gitbook/assets/manual-test-mark.png" alt=""><figcaption></figcaption></figure>
 
-When you override a test's status, you will be prompted to provide a description explaining the reason for the change. This description is displayed alongside the status change in the test's [status history timeline](dashboard.md#test-history).
-
 {% hint style="info" %}
-Be sure to include a meaningful description when overriding the test status to help your team track any issues.
+Be sure to include a meaningful description when overriding the test status. This description is displayed alongside the override in the test's [status history timeline](dashboard.md#test-history), helping your team understand why the change was made.
 {% endhint %}
 
 #### How manual overrides interact with detection
 
-A manual override resets the starting point for Trunk's detection rules engine. After a manual override, the rules engine begins classifying the test from that point forward using only new test run data. Any test runs that occurred before the override are not factored into future classification.
+When you submit a manual status override, Trunk's detection engine treats the override as a new starting point for classification:
 
-This means the rules engine can change the status again after a manual override if new test results warrant it. Manual overrides do not lock a test into a particular status permanently. Specifically:
+1. **All test runs up to the time of the override are processed normally.** The detection engine completes classification for any pending runs before the override takes effect.
+2. **The override resets the detection engine's classification window.** After the override, the engine begins classification fresh from the new status you set, using only test runs that occur after the override.
+3. **The detection engine continues to classify the test automatically after the override.** If new test runs contradict the manually set status, the engine will transition the test to the appropriate status based on its rules.
 
-* **Overriding to Healthy:** If you mark a test as Healthy and it experiences a flaky failure shortly after, the rules engine will transition it back to Flaky once it observes sufficient evidence. This is the most common use case: correcting a test that is stuck in Flaky despite consistent recent successes.
-* **Overriding to Flaky:** If you mark a test as Flaky and it then accumulates enough passing runs, the rules engine will transition it back to Healthy based on its normal classification rules.
+This means manual overrides do not permanently lock a test into a status. They reset the starting point for detection so that classification can proceed from a corrected state.
+
+#### Examples
+
+* **Manually setting a test to Healthy:** If a test has been classified as Flaky but has been passing consistently, you can override it to Healthy. If the test fails again after the override, the detection engine will reclassify it as Flaky based on the new failures.
+* **Manually setting a test to Flaky:** If a test is classified as Healthy but you know it is unreliable, you can override it to Flaky. If the test then passes consistently for enough runs, the detection engine will transition it back to Healthy.
 
 {% hint style="warning" %}
-Manual overrides are best suited for correcting tests that are stuck in an outdated status. They are not designed to permanently override or bypass the rules engine. If the test's behavior does not match the status you set, the rules engine will reclassify it.
+Manual overrides are best suited for correcting tests that are stuck in an outdated status. They are not designed to suppress or ignore future test failures.
 {% endhint %}
+
+#### Manual overrides in the timeline
+
+Both engine-generated status changes and manual overrides are displayed together in the [test's status history](dashboard.md#test-history). Manual overrides include the description you provided when submitting the change, so your team has full context for every transition.
 
 ### Next steps
 
