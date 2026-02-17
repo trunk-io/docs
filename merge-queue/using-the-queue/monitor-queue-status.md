@@ -41,11 +41,31 @@ View status of the queue and recent activity in the **Queue** tab
 
 ### Graph view
 
-The view of all current PRs being tested by Trunk Merge Queue and their respective queues. Each node shown is a pull request, and each edge indicates that the pull request is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, this will be a single line showing the testing and merging process.
+The graph view provides a visual representation of all current PRs being tested by Trunk Merge Queue and their relationships. Each node represents a pull request or a batch of pull requests, and each edge indicates testing dependencies. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, this will be a single line showing the testing and merging process.
 
-<figure><img src="../../.gitbook/assets/merge-graph.png" alt=""><figcaption></figcaption></figure>
+#### Reading the graph
 
-You can click on any shown PR to navigate to the details page for that PR.
+The graph organizes PRs into distinct sections based on their current status:
+
+* **Merged section (green)**: PRs displayed at the top of the graph in the green section have successfully merged into the target branch.
+* **Testing and queued sections**: PRs currently being tested or waiting in the queue appear in the main body of the graph.
+
+**Batching information**: When [batching](../optimizations/batching.md) is enabled, each node in the graph displays batch details so you can see which PRs are grouped together for testing.
+
+**Bisection tab**: When a batch fails and [bisection](../optimizations/batching.md#bisection-testing-concurrency) is in progress, a side tab appears showing the bisection process and its current status.
+
+#### Interacting with the graph
+
+* **Hover** over any node to highlight its path to the root of the graph, making it easy to trace a PR's position and dependencies in the queue.
+* **Click** on a node to navigate to the details page for that PR. For batched items, clicking a batch node takes you to the actual PR opened for that batch.
+
+#### Graph legend
+
+The graph includes a legend that explains the meaning of each node color and icon, so you can quickly understand the state of every item in the queue at a glance.
+
+#### Legacy graph view
+
+If you need to access the previous graph layout, a link to the legacy graph view is available at the top of the graph page.
 
 ### Health view
 
