@@ -85,9 +85,21 @@ Features like Optimistic Merging and Batching are validation and testing strateg
 
 <summary>Can I create multiple merge queues for a single repository?</summary>
 
-Currently, Trunk Merge Queue supports one merge queue per repository. If this is critical for your use case, [talk to us](../../setup-and-administration/support.md) and we'll consider adding support for your use case.
+Yes. Trunk Merge Queue supports multiple queues per repository, each targeting a different branch. For example, you can run one queue merging into `main` and another merging into `release/v2`. Each queue operates independently with its own configuration, concurrency settings, and queue state.
 
-For validating significant changes to your CI process or queue configuration without impacting your primary workflow, the recommended approach is to use a fork of your repository. You can set up and test a separate merge queue on the fork to ensure your changes work as expected before applying them to your primary repository.
+To create an additional queue for your repository:
+
+1. Navigate to the **Merge Queue** tab in [app.trunk.io](https://app.trunk.io).
+2. Click **Create New Queue**.
+3. Select the same repository and enter a different target branch.
+
+Each queue has its own settings (merge method, concurrency, batching, parallel mode, etc.) and can be managed independently. PRs are automatically routed to the correct queue based on their target branch.
+
+For more details, see [Multi-branch merge queues](../using-the-queue/multi-branch-queues.md).
+
+{% hint style="info" %}
+**One queue per branch.** You can have multiple queues in the same repository, but each target branch can only have one queue. For example, you cannot create two separate queues that both merge into `main`.
+{% endhint %}
 
 </details>
 
