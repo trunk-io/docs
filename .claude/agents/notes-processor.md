@@ -24,6 +24,7 @@ may contain any combination of:
 2. Extract:
    - **Feature/change name** — what is this about?
    - **Linear ticket IDs** — any TRUNK-XXXXX references
+   - **GitHub PR URLs** — any github.com PR links. Use `gh pr view <url>` to read PR descriptions, changed files, and review comments for additional context
    - **Product area** — Merge Queue, Flaky Tests, CI Autopilot, Code Quality, or Admin/Setup
    - **Change type** — new feature, update, fix, or deprecation
    - **Key details** — what changed, why, any configuration involved
