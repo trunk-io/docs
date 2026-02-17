@@ -59,12 +59,10 @@ The `notes-processor` agent will:
 
 ### 3. Review the report
 
-After processing, the agent appends a review card to the daily report at
-`.claude/reports/YYYY-MM-DD-<topic>.md`. Each card includes:
-- PR and Linear links
-- Links back to the draft and sources files
-- A **Review focus** field highlighting what the reviewer should check
-- Open questions the agent couldn't resolve
+After processing, the agent:
+- Appends a review card to `.claude/reports/YYYY-MM-DD-<topic>.html`
+  (open in browser for easy scanning — PR links, Linear links, review focus)
+- Stages a changelog entry at `.claude/staging/changelog/` for DatoCMS upload
 
 ### 4. Review and iterate
 
@@ -136,8 +134,10 @@ six phases sequentially:
    or creates Linear ticket with PR link, attaches all context links
    (Slack, Slite, Loom, etc.), and links docs ticket to related
    engineering tickets
-6. **Report** — appends a review card to `.claude/reports/` with PR link,
-   Linear link, review focus areas, and open questions
+6. **Changelog** — stages a changelog entry at `.claude/staging/changelog/`
+   for manual DatoCMS upload
+7. **Report** — appends an HTML review card to `.claude/reports/` with PR
+   link, Linear link, review focus areas, and open questions
 
 ## Directory Structure
 
@@ -155,5 +155,7 @@ six phases sequentially:
     *.md                  # Your notes files (gitignored)
     *.sources.md          # Source audit trails (gitignored)
   reports/
-    *.md                  # Review reports (committed to repo)
+    *.html                # Review reports (gitignored, open in browser)
+  staging/
+    changelog/            # Changelog entries for DatoCMS upload (gitignored)
 ```

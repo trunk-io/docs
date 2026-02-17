@@ -197,29 +197,88 @@ After changes are applied:
 5. **Return to original branch**: Switch back to the branch you started on
    and restore any stashed changes
 
-### Phase 6: Generate Review Report
-After the PR is created, append an entry to the daily report file at
-`.claude/reports/YYYY-MM-DD-<session-topic>.md`. If the file doesn't
-exist yet, create it with a header. Each entry should be a self-contained
-review card with everything a human reviewer needs.
+### Phase 5.5: Stage Changelog Entry
+Write a changelog entry to `.claude/staging/changelog/YYYY-MM-DD-<kebab-title>.md`.
+These are staged for manual upload to DatoCMS.
 
-Report entry format:
+Use this format:
 
 ```markdown
-### PR #[number] — [short title]
-| | |
-|---|---|
-| **Branch** | `sam/[branch-name]` |
-| **PR** | [full GitHub PR URL] |
-| **Linear** | [TRUNK-XXXXX](linear-url) — [status] |
-| **Sources** | `.claude/drafts/[notes-file].sources.md` |
-| **Draft** | `.claude/drafts/[notes-file].md` |
-| **Type** | [new-feature / update / fix / deprecation / explainer] |
-| **Changes** | [1-2 sentence summary of files created/modified] |
-| **Context links** | [List of Slack/Slite/Loom/other links, or "None"] |
-| **Related tickets** | [List of linked TRUNK-XXXXX IDs, or "None"] |
-| **Review focus** | [What the human reviewer should pay attention to — accuracy risks, open questions, things the agent wasn't sure about] |
-| **Open questions** | [Numbered list, or "None"] |
+---
+date: YYYY-MM-DD
+title: [Short, punchy title — lead with user benefit]
+product: [Merge Queue | Flaky Tests | CI Autopilot | Code Quality | Platform]
+status: draft
+linear: [TRUNK-XXXXX URL if applicable]
+docs_pr: [GitHub PR URL]
+---
+
+[2-4 sentence description. Lead with user benefit. Present tense.
+Include a "why this matters" sentence.]
+
+[Learn more →](https://docs.trunk.io/path/to/relevant/page)
+```
+
+### Phase 6: Generate Review Report
+After the PR is created, append an entry to the daily report file at
+`.claude/reports/YYYY-MM-DD-<session-topic>.html`. If the file doesn't
+exist yet, create it with a full HTML document including basic styling.
+Each entry should be a self-contained review card with everything a
+human reviewer needs. The HTML format makes it easy to open in a browser
+for quick scanning.
+
+If the file already exists, append the new card inside the `<main>` element.
+
+HTML template for new files:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Docs Review Report — [date]</title>
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+    h1 { border-bottom: 2px solid #e5e5e5; padding-bottom: 0.5rem; }
+    .card { border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+    .card h3 { margin-top: 0; }
+    .card table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .card td { padding: 0.35rem 0.5rem; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+    .card td:first-child { font-weight: 600; width: 140px; white-space: nowrap; }
+    a { color: #2563eb; }
+    .review-focus { background: #fef3c7; padding: 0.75rem; border-radius: 4px; margin-top: 0.75rem; font-size: 0.9rem; }
+    .open-questions { background: #fef2f2; padding: 0.75rem; border-radius: 4px; margin-top: 0.5rem; font-size: 0.9rem; }
+    .checklist { margin-top: 2rem; padding: 1rem; background: #f9fafb; border-radius: 8px; }
+    .checklist label { display: block; padding: 0.25rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Docs Review Report — [date]</h1>
+  <main>
+  </main>
+</body>
+</html>
+```
+
+Card format to append inside `<main>`:
+
+```html
+<div class="card">
+  <h3>PR #[number] — [short title]</h3>
+  <table>
+    <tr><td>Branch</td><td><code>sam/[branch-name]</code></td></tr>
+    <tr><td>PR</td><td><a href="[url]">[url]</a></td></tr>
+    <tr><td>Linear</td><td><a href="[linear-url]">TRUNK-XXXXX</a> — [status]</td></tr>
+    <tr><td>Sources</td><td><code>.claude/drafts/[notes-file].sources.md</code></td></tr>
+    <tr><td>Draft</td><td><code>.claude/drafts/[notes-file].md</code></td></tr>
+    <tr><td>Type</td><td>[new-feature / update / fix / deprecation / explainer]</td></tr>
+    <tr><td>Changes</td><td>[1-2 sentence summary]</td></tr>
+    <tr><td>Context links</td><td>[Slack/Slite/Loom links as clickable anchors, or "None"]</td></tr>
+    <tr><td>Related tickets</td><td>[Linked TRUNK-XXXXX as clickable anchors, or "None"]</td></tr>
+  </table>
+  <div class="review-focus"><strong>Review focus:</strong> [what the reviewer should check]</div>
+  <div class="open-questions"><strong>Open questions:</strong><ol><li>[questions]</li></ol></div>
+</div>
 ```
 
 The **Review focus** field is critical. Be honest about what you're
@@ -243,7 +302,10 @@ When complete, report:
 - Ticket: [TRUNK-XXXXX] — [status]
 
 ### Review Report
-- Entry added to: .claude/reports/[filename].md
+- Entry added to: .claude/reports/[filename].html
+
+### Changelog
+- Staged at: .claude/staging/changelog/[filename].md
 
 ### Open Questions
 1. [questions for team review]
