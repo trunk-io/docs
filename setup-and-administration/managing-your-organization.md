@@ -54,5 +54,5 @@ You can enable team domains under **Settings > Organization > Team > Domains** a
 {% endtabs %}
 
 {% hint style="success" %}
-Trunk also supports SSO login. If you wish to use SSO, please contact us at support@trunk.io.
+Trunk also supports SSO login for enterprise organizations. See our [SSO and Authentication](sso-and-authentication.md) guide for setup instructions, or contact us at [support@trunk.io](mailto:support@trunk.io).
 {% endhint %}
