@@ -41,31 +41,46 @@ View status of the queue and recent activity in the **Queue** tab
 
 ### Graph view
 
-The graph view provides a visual representation of all current PRs being tested by Trunk Merge Queue and their relationships. Each node represents a pull request or a batch of pull requests, and each edge indicates testing dependencies. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, this will be a single line showing the testing and merging process.
+The **Graph** tab provides a visual representation of all pull requests currently being tested by Trunk Merge Queue and their relationships within the queue. The graph surfaces batching, bisection, and dependency information at a glance so you can understand what the queue is doing at any moment.
+
+<!-- TODO: Replace with new graph UI screenshot when available -->
+
+<figure><img src="../../.gitbook/assets/merge-graph.png" alt=""><figcaption><p>The merge queue graph showing PRs progressing through testing and merging.</p></figcaption></figure>
 
 #### Reading the graph
 
-The graph organizes PRs into distinct sections based on their current status:
+Each **node** in the graph represents a pull request or a batch of pull requests. Each **edge** indicates a dependency: the connected PR is testing against the changes from the item above it. All edges point toward the target branch. As items merge, the affected queues automatically restructure.
 
-* **Merged section (green)**: PRs displayed at the top of the graph in the green section have successfully merged into the target branch.
-* **Testing and queued sections**: PRs currently being tested or waiting in the queue appear in the main body of the graph.
+* In **Single** mode, the graph displays as a single line showing the testing and merging process.
+* In **Parallel** mode, multiple independent lanes are shown side by side.
 
-**Batching information**: When [batching](../optimizations/batching.md) is enabled, each node in the graph displays batch details so you can see which PRs are grouped together for testing.
+#### Merged items
 
-**Bisection tab**: When a batch fails and [bisection](../optimizations/batching.md#bisection-testing-concurrency) is in progress, a side tab appears showing the bisection process and its current status.
+Pull requests that have successfully merged are displayed in the **green section at the top** of the graph, giving you immediate visibility into what has recently landed on the target branch.
 
-#### Interacting with the graph
+#### Batch information on nodes
 
-* **Hover** over any node to highlight its path to the root of the graph, making it easy to trace a PR's position and dependencies in the queue.
-* **Click** on a node to navigate to the details page for that PR. For batched items, clicking a batch node takes you to the actual PR opened for that batch.
+When [batching](../optimizations/batching.md) is enabled, graph nodes display batch information directly. You can see which PRs have been grouped together for testing. Clicking on a batched node navigates you to the actual PR that was opened for that batch test, so you can inspect CI results and logs.
+
+#### Hover to trace path
+
+Hovering over any item in the graph highlights the **full path from that item to the root** (target branch). This makes it easy to understand exactly which changes a given PR is being tested against and to trace its dependency chain through the queue.
 
 #### Graph legend
 
-The graph includes a legend that explains the meaning of each node color and icon, so you can quickly understand the state of every item in the queue at a glance.
+The graph includes a **legend** that explains the meaning of each visual element, including node colors, edge types, and status indicators. Refer to the legend to understand what is happening in the queue at a glance.
+
+#### Bisection tab
+
+When a batch fails and [bisection](../optimizations/batching.md#bisection-testing-concurrency) is in progress, a **Bisection** side tab appears in the graph view. This tab shows the current state of the bisection process, including which sub-groups are being tested to isolate the failing PR. The bisection tab only appears when bisection is actively running.
 
 #### Legacy graph view
 
-If you need to access the previous graph layout, a link to the legacy graph view is available at the top of the graph page.
+To access the previous graph layout, use the **link at the top** of the graph page to switch to the legacy graph view.
+
+#### Clicking on a PR
+
+Click on any node in the graph to navigate to the [details page](#pull-request-details) for that PR, where you can see full test history, status, and available actions.
 
 ### Health view
 
