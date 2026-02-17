@@ -107,12 +107,29 @@ Trunk classifies all tests into one of three categories based on the history of 
 
 ### Override test status
 
-If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status. Tests can be manually marked as "Flaky" or "Healthy"
+If Trunk's automated detection does not reflect the current state of a test, you can manually override its status. This is useful when a test is stuck in a status that no longer matches its actual behavior, for example, a test that is marked as Flaky but has been passing consistently and should be Healthy.
+
+To override a test's status, use the pencil dropdown on the **Tests** tab. Tests can be manually set to **Healthy** or **Flaky**.
 
 <figure><img src="../.gitbook/assets/manual-test-mark.png" alt=""><figcaption></figcaption></figure>
 
+When you override a test's status, you will be prompted to provide a description explaining the reason for the change. This description is displayed alongside the status change in the test's [status history timeline](dashboard.md#test-history).
+
 {% hint style="info" %}
 Be sure to include a meaningful description when overriding the test status to help your team track any issues.
+{% endhint %}
+
+#### How manual overrides interact with detection
+
+A manual override resets the starting point for Trunk's detection rules engine. After a manual override, the rules engine begins classifying the test from that point forward using only new test run data. Any test runs that occurred before the override are not factored into future classification.
+
+This means the rules engine can change the status again after a manual override if new test results warrant it. Manual overrides do not lock a test into a particular status permanently. Specifically:
+
+* **Overriding to Healthy:** If you mark a test as Healthy and it experiences a flaky failure shortly after, the rules engine will transition it back to Flaky once it observes sufficient evidence. This is the most common use case: correcting a test that is stuck in Flaky despite consistent recent successes.
+* **Overriding to Flaky:** If you mark a test as Flaky and it then accumulates enough passing runs, the rules engine will transition it back to Healthy based on its normal classification rules.
+
+{% hint style="warning" %}
+Manual overrides are best suited for correcting tests that are stuck in an outdated status. They are not designed to permanently override or bypass the rules engine. If the test's behavior does not match the status you set, the rules engine will reclassify it.
 {% endhint %}
 
 ### Next steps
