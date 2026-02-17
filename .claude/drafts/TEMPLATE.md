@@ -2,7 +2,7 @@
 
 ## Type
 
-<!-- Pick one: new-feature | update | fix | deprecation -->
+<!-- Pick one: new-feature | update | fix | deprecation | explainer -->
 
 ## Priority
 

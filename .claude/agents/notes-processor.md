@@ -26,7 +26,7 @@ may contain any combination of:
    - **Linear ticket IDs** — any TRUNK-XXXXX references
    - **GitHub PR URLs** — any github.com PR links. Use `gh pr view <url>` to read PR descriptions, changed files, and review comments for additional context
    - **Product area** — Merge Queue, Flaky Tests, CI Autopilot, Code Quality, or Admin/Setup
-   - **Change type** — new feature, update, fix, or deprecation
+   - **Change type** — new feature, update, fix, deprecation, or explainer
    - **Key details** — what changed, why, any configuration involved
    - **Priority** — if specified, otherwise infer from context
 
@@ -47,6 +47,19 @@ Based on everything gathered, write the documentation changes:
 - For **new pages**: write the full page content
 - For **updates**: show the exact edits needed (old text → new text)
 - For **fixes**: identify and correct the specific issues
+- For **explainers**: enhance existing docs with examples, scenarios, or
+  clarifications based on customer feedback. Important guidelines:
+  - Add examples and scenarios to the relevant existing page — don't
+    create new pages unless the content truly doesn't fit anywhere
+  - Keep "happy path" workflow guides clean and scannable. Add examples
+    in a dedicated section (e.g., "## Examples" or "## Common scenarios")
+    below the main workflow steps, not inline
+  - Use collapsible details blocks (`<details>`) for edge cases or
+    longer scenarios so they don't clutter the page
+  - Prioritize the customer's actual question/confusion — write the
+    example that would have answered it
+  - If the existing page is already long, consider adding a linked
+    "Examples" or "Cookbook" subpage instead of making it longer
 
 ### Phase 4: Apply Changes
 Apply the documentation changes directly to the repo files:
