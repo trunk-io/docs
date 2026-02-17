@@ -25,6 +25,7 @@ Verify with `claude mcp list` or `/mcp` inside Claude Code.
 | `doc-writer` | Opus | Full documentation drafting with all outputs (doc, PRs, questions, changelog, roadmap) |
 | `doc-researcher` | Sonnet | Gathers and organizes context from Linear + existing docs before writing |
 | `changelog-writer` | Sonnet | Focused changelog/release note entries |
+| `branch-manager` | Sonnet | Creates branches, PRs, and updates/creates Linear tickets for tracking |
 
 ## Usage Examples
 
