@@ -133,7 +133,7 @@ Before modifying your CI jobs to automatically upload test results to Trunk, try
 You make an upload to Trunk using the following command:
 
 ```sh
-./trunk-analytics-cli flakytests upload --junit-paths "./junit-reports/*.xml" \
+./trunk-analytics-cli upload --junit-paths "./junit-reports/*.xml" \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```
