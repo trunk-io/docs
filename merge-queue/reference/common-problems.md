@@ -101,6 +101,26 @@ The `trunk-temp/*` branch is a temporary, intermediate branch that the merge que
 
 </details>
 
+<details>
+
+<summary>Why don't I see my repository in the "Create Queue" dropdown?</summary>
+
+The repository dropdown only lists repositories that the Trunk GitHub App has been granted access to. If you installed the GitHub App with access to **specific repositories** rather than **all repositories**, any repo not included during installation won't appear in the dropdown.
+
+To fix this:
+
+1. Go to **Settings** > **Organization** > **GitHub** in the [Trunk web app](https://app.trunk.io), or navigate directly to your GitHub organization's installation settings at `https://github.com/organizations/<your_organization>/settings/installations`.
+2. Click **Configure** next to the Trunk-io app.
+3. Under **Repository access**, either select **All repositories** or add the missing repository to the list of selected repositories.
+4. Click **Save**.
+5. Return to the Trunk web app and click **Create New Queue** again. Your repository should now appear in the dropdown.
+
+{% hint style="info" %}
+**You must be a GitHub admin** to modify the Trunk GitHub App's repository access. If you don't have admin access, ask an organization admin to update the app's repository permissions.
+{% endhint %}
+
+</details>
+
 #### Priority & Overrides <a href="#prioirty-and-overrides" id="prioirty-and-overrides"></a>
 
 <details>
