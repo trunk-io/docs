@@ -90,6 +90,7 @@
     * [Semaphore CI](flaky-tests/get-started/ci-providers/semaphoreci.md)
     * [Travis CI](flaky-tests/get-started/ci-providers/travisci.md)
     * [Other CI Providers](flaky-tests/get-started/ci-providers/otherci.md)
+  * [How test identification works](flaky-tests/get-started/test-identification.md)
 * [Managing detected flaky tests](flaky-tests/managing-detected-flaky-tests.md)
 * [Dashboard](flaky-tests/dashboard.md)
 * [Flaky test detection](flaky-tests/detection.md)
