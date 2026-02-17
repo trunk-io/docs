@@ -125,16 +125,17 @@ Use doc-researcher to survey Linear for all open tickets labeled "docs"
 When you process a notes file, the `notes-processor` agent runs through
 six phases sequentially:
 
-1. **Parse** — extracts feature name, Linear tickets, GitHub PRs, Slack
-   links, and product area from the notes
+1. **Parse** — extracts feature name, Linear tickets, GitHub PRs, context
+   links (Slack, Slite, Loom, etc.), and product area from the notes
 2. **Research** — looks up Linear tickets, searches for related engineering
    tickets, scans existing docs for coverage gaps
 3. **Sources** — writes a `.sources.md` audit trail with every ticket, PR,
    Slack thread, and doc file it used as input
 4. **Draft** — writes or edits documentation, matching existing Trunk style
 5. **Branch/PR/Linear** — creates branch, commits, pushes, opens PR, updates
-   or creates Linear ticket with PR link, attaches Slack links, and links
-   docs ticket to related engineering tickets
+   or creates Linear ticket with PR link, attaches all context links
+   (Slack, Slite, Loom, etc.), and links docs ticket to related
+   engineering tickets
 6. **Report** — appends a review card to `.claude/reports/` with PR link,
    Linear link, review focus areas, and open questions
 

@@ -25,7 +25,12 @@ may contain any combination of:
    - **Feature/change name** — what is this about?
    - **Linear ticket IDs** — any TRUNK-XXXXX references
    - **GitHub PR URLs** — any github.com PR links. Use `gh pr view <url>` to read PR descriptions, changed files, and review comments for additional context
-   - **Slack links** — any `trunk-io.slack.com` URLs. Collect all of them.
+   - **Context links** — collect ALL URLs found in the notes, including:
+     - Slack threads (`trunk-io.slack.com`)
+     - Slite docs (`*.slite.com`)
+     - Loom videos (`loom.com`)
+     - Notion pages, Google Docs, Confluence, or any other internal tool
+     - External references (blog posts, vendor docs, specs)
      These are important context breadcrumbs — they will be attached to
      Linear tickets and referenced in the PR body
    - **Product area** — Merge Queue, Flaky Tests, CI Autopilot, Code Quality, or Admin/Setup
@@ -91,9 +96,10 @@ extracted from PRs, tickets, or Slack context that informed the docs:
   [the relevant snippet]
   ```
 
-## Slack Threads
-Links to Slack conversations that provided context:
-- [channel/thread description](slack-url) — [what context it provided]
+## Context Links
+All URLs extracted from the notes file and Linear tickets (Slack, Slite,
+Loom, Google Docs, external references, etc.):
+- [source type]: [description](url) — [what context it provided]
 
 ## Related Linear Tickets
 Tickets discovered via search that relate to the same feature/area
@@ -149,8 +155,8 @@ After changes are applied:
    - Body must include:
      - **Summary** — bullet list of changes
      - **Linear tickets** — link every related ticket, not just the docs ticket
-     - **Slack context** — list any Slack thread links from the notes file
-       so reviewers can trace back to the original conversation
+     - **Context links** — list all Slack, Slite, Loom, and other links
+       from the notes so reviewers can trace back to original context
      - **Files changed** — list of files created/modified
      - **Open questions** — things the agent couldn't confirm
      - **Test plan** — checklist for reviewer
@@ -158,20 +164,25 @@ After changes are applied:
 
    **4a. Create or update the docs ticket:**
    - If a ticket exists: update its description to be comprehensive.
-     Include: what docs were changed, why, links to the PR, links to
-     any Slack threads found in the notes, and a summary of what the
-     reviewer should check. Add a comment with the PR link.
+     Include: what docs were changed, why, links to the PR, all context
+     links found in the notes (Slack, Slite, Loom, etc.), and a summary
+     of what the reviewer should check. Add a comment with the PR link.
      Update status to "In Review".
    - If no ticket exists: create one in Trunk Engineering team with
      label `docs`, assigned to "me". Write a thorough description
      (not just a title) covering: what changed, why, the PR link,
-     Slack context links, and open questions. Include PR link.
+     all context links, and open questions. Include PR link.
 
-   **4b. Attach Slack links to the ticket:**
-   - For every Slack URL found in the notes file, add it as a link
-     attachment on the Linear ticket using the `links` field in
-     `update_issue` or `create_issue`. Use a descriptive title like
-     "Slack: [channel] — [brief topic]" for each link.
+   **4b. Attach context links to the ticket:**
+   - For every URL found in the notes file (Slack, Slite, Loom, Google
+     Docs, Notion, external docs, etc.), add it as a link attachment on
+     the Linear ticket using the `links` field in `update_issue` or
+     `create_issue`. Use a descriptive title prefix based on the source:
+     - Slack: `"Slack: [channel] — [brief topic]"`
+     - Slite: `"Slite: [doc title or topic]"`
+     - Loom: `"Loom: [video title or topic]"`
+     - GitHub PR: `"PR: [title]"`
+     - Other: `"[Source]: [brief description]"`
 
    **4c. Link related tickets:**
    - For every related Linear ticket discovered during Phase 2 research,
@@ -205,7 +216,7 @@ Report entry format:
 | **Draft** | `.claude/drafts/[notes-file].md` |
 | **Type** | [new-feature / update / fix / deprecation / explainer] |
 | **Changes** | [1-2 sentence summary of files created/modified] |
-| **Slack context** | [List of Slack links, or "None"] |
+| **Context links** | [List of Slack/Slite/Loom/other links, or "None"] |
 | **Related tickets** | [List of linked TRUNK-XXXXX IDs, or "None"] |
 | **Review focus** | [What the human reviewer should pay attention to — accuracy risks, open questions, things the agent wasn't sure about] |
 | **Open questions** | [Numbered list, or "None"] |

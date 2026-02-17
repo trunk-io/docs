@@ -15,7 +15,7 @@ details and linked PRs.
 You will receive some combination of:
 - A feature name or topic
 - Slack message blobs with context about the feature
-- Slack thread links (`trunk-io.slack.com` URLs)
+- Context links (Slack threads, Slite docs, Loom videos, Google Docs, etc.)
 - Linear ticket IDs to look up for details and PRs
 
 ## Your Process
@@ -53,9 +53,9 @@ the actual directory structure you can see.
 A list of PRs extracted from Linear tickets, formatted as:
 - PR title | URL | status | brief relevance note
 
-### Slack Context
-List any Slack links found in the input. These should be attached to the
-Linear ticket and referenced in the PR body.
+### Context Links
+List all URLs found in the input (Slack, Slite, Loom, Google Docs, etc.).
+These should be attached to the Linear ticket and referenced in the PR body.
 
 ### Related Linear Tickets
 List any related engineering tickets found during research. These should

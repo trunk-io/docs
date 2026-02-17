@@ -25,10 +25,11 @@
 <!-- Optional. Link any relevant PRs that implemented the feature/change.
      The agents will read PR descriptions and diffs for additional context. -->
 
-## Slack Links
+## Context Links
 
-<!-- Optional. Paste links to Slack threads or messages with relevant context.
-     These will be attached to the Linear ticket and included in the PR body. -->
+<!-- Optional. Paste links to any relevant context — Slack threads, Slite docs,
+     Loom videos, Google Docs, Notion pages, external references, etc.
+     All links will be attached to the Linear ticket and included in the PR body. -->
 
 ## Target Docs
 
