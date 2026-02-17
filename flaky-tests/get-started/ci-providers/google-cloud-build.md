@@ -112,25 +112,27 @@ steps:
       - jest-test # add each test step that generates JUnit XML files
     timeout: 300s
     env:
-      # Google Cloud Build default substitution variables
+      # Required — helps link to CI run
       - "PROJECT_ID=${PROJECT_ID}"
       - "BUILD_ID=${BUILD_ID}"
+      - "TRIGGER_NAME=${TRIGGER_NAME}"
+      # Required — needed for branch detection
+      - "BRANCH_NAME=${BRANCH_NAME}"
+      - "COMMIT_SHA=${COMMIT_SHA}"
+      # Required for PRs
+      - "_HEAD_BRANCH=${_HEAD_BRANCH}"
+      - "_PR_NUMBER=${_PR_NUMBER}"
+      # Optional — additional metadata
       - "PROJECT_NUMBER=${PROJECT_NUMBER}"
       - "LOCATION=${LOCATION}"
-      - "TRIGGER_NAME=${TRIGGER_NAME}"
-      - "COMMIT_SHA=${COMMIT_SHA}"
       - "REVISION_ID=${REVISION_ID}"
       - "SHORT_SHA=${SHORT_SHA}"
       - "REPO_NAME=${REPO_NAME}"
       - "REPO_FULL_NAME=${REPO_FULL_NAME}"
-      - "BRANCH_NAME=${BRANCH_NAME}"
       - "TAG_NAME=${TAG_NAME}"
       - "REF_NAME=${REF_NAME}"
-      # Google Cloud Build GitHub PR substitution variables
-      - "_HEAD_BRANCH=${_HEAD_BRANCH}"
       - "_BASE_BRANCH=${_BASE_BRANCH}"
       - "_HEAD_REPO_URL=${_HEAD_REPO_URL}"
-      - "_PR_NUMBER=${_PR_NUMBER}"
     secretEnv: ["TRUNK_API_TOKEN"]
 
 options:
@@ -152,9 +154,37 @@ availableSecrets:
 
 **Step dependencies:** Use `waitFor` on the upload step to list all test steps that produce JUnit XML files. This ensures the upload runs only after all tests complete.
 
-**Environment variables:** Google Cloud Build provides [built-in substitution variables](https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values) that the Trunk CLI uses to associate uploads with the correct commit, branch, and PR. The variables listed in the example above are recommended for full functionality.
+**Environment variables:** Google Cloud Build provides [built-in substitution variables](https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values) that the Trunk CLI uses to associate uploads with the correct commit, branch, and PR. See the reference table below for which variables are required.
 
 **Secret access:** The `availableSecrets` block makes your Trunk API token available as the `TRUNK_API_TOKEN` environment variable in the upload step via `secretEnv`.
+
+#### Environment Variable Reference
+
+The following table lists the Cloud Build substitution variables used by the Trunk CLI. Pass these through the `env` field on your upload step.
+
+| Variable | Required | Description |
+| --- | --- | --- |
+| `PROJECT_ID` | Yes | GCP project ID; helps link to the CI run |
+| `BUILD_ID` | Yes | Cloud Build build ID; helps link to the CI run |
+| `TRIGGER_NAME` | Yes | Name of the Cloud Build trigger; distinguishes uploads from other CI providers |
+| `BRANCH_NAME` | Yes | Git branch being built; needed for push-based builds |
+| `COMMIT_SHA` | Yes | Full commit SHA for the build |
+| `_HEAD_BRANCH` | Yes (PRs) | Head branch name; needed for pull request builds |
+| `_PR_NUMBER` | Yes (PRs) | Pull request number; needed for pull request builds |
+| `PROJECT_NUMBER` | No | GCP project number |
+| `LOCATION` | No | Build location/region |
+| `REVISION_ID` | No | Revision identifier |
+| `SHORT_SHA` | No | Short commit SHA |
+| `REPO_NAME` | No | Repository name |
+| `REPO_FULL_NAME` | No | Full repository name (owner/repo) |
+| `TAG_NAME` | No | Git tag name, if applicable |
+| `REF_NAME` | No | Git ref name |
+| `_BASE_BRANCH` | No | Base branch for pull requests |
+| `_HEAD_REPO_URL` | No | URL of the head repository for pull requests |
+
+{% hint style="info" %}
+Variables prefixed with `_` (such as `_HEAD_BRANCH` and `_PR_NUMBER`) are [user-defined substitution variables](https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values#using_user-defined_substitutions) that Cloud Build populates automatically when a build is triggered by a GitHub pull request via the Cloud Build GitHub App.
+{% endhint %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
