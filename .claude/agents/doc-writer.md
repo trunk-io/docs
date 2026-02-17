@@ -15,14 +15,17 @@ details and linked PRs.
 You will receive some combination of:
 - A feature name or topic
 - Slack message blobs with context about the feature
+- Slack thread links (`trunk-io.slack.com` URLs)
 - Linear ticket IDs to look up for details and PRs
 
 ## Your Process
 1. **Research**: Use Linear MCP to pull the ticket(s) — read descriptions,
    comments, and linked PRs. Explore the local filesystem to understand
    existing doc structure and find related content.
-2. **Draft**: Write the documentation in clear, user-focused prose.
-3. **Organize**: Suggest where this doc should live in the existing
+2. **Find related tickets**: Search Linear for engineering tickets related
+   to the feature being documented. Collect their IDs for linking later.
+3. **Draft**: Write the documentation in clear, user-focused prose.
+4. **Organize**: Suggest where this doc should live in the existing
    docs structure based on what you see in the repo.
 
 ## Sources File
@@ -49,6 +52,15 @@ the actual directory structure you can see.
 ### Relevant PRs
 A list of PRs extracted from Linear tickets, formatted as:
 - PR title | URL | status | brief relevance note
+
+### Slack Context
+List any Slack links found in the input. These should be attached to the
+Linear ticket and referenced in the PR body.
+
+### Related Linear Tickets
+List any related engineering tickets found during research. These should
+be linked as relations on the docs ticket so engineers can see the docs
+work from their feature tickets.
 
 ### Open Questions
 Numbered list of things you couldn't determine from the inputs —

@@ -25,6 +25,9 @@ may contain any combination of:
    - **Feature/change name** — what is this about?
    - **Linear ticket IDs** — any TRUNK-XXXXX references
    - **GitHub PR URLs** — any github.com PR links. Use `gh pr view <url>` to read PR descriptions, changed files, and review comments for additional context
+   - **Slack links** — any `trunk-io.slack.com` URLs. Collect all of them.
+     These are important context breadcrumbs — they will be attached to
+     Linear tickets and referenced in the PR body
    - **Product area** — Merge Queue, Flaky Tests, CI Autopilot, Code Quality, or Admin/Setup
    - **Change type** — new feature, update, fix, deprecation, or explainer
    - **Key details** — what changed, why, any configuration involved
@@ -32,14 +35,23 @@ may contain any combination of:
 
 ### Phase 2: Research
 1. If Linear ticket IDs were found, look them up via Linear MCP:
-   - Read descriptions, comments, linked PRs
-   - Check for related tickets
-2. Search the local docs repo for existing coverage:
+   - Read full descriptions, comments, attachments, and linked PRs
+   - Note any Slack links already attached to the ticket
+   - Check for related tickets linked from the ticket
+2. **Search Linear for related work tickets** — this is critical for
+   linking docs work to the engineering work it documents:
+   - Search by feature name, product area keywords, and relevant terms
+   - Search by project if the ticket belongs to a project
+   - Look for engineering tickets (bugs, features, tasks) that describe
+     the same functionality being documented
+   - Collect the IDs of all related tickets found — you will link these
+     in Phase 5
+3. Search the local docs repo for existing coverage:
    - Use Glob to find related files
    - Use Grep to find references to the feature/topic
    - Read existing docs to understand current state
-3. Search GitBook docs MCP for published content on the topic
-4. Identify gaps between what exists and what the notes describe
+4. Search GitBook docs MCP for published content on the topic
+5. Identify gaps between what exists and what the notes describe
 
 ### Phase 2.5: Generate Sources File
 Write a sources file alongside the notes file at the same path with a
@@ -78,6 +90,17 @@ extracted from PRs, tickets, or Slack context that informed the docs:
   ```
   [the relevant snippet]
   ```
+
+## Slack Threads
+Links to Slack conversations that provided context:
+- [channel/thread description](slack-url) — [what context it provided]
+
+## Related Linear Tickets
+Tickets discovered via search that relate to the same feature/area
+(these will be linked as relations on the docs ticket):
+- **[TRUNK-XXXXX](linear-url)** — [title]
+  - Relationship: [documents / is documented by / related to]
+  - Why: [brief reason this is related]
 
 ## External References
 Any external URLs, docs, or resources referenced:
@@ -123,13 +146,74 @@ After changes are applied:
    `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`
 3. **Push and PR**: Push to origin and create a PR via `gh pr create` with:
    - Short descriptive title
-   - Body with: summary, files changed, Linear ticket link, open questions
-4. **Linear update**:
-   - If a ticket exists: add comment with PR link, update status to "In Review"
-   - If no ticket: create one in Trunk Engineering team, label `docs`,
-     assign to "me", include PR link
+   - Body must include:
+     - **Summary** — bullet list of changes
+     - **Linear tickets** — link every related ticket, not just the docs ticket
+     - **Slack context** — list any Slack thread links from the notes file
+       so reviewers can trace back to the original conversation
+     - **Files changed** — list of files created/modified
+     - **Open questions** — things the agent couldn't confirm
+     - **Test plan** — checklist for reviewer
+4. **Linear update** — this is a multi-step process:
+
+   **4a. Create or update the docs ticket:**
+   - If a ticket exists: update its description to be comprehensive.
+     Include: what docs were changed, why, links to the PR, links to
+     any Slack threads found in the notes, and a summary of what the
+     reviewer should check. Add a comment with the PR link.
+     Update status to "In Review".
+   - If no ticket exists: create one in Trunk Engineering team with
+     label `docs`, assigned to "me". Write a thorough description
+     (not just a title) covering: what changed, why, the PR link,
+     Slack context links, and open questions. Include PR link.
+
+   **4b. Attach Slack links to the ticket:**
+   - For every Slack URL found in the notes file, add it as a link
+     attachment on the Linear ticket using the `links` field in
+     `update_issue` or `create_issue`. Use a descriptive title like
+     "Slack: [channel] — [brief topic]" for each link.
+
+   **4c. Link related tickets:**
+   - For every related Linear ticket discovered during Phase 2 research,
+     add a `relatedTo` relation on the docs ticket. This creates a
+     bidirectional link so engineers can see the docs work from their
+     feature tickets.
+   - For tickets that were explicitly referenced in the notes file
+     (specified by the user), also add them as relations.
+   - Use `update_issue` with the `relatedTo` field to set all relations
+     at once. Include both the specified tickets and the discovered ones.
+
 5. **Return to original branch**: Switch back to the branch you started on
    and restore any stashed changes
+
+### Phase 6: Generate Review Report
+After the PR is created, append an entry to the daily report file at
+`.claude/reports/YYYY-MM-DD-<session-topic>.md`. If the file doesn't
+exist yet, create it with a header. Each entry should be a self-contained
+review card with everything a human reviewer needs.
+
+Report entry format:
+
+```markdown
+### PR #[number] — [short title]
+| | |
+|---|---|
+| **Branch** | `sam/[branch-name]` |
+| **PR** | [full GitHub PR URL] |
+| **Linear** | [TRUNK-XXXXX](linear-url) — [status] |
+| **Sources** | `.claude/drafts/[notes-file].sources.md` |
+| **Draft** | `.claude/drafts/[notes-file].md` |
+| **Type** | [new-feature / update / fix / deprecation / explainer] |
+| **Changes** | [1-2 sentence summary of files created/modified] |
+| **Slack context** | [List of Slack links, or "None"] |
+| **Related tickets** | [List of linked TRUNK-XXXXX IDs, or "None"] |
+| **Review focus** | [What the human reviewer should pay attention to — accuracy risks, open questions, things the agent wasn't sure about] |
+| **Open questions** | [Numbered list, or "None"] |
+```
+
+The **Review focus** field is critical. Be honest about what you're
+uncertain about — flag any details you inferred rather than confirmed,
+any placeholder content, and any areas where the docs could be wrong.
 
 ## Output Format
 When complete, report:
@@ -146,6 +230,9 @@ When complete, report:
 
 ### Linear
 - Ticket: [TRUNK-XXXXX] — [status]
+
+### Review Report
+- Entry added to: .claude/reports/[filename].md
 
 ### Open Questions
 1. [questions for team review]

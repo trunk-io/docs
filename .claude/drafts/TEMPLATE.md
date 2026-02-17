@@ -25,6 +25,11 @@
 <!-- Optional. Link any relevant PRs that implemented the feature/change.
      The agents will read PR descriptions and diffs for additional context. -->
 
+## Slack Links
+
+<!-- Optional. Paste links to Slack threads or messages with relevant context.
+     These will be attached to the Linear ticket and included in the PR body. -->
+
 ## Target Docs
 
 <!-- Optional. If you know which docs page(s) need updating, list them.

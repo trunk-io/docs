@@ -57,23 +57,44 @@ The `notes-processor` agent will:
 - Create a branch (`sam/<topic>`), commit, push, and open a PR
 - Update or create a Linear ticket with the PR link
 
-### 3. Review and iterate
+### 3. Review the report
+
+After processing, the agent appends a review card to the daily report at
+`.claude/reports/YYYY-MM-DD-<topic>.md`. Each card includes:
+- PR and Linear links
+- Links back to the draft and sources files
+- A **Review focus** field highlighting what the reviewer should check
+- Open questions the agent couldn't resolve
+
+### 4. Review and iterate
 
 Check the PR and GitBook preview. The agent will list any open questions
 for things it couldn't determine from the notes alone.
 
 ### Batch processing
 
-To process multiple notes files:
+To process multiple notes files sequentially:
 ```
-Process all notes files in .claude/drafts/ that haven't been processed yet
+Process each notes file in .claude/drafts/ one at a time.
+For each file: research, draft, apply changes, create branch/PR, update Linear, then move to the next.
 ```
+
+Each file gets its own branch (`sam/<topic>`), PR, and Linear ticket.
+The agent processes them one at a time to avoid git conflicts.
 
 ## Usage Examples
 
 **Process a notes file (recommended):**
 ```
 Process the notes file at .claude/drafts/parallel-queues.md
+```
+
+**Process several notes files sequentially:**
+```
+Process each of these notes files one at a time:
+- .claude/drafts/feature-a.md
+- .claude/drafts/feature-b.md
+- .claude/drafts/feature-c.md
 ```
 
 **Write docs for a feature (manual):**
@@ -99,14 +120,23 @@ Use changelog-writer for the new test quarantine feature. Tickets: FTD-301
 Use doc-researcher to survey Linear for all open tickets labeled "docs"
 ```
 
-## Parallel Workflows
+## What the Agent Does
 
-For working on multiple features simultaneously, use [Claude Squad](https://github.com/smtg-ai/claude-squad):
-```bash
-brew install claude-squad
-cs
-```
-This lets you run multiple Claude Code sessions in parallel, each with its own git worktree.
+When you process a notes file, the `notes-processor` agent runs through
+six phases sequentially:
+
+1. **Parse** — extracts feature name, Linear tickets, GitHub PRs, Slack
+   links, and product area from the notes
+2. **Research** — looks up Linear tickets, searches for related engineering
+   tickets, scans existing docs for coverage gaps
+3. **Sources** — writes a `.sources.md` audit trail with every ticket, PR,
+   Slack thread, and doc file it used as input
+4. **Draft** — writes or edits documentation, matching existing Trunk style
+5. **Branch/PR/Linear** — creates branch, commits, pushes, opens PR, updates
+   or creates Linear ticket with PR link, attaches Slack links, and links
+   docs ticket to related engineering tickets
+6. **Report** — appends a review card to `.claude/reports/` with PR link,
+   Linear link, review focus areas, and open questions
 
 ## Directory Structure
 
@@ -122,4 +152,7 @@ This lets you run multiple Claude Code sessions in parallel, each with its own g
   drafts/
     TEMPLATE.md           # Notes file template
     *.md                  # Your notes files (gitignored)
+    *.sources.md          # Source audit trails (gitignored)
+  reports/
+    *.md                  # Review reports (committed to repo)
 ```
