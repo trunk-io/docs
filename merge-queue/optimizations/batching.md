@@ -40,7 +40,7 @@ When a batch fails, Trunk automatically splits it apart (bisects) to identify wh
 
 #### Why Separate Bisection Concurrency?
 
-By default, bisection tests use the same concurrency limit as your main queue. This means:
+By default, bisection tests use the same concurrency limit as your main queue when bisection concurrency is not explicitly configured. This means:
 
 * Bisection can slow down other PRs waiting to merge
 * Developers wait longer to learn which PR broke the batch
