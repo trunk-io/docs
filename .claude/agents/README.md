@@ -119,10 +119,71 @@ Use changelog-writer for the new test quarantine feature. Tickets: FTD-301
 Use doc-researcher to survey Linear for all open tickets labeled "docs"
 ```
 
+## Pipeline Flow
+
+```mermaid
+flowchart TD
+    A["📝 Notes File<br/><code>.claude/drafts/my-feature.md</code>"] --> B["<b>1. Parse</b><br/>Extract feature name, Linear IDs,<br/>PR URLs, context links, product area"]
+
+    B --> C["<b>2. Research</b><br/>Look up Linear tickets &amp; PRs<br/>Search for related eng tickets<br/>Scan existing docs for gaps"]
+
+    C --> D["<b>3. Sources</b><br/>Write audit trail to<br/><code>tmp/sources/</code>"]
+
+    D --> E["<b>4. Draft</b><br/>Write or edit docs<br/>matching Trunk style"]
+
+    E --> F["<b>5. Branch / PR / Linear</b>"]
+
+    F --> F1["Create branch<br/><code>sam/&lt;topic&gt;</code>"]
+    F1 --> F2["Commit &amp; push"]
+    F2 --> F3["Create PR<br/><code>[TRUNK-XXXXX] Title</code>"]
+    F3 --> F4["Update Linear ticket<br/>Link PR, attach context,<br/>link related eng tickets"]
+
+    F4 --> G["<b>6. Changelog</b><br/>Stage entry to<br/><code>tmp/changelogs/</code>"]
+
+    G --> H["<b>7. Slack Post</b><br/>Write announcement to<br/><code>tmp/slack/</code>"]
+
+    H --> I["<b>8. Report</b><br/>Append review card to<br/><code>tmp/report.html</code>"]
+
+    I --> J{"More drafts?"}
+    J -- Yes --> K["Clean working tree<br/>Return to base branch"] --> A
+    J -- No --> L["✅ Done<br/>Open report.html to review"]
+
+    style A fill:#e8f4fd,stroke:#2563eb
+    style L fill:#d1fae5,stroke:#059669
+    style F fill:#fef3c7,stroke:#d97706
+    style F1 fill:#fef3c7,stroke:#d97706
+    style F2 fill:#fef3c7,stroke:#d97706
+    style F3 fill:#fef3c7,stroke:#d97706
+    style F4 fill:#fef3c7,stroke:#d97706
+```
+
+### Agent Collaboration
+
+```mermaid
+flowchart LR
+    NP["<b>notes-processor</b><br/>Orchestrator<br/><i>Opus</i>"]
+
+    NP -- "research context" --> DR["<b>doc-researcher</b><br/>Context gathering<br/><i>Sonnet</i>"]
+    NP -- "draft docs" --> DW["<b>doc-writer</b><br/>Documentation<br/><i>Opus</i>"]
+    NP -- "branch &amp; PR" --> BM["<b>branch-manager</b><br/>Git / PR / Linear<br/><i>Sonnet</i>"]
+    NP -- "changelog" --> CW["<b>changelog-writer</b><br/>Release notes<br/><i>Sonnet</i>"]
+
+    DR -- "Linear MCP" --> LIN[(Linear)]
+    DR -- "GitBook MCP" --> GB[(GitBook)]
+    DR -- "gh CLI" --> GH[(GitHub)]
+    BM -- "gh CLI" --> GH
+    DW -- "Linear MCP" --> LIN
+
+    style NP fill:#e8f4fd,stroke:#2563eb
+    style LIN fill:#f3e8ff,stroke:#7c3aed
+    style GB fill:#f3e8ff,stroke:#7c3aed
+    style GH fill:#f3e8ff,stroke:#7c3aed
+```
+
 ## What the Agent Does
 
 When you process a notes file, the `notes-processor` agent runs through
-six phases sequentially:
+eight phases sequentially:
 
 1. **Parse** — extracts feature name, Linear tickets, GitHub PRs, context
    links (Slack, Slite, Loom, etc.), and product area from the notes
