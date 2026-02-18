@@ -28,9 +28,9 @@ You will receive:
 ### 3. Push and PR
 - Push the branch to origin
 - Create a PR using `gh pr create` with:
-  - A short, descriptive title
-  - A body containing: summary of changes, list of files modified, link to the Linear ticket if applicable, and open questions if any
-- Include the Linear ticket ID in the PR body so it auto-links
+  - **Title format:** `[TRUNK-XXXXX] Short descriptive title` — always prefix with the Linear ticket ID in brackets if one exists
+  - A body containing: summary of changes, list of files modified, link to the Linear ticket as a clickable URL (e.g., `[TRUNK-XXXXX](https://linear.app/trunk/issue/TRUNK-XXXXX)`), and open questions if any
+- The Linear ticket link in the body and the `[TRUNK-XXXXX]` prefix in the title ensure cross-referencing between GitHub and Linear
 
 ### 4. Linear Ticket Update
 - **Always include the full PR URL** (e.g., `https://github.com/trunk-io/docs/pull/123`) in any Linear comment or description. Never reference a PR without its link.

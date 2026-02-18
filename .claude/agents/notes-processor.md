@@ -154,7 +154,8 @@ After changes are applied:
 2. **Commit**: Stage and commit with a clear message, include
    `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`
 3. **Push and PR**: Push to origin and create a PR via `gh pr create` with:
-   - Short descriptive title
+   - **Title format:** `[TRUNK-XXXXX] Short descriptive title` — always prefix
+     with the Linear ticket ID in brackets (use the docs ticket ID)
    - Body must include:
      - **Summary** — bullet list of changes
      - **Linear tickets** — link every related ticket, not just the docs ticket
