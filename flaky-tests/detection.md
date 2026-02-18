@@ -107,13 +107,67 @@ Trunk classifies all tests into one of three categories based on the history of 
 
 ### Override test status
 
-If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status. Tests can be manually marked as "Flaky" or "Healthy"
+You can manually override the detected status of any test case. This is useful when a test is stuck in a status that no longer reflects its actual behavior — for example, a test marked as Flaky that has been consistently passing for a while.
+
+To override a test's status:
+
+1. Navigate to the **Tests** tab on the Flaky Tests dashboard.
+2. Click the pencil icon dropdown next to the test you want to update.
+3. Select the new status: **Healthy**, **Flaky**, or **Broken**.
+4. Provide a reason describing why you are overriding the status.
+5. Submit the override.
 
 <figure><img src="../.gitbook/assets/manual-test-mark.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Be sure to include a meaningful description when overriding the test status to help your team track any issues.
+Be sure to include a meaningful description when overriding the test status. This reason is displayed alongside the override in the test's [status history](dashboard.md#test-history), helping your team understand why the status was changed.
 {% endhint %}
+
+#### How overrides interact with the detection engine
+
+When you override a test's status, the detection engine resets its classification for that test and begins re-evaluating from the override point forward. This means:
+
+1. **All test runs up to the override are processed.** The detection engine completes its analysis of any pending runs before applying the override.
+2. **Classification resets at the override.** The engine clears any partial rule matches and starts fresh from the new status you set.
+3. **Detection continues normally after the override.** New test runs uploaded after the override are analyzed using the standard detection rules, starting from the status you selected.
+
+{% hint style="warning" %}
+Overriding a test's status does **not** suppress future detection. If a test you mark as Healthy starts failing again, the detection engine will reclassify it as Flaky or Broken based on the new failures.
+{% endhint %}
+
+#### Example scenarios
+
+<details>
+
+<summary>Override to Healthy — test starts failing again</summary>
+
+A test has been marked as Flaky by the detection engine but has been passing consistently. You override the status to **Healthy**.
+
+After the override, if the test experiences a flaky failure on a subsequent CI run, the detection engine will reclassify it as **Flaky** — just as it would for any healthy test that starts failing. The override does not grant any special protection.
+
+</details>
+
+<details>
+
+<summary>Override to Flaky — test starts passing consistently</summary>
+
+A test has been incorrectly classified as Healthy, but you know it is unreliable. You override the status to **Flaky**.
+
+After the override, if the test accumulates enough consistent passes to meet the detection engine's criteria for a healthy test, it will be reclassified as **Healthy** automatically. The override sets the starting point, but the detection engine is free to reclassify based on new evidence.
+
+</details>
+
+<details>
+
+<summary>Override to Broken — detection continues from that point</summary>
+
+You can also override a test's status to **Broken** if it is consistently failing but has not yet been reclassified by the detection engine. The engine will continue classification from the Broken status, and if the test starts passing again, it will transition back to Healthy or Flaky based on the detection rules.
+
+</details>
+
+#### Viewing overrides in status history
+
+Both manual overrides and engine-generated status changes appear together in the test's [status history timeline](dashboard.md#test-history). Manual overrides display the reason you provided when submitting the override, while engine-generated transitions display the detection rule that triggered the change.
 
 ### Next steps
 
