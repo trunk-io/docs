@@ -81,6 +81,8 @@ The following is an example Cloud Build configuration that runs tests and upload
 
 To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
 
+{% tabs %}
+{% tab title="XML" %}
 ```yaml
 steps:
   - name: gcr.io/cloud-builders/npm
@@ -143,6 +145,68 @@ availableSecrets:
     - versionName: projects/${PROJECT_ID}/secrets/<YOUR_SECRET_NAME>/versions/latest
       env: TRUNK_API_TOKEN
 ```
+{% endtab %}
+
+{% tab title="Bazel" %}
+```yaml
+steps:
+  - name: gcr.io/cloud-builders/bazel
+    id: bazel-test
+    args: ['test', '//...', '--build_event_json_file=bep.json']
+    timeout: 600s
+    allowExitCodes: [0, 1] # allow test failures so upload step still runs
+
+  - name: gcr.io/cloud-builders/gcloud
+    id: analytics-upload
+    script: |
+      #!/bin/bash
+      set -euo pipefail
+      SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
+      curl -fL --retry 3 \
+        "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
+        | tar -xz
+      chmod +x trunk-analytics-cli
+      ./trunk-analytics-cli upload \
+        --bazel-bep-path "bep.json" \
+        --org-url-slug "<TRUNK_ORG_SLUG>" \
+        --token "${TRUNK_API_TOKEN}"
+    waitFor:
+      - bazel-test
+    timeout: 300s
+    env:
+      # Required — helps link to CI run
+      - "PROJECT_ID=${PROJECT_ID}"
+      - "BUILD_ID=${BUILD_ID}"
+      - "TRIGGER_NAME=${TRIGGER_NAME}"
+      # Required — needed for branch detection
+      - "BRANCH_NAME=${BRANCH_NAME}"
+      - "COMMIT_SHA=${COMMIT_SHA}"
+      # Required for PRs
+      - "_HEAD_BRANCH=${_HEAD_BRANCH}"
+      - "_PR_NUMBER=${_PR_NUMBER}"
+      # Optional — additional metadata
+      - "PROJECT_NUMBER=${PROJECT_NUMBER}"
+      - "LOCATION=${LOCATION}"
+      - "REVISION_ID=${REVISION_ID}"
+      - "SHORT_SHA=${SHORT_SHA}"
+      - "REPO_NAME=${REPO_NAME}"
+      - "REPO_FULL_NAME=${REPO_FULL_NAME}"
+      - "TAG_NAME=${TAG_NAME}"
+      - "REF_NAME=${REF_NAME}"
+      - "_BASE_BRANCH=${_BASE_BRANCH}"
+      - "_HEAD_REPO_URL=${_HEAD_REPO_URL}"
+    secretEnv: ["TRUNK_API_TOKEN"]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 1200s
+availableSecrets:
+  secretManager:
+    - versionName: projects/${PROJECT_ID}/secrets/<YOUR_SECRET_NAME>/versions/latest
+      env: TRUNK_API_TOKEN
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="warning" %}
 **Important:** Replace `<TRUNK_ORG_SLUG>` with your Trunk organization slug and `<YOUR_SECRET_NAME>` with the name of the secret you created in GCP Secret Manager.
