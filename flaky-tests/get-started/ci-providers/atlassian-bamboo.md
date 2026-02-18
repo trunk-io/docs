@@ -2,7 +2,7 @@
 description: Configure Flaky Tests using Atlassian Bamboo
 ---
 
-# Bamboo
+# Atlassian Bamboo
 
 Trunk Flaky Tests integrates with your CI by adding a step in your Bamboo Plans to upload tests with the [Trunk Uploader CLI](../../uploader.md).
 
@@ -15,11 +15,11 @@ Before you start on these steps, see the [Test Frameworks](../frameworks/) docs 
 By the end of this guide, you should achieve the following.
 
 * [ ] Get your Trunk organization slug and token
-* [ ] Set your slug and token as a variable in CI
-* [ ] Configure your CI to upload to Trunk
+* [ ] Set your slug and token as a variable in Bamboo
+* [ ] Configure your Bamboo Plan to upload to Trunk
 * [ ] Validate your uploads in Trunk
 
-After completing these checklist items, you'll be integrated with Trunk.&#x20;
+After completing these checklist items, you'll be integrated with Trunk.
 
 ### Trunk Organization Slug and Token
 
@@ -27,7 +27,7 @@ Before setting up uploads to Trunk, you must sign in to [app.trunk.io](https://a
 
 #### Trunk Slug
 
-You can find your organization slug under **Settings > Organization > Manage > Organization Name > Slug**. You'll save this as a variable in CI in a later step.
+You can find your organization slug under **Settings > Organization > Manage > Organization Name > Slug**. You'll save this as a variable in Bamboo in a later step.
 
 #### Trunk Token
 
@@ -35,13 +35,11 @@ You can find your token under **Settings > Organization > Manage > Organization 
 
 ### Add the Trunk Token as a Secret
 
-Store the Trunk slug and API token obtained in the previous step in your Bamboo instance as plan variables named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively. Mark `TRUNK_TOKEN` as a **secret** in the Bamboo UI so it is not exposed in build logs.
-
-You can add plan variables in Bamboo under **Plan Configuration > Variables**.
+Store the Trunk API token as a [Bamboo plan variable](https://confluence.atlassian.com/bamboo/bamboo-variables-289277087.html) named `TRUNK_TOKEN`. Mark this variable as **Secret** in the Bamboo UI to prevent it from being exposed in build logs.
 
 ### Upload to Trunk
 
-Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
+Add an `Upload Test Results` step after running tests in each of your Bamboo jobs that run tests. This should minimally include all jobs that run on pull requests, as well as jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
 
 {% hint style="danger" %}
 It is important to upload test results from CI runs on [**stable branches**](../../detection.md#stable-branches), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
@@ -53,12 +51,12 @@ Trunk can also detect test flakes on PR and merge branches. To best detect flaky
 
 #### Example Bamboo Plan Spec
 
-The following is an example of a [Bamboo Plan Spec](https://confluence.atlassian.com/bamboo/bamboo-specs-894743906.html) (YAML) that runs tests and uploads results to Trunk. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
+The following is an example of a [Bamboo Plan Spec](https://confluence.atlassian.com/bamboo/bamboo-specs-894743906.html) (YAML) that uploads test results after your tests run. The upload step is placed under `final-tasks` so it runs even if your tests fail.
 
-To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
+To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [Test Frameworks](../frameworks/) docs.
 
 {% tabs %}
-{% tab title="XML" %}
+{% tab title="JUnit XML" %}
 ```yaml
 version: 2
 plan:
@@ -73,10 +71,12 @@ Run Tests and Upload to Trunk:
         description: Checkout Source Code
 
     - script:
-        description: Run Tests
+        name: Run Tests
         body: |
-          # Run your tests and produce JUnit XML output
-          ...
+          # Your test command here, e.g.:
+          # ./gradlew test
+          # mvn test
+          # npm test
 
   final-tasks:
     - script:
@@ -84,10 +84,12 @@ Run Tests and Upload to Trunk:
         body: |
           curl -fsSLO --retry 3 https://trunk.io/releases/trunk
           chmod +x ./trunk
-          ./trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug ${bamboo.TRUNK_ORG_SLUG} --token ${bamboo.TRUNK_TOKEN}
+          ./trunk flakytests upload \
+            --junit-paths "**/junit.xml" \
+            --org-url-slug <TRUNK_ORG_SLUG> \
+            --token ${bamboo.TRUNK_TOKEN}
 
 variables:
-  TRUNK_ORG_SLUG: <YOUR_TRUNK_ORG_SLUG>
   TRUNK_TOKEN: <YOUR_TRUNK_TOKEN>
 
 branches:
@@ -97,7 +99,7 @@ branches:
 ```
 {% endtab %}
 
-{% tab title="Bazel" %}
+{% tab title="Bazel BEP JSON" %}
 ```yaml
 version: 2
 plan:
@@ -112,10 +114,9 @@ Run Tests and Upload to Trunk:
         description: Checkout Source Code
 
     - script:
-        description: Run Tests
+        name: Run Tests
         body: |
-          # Run your Bazel tests
-          ...
+          bazel test //... --build_event_json_file=build_events.json
 
   final-tasks:
     - script:
@@ -123,10 +124,12 @@ Run Tests and Upload to Trunk:
         body: |
           curl -fsSLO --retry 3 https://trunk.io/releases/trunk
           chmod +x ./trunk
-          ./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> --org-url-slug ${bamboo.TRUNK_ORG_SLUG} --token ${bamboo.TRUNK_TOKEN}
+          ./trunk flakytests upload \
+            --bazel-bep-path build_events.json \
+            --org-url-slug <TRUNK_ORG_SLUG> \
+            --token ${bamboo.TRUNK_TOKEN}
 
 variables:
-  TRUNK_ORG_SLUG: <YOUR_TRUNK_ORG_SLUG>
   TRUNK_TOKEN: <YOUR_TRUNK_TOKEN>
 
 branches:
@@ -136,7 +139,7 @@ branches:
 ```
 {% endtab %}
 
-{% tab title="XCode" %}
+{% tab title="XCResult Path" %}
 ```yaml
 version: 2
 plan:
@@ -151,10 +154,11 @@ Run Tests and Upload to Trunk:
         description: Checkout Source Code
 
     - script:
-        description: Run Tests
+        name: Run Tests
         body: |
-          # Run your XCode tests
-          ...
+          xcodebuild test \
+            -scheme YourScheme \
+            -resultBundlePath ./test-results.xcresult
 
   final-tasks:
     - script:
@@ -162,10 +166,12 @@ Run Tests and Upload to Trunk:
         body: |
           curl -fsSLO --retry 3 https://trunk.io/releases/trunk
           chmod +x ./trunk
-          ./trunk flakytests upload --xcresult-path <XCRESULT_PATH> --org-url-slug ${bamboo.TRUNK_ORG_SLUG} --token ${bamboo.TRUNK_TOKEN}
+          ./trunk flakytests upload \
+            --xcresult-path ./test-results.xcresult \
+            --org-url-slug <TRUNK_ORG_SLUG> \
+            --token ${bamboo.TRUNK_TOKEN}
 
 variables:
-  TRUNK_ORG_SLUG: <YOUR_TRUNK_ORG_SLUG>
   TRUNK_TOKEN: <YOUR_TRUNK_TOKEN>
 
 branches:
@@ -177,16 +183,20 @@ branches:
 {% endtabs %}
 
 {% hint style="info" %}
-**Using `final-tasks`:** The upload step is placed under `final-tasks` so that test results are uploaded even if the test step fails. This ensures Trunk captures results from both passing and failing test runs.
+**Why `final-tasks`?** In Bamboo, `final-tasks` always execute regardless of whether previous tasks succeeded or failed. This ensures test results are uploaded even when tests fail, which is essential for accurate flaky test detection.
 {% endhint %}
 
-{% hint style="info" %}
-**PR branch builds:** The `branches.create.for-pull-request` section ensures Bamboo automatically creates plan branches for pull requests, allowing Trunk to also detect flaky tests on PR branches.
+See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
+
+### PR Number Detection
+
+{% hint style="warning" %}
+Bamboo may not always expose the pull request number through its environment variables, depending on your plan configuration and how branch builds are triggered.
+
+If Trunk is not detecting PR numbers for your Bamboo builds, you can explicitly pass the PR number using the `--pr-number` flag or the `TRUNK_PR_NUMBER` environment variable.
 {% endhint %}
 
-#### PR Number Detection
-
-Bamboo does not always expose the pull request number as an environment variable in all configurations. If Trunk is unable to detect the PR number from your Bamboo builds, you can explicitly pass it using the `--pr-number` flag or the `TRUNK_PR_NUMBER` environment variable:
+To set the PR number explicitly, add the `--pr-number` flag to your upload command:
 
 ```yaml
   final-tasks:
@@ -195,12 +205,31 @@ Bamboo does not always expose the pull request number as an environment variable
         body: |
           curl -fsSLO --retry 3 https://trunk.io/releases/trunk
           chmod +x ./trunk
-          ./trunk flakytests upload --junit-paths "**/junit.xml" --org-url-slug ${bamboo.TRUNK_ORG_SLUG} --token ${bamboo.TRUNK_TOKEN} --pr-number ${bamboo.TRUNK_PR_NUMBER}
+          ./trunk flakytests upload \
+            --junit-paths "**/junit.xml" \
+            --org-url-slug <TRUNK_ORG_SLUG> \
+            --token ${bamboo.TRUNK_TOKEN} \
+            --pr-number ${bamboo.TRUNK_PR_NUMBER}
 ```
 
-Set `TRUNK_PR_NUMBER` as a plan variable that your Bamboo plan branch configuration populates with the PR number on PR builds.
+Alternatively, set the `TRUNK_PR_NUMBER` environment variable in your plan, and the CLI will pick it up automatically.
 
-See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
+### Bamboo Environment Variables
+
+Trunk automatically detects the following Bamboo environment variables when running in a Bamboo CI environment:
+
+| Variable | Description |
+| --- | --- |
+| `bamboo_planRepository_branch` | The branch being built |
+| `bamboo_planRepository_revision` | The commit SHA |
+| `bamboo_planRepository_repositoryUrl` | The repository URL |
+| `bamboo_buildNumber` | The build number |
+| `bamboo_buildResultKey` | Unique key for the build result |
+| `bamboo_buildResultsUrl` | URL to the build results page |
+| `bamboo_planKey` | The plan key |
+| `bamboo_planName` | The plan name |
+| `bamboo_buildTimeStamp` | Timestamp of the build |
+| `bamboo_repository_pr_key` | PR number (only available on PR builds) |
 
 #### Stale files
 
