@@ -88,4 +88,4 @@ If you want to see full logging of the original CI job for an individual test fa
 
 Tests may transition between flaky, broken, and healthy states multiple times over their lifetime. You can see previous changes in the detected health status of a test in Test History, as well as an explanation for why it was detected to have a new state.
 
-The timeline includes both engine-generated transitions and [manual status overrides](detection.md#override-test-status). Manual overrides display the description provided by the user who submitted the change, while engine-generated transitions show the detection rule that triggered the status change.
+The timeline displays both engine-generated transitions and [manual status overrides](detection.md#override-test-status). Manual overrides show the reason provided by the user who submitted the override, while engine-generated transitions show the detection rule that caused the status change.
