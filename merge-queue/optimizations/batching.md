@@ -34,13 +34,13 @@ A good place to start is with the defaults, Maximum wait time set to 5 (minutes)
 
 ### Bisection Testing Concurrency
 
-When a batch fails, Trunk automatically splits it apart (bisects) to identify which PR caused the failure. You can configure a separate, higher concurrency limit specifically for these bisection tests to isolate failures faster without impacting your main queue.
+When a batch fails, Trunk automatically splits it apart (bisects) to identify which PR caused the failure. You can configure a separate, higher concurrency limit specifically for these bisection tests to isolate failures faster without impacting your main queue. This setting is independent from the main [Testing Concurrency](../administration/advanced-settings.md#testing-concurrency), which applies only to the main queue when batching is enabled.
 
 <figure><img src="../../.gitbook/assets/1768426960-batching-settings.avif" alt=""><figcaption></figcaption></figure>
 
 #### Why Separate Bisection Concurrency?
 
-By default, bisection tests use the same concurrency limit as your main queue. This means:
+By default, bisection tests use the same concurrency limit as your main queue when bisection concurrency is not explicitly configured. This means:
 
 * Bisection can slow down other PRs waiting to merge
 * Developers wait longer to learn which PR broke the batch

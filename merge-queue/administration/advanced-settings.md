@@ -15,6 +15,10 @@ All of the following settings are specific to individual Merge Queues and can be
 Note that you must be an Organization admin to adjust any of these settings.
 {% endhint %}
 
+{% hint style="info" %}
+All queue settings can also be managed programmatically using the [Queue management API endpoints](../reference/merge.md#queue-management-endpoints). This is useful for automating queue configuration across multiple repositories or integrating with infrastructure-as-code workflows.
+{% endhint %}
+
 ***
 
 ## Merge Queue state
@@ -184,6 +188,10 @@ The merge method is configured per repository, so different repositories in your
 Configure how many PRs may be tested in parallel. A larger number may increase throughput since more PRs are tested in parallel, but at the expense of CI since more jobs are running in parallel. When the queue is at capacity, PRs will still be submitted to it, but they will not begin testing until a PR leaves the queue.
 
 {% hint style="info" %}
+When [Batching](advanced-settings.md#batching) is enabled, Testing Concurrency applies only to the main queue. Bisection tests during batch failure isolation use a separate [Bisection Testing Concurrency](advanced-settings.md#bisection-testing-concurrency) setting.
+{% endhint %}
+
+{% hint style="info" %}
 If your testing workload contains some flaky tests, a deeper queue (i.e., a higher concurrency) may struggle. Running Merge in Parallel mode can help with this, as it will reduce the average depth of your merge queue since all PRs won't be queued directly behind each other.
 {% endhint %}
 
@@ -299,11 +307,15 @@ Whether or not GitHub slash commands like `/trunk merge` are enabled for this me
 
 ### Bisection Testing Concurrency
 
-Configure how many PRs can be tested simultaneously during batch failure isolation (bisection). This setting is independent from the main Testing Concurrency and only applies when batches fail and need to be split to identify the failing PR.
+Configure how many PRs can be tested simultaneously during batch failure isolation (bisection). This setting is independent from the main [Testing Concurrency](advanced-settings.md#testing-concurrency) and only applies when batches fail and need to be split to identify the failing PR.
 
-**Default:** Same as Testing Concurrency (automatically mirrors your main concurrency setting)
+**Default:** When not explicitly configured, bisection uses the same concurrency as your main Testing Concurrency setting. We recommend setting this to a higher value for faster failure isolation.
 
 **Recommended:** Set 2-5x higher than your main Testing Concurrency for faster failure isolation
+
+{% hint style="info" %}
+Changes to Bisection Testing Concurrency are reported in Slack notifications and GitHub PR comments when those integrations are enabled.
+{% endhint %}
 
 #### How to Configure
 
