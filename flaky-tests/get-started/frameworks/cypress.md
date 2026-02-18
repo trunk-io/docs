@@ -70,6 +70,31 @@ module.exports = defineConfig({
 If you use the built-in reporter, you will see a warning during upload: `report has test cases with missing file or filepath`. This warning does not prevent the upload from succeeding, but tests will not have file paths or Code Owners associated with them.
 {% endhint %}
 
+<details>
+
+<summary>Why does the built-in reporter cause this warning?</summary>
+
+The built-in Mocha reporter produces XML where the `file` attribute and the `<testcase>` elements are in **sibling** `<testsuite>` elements rather than in a parent-child hierarchy:
+
+```xml
+<testsuites name="Mocha Tests">
+  <!-- file attribute is here... -->
+  <testsuite name="Root Suite" file="cypress/e2e/example.cy.js">
+  </testsuite>
+  <!-- ...but test cases are in a sibling, not a child -->
+  <testsuite name="My Test Suite">
+    <testcase name="should do something" classname="does something">
+    </testcase>
+  </testsuite>
+</testsuites>
+```
+
+Trunk resolves attributes like `file` by walking **up** the XML hierarchy from each `<testcase>`. Because the `file` attribute lives on an adjacent `<testsuite>` rather than a parent, it is not inherited by the test cases.
+
+The Sauce Labs plugin solves this by placing file path information directly on each test case in a properly nested structure.
+
+</details>
+
 #### Report File Path
 
 When using the Sauce Labs plugin, the report location is specified by the `outputDirectory` and `outputFileName` options. When using the built-in Mocha reporter, the location is specified by the `mochaFile` property. In both examples above, the file will be at `./junit.xml`.
