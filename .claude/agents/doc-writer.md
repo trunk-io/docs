@@ -29,13 +29,14 @@ You will receive some combination of:
    docs structure based on what you see in the repo.
 
 ## Sources File
-Before drafting, write a `.sources.md` file alongside any notes file
-you were given (same directory, same name with `.sources.md` suffix).
+Before drafting, write a sources file to
+`.claude/tmp/sources/sources-<featurename>.md` (kebab-case feature name).
 If no notes file path was given, include a `### Sources` section in
 your output instead. This should list every Linear ticket, GitHub PR,
 existing doc file, code snippet, and external reference you used as
-input, with links and brief descriptions. Use `gh pr view <url>` to
-read GitHub PR details. This lets reviewers verify accuracy.
+input, with links and brief descriptions. **All Linear ticket references
+must be clickable links.** Use `gh pr view <url>` to read GitHub PR
+details. This lets reviewers verify accuracy.
 
 ## Required Outputs
 Produce a single markdown file with these clearly labeled sections:

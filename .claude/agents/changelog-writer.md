@@ -23,7 +23,7 @@ www.trunk.io/changelog. Entries are staged for manual upload to DatoCMS.
 4. Flag any ambiguities as questions
 
 ## Output
-Write the changelog entry to `.claude/staging/changelog/YYYY-MM-DD-<kebab-title>.md`
+Write the changelog entry to `.claude/tmp/changelogs/changelog-<featurename>.md`
 using this format:
 
 ```markdown

@@ -59,11 +59,14 @@ may contain any combination of:
 5. Identify gaps between what exists and what the notes describe
 
 ### Phase 2.5: Generate Sources File
-Write a sources file alongside the notes file at the same path with a
-`.sources.md` suffix (e.g., `.claude/drafts/my-feature.sources.md`).
+Write a sources file to `.claude/tmp/sources/sources-<featurename>.md`.
+Use a kebab-case feature name derived from the notes file name (e.g.,
+`google-cloud` from `google-cloud.md`).
+
 This file is a human-readable manifest of everything the agent found
 and used as input. It should be easy to scan for accuracy and
-cross-referencing.
+cross-referencing. **All Linear ticket references must be clickable
+links** using `[TRUNK-XXXXX](https://linear.app/trunk/issue/TRUNK-XXXXX)`.
 
 Format:
 
@@ -73,7 +76,7 @@ Generated: [date]
 
 ## Linear Tickets
 For each ticket found:
-- **[TRUNK-XXXXX](linear-url)** — [title]
+- **[TRUNK-XXXXX](https://linear.app/trunk/issue/TRUNK-XXXXX)** — [title]
   - Status: [status] | Assignee: [name]
   - Summary: [1-2 sentence description from ticket]
 
@@ -104,7 +107,7 @@ Loom, Google Docs, external references, etc.):
 ## Related Linear Tickets
 Tickets discovered via search that relate to the same feature/area
 (these will be linked as relations on the docs ticket):
-- **[TRUNK-XXXXX](linear-url)** — [title]
+- **[TRUNK-XXXXX](https://linear.app/trunk/issue/TRUNK-XXXXX)** — [title]
   - Relationship: [documents / is documented by / related to]
   - Why: [brief reason this is related]
 
@@ -198,7 +201,7 @@ After changes are applied:
    and restore any stashed changes
 
 ### Phase 5.5: Stage Changelog Entry
-Write a changelog entry to `.claude/staging/changelog/YYYY-MM-DD-<kebab-title>.md`.
+Write a changelog entry to `.claude/tmp/changelogs/changelog-<featurename>.md`.
 These are staged for manual upload to DatoCMS.
 
 Use this format:
@@ -219,13 +222,36 @@ Include a "why this matters" sentence.]
 [Learn more →](https://docs.trunk.io/path/to/relevant/page)
 ```
 
+### Phase 5.6: Generate Slack Post
+Write a Slack-ready internal announcement to
+`.claude/tmp/slack/slack-<featurename>.md`. This file is meant to be
+copied and pasted into Slack to notify the team about the docs change.
+
+Use this format:
+
+```markdown
+**[Feature Name] — docs update ready for review**
+
+[1-2 sentence summary of what changed in the docs.]
+
+- PR: [GitHub PR URL]
+- Linear: [Linear ticket URL]
+- Preview: [GitBook preview URL if available, otherwise omit]
+
+Open questions for the team:
+- [list any items needing eng confirmation]
+```
+
+Keep it concise — this is a Slack message, not a document. Use bold for
+the title line. Include the PR and Linear links so people can click
+through directly.
+
 ### Phase 6: Generate Review Report
 After the PR is created, append an entry to the daily report file at
-`.claude/reports/YYYY-MM-DD-<session-topic>.html`. If the file doesn't
-exist yet, create it with a full HTML document including basic styling.
-Each entry should be a self-contained review card with everything a
-human reviewer needs. The HTML format makes it easy to open in a browser
-for quick scanning.
+`.claude/tmp/report.html`. If the file doesn't exist yet, create it
+with a full HTML document including basic styling. Each entry should be
+a self-contained review card with everything a human reviewer needs.
+The HTML format makes it easy to open in a browser for quick scanning.
 
 If the file already exists, append the new card inside the `<main>` element.
 
@@ -269,7 +295,7 @@ Card format to append inside `<main>`:
     <tr><td>Branch</td><td><code>sam/[branch-name]</code></td></tr>
     <tr><td>PR</td><td><a href="[url]">[url]</a></td></tr>
     <tr><td>Linear</td><td><a href="[linear-url]">TRUNK-XXXXX</a> — [status]</td></tr>
-    <tr><td>Sources</td><td><code>.claude/drafts/[notes-file].sources.md</code></td></tr>
+    <tr><td>Sources</td><td><code>.claude/tmp/sources/sources-[featurename].md</code></td></tr>
     <tr><td>Draft</td><td><code>.claude/drafts/[notes-file].md</code></td></tr>
     <tr><td>Type</td><td>[new-feature / update / fix / deprecation / explainer]</td></tr>
     <tr><td>Changes</td><td>[1-2 sentence summary]</td></tr>
@@ -284,36 +310,6 @@ Card format to append inside `<main>`:
 The **Review focus** field is critical. Be honest about what you're
 uncertain about — flag any details you inferred rather than confirmed,
 any placeholder content, and any areas where the docs could be wrong.
-
-## Output Format
-When complete, report:
-
-```
-## Processed: [Feature Name]
-
-### Changes Made
-- [list of files created/modified]
-
-### Branch & PR
-- Branch: sam/[branch-name]
-- PR: [URL]
-
-### Linear
-- Ticket: [TRUNK-XXXXX] — [status]
-
-### Review Report
-- Entry added to: .claude/reports/[filename].html
-
-### Changelog
-- Staged at: .claude/staging/changelog/[filename].md
-
-### Open Questions
-1. [questions for team review]
-
-### Notes File
-- Source: [path to notes file]
-- Status: Processed
-```
 
 ## Important Rules
 - **Always include PR links** in Linear comments and descriptions

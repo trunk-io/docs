@@ -6,6 +6,5 @@
 .claude/drafts/*.md
 !.claude/drafts/TEMPLATE.md
 
-# Agent outputs (local working files)
-.claude/staging/
-.claude/reports/*.html
+# Agent outputs (local working files, all under tmp/)
+.claude/tmp/

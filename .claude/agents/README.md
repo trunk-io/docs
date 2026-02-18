@@ -57,12 +57,13 @@ The `notes-processor` agent will:
 - Create a branch (`sam/<topic>`), commit, push, and open a PR
 - Update or create a Linear ticket with the PR link
 
-### 3. Review the report
+### 3. Review the outputs
 
-After processing, the agent:
-- Appends a review card to `.claude/reports/YYYY-MM-DD-<topic>.html`
-  (open in browser for easy scanning — PR links, Linear links, review focus)
-- Stages a changelog entry at `.claude/staging/changelog/` for DatoCMS upload
+After processing, the agent writes to `.claude/tmp/`:
+- `report.html` — open in browser for easy scanning (PR links, Linear links, review focus)
+- `changelogs/changelog-<feature>.md` — copy to DatoCMS for changelog
+- `slack/slack-<feature>.md` — copy/paste into Slack to notify the team
+- `sources/sources-<feature>.md` — audit trail of all inputs and citations
 
 ### 4. Review and iterate
 
@@ -127,16 +128,17 @@ six phases sequentially:
    links (Slack, Slite, Loom, etc.), and product area from the notes
 2. **Research** — looks up Linear tickets, searches for related engineering
    tickets, scans existing docs for coverage gaps
-3. **Sources** — writes a `.sources.md` audit trail with every ticket, PR,
-   Slack thread, and doc file it used as input
+3. **Sources** — writes a sources audit trail to `tmp/sources/` with every
+   ticket, PR, Slack thread, and doc file it used as input
 4. **Draft** — writes or edits documentation, matching existing Trunk style
 5. **Branch/PR/Linear** — creates branch, commits, pushes, opens PR, updates
    or creates Linear ticket with PR link, attaches all context links
    (Slack, Slite, Loom, etc.), and links docs ticket to related
    engineering tickets
-6. **Changelog** — stages a changelog entry at `.claude/staging/changelog/`
-   for manual DatoCMS upload
-7. **Report** — appends an HTML review card to `.claude/reports/` with PR
+6. **Changelog** — stages a changelog entry at `tmp/changelogs/` for DatoCMS
+7. **Slack post** — writes a copy-paste-ready Slack message to `tmp/slack/`
+   with PR and Linear links for internal notification
+8. **Report** — appends an HTML review card to `tmp/report.html` with PR
    link, Linear link, review focus areas, and open questions
 
 ## Directory Structure
@@ -153,9 +155,9 @@ six phases sequentially:
   drafts/
     TEMPLATE.md           # Notes file template
     *.md                  # Your notes files (gitignored)
-    *.sources.md          # Source audit trails (gitignored)
-  reports/
-    *.html                # Review reports (gitignored, open in browser)
-  staging/
-    changelog/            # Changelog entries for DatoCMS upload (gitignored)
+  tmp/                    # All agent outputs (gitignored)
+    report.html           # Review report (open in browser)
+    changelogs/           # Changelog entries for DatoCMS upload
+    slack/                # Slack posts for internal notification
+    sources/              # Source audit trails and citations
 ```
