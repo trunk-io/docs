@@ -307,11 +307,15 @@ Whether or not GitHub slash commands like `/trunk merge` are enabled for this me
 
 ### Bisection Testing Concurrency
 
-Configure how many PRs can be tested simultaneously during batch failure isolation (bisection). This setting is independent from the main Testing Concurrency and only applies when batches fail and need to be split to identify the failing PR.
+Configure how many PRs can be tested simultaneously during batch failure isolation (bisection). This setting is independent from the main [Testing Concurrency](advanced-settings.md#testing-concurrency) and only applies when batches fail and need to be split to identify the failing PR.
 
 **Default:** When not explicitly configured, bisection uses the same concurrency as your main Testing Concurrency setting. We recommend setting this to a higher value for faster failure isolation.
 
 **Recommended:** Set 2-5x higher than your main Testing Concurrency for faster failure isolation
+
+{% hint style="info" %}
+Changes to Bisection Testing Concurrency are reported in Slack notifications and GitHub PR comments when those integrations are enabled.
+{% endhint %}
 
 #### How to Configure
 
