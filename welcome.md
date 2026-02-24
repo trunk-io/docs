@@ -20,11 +20,11 @@ Teams start with whichever problem hurts more, then expand. Caseware cut merge t
 
 #### Why This Matters Now
 
-You check out main on Monday morning, grab your coffee, open a pull request, and CI fails for reasons that have nothing to do with your code. You're reading logs, pinging Slack, trying to figure out who broke what. That happens to every engineer, every day. Continuous delivery means every commit on main is known-good. Every CI failure is yours to fix, not something you inherited.
+You check out `main` on Monday morning, grab your coffee, open a pull request, and CI fails for reasons that have nothing to do with your code. You're reading logs, pinging Slack, trying to figure out who broke what. That happens to every engineer, every day. Continuous delivery means every commit on main is known-good. Every CI failure is yours to fix, not something you inherited.
 
 That problem has existed for years. What makes it urgent now is volume. AI agents are generating 50+ PRs a day, and they hit the same merge queue serialization and flaky test noise that slows humans. Except agents can't context-switch to other work while they wait. Every bottleneck in your CI pipeline that used to cost you hours now costs you days.
 
-#### Trunk Flaky Tests
+### Trunk Flaky Tests
 
 At tens of thousands of tests, even a 1% flake rate means false failures on nearly every run. Each flake costs 10 to 15 minutes: the developer waits, reads logs, reruns, confirms it was noise. If your CI target is five-minute PR jobs, every flake doubles or triples that.
 
@@ -34,7 +34,7 @@ On the repair side, we're working with design partners on AI-powered fixing thro
 
 [Full Flaky Tests documentation →](flaky-tests/overview.md)
 
-#### Trunk Merge Queue
+### Trunk Merge Queue
 
 Traditional merge queues guarantee main stability by testing PRs one at a time. At 100+ PRs/day, that becomes a bottleneck. Monorepos make this easier to solve. If you have mobile, frontend, and backend code in the same repo, those PRs can test and merge independently because they don't touch the same targets. Linear merge queues don't know that. They put everything in one line.
 
@@ -44,7 +44,7 @@ Validated at 250+ PRs/hour sustained over 24 hours. Peaked at 300+ simultaneous 
 
 [Full Merge Queue documentation →](merge-queue/merge-queue.md)
 
-#### How They Work Together
+### How They Work Together
 
 Without flaky test handling, a merge queue backs up every time a test becomes unreliable. One recurring flake means batches fail, need re-isolation, and the queue goes serial again. With both products running, flakes get quarantined by failure mode so CI stays clean, parallel mode and batching keep the queue moving, and anti-flake protection in the queue catches what slips through.
 
