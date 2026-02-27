@@ -72,7 +72,7 @@ Without flaky test handling, a merge queue backs up every time a test becomes un
 
 Most teams schedule a 30-minute call before integrating. We help plan for security reviews, understand your CI architecture, and flag common gotchas.
 
-* [**Schedule a call**](https://calendly.com/trunk/trunk-integration-planning) ← Recommended
+* [Schedule a call](https://calendly.com/trunk/demo) **← Recommended**
 
 Or explore on your own: [Create a Trunk account →](https://app.trunk.io/signup)
 
