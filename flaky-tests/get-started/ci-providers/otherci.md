@@ -103,7 +103,7 @@ chmod +x trunk-analytics-cli
 {% endtab %}
 {% endtabs %}
 
-Then, you can validate the results using the `trunk flakytests validate` command like this:
+Then, you can validate the results using the `trunk-analytics-cli validate` command like this:
 
 ```bash
 ./trunk-analytics-cli validate --junit-paths <PATH_TO_REPORTS>
