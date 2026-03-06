@@ -5,7 +5,7 @@
 Welcome to Trunk! Before you can access Trunk's toolkit to ship faster, you must [create a Trunk account](https://app.trunk.io/signup). You can connect to Trunk in two ways:
 
 * Connect with OAuth using your Google, GitHub, or Microsoft account.
-* Connect with SSO through your organization's email. To configure SSO for your organization, please [contact us](mailto:support@trunk.io) or [join us on Slack](https://slack.trunk.io/).
+* Connect with SSO through your organization's email. See our [SSO and Authentication](sso-and-authentication.md) guide for setup instructions, or [contact us](mailto:support@trunk.io) to get started.
 
 ### Create an Organization
 
