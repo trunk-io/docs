@@ -113,12 +113,16 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 
 #### Environment Variables
 
-Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
+Set these environment variables before running `trunk flakytests upload` when the CLI cannot auto-detect your CI context.
+
+{% hint style="warning" %}
+**Not just for unsupported CI providers.** If you use a **supported** CI provider (like GitHub Actions or BuildKite) but run tests on **custom or self-hosted runners**, the CLI may not detect your CI environment automatically. In that case, you also need to set these environment variables.
+{% endhint %}
 
 {% hint style="info" %}
-**Config Requirement:** `CUSTOM` must be set to `true` for environment varaibles to take effect and override the auto-detection of CI.
+**Config Requirement:** `CUSTOM` must be set to `true` for environment variables to take effect and override the auto-detection of CI.
 
-All other variables are optional but recommended.
+All other variables are optional but recommended for accurate attribution in the Trunk dashboard.
 {% endhint %}
 
 | Variable         | Description                                                                                                      | Example                               |
