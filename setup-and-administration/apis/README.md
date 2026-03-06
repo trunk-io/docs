@@ -11,7 +11,7 @@ Trunk provides HTTP REST APIs for each of our features. The APIs use status code
 ## Available APIs
 
 * [Flaky Tests](../../flaky-tests/flaky-tests.md): for accessing information like quarantined tests in your repo.
-* [Merge API](../../merge-queue/reference/merge.md) : for controlling the Trunk Merge Queue.
+* [Merge API](../../merge-queue/reference/merge.md): for submitting and managing PRs in the merge queue, and for creating, configuring, and deleting merge queues programmatically.
 
 ## Authentication
 

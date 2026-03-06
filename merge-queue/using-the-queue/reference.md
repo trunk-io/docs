@@ -20,6 +20,8 @@ trunk login
 trunk merge <pr-number>
 ```
 
+* Using the [Merge Queue API](../reference/merge.md#pull-request-endpoints) to submit PRs programmatically from custom tooling or CI scripts.
+
 We offer similar commands for cancellation.
 
 * Posting a GitHub comment `/trunk cancel` on a pull request.
