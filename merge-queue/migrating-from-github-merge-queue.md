@@ -24,6 +24,31 @@ Follow the [Getting Started](getting-started/) to setup your repo with Trunk Mer
 
 ***
 
+### Running Both Merge Queues Simultaneously
+
+Many teams prefer a gradual migration approach where Trunk Merge Queue runs alongside GitHub Merge Queue before fully switching over. This is a common path for teams migrating from GitHub's merge queue to Trunk and works well for several reasons:
+
+#### No Disruption to Existing Workflows
+
+Enabling Trunk Merge Queue does not stop or prevent your current merging flow. GitHub's merge queue will continue to function normally and merge PRs as it always has. Your team can continue using their familiar workflow while you evaluate Trunk Merge Queue.
+
+#### Disable Comments During Evaluation
+
+To prevent confusion for developers who aren't yet aware of the migration, you can disable the comments Trunk leaves on PRs. This way, developers won't see unfamiliar comments about Trunk Merge Queue while you're still evaluating.
+
+This setting is found under **Merge Queue** tab **>** repository **> Settings >** toggle **off GitHub Comments.**
+
+#### Trunk Handles External Merges Gracefully
+
+Trunk Merge Queue understands when a PR is merged outside of its queue (for example, through GitHub's merge queue):
+
+- **If the PR is also in Trunk's queue**: Trunk will automatically mark it as merged on its side.
+- **If the PR is not in Trunk's queue**: Trunk will restart any PRs currently in its queue so they can test on top of the new commit.
+
+This ensures that Trunk always tests against the latest state of your target branch, regardless of how PRs are merged.
+
+***
+
 ### Pre migration
 
 Before migrating fully, it may be useful to evaluate the workflows "quiety" and confirm settings before converting your repository to an entirely new workflow.
