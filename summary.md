@@ -86,6 +86,7 @@
     * [Drone CI](flaky-tests/get-started/ci-providers/droneci.md)
     * [GitHub Actions](flaky-tests/get-started/ci-providers/github-actions.md)
     * [GitLab](flaky-tests/get-started/ci-providers/gitlab.md)
+    * [Google Cloud Build](flaky-tests/get-started/ci-providers/google-cloud-build.md)
     * [Jenkins](flaky-tests/get-started/ci-providers/jenkins.md)
     * [Semaphore CI](flaky-tests/get-started/ci-providers/semaphoreci.md)
     * [Travis CI](flaky-tests/get-started/ci-providers/travisci.md)
