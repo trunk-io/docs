@@ -31,6 +31,7 @@
   * [Handle failed pull requests](merge-queue/using-the-queue/handle-failed-pull-requests.md)
   * [Work with stacked pull requests](merge-queue/using-the-queue/stacked-pull-requests.md)
   * [Emergency pull requests](merge-queue/using-the-queue/emergency-pull-requests.md)
+  * [Multi-branch merge queues](merge-queue/using-the-queue/multi-branch-queues.md)
 * [Slack Integration](merge-queue/integration-for-slack.md)
 * [Webhooks](merge-queue/webhooks.md)
 * [Administration](merge-queue/administration/README.md)
