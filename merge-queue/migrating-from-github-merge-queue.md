@@ -24,7 +24,7 @@ Follow the [Getting Started](getting-started/) to setup your repo with Trunk Mer
 
 ***
 
-### Running Both Merge Queues Simultaneously
+### Running both merge queues simultaneously
 
 Many teams prefer a gradual migration approach where Trunk Merge Queue runs alongside GitHub Merge Queue before fully switching over. This is a common path for teams migrating from GitHub's merge queue to Trunk and works well for several reasons:
 
