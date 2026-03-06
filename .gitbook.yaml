@@ -269,13 +269,11 @@ redirects:
   merge-queue/managing-merge-queue/advanced-settings: /merge-queue/optimizations/README.md
   merge-queue/managing-merge-queue/reference: merge-queue/using-the-queue/reference.md
   merge-queue/set-up-trunk-merge/branch-protection-and-required-status-checks: merge-queue/getting-started/configure-branch-protection.md
-  merge-queue/set-up-trunk-merge/integration-for-slack: merge-queue/administration/integration-for-slack.md
+  merge-queue/set-up-trunk-merge/integration-for-slack: merge-queue/integration-for-slack.md
 
   merge-queue/managing-merge-queue/metrics: merge-queue/administration/metrics.md
-  merge-queue/webhooks: merge-queue/administration/webhooks.md
   merge-queue/concepts-and-optimizations/pr-prioritization: merge-queue/optimizations/priority-merging.md
   merge-queue/managing-merge-queue: merge-queue/using-the-queue/reference.md
   merge-queue/managing-merge-queue/using-the-webapp: merge-queue/using-the-queue/reference.md
 
   merge-queue/references/apis/merge: merge-queue/administration/merge.md
-  
