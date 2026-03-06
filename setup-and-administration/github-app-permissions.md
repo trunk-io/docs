@@ -85,3 +85,7 @@ Trunk uses this permission to get organization events to keep app install inform
 This permission includes access to organization members and teams.
 
 Trunk uses this permission to subscribe to organization rename events to keep app install information current.
+
+## GitHub IP allow lists
+
+If your GitHub organization uses IP allow lists to restrict network access, you will need to configure your allow list to permit Trunk's servers. See [GitHub IP Allow Lists](github-ip-allow-lists.md) for setup instructions and Trunk's server IP addresses.

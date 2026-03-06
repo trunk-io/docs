@@ -115,6 +115,7 @@
 * [Account Setup](setup-and-administration/connecting-to-trunk.md)
 * [Managing your Organization](setup-and-administration/managing-your-organization.md)
 * [Trunk GitHub App](setup-and-administration/github-app-permissions.md)
+* [GitHub IP Allow Lists](setup-and-administration/github-ip-allow-lists.md)
 * [Support](setup-and-administration/support.md)
 * [Billing and plans](setup-and-administration/billing.md)
 * [Security](setup-and-administration/security.md)
