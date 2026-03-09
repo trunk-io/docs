@@ -37,7 +37,6 @@ Test Deletion & History
 
 * Inactive tests disappear from the dashboard automatically after 30 days and are fully removed after 45 days. Tests cannot be manually deleted.
 * Changing test identifiers (e.g., adding file paths) creates new test entries — merging with old history isn’t supported.
-* To reduce noise, use the [manual monitor](detection/manual-monitor.md) to mark old or unused tests as Healthy while waiting for them to expire.
 {% endhint %}
 
 ### Test case details

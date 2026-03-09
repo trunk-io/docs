@@ -26,12 +26,10 @@ graph LR
     subgraph Monitors
         POR[Pass-on-Retry Monitor]
         TH[Threshold Monitor]
-        MAN[Manual Monitor]
     end
 
     POR -- "active" --> OR{Any monitor\nactive?}
     TH -- "inactive" --> OR
-    MAN -- "inactive" --> OR
 
     OR -- "Yes" --> FLAKY["Test Status: Flaky"]
     OR -- "No" --> HEALTHY["Test Status: Healthy"]
@@ -46,9 +44,10 @@ graph LR
 |---|---|---|---|
 | [**Pass-on-Retry**](pass-on-retry-monitor.md) | A test fails then passes on the same commit (retry after failure) | Team and above | Enabled |
 | [**Threshold**](threshold-monitor.md) | Failure rate exceeds a configured percentage over a time window | Paid plans | Disabled |
-| [**Manual**](manual-monitor.md) | User explicitly marks a test as flaky | All plans | Always available |
 
 You can run multiple monitors simultaneously. For example, you might use pass-on-retry to catch classic retry-based flakiness while also running threshold monitors scoped to different branches to catch elevated failure rates where they matter most.
+
+If you need to manually flag a test that automated monitors haven't caught, use [Flag as Flaky](flag-as-flaky.md) from the test detail page.
 
 ## Branch-aware detection
 
@@ -62,7 +61,7 @@ Pass-on-retry detection is branch-agnostic. It flags any test that fails and pas
 
 You can temporarily mute a monitor for a specific test case. A muted monitor continues to run and record detections, but it won't contribute to the test's flaky status until the mute expires.
 
-This is useful when you know a test is flaky but want to suppress the signal temporarily, for example while a fix is in progress or during a known infrastructure issue. Unlike marking a test as healthy with the manual monitor, muting preserves the detection history and automatically re-enables itself after the mute period.
+This is useful when you know a test is flaky but want to suppress the signal temporarily, for example while a fix is in progress or during a known infrastructure issue. Unlike [Flag as Flaky](flag-as-flaky.md), which is a persistent user override, muting preserves the detection history and automatically re-enables itself after the mute period.
 
 ### How muting works
 
@@ -85,7 +84,7 @@ Show the test case detail page with a monitor's mute button visible,
 and ideally the duration picker dropdown open. -->
 
 {% hint style="info" %}
-You can only mute a monitor that has already detected flaky behavior for a test. If a monitor has never been active for a test, the mute option is disabled. Manual monitors cannot be muted.
+You can only mute a monitor that has already detected flaky behavior for a test. If a monitor has never been active for a test, the mute option is disabled.
 {% endhint %}
 
 ### When to mute vs. other options
@@ -93,7 +92,7 @@ You can only mute a monitor that has already detected flaky behavior for a test.
 | Situation | Recommended action |
 |---|---|
 | Fix is in progress and you want to suppress noise temporarily | **Mute** the monitor for a few days |
-| Test is flaky but no automated monitor has caught it | Use the [**manual monitor**](manual-monitor.md) to mark it as flaky |
+| Test is flaky but no automated monitor has caught it | Use [**Flag as Flaky**](flag-as-flaky.md) to mark it as flaky |
 | You want to stop a monitor from evaluating a test permanently | Adjust the monitor's branch scope or thresholds instead |
 | You want to suppress all flaky signals for a test | Mute each active monitor individually, or address the root cause |
 

@@ -95,7 +95,7 @@
 * [Flaky test detection](flaky-tests/detection/README.md)
   * [Pass-on-Retry Monitor](flaky-tests/detection/pass-on-retry-monitor.md)
   * [Threshold Monitor](flaky-tests/detection/threshold-monitor.md)
-  * [Manual Monitor](flaky-tests/detection/manual-monitor.md)
+  * [Flag as Flaky](flaky-tests/detection/flag-as-flaky.md)
 * [Infrastructure Failure Protection](flaky-tests/infrastructure-failure-protection.md)
 * [The Importance of PR Test Results](flaky-tests/the-importance-of-pr-test-results.md)
 * [Quarantining](flaky-tests/quarantining.md)
