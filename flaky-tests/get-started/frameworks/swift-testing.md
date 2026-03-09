@@ -5,7 +5,7 @@ description: A guide for generating Trunk-compatible test reports with Swift Tes
 
 # Swift Testing
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Swift projects by integrating with Trunk. This document explains how to configure Swift Testing to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Swift projects by integrating with Trunk. This document explains how to configure Swift Testing to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 

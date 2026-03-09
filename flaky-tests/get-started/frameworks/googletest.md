@@ -4,7 +4,7 @@ description: A guide for generating Trunk-compatible test reports for GoogleTest
 
 # GoogleTest
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your GoogleTest projects by integrating with Trunk. This document explains how to configure GoogleTest to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your GoogleTest projects by integrating with Trunk. This document explains how to configure GoogleTest to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 

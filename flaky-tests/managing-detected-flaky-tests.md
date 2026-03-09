@@ -11,7 +11,7 @@ It is important to have a follow-up process in place to manage detected flaky te
 This guide walks through Trunk's recommended best practices for building a process around detected flaky tests in your organization.
 
 {% hint style="info" %}
-Flaky tests will be [automatically detected](detection.md) by Trunk after you:
+Flaky tests will be [automatically detected](detection/) by Trunk after you:
 
 * [Set up your test framework](get-started/frameworks/) to produce test reports
 * [Integrated with your CI provider](get-started/ci-providers/) to upload those reports on CI runs.

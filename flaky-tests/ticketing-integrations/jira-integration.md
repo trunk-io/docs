@@ -6,7 +6,7 @@ description: >-
 
 # Jira integration
 
-When Trunk Flaky Tests [detects a broken or flaky test](../detection.md), you can create an automatically generated Jira ticket for your team to pick up and fix the test.
+When Trunk Flaky Tests [detects a flaky test](../detection/), you can create an automatically generated Jira ticket for your team to pick up and fix the test.
 
 Webhook payloads will also contain ticket information when a Jira ticket is created with the integration or when [existing tickets are linked](jira-integration.md#link-existing-tickets-to-tests).
 
@@ -76,7 +76,7 @@ There are 2 ways to create a new ticket in the Flaky Test dashboard:
 
 <figure><picture><source srcset="../../.gitbook/assets/create-ticket-button-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/create-ticket-button-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-* Use the Create ticket button in the top left corner of the [test case details](../detection.md#test-case-details) page.
+* Use the Create ticket button in the top left corner of the [test case details](../dashboard.md#test-case-details) page.
 
 Before you create the ticket, you will have a preview of the title and description.
 
