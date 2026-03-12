@@ -14,6 +14,59 @@ You can access the metrics in your Trunk Merge Queue by navigating to the **Merg
 CI Time and CI Jobs Triggered charts are only available for **GitHub Actions**.
 {% endhint %}
 
+### Filter Metrics by Impacted Targets
+
+When running in Parallel Mode, you can filter your merge queue health metrics by impacted targets to analyze performance for specific parts of your codebase.
+
+<figure><img src="../../.gitbook/assets/1768426992-impacted-target-filtering.avif" alt=""><figcaption></figcaption></figure>
+
+#### Why Filter by Impacted Targets?
+
+In repositories with multiple teams or distinct components (like a TypeScript/Python monorepo), different parts of your codebase may have different merge characteristics. Filtering by impacted targets helps you:
+
+* **Analyze team-specific performance** - See how PRs from different teams move through the queue
+* **Identify bottlenecks by component** - Determine if certain targets have slower merge times
+* **Optimize strategically** - Focus queue configuration improvements on your highest-priority code paths
+* **Demonstrate value** - Show engineering leadership how parallel mode benefits specific teams or projects
+* **Ensure fairness** - Verify that all teams experience similar queue performance
+
+#### How to Use the Filter
+
+1. Navigate to **Merge Queue** > your repository > **Health** tab in the Trunk web app
+2. Locate the **Impacted Targets** filter dropdown at the top of the metrics dashboard
+3. Select one or more targets to filter by:
+   * **All Targets** (default) - Shows aggregate metrics across all PRs
+   * **Specific target names** - Shows metrics only for PRs affecting that target (e.g., `frontend`, `backend`, `//services/api`)
+4. All charts and metrics on the page will update to reflect only PRs impacting the selected targets
+
+#### Understanding the Data
+
+**Impacted targets are set when a PR enters the queue**
+
+Each PR's impacted targets are calculated based on which files changed and which parts of your codebase are affected. For details on how impacted targets are computed, see [Parallel Queues - Impacted Targets](../optimizations/parallel-queues/#posting-impacted-targets-from-your-pull-requests).
+
+**PRs can affect multiple targets**
+
+A PR that changes both frontend and backend code will be counted in metrics when filtering by either `frontend` OR `backend`. This means the numbers may not sum to 100% when viewing multiple target filters separately.
+
+**"All Targets" shows aggregate performance**
+
+Selecting "All Targets" displays metrics for every PR, regardless of which targets it impacts. This is the default view and shows overall queue health.
+
+#### Requirements
+
+**Parallel Mode must be enabled**
+
+Impacted target filtering is only available when your merge queue is running in Parallel Mode. Repositories in Single Mode do not track impacted targets.
+
+**Impacted targets must be uploaded**
+
+Your CI workflow must calculate and upload impacted targets for each PR. See the Parallel Queues documentation for setup instructions using:
+
+* Bazel
+* Nx
+* Custom build systems
+
 ### Time buckets
 
 The date ranges selector at the top left of the dashboard allows you to filter the data displayed by date and time. You can display time buckets by the day or hour in the day/hour dropdown.

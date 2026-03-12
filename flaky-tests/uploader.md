@@ -157,6 +157,12 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 {% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
+### Service Availability and Graceful Degradation
+
+Trunk Analytics CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
+{% endhint %}
+
 #### Upload failure vs test failure
 
 We use the `SOFTWARE` exit code (70) if the upload fails.
@@ -224,3 +230,4 @@ During execution, it simply:
 \
 You can safely run the CLI even with large or memory-intensive suites, without risking additional OOMs in your CI agents.
 {% endhint %}
+

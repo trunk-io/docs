@@ -24,20 +24,20 @@ After connecting to Jira, you can specify a default issue type for new tickets a
 
 #### API Token permissions
 
-Your Jira user account must have the following project permissions to create a Jira API token that allows Trunk to read, create, and assign tickets automatically:&#x20;
+Your Jira user account must have the following project permissions to create a Jira API token that allows Trunk to read, create, and assign tickets automatically:
 
 * _Create issues_
 * _Assign issues_ OR _Browse users and groups_ (global permission)
 * _Browse projects_
-  * If issue-level security is configured, issue-level security permissions must be granted to read issues.&#x20;
+  * If issue-level security is configured, issue-level security permissions must be granted to read issues.
 
 You need to create an API token with the following scopes:
 
 * Required scopes (classic)
   * `read:jira-work`
-  * `write:jira-work`&#x20;
+  * `write:jira-work`
   * `read:jira-user`
-* Required scopes (granular):&#x20;
+* Required scopes (granular):
   * `read:issue:jira`
   * `read:issue-meta:jira`
   * `read:issue-security-level:jira`
@@ -68,7 +68,7 @@ Jira tokens cannot last longer than 365 days. Once the token expires, you will n
 
 ### Create a new ticket
 
-You can create a new ticket for any test listed in Trunk Flaky Tests.&#x20;
+You can create a new ticket for any test listed in Trunk Flaky Tests.
 
 There are 2 ways to create a new ticket in the Flaky Test dashboard:
 
@@ -89,3 +89,51 @@ If you are connected to Jira, you can click the **Create Jira Ticket** button at
 #### Link existing tickets to tests
 
 If you already have a ticket in Jira that you want to link to a test in the dashboard, you can use the [Link Ticket to Test Case API](../flaky-tests.md#post-flaky-tests-link-ticket-to-test-case).
+
+### Required Custom Fields
+
+Some Jira projects require additional fields beyond the standard fields (like summary, description, and issue type) to be specified when creating tickets. Common required custom fields include:
+
+* **Components** - Categories or modules within your project
+* **Affects Version** - Which version of your product is impacted
+* **Fix Version** - Target version for the fix
+* **Epic Link** - Parent epic for the ticket
+* **Sprint** - Sprint assignment
+* **Story Points** - Estimation field
+* Custom fields specific to your organization
+
+#### Enterprise Feature
+
+{% hint style="warning" %}
+**Support for required custom fields is an Enterprise feature.**&#x20;
+{% endhint %}
+
+If your Jira project requires custom fields that aren't supported in the standard Trunk Flaky Tests integration, you'll see an error message when attempting to create a ticket:
+
+```
+The Jira project [PROJECT_KEY] requires a field "[field_name]". 
+Contact sales@trunk.io to upgrade your account for custom field support.
+```
+
+To enable support for your required custom fields, contact our sales team at [sales@trunk.io](mailto:sales@trunk.io) to discuss Enterprise plan options.
+
+#### Alternative: Remove Field Requirements
+
+If you don't need Enterprise features, you can modify your Jira project settings to make custom fields optional instead of required. This allows Trunk Flaky Tests to create tickets without needing to specify those fields.
+
+**To make a field optional in Jira:**
+
+1. Navigate to **Project Settings** in your Jira project
+2. Select **Issue Types** from the sidebar
+3. Choose the issue type you're using for flaky test tickets (e.g., Task, Bug)
+4. Click **Fields** to see all fields for that issue type
+5. Locate the required custom field (e.g., "Components")
+6. Click the field to open its configuration
+7. Uncheck **Required** or change the field requirement setting
+8. Save your changes
+
+After making the field optional, you should be able to create tickets through Trunk Flaky Tests without encountering the error.
+
+{% hint style="info" %}
+**Note:** You may need Jira Administrator permissions to modify project settings. If you don't have access, contact your Jira administrator to make these changes.
+{% endhint %}

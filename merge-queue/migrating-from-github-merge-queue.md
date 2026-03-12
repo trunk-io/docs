@@ -3,7 +3,7 @@
 For teams switching from [GitHub Merge Queues](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue) to Trunk Merge Queue, the process is straight forward.
 
 {% hint style="success" %}
-Not ready to jump in completely right away, thats ok, checkout the [#pre-migration](migrating-from-github-merge-queue.md#pre-migration "mention") section below for an example migration game plan that keeps your teams working.
+Looking for a more detailed comparison between Trunk and GitHub's Merge Queues?  [Learn more](https://trunk.io/trunk-vs-github-merge-queue)
 {% endhint %}
 
 ***
@@ -20,7 +20,7 @@ Note that only users with admin permissions can manage merge queues for pull req
 
 ### Enable Trunk Merge Queue
 
-Follow the [Quickstart guide](set-up-trunk-merge/) to setup your repo with Trunk Merge Queue and configure the [settings](administration/advanced-settings.md) for your repository.
+Follow the [Getting Started](getting-started/) to setup your repo with Trunk Merge Queue and configure the [settings](administration/advanced-settings.md) for your repository.
 
 ***
 

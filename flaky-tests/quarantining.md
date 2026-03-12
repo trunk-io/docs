@@ -23,14 +23,14 @@ Tests can be quarantined through two methods:
 1. **Manual Quarantine** - You explicitly select specific tests using override settings
 2. **Auto-Quarantine** (when enabled) - Tests already flagged by [Trunk's flaky detection](detection.md) are automatically quarantined
 
-Tests are auto-quarantined only if detected as flaky or manually marked as flaky. For [manually quarantined tests](quarantining.md#overriding-individual-tests), all failures are quarantined regardless of test state.&#x20;
+Tests are auto-quarantined only if detected as flaky or manually marked as flaky. For [manually quarantined tests](quarantining.md#overriding-individual-tests), all failures are quarantined regardless of test state.
 
 ### Enable quarantining
 
 {% hint style="warning" %}
 Toggling the **Enable Test Quarantining** switch makes quarantining possible but does not quarantine any tests on its own.
 
-A test failure will only be ignored by CI if the test is already manually quarantined, or if the test has previously been identified as flaky and the Auto-Quarantine option is enabled.&#x20;
+A test failure will only be ignored by CI if the test is already manually quarantined, or if the test has previously been identified as flaky and the Auto-Quarantine option is enabled.
 
 Actively quarantining tests will significantly change CI results, as failures from quarantined tests no longer cause builds to fail. [Learn more about the effects of quarantining](quarantining.md#whats-affected).
 {% endhint %}
@@ -68,7 +68,7 @@ trunk flakytests test --org-url-slug=[org] --token=[token] --junit-paths=test2_o
 
 For complex setups where Trunk can’t wrap test commands, run tests first and let the upload step be the final gate. When quarantining is enabled, the upload inspects the provided JUnit results and decides whether to return exit code `0` or `1` based on the outcomes.
 
-**Advanced: Handling  build errors outside test runs**
+**Advanced: Handling build errors outside test runs**
 
 To handle build issues that occur outside test runs, use the --test-process-exit-code option. This provides a fallback exit code if the upload runs without detecting any Junit results.
 
@@ -96,9 +96,9 @@ If you're using the Trunk CLI directly or other CI providers, check the instruct
 
 {% tabs %}
 {% tab title="GitHub Actions Workflow" %}
-Using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, may need modifications to your workflow files to support quarantining.&#x20;
+Using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, may need modifications to your workflow files to support quarantining.
 
-If you upload your test results as a second step after you run your tests,  **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures.&#x20;
+If you upload your test results as a second step after you run your tests, **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures.
 
 Here's an example file.
 
@@ -125,7 +125,7 @@ jobs:
         token: ${{ secrets.TRUNK_API_TOKEN }}
 </code></pre>
 
-If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter.&#x20;
+If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter.
 
 This will override the response code of the test command. Make sure to set `continue-on-error: false` so un-quarantined tests are blocking.
 
@@ -154,9 +154,9 @@ jobs:
 {% endtab %}
 
 {% tab title="Using The Trunk CLI Directly" %}
-#### Using Flaky Tests as a separate step
+**Using Flaky Tests as a separate step**
 
-If you upload your test results as a second step after you run your tests,  you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled, the `flakytests upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
+If you upload your test results as a second step after you run your tests, you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled, the `flakytests upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
 
 ```bash
 <run my tests> || true # doesn't fail job on failure
@@ -167,7 +167,7 @@ If you upload your test results as a second step after you run your tests,  you 
         --junit-paths $JUNIT_PATH
 ```
 
-#### Using Flaky Tests as a single step
+**Using Flaky Tests as a single step**
 
 You can also wrap the test command with the Trunk CLI. When wrapping the command with the Trunk CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code 0.
 
@@ -227,3 +227,8 @@ For advanced use cases, you can interact with quarantining features programmatic
 * API: Use the [Flaky Tests API](flaky-tests.md) to fetch a list of all currently quarantined tests in your project.
 * Webhooks: Subscribe to the `test_case.quarantining_setting_changed` event to trigger automated workflows whenever a test's quarantine override is modified. Learn more about [Webhooks](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed).
 
+{% hint style="info" %}
+### Service Availability and Graceful Degradation
+
+Trunk Analytics CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
+{% endhint %}

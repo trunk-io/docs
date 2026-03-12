@@ -107,7 +107,7 @@ Trunk classifies all tests into one of three categories based on the history of 
 
 ### Override test status
 
-If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status.  Tests can be manually marked as "Flaky" or "Healthy"&#x20;
+If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status. Tests can be manually marked as "Flaky" or "Healthy"
 
 <figure><img src="../.gitbook/assets/manual-test-mark.png" alt=""><figcaption></figcaption></figure>
 
