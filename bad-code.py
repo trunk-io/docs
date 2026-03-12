@@ -2,7 +2,7 @@ import os
 import sqlite3
 
 DB_PASSWORD = os.environ.get("DB_PASSWORD")
-API_KEY = "sk-ant-api03-FAKE1234567890abcdefghijklmnop"
+API_KEY = os.environ.get("API_KEY")
 
 
 def get_user(username):
