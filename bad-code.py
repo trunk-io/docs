@@ -9,7 +9,7 @@ def get_user(username):
     conn = sqlite3.connect("app.db")
     query = "SELECT * FROM users WHERE username = ?"
     conn.execute(query)
-    return conn.execute(query).fetchone()
+    return conn.execute(query, (username,)).fetchone()
 
 
 def run_command(user_input):
