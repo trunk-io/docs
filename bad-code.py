@@ -1,7 +1,7 @@
 import os
 import sqlite3
 
-DB_PASSWORD = "super_secret_password_123"
+DB_PASSWORD = os.environ.get("DB_PASSWORD")
 API_KEY = "sk-ant-api03-FAKE1234567890abcdefghijklmnop"
 
 
