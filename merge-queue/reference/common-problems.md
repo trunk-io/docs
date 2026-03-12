@@ -62,6 +62,8 @@ Commit messages depend on your configured merge method:
 * **Merge Commit**: Preserves all individual commit messages from the PR and creates an additional merge commit message
 * **Rebase**: Preserves all individual commit messages from the PR as they are replayed onto the target branch
 
+You can override the merge commit title for any PR by adding `merge-commit-title: Your Custom Title` on its own line in the PR body. See [Custom merge commit titles](../administration/advanced-settings.md#custom-merge-commit-titles) for details.
+
 You can configure your preferred merge method in [Advanced Settings](../administration/advanced-settings.md#merge-method).
 
 </details>
