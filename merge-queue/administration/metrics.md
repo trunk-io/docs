@@ -104,3 +104,60 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P50     | The value below 50% of the time in queue falls.     |
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
+
+***
+
+## Prometheus metrics endpoint
+
+Trunk exposes merge queue metrics in Prometheus-compatible text format via a scrapable API endpoint. Use this to build custom Grafana dashboards, set up alerts, or integrate merge queue health into your existing observability stack.
+
+### Available metrics
+
+| Metric | Type | Description |
+| --- | --- | --- |
+| `trunk_merge_queue_depth` | Gauge | Number of PRs currently in the queue (excludes PRs in NOT\_READY state) |
+| `trunk_merge_queue_wait_time_seconds` | Histogram | Time PRs spend waiting in queue before testing starts |
+| `trunk_merge_queue_test_time_seconds` | Histogram | Time PRs spend in the testing phase |
+| `trunk_merge_queue_throughput` | Counter | Number of PRs merged |
+| `trunk_merge_queue_batch_size` | Histogram | Number of PRs per batch (when batching is enabled) |
+| `trunk_merge_queue_failure_rate` | Gauge | Ratio of failed PRs to total PRs processed |
+
+{% hint style="warning" %}
+Metric names and labels are subject to change. Verify the exact metrics available by scraping the endpoint and reviewing the output.
+{% endhint %}
+
+### Scrape configuration
+
+Configure your Prometheus instance to scrape the Trunk metrics endpoint. Authenticate with your [Trunk API token](../../setup-and-administration/apis/#authentication).
+
+```yaml
+scrape_configs:
+  - job_name: 'trunk-merge-queue'
+    scrape_interval: 60s
+    metrics_path: '/v1/merge-queue/metrics'
+    scheme: https
+    bearer_token: '<your-trunk-api-token>'
+    static_configs:
+      - targets: ['api.trunk.io']
+```
+
+{% hint style="info" %}
+Metrics are computed on-demand from Trunk's data store on each scrape, so values are always current. There are no long-lived gauges that could become stale.
+{% endhint %}
+
+### Example Grafana queries
+
+**Queue depth over time:**
+```promql
+trunk_merge_queue_depth{repo="my-org/my-repo"}
+```
+
+**P95 wait time:**
+```promql
+histogram_quantile(0.95, trunk_merge_queue_wait_time_seconds_bucket{repo="my-org/my-repo"})
+```
+
+**Merge throughput per hour:**
+```promql
+rate(trunk_merge_queue_throughput{repo="my-org/my-repo"}[1h]) * 3600
+```

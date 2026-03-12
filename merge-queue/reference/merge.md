@@ -34,6 +34,14 @@ All requests must be [authenticated](../../setup-and-administration/apis/#authen
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
 
+## Metrics Endpoints
+
+### Prometheus metrics
+
+Trunk exposes merge queue metrics in Prometheus-compatible text format. Scrape this endpoint with your Prometheus instance to build custom dashboards and alerts.
+
+See [Prometheus metrics endpoint](../administration/metrics.md#prometheus-metrics-endpoint) for available metrics, scrape configuration, and example Grafana queries.
+
 ## Queue Endpoints
 
 {% openapi-operation spec="trunk-api" path="/createQueue" method="post" %}
