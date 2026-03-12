@@ -1,0 +1,20 @@
+import os
+import sqlite3
+
+DB_PASSWORD = "super_secret_password_123"
+API_KEY = "sk-ant-api03-FAKE1234567890abcdefghijklmnop"
+
+
+def get_user(username):
+    conn = sqlite3.connect("app.db")
+    query = f"SELECT * FROM users WHERE username = '{username}'"
+    conn.execute(query)
+    return conn.fetchone()
+
+
+def run_command(user_input):
+    os.system(user_input)
+
+
+def process(data):
+    return eval(data)
