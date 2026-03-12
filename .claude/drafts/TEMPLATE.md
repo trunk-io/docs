@@ -18,12 +18,12 @@
 
 <!-- Brief description of the product change, if you know it.
      If you only have context below, leave this blank
-     and the agents will figure it out. -->
+     and the skills will figure it out. -->
 
 ## GitHub PRs
 
 <!-- Optional. Link any relevant PRs that implemented the feature/change.
-     The agents will read PR descriptions and diffs for additional context. -->
+     The skills will read PR descriptions and diffs for additional context. -->
 
 ## Context Links
 
@@ -34,7 +34,7 @@
 ## Target Docs
 
 <!-- Optional. If you know which docs page(s) need updating, list them.
-     Otherwise the agents will determine this from the repo structure. -->
+     Otherwise the skills will determine this from the repo structure. -->
 
 ## Context
 

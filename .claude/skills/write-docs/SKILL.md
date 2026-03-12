@@ -1,209 +1,126 @@
 ---
 name: write-docs
-description: Process notes, Slack threads, or trunk2 deploy context into documentation changes. Creates a branch, edits docs, opens a PR, and updates Linear. Use when given a notes file from .claude/drafts/, trunk2 PR numbers, Linear ticket IDs, or a deploy tag to document.
-allowed-tools: Bash(git *), Bash(gh pr *), Bash(gh issue *), Bash(gh api *), Read, Write, Edit, Glob, Grep, mcp__claude_ai_Linear__get_issue, mcp__claude_ai_Linear__list_issues, mcp__claude_ai_Linear__list_projects, mcp__claude_ai_Linear__save_issue, mcp__claude_ai_Linear__save_comment, mcp__claude_ai_Linear__create_attachment, mcp__claude_ai_trunk_docs__searchDocumentation, WebFetch
+description: Process notes, Slack threads, Slite docs, or trunk2 deploy context into documentation changes. Creates a branch, edits docs, opens a PR, and updates Linear. Use when given a notes file from .claude/drafts/, trunk2 PR numbers, Linear ticket IDs, a deploy tag, Slite doc links, or when the user says "write docs", "document this", or "process drafts".
+allowed-tools: Bash(git *), Bash(gh pr *), Bash(gh issue *), Bash(gh api *), Read, Write, Edit, Glob, Grep, mcp__claude_ai_Linear__get_issue, mcp__claude_ai_Linear__list_issues, mcp__claude_ai_Linear__list_projects, mcp__claude_ai_Linear__save_issue, mcp__claude_ai_Linear__save_comment, mcp__claude_ai_Linear__create_attachment, mcp__claude_ai_trunk_docs__searchDocumentation, mcp__claude_ai_Trunk_Slite__*, mcp__claude_ai_Slack__*, WebFetch
 ---
 
-Process raw input (notes files, Slack threads, engineer context, trunk2 deploy info) into polished documentation changes with full project tracking.
+# Writing Docs
 
-## Products
+Turn raw notes, Slack pastes, and PR references into reviewed docs PRs with full Linear tracking.
 
-Documentation is organized by product:
-- **Merge Queue** — `/merge-queue/` in the docs repo
-- **Flaky Tests** — `/flaky-tests/` in the docs repo
-- **CI Autopilot** — `/ci-autopilot/` in the docs repo
-- **Code Quality** — `/code-quality/` in the docs repo
-- **Setup & Administration** — `/setup-and-administration/` in the docs repo
+## Contents
+
+- [Inputs](#inputs)
+- [Products](#products)
+- [Workflow](#workflow)
+- [Guidelines](#guidelines)
+- [Batch processing](#batch-processing)
 
 ## Inputs
 
-The user may provide any combination of:
-- **A notes file path** (e.g., `.claude/drafts/my-feature.md`) — the primary input mode. Contains Slack pastes, engineer notes, Linear ticket IDs, context links.
-- **trunk2 PR numbers** — PRs from the product repo (`trunk-io/trunk2`) to document
-- **Linear ticket IDs** — `TRUNK-NNNNN` references to look up
-- **A deploy tag** (e.g., `v126`) — document features shipped in a specific release
-- **Context links** — Slack threads, Slite docs, Loom videos, etc.
-- **A specific docs page to update** — if the user knows what needs changing
+The user provides any combination of:
+- **Notes file** (e.g., `.claude/drafts/my-feature.md`) — primary input. Template: `.claude/drafts/TEMPLATE.md`
+- **trunk2 PR numbers** — PRs from `trunk-io/trunk2`
+- **Linear ticket IDs** — `TRUNK-NNNNN` references
+- **Deploy tag** (e.g., `v126`) — features shipped in a release
+- **Slite doc links** — PRDs, specs, or knowledge base articles from Slite
+- **Context links** — Slack threads, Loom videos, Google Docs, etc.
+- **Specific docs page** — if the user knows what needs changing
 
-If a notes file is provided, use `.claude/drafts/TEMPLATE.md` as the reference format.
+## Products
 
-## Steps
+Docs are organized by product area:
+- **Merge Queue** — `/merge-queue/`
+- **Flaky Tests** — `/flaky-tests/`
+- **CI Autopilot** — `/ci-autopilot/`
+- **Code Quality** — `/code-quality/`
+- **Setup & Administration** — `/setup-and-administration/`
 
-### Phase 0: Duplicate and Overlap Check
+## Workflow
 
-Before doing any work, check if this draft has already been processed or if another PR already covers the same docs:
+Copy this checklist and track progress:
 
-#### Step 1: Check for existing PRs/branches from this draft
+```
+Progress:
+- [ ] Phase 0: Duplicate & overlap check
+- [ ] Phase 1: Parse input
+- [ ] Phase 2: Research (Linear, Slite, Slack, docs, PRs)
+- [ ] Phase 2.5: Write sources audit file
+- [ ] Phase 3: Draft documentation
+- [ ] Phase 4: Branch, commit, PR
+- [ ] Phase 5: Update Linear
+- [ ] Phase 6: Stage outputs (Slack post, report)
+- [ ] Phase 7: Clean up and summarize
+```
 
-1. **Determine the expected branch name**: From the draft filename, derive the kebab-case topic (e.g., `flag-as-flaky.md` → `flag-as-flaky`). Run `git config user.name` to get the username prefix. The expected branch pattern is `<git-username>/<topic>` (with possible suffix variations).
+### Phase 0: Duplicate & Overlap Check
 
-2. **Check for existing PRs**: Run `gh pr list --repo trunk-io/docs --state open --head "<branch-pattern>" --json number,title,url,headRefName` to find any open PR from a matching branch. Also search by draft name: `gh pr list --repo trunk-io/docs --state open --json number,title,url,headRefName | jq '.[] | select(.headRefName | contains("<topic>"))'`.
+Before doing any work, verify no existing PR already covers this draft. See [OVERLAP-CHECK.md](OVERLAP-CHECK.md) for the detailed check procedure.
 
-3. **Check for existing local branches**: Run `git branch --list "*<topic>*"` to find local branches matching this draft.
-
-4. **If a match is found**: Stop and show the user:
-   - The existing PR number, title, and URL (if any)
-   - The existing branch name (if any)
-   - Ask: "A PR/branch already exists for this draft. Would you like to: (a) update the existing PR, (b) close it and start fresh, or (c) skip this draft?"
-   - Do NOT proceed until the user responds.
-
-#### Step 2: Check for overlapping PRs from other authors
-
-Even if no exact match exists, another PR may already cover the same docs pages.
-
-1. **Read the draft** to identify the target docs files/product area (from the `Target Docs` section or by inferring from the topic — e.g., a "flag as flaky" draft targets `flaky-tests/detection.md`).
-
-2. **List all open PRs**: Run `gh pr list --repo trunk-io/docs --state open --json number,title,headRefName,url --limit 50`.
-
-3. **Check for file overlap**: For any PR that looks potentially related (based on title or branch name matching the same product area), run `gh pr view <number> --repo trunk-io/docs --json files --jq '[.files[].path]'` and compare against the draft's target files.
-
-4. **If overlapping PRs are found**: Stop and show the user:
-   - The overlapping PR number, title, URL, and author
-   - Which target files overlap
-   - Ask: "PR #NNN already touches [overlapping files]. Would you like to: (a) proceed anyway (changes will likely conflict), (b) wait for that PR to merge first, or (c) skip this draft?"
-   - Do NOT proceed until the user responds.
-
-5. **If no overlaps found**: Continue to Phase 1.
+If a match or overlap is found, stop and ask the user how to proceed before continuing.
 
 ### Phase 1: Parse and Understand
 
-1. If a notes file was provided, read it completely and extract:
-   - Feature/change name
-   - Linear ticket IDs (`TRUNK-NNNNN`)
-   - GitHub PR URLs or numbers
-   - Context links (Slack, Slite, Loom, Google Docs, etc.)
-   - Product area
-   - Change type (new feature, update, fix, deprecation, explainer)
-   - Key details about what changed and why
-
-2. If trunk2 PR numbers or a deploy tag were provided instead:
-   - Use `gh pr view <number> --repo trunk-io/trunk2` to get PR details
-   - Extract Linear ticket IDs from PR titles and branch names
+1. If a notes file was provided, read it and extract: feature name, Linear ticket IDs, GitHub PR URLs, context links, product area, change type, and key details.
+2. If trunk2 PR numbers or a deploy tag were provided instead, use `gh pr view <number> --repo trunk-io/trunk2` to get details and extract Linear ticket IDs.
 
 ### Phase 2: Research
 
-3. **Look up Linear tickets**: Use `mcp__claude_ai_Linear__get_issue` for each ticket ID to get descriptions, status, assignee, linked PRs, and related tickets.
-
-4. **Search Linear for related work**: Search by feature name and product area to find engineering tickets that describe the same functionality. Collect related ticket IDs for linking later.
-
-5. **Search existing docs**: Use `mcp__claude_ai_trunk_docs__searchDocumentation` to find published docs on the topic. Also search the local filesystem:
-   - Use Glob to find related files by path
-   - Use Grep to find references to the feature/topic
-   - Read `summary.md` to understand the docs hierarchy
-
-6. **Read trunk2 PR diffs** (if PR numbers available): Use `gh pr diff <number> --repo trunk-io/trunk2 --name-only` to understand what code changed, then read key files for context.
-
-7. **Identify gaps**: Compare what exists in the docs vs. what the notes/PRs describe. Determine:
-   - Does a page need updating, or does a new page need creating?
-   - What sections are affected?
-   - What's accurate vs. outdated?
+3. **Linear tickets**: Use `mcp__claude_ai_Linear__get_issue` for each ticket ID. Search by feature name for related engineering tickets.
+4. **Slite docs**: Search Slite for PRDs, specs, roadmap items, and knowledge base articles related to the feature. Use feature name and product area as search terms. Retrieve relevant docs for product intent, requirements, and decisions.
+5. **Slack channels**: Search relevant Slack channels for recent discussion, changelogs, and context:
+   - `#team-flaky-tests` — Flaky Tests product discussions
+   - `#team-merge-queue` — Merge Queue product discussions
+   - Search by feature name, ticket ID, or key terms from the notes
+6. **Existing docs**: Use `mcp__claude_ai_trunk_docs__searchDocumentation`, Glob, and Grep. Read `summary.md` for the docs hierarchy.
+7. **trunk2 PR diffs** (if available): `gh pr diff <number> --repo trunk-io/trunk2 --name-only`, then read key files.
+8. **Gap analysis**: Compare existing docs vs. what the notes, Slite specs, and Slack threads describe. Determine whether to update or create pages.
 
 ### Phase 2.5: Generate Sources File
 
-8. Determine the output directory from the draft filename (e.g., `.claude/drafts/flag-as-flaky.md` → `.claude/tmp/flag-as-flaky/`). All staged outputs for this run go under this directory.
-
-   Write a sources audit trail to `.claude/tmp/<draft-name>/sources.md`. This lets reviewers verify accuracy. Include:
-   - All Linear tickets found (with clickable links)
-   - All GitHub PRs (with links, status, key changes)
-   - Existing docs files relevant to this change
-   - Key code references from PRs
-   - All context links from the notes
-   - Related Linear tickets discovered via search
+9. Write `.claude/tmp/<draft-name>/sources.md` with all Linear tickets, GitHub PRs, Slite docs, Slack threads, existing docs, code references, and context links found during research. This is the reviewer audit trail.
 
 ### Phase 3: Draft Documentation
 
-9. Write or edit documentation:
-   - **Match the tone and structure of existing Trunk docs** — read nearby files for reference
-   - For **new pages**: write the full page content
-   - For **updates**: edit the existing file(s) in place
-   - For **explainers**: add examples and scenarios to the relevant existing page. Use collapsible `<details>` blocks for edge cases. Keep happy-path guides clean.
+8. Write or edit documentation:
+   - **Match tone and structure** of existing Trunk docs — read nearby files first
+   - **New pages**: write full content; **Updates**: edit in place; **Explainers**: add to relevant existing page
    - Update `summary.md` if adding new pages
-
-   Writing guidelines:
-   - Lead with the user benefit, not implementation details
-   - Use present tense ("Merge Queue now supports...")
-   - Include practical examples and code snippets where relevant
+   - Lead with user benefit, not implementation details
+   - Use present tense, include practical examples
    - Don't mention internal systems (ClickHouse, Prisma, SST, Lambda)
-   - Use the customer's vocabulary, not engineering jargon
 
-### Phase 4: Create Branch, Commit, and PR
+### Phase 4: Branch, Commit, and PR
 
-10. **Branch**: Create a branch from `main`. Determine the git username by running `git config user.name` and converting it to kebab-case (e.g., "Sam Gutentag" → `sam-gutentag`). Name the branch `<git-username>/<kebab-case-topic>`.
-    - Stash any unrelated working tree changes first
-    - Apply only the files relevant to this change
-
-11. **Commit**: Stage the changed files and commit with a clear message. Include `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`
-
-12. **Push and PR**: Push to origin and create a PR via `gh pr create` with:
-    - **Title format:** `[TRUNK-XXXXX] Short descriptive title` (prefix with Linear ticket ID if one exists)
-    - Body containing:
-      - **Summary** — bullet list of changes
-      - **Linear tickets** — clickable links to all related tickets
-      - **Context links** — all Slack, Slite, Loom links from the notes
-      - **Files changed** — list of files created/modified
-      - **Open questions** — things that couldn't be confirmed from available context
-      - **Test plan** — checklist for reviewer (e.g., "check GitBook preview", "verify code example works")
+9. **Branch**: From `main`. Name: `<git-username>/<kebab-case-topic>` (username from `git config user.name`, kebab-cased). Stash unrelated changes first.
+10. **Commit**: Stage changed files. Include `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`.
+11. **Push and PR**: `gh pr create` with structured body. See [OUTPUTS.md](OUTPUTS.md) for PR body format.
 
 ### Phase 5: Update Linear
 
-13. **Create or update the docs ticket**:
-    - If a ticket exists: update description with PR link, context links, summary of changes. Add a comment with the PR link. Update status to "In Review".
-    - If no ticket exists: create one in Trunk Engineering team with `docs` label, assigned to "me". Include PR link and full context.
-
-14. **Attach context links**: For every URL from the notes (Slack, Slite, Loom, etc.), add it as an attachment on the Linear ticket with a descriptive title (e.g., `"Slack: #channel — topic"`).
-
-15. **Link related tickets**: For every related engineering ticket discovered during research, add a `relatedTo` relation on the docs ticket.
+12. Create or update the docs ticket — add PR link, context links, change summary. Set status to "In Review". If no ticket exists, create one in Trunk Engineering with `docs` label.
+13. Attach all context links (Slack, Slite, Loom) as attachments with descriptive titles.
+14. Add `relatedTo` relations for every related engineering ticket found during research.
 
 ### Phase 6: Stage Outputs
 
-16. **Slack post**: Write to `.claude/tmp/<draft-name>/slack.md`. This file must be directly copy-pasteable into Slack with correct formatting. Use Slack's mrkdwn syntax (not Markdown):
-    - Bold: `*text*` (single asterisks, not double)
-    - Links: `<URL|display text>`
-    - Bullets: `•` (bullet character, not `-`)
-    - No Markdown-style headers (`##`), links (`[text](url)`), or bold (`**text**`)
-
-    Format:
-    ```
-    *[Feature Name] — docs update ready for review*
-
-    [1-2 sentence summary of what changed in the docs.]
-
-    • PR: <GitHub PR URL|#NNN>
-    • Linear: <Linear ticket URL|TRUNK-XXXXX>
-
-    *Open questions for the team:*
-    • [list any items needing eng confirmation]
-    ```
-
-17. **Review report**: Append an HTML card to `.claude/tmp/report.html` with PR link, Linear link, changes summary, review focus areas, and open questions. If the file doesn't exist, create it with basic HTML styling.
+15. **Slack post**: Write to `.claude/tmp/<draft-name>/slack.md`. See [OUTPUTS.md](OUTPUTS.md) for Slack formatting rules.
+16. **Report**: Append an HTML card to `.claude/tmp/report.html`. See [OUTPUTS.md](OUTPUTS.md) for report format.
 
 ### Phase 7: Clean Up
 
-19. Return to the original branch and restore any stashed changes.
-
-20. **Output summary**: Show the user:
-    - Branch name and PR link
-    - Linear ticket link
-    - Files changed (list)
-    - Open questions (numbered)
-    - Staged output files (slack, sources)
+17. Return to original branch, restore stashed changes.
+18. Show the user: branch name, PR link, Linear ticket link, files changed, open questions, staged output file paths.
 
 ## Guidelines
 
-- **One notes file = one PR.** If a notes file describes multiple unrelated changes, flag this and ask how to split.
-- **Preserve the notes file** — don't delete or modify it. It's the audit trail.
-- **Ask before guessing** — if the notes are too ambiguous, output your best interpretation and list specific questions rather than making assumptions.
-- **Always include PR links** in Linear comments and descriptions.
-- **Match existing style** — read adjacent doc files before writing. Don't introduce new formatting conventions.
-- **Keep happy paths clean** — add examples in dedicated sections, not inline with workflow steps.
-- **Prioritize accuracy** — flag anything you inferred vs. confirmed in the open questions.
+- **One notes file = one PR.** Flag multi-topic drafts and ask how to split.
+- **Preserve the notes file** — never delete or modify it.
+- **Ask before guessing** — list specific questions rather than making assumptions.
+- **Always include full PR URLs** in Linear comments and descriptions.
+- **Match existing style** — read adjacent docs before writing.
+- **Prioritize accuracy** — flag inferred vs. confirmed items in open questions.
 
 ## Batch Processing
 
-To process multiple notes files:
-```
-Process each notes file in .claude/drafts/ one at a time.
-For each: research, draft, apply, branch/PR, update Linear, then move to the next.
-```
-
-Each file gets its own branch (`<git-username>/<topic>`), PR, Linear ticket, and output directory under `.claude/tmp/`. Process one at a time to avoid git conflicts.
+Process each notes file in `.claude/drafts/` one at a time. Each gets its own branch, PR, Linear ticket, and `.claude/tmp/<draft-name>/` directory. The skill handles git stash/restore between runs.
