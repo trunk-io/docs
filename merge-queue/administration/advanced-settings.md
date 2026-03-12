@@ -173,7 +173,17 @@ You can change your merge method at any time:
 
 The merge method is configured per repository, so different repositories in your organization can use different methods based on their needs.
 
+### Custom merge commit titles
 
+You can override the merge commit title on a per-PR basis by adding a `merge-commit-title:` directive on its own line anywhere in the PR body:
+
+```
+merge-commit-title: feat(auth): add OAuth2 login flow [PROJ-123]
+```
+
+When present, Trunk uses this title for the merge commit instead of the default GitHub-generated title. The commit body follows the usual behavior for the configured merge method. When the directive is not present, the default behavior is preserved.
+
+See [Submit and cancel pull requests](../using-the-queue/reference.md#custom-merge-commit-titles) for more details and examples.
 
 ***
 
