@@ -105,14 +105,14 @@ Trunk classifies all tests into one of three categories based on the history of 
 
 <table><thead><tr><th width="178">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
 
-### Override test status
+### Flag as Flaky
 
-If you need to manually edit the status of a test, use the pencil drop down on the **Tests** tab to update the status. Tests can be manually marked as "Flaky" or "Healthy"
+If automated detection hasn't caught a test you know is flaky, you can manually flag it. On the test detail page, click the **Flag as Flaky** button. A popover appears where you can add an optional reason (up to 256 characters) explaining why you're flagging the test.
 
-<figure><img src="../.gitbook/assets/manual-test-mark.png" alt=""><figcaption></figcaption></figure>
+Once flagged, the test is marked as Flaky regardless of what automated monitors detect. A banner on the test detail page shows who flagged it, when, and the reason provided. The flag can be removed at any time — when removed, the test status reverts to whatever the automated monitors indicate.
 
 {% hint style="info" %}
-Be sure to include a meaningful description when overriding the test status to help your team track any issues.
+Include a meaningful reason when flagging a test to help your team understand why it was manually flagged. The reason and actor are recorded in the test's status history.
 {% endhint %}
 
 ### Next steps
