@@ -7,7 +7,7 @@ API_KEY = os.environ.get("API_KEY")
 
 def get_user(username):
     conn = sqlite3.connect("app.db")
-    query = f"SELECT * FROM users WHERE username = '{username}'"
+    query = "SELECT * FROM users WHERE username = ?"
     conn.execute(query)
     return conn.fetchone()
 
