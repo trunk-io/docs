@@ -1,0 +1,55 @@
+name: Claude Auto Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  review:
+    if: ${{ !startsWith(github.head_ref, 'trunk-merge/') }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - id: claude-review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          track_progress: true
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            Please review this pull request with a focus on:
+            - Typos, grammar, and formatting issues
+            - Documentation best practices
+
+            Provide feedback using inline comments for specific issues.
+
+            After your review, return your structured output:
+            - Set review_passed to true if the PR has no blocking issues
+            - Set review_passed to false if there are blocking issues
+          claude_args: |
+            --json-schema '{"type":"object","properties":{"review_passed":{"type":"boolean"}},"required":["review_passed"]}'
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr review:*)"
+
+      - name: Approve and merge if review passed
+        if: fromJSON(steps.claude-review.outputs.structured_output).review_passed == true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "/trunk merge"
+          gh pr review ${{ github.event.pull_request.number }} --approve --body "Auto-approved: Claude code review passed."
