@@ -31,12 +31,16 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     reporters: [
-      ['junit', { outputFile: './junit.xml' }],
+      ['junit', { outputFile: './junit.xml', addFileAttribute: true }],
     ],
   },
 });
 ```
 {% endcode %}
+
+{% hint style="warning" %}
+**Important**: The `addFileAttribute: true` option is required for the JUnit report to pass `trunk-analytics-cli` validation. This option adds file path information to each test case in the XML output, which Trunk uses to associate test results with source files.
+{% endhint %}
 
 #### Report File Path
 
