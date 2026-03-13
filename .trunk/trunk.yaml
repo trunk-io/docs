@@ -44,4 +44,4 @@ lint:
 
 merge:
   required_statuses:
-    - "CI / build (pull_request)"
+    - "build"
