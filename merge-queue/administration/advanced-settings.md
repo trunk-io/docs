@@ -316,6 +316,35 @@ For detailed guidance on using this setting effectively, see [Bisection Testing 
 
 ***
 
+## Required status checks
+
+Configure which CI status checks must pass before a PR can merge through the queue. You can set required statuses directly in the Trunk UI using the CI job selector, giving you more control than relying solely on GitHub branch protection rules.
+
+### How to configure
+
+1. Navigate to **Settings** > **Repositories** > your repository > **Merge Queue**
+2. Scroll to the **Required Status Checks** section
+3. Use the CI job selector to pick which status checks must pass
+4. The selector shows CI jobs that have been seen on recent PRs
+
+### How required statuses are resolved
+
+Trunk determines required status checks from one of three sources, in this priority order:
+
+| Source | When used |
+| --- | --- |
+| **Trunk UI** (this setting) | When you explicitly select status checks in the Merge Queue settings |
+| **`.trunk/trunk.yaml`** | When using [push-triggered mode](../getting-started/configure-ci-status-checks.md#if-using-push-triggered-mode) with `required_statuses` defined |
+| **GitHub branch protection** | Default — uses the required status checks from your branch protection rules or rulesets |
+
+When required statuses are configured in the Trunk UI, they override both `.trunk/trunk.yaml` and GitHub branch protection for the merge queue. This is useful when your branch protection rules include checks that shouldn't gate the merge queue, or when you want the merge queue to require different checks than direct merges.
+
+{% hint style="info" %}
+Required status checks are per-queue. If you have [multiple queues per repository](#multiple-queues-per-repository), each queue can have its own set of required statuses.
+{% endhint %}
+
+***
+
 ## Delete Merge Integration
 
 {% hint style="danger" %}

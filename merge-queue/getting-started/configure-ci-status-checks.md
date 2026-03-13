@@ -4,7 +4,7 @@
 
 Your existing pull request-triggered CI workflows will automatically run when Trunk creates draft pull requests to test changes. **No additional configuration is required.**
 
-Trunk will wait for the same required status checks configured in your branch protection rules (either via Classic rules or Rulesets) before merging.
+Trunk will wait for the same required status checks configured in your branch protection rules (either via Classic rules or Rulesets) before merging. You can also override this by configuring required statuses directly in the [Trunk Merge Queue settings](../administration/advanced-settings.md#required-status-checks).
 
 See GitHub's documentation for configuring required status checks:
 
