@@ -1,3 +1,10 @@
 # Mac
 .DS_Store
 /.idea/workspace.xml
+
+# Agent drafts (notes files are personal, template is committed)
+.claude/drafts/*.md
+!.claude/drafts/TEMPLATE.md
+
+# Agent outputs (local working files, all under tmp/)
+.claude/tmp/
