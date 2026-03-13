@@ -104,3 +104,158 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P50     | The value below 50% of the time in queue falls.     |
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
+
+***
+
+### Prometheus metrics endpoint
+
+Trunk exposes merge queue metrics in [Prometheus text exposition format](https://prometheus.io/docs/instrumenting/exposition_formats/) via a scrapable API endpoint. Use this to build custom Grafana dashboards, set up alerts, or integrate merge queue health into your existing observability stack.
+
+{% hint style="info" %}
+The Prometheus metrics endpoint is available on select plans. Contact your Trunk representative for access.
+{% endhint %}
+
+### Endpoint
+
+```
+GET https://api.trunk.io/v1/getMergeQueueMetrics
+```
+
+Authenticate with your [Trunk API token](../../setup-and-administration/apis/#authentication) using the `x-api-token` header.
+
+**Query parameters:**
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `repo` | No | Repository in `owner/name` format (e.g., `my-org/my-repo`). If omitted, returns metrics for all repositories in the organization. |
+| `repoHost` | No | Repository host. Defaults to `github.com`. |
+
+The response uses content type `text/plain; version=0.0.4; charset=utf-8` (standard Prometheus format). Metrics are computed on-demand with a 60-second cache.
+
+### Available metrics
+
+All metrics include these labels:
+
+| Label | Description | Example values |
+| --- | --- | --- |
+| `repo` | Repository name | `my-org/my-repo` |
+| `branch` | Base branch name | `main`, `develop` |
+| `queue_type` | Queue type | `main`, `bisection` |
+
+#### Point-in-time gauges
+
+These metrics reflect the current state of your merge queue.
+
+| Metric | Type | Description |
+| --- | --- | --- |
+| `mq_queue_depth_current` | Gauge | Number of PRs currently in the queue (excludes NOT\_READY PRs) |
+| `mq_awaiting_mergeability` | Gauge | Number of PRs waiting for prerequisites like required reviews or status checks |
+| `mq_testing_slots_active` | Gauge | Number of PRs currently in TESTING state (active CI slots in use) |
+
+#### Rolling 1-hour window metrics
+
+These metrics summarize activity over a sliding 1-hour window. They update continuously as the window advances.
+
+| Metric | Type | Extra labels | Description |
+| --- | --- | --- | --- |
+| `mq_pr_conclusions_1h_total` | Gauge | `conclusion` (merged, failed, cancelled) | PRs that exited the queue in the last hour |
+| `mq_pr_restarts_1h_total` | Gauge | — | PR restarts (TESTING to PENDING transitions) in the last hour |
+| `mq_pr_wait_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent waiting before testing starts |
+| `mq_pr_test_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent in the testing phase |
+| `mq_pr_time_in_queue_1h_seconds` | Histogram | `conclusion`, `le` | Distribution of total time in queue for PRs that concluded in the last hour |
+
+Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
+
+{% hint style="warning" %}
+Rolling window metrics use **gauge semantics**, not true Prometheus counters. They represent a snapshot of the last hour, not cumulative totals. PromQL functions like `rate()` and `increase()` are **not meaningful** on these metrics. Use the values directly instead.
+{% endhint %}
+
+### Scrape configuration
+
+Configure your Prometheus instance to scrape the Trunk metrics endpoint:
+
+```yaml
+scrape_configs:
+  - job_name: trunk-merge-queue
+    scrape_interval: 60s
+    scheme: https
+    static_configs:
+      - targets: ['api.trunk.io']
+    metrics_path: /v1/getMergeQueueMetrics
+    params:
+      repo: ['my-org/my-repo']
+    http_headers:
+      x-api-token:
+        values: ['<your-trunk-api-token>']
+```
+
+To scrape metrics for all repositories in your organization, omit the `repo` parameter.
+
+### Example queries
+
+**Queue health alerts:**
+
+```promql
+# Alert when queue depth exceeds threshold
+mq_queue_depth_current{branch="main"} > 10
+
+# Max queue depth over the last hour
+max_over_time(mq_queue_depth_current{branch="main"}[1h])
+
+# CI utilization (if you have 8 concurrency slots)
+mq_testing_slots_active{branch="main",queue_type="main"} / 8
+```
+
+**Failure analysis:**
+
+```promql
+# Failure rate over the last hour
+mq_pr_conclusions_1h_total{conclusion="failed"}
+  /
+ignoring(conclusion) sum(mq_pr_conclusions_1h_total)
+
+# Alert on high failure count
+mq_pr_conclusions_1h_total{conclusion="failed"} > 5
+```
+
+**Duration analysis:**
+
+```promql
+# P90 wait time (time before testing starts)
+histogram_quantile(0.90, mq_pr_wait_duration_1h_seconds_bucket)
+
+# Average wait time
+mq_pr_wait_duration_1h_seconds_sum / mq_pr_wait_duration_1h_seconds_count
+
+# P95 total time in queue for merged PRs
+histogram_quantile(0.95, mq_pr_time_in_queue_1h_seconds_bucket{conclusion="merged"})
+
+# Restart ratio (restarts per merge)
+mq_pr_restarts_1h_total / mq_pr_conclusions_1h_total{conclusion="merged"}
+```
+
+### Sample output
+
+```
+# HELP mq_queue_depth_current PRs currently in the queue
+# TYPE mq_queue_depth_current gauge
+mq_queue_depth_current{repo="my-org/my-repo",branch="main",queue_type="main"} 4
+
+# HELP mq_awaiting_mergeability Number of PRs currently awaiting mergeability
+# TYPE mq_awaiting_mergeability gauge
+mq_awaiting_mergeability{repo="my-org/my-repo",branch="main",queue_type="main"} 1
+
+# HELP mq_testing_slots_active PRs currently in TESTING state
+# TYPE mq_testing_slots_active gauge
+mq_testing_slots_active{repo="my-org/my-repo",branch="main",queue_type="main"} 3
+
+# HELP mq_pr_conclusions_1h_total PRs exiting the queue in last hour
+# TYPE mq_pr_conclusions_1h_total gauge
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="merged"} 12
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="failed"} 1
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="cancelled"} 0
+
+# HELP mq_pr_restarts_1h_total PR restarts in last hour
+# TYPE mq_pr_restarts_1h_total gauge
+mq_pr_restarts_1h_total{repo="my-org/my-repo",branch="main",queue_type="main"} 2
+```
