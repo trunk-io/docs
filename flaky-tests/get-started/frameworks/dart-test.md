@@ -4,7 +4,7 @@ description: A guide for generating Trunk-compatible test reports for Dart tests
 
 # Dart Test
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Dart projects by integrating with Trunk. This document explains how to configure Dart to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Dart projects by integrating with Trunk. This document explains how to configure Dart to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
@@ -38,7 +38,7 @@ The JUnit report is written to the location specified by the `tojunit >` pipe. I
 
 You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
 
-Dart provides retries through the [retry class annotations](https://pub.dev/documentation/test/latest/test/Retry-class.html). Disable retry, use Trunk to [detect](../../detection.md)[ flaky tests](../../detection.md), and use Quarantining to isolate flaky tests dynamically at run time.
+Dart provides retries through the [retry class annotations](https://pub.dev/documentation/test/latest/test/Retry-class.html). Disable retry, use Trunk to [detect](../../detection/)[ flaky tests](../../detection/), and use Quarantining to isolate flaky tests dynamically at run time.
 
 ### Try It Locally
 

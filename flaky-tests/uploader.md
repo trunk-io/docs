@@ -79,7 +79,7 @@ You can find your organization slug and token by going to **Settings** > **Manag
 ### Uploading Test Results
 
 {% hint style="info" %}
-The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as broken or flaky.
+The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as flaky.
 {% endhint %}
 
 Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `./trunk flakytest upload` command like this:
@@ -115,6 +115,27 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 ```
 {% endtab %}
 {% endtabs %}
+
+### Variants
+
+If you run the same tests across different environments or architectures, you can use variants to separate these runs into distinct test cases. This allows Trunk to detect environment-specific flakes.
+
+For example, a test for a mobile app might be flaky on iOS but stable on Android. Using variants, Trunk can isolate flakes on the iOS variant instead of marking the test as flaky across all environments.
+
+You can specify a variant during upload using the `--variant` option:
+
+{% code title="Upload an iOS variant " %}
+```
+./trunk flakytests upload --junit-paths "test_output.xml" \
+   --org-url-slug <TRUNK_ORG_SLUG> \
+   --token $TRUNK_API_TOKEN \
+   --variant ios
+```
+{% endcode %}
+
+Variant names are displayed in brackets next to test names in your dashboard:
+
+<figure><picture><source srcset="../.gitbook/assets/variants-dark-border.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/variants-light-border.png" alt=""></picture><figcaption><p>The same test, but the first is a macOS variant.</p></figcaption></figure>
 
 ### Running and Quarantining Tests
 

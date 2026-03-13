@@ -5,7 +5,7 @@ description: A guide for generating Trunk-compatible test reports for Jasmine te
 
 # Jasmine
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Jasmine projects by integrating with Trunk. This document explains how to configure Jasmine to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Jasmine projects by integrating with Trunk. This document explains how to configure Jasmine to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 

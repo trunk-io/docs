@@ -39,14 +39,14 @@ Store the Trunk slug and API token obtained in the previous step in your repo as
 
 ### Upload to Trunk
 
-Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should minimally include all jobs that run on pull requests, as well as jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should minimally include all jobs that run on pull requests, as well as jobs that run on your main or [stable branches](../../detection/), for example, `main`, `master`, or `develop`.
 
 {% hint style="danger" %}
-It is important to upload test results from CI runs on [**stable branches**](../../detection.md#stable-branches), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
+It is important to upload test results from CI runs on [**stable branches**](../../detection/), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
 
 Trunk can also detect test flakes on PR and merge branches. To best detect flaky tests, it is recommended to upload test results from stable, PR, and merge branch CI runs.
 
-[Learn more about detection](../../detection.md)
+[Learn more about detection](../../detection/)
 {% endhint %}
 
 #### Example GitHub Actions Workflow
