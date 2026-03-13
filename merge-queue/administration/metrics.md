@@ -115,7 +115,7 @@ Trunk exposes merge queue metrics in [Prometheus text exposition format](https:/
 The Prometheus metrics endpoint is available to all Merge Queue users.
 {% endhint %}
 
-### Endpoint
+#### Endpoint
 
 ```
 GET https://api.trunk.io/v1/getMergeQueueMetrics
@@ -128,11 +128,11 @@ Authenticate with your [Trunk API token](../../setup-and-administration/apis/#au
 | Parameter | Required | Description |
 | --- | --- | --- |
 | `repo` | No | Repository in `owner/name` format (e.g., `my-org/my-repo`). If omitted, returns metrics for all repositories in the organization. Must be provided together with `repoHost`. |
-| `repoHost` | No | Repository host (e.g., `github.com`). Required if `repo` is specified. |
+| `repoHost` | Conditional | Repository host (e.g., `github.com`). Required if `repo` is specified. |
 
 The response uses content type `text/plain; version=0.0.4; charset=utf-8` (standard Prometheus format).
 
-### Available metrics
+#### Available metrics
 
 All metrics include these labels:
 
@@ -142,7 +142,7 @@ All metrics include these labels:
 | `branch` | Base branch name | `main`, `develop` |
 | `queue_type` | Queue type | `main` or `bisection` |
 
-#### Point-in-time gauges
+##### Point-in-time gauges
 
 These metrics reflect the current state of your merge queue.
 
@@ -152,7 +152,7 @@ These metrics reflect the current state of your merge queue.
 | `mq_awaiting_mergeability` | Gauge | Number of PRs waiting for prerequisites like required reviews or status checks |
 | `mq_testing_slots_active` | Gauge | Number of PRs currently in TESTING state (active CI slots in use) |
 
-#### Rolling 1-hour window metrics
+##### Rolling 1-hour window metrics
 
 These metrics summarize activity over a sliding 1-hour window. They update continuously as the window advances.
 
@@ -168,7 +168,7 @@ Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket bo
 Rolling window metrics use **gauge semantics**, not true Prometheus counters. They represent a snapshot of the last hour, not cumulative totals. PromQL functions like `rate()` and `increase()` are **not meaningful** on these metrics. Use the values directly instead.
 {% endhint %}
 
-### Scrape configuration
+#### Scrape configuration
 
 Configure your Prometheus instance to scrape the Trunk metrics endpoint:
 
@@ -190,7 +190,7 @@ scrape_configs:
 
 To scrape metrics for all repositories in your organization, omit both the `repo` and `repoHost` parameters.
 
-### Example queries
+#### Example queries
 
 **Queue health alerts:**
 
@@ -221,7 +221,7 @@ mq_pr_conclusions_1h_total{conclusion="failed"} > 5
 
 ```promql
 # P90 wait time (time before testing starts)
-histogram_quantile(0.90, mq_pr_wait_duration_1h_seconds_bucket)
+histogram_quantile(0.90, sum(mq_pr_wait_duration_1h_seconds_bucket) by (le))
 
 # Average wait time
 mq_pr_wait_duration_1h_seconds_sum / mq_pr_wait_duration_1h_seconds_count
@@ -230,7 +230,7 @@ mq_pr_wait_duration_1h_seconds_sum / mq_pr_wait_duration_1h_seconds_count
 mq_pr_restarts_1h_total / mq_pr_conclusions_1h_total{conclusion="merged"}
 ```
 
-### Sample output
+#### Sample output
 
 ```
 # HELP mq_depth_current PRs currently in the queue
