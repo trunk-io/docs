@@ -107,7 +107,7 @@ The time in queue can be displayed as different statistical measures. You can sh
 
 ***
 
-## Prometheus metrics endpoint
+### Prometheus metrics endpoint
 
 Trunk exposes merge queue metrics in Prometheus-compatible text format via a scrapable API endpoint. Use this to build custom Grafana dashboards, set up alerts, or integrate merge queue health into your existing observability stack.
 
