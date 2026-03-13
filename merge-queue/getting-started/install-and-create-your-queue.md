@@ -44,6 +44,10 @@ If the GitHub App is already installed, step 3 will be skipped automatically.
 
 You've installed the Trunk GitHub App on your organization and created your first merge queue for the specified branch (`main` in the example above). Trunk is now connected to your repository and ready to be configured. Your queue won't start processing pull requests until you complete the branch protection setup in the next step.
 
+{% hint style="info" %}
+**Need multiple queues?** You can create additional queues for the same repository targeting different branches (e.g., `staging`, `release/v2`). Each queue operates independently with its own settings. See [Multiple queues per repository](../administration/advanced-settings.md#multiple-queues-per-repository) for details.
+{% endhint %}
+
 ### Next steps
 
 → [**Configure branch protection**](configure-branch-protection.md) - Set up GitHub rules so Trunk can safely manage your merges
