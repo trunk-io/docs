@@ -51,7 +51,7 @@ Trunk can also detect test flakes on PR and merge branches. To best detect flaky
 
 #### Example Travis CI Workflow
 
-The following is an example of a Travis CI workflow step to upload test results after your tests run. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
+The following is an example of a Travis CI workflow step to upload test results after your tests run. Note: you must either run `trunk-analytics-cli` from the repo root when uploading test results or pass a `--repo-root` argument.
 
 To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [Test Frameworks](https://docs.trunk.io/flaky-tests/frameworks) docs.
 
@@ -67,8 +67,9 @@ dist: jammy
 node_js:
   - 20
 script:
-  - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-  - ./trunk flakytests upload --junit-paths "<XML_GLOB_PATH>" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+  - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
+  - chmod +x trunk-analytics-cli
+  - ./trunk-analytics-cli upload --junit-paths "<XML_GLOB_PATH>" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
 
@@ -79,8 +80,9 @@ dist: jammy
 node_js:
   - 20
 script:
-  - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-  - ./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+  - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
+  - chmod +x trunk-analytics-cli
+  - ./trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
 
@@ -91,8 +93,9 @@ dist: jammy
 node_js:
   - 20
 script:
-  - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-  - ./trunk flakytests upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+  - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
+  - chmod +x trunk-analytics-cli
+  - ./trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
 

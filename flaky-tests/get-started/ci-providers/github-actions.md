@@ -201,18 +201,18 @@ jobs:
 </code></pre>
 {% endtab %}
 
-{% tab title="Using The Trunk CLI Directly" %}
+{% tab title="Using The Trunk Analytics CLI Directly" %}
 **Using Flaky Tests as a separate step**
 
 {% hint style="warning" %}
 If you upload your test results as a second step after you run your tests, you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests.&#x20;
 
-When quarantining is enabled, the `flakytests upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
+When quarantining is enabled, the `upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
 {% endhint %}
 
 <pre class="language-bash"><code class="lang-bash"><strong>&#x3C;run my tests> || true # doesn't fail job on failure
 </strong>|
-    ./trunk flakytests upload \
+    ./trunk-analytics-cli upload \
         --org-url-slug $TRUNK_ORG_SLUG \
         --token $TRUNK_API_TOKEN \
         --junit-paths $JUNIT_PATH
@@ -220,11 +220,11 @@ When quarantining is enabled, the `flakytests upload` command will **return an e
 
 **Using Flaky Tests as a single step**
 
-You can also wrap the test command with the Trunk CLI. When wrapping the command with the Trunk CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code `0`.
+You can also wrap the test command with the Trunk Analytics CLI. When wrapping the command with the Trunk Analytics CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code `0`.
 
 {% code overflow="wrap" %}
 ```bash
-./trunk flakytests test \
+./trunk-analytics-cli test \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token $TRUNK_API_TOKEN \
     --junit-paths $JUNIT_PATH \
