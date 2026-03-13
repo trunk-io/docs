@@ -38,9 +38,18 @@ All requests must be [authenticated](../../setup-and-administration/apis/#authen
 
 ### Prometheus metrics
 
-Trunk exposes merge queue metrics in Prometheus-compatible text format. Scrape this endpoint with your Prometheus instance to build custom dashboards and alerts.
+`GET /v1/getMergeQueueMetrics`
 
-See [Prometheus metrics endpoint](../administration/metrics.md#prometheus-metrics-endpoint) for available metrics, scrape configuration, and example Grafana queries.
+Returns merge queue metrics in Prometheus text exposition format. Authenticate with the `x-api-token` header.
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `repo` | No | Repository in `owner/name` format. If omitted, returns metrics for all repositories in the organization. |
+| `repoHost` | No | Repository host. Defaults to `github.com`. |
+
+Response content type: `text/plain; version=0.0.4; charset=utf-8`
+
+See [Prometheus metrics endpoint](../administration/metrics.md#prometheus-metrics-endpoint) for the full list of available metrics, scrape configuration, and example queries.
 
 ## Queue Endpoints
 

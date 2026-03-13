@@ -109,55 +109,153 @@ The time in queue can be displayed as different statistical measures. You can sh
 
 ### Prometheus metrics endpoint
 
-Trunk exposes merge queue metrics in Prometheus-compatible text format via a scrapable API endpoint. Use this to build custom Grafana dashboards, set up alerts, or integrate merge queue health into your existing observability stack.
+Trunk exposes merge queue metrics in [Prometheus text exposition format](https://prometheus.io/docs/instrumenting/exposition_formats/) via a scrapable API endpoint. Use this to build custom Grafana dashboards, set up alerts, or integrate merge queue health into your existing observability stack.
+
+{% hint style="info" %}
+The Prometheus metrics endpoint is available on select plans. Contact your Trunk representative for access.
+{% endhint %}
+
+### Endpoint
+
+```
+GET https://api.trunk.io/v1/getMergeQueueMetrics
+```
+
+Authenticate with your [Trunk API token](../../setup-and-administration/apis/#authentication) using the `x-api-token` header.
+
+**Query parameters:**
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `repo` | No | Repository in `owner/name` format (e.g., `my-org/my-repo`). If omitted, returns metrics for all repositories in the organization. |
+| `repoHost` | No | Repository host. Defaults to `github.com`. |
+
+The response uses content type `text/plain; version=0.0.4; charset=utf-8` (standard Prometheus format). Metrics are computed on-demand with a 60-second cache.
 
 ### Available metrics
 
+All metrics include these labels:
+
+| Label | Description | Example values |
+| --- | --- | --- |
+| `repo` | Repository name | `my-org/my-repo` |
+| `branch` | Base branch name | `main`, `develop` |
+| `queue_type` | Queue type | `main`, `bisection` |
+
+#### Point-in-time gauges
+
+These metrics reflect the current state of your merge queue.
+
 | Metric | Type | Description |
 | --- | --- | --- |
-| `trunk_merge_queue_depth` | Gauge | Number of PRs currently in the queue (excludes PRs in NOT\_READY state) |
-| `trunk_merge_queue_wait_time_seconds` | Histogram | Time PRs spend waiting in queue before testing starts |
-| `trunk_merge_queue_test_time_seconds` | Histogram | Time PRs spend in the testing phase |
-| `trunk_merge_queue_throughput` | Counter | Number of PRs merged |
-| `trunk_merge_queue_batch_size` | Histogram | Number of PRs per batch (when batching is enabled) |
-| `trunk_merge_queue_failure_rate` | Gauge | Ratio of failed PRs to total PRs processed |
+| `mq_queue_depth_current` | Gauge | Number of PRs currently in the queue (excludes NOT\_READY PRs) |
+| `mq_awaiting_mergeability` | Gauge | Number of PRs waiting for prerequisites like required reviews or status checks |
+| `mq_testing_slots_active` | Gauge | Number of PRs currently in TESTING state (active CI slots in use) |
+
+#### Rolling 1-hour window metrics
+
+These metrics summarize activity over a sliding 1-hour window. They update continuously as the window advances.
+
+| Metric | Type | Extra labels | Description |
+| --- | --- | --- | --- |
+| `mq_pr_conclusions_1h_total` | Gauge | `conclusion` (merged, failed, cancelled) | PRs that exited the queue in the last hour |
+| `mq_pr_restarts_1h_total` | Gauge | — | PR restarts (TESTING to PENDING transitions) in the last hour |
+| `mq_pr_wait_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent waiting before testing starts |
+| `mq_pr_test_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent in the testing phase |
+| `mq_pr_time_in_queue_1h_seconds` | Histogram | `conclusion`, `le` | Distribution of total time in queue for PRs that concluded in the last hour |
+
+Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
 
 {% hint style="warning" %}
-Metric names and labels are subject to change. Verify the exact metrics available by scraping the endpoint and reviewing the output.
+Rolling window metrics use **gauge semantics**, not true Prometheus counters. They represent a snapshot of the last hour, not cumulative totals. PromQL functions like `rate()` and `increase()` are **not meaningful** on these metrics. Use the values directly instead.
 {% endhint %}
 
 ### Scrape configuration
 
-Configure your Prometheus instance to scrape the Trunk metrics endpoint. Authenticate with your [Trunk API token](../../setup-and-administration/apis/#authentication).
+Configure your Prometheus instance to scrape the Trunk metrics endpoint:
 
 ```yaml
 scrape_configs:
-  - job_name: 'trunk-merge-queue'
+  - job_name: trunk-merge-queue
     scrape_interval: 60s
-    metrics_path: '/v1/merge-queue/metrics'
     scheme: https
-    bearer_token: '<your-trunk-api-token>'
     static_configs:
       - targets: ['api.trunk.io']
+    metrics_path: /v1/getMergeQueueMetrics
+    params:
+      repo: ['my-org/my-repo']
+    http_headers:
+      x-api-token:
+        values: ['<your-trunk-api-token>']
 ```
 
-{% hint style="info" %}
-Metrics are computed on-demand from Trunk's data store on each scrape, so values are always current. There are no long-lived gauges that could become stale.
-{% endhint %}
+To scrape metrics for all repositories in your organization, omit the `repo` parameter.
 
-### Example Grafana queries
+### Example queries
 
-**Queue depth over time:**
+**Queue health alerts:**
+
 ```promql
-trunk_merge_queue_depth{repo="my-org/my-repo"}
+# Alert when queue depth exceeds threshold
+mq_queue_depth_current{branch="main"} > 10
+
+# Max queue depth over the last hour
+max_over_time(mq_queue_depth_current{branch="main"}[1h])
+
+# CI utilization (if you have 8 concurrency slots)
+mq_testing_slots_active{branch="main",queue_type="main"} / 8
 ```
 
-**P95 wait time:**
+**Failure analysis:**
+
 ```promql
-histogram_quantile(0.95, trunk_merge_queue_wait_time_seconds_bucket{repo="my-org/my-repo"})
+# Failure rate over the last hour
+mq_pr_conclusions_1h_total{conclusion="failed"}
+  /
+ignoring(conclusion) sum(mq_pr_conclusions_1h_total)
+
+# Alert on high failure count
+mq_pr_conclusions_1h_total{conclusion="failed"} > 5
 ```
 
-**Merge throughput per hour:**
+**Duration analysis:**
+
 ```promql
-rate(trunk_merge_queue_throughput{repo="my-org/my-repo"}[1h]) * 3600
+# P90 wait time (time before testing starts)
+histogram_quantile(0.90, mq_pr_wait_duration_1h_seconds_bucket)
+
+# Average wait time
+mq_pr_wait_duration_1h_seconds_sum / mq_pr_wait_duration_1h_seconds_count
+
+# P95 total time in queue for merged PRs
+histogram_quantile(0.95, mq_pr_time_in_queue_1h_seconds_bucket{conclusion="merged"})
+
+# Restart ratio (restarts per merge)
+mq_pr_restarts_1h_total / mq_pr_conclusions_1h_total{conclusion="merged"}
+```
+
+### Sample output
+
+```
+# HELP mq_queue_depth_current PRs currently in the queue
+# TYPE mq_queue_depth_current gauge
+mq_queue_depth_current{repo="my-org/my-repo",branch="main",queue_type="main"} 4
+
+# HELP mq_awaiting_mergeability Number of PRs currently awaiting mergeability
+# TYPE mq_awaiting_mergeability gauge
+mq_awaiting_mergeability{repo="my-org/my-repo",branch="main",queue_type="main"} 1
+
+# HELP mq_testing_slots_active PRs currently in TESTING state
+# TYPE mq_testing_slots_active gauge
+mq_testing_slots_active{repo="my-org/my-repo",branch="main",queue_type="main"} 3
+
+# HELP mq_pr_conclusions_1h_total PRs exiting the queue in last hour
+# TYPE mq_pr_conclusions_1h_total gauge
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="merged"} 12
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="failed"} 1
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="cancelled"} 0
+
+# HELP mq_pr_restarts_1h_total PR restarts in last hour
+# TYPE mq_pr_restarts_1h_total gauge
+mq_pr_restarts_1h_total{repo="my-org/my-repo",branch="main",queue_type="main"} 2
 ```
