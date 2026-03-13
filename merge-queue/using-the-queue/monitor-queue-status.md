@@ -15,6 +15,7 @@ The Trunk Merge Queue dashboard gives you real-time visibility into your queue's
 
 * Trunk bot comments include dashboard links
 * Click any link in bot comments to go directly to that PR's status
+* When [GitHub status posting](../administration/advanced-settings.md#github-status-posting) is enabled, a `trunk/merge-queue` commit status appears in the PR's checks section showing the current queue state. Click **Details** to go to the Trunk dashboard.
 
 ### Queue overview
 
