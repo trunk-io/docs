@@ -49,63 +49,12 @@ Before modifying your CI jobs to automatically upload test results to Trunk, try
 
 You make an upload to Trunk using the following command:
 
-{% tabs %}
-{% tab title="Linux (x64)" %}
 ```bash
-SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli upload --xcresult-path "./test-results.xcresult" \
+curl https://get.trunk.io -fsSL | bash
+trunk flakytests upload --xcresult-path "./test-results.xcresult" \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```
-{% endtab %}
-
-{% tab title="Linux (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli upload --xcresult-path "./test-results.xcresult" \
-    --org-url-slug <TRUNK_ORG_SLUG> \
-    --token <TRUNK_ORG_TOKEN>
-```
-{% endtab %}
-
-{% tab title="macOS (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli upload --xcresult-path "./test-results.xcresult" \
-    --org-url-slug <TRUNK_ORG_SLUG> \
-    --token <TRUNK_ORG_TOKEN>
-```
-{% endtab %}
-
-{% tab title="macOS (x64)" %}
-```bash
-SKU="trunk-analytics-cli-x86_64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli upload --xcresult-path "./test-results.xcresult" \
-    --org-url-slug <TRUNK_ORG_SLUG> \
-    --token <TRUNK_ORG_TOKEN>
-```
-{% endtab %}
-{% endtabs %}
 
 You can find your Trunk organization slug and token in the settings or by following these [instructions](https://docs.trunk.io/flaky-tests/get-started/ci-providers/otherci#id-1.-store-a-trunk_token-secret-in-your-ci-system). After your upload, you can verify that Trunk has received and processed it successfully in the **Uploads** tab. Warnings will be displayed if the report has issues.
 

@@ -1,6 +1,6 @@
-# Trunk Analytics CLI
+# Trunk CLI for Flaky Tests
 
-Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Trunk Analytics CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.
+Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded using the Trunk CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.
 
 ### Guides
 
@@ -8,57 +8,19 @@ If you're setting up Trunk Flaky Tests for the first time, you can follow the gu
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guides by Test Frameworks</td><td></td><td></td><td><a href="get-started/frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="get-started/ci-providers/">ci-providers</a></td></tr></tbody></table>
 
-The CLI should be **downloaded as part of your test workflow** in your CI system. The automatic launcher is platform agnostic and will download the latest version of the uploader for your platform.
+### Installation
 
-### Manual Download
+The Trunk CLI is platform agnostic and will automatically download the correct version for your system.
 
-You can find the list of releases on [the GitHub release page](https://github.com/trunk-io/analytics-cli/releases). We provide executables for Linux and OS X. It’s a single file inside a tar and upon downloading the tar you will find a single binary - `trunk-analytics-cli` to use.
-
-{% tabs %}
-{% tab title="Linux (x64)" %}
 ```bash
-SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
+curl https://get.trunk.io -fsSL | bash
 ```
-{% endtab %}
 
-{% tab title="Linux (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
+You can also install via Homebrew (`brew install trunk-io`) or npm (`npm install -D @trunkio/launcher`). See the [install docs](../code-quality/overview/cli/getting-started/install.md) for all options.
 
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-
-{% tab title="macOS (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-
-{% tab title="macOS (x64)" %}
-```bash
-SKU="trunk-analytics-cli-x86_64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-{% endtabs %}
+{% hint style="info" %}
+**Shorthand:** You can use `trunk ft` as an alias for `trunk flakytests` in all commands below.
+{% endhint %}
 
 ### Organization Slug and Token
 
@@ -82,14 +44,14 @@ You can find your organization slug and token by going to **Settings** > **Manag
 The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as broken or flaky.
 {% endhint %}
 
-Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `./trunk flakytest upload` command like this:
+Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `trunk flakytests upload` command like this:
 
 {% tabs %}
 {% tab title="XML" %}
 Trunk can accept JUnit XMLs through the `--junit-paths` argument:
 
 ```
-./trunk-analytics-cli upload --junit-paths "test_output.xml" \
+trunk flakytests upload --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -99,7 +61,7 @@ Trunk can accept JUnit XMLs through the `--junit-paths` argument:
 Trunk can accept Bazel through the `--bazel-bep-path` argument:
 
 ```
-./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> \
+trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -109,7 +71,7 @@ Trunk can accept Bazel through the `--bazel-bep-path` argument:
 Trunk can accept XCode through the `--xcresult-path` argument:
 
 ```
-./trunk flakytests upload --xcresult-path <XCRESULT_PATH> \
+trunk flakytests upload --xcresult-path <XCRESULT_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -127,7 +89,7 @@ This is especially useful for [Quarantining](quarantining.md), where the Trunk C
 Trunk can accept JUnit XMLs through the `--junit-paths` argument:
 
 ```
-./trunk-analytics-cli test --junit-paths "test_output.xml" \
+trunk flakytests test --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN \
    <YOUR_TEST_COMMAND>
@@ -138,7 +100,7 @@ Trunk can accept JUnit XMLs through the `--junit-paths` argument:
 Trunk can accept Bazel through the `--bazel-bep-path` argument:
 
 ```
-./trunk-analytics-cli test --bazel-bep-path <BEP_JSON_PATH> \
+trunk flakytests test --bazel-bep-path <BEP_JSON_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN \
    <YOUR_TEST_COMMAND>
@@ -149,7 +111,7 @@ Trunk can accept Bazel through the `--bazel-bep-path` argument:
 Trunk can accept XCode through the `--xcresult-path` argument:
 
 ```
-./trunk-analytics-cli test --xcresult-path <XCRESULT_PATH> \
+trunk flakytests test --xcresult-path <XCRESULT_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN \
    <YOUR_TEST_COMMAND>
@@ -160,7 +122,7 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 {% hint style="info" %}
 ### Service Availability and Graceful Degradation
 
-Trunk Analytics CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
+The Trunk CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
 {% endhint %}
 
 #### Upload failure vs test failure
@@ -178,7 +140,7 @@ You can validate the test reports produced by your test frameworks before you se
 You can run the validate command like this:
 
 ```
-./trunk-analytics-cli validate --junit-paths "test_output.xml"
+trunk flakytests validate --junit-paths "test_output.xml"
 ```
 
 The `validate` command will output any problems with your reports so you can address them before setting up Trunk in CI.
@@ -202,13 +164,13 @@ The CLI is preconfigured to work with a set [ci-providers](get-started/ci-provid
 
 ### Full command reference
 
-The `trunk` command-line tool can upload and analyze test results. The `trunk-analytics-cli` command accepts the following subcommands:
+The `trunk flakytests` command accepts the following subcommands:
 
-| Command                              | Description                                                                                                                                                                                         |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `trunk-analytics-cli upload`         | Upload data to Trunk Flaky Tests.                                                                                                                                                                   |
-| `trunk-analytics-cli validate`       | Validates if the provided JUnit XML files and prints any errors.                                                                                                                                    |
-| `trunk-analytics-cli test <COMMAND>` | Runs tests using the provided command, uploads results, checks whether the failures are [quarantined](quarantining.md#using-the-trunk-cli-directly) tests, and correct the exit code based on that. |
+| Command                                  | Description                                                                                                                                                                                     |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `trunk flakytests upload`                | Upload data to Trunk Flaky Tests.                                                                                                                                                               |
+| `trunk flakytests validate`              | Validates if the provided JUnit XML files and prints any errors.                                                                                                                                |
+| `trunk flakytests test <COMMAND>`        | Runs tests using the provided command, uploads results, checks whether the failures are [quarantined](quarantining.md#using-the-trunk-cli-directly) tests, and corrects the exit code based on that. |
 
 The `upload` and `test` commands accept the following options:
 
@@ -217,7 +179,7 @@ The `upload` and `test` commands accept the following options:
 {% hint style="info" %}
 **Memory Overhead**
 
-Running tests via `trunk-analytics-cli test` adds negligible memory overhead.
+Running tests via `trunk flakytests test` adds negligible memory overhead.
 
 This subcommand is a thin wrapper around your existing test command and doesn't modify or parallelize test execution.
 

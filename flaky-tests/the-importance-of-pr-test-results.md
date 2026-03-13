@@ -33,11 +33,11 @@ Quarantining is one of the most powerful features of Trunk Flaky Tests. Its core
 The entire quarantining workflow is predicated on analyzing test results from PRs. Without PR data, you cannot:
 
 * **Identify tests as flaky from PR test runs:** The system needs to see a test pass and fail on the same commit (a signal primarily gathered from PRs) to classify it as flaky.
-* **Apply Quarantine Logic at Runtime:** Uploading a test result and checking if it should be quarantined are part of the same, single step in your CI job. When a test fails on a PR, the `Trunk Analytics CLI` uploads the failure and, in the same operation, checks with the Trunk service to see if that test is on the quarantine list. If it is, the CLI overrides the job's exit code, allowing the build to pass. Without running the `Trunk Analytics CLI` on your PR jobs, this real-time check cannot occur, and even known flaky tests will continue to block your PRs.
+* **Apply Quarantine Logic at Runtime:** Uploading a test result and checking if it should be quarantined are part of the same, single step in your CI job. When a test fails on a PR, the `Trunk CLI` uploads the failure and, in the same operation, checks with the Trunk service to see if that test is on the quarantine list. If it is, the CLI overrides the job's exit code, allowing the build to pass. Without running the `Trunk CLI` on your PR jobs, this real-time check cannot occur, and even known flaky tests will continue to block your PRs.
 
 #### Immediate CI Feedback and Error Summaries
 
-The `Trunk Analytics CLI` provides a detailed summary directly in the CI job's output log. This is the fastest, most immediate feedback a developer gets about their test run.
+The `Trunk CLI` provides a detailed summary directly in the CI job's output log. This is the fastest, most immediate feedback a developer gets about their test run.
 
 Without uploading PR results, you lose:
 

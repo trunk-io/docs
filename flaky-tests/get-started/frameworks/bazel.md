@@ -57,55 +57,10 @@ Disable retries if you're retrying tests using the `--flaky_test_attempts` comma
 
 #### **The Validate Command**
 
-{% tabs %}
-{% tab title="Linux (x64)" %}
 ```bash
-SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli validate --bazel-bep-path=build_events.json
+curl https://get.trunk.io -fsSL | bash
+trunk flakytests validate --bazel-bep-path=build_events.json
 ```
-{% endtab %}
-
-{% tab title="Linux (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli validate --bazel-bep-path=build_events.json
-```
-{% endtab %}
-
-{% tab title="macOS (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli validate --bazel-bep-path=build_events.json
-```
-{% endtab %}
-
-{% tab title="macOS (x64)" %}
-```bash
-SKU="trunk-analytics-cli-x86_64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli validate --bazel-bep-path=build_events.json
-```
-{% endtab %}
-{% endtabs %}
 
 #### Test Upload
 
@@ -114,7 +69,7 @@ Before modifying your CI jobs to automatically upload test results to Trunk, try
 You make an upload to Trunk using the following command:
 
 ```sh
-./trunk-analytics-cli upload --bazel-bep-path=build_events.json \
+trunk flakytests upload --bazel-bep-path=build_events.json \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```
