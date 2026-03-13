@@ -12,7 +12,7 @@ description: Mitigate impact of known flaky tests by isolating them at run time
 
 ### What does "Quarantined" mean?
 
-A quarantined test continues running in CI and uploading results to Trunk Flaky Tests, but its failures won't block your pipeline. The [Trunk Analytics CLI](uploader.md) checks with Trunk's backend to determine if failed tests are quarantined, then overrides the exit code for those failures. When all failures in a CI job come from quarantined tests, the entire job passes.
+A quarantined test continues running in CI and uploading results to Trunk Flaky Tests, but its failures won't block your pipeline. The [Trunk CLI](uploader.md) checks with Trunk's backend to determine if failed tests are quarantined, then overrides the exit code for those failures. When all failures in a CI job come from quarantined tests, the entire job passes.
 
 **Why this matters:** You maintain complete test coverage and historical data while preventing known problematic tests from disrupting your development cycle.
 
@@ -35,7 +35,7 @@ A test failure will only be ignored by CI if the test is already manually quaran
 Actively quarantining tests will significantly change CI results, as failures from quarantined tests no longer cause builds to fail. [Learn more about the effects of quarantining](quarantining.md#whats-affected).
 {% endhint %}
 
-With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are quarantined, the exit code of the test command will be overridden to return 0 and the CI job will pass.
+With quarantining enabled, the Trunk CLI will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are quarantined, the exit code of the test command will be overridden to return 0 and the CI job will pass.
 
 #### Quarantining settings
 
@@ -75,7 +75,7 @@ To handle build issues that occur outside test runs, use the --test-process-exit
 **Example**
 
 ```sh
-./trunk flakytests test --junit-paths "test_output.xml" \
+trunk flakytests test --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN \
    --junit-paths="**/results/*.xml" \
@@ -96,7 +96,7 @@ If you're using the Trunk CLI directly or other CI providers, check the instruct
 
 {% tabs %}
 {% tab title="GitHub Actions Workflow" %}
-Using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, may need modifications to your workflow files to support quarantining.
+Using the Trunk Flaky Tests Action in your GitHub Actions Workflow files may need modifications to your workflow files to support quarantining.
 
 If you upload your test results as a second step after you run your tests, **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures.
 
@@ -125,7 +125,7 @@ jobs:
         token: ${{ secrets.TRUNK_API_TOKEN }}
 </code></pre>
 
-If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter.
+If you want to run the test command and upload in a single step, the test command must be **run via the Trunk Flaky Tests Action** through the `run: <COMMAND TO RUN TESTS>` parameter.
 
 This will override the response code of the test command. Make sure to set `continue-on-error: false` so un-quarantined tests are blocking.
 
@@ -161,7 +161,7 @@ If you upload your test results as a second step after you run your tests, you n
 ```bash
 <run my tests> || true # doesn't fail job on failure
 |
-    ./trunk flakytests upload \
+    trunk flakytests upload \
         --org-url-slug $TRUNK_ORG_SLUG \
         --token $TRUNK_API_TOKEN \
         --junit-paths $JUNIT_PATH
@@ -173,7 +173,7 @@ You can also wrap the test command with the Trunk CLI. When wrapping the command
 
 {% code overflow="wrap" %}
 ```bash
-./trunk flakytests test \
+trunk flakytests test \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token $TRUNK_API_TOKEN \
     --junit-paths $JUNIT_PATH \
@@ -230,5 +230,5 @@ For advanced use cases, you can interact with quarantining features programmatic
 {% hint style="info" %}
 ### Service Availability and Graceful Degradation
 
-Trunk Analytics CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
+Trunk CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
 {% endhint %}

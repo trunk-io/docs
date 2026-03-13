@@ -4,7 +4,7 @@ description: Configure Flaky Tests using any CI Provider
 
 # Other CI Providers
 
-Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
@@ -57,63 +57,21 @@ To find out how to produce the report files the uploader needs, see the instruct
 
 You can install the Trunk CLI locally like this:
 
-{% tabs %}
-{% tab title="Linux (x64)" %}
 ```bash
-SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
+curl https://get.trunk.io -fsSL | bash
 ```
-{% endtab %}
-
-{% tab title="Linux (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-
-{% tab title="macOS (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-
-{% tab title="macOS (x64)" %}
-```bash
-SKU="trunk-analytics-cli-x86_64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-{% endtabs %}
 
 Then, you can validate the results using the `trunk flakytests validate` command like this:
 
 ```bash
-./trunk-analytics-cli validate --junit-paths <PATH_TO_REPORTS>
+trunk flakytests validate --junit-paths <PATH_TO_REPORTS>
 ```
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 
 #### Environment Variables
 
-Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
+Set these environment variables before running `trunk flakytests upload` on unsupported CI systems:
 
 {% hint style="info" %}
 **Config Requirement:** `CUSTOM` must be set to `true` for environment varaibles to take effect and override the auto-detection of CI.

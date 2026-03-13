@@ -24,56 +24,14 @@ Since you'll be generating JUnit reports using a new plugin or custom reporter, 
 
 You can install the Trunk CLI locally like this:
 
-{% tabs %}
-{% tab title="Linux (x64)" %}
 ```bash
-SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
+curl https://get.trunk.io -fsSL | bash
 ```
-{% endtab %}
-
-{% tab title="Linux (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-
-{% tab title="macOS (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-
-{% tab title="macOS (x64)" %}
-```bash
-SKU="trunk-analytics-cli-x86_64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-```
-{% endtab %}
-{% endtabs %}
 
 Then, you can validate the results using the `trunk flakytests validate` command like this:
 
 ```bash
-./trunk-analytics-cli validate --junit-paths <PATH_TO_REPORTS>
+trunk flakytests validate --junit-paths <PATH_TO_REPORTS>
 ```
 
 ## Next Step

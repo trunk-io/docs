@@ -104,55 +104,10 @@ If you're using a package like [**retry**](https://pkg.go.dev/github.com/hashico
 
 ### Try It Locally
 
-{% tabs %}
-{% tab title="Linux (x64)" %}
 ```bash
-SKU="trunk-analytics-cli-x86_64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli validate --junit-paths "./junit.xml"
+curl https://get.trunk.io -fsSL | bash
+trunk flakytests validate --junit-paths "./junit.xml"
 ```
-{% endtab %}
-
-{% tab title="Linux (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-unknown-linux.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli validate --junit-paths "./junit.xml"
-```
-{% endtab %}
-
-{% tab title="macOS (arm64)" %}
-```bash
-SKU="trunk-analytics-cli-aarch64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli validate --junit-paths "./junit.xml"
-```
-{% endtab %}
-
-{% tab title="macOS (x64)" %}
-```bash
-SKU="trunk-analytics-cli-x86_64-apple-darwin.tar.gz"
-curl -fL --retry 3 \
-  "https://github.com/trunk-io/analytics-cli/releases/latest/download/${SKU}" \
-  | tar -xz
-
-chmod +x trunk-analytics-cli
-./trunk-analytics-cli validate --junit-paths "./junit.xml"
-```
-{% endtab %}
-{% endtabs %}
 
 ### Test Upload
 
@@ -161,7 +116,7 @@ Before modifying your CI jobs to automatically upload test results to Trunk, try
 You make an upload to Trunk using the following command:
 
 ```sh
-./trunk-analytics-cli upload --junit-paths "./junit.xml" \
+trunk flakytests upload --junit-paths "./junit.xml" \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```
