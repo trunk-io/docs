@@ -66,6 +66,8 @@ If a match or overlap is found, stop and ask the user how to proceed before cont
 
 ### Phase 2: Research
 
+**Code is law.** Actual source code and PR diffs are the authoritative source of truth. Slite specs, PRDs, Slack threads, and other planning docs provide context, intent, and examples — but when they conflict with what the code does, the code wins. Only document what is actually implemented.
+
 3. **Linear tickets**: Use `mcp__claude_ai_Linear__get_issue` for each ticket ID. Search by feature name for related engineering tickets.
 4. **Slite docs**: Search Slite for PRDs, specs, roadmap items, and knowledge base articles related to the feature. Use feature name and product area as search terms. Retrieve relevant docs for product intent, requirements, and decisions.
 5. **Slack channels**: Search relevant Slack channels for recent discussion, changelogs, and context:
@@ -73,12 +75,15 @@ If a match or overlap is found, stop and ask the user how to proceed before cont
    - `#team-merge-queue` — Merge Queue product discussions
    - Search by feature name, ticket ID, or key terms from the notes
 6. **Existing docs**: Use `mcp__claude_ai_trunk_docs__searchDocumentation`, Glob, and Grep. Read `summary.md` for the docs hierarchy.
-7. **trunk2 PR diffs** (if available): `gh pr diff <number> --repo trunk-io/trunk2 --name-only`, then read key files.
-8. **Gap analysis**: Compare existing docs vs. what the notes, Slite specs, and Slack threads describe. Determine whether to update or create pages.
+7. **trunk2 PR diffs** (if available): `gh pr diff <number> --repo trunk-io/trunk2 --name-only`, then read key files. When possible, also read the current source on `main` via `gh api` to confirm the latest state.
+8. **Gap analysis**: Compare existing docs vs. what the code implements. Cross-reference planning docs (Slite, Slack) against code to identify discrepancies — features described in specs but not yet implemented should be flagged as open questions, not documented as existing functionality.
 
 ### Phase 2.5: Generate Sources File
 
-9. Write `.claude/tmp/<draft-name>/sources.md` with all Linear tickets, GitHub PRs, Slite docs, Slack threads, existing docs, code references, and context links found during research. This is the reviewer audit trail.
+9. Write `.claude/tmp/<draft-name>/sources.md` with all Linear tickets, GitHub PRs, Slite docs, Slack threads, existing docs, code references, and context links found during research. This is the reviewer audit trail. Must include:
+   - A **"Code-Confirmed Details"** section listing metric names, endpoint paths, auth mechanisms, etc. as they exist in the actual codebase
+   - A **"Differences: Code vs. Planning Docs"** table highlighting any discrepancies between what planning docs describe and what the code implements
+   - An **"Open Questions"** section for anything that could not be confirmed from code
 
 ### Phase 3: Draft Documentation
 
