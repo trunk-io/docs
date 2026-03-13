@@ -47,7 +47,7 @@ Trunk requires **10+ runs per test** to start detecting flaky tests accurately. 
 
 You'll receive email notification when the first flaky test is detected.
 
-[How Trunk detects flaky tests →](../detection.md)
+[How Trunk detects flaky tests →](../detection/)
 
 #### Quarantining
 

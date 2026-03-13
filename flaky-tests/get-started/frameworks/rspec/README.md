@@ -6,7 +6,7 @@ description: >-
 
 # RSpec
 
-You can automatically [detect and manage flaky tests](../../../detection.md) in your projects running RSpec by integrating with Trunk. This document explains how to use Trunk's RSpec plugin to upload test results to Trunk.
+You can automatically [detect and manage flaky tests](../../../detection/) in your projects running RSpec by integrating with Trunk. This document explains how to use Trunk's RSpec plugin to upload test results to Trunk.
 
 ### Checklist
 

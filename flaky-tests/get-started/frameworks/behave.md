@@ -4,7 +4,7 @@ description: A guide for generating Trunk-compatible test reports for Behave
 
 # Behave
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your projects running Behave by integrating with Trunk. This document explains how to configure Behave to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your projects running Behave by integrating with Trunk. This document explains how to configure Behave to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
