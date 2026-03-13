@@ -41,3 +41,7 @@ lint:
     - linters: [prettier]
       paths:
         - "**/*.md"
+
+merge:
+  required_statuses:
+    - "build"
