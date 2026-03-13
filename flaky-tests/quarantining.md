@@ -35,7 +35,7 @@ A test failure will only be ignored by CI if the test is already manually quaran
 Actively quarantining tests will significantly change CI results, as failures from quarantined tests no longer cause builds to fail. [Learn more about the effects of quarantining](quarantining.md#whats-affected).
 {% endhint %}
 
-With quarantining enabled, the Analytics Uploader will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are quarantined, the exit code of the test command will be overridden to return 0 and the CI job will pass.
+With quarantining enabled, the Trunk CLI will compare failed test cases against known flaky tests. If a test is known to be flaky, it will be quarantined. If all failed tests are quarantined, the exit code of the test command will be overridden to return 0 and the CI job will pass.
 
 #### Quarantining settings
 
@@ -96,7 +96,7 @@ If you're using the Trunk CLI directly or other CI providers, check the instruct
 
 {% tabs %}
 {% tab title="GitHub Actions Workflow" %}
-Using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, may need modifications to your workflow files to support quarantining.
+Using the Trunk Flaky Tests Action in your GitHub Actions Workflow files may need modifications to your workflow files to support quarantining.
 
 If you upload your test results as a second step after you run your tests, **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures.
 
@@ -125,7 +125,7 @@ jobs:
         token: ${{ secrets.TRUNK_API_TOKEN }}
 </code></pre>
 
-If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter.
+If you want to run the test command and upload in a single step, the test command must be **run via the Trunk Flaky Tests Action** through the `run: <COMMAND TO RUN TESTS>` parameter.
 
 This will override the response code of the test command. Make sure to set `continue-on-error: false` so un-quarantined tests are blocking.
 

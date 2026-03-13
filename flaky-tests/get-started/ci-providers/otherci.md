@@ -4,7 +4,7 @@ description: Configure Flaky Tests using any CI Provider
 
 # Other CI Providers
 
-Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 

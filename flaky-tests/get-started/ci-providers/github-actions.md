@@ -6,7 +6,7 @@ description: Configure Flaky Tests detection using a GitHub Action
 
 Before you start these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing Trunk-compatible reports for your test runner.
 
-Trunk Flaky Tests integrates with your CI by adding a step in your GitHub Action workflow to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your GitHub Action workflow to upload tests with the [Trunk CLI](../../uploader.md).
 
 Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing a Trunk-compatible output for your test framework.
 
@@ -51,7 +51,7 @@ Trunk can also detect test flakes on PR and merge branches. To best detect flaky
 
 #### Example GitHub Actions Workflow
 
-The following is an example of a GitHub Actions workflow step to upload test results after your tests using Trunk's [**Analytics Uploader Action**](https://github.com/trunk-io/analytics-uploader).
+The following is an example of a GitHub Actions workflow step to upload test results after your tests using the [**Trunk Flaky Tests Action**](https://github.com/trunk-io/analytics-uploader).
 
 To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [**Test Frameworks**](../frameworks/) docs.
 
@@ -146,7 +146,7 @@ You can quarantine flaky tests by wrapping the test command or as a follow-up st
 {% tabs %}
 {% tab title="GitHub Actions Workflow" %}
 {% hint style="warning" %}
-Using the Trunk Analytics Uploader Action in your GitHub Actions Workflow files, may need modifications to your workflow files to support quarantining.
+Using the Trunk Flaky Tests Action in your GitHub Actions Workflow files may need modifications to your workflow files to support quarantining.
 
 If you upload your test results as a second step after you run your tests, **you need to add** `continue-on-error: true` **on your test step so your CI** job will continue even on failures.
 {% endhint %}
@@ -176,7 +176,7 @@ jobs:
         token: ${{ secrets.TRUNK_API_TOKEN }}
 </code></pre>
 
-If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter.
+If you want to run the test command and upload in a single step, the test command must be **run via the Trunk Flaky Tests Action** through the `run: <COMMAND TO RUN TESTS>` parameter.
 
 This will override the response code of the test command. Make sure to set `continue-on-error: false` so un-quarantined tests are blocking.
 

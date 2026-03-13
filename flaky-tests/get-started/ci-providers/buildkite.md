@@ -4,7 +4,7 @@ description: Configure Buildkite jobs to upload test results to Trunk Flaky Test
 
 # Buildkite
 
-Trunk Flaky Tests integrates with your CI by adding a step in your Buildkite Pipelines to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your Buildkite Pipelines to upload tests with the [Trunk CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 

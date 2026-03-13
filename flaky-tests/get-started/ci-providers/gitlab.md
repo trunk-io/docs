@@ -4,7 +4,7 @@ description: Configure Flaky Tests using GitLab CI
 
 # GitLab
 
-Trunk Flaky Tests integrates with your CI by adding a step in your GitLab CI/CD pipelines to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your GitLab CI/CD pipelines to upload tests with the [Trunk CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 

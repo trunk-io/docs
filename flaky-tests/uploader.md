@@ -22,6 +22,10 @@ You can also install via Homebrew (`brew install trunk-io`) or npm (`npm install
 **Shorthand:** You can use `trunk ft` as an alias for `trunk flakytests` in all commands below.
 {% endhint %}
 
+{% hint style="info" %}
+**GitHub Actions users:** If you use GitHub Actions, the [**Trunk Flaky Tests Action**](https://github.com/trunk-io/analytics-uploader) (`trunk-io/analytics-uploader@v1`) is a convenience wrapper that downloads the Trunk CLI, infers GitHub Actions context (branch, commit, PR number), and invokes `trunk flakytests` for you. All the parsing, bundling, and uploading is done by the CLI — the Action simply makes setup easier in GitHub Actions workflows. See the [GitHub Actions guide](get-started/ci-providers/github-actions.md) for details.
+{% endhint %}
+
 ### Organization Slug and Token
 
 The CLI requires your Trunk organization slug and token passed through `--org-url-slug` and `--token` to upload results to the correct organzation.
