@@ -44,8 +44,8 @@ Returns merge queue metrics in Prometheus text exposition format. Authenticate w
 
 | Parameter | Required | Description |
 | --- | --- | --- |
-| `repo` | No | Repository in `owner/name` format. If omitted, returns metrics for all repositories in the organization. |
-| `repoHost` | No | Repository host. Defaults to `github.com`. |
+| `repo` | No | Repository in `owner/name` format. If omitted, returns metrics for all repositories in the organization. Must be provided together with `repoHost`. |
+| `repoHost` | No | Repository host (e.g., `github.com`). Required if `repo` is specified. |
 
 Response content type: `text/plain; version=0.0.4; charset=utf-8`
 
