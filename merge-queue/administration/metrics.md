@@ -190,6 +190,48 @@ scrape_configs:
 
 To scrape metrics for all repositories in your organization, omit both the `repo` and `repoHost` parameters.
 
+#### Datadog Agent configuration
+
+You can ingest Trunk merge queue metrics into Datadog using the Datadog Agent's built-in [OpenMetrics integration](https://docs.datadoghq.com/integrations/openmetrics/). This lets Datadog scrape the Prometheus endpoint directly without requiring a separate Prometheus server.
+
+**1. Enable the OpenMetrics integration**
+
+Create or edit `/etc/datadog-agent/conf.d/openmetrics.d/conf.yaml`:
+
+```yaml
+instances:
+  - openmetrics_endpoint: https://api.trunk.io/v1/getMergeQueueMetrics?repo=my-org/my-repo&repoHost=github.com
+    namespace: trunk_merge_queue
+    metrics:
+      - mq_.*
+    headers:
+      x-api-token: <your-trunk-api-token>
+    min_collection_interval: 60
+    send_distribution_buckets: true
+```
+
+To collect metrics for all repositories in your organization, omit the query parameters:
+
+```yaml
+    openmetrics_endpoint: https://api.trunk.io/v1/getMergeQueueMetrics
+```
+
+**2. Restart the Datadog Agent**
+
+```bash
+sudo systemctl restart datadog-agent
+```
+
+**3. Validate**
+
+```bash
+sudo -u dd-agent -- datadog-agent check openmetrics
+```
+
+{% hint style="info" %}
+All metrics are prefixed with your configured `namespace` value. For example, `mq_depth_current` becomes `trunk_merge_queue.mq_depth_current` in Datadog.
+{% endhint %}
+
 #### Example queries
 
 **Queue health alerts:**
