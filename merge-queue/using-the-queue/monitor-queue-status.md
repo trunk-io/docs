@@ -41,11 +41,20 @@ View status of the queue and recent activity in the **Queue** tab
 
 ### Graph view
 
-The view of all current PRs being tested by Trunk Merge Queue and their respective queues. Each node shown is a pull request, and each edge indicates that the pull request is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, this will be a single line showing the testing and merging process.
+The graph view shows all PRs currently being tested by Trunk Merge Queue and their relationships. Each node represents a pull request, and each edge indicates that the PR is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, this will be a single line showing the testing and merging process.
 
-<figure><img src="../../.gitbook/assets/merge-graph.png" alt=""><figcaption></figcaption></figure>
+#### Reading the graph
 
-You can click on any shown PR to navigate to the details page for that PR.
+* **Merged items** appear in the green section at the top of the graph
+* **Batched items** display batching information directly on each node. Clicking a batched node takes you to the draft PR created for that batch
+* **Hover** over any node to highlight its path to the root, making it easy to trace dependencies
+* **Bisection** activity appears in a side tab when a batch is being bisected to isolate a failure
+* A **legend** explains the node states and visual indicators
+
+#### Navigation
+
+* Click any node to navigate to the PR's detail page
+* A link at the top of the graph view lets you switch to the legacy graph layout if needed
 
 ### Health view
 
