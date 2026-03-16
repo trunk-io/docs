@@ -35,7 +35,9 @@ It is important to keep the team informed on all status changes for flaky tests 
 * Trunk's built-in templates help you get started and test the connection.
 * You can then customize the transformation to update the message format and content, including @-mentioning test owners so they can follow up right away.
 
-### Step 3: Start quarantining manually
+### Step 3: Flag and quarantine flaky tests
+
+If automated detection hasn't caught a test you know is flaky, you can manually [flag it as flaky](detection.md#flag-as-flaky) from the test detail page. Flagged tests are treated as flaky regardless of automated detection state, and the flag can be removed at any time.
 
 Flaky tests slow down CI and have a high negative impact on merge queue throughput. You can minimize or eliminate this CI slowdown by [quarantining](quarantining.md) flaky tests at runtime.
 
