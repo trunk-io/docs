@@ -76,6 +76,35 @@ To receive personal Slack notifications, you'll need to connect both your GitHub
 
 <figure><img src="../.gitbook/assets/SCR-20260202-negj.png" alt=""><figcaption></figcaption></figure>
 
+## Slack App Home Dashboard
+
+The Trunk Slack app's **Home** tab provides a personal merge queue dashboard directly in Slack. Open the Trunk app in Slack and click the **Home** tab to see an overview of your merge queue activity.
+
+### What you'll see
+
+The Home tab displays the following sections:
+
+* **Account connection status** — Shows whether your Trunk and GitHub accounts are linked. If GitHub is not connected, a warning explains that most notifications require it, with a button to start the GitHub OAuth flow.
+* **Not Ready PRs** — PRs you've submitted to the queue that are waiting for prerequisites (e.g., passing required checks, no merge conflicts) before entering active testing. Grouped by queue.
+* **PRs in Queue** — Your PRs that are currently pending, testing, or have passed tests, with status indicators. Grouped by queue.
+* **Recently Merged PRs** — Up to 5 of your most recently merged PRs with merge dates. Grouped by queue.
+* **Failed PRs** — Your PRs that failed in the queue. Grouped by queue.
+* **Notification Preferences** — Toggle buttons for each notification topic. You can enable or disable individual notifications directly from Slack without visiting the web UI.
+
+Each PR entry shows the PR title, number, a link to the Trunk dashboard, and a link to the GitHub PR. All data is scoped to your PRs via your linked GitHub account.
+
+### Linking your account
+
+1. Open the Trunk app in Slack and go to the **Home** tab
+2. Click **Link Account** to connect your Trunk account
+3. Click **Connect GitHub** to link your GitHub account (required for PR tracking and most notifications)
+
+### Managing notification preferences
+
+You can toggle notification topics on or off directly from the Home tab — no need to visit the Trunk web UI. Changes take effect immediately. The available topics are the same as those listed in [Available Notification Topics](integration-for-slack.md#available-notification-topics).
+
+Use the **Refresh** button at the top of the Home tab to update the view with the latest queue data.
+
 ## Frequently Asked Questions
 
 <details>
