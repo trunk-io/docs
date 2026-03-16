@@ -128,7 +128,7 @@ variables:
 ```
 {% endtab %}
 
-{% tab title="XCode" %}
+{% tab title="Xcode" %}
 ```yaml
 version: 2
 plan:
