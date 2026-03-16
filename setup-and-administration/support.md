@@ -21,7 +21,9 @@ description: Need help with Trunk?
 * High Priority Issues: 4 hours maximum response time (business hours)
 * General Issues: 1 business day maximum response time (business hours)
 
+{% hint style="info" %}
 _Response time refers to initial acknowledgment and issue triage. Resolution timeframes depend on technical complexity and may require coordination across multiple systems._
+{% endhint %}
 
 #### Account management
 
