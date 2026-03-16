@@ -103,7 +103,22 @@ Variant names are displayed in brackets next to test names in your dashboard:
 
 Trunk classifies all tests into one of three categories based on the history of each test:
 
-<table><thead><tr><th width="178">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is reproducible but is always failing. These tests that always fail are not useful and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
+<table><thead><tr><th width="178">Test Status</th><th>Description</th></tr></thead><tbody><tr><td>Flaky</td><td>This test is not deterministic. Given the same inputs, the test will occasionally produce different outputs. This means you <strong>cannot trust the results</strong> of these tests.</td></tr><tr><td>Broken</td><td>This test is consistently failing. Unlike flaky tests, broken tests fail reliably rather than intermittently. These tests need immediate attention and should be fixed.</td></tr><tr><td>Healthy</td><td>This test is reproducible. Given the same inputs, the test will produce the same outputs.</td></tr></tbody></table>
+
+### How Trunk detects broken tests
+
+Threshold monitors detect broken tests alongside flaky tests. When a test's failure rate exceeds the configured threshold and the failures are consistent rather than intermittent, Trunk classifies the test as **Broken** instead of **Flaky**.
+
+The key difference is the failure pattern:
+
+* **Flaky**: Failures are intermittent — the test sometimes passes and sometimes fails on the same code.
+* **Broken**: Failures are consistent — the test fails reliably above the threshold without intermittent passes.
+
+Broken detection events appear in the test case detail view alongside flaky detection events. In the events panel, broken events are displayed as a distinct series so you can track when tests transition between healthy, flaky, and broken states.
+
+{% hint style="info" %}
+A test can transition between states over time. For example, a test might start as healthy, become flaky as a race condition surfaces, and eventually be classified as broken if the underlying issue causes consistent failures.
+{% endhint %}
 
 ### Flag as Flaky
 
