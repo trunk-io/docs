@@ -26,6 +26,6 @@ Instead of getting 15 separate comments for 15 related test failures, CI Autopil
 
 ### What's next?
 
-After reviewing the root-cause analysis and fix suggestions, users can request fixes on PRs or apply them with [MCP](../use-mcp-server/).
+After reviewing the root-cause analysis and fix suggestions, users can request fixes on PRs or apply them with [MCP](../../../flaky-tests/use-mcp-server/).
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Request fixes on PRs</td><td><a href="request-fixes-on-prs.md">request-fixes-on-prs.md</a></td></tr><tr><td>Apply fixes with MCP</td><td><a href="apply-fixes-with-mcp.md">apply-fixes-with-mcp.md</a></td></tr></tbody></table>

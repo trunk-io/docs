@@ -6,7 +6,7 @@ description: Learn about how to apply fix recommendations with MCP
 
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) allows AI applications like Claude Code, Cursor, or other AI coding assistants to directly access CI Autopilot's analysis and apply fixes to your code. Instead of manually implementing suggested changes, your AI assistant can understand the root cause and apply the fix automatically.
 
-[CI Autopilot's MCP server](../use-mcp-server/) exposes a tool called `get-root-cause-analysis`. This tool retrieves root cause analyses and fix recommendations for CI failures.
+[CI Autopilot's MCP server](../../../flaky-tests/use-mcp-server/) exposes a tool called `get-root-cause-analysis`. This tool retrieves root cause analyses and fix recommendations for CI failures.
 
 ### Why use MCP instead of stacked PRs?
 
@@ -19,7 +19,7 @@ description: Learn about how to apply fix recommendations with MCP
 
 * [CI Autopilot enabled for your GitHub repository](../get-started/)
 * CI Autopilot provided a root cause analysis on your pull request
-* Completed the [MCP server configuration](../use-mcp-server/configuration/) with your preferred AI application
+* Completed the [MCP server configuration](../../../flaky-tests/use-mcp-server/configuration/) with your preferred AI application
 
 {% hint style="info" %}
 The following AI applications are currently supported: Cursor, Claude Code, Gemini CLI, and GitHub Copilot.

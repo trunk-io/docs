@@ -6,6 +6,10 @@ Your existing pull request-triggered CI workflows will automatically run when Tr
 
 Trunk will wait for the same required status checks configured in your branch protection rules (either via Classic rules or Rulesets) before merging.
 
+{% hint style="info" %}
+You can also configure required status checks directly in the Trunk UI instead of relying on GitHub branch protection. See [Required Status Checks](../administration/advanced-settings.md#required-status-checks) in the settings documentation.
+{% endhint %}
+
 See GitHub's documentation for configuring required status checks:
 
 * [Classic branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging)

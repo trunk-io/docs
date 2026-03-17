@@ -35,7 +35,42 @@ It is important to keep the team informed on all status changes for flaky tests 
 * Trunk's built-in templates help you get started and test the connection.
 * You can then customize the transformation to update the message format and content, including @-mentioning test owners so they can follow up right away.
 
-### Step 3: Start quarantining manually
+### Step 3: Mute monitors
+
+If a flaky test has a known issue or a fix in progress, you can mute the monitor that flagged it. A muted monitor continues to run and record detections, but it does not contribute to the test's flaky status until the mute expires or is manually removed.
+
+To mute a monitor:
+
+1. Navigate to the test case detail page in the Trunk app.
+2. Find the monitor that flagged the test.
+3. Click **Mute** and select a duration.
+
+| Duration | Description |
+|---|---|
+| 1 hour | Quick suppression for transient issues |
+| 4 hours | Short-term suppression |
+| 24 hours | Suppress for a full day |
+| 7 days | Suppress for a week |
+| 30 days | Suppress for a month |
+| Forever | Mute indefinitely until manually unmuted |
+
+The **Forever** option mutes the monitor with no expiration. The monitor stays muted until you explicitly unmute it from the test case detail page. This is useful when a test has a known flake that your team has accepted, or when a fix is planned but not yet scheduled.
+
+For timed durations, the monitor automatically unmutes when the period expires. If the monitor is still detecting flaky behavior at that point, the test will be flagged as flaky again.
+
+You can optionally provide a reason when muting a monitor. This helps your team understand why the monitor was muted and makes it easier to review muted monitors later.
+
+You can unmute a monitor at any time from the test case detail page, regardless of the selected duration.
+
+{% hint style="info" %}
+Muting suppresses the monitor's contribution to the test's status. If the muted monitor was the only active monitor for a test, the test transitions from flaky to healthy for the duration of the mute.
+{% endhint %}
+
+### Step 4: Flag flaky tests
+
+If automated detection hasn't caught a test you know is flaky, you can manually [flag it as flaky](detection.md#flag-as-flaky) from the test detail page. Flagged tests are treated as flaky regardless of automated detection state, and the flag can be removed at any time.
+
+### Step 5: Quarantine flaky tests
 
 Flaky tests slow down CI and have a high negative impact on merge queue throughput. You can minimize or eliminate this CI slowdown by [quarantining](quarantining.md) flaky tests at runtime.
 
@@ -44,7 +79,7 @@ Flaky tests slow down CI and have a high negative impact on merge queue throughp
 
 After quarantining a test, Trunk will ignore the test result (pass/fail) on CI runs, preventing this flaky test from failing CI.
 
-### Step 4: Automation
+### Step 6: Automation
 
 Trunk has [webhooks](webhooks/) and [Flaky Tests APIs](flaky-tests.md) that can be used to build custom workflows around ticket creation, linking existing tickets to Trunk, sending notifications, and dealing with quarantined tests.
 
@@ -56,7 +91,7 @@ There is also built-in automation support that handles tasks such as assigning f
 
 You can customize how flaky and quarantined tests are handled to suit your team and organization best.
 
-### Step 5: Review existing flakes
+### Step 7: Review existing flakes
 
 It is important to track and triage existing flaky tests over time. Trunk collects historical failure logs and stack traces for flaky tests, providing developers as much information as possible for debugging high-impact flaky tests.
 

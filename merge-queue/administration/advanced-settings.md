@@ -210,6 +210,31 @@ For example, assuming a timeout of 4 hours:
 
 ***
 
+## Required Status Checks
+
+> Configure which CI status checks must pass before a PR can merge through the queue.
+
+By default, Trunk infers required status checks from your GitHub branch protection rules. You can override this by configuring required statuses directly in the Trunk UI, giving you independent control over which checks gate the merge queue.
+
+**When to configure in Trunk:**
+
+* **Different checks for the queue** - Your branch protection requires checks that shouldn't gate the merge queue (e.g., code coverage reports, deployment previews)
+* **Stricter queue requirements** - You want the merge queue to require additional checks beyond what branch protection enforces
+* **Multiple queues** - Each queue can have its own set of required statuses
+
+### How to configure
+
+1. Navigate to **Settings** > **Repositories** > your repository > **Merge Queue**
+2. Find the **Required Status Checks** section
+3. Use the CI job selector to choose which status checks must pass. The selector shows CI jobs that have been seen on recent PRs.
+4. Selected statuses override the GitHub branch protection defaults for the merge queue
+
+{% hint style="info" %}
+When required statuses are configured in Trunk, only those statuses are required for the merge queue. When not configured, Trunk falls back to your GitHub branch protection required checks.
+{% endhint %}
+
+***
+
 ## Optimistic Merge Queue
 
 > Toggle this feature **Enabled** or **Disabled**. Default is **Disabled**.

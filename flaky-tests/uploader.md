@@ -62,7 +62,7 @@ chmod +x trunk-analytics-cli
 
 ### Organization Slug and Token
 
-The CLI requires your Trunk organization slug and token passed through `--org-url-slug` and `--token` to upload results to the correct organzation.
+The CLI requires your Trunk organization slug and token passed through `--org-url-slug` and `--token` to upload results to the correct organization. They can alternatively be set via environment variables, `TRUNK_ORG_URL_SLUG` and `TRUNK_API_TOKEN`, respectively.
 
 You can find your organization slug and token by going to **Settings** > **Manage** > **Organization**.
 

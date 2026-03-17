@@ -77,7 +77,7 @@ The metrics displayed only include data that have **completed within the time ra
 When working across multiple time zones, enable **Time in UTC** to ensure everyone sees the same data.
 {% endhint %}
 
-### Conclusion bount
+### Conclusion count
 
 Conclusion count displays the number of pull requests that exited the merge queue during each time bucket. This includes passes, failures, and cancellations. Passes and failures signal a PR that was tested in the queue to completion, while canceled signals that the request to merge terminated before testing finished or before testing began.
 
@@ -85,7 +85,7 @@ Conclusion counts are an important signal to potential bottlenecks or underlying
 
 Conclusions are tagged with a reason to give further insights into how merges pass or fail in the queue. You can show or hide conclusions of a particular reason by using the **+ Add** button.
 
-<table><thead><tr><th width="167">Category</th><th width="248">Reason</th><th>Description</th></tr></thead><tbody><tr><td>✅ Pass</td><td>Merged by Trunk</td><td>Passed all tests in Merge Queue and merged by Trunk</td></tr><tr><td>✅ Pass</td><td>Merged manually</td><td>User manually merged the PR in Git</td></tr><tr><td>❌ Failure</td><td>Test run timeout</td><td>User-defined timeout for tests exceeded</td></tr><tr><td>❌ Failure</td><td>Failed Tests</td><td>Required test failed while testing the PR in the merge queue</td></tr><tr><td>❌ Failure</td><td>Merge conflict</td><td>A (git) merge conflict encountered</td></tr><tr><td>❌ Failure</td><td>Config parsing failure</td><td>Malformed <code>trunk.yaml</code> that couldn't be parsed</td></tr><tr><td>❌ Failure</td><td>Config bad version</td><td>Invalid version field in <code>trunk.yaml</code></td></tr><tr><td>❌ Failure</td><td>Config bad required statuses</td><td>Failed to parse required statuses in <code>trunk.yaml</code></td></tr><tr><td>❌ Failure</td><td>No required statuses</td><td>No source for required tests was found in <code>trunk.yaml</code> or branch protection settings</td></tr><tr><td>❌ Failure</td><td>GitHub API Failed</td><td>GitHub returned an error to us that could not be resolved while processing the PR</td></tr><tr><td>❌ Failure</td><td>PR updated at merge time</td><td>PR updated as Trunk was attempting to merge it</td></tr><tr><td>🚫 Cancel</td><td>Canceled by user</td><td>PR explicitly canceled by user</td></tr><tr><td>🚫 Cancel</td><td>PR closed</td><td>PR closed (not merged)</td></tr><tr><td>🚫 Cancel</td><td>PR pushed to</td><td>New commits pushed to the PR branch while in the merge queue</td></tr><tr><td>🚫 Cancel</td><td>PR draft</td><td>PR was converted to a draft, which cannot be merged</td></tr><tr><td>🚫 Cancel</td><td>PR base branch changed</td><td>Base branch of PR in the merge queue changed</td></tr><tr><td>🚫 Cancel</td><td>Admin requested</td><td>Trunk employee canceled PR during a support session (extreme cases)</td></tr></tbody></table>
+<table><thead><tr><th width="167">Category</th><th width="248">Reason</th><th>Description</th></tr></thead><tbody><tr><td>✅ Pass</td><td>Merged by Trunk</td><td>Passed all tests in Merge Queue and merged by Trunk</td></tr><tr><td>✅ Pass</td><td>Merged manually</td><td>User manually merged the PR in Git</td></tr><tr><td>❌ Failure</td><td>Test run timeout</td><td>User-defined timeout for tests exceeded</td></tr><tr><td>❌ Failure</td><td>Failed Tests</td><td>Required test failed while testing the PR in the merge queue</td></tr><tr><td>❌ Failure</td><td>Merge conflict</td><td>A (git) merge conflict encountered</td></tr><tr><td>❌ Failure</td><td>Config parsing failure</td><td>Malformed <code>trunk.yaml</code> that couldn't be parsed</td></tr><tr><td>❌ Failure</td><td>Config bad version</td><td>Invalid version field in <code>trunk.yaml</code></td></tr><tr><td>❌ Failure</td><td>Config bad required statuses</td><td>Failed to parse required statuses in <code>trunk.yaml</code></td></tr><tr><td>❌ Failure</td><td>No required statuses</td><td>No source for required tests was found in <code>trunk.yaml</code> or branch protection settings</td></tr><tr><td>❌ Failure</td><td>GitHub API Failed</td><td>GitHub returned an error to us that could not be resolved while processing the PR</td></tr><tr><td>❌ Failure</td><td>PR updated at merge time</td><td>PR updated as Trunk was attempting to merge it</td></tr><tr><td>🚫 Cancel</td><td>Canceled by user</td><td>PR explicitly canceled by user</td></tr><tr><td>🚫 Cancel</td><td>PR closed</td><td>PR closed (not merged)</td></tr><tr><td>🚫 Cancel</td><td>PR pushed to</td><td>New commits pushed to the PR branch while in the merge queue</td></tr><tr><td>🚫 Cancel</td><td>PR draft</td><td>PR was converted to a draft, which cannot be merged</td></tr><tr><td>🚫 Cancel</td><td>PR base branch changed</td><td>Base branch of PR in the merge queue changed</td></tr><tr><td>🚫 Cancel</td><td>Admin requested</td><td>Trunk employee canceled PR during a support session (extreme cases)</td></tr><tr><td>🚫 Cancel</td><td>A PR in the stack had its base branch changed</td><td>A member of the PR stack had its base branch changed while in the queue (stacked PRs only)</td></tr><tr><td>🚫 Cancel</td><td>A PR in a PR stack was closed</td><td>A member of the PR stack was closed while in the queue (stacked PRs only)</td></tr><tr><td>🚫 Cancel</td><td>PR was merged as part of a different stack</td><td>The PR was already merged through a different stack (stacked PRs only)</td></tr><tr><td>🚫 Cancel</td><td>Part of this PR's stack was pushed to</td><td>New commits were pushed to a PR in the stack while in the queue (stacked PRs only)</td></tr></tbody></table>
 
 ### Time in queue
 
@@ -104,3 +104,196 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P50     | The value below 50% of the time in queue falls.     |
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
+
+***
+
+### Prometheus metrics endpoint
+
+Trunk exposes merge queue metrics in [Prometheus text exposition format](https://prometheus.io/docs/instrumenting/exposition_formats/) via a scrapable API endpoint. Use this to build custom Grafana dashboards, set up alerts, or integrate merge queue health into your existing observability stack.
+
+{% hint style="info" %}
+The Prometheus metrics endpoint is available to all Merge Queue users.
+{% endhint %}
+
+#### Endpoint
+
+```
+GET https://api.trunk.io/v1/getMergeQueueMetrics
+```
+
+Authenticate with your [Trunk API token](../../setup-and-administration/apis/#authentication) using the `x-api-token` header.
+
+**Query parameters:**
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `repo` | No | Repository in `owner/name` format (e.g., `my-org/my-repo`). If omitted, returns metrics for all repositories in the organization. Must be provided together with `repoHost`. |
+| `repoHost` | Conditional | Repository host (e.g., `github.com`). Required if `repo` is specified. |
+
+The response uses content type `text/plain; version=0.0.4; charset=utf-8` (standard Prometheus format).
+
+#### Available metrics
+
+All metrics include these labels:
+
+| Label | Description | Example values |
+| --- | --- | --- |
+| `repo` | Repository name | `my-org/my-repo` |
+| `branch` | Base branch name | `main`, `develop` |
+| `queue_type` | Queue type | `main` or `bisection` |
+
+##### Point-in-time gauges
+
+These metrics reflect the current state of your merge queue.
+
+| Metric | Type | Description |
+| --- | --- | --- |
+| `mq_depth_current` | Gauge | Number of PRs currently in the queue (excludes PRs that are waiting to be mergeable before being admitted to the queue) |
+| `mq_awaiting_mergeability` | Gauge | Number of PRs waiting for prerequisites like required reviews or status checks |
+| `mq_testing_slots_active` | Gauge | Number of PRs currently in TESTING state (active CI slots in use) |
+
+##### Rolling 1-hour window metrics
+
+These metrics summarize activity over a sliding 1-hour window. They update continuously as the window advances.
+
+| Metric | Type | Extra labels | Description |
+| --- | --- | --- | --- |
+| `mq_pr_conclusions_1h_total` | Gauge | `conclusion` (merged, failed, cancelled) | PRs that exited the queue in the last hour |
+| `mq_pr_restarts_1h_total` | Gauge | — | PR restarts (TESTING to PENDING transitions) in the last hour |
+| `mq_pr_wait_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent waiting before testing starts |
+| `mq_pr_test_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent in the testing phase |
+Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
+
+{% hint style="warning" %}
+Rolling window metrics use **gauge semantics**, not true Prometheus counters. They represent a snapshot of the last hour, not cumulative totals. PromQL functions like `rate()` and `increase()` are **not meaningful** on these metrics. Use the values directly instead.
+{% endhint %}
+
+#### Scrape configuration
+
+Configure your Prometheus instance to scrape the Trunk metrics endpoint:
+
+```yaml
+scrape_configs:
+  - job_name: trunk-merge-queue
+    scrape_interval: 60s
+    scheme: https
+    static_configs:
+      - targets: ['api.trunk.io']
+    metrics_path: /v1/getMergeQueueMetrics
+    params:
+      repo: ['my-org/my-repo']
+      repoHost: ['github.com']
+    http_headers:
+      x-api-token:
+        values: ['<your-trunk-api-token>']
+```
+
+To scrape metrics for all repositories in your organization, omit both the `repo` and `repoHost` parameters.
+
+#### Datadog Agent configuration
+
+You can ingest Trunk merge queue metrics into Datadog using the Datadog Agent's built-in [OpenMetrics integration](https://docs.datadoghq.com/integrations/openmetrics/). This lets Datadog scrape the Prometheus endpoint directly without requiring a separate Prometheus server.
+
+**1. Enable the OpenMetrics integration**
+
+Create or edit `/etc/datadog-agent/conf.d/openmetrics.d/conf.yaml`:
+
+```yaml
+instances:
+  - openmetrics_endpoint: https://api.trunk.io/v1/getMergeQueueMetrics?repo=my-org/my-repo&repoHost=github.com
+    namespace: trunk_merge_queue
+    metrics:
+      - mq_.*
+    headers:
+      x-api-token: <your-trunk-api-token>
+    min_collection_interval: 60
+    send_distribution_buckets: true
+```
+
+To collect metrics for all repositories in your organization, omit the query parameters:
+
+```yaml
+    openmetrics_endpoint: https://api.trunk.io/v1/getMergeQueueMetrics
+```
+
+**2. Restart the Datadog Agent**
+
+```bash
+sudo systemctl restart datadog-agent
+```
+
+**3. Validate**
+
+```bash
+sudo -u dd-agent -- datadog-agent check openmetrics
+```
+
+{% hint style="info" %}
+All metrics are prefixed with your configured `namespace` value. For example, `mq_depth_current` becomes `trunk_merge_queue.mq_depth_current` in Datadog.
+{% endhint %}
+
+#### Example queries
+
+**Queue health alerts:**
+
+```promql
+# Alert when queue depth exceeds threshold
+mq_depth_current{branch="main"} > 10
+
+# Max queue depth over the last hour
+max_over_time(mq_depth_current{branch="main"}[1h])
+
+# CI utilization (if you have 8 concurrency slots)
+mq_testing_slots_active{branch="main",queue_type="main"} / 8
+```
+
+**Failure analysis:**
+
+```promql
+# Failure rate over the last hour
+mq_pr_conclusions_1h_total{conclusion="failed"}
+  /
+ignoring(conclusion) sum(mq_pr_conclusions_1h_total)
+
+# Alert on high failure count
+mq_pr_conclusions_1h_total{conclusion="failed"} > 5
+```
+
+**Duration analysis:**
+
+```promql
+# P90 wait time (time before testing starts)
+histogram_quantile(0.90, sum(mq_pr_wait_duration_1h_seconds_bucket) by (le))
+
+# Average wait time
+mq_pr_wait_duration_1h_seconds_sum / mq_pr_wait_duration_1h_seconds_count
+
+# Restart ratio (restarts per merge)
+mq_pr_restarts_1h_total / mq_pr_conclusions_1h_total{conclusion="merged"}
+```
+
+#### Sample output
+
+```
+# HELP mq_depth_current PRs currently in the queue
+# TYPE mq_depth_current gauge
+mq_depth_current{repo="my-org/my-repo",branch="main",queue_type="main"} 4
+
+# HELP mq_awaiting_mergeability Number of PRs currently awaiting mergeability
+# TYPE mq_awaiting_mergeability gauge
+mq_awaiting_mergeability{repo="my-org/my-repo",branch="main",queue_type="main"} 1
+
+# HELP mq_testing_slots_active PRs currently in TESTING state
+# TYPE mq_testing_slots_active gauge
+mq_testing_slots_active{repo="my-org/my-repo",branch="main",queue_type="main"} 3
+
+# HELP mq_pr_conclusions_1h_total PRs exiting the queue in last hour
+# TYPE mq_pr_conclusions_1h_total gauge
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="merged"} 12
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="failed"} 1
+mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main",conclusion="cancelled"} 0
+
+# HELP mq_pr_restarts_1h_total PR restarts in last hour
+# TYPE mq_pr_restarts_1h_total gauge
+mq_pr_restarts_1h_total{repo="my-org/my-repo",branch="main",queue_type="main"} 2
+```
