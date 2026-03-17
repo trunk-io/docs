@@ -18,7 +18,7 @@ Trunk Flaky Test provides key repo metrics based on the detected health status o
 
 These numbers are important for understanding the overall health of your repo’s tests, how flaky and broken tests impact your developer productivity, and the developer hours saved from quarantining tests. You can also view the trends in these numbers in the trend charts.
 
-The trend charts display the New Test Cases added by day, as well as Detection Events and Quarantined Runs. Detection Events show the number of times monitors detected a status change (flaky or broken) per day across all monitors in the repository. Quarantined Runs represents the number of runs of quarantined tests by day.
+The trend charts display the New Test Cases added by day, as well as Test Transitions and Quarantined Runs. Test Transitions represent the number of tests that have transitioned to a particular status on a particular day, excluding new test cases (which default to a status of Healthy). If a bar shows 5 Healthy, 10 Flaky on a single day, that indicates 5 tests transitioned to Healthy, and 10 tests transitioned to Flaky on that day. Quarantined Runs represents the number of runs of quarantined tests by day.
 
 ### Tests cases overview
 
@@ -82,24 +82,8 @@ If you want to see full logging of the original CI job for an individual test fa
 
 <figure><picture><source srcset="../.gitbook/assets/failure-logs-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/failure-logs-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-### **Status history**
+### **Test history**
 
-Tests may transition between flaky, broken, and healthy states multiple times over their lifetime. You can see previous changes in the detected health status of a test in the test case detail view, along with an explanation for why it was detected to have a new state.
+<figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-### **Events tab**
-
-The **Events** tab on the test case detail page shows an audit trail of detection events for the individual test. Each event records when a monitor fired and why — for example, when a threshold monitor detected the test as flaky or broken. This gives you visibility into the full history of monitor activity for a specific test.
-
-### **Monitors**
-
-Monitors are configured at the repository level and can be viewed on the **Monitors** page. Monitors are organized into three sections:
-
-* **Pass on Retry** — Monitors that detect flaky tests based on tests that fail then pass on retry
-* **Threshold Monitors** — Monitors that detect flaky or broken tests based on failure rate thresholds
-* **Disabled** — Monitors that have been turned off (collapsed by default)
-
-Each monitor row shows the monitor name, event count, last detection time, and an actions menu for editing, enabling, or disabling the monitor.
-
-{% hint style="info" %}
-Disabling a monitor takes effect immediately. Active monitor states are marked inactive, test statuses are reconciled, and status-change webhooks are sent. If any step fails, the operation is rolled back.
-{% endhint %}
+Tests may transition between flaky, broken, and healthy states multiple times over their lifetime. You can see previous changes in the detected health status of a test in Test History, as well as an explanation for why it was detected to have a new state.
