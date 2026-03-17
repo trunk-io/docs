@@ -1,6 +1,6 @@
 ---
 name: doc-researcher
-description: "Researches Linear tickets, PRs, and existing docs to compile context for documentation work. Use PROACTIVELY before doc-writer when the scope is unclear or when multiple tickets need to be surveyed."
+description: "Researches Linear tickets, PRs, and existing docs to compile context for documentation work. Use PROACTIVELY before write-docs when the scope is unclear or when multiple tickets need to be surveyed."
 model: claude-sonnet-4-5
 tools: Read, Grep, Glob, Bash
 ---
