@@ -40,7 +40,7 @@ After removing:
 
 ## Relationship to Monitors
 
-The "Flag as Flaky" action is independent of automated monitors (threshold-based, pass-on-retry). It does not appear in the Monitors tab. Instead, it lives in the test detail header as a user-driven override.
+The "Flag as Flaky" action is independent of automated monitors (threshold-based, pass-on-retry). It does not appear in the Monitors tab.
 
 | Scenario                            | Test status              |
 | ----------------------------------- | ------------------------ |
@@ -55,6 +55,3 @@ The "Flag as Flaky" action is independent of automated monitors (threshold-based
 
 All flag and unflag actions are recorded as events. You can view the history by opening the Flag History panel from the test detail page. Each entry shows who performed the action, when, and the reason (if one was provided).
 
-## Permissions
-
-Flagging and unflagging a test requires write access to the repository. If you don't have write access, the Flag as Flaky button will not be visible.
