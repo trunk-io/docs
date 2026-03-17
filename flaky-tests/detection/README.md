@@ -13,50 +13,18 @@ Each monitor independently observes your test runs and tracks two states per tes
 | Priority | Status | Condition |
 |----------|--------|-----------|
 | Highest | **Broken** | Any enabled broken-type threshold monitor is active for this test |
-| Middle | **Flaky** | Any enabled flaky-type monitor (threshold, pass-on-retry, or manual) is active |
+| Middle | **Flaky** | Any enabled flaky-type monitor (threshold or pass-on-retry) is active |
 | Lowest | **Healthy** | No active monitors |
 
 If a test triggers both a broken monitor and a flaky monitor simultaneously, it shows as **Broken**. When the broken monitor resolves (e.g., you fix the regression and the failure rate drops), the test transitions to **Flaky** if a flaky monitor is still active, or to **Healthy** if no monitors remain active.
 
 A test stays in its detected state until every relevant monitor that flagged it has independently resolved.
 
-### Status Transitions
-
-```
-HEALTHY → BROKEN    Broken monitor activates
-HEALTHY → FLAKY     Flaky monitor activates
-
-BROKEN  → FLAKY     All broken monitors resolve, but a flaky monitor is still active
-BROKEN  → HEALTHY   All broken monitors resolve, no flaky monitors active
-
-FLAKY   → BROKEN    Broken monitor activates while flaky monitors are also active
-FLAKY   → HEALTHY   All flaky monitors resolve
-```
-
 ### Disabling or Deleting a Monitor
 
 When you disable or delete a monitor, it is immediately set to **resolved** for every test case in the repo. This triggers a status re-evaluation for all affected tests. If the disabled monitor was the only active monitor for a test, that test transitions to healthy. If other monitors are still active, the test remains in the most severe active state.
 
 For example, if you have a broken threshold monitor and a flaky pass-on-retry monitor, and you disable the broken monitor, any test that was only flagged by the broken monitor will become healthy. A test flagged by both will transition from broken to flaky (because pass-on-retry is still active).
-
-```mermaid
-graph LR
-    subgraph Monitors
-        POR[Pass-on-Retry Monitor]
-        TH[Threshold Monitor]
-    end
-
-    POR -- "active" --> SEV{"Most severe\nactive monitor?"}
-    TH -- "broken-type, active" --> SEV
-
-    SEV -- "Broken monitor active" --> BROKEN["Test Status: Broken"]
-    SEV -- "Flaky monitor active\n(no broken)" --> FLAKY["Test Status: Flaky"]
-    SEV -- "No monitors active" --> HEALTHY["Test Status: Healthy"]
-
-    style BROKEN fill:#fef3c7,stroke:#d97706,color:#92400e
-    style FLAKY fill:#fee2e2,stroke:#dc2626,color:#991b1b
-    style HEALTHY fill:#dcfce7,stroke:#16a34a,color:#166534
-```
 
 ## Monitor Types
 
@@ -115,44 +83,6 @@ You can only mute a monitor that has already detected flaky behavior for a test.
 | Test is flaky but no automated monitor has caught it | Use [**Flag as Flaky**](flag-as-flaky.md) to mark it as flaky |
 | You want to stop a monitor from evaluating a test permanently | Adjust the monitor's branch scope or thresholds instead |
 | You want to suppress all flaky signals for a test | Mute each active monitor individually, or address the root cause |
-
-## Events
-
-Monitors produce two kinds of events:
-
-**Monitor events** are emitted every time a monitor activates or resolves for a specific test. These give you a detailed audit trail of what each monitor observed. Use these for logging, debugging, or understanding why a test was flagged.
-
-**Status change events** (`v2.test_case.status_changed`) are emitted only when a test's overall status transitions between Healthy, Flaky, and Broken. These are the events that matter for notifications. You'll typically want to alert on status changes rather than individual monitor events, since a single monitor resolving doesn't necessarily mean the test is healthy.
-
-```mermaid
-sequenceDiagram
-    participant M1 as Broken Threshold Monitor
-    participant M2 as Flaky Threshold Monitor
-    participant T as Test Status
-    participant E as Events
-
-    Note over T: Status: Healthy
-    M1->>T: Activates (85% failure rate)
-    T->>E: Monitor event: broken threshold activated
-    T->>E: Status change: healthy → broken
-    Note over T: Status: Broken
-
-    M2->>T: Activates (35% failure rate)
-    T->>E: Monitor event: flaky threshold activated
-    Note over T: Status: Broken (no status change, broken takes priority)
-
-    M1->>T: Resolves (rate dropped to 10%)
-    T->>E: Monitor event: broken threshold resolved
-    T->>E: Status change: broken → flaky
-    Note over T: Status: Flaky (flaky threshold still active)
-
-    M2->>T: Resolves (rate dropped to 5%)
-    T->>E: Monitor event: flaky threshold resolved
-    T->>E: Status change: flaky → healthy
-    Note over T: Status: Healthy
-```
-
-Both event types are available via webhooks. The `v2.test_case.status_changed` payload includes `previous_status` and `new_status` fields which can be any of: `HEALTHY`, `FLAKY`, `BROKEN`. If you have an existing webhook consumer that only handles `HEALTHY` and `FLAKY`, update it to handle `BROKEN` as well. See [Webhooks](../webhooks/) for configuration and payload details.
 
 ## Variants
 

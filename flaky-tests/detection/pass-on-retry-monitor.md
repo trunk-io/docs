@@ -25,20 +25,6 @@ The monitor detects that `test_login` had both a failure and success on the same
 
 Seven days later (assuming default settings), if `test_login` hasn't exhibited any more retry behavior, the monitor resolves and the test returns to healthy.
 
-```mermaid
-graph LR
-    A["Feb 1: Fail + Pass on same commit"] --> B["Monitor activates"]
-    B --> C["Feb 2–7: No retry behavior"]
-    C --> D["Feb 8: Recovery period elapsed"]
-    D --> E["Monitor resolves"]
-
-    style A fill:#fee2e2,stroke:#dc2626,color:#991b1b
-    style B fill:#fee2e2,stroke:#dc2626,color:#991b1b
-    style C fill:#fef3c7,stroke:#d97706,color:#92400e
-    style D fill:#dcfce7,stroke:#16a34a,color:#166534
-    style E fill:#dcfce7,stroke:#16a34a,color:#166534
-```
-
 ## Configuration
 
 <!-- SCREENSHOT: Pass-on-Retry monitor configuration panel.
@@ -57,7 +43,7 @@ A shorter recovery period (e.g., 1 to 3 days) returns tests to healthy quickly, 
 
 ## When Detection Happens
 
-Pass-on-retry detection runs continuously as new test results arrive. A failure and its corresponding retry don't need to arrive at exactly the same time. The monitor looks back up to 7 days to match failures with later retries.
+Pass-on-retry detection runs continuously as new test results arrive. A failure and its corresponding retry don't need to arrive at exactly the same time.
 
 Resolution is evaluated daily. If a test hasn't shown pass-on-retry behavior within the recovery window, it resolves on the next daily check.
 
