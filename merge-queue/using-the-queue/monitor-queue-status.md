@@ -56,6 +56,23 @@ The graph view shows all PRs currently being tested by Trunk Merge Queue and the
 * Click any node to navigate to the PR's detail page
 * A link at the top of the graph view lets you switch to the legacy graph layout if needed
 
+#### Impacted targets in the graph
+
+When running in [Parallel mode](../optimizations/parallel-queues/), the graph view shows impacted targets information to help you understand why PRs are grouped or ordered the way they are.
+
+* **Per-PR tooltips**: Hover over a PR node to see which targets that PR impacts.
+* **Overlapping targets on edges**: Use the **Show impacted targets** toggle to display which targets overlap between connected PRs. Overlapping targets explain why PRs are in the same testing sequence — PRs with shared targets must test together.
+
+This is useful for debugging unexpected queue ordering or understanding why specific PRs are batched together.
+
+#### Impacted targets on the PR detail page
+
+On any PR's detail page, click **View impacted targets** to see the full list of uploaded targets. The modal shows one of three states:
+
+* **IMPACTS\_ALL**: The PR impacts all targets, so no parallel optimization is possible.
+* **Specific targets**: A list of each target the PR impacts.
+* **No targets uploaded**: No targets were provided, so the PR is treated as IMPACTS\_ALL for safety.
+
 ### Health view
 
 Select a period of time to inspect using the **Period** dropdown (default 7 days) and a **Granularity** (defaults  to daily) of queue metrics
