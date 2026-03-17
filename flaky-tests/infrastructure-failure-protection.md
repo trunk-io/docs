@@ -61,7 +61,7 @@ If you're using test quarantine, this feature is especially important to prevent
 
 ### Next steps
 
-* Learn more about how Trunk [detects flaky tests](detection.md)
+* Learn more about how Trunk [detects flaky tests](detection/)
 * View excluded uploads in the Uploads tab
 * Configure [test quarantine](quarantining.md#enable-quarantining) to automatically skip flaky tests
 

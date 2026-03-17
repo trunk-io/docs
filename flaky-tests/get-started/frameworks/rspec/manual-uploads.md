@@ -7,7 +7,7 @@ description: >-
 
 # RSpec (Manual Uploads)
 
-You can automatically [detect and manage flaky tests](../../../detection.md) in your projects running RSpec by integrating with Trunk. This document explains how to configure RSpec to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../../detection/) in your projects running RSpec by integrating with Trunk. This document explains how to configure RSpec to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 {% hint style="warning" %}
 We highly recommend using [Trunk's RSpec plugin](./) to upload test results for the best accuracy when detecting flaky tests.

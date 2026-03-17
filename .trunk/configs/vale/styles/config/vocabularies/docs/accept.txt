@@ -24,5 +24,7 @@ runtimes
 Uploader
 Vitest
 VSCode
+unflag
+unmute
 worktree
 XCTest
