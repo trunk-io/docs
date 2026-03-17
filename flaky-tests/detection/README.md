@@ -6,7 +6,7 @@ description: Learn how Trunk detects and labels flaky tests
 
 Flake Detection automatically identifies flaky tests in your test suite by monitoring test behavior over time. Instead of a single set of built-in detection rules, Trunk uses **monitors**, independent detectors that each watch for a specific flakiness pattern. When any monitor flags a test, it's marked as flaky. When all monitors agree the test has recovered, it returns to healthy.
 
-## How monitors work
+## How Monitors Work
 
 Each monitor independently observes your test runs and tracks two states per test: **active** (flaky behavior detected) or **inactive** (no flaky behavior). A test's overall status is determined by combining all of its monitors:
 
@@ -15,7 +15,7 @@ Each monitor independently observes your test runs and tracks two states per tes
 
 This means monitors are additive. A test stays flaky until every monitor that flagged it has independently resolved. If a threshold monitor detects high failure rates and a pass-on-retry monitor detects retries on the same test, both conditions must clear before the test is marked healthy.
 
-### Disabling or deleting a monitor
+### Disabling or Deleting a Monitor
 
 When you disable or delete a monitor, it is immediately set to **resolved** for every test case in the repo. This triggers a status re-evaluation for all affected tests. If the disabled monitor was the only active monitor for a test, that test transitions from flaky to healthy. If other monitors are still active, the test remains flaky.
 
@@ -38,7 +38,7 @@ graph LR
     style HEALTHY fill:#dcfce7,stroke:#16a34a,color:#166534
 ```
 
-## Monitor types
+## Monitor Types
 
 | Monitor | What it detects | Plan availability | Default state |
 |---|---|---|---|
@@ -49,7 +49,7 @@ You can run multiple monitors simultaneously. For example, you might use pass-on
 
 If you need to manually flag a test that automated monitors haven't caught, use [Flag as Flaky](flag-as-flaky.md) from the test detail page.
 
-## Branch-aware detection
+## Branch-Aware Detection
 
 Tests often behave differently depending on where they run. Failures on `main` are usually unexpected and signal flakiness. Failures on PR branches may be expected during active development. Merge queue failures are suspicious because the code has already passed PR checks.
 
@@ -57,13 +57,13 @@ Rather than applying a single set of branch rules automatically, Trunk gives you
 
 Pass-on-retry detection is branch-agnostic. It flags any test that fails and passes on the same commit, regardless of which branch the test ran on.
 
-## Muting monitors
+## Muting Monitors
 
 You can temporarily mute a monitor for a specific test case. A muted monitor continues to run and record detections, but it won't contribute to the test's flaky status until the mute expires.
 
 This is useful when you know a test is flaky but want to suppress the signal temporarily, for example while a fix is in progress or during a known infrastructure issue. Unlike [Flag as Flaky](flag-as-flaky.md), which is a persistent user override, muting preserves the detection history and automatically re-enables itself after the mute period.
 
-### How muting works
+### How Muting Works
 
 You can mute a monitor from the test case view in the Trunk app. When muting, you choose a duration:
 
@@ -87,7 +87,7 @@ and ideally the duration picker dropdown open. -->
 You can only mute a monitor that has already detected flaky behavior for a test. If a monitor has never been active for a test, the mute option is disabled.
 {% endhint %}
 
-### When to mute vs. other options
+### When to Mute vs. Other Options
 
 | Situation | Recommended action |
 |---|---|

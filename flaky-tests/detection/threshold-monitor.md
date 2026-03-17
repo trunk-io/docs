@@ -8,7 +8,7 @@ The threshold monitor detects flaky tests based on failure rate over a rolling t
 
 You can create multiple threshold monitors with different configurations. This is how you tailor detection to different branches, test volumes, and sensitivity levels.
 
-## How it works
+## How It Works
 
 The monitor periodically calculates the failure rate for each test within a time window you define. If the rate meets or exceeds your activation threshold and the test has enough runs to be statistically meaningful, the test is flagged as flaky.
 
@@ -33,13 +33,13 @@ stale timeout, and branch scope. Capture it with realistic example
 values filled in (e.g., "Main branch flake detector", 30% activation,
 15% recovery, 6 hour window, 50 min sample, main branch). -->
 
-### Activation threshold
+### Activation Threshold
 
 The failure rate that triggers detection, expressed as a percentage. A test is flagged when its failure rate meets or exceeds this value within the time window.
 
 Setting this lower (e.g., 10%) catches more flaky tests but may produce false positives for tests that occasionally have legitimate failures. Setting it higher (e.g., 50%) is more conservative and only flags tests that fail frequently.
 
-### Recovery threshold
+### Recovery Threshold
 
 The failure rate a test must drop below to be resolved as healthy. If not set, it defaults to the activation threshold, meaning a test resolves as soon as its failure rate drops below the activation level.
 
@@ -59,13 +59,13 @@ graph LR
 
 The gap between activation (30%) and recovery (15%) is the buffer zone. A test with a failure rate in this range keeps its current status: a healthy test won't be flagged, but a test already flagged as flaky won't be resolved either.
 
-### Window duration
+### Window Duration
 
 The rolling time window (in minutes) over which failure rate is calculated. Only test runs within this window are considered.
 
 A shorter window (e.g., 60 minutes) reacts quickly to recent failures but may miss patterns that play out over longer periods. A longer window (e.g., 24 hours) smooths out short-term spikes and gives a more stable picture, but takes longer to detect new flakiness and longer to resolve.
 
-### Minimum sample size
+### Minimum Sample Size
 
 The minimum number of test runs required within the time window before the monitor will evaluate a test. Tests with fewer runs are skipped entirely. They won't be flagged or resolved until enough data accumulates.
 
@@ -73,7 +73,7 @@ This prevents the monitor from making decisions on insufficient data. A test tha
 
 The right minimum depends on your test volume. If your tests run hundreds of times per day, a minimum of 50 to 100 is reasonable. If tests only run a few times per day, you may need a lower minimum, but keep in mind that lower minimums mean less statistical confidence.
 
-### Stale timeout
+### Stale Timeout
 
 How long (in minutes) a flagged test can go without any runs before it's automatically resolved as stale. This clears out tests that have been deleted, renamed, or are no longer part of your test suite.
 
@@ -81,11 +81,11 @@ When not set, flagged tests remain flaky indefinitely until they run enough time
 
 A test resolved as stale is simply no longer being tracked by this monitor. If the test starts running again and exceeds the activation threshold, it will be re-flagged.
 
-### Branch scope
+### Branch Scope
 
 Which branches the monitor evaluates. You can specify up to 10 branch patterns. Only test runs on matching branches are included in the failure rate calculation.
 
-#### Branch pattern syntax
+#### Branch Pattern Syntax
 
 Branch patterns use glob-style matching with two special characters:
 
@@ -100,7 +100,7 @@ All other characters are matched literally. Special regex characters (like `.`, 
 Unlike some glob implementations, `*` matches across `/` separators. The pattern `feature/*` matches both `feature/login` and `feature/api/auth`.
 {% endhint %}
 
-#### Pattern examples
+#### Pattern Examples
 
 | Pattern | Matches | Does not match |
 |---|---|---|
@@ -112,7 +112,7 @@ Unlike some glob implementations, `*` matches across `/` separators. The pattern
 
 A pattern with no special characters matches that exact branch name only. For example, `main` matches the branch named `main` and nothing else.
 
-#### Stable branch patterns
+#### Stable Branch Patterns
 
 For your main or stable branch, use the exact branch name:
 
@@ -122,7 +122,7 @@ For your main or stable branch, use the exact branch name:
 | `master` | `master` |
 | `develop` | `develop` |
 
-#### Merge queue branch patterns
+#### Merge Queue Branch Patterns
 
 If you use a merge queue, your queue creates temporary branches to test changes before merging. Each merge queue product uses a different branch naming convention:
 
@@ -134,7 +134,7 @@ If you use a merge queue, your queue creates temporary branches to test changes 
 
 GitLab Merge Trains run on the target branch directly rather than creating separate branches. To monitor merge train runs, scope your monitor to the target branch (e.g., `main`).
 
-#### Tips for branch scoping
+#### Tips for Branch Scoping
 
 - You can add up to **10 patterns** per monitor. A test run is included if its branch matches any of the patterns.
 - Since patterns can't express "everything except a branch," a practical approach is to create **separate monitors**: one scoped to `main` with strict settings, and another scoped to your PR branch naming patterns (e.g., `feature/*`, `fix/*`) with more lenient settings.
@@ -145,7 +145,7 @@ Show the branch pattern input with a few patterns entered (e.g.,
 `main` and `release/*`), ideally showing the tag/chip-style UI for
 each pattern. -->
 
-## Resolution behavior
+## Resolution Behavior
 
 A flagged test resolves in one of two ways:
 
@@ -163,7 +163,7 @@ You can temporarily mute a threshold monitor for a specific test case. See [Muti
 
 Tests behave differently depending on where they run. Failures on `main` are usually unexpected and worth catching aggressively. Failures on PR branches may be noise during active development. Merge queue failures are suspicious because the code has already passed PR checks. Here are some starting points for setting up monitors that reflect these differences.
 
-### Main branch: catch flakiness early
+### Main Branch: Catch Flakiness Early
 
 Failures on your stable branch are a strong signal. Tests should be passing before code is merged, so failures here are unexpected and likely indicate flakiness.
 
@@ -175,7 +175,7 @@ Failures on your stable branch are a strong signal. Tests should be passing befo
 | Min sample size | 20 to 50 | Depends on how often your tests run on main |
 | Branches | `main` (or `master`, `develop`, etc.) | Use the exact name of your stable branch |
 
-### Pull requests: flag severe flakiness only
+### Pull Requests: Flag Severe Flakiness Only
 
 PR branches see a lot of churn. Tests fail for legitimate reasons during development, so you want a higher bar before flagging something as flaky here. Focus on tests that are failing at a rate that clearly isn't caused by code changes.
 
@@ -189,7 +189,7 @@ PR branches see a lot of churn. Tests fail for legitimate reasons during develop
 
 Since branch patterns can't express "everything except main," create one monitor scoped to `main` with strict settings and a second monitor scoped to your PR branch naming patterns with more lenient settings.
 
-### Merge queue: strict monitoring
+### Merge Queue: Strict Monitoring
 
 Merge queue branches test code that has already passed PR checks. Failures here are suspicious. If you use a merge queue, consider a dedicated monitor with settings similar to or stricter than your main branch monitor.
 
@@ -201,7 +201,7 @@ Merge queue branches test code that has already passed PR checks. Failures here 
 | Min sample size | 10 to 20 | Merge queues may have fewer total test runs |
 | Branches | `trunk-merge/*` or `gh-readonly-queue/*` | Use the pattern for your merge queue provider (see table above) |
 
-### Other patterns
+### Other Patterns
 
 - **Release branches:** A monitor scoped to `release/*` with strict thresholds catches flakiness before it ships.
 - **Nightly or scheduled builds:** If you run comprehensive test suites on a schedule, a monitor with a longer window and higher minimum sample size can catch slow-burn flakiness that doesn't show up in faster CI runs.

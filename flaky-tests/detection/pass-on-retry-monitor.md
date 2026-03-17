@@ -8,7 +8,7 @@ The pass-on-retry monitor detects the most common flakiness pattern: a test fail
 
 This monitor is branch-agnostic. It evaluates all test runs regardless of which branch they ran on.
 
-## How it works
+## How It Works
 
 The monitor continuously scans your test runs looking for commits where a test has both a failure and a success. When it finds one, the test is flagged as flaky.
 
@@ -51,11 +51,11 @@ default 7-day recovery period visible. -->
 | **Enabled** | Whether the monitor is active | On |
 | **Recovery days** | Days without pass-on-retry behavior before a test is resolved as healthy. Range: 1 to 15 days. | 7 |
 
-### What recovery days controls
+### What Recovery Days Controls
 
 A shorter recovery period (e.g., 1 to 3 days) returns tests to healthy quickly, which is useful if you fix flaky tests promptly and want fast feedback. A longer recovery period (e.g., 10 to 15 days) is more conservative. It keeps tests flagged longer to account for flaky behavior that only surfaces occasionally.
 
-## When detection happens
+## When Detection Happens
 
 Pass-on-retry detection runs continuously as new test results arrive. A failure and its corresponding retry don't need to arrive at exactly the same time. The monitor looks back up to 7 days to match failures with later retries.
 
@@ -65,7 +65,7 @@ Resolution is evaluated daily. If a test hasn't shown pass-on-retry behavior wit
 
 You can temporarily mute the pass-on-retry monitor for a specific test case. See [Muting monitors](README.md#muting-monitors) for details.
 
-## Edge cases
+## Edge Cases
 
 **Failure without a retry yet:** If a test fails but hasn't been retried, no detection occurs. If the retry arrives later (even hours or days later on the same commit), the monitor will pick it up.
 
