@@ -21,7 +21,7 @@ A quarantined test continues running in CI and uploading results to Trunk Flaky 
 Tests can be quarantined through two methods:
 
 1. **Manual Quarantine** - You explicitly select specific tests using override settings
-2. **Auto-Quarantine** (when enabled) - Tests already flagged by [Trunk's flaky detection](detection.md) are automatically quarantined
+2. **Auto-Quarantine** (when enabled) - Tests already flagged by [Trunk's flaky detection](detection/) are automatically quarantined
 
 Tests are auto-quarantined only if detected as flaky or [flagged as flaky](detection.md#flag-as-flaky) manually. For [manually quarantined tests](quarantining.md#overriding-individual-tests), all failures are quarantined regardless of test state.
 

@@ -14,7 +14,7 @@ You can see an overview of Trunk Flaky Tests in this video.
 
 ### Understand the impact
 
-Your dashboard shows a comprehensive overview of your test suite's health at a glance. It lets you see important impact metrics like the number of flaky tests, broken tests, PRs impacted by flaky tests, and PRs rescued by quarantining flaky tests.
+Your dashboard shows a comprehensive overview of your test suite's health at a glance. It lets you see important impact metrics like the number of flaky tests, PRs impacted by flaky tests, and PRs rescued by quarantining flaky tests.
 
 <figure><picture><source srcset="../.gitbook/assets/key-metrics-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/key-metrics-light.png" alt=""></picture><figcaption><p>Key repo metrics</p></figcaption></figure>
 
@@ -46,7 +46,7 @@ Test details will summarize all the unique ways a flaky test fails and let you f
 
 <figure><picture><source srcset="../.gitbook/assets/run-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/run-details-light.png" alt=""></picture><figcaption><p>Full failure stack traces</p></figcaption></figure>
 
-To learn more, [see our docs about the detection of flaky tests](detection.md#test-case-details).
+To learn more, [see our docs about the detection of flaky tests](detection/).
 
 ### **Quarantine flaky failures**
 

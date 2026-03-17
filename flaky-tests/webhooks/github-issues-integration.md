@@ -8,7 +8,7 @@ Trunk allows you to automate GitHub Issue creation through webhooks. This will a
 
 <figure><img src="../../.gitbook/assets/example-webhook-github-issue-light.png" alt=""><figcaption><p>GitHub Issue created automatically with webhooks.</p></figcaption></figure>
 
-This guide will walk you through integrating Trunk Flaky Tests with GitHub Issues through webhooks. You will be able to automatically generate GitHub issues for new flaky or broken tests. This guide should take 15 minutes to complete.
+This guide will walk you through integrating Trunk Flaky Tests with GitHub Issues through webhooks. You will be able to automatically generate GitHub issues for new flaky tests. This guide should take 15 minutes to complete.
 
 ### 1. Create a GitHub Token
 

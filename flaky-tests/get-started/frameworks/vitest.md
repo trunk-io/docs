@@ -5,7 +5,7 @@ description: A guide for generating Trunk-compatible test reports with Vitest
 
 # Vitest
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Vitest projects by integrating with Trunk. This document explains how to configure Vitest to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Vitest projects by integrating with Trunk. This document explains how to configure Vitest to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 

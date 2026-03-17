@@ -4,7 +4,7 @@ description: A guide for generating Trunk-compatible test reports for Robot Fram
 
 # Robot Framework
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your projects running tests with Robot by integrating with Trunk. This document explains how to configure Robot to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your projects running tests with Robot by integrating with Trunk. This document explains how to configure Robot to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 

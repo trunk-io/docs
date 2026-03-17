@@ -23,7 +23,7 @@ The Flaky Tests dashboard is designed to help you prioritize which tests to fix 
 If you don't upload test results from PRs:
 
 * The `PRs Impacted` count for every test will be zero.
-* You will have no way to determine which flaky or broken tests are causing the most disruption.
+* You will have no way to determine which flaky tests are causing the most disruption.
 * You lose the ability to prioritize fixes based on real-world data, potentially wasting time on less important issues.
 
 #### Unblocking Developers with Quarantining
