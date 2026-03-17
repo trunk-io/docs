@@ -99,23 +99,42 @@ If a match or overlap is found, stop and ask the user how to proceed before cont
 
 9. **Branch**: From `main`. Name: `<git-username>/<kebab-case-topic>` (username from `git config user.name`, kebab-cased). Stash unrelated changes first.
 10. **Commit**: Stage changed files. Include `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`.
-11. **Push and PR**: `gh pr create` with structured body. See [OUTPUTS.md](OUTPUTS.md) for PR body format.
+11. **Identify engineering authors**: Before creating the PR, look up who built the feature. For every `trunk-io/trunk2` PR linked in the Linear ticket or found during research:
+    - Fetch the PR via `gh pr view <number> --repo trunk-io/trunk2 --json author`
+    - Extract the author's GitHub handle
+    - Collect all unique authors across all linked PRs — list every one, do not filter by contribution size
+    - Include all authors in the PR body under an "Engineering authors" section so Sam can tag them for technical accuracy review
+
+    **Known Trunk team GitHub handle reference** (fallback if API is unavailable):
+
+    | Name | GitHub handle |
+    |------|--------------|
+    | Phil Vendola | @pvendola |
+    | Tyler Jang | @tyler-jang |
+    | Ben Cook | @bwcook |
+    | Alexander Graebe | @alexgraebe |
+    | Ventsi Tsachev | @ventsislavtsachev |
+
+    If you cannot determine a handle confidently, write `[unknown — check trunk2 PR: <url>]`.
+
+12. **Push and PR**: `gh pr create --draft` with structured body. **Always create as a draft** — Sam reviews every PR manually before marking it ready. See [OUTPUTS.md](OUTPUTS.md) for PR body format. Include the engineering authors list in the PR body.
+13. **Request reviewers**: After creating the PR, add engineering authors as reviewers using `gh pr edit <number> --add-reviewer <handle1>,<handle2>`. This works even on draft PRs — reviewers see the PR and can leave early feedback. If a handle lookup fails, note it in the PR body for Sam to add manually.
 
 ### Phase 5: Update Linear
 
-12. Create or update the docs ticket — add PR link, context links, change summary. Set status to "In Review". If no ticket exists, create one in Trunk Engineering with `docs` label.
-13. Attach all context links (Slack, Slite, Loom) as attachments with descriptive titles.
-14. Add `relatedTo` relations for every related engineering ticket found during research.
+14. Create or update the docs ticket — add PR link, context links, change summary. Set status to "In Review". If no ticket exists, create one in Trunk Engineering with `docs` label.
+15. Attach all context links (Slack, Slite, Loom) as attachments with descriptive titles.
+16. Add `relatedTo` relations for every related engineering ticket found during research.
 
 ### Phase 6: Stage Outputs
 
-15. **Slack post**: Write to `.claude/tmp/<draft-name>/slack.md`. See [OUTPUTS.md](OUTPUTS.md) for Slack formatting rules.
-16. **Report**: Append an HTML card to `.claude/tmp/report.html`. See [OUTPUTS.md](OUTPUTS.md) for report format.
+17. **Slack post**: Write to `.claude/tmp/<draft-name>/slack.md`. See [OUTPUTS.md](OUTPUTS.md) for Slack formatting rules.
+18. **Report**: Append an HTML card to `.claude/tmp/report.html`. See [OUTPUTS.md](OUTPUTS.md) for report format.
 
 ### Phase 7: Clean Up
 
-17. Return to original branch, restore stashed changes.
-18. Show the user: branch name, PR link, Linear ticket link, files changed, open questions, staged output file paths.
+19. Return to original branch, restore stashed changes.
+20. Show the user: branch name, PR link, Linear ticket link, files changed, open questions, staged output file paths.
 
 ## Guidelines
 
