@@ -80,7 +80,7 @@ To receive personal Slack notifications, you'll need to connect both your GitHub
 
 The Trunk Slack app's **Home** tab provides a personal merge queue dashboard directly in Slack. Open the Trunk app in Slack and click the **Home** tab to see an overview of your merge queue activity.
 
-### What you'll see
+### What You'll See
 
 The Home tab displays the following sections:
 
@@ -93,13 +93,13 @@ The Home tab displays the following sections:
 
 Each PR entry shows the PR title, number, a link to the Trunk dashboard, and a link to the GitHub PR. All data is scoped to your PRs via your linked GitHub account.
 
-### Linking your account
+### Linking Your Account
 
 1. Open the Trunk app in Slack and go to the **Home** tab
 2. Click **Link Account** to connect your Trunk account
 3. Click **Connect GitHub** to link your GitHub account (required for PR tracking and most notifications)
 
-### Managing notification preferences
+### Managing Notification Preferences
 
 You can toggle notification topics on or off directly from the Home tab — no need to visit the Trunk web UI. Changes take effect immediately. The available topics are the same as those listed in [Available Notification Topics](integration-for-slack.md#available-notification-topics).
 

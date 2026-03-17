@@ -107,14 +107,14 @@ Trunk classifies all tests into one of three categories based on the history of 
 
 ### How Trunk detects broken tests
 
-Threshold monitors detect broken tests alongside flaky tests. When a test's failure rate exceeds the configured threshold and the failures are consistent rather than intermittent, Trunk classifies the test as **Broken** instead of **Flaky**.
+[Threshold monitors](dashboard.md#monitors) detect broken tests alongside flaky tests. When a test's failure rate exceeds the configured threshold and the failures are consistent rather than intermittent, Trunk classifies the test as **Broken** instead of **Flaky**.
 
 The key difference is the failure pattern:
 
 * **Flaky**: Failures are intermittent — the test sometimes passes and sometimes fails on the same code.
 * **Broken**: Failures are consistent — the test fails reliably above the threshold without intermittent passes.
 
-Broken detection events appear in the test case detail view alongside flaky detection events. In the events panel, broken events are displayed as a distinct series so you can track when tests transition between healthy, flaky, and broken states.
+Broken detection events appear in the test case detail view alongside flaky detection events. In the events panel, broken and flaky events are shown as separate series so you can track when tests transition between healthy, flaky, and broken states.
 
 {% hint style="info" %}
 A test can transition between states over time. For example, a test might start as healthy, become flaky as a race condition surfaces, and eventually be classified as broken if the underlying issue causes consistent failures.

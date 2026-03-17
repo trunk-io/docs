@@ -180,7 +180,7 @@ Use these endpoints to create, configure, and manage merge queues. Each queue ta
 {% endopenapi-operation %}
 
 {% hint style="warning" %}
-The queue must be empty before it can be deleted. Cancel or merge all enqueued PRs first.
+The queue must be empty before it can be deleted. Cancel all enqueued PRs or wait for them to be merged first.
 {% endhint %}
 
 {% openapi-operation spec="trunk-api" path="/getQueue" method="post" %}

@@ -41,7 +41,9 @@ View status of the queue and recent activity in the **Queue** tab
 
 ### Graph view
 
-The graph view shows all PRs currently being tested by Trunk Merge Queue and their relationships. Each node represents a pull request, and each edge indicates that the PR is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure. If running in `Single` mode, this will be a single line showing the testing and merging process.
+The graph view shows all PRs currently being tested by Trunk Merge Queue and their relationships. Each node represents a pull request, and each edge indicates that the PR is testing with the item above and depends on it. All edges point towards the target branch; as items merge, the affected queues restructure.
+
+If running in `Single` mode, this will be a single line showing the testing and merging process.
 
 #### Reading the graph
 
