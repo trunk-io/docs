@@ -177,6 +177,10 @@ The generated webhook template contains several configurable constants out of th
 
 Here is the provided transformation for context. You can customize your Linear Issues integration by following the[ Linear API](https://studio.apollographql.com/public/Linear-API/variant/current/schema/reference) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
 
+{% hint style="info" %}
+The default transformation only creates issues when `newStatus === "flaky"`. If you also want to create issues for tests marked as **Broken** (consistently failing at a high rate), update the filter condition. For example, change `newStatus !== "flaky"` to `newStatus !== "flaky" && newStatus !== "broken"` to handle both statuses.
+{% endhint %}
+
 ```javascript
 /**
  * @param webhook the webhook object

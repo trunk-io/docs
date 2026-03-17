@@ -10,6 +10,10 @@ description: Mitigate impact of known flaky tests by isolating them at run time
 
 **Why use quarantining:** It acts as a crucial stopgap, minimizing the disruption from known flaky tests while your team works on fixing them. By quarantining flaky tests, you unblock critical CI pipelines—**especially your merge queue**—and regain development velocity without losing visibility, as these tests continue to run and upload results. This constant stream of data allows you to prioritize fixing the worst offenders based on their ongoing impact.
 
+{% hint style="warning" %}
+**Broken tests are not quarantine candidates.** Quarantining is designed for flaky tests — tests that intermittently fail and can be safely skipped to unblock CI while being investigated. A broken test represents a real failure that should not be hidden from CI results. Only tests with a **Flaky** status are eligible for auto-quarantine.
+{% endhint %}
+
 ### What does "Quarantined" mean?
 
 A quarantined test continues running in CI and uploading results to Trunk Flaky Tests, but its failures won't block your pipeline. The [Trunk Analytics CLI](uploader.md) checks with Trunk's backend to determine if failed tests are quarantined, then overrides the exit code for those failures. When all failures in a CI job come from quarantined tests, the entire job passes.
@@ -23,7 +27,7 @@ Tests can be quarantined through two methods:
 1. **Manual Quarantine** - You explicitly select specific tests using override settings
 2. **Auto-Quarantine** (when enabled) - Tests already flagged by [Trunk's flaky detection](detection/) are automatically quarantined
 
-Tests are auto-quarantined only if detected as flaky or [flagged as flaky](detection.md#flag-as-flaky) manually. For [manually quarantined tests](quarantining.md#overriding-individual-tests), all failures are quarantined regardless of test state.
+Tests are auto-quarantined only if detected as **flaky** or [flagged as flaky](detection/flag-as-flaky.md) manually. Tests with a **Broken** status are not auto-quarantined — they represent real failures that should be investigated and fixed. For [manually quarantined tests](quarantining.md#overriding-individual-tests), all failures are quarantined regardless of test state.
 
 ### Enable quarantining
 
