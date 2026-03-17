@@ -15,6 +15,7 @@ PR title: `[TRUNK-XXXXX] Short descriptive title` (prefix with Linear ticket ID 
 PR body sections:
 - **Summary** — bullet list of changes
 - **Linear tickets** — clickable links to all related tickets
+- **Engineering authors** — GitHub handles of engineers who built the feature (from trunk2 PRs), for technical accuracy review
 - **Context links** — all Slack, Slite, Loom links from the notes
 - **Files changed** — list of files created/modified
 - **Open questions** — things that could not be confirmed from available context
