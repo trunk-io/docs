@@ -77,6 +77,19 @@ Instead, if you submit PR D with an `"urgent"` priority, then D would be tested 
 
 <img src="../../.gitbook/assets/file.excalidraw (13).svg" alt="Queue with an urgent PR moved to the front and a normal PR restarting" class="gitbook-drawing">
 
+### Visual indicators in the dashboard
+
+When a PR is queued with a non-default priority, the merge queue graph view displays a badge on the PR node so you can quickly identify fast-tracked items:
+
+| Priority | Badge | Description |
+|----------|-------|-------------|
+| Urgent   | Red pulsing badge labeled **URGENT** | Draws immediate attention; this PR is interrupting in-progress testing |
+| High     | Orange badge labeled **HIGH** | PR is being fast-tracked ahead of normal-priority items |
+| Medium   | No badge | Default priority — no visual indicator |
+| Low      | No badge | Lower-than-default priority — no visual indicator |
+
+Priority badges appear on individual PR nodes in the [graph view](../using-the-queue/monitor-queue-status.md#graph-view). Batch nodes (multiple PRs tested together) do not display priority badges.
+
 ### Tradeoffs and considerations
 
 #### What you gain
