@@ -32,6 +32,62 @@ With Batching enabled, you can configure two options:
 A good place to start is with the defaults, Maximum wait time set to 5 (minutes) and Target batch size set to 4 (PRs).
 {% endhint %}
 
+### Excluding PRs from Batching
+
+Sometimes you need a specific PR to test in isolation, even when batching is enabled for your queue. You can prevent individual PRs from batching without changing your overall batching configuration.
+
+#### When to use this
+
+* **High-risk changes** — Infrastructure updates, database migrations, or changes that could affect other PRs in unpredictable ways
+* **Debugging batch failures** — Isolate a suspected problematic PR to confirm it tests correctly on its own
+* **Critical hotfixes** — Ensure a time-sensitive fix isn't delayed or affected by other PRs in a batch
+* **Flaky PR isolation** — Test a PR with known flaky behavior separately to avoid impacting other PRs
+
+#### How to exclude a PR from batching
+
+**Option 1: Using the `/trunk merge` command**
+
+Add the `--no-batch` flag when submitting your PR:
+
+```
+/trunk merge --no-batch
+```
+
+**Option 2: Using the API**
+
+Set `noBatch: true` when calling the [`/submitPullRequest`](../reference/merge.md#post-submitpullrequest) endpoint:
+
+```bash
+curl -X POST https://api.trunk.io/v1/submitPullRequest \
+  -H "Content-Type: application/json" \
+  -H "x-api-token: $TRUNK_API_TOKEN" \
+  -d '{
+    "repo": {
+      "host": "github.com",
+      "owner": "my-org",
+      "name": "my-repo"
+    },
+    "targetBranch": "main",
+    "pr": {
+      "number": 123
+    },
+    "noBatch": true
+  }'
+```
+
+#### How it works
+
+When a PR is submitted with no-batch:
+
+* **Queue position is unchanged** — The PR maintains its position in the queue based on when it was submitted
+* **No restarts triggered** — Submitting a no-batch PR doesn't restart testing for other PRs already in the queue
+* **Tests in isolation** — The PR is guaranteed to test by itself, not grouped with other PRs
+* **Other PRs unaffected** — Batching continues normally for all other PRs in the queue
+
+{% hint style="info" %}
+Excluding a PR from batching only affects that specific PR. Your queue's batching settings and other PRs remain unaffected.
+{% endhint %}
+
 ### Bisection Testing Concurrency
 
 When a batch fails, Trunk automatically splits it apart (bisects) to identify which PR caused the failure. You can configure a separate, higher concurrency limit specifically for these bisection tests to isolate failures faster without impacting your main queue.
