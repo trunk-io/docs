@@ -69,6 +69,10 @@ The generated webhook template contains several configurable constants out of th
 
 Here is the provided transformation for context. You can customize your GitHub Issues integration by following the [GitHub](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
 
+{% hint style="info" %}
+The default transformation only creates issues when `newStatus === "flaky"`. If you also want to create issues for tests marked as **Broken** (consistently failing at a high rate), update the filter condition. For example, change `newStatus !== "flaky"` to `newStatus !== "flaky" && newStatus !== "broken"` to handle both statuses.
+{% endhint %}
+
 {% code lineNumbers="true" %}
 ```javascript
 /**
