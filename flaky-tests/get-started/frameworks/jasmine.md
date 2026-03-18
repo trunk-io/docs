@@ -72,7 +72,7 @@ If you're using a package like [protractor-flake](https://www.npmjs.com/package/
 
 #### The Validate Command
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}
@@ -133,7 +133,7 @@ Before modifying your CI jobs to automatically upload test results to Trunk, try
 You make an upload to Trunk using the following command:
 
 ```sh
-./trunk-analytics-cli flakytests upload --junit-paths "./junit-reports/*.xml" \
+./trunk-analytics-cli upload --junit-paths "./junit-reports/*.xml" \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>
 ```
