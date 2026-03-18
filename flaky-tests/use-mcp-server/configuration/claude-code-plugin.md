@@ -67,7 +67,7 @@ The plugin includes two skills that activate automatically based on context:
 
 ## Also Available For
 
-- [Cursor](https://docs.trunk.io/flaky-tests/use-mcp-server/configuration/cursor-ide) (one-click install)
-- [GitHub Copilot](https://docs.trunk.io/flaky-tests/use-mcp-server/configuration/github-copilot-ide) (one-click install)
-- [Gemini CLI](https://docs.trunk.io/flaky-tests/use-mcp-server/configuration/gemini-cli)
+- [Cursor](cursor-ide.md) (one-click install)
+- [GitHub Copilot](github-copilot-ide.md) (one-click install)
+- [Gemini CLI](gemini-cli.md)
 - [Any MCP client](https://github.com/trunk-io/mcp-server) — manual configuration
