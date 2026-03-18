@@ -4,7 +4,7 @@ description: Configure Flaky Tests using Travis CI
 
 # Travis CI
 
-Trunk Flaky Tests integrates with your CI by adding a step in your Travis CI Pipelines to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your Travis CI Pipelines to upload tests with the [Trunk Analytics CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
@@ -67,8 +67,8 @@ dist: jammy
 node_js:
   - 20
 script:
-  - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-  - ./trunk flakytests upload --junit-paths "<XML_GLOB_PATH>" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+  - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
+  - ./trunk-analytics-cli upload --junit-paths "<XML_GLOB_PATH>" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
 
@@ -79,8 +79,8 @@ dist: jammy
 node_js:
   - 20
 script:
-  - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-  - ./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+  - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
+  - ./trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
 
@@ -91,8 +91,8 @@ dist: jammy
 node_js:
   - 20
 script:
-  - curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-  - ./trunk flakytests upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
+  - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
+  - ./trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
 ```
 {% endtab %}
 
@@ -107,6 +107,11 @@ script:
 ```
 {% endtab %}
 {% endtabs %}
+
+
+{% hint style="info" %}
+The examples above use the Linux x64 binary. If your CI runs on a different platform, see the [Trunk Analytics CLI](../../uploader.md#manual-download) page for all available platform downloads.
+{% endhint %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 

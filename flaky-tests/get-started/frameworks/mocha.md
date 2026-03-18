@@ -59,7 +59,7 @@ You can disable retry by omitting the `--retries` CLI option and [removing retri
 
 #### **The Validate Command**
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

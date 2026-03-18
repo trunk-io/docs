@@ -20,9 +20,9 @@ You'll need to validate and upload the generated JUnit files to Trunk later duri
 
 ## 3. Validate Your Reports
 
-Since you'll be generating JUnit reports using a new plugin or custom reporter, you should use the Trunk CLI to validate your results and fix any warnings or errors.
+Since you'll be generating JUnit reports using a new plugin or custom reporter, you should use the Trunk Analytics CLI to validate your results and fix any warnings or errors.
 
-You can install the Trunk CLI locally like this:
+You can install the Trunk Analytics CLI locally like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}
@@ -70,7 +70,7 @@ chmod +x trunk-analytics-cli
 {% endtab %}
 {% endtabs %}
 
-Then, you can validate the results using the `trunk flakytests validate` command like this:
+Then, you can validate the results using the `trunk-analytics-cli validate` command like this:
 
 ```bash
 ./trunk-analytics-cli validate --junit-paths <PATH_TO_REPORTS>
