@@ -119,6 +119,7 @@
     * [Cursor (IDE)](flaky-tests/use-mcp-server/configuration/cursor-ide.md)
     * [GitHub Copilot (IDE)](flaky-tests/use-mcp-server/configuration/github-copilot-ide.md)
     * [Claude Code (CLI)](flaky-tests/use-mcp-server/configuration/claude-code-cli.md)
+    * [Claude Code Plugin](flaky-tests/use-mcp-server/configuration/claude-code-plugin.md)
     * [Gemini (CLI)](flaky-tests/use-mcp-server/configuration/gemini-cli.md)
   * [MCP Tool Reference](flaky-tests/use-mcp-server/mcp-tool-reference/README.md)
     * [Get root cause analysis](flaky-tests/use-mcp-server/mcp-tool-reference/get-root-cause-analysis.md)
