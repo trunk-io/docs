@@ -73,15 +73,17 @@ See [Available Notification Topics](integration-for-slack.md#available-notificat
 
 ## Personal Slack Notifications
 
-Get direct messages in Slack about your PRs in the merge queue, keeping you informed without adding noise to team channels.
-
-Personal Slack notifications deliver DMs when your PRs are queued, start testing, pass tests, get merged, or encounter issues. This keeps you up-to-date on the progress of your code through the merge queue without needing to check the web UI or monitor shared channels.
+Get direct messages in Slack about your PRs as they move through the merge queue — queued, testing, merged, failed, and more — without adding noise to team channels.
 
 ### Setting up Personal Notifications
 
-Personal notification setup is done entirely from the **Trunk Slack app's Home tab** — no part of this flow is completed from the Trunk web UI.
+{% hint style="info" %}
+**Prerequisite:** The Trunk Slack app must be [installed for your organization](integration-for-slack.md#installing-the-trunk-slack-app) before personal notifications can be configured. If the app hasn't been installed yet, the Home tab will display a warning directing a Slack admin to complete the installation.
+{% endhint %}
 
-1. Open the **Trunk** app in Slack. If you don't see it in your sidebar, add it via **Apps > Manage > Browse Apps** in Slack.
+Personal notification setup is done from the **Trunk Slack app's Home tab** in Slack:
+
+1. Open the **Trunk** app in Slack. If you don't see it in your sidebar, add it via **Apps > Manage > Browse Apps** and search for "Trunk."
 2. Go to the **Home** tab.
 3. Click **Link Account** to connect your Trunk account to Slack.
 4. Connect your **GitHub account** from the Home tab. This is required for PR tracking and most notifications.
@@ -89,22 +91,15 @@ Personal notification setup is done entirely from the **Trunk Slack app's Home t
 
 <!-- TODO: add screenshot of Slack Home tab showing Link Account button -->
 
-{% hint style="info" %}
-**Tip:** After the Trunk Slack app is installed for your workspace, individual users may still need to manually add the app to their Slack account. In Slack, go to **Apps > Manage > Browse Apps** and search for "Trunk" to add it.
-{% endhint %}
-
 ### Using the Trunk Web UI
 
-The Trunk notifications page (**Settings > Account > Notifications**) still exists as a convenience entry point, but it directs you to complete setup in Slack:
+You can also start setup from the Trunk web app, which will redirect you to Slack to complete the process:
 
-* **Step 1: Connect your Slack workspace** — Shows whether your workspace is connected. If not, a **Go to Slack settings** button takes you to the organization Slack settings page.
-* **Step 2: Complete setup in Slack** — An **Open in Slack** button takes you to the Trunk app's Home tab to link your account and configure notifications.
+1. Navigate to **Settings > Account > Notifications** in Trunk.
+2. Under **Connect your Slack workspace**, verify your workspace is connected. If not, click **Go to Slack settings** to install the app first.
+3. Click **Open in Slack** to jump to the Trunk app's Home tab, where you'll link your account and configure notifications.
 
 <!-- TODO: add screenshot of Trunk web UI notifications page showing the two-step redirect flow -->
-
-{% hint style="warning" %}
-**Slack app not installed?** If the Trunk Slack app hasn't been installed for your organization yet, the Home tab in Slack will display a warning: "The Trunk app isn't fully installed for this workspace yet, so personal notifications can't be set up here." It will direct a Slack admin to go to **Settings > Organization** in Trunk and install the app. See [Installing the Trunk Slack App](integration-for-slack.md#installing-the-trunk-slack-app).
-{% endhint %}
 
 {% hint style="info" %}
 **Tip:** Want to send notifications to a shared team channel instead? Check out the [Channel Notifications](integration-for-slack.md#channel-notifications) setup guide.
@@ -134,13 +129,7 @@ Each PR entry shows the PR title, number, and a link to the GitHub PR. All data 
 
 ### Linking Your Account
 
-1. Open the Trunk app in Slack and go to the **Home** tab.
-2. Click **Link Account** to connect your Trunk account.
-3. Connect your **GitHub account** (required for PR tracking and most notifications).
-
-{% hint style="info" %}
-After the workspace-level Slack app installation, individual users may still need to add the Trunk app to their Slack account. In Slack, go to **Apps > Manage > Browse Apps** and search for "Trunk."
-{% endhint %}
+To use the Home tab, you need to link your Trunk and GitHub accounts. Follow the steps in [Setting up Personal Notifications](integration-for-slack.md#setting-up-personal-notifications) — the same account linking process powers both the dashboard and personal DMs.
 
 ### Managing Notification Preferences
 
@@ -186,9 +175,9 @@ You can unlink your account from the Trunk Slack app's Home tab using the **Unli
 
 <details>
 
-<summary><strong>How do I add the Trunk app to my Slack account?</strong></summary>
+<summary><strong>I don't see the Trunk app in my Slack sidebar. How do I add it?</strong></summary>
 
-After a Slack workspace admin has installed the Trunk app for your organization, individual users may still need to add it to their Slack account. In Slack, go to **Apps > Manage > Browse Apps**, search for "Trunk," and add the app. Once added, it will appear in your Slack sidebar under **Apps**.
+The Trunk app must first be [installed at the organization level](integration-for-slack.md#installing-the-trunk-slack-app) by a Slack workspace admin. After that, individual users can add it to their sidebar: in Slack, go to **Apps > Manage > Browse Apps**, search for "Trunk," and click **Add**.
 
 </details>
 
@@ -204,7 +193,7 @@ Both channel and personal Slack notifications support the same notification topi
 | Pull request is submitted for merging                                       | A pull request has been [submitted to the queue](https://docs.trunk.io/merge-queue/set-up-trunk-merge#submit-pull-requests)                                                                                                                                                                                                                                                                                                                                                   |
 | Pull request is admitted to the queue and is waiting to be tested           | A pull request has been admitted to the queue and will begin testing as soon as it can                                                                                                                                                                                                                                                                                                                                                                                        |
 | Pull request is testing                                                     | Trunk merge has begun testing a pull request                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Pull request has passed tests                                               | Testing has passed on a pull request. The PR will be merged when it reached the top of the queue                                                                                                                                                                                                                                                                                                                                                                              |
+| Pull request has passed tests                                               | Testing has passed on a pull request. The PR will be merged when it reaches the top of the queue                                                                                                                                                                                                                                                                                                                                                                              |
 | Pull request is merged                                                      | A pull request submitted to the queue has successfully been merged into its target branch                                                                                                                                                                                                                                                                                                                                                                                     |
 | Pull request fails                                                          | Testing failed on a pull request and it was removed from the queue or Trunk failed to merge the PR into its target branch                                                                                                                                                                                                                                                                                                                                                     |
 | Pull request is canceled                                                    | A pull request has been canceled, either manually or due to it [reaching a configured testing timeout](https://docs.trunk.io/merge-queue/set-up-trunk-merge/advanced-settings#timeout-for-tests-to-complete)                                                                                                                                                                                                                                                                  |
