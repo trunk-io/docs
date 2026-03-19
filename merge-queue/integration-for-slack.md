@@ -115,13 +115,13 @@ The Home tab displays the following sections:
 
 * **Refresh** — A button at the top of the Home tab to update the view with the latest queue data, along with a "Last refreshed" timestamp.
 * **Account connection status** — Shows your connected identity (e.g., "Connected as **Your Name**"), an **Unlink Account** button, and your GitHub account connection status. You can connect your GitHub account directly from the Home tab if it isn't linked yet.
-* **Not Ready** — PRs you've submitted that are waiting for prerequisites (e.g., GitHub mergeability) before entering the queue. Grouped by repository and branch.
-* **PRs in Queue** — Your PRs that are currently in the queue, with real-time status indicators (e.g., "Testing"). Grouped by repository and branch.
-* **Recently Merged PRs** — Your most recently merged PRs with merge dates. Grouped by repository and branch.
-* **Failed PRs** — Your PRs that failed in the queue. Grouped by repository and branch.
+* **Not Ready** — PRs you've submitted that are waiting for prerequisites (e.g., GitHub mergeability) before entering the queue.
+* **PRs in Queue** — Your PRs that are currently in the queue, with real-time status indicators (e.g., "Testing").
+* **Recently Merged PRs** — Your most recently merged PRs, with merge dates.
+* **Failed PRs** — Your PRs that failed in the queue.
 * **Notification Preferences** — Toggle buttons for all 9 notification topics. You can enable or disable individual notifications directly from Slack without visiting the web UI.
 
-Each PR entry shows the PR title, number, and a link to the GitHub PR. All data is scoped to your PRs via your linked GitHub account and is shown across **all merge queues** you submit to.
+All PR sections are grouped by repository and branch. Each PR entry shows the title, PR number, and a link to the GitHub PR. Data is shown across **all merge queues** you submit to, scoped to your PRs via your linked GitHub account.
 
 <!-- TODO: add screenshot of Home tab connected state showing account info and PR sections -->
 
@@ -197,4 +197,4 @@ Both channel and personal Slack notifications support the same notification topi
 | Pull request is merged                                                      | A pull request submitted to the queue has successfully been merged into its target branch                                                                                                                                                                                                                                                                                                                                                                                     |
 | Pull request fails                                                          | Testing failed on a pull request and it was removed from the queue or Trunk failed to merge the PR into its target branch                                                                                                                                                                                                                                                                                                                                                     |
 | Pull request is canceled                                                    | A pull request has been canceled, either manually or due to it [reaching a configured testing timeout](https://docs.trunk.io/merge-queue/set-up-trunk-merge/advanced-settings#timeout-for-tests-to-complete)                                                                                                                                                                                                                                                                  |
-| Pull request failed and is waiting for PRs in front of it to finish testing | <p>A pull request failed testing, but the pull request is currently waiting before being kicked. This can happen for one of two reasons:<br>1. The pull request is not at the head of the queue, so it is waiting to determine if it is the source of the failure or if a PR it depends on is<br>2. <a href="https://docs.trunk.io/merge-queue/pending-failure-depth">Pending Failure Depth is enabled</a> and the PR is waiting for other PRs below it to finish testing</p> |
+| Pull request failed and is waiting for PRs in front of it to finish testing | <p>A pull request failed testing, but the pull request is currently waiting before being kicked. This can happen for one of two reasons:<br>1. The pull request is not at the head of the queue, so it is waiting to determine if it is the source of the failure or if a PR it depends on is the cause<br>2. <a href="https://docs.trunk.io/merge-queue/pending-failure-depth">Pending Failure Depth is enabled</a> and the PR is waiting for other PRs below it to finish testing</p> |
