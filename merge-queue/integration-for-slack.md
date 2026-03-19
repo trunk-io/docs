@@ -8,9 +8,8 @@ description: >-
 
 Trunk Merge Queue integrates with Slack to send real-time notifications about queue activity and pull request state changes. You can route notifications to **multiple Slack channels** per repository, each with its own set of enabled topics, and receive **personal DMs** about your own PRs directly in Slack.
 
-<!-- TODO: replace with updated overview screenshot showing new multi-channel UI -->
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-10-21 at 4.32.54 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/slack-multi-channel.png" alt=""><figcaption></figcaption></figure>
 
 ## Installing the Trunk Slack App
 
@@ -23,11 +22,12 @@ Before you can set up channel notifications or personal DMs, a Slack workspace a
 3. Review and approve the requested permissions on the Slack OAuth screen.
 4. You'll be redirected back to Trunk. The page will show your workspace as **Connected** along with the workspace name.
 
-<!-- TODO: add screenshot of Settings > Organization > Slack page showing Add to Slack button -->
+<figure><img src="../.gitbook/assets/slack-workspace-connect.png" alt=""><figcaption>What the screen to connect Slack to your workspace will look like</figcaption></figure>
 
-<!-- TODO: add screenshot of Slack OAuth permission review screen -->
+<figure><img src="../.gitbook/assets/slack-workspace-oauth.png" alt=""><figcaption>What Slack's screen to install our Slack app will look like</figcaption></figure>
 
-<!-- TODO: add screenshot of connected state showing workspace name and Reconnect/Disconnect options -->
+<figure><img src="../.gitbook/assets/slack-workspace-connected.png" alt=""><figcaption>What you will see when the Slack app has been connected</figcaption></figure>
+
 
 ### Managing the Connection
 
@@ -55,9 +55,7 @@ Send merge queue updates to one or more shared Slack channels to keep your team 
 
 You can connect **multiple channels**, each with a different set of enabled topics. For example, you might send all notifications to a `#merge-notifications` channel while only sending failure alerts to a `#merge-queue-failures` channel.
 
-<!-- TODO: add screenshot of Slack Notifications panel showing connected channels list with Add Channel and Disconnect buttons -->
-
-<!-- TODO: add screenshot of Add Slack Channel modal with channel dropdown and notification topic toggles -->
+<figure><img src="../.gitbook/assets/slack-multiple-channels.png" alt=""><figcaption>An example where regular Merge Queue notifications are being sent to one channel, and failures to a specific channel to make them clear.</figcaption></figure>
 
 The channel list displays each connected channel along with a summary of how many notification topics are enabled (e.g., "6/9 enabled"). To remove an individual channel, click the trash icon next to it. To remove all channel connections for the repository, click **Disconnect**.
 
@@ -89,7 +87,7 @@ Personal notification setup is done from the **Trunk Slack app's Home tab** in S
 4. Connect your **GitHub account** from the Home tab. This is required for PR tracking and most notifications.
 5. Configure your notification preferences using the toggles on the Home tab.
 
-<!-- TODO: add screenshot of Slack Home tab showing Link Account button -->
+<figure><img src="../.gitbook/assets/slack-home-connect.png" alt=""><figcaption></figcaption></figure>
 
 ### Using the Trunk Web UI
 
@@ -99,7 +97,7 @@ You can also start setup from the Trunk web app, which will redirect you to Slac
 2. Under **Connect your Slack workspace**, verify your workspace is connected. If not, click **Go to Slack settings** to install the app first.
 3. Click **Open in Slack** to jump to the Trunk app's Home tab, where you'll link your account and configure notifications.
 
-<!-- TODO: add screenshot of Trunk web UI notifications page showing the two-step redirect flow -->
+<figure><img src="../.gitbook/assets/slack-dm-start-connection.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Tip:** Want to send notifications to a shared team channel instead? Check out the [Channel Notifications](integration-for-slack.md#channel-notifications) setup guide.
@@ -119,13 +117,9 @@ The Home tab displays the following sections:
 * **PRs in Queue** — Your PRs that are currently in the queue, with real-time status indicators (e.g., "Testing").
 * **Recently Merged PRs** — Your most recently merged PRs, with merge dates.
 * **Failed PRs** — Your PRs that failed in the queue.
-* **Notification Preferences** — Toggle buttons for all 9 notification topics. You can enable or disable individual notifications directly from Slack without visiting the web UI.
+* **Notification Preferences** — Toggle buttons for all notification topics. You can enable or disable individual notifications directly from Slack without visiting the web UI.
 
 All PR sections are grouped by repository and branch. Each PR entry shows the title, PR number, and a link to the GitHub PR. Data is shown across **all merge queues** you submit to, scoped to your PRs via your linked GitHub account.
-
-<!-- TODO: add screenshot of Home tab connected state showing account info and PR sections -->
-
-<!-- TODO: add screenshot of Home tab Notification Preferences toggles -->
 
 ### Linking Your Account
 
@@ -141,7 +135,7 @@ You can toggle notification topics on or off directly from the Home tab — no n
 
 <summary><strong>Do I need both GitHub and Slack connected to receive personal notifications?</strong></summary>
 
-Yes, both connections are required. Connect your GitHub account from the Trunk Slack app's **Home** tab — this links your PRs to your Trunk user account. Your Slack connection is established when you link your account from the Home tab, enabling direct messaging.
+Yes, both connections are required. Link your Trunk account from the Slack app's **Home** tab to establish the Slack connection, then connect your GitHub account from the same tab to link your PRs to your Trunk profile.  
 
 </details>
 
@@ -167,7 +161,7 @@ Yes. For personal notifications, toggle topics on or off from the Trunk Slack ap
 
 <details>
 
-<summary><strong>What happens if I disconnect my accounts?</strong></summary>
+<summary><strong>What happens if I disconnect my Slack account from my Trunk account?</strong></summary>
 
 You can unlink your account from the Trunk Slack app's Home tab using the **Unlink Account** button. Disconnecting stops personal Slack notifications. You can reconnect at any time by returning to the Home tab and clicking **Link Account**.
 
@@ -185,7 +179,7 @@ The Trunk app must first be [installed at the organization level](integration-fo
 
 Both channel and personal Slack notifications support the same notification topics. You can customize which events trigger notifications for each channel or for your personal DMs.
 
-<figure><img src="../.gitbook/assets/SCR-20260202-neph.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/slack-notification-topics.png" alt=""><figcaption></figcaption></figure>
 
 | Notification                                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
