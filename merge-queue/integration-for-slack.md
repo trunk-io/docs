@@ -22,11 +22,11 @@ Before you can set up channel notifications or personal DMs, a Slack workspace a
 3. Review and approve the requested permissions on the Slack OAuth screen.
 4. You'll be redirected back to Trunk. The page will show your workspace as **Connected** along with the workspace name.
 
-<figure><img src="../.gitbook/assets/slack-workspace-connect.png" alt=""><figcaption>What the screen to connect Slack to your workspace will look like</figcaption></figure>
+<figure><img src="../.gitbook/assets/slack-workspace-connect.png" alt=""><figcaption>Screen to connect Slack to your workspace</figcaption></figure>
 
-<figure><img src="../.gitbook/assets/slack-workspace-oauth.png" alt=""><figcaption>What Slack's screen to install our Slack app will look like</figcaption></figure>
+<figure><img src="../.gitbook/assets/slack-workspace-oauth.png" alt=""><figcaption>Slack's OAuth authorization screen for the Trunk app</figcaption></figure>
 
-<figure><img src="../.gitbook/assets/slack-workspace-connected.png" alt=""><figcaption>What you will see when the Slack app has been connected</figcaption></figure>
+<figure><img src="../.gitbook/assets/slack-workspace-connected.png" alt=""><figcaption>Trunk's UI after the Slack app has been connected</figcaption></figure>
 
 
 ### Managing the Connection
@@ -55,7 +55,7 @@ Send merge queue updates to one or more shared Slack channels to keep your team 
 
 You can connect **multiple channels**, each with a different set of enabled topics. For example, you might send all notifications to a `#merge-notifications` channel while only sending failure alerts to a `#merge-queue-failures` channel.
 
-<figure><img src="../.gitbook/assets/slack-multiple-channels.png" alt=""><figcaption>An example where regular Merge Queue notifications are being sent to one channel, and failures to a specific channel to make them clear.</figcaption></figure>
+<figure><img src="../.gitbook/assets/slack-multiple-channels.png" alt=""><figcaption>An example where all Merge Queue notifications go to one channel, and failures are routed to a dedicated channel for higher visibility.</figcaption></figure>
 
 The channel list displays each connected channel along with a summary of how many notification topics are enabled (e.g., "6/9 enabled"). To remove an individual channel, click the trash icon next to it. To remove all channel connections for the repository, click **Disconnect**.
 
