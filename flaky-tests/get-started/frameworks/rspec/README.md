@@ -92,7 +92,7 @@ These optoinal environment variables can be set in your project to change the be
 | `TRUNK_DRY_RUN`                   | Set to 'true' to save bundle locally instead of uploading |
 | `TRUNK_USE_UNCLONED_REPO`         | Set to 'true' for uncloned repo mode                      |
 | `TRUNK_LOCAL_UPLOAD_DIR`          | Directory to save test results locally (disables upload)  |
-| `DISABLE_RPSEC_TRUNK_FLAKY_TESTS` | Set to 'true' to completely disable Trunk                 |
+| `DISABLE_RSPEC_TRUNK_FLAKY_TESTS` | Set to 'true' to completely disable Trunk                 |
 
 ### Try It Locally
 
