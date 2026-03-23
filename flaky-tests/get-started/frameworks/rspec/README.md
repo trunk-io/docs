@@ -12,9 +12,9 @@ You can automatically [detect and manage flaky tests](../../../detection/) in yo
 
 By the end of this guide, you should achieve the following before proceeding to the [next steps](./#next-step) to configure your CI provider.
 
-* [ ] Set up and installed Trunk's RSpec plugin
-* [ ] Disable retries for better detection accuracy
-* [ ] Test uploads locally
+- [ ] Set up and installed Trunk's RSpec plugin
+- [ ] Disable retries for better detection accuracy
+- [ ] Test uploads locally
 
 {% hint style="info" %}
 Using the plugin is the best way to accurately detect flaky RSpec tests.
@@ -29,9 +29,11 @@ Trunk detects flaky tests by analyzing test reports automatically uploaded from 
 To install the plugin in your project, add the `rspec_trunk_flaky_tests` gem to your `Gemfile`:
 
 {% code title="Gemfile" %}
+
 ```shell
 gem "rspec_trunk_flaky_tests"
 ```
+
 {% endcode %}
 
 Install the plugin:
@@ -43,9 +45,11 @@ bundle install
 Then, load the plugin in `spec_helper.rb`:
 
 {% code title="spec/spec_helper.rb" %}
+
 ```shell
 require "trunk_spec_helper"
 ```
+
 {% endcode %}
 
 #### Disable Retries
@@ -79,16 +83,16 @@ These optoinal environment variables can be set in your project to change the be
 
 #### Configuration variables:
 
-| Argument                         | Description                                               |
-| -------------------------------- | --------------------------------------------------------- |
-| `TRUNK_CODEOWNERS_PATH`          | Path to CODEOWNERS file                                   |
-| `TRUNK_VARIANT`                  | Variant name for test results (e.g., 'linux', 'pr-123')   |
-| `TRUNK_DISABLE_QUARANTINING`     | Set to 'true' to disable quarantining                     |
-| `TRUNK_ALLOW_EMPTY_TEST_RESULTS` | Set to 'true' to allow empty results                      |
-| `TRUNK_DRY_RUN`                  | Set to 'true' to save bundle locally instead of uploading |
-| `TRUNK_USE_UNCLONED_REPO`        | Set to 'true' for uncloned repo mode                      |
-| `TRUNK_LOCAL_UPLOAD_DIR`         | Directory to save test results locally (disables upload)  |
-| `DISABLE_RPSEC_TRUNK_FLAY_TESTS` | Set to 'true' to completely disable Trunk                 |
+| Argument                          | Description                                               |
+| --------------------------------- | --------------------------------------------------------- |
+| `TRUNK_CODEOWNERS_PATH`           | Path to CODEOWNERS file                                   |
+| `TRUNK_VARIANT`                   | Variant name for test results (e.g., 'linux', 'pr-123')   |
+| `TRUNK_DISABLE_QUARANTINING`      | Set to 'true' to disable quarantining                     |
+| `TRUNK_ALLOW_EMPTY_TEST_RESULTS`  | Set to 'true' to allow empty results                      |
+| `TRUNK_DRY_RUN`                   | Set to 'true' to save bundle locally instead of uploading |
+| `TRUNK_USE_UNCLONED_REPO`         | Set to 'true' for uncloned repo mode                      |
+| `TRUNK_LOCAL_UPLOAD_DIR`          | Directory to save test results locally (disables upload)  |
+| `DISABLE_RSPEC_TRUNK_FLAKY_TESTS` | Set to 'true' to completely disable Trunk                 |
 
 ### Try It Locally
 
