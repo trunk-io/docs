@@ -142,7 +142,7 @@
 * [Overview](ci-autopilot/overview/README.md)
   * [Get Started](ci-autopilot/overview/get-started/README.md)
     * [Connect to GitHub](ci-autopilot/overview/get-started/connect-to-github.md)
-    * [Upload test reports](ci-autopilot/overview/get-started/upload-test-reports.md)
+    * [Upload test results](ci-autopilot/overview/get-started/upload-test-reports.md)
   * [Use CI Autopilot](ci-autopilot/overview/use-ci-autopilot/README.md)
     * [Understand root cause analysis](ci-autopilot/overview/use-ci-autopilot/understand-root-cause-analysis.md)
     * [Request fixes on PRs](ci-autopilot/overview/use-ci-autopilot/request-fixes-on-prs.md)

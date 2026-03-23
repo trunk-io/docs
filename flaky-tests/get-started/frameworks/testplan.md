@@ -19,7 +19,7 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating reports
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. Testplan can output JUnit XML reports which are compatible with Trunk. You can do so with the `--xml` option:
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. Testplan can output JUnit XML reports which are compatible with Trunk. You can do so with the `--xml` option:
 
 ```sh
 ./test_plan.py --xml
