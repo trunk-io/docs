@@ -25,7 +25,7 @@ You can add the new Slack Webhook URL to Svix by following these steps:
 
     <figure><img src="../../.gitbook/assets/example-webhook-connector-slack (1).png" alt=""><figcaption></figcaption></figure>
 5. Review the transformation code automatically generated for GitHub issues. You can customize this transformation at any time. Learn more about [customizing transformations](slack-integration.md#id-2.-customize-your-transformation).
-6. By default, this connection will send messages about Trunk Merge and Flaky Tests events. If you only want Flaky Test events, unselect all events other than `test_case.status_changed`.
+6. By default, this connection will send messages about Trunk Merge and Flaky Tests events. If you only want Flaky Tests events, unselect all events other than `test_case.status_changed`.
 7. Create the new endpoint. You will be redirected to the endpoint configuration view.
 
 If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).
