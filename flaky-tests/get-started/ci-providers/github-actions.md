@@ -173,7 +173,7 @@ jobs:
       with:
         junit-paths: &#x3C;TEST OUTPUT PATH>
         org-slug: my-trunk-org-slug
-        token: ${{ secrets.TRUNK_API_TOKEN }}
+        token: ${{ secrets.TRUNK_TOKEN }}
 </code></pre>
 
 If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter.
@@ -197,7 +197,7 @@ jobs:
           junit-paths: &#x3C;TEST OUTPUT PATH>
 <strong>          run: &#x3C;COMMAND TO RUN TESTS> # command to run tests goes here
 </strong>          org-slug: my-trunk-org-slug
-          token: ${{ secrets.TRUNK_API_TOKEN }}
+          token: ${{ secrets.TRUNK_TOKEN }}
 </code></pre>
 {% endtab %}
 
@@ -214,7 +214,7 @@ When quarantining is enabled, the `trunk-analytics-cli upload` command will **re
 </strong>|
     ./trunk-analytics-cli upload \
         --org-url-slug $TRUNK_ORG_SLUG \
-        --token $TRUNK_API_TOKEN \
+        --token $TRUNK_TOKEN \
         --junit-paths $JUNIT_PATH
 </code></pre>
 
@@ -226,7 +226,7 @@ You can also wrap the test command with the Trunk Analytics CLI. When wrapping t
 ```bash
 ./trunk-analytics-cli test \
     --org-url-slug <TRUNK_ORG_SLUG> \
-    --token $TRUNK_API_TOKEN \
+    --token $TRUNK_TOKEN \
     --junit-paths $JUNIT_PATH \
     --allow-empty-test-results \
     <Test Command>
@@ -284,7 +284,7 @@ If you want **direct links to individual job logs** instead of the workflow run,
         with:
           junit-paths: &#x3C;TEST OUTPUT PATH>
           org-slug: my-trunk-org-slug
-          token: ${{ secrets.TRUNK_API_TOKEN }}
+          token: ${{ secrets.TRUNK_TOKEN }}
 <strong>        env:
 </strong><strong>          JOB_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ steps.get-job-id.outputs.jobId }}
 </strong></code></pre>
@@ -325,7 +325,7 @@ jobs:
         with:
           junit-paths: junit.xml
           org-slug: my-trunk-org-slug
-          token: ${{ secrets.TRUNK_API_TOKEN }}
+          token: ${{ secrets.TRUNK_TOKEN }}
         env:
           JOB_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ steps.get-job-id.outputs.jobId }}
 ```
