@@ -2,9 +2,13 @@
 description: Learn how to use flaky test webhooks to power Slack notifications
 ---
 
-# Slack integration
+# Integration for Slack
 
 Trunk allows you to create custom workflows to send customized messages to Slack through webhooks.
+
+{% hint style="info" %}
+For details on how Trunk collects, manages, and stores your data, see our [Security and Privacy](../../setup-and-administration/security.md) page.
+{% endhint %}
 
 <figure><picture><source srcset="../../.gitbook/assets/example-slack-message (1).png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message.png" alt=""></picture><figcaption></figcaption></figure>
 
