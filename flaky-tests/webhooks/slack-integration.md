@@ -2,9 +2,13 @@
 description: Learn how to use flaky test webhooks to power Slack notifications
 ---
 
-# Slack integration
+# Integration for Slack
 
 Trunk allows you to create custom workflows to send customized messages to Slack through webhooks.
+
+{% hint style="info" %}
+For details on how Trunk collects, manages, and stores your data, see our [Security and Privacy](../../setup-and-administration/security.md) page.
+{% endhint %}
 
 <figure><picture><source srcset="../../.gitbook/assets/example-slack-message (1).png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -25,7 +29,7 @@ You can add the new Slack Webhook URL to Svix by following these steps:
 
     <figure><img src="../../.gitbook/assets/example-webhook-connector-slack (1).png" alt=""><figcaption></figcaption></figure>
 5. Review the transformation code automatically generated for GitHub issues. You can customize this transformation at any time. Learn more about [customizing transformations](slack-integration.md#id-2.-customize-your-transformation).
-6. By default, this connection will send messages about Trunk Merge and Flaky Tests events. If you only want Flaky Test events, unselect all events other than `test_case.status_changed`.
+6. By default, this connection will send messages about Trunk Merge and Flaky Tests events. If you only want Flaky Tests events, unselect all events other than `test_case.status_changed`.
 7. Create the new endpoint. You will be redirected to the endpoint configuration view.
 
 If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).

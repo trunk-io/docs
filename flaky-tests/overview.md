@@ -6,7 +6,7 @@ description: Detect, quarantine, and eliminates flaky tests from your codebase
 
 Trunk Flaky Tests lets your teams detect, track, quarantine, and fix **flaky tests** in your codebase. Trunk can also identify **broken tests** — tests failing consistently at a high rate that indicate real regressions needing immediate fixes, not just quarantining. Flaky Tests is language, environment, and framework-agnostic.
 
-Let's explore how Trunk Flaky Tests' features help you tackle Flaky Tests. If you can't wait to try Trunk, follow our [getting started guide](https://docs.trunk.io/flaky-tests/get-started).
+Let's explore how Trunk Flaky Tests' features help you tackle flaky tests. If you can't wait to try Trunk, follow our [getting started guide](https://docs.trunk.io/flaky-tests/get-started).
 
 You can see an overview of Trunk Flaky Tests in this video.
 
