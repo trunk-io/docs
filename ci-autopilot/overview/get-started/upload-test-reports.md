@@ -1,10 +1,10 @@
 ---
-description: Enhance CI Autopilot by uploading test reports
+description: Enhance CI Autopilot by uploading test results
 ---
 
-# Upload test reports
+# Upload test results
 
-By default, CI Autopilot analyzes general CI logs to identify failures. Adding structured test reports enables more precise, test-level analysis with better root cause identification and more targeted fix recommendations.
+By default, CI Autopilot analyzes general CI logs to identify failures. Adding structured test results enables more precise, test-level analysis with better root cause identification and more targeted fix recommendations.
 
 ### Prerequisites
 
@@ -26,7 +26,7 @@ Select test framework and follow the instructions to configure test reports: [fr
 
 **✅ Success: The test reports pass the validation checks**
 
-### Step 2 of 3: Configure GitHub Actions to upload test reports
+### Step 2 of 3: Configure GitHub Actions to upload test results
 
 {% hint style="warning" %}
 CI Autopilot currently only supports GitHub Actions.
@@ -34,9 +34,9 @@ CI Autopilot currently only supports GitHub Actions.
 
 Follow the setup guide to upload test results: [github-actions.md](../../../flaky-tests/get-started/ci-providers/github-actions.md "mention")
 
-**✅ Success: The updated workflow uploads test reports successfully**
+**✅ Success: The updated workflow uploads test results successfully**
 
-### Step 3 of 3: Confirm test reports are uploaded
+### Step 3 of 3: Confirm test results are uploaded
 
 {% hint style="info" %}
 A new Uploads view for CI Autopilot is currently in progress
@@ -50,4 +50,4 @@ Currently, the best way to validate test result uploads are successfully process
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-09-11 at 4.08.51 PM.png" alt="The uploads tab contains results received from past CI jobs."><figcaption><p>The uploads tab contains results received from past CI jobs</p></figcaption></figure>
 
-**✅ Success: The uploaded test reports are showing up in the uploads view**
+**✅ Success: The uploaded test results are showing up in the uploads view**

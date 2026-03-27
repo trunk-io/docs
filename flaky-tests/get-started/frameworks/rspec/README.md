@@ -24,7 +24,7 @@ You can also [manually generate and upload](manual-uploads.md) test results in R
 
 ### Installing the plugin
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. You can do this for your Rspec tests using Trunk's RSpec plugin.
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. You can do this for your Rspec tests using Trunk's RSpec plugin.
 
 To install the plugin in your project, add the `rspec_trunk_flaky_tests` gem to your `Gemfile`:
 

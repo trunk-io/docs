@@ -15,7 +15,7 @@ Trunk provides HTTP REST APIs for each of our features. The APIs use status code
 
 ## Authentication
 
-Authenticate to the API with an API key using the header `x-api-token`.
+Authenticate to the API with an API token using the header `x-api-token`.
 
 ### Finding your API token
 
