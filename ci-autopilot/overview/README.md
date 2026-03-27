@@ -68,7 +68,7 @@ Connect CI Autopilot to GitHub for immediate failure analysis from CI logs.
 
 #### [Enhanced Setup (+10 minutes)](get-started/upload-test-reports.md)
 
-Add structured test reports for precise, test-level analysis.
+Add structured test results for precise, test-level analysis.
 
 * ✅ Test-specific, targeted fixes
 * ✅ Better accuracy and detail

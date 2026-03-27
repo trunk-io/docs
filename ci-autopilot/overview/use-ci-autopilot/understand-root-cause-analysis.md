@@ -15,7 +15,7 @@ You'll know the analysis is complete when you see a comment from the `trunk-io` 
 Each comment includes the following details:
 
 * **Test summary**: A brief description of the issue
-* **Affected jobs or tests (when** [**test reports are uploaded**](../get-started/upload-test-reports.md)**)**: The jobs or a list of all the tests that failed with the same root-cause
+* **Affected jobs or tests (when** [**test results are uploaded**](../get-started/upload-test-reports.md)**)**: The jobs or a list of all the tests that failed with the same root-cause
 * **Root-cause**: An explanation of the root cause, what changes caused it, and the effects
 * **Proposed fixes:** Suggested code changes to fix the issue
 * **Autofix options:** Instructions on how to apply the fix - either as a stacked pull request
