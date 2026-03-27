@@ -6,13 +6,13 @@ description: >-
 
 # Dashboard
 
-Trunk Flaky Tests detect flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard.
+Trunk Flaky Tests detects flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard.
 
 ### Key repository metrics
 
 <figure><picture><source srcset="../.gitbook/assets/key-metrics-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/key-metrics-light.png" alt=""></picture><figcaption><p>Key repo metrics</p></figcaption></figure>
 
-Trunk Flaky Test provides key repo metrics based on the detected health status of your tests. You'll find metrics for the following information at the top of the Flaky Test dashboard.
+Trunk Flaky Tests provides key repo metrics based on the detected health status of your tests. You'll find metrics for the following information at the top of the Flaky Tests dashboard.
 
 <table><thead><tr><th width="209">Metric</th><th>Description</th></tr></thead><tbody><tr><td>Flaky tests</td><td>Number of flaky test cases in your repo.</td></tr><tr><td>PRs blocked by failed tests</td><td>PRs that have been blocked by failed tests in CI.</td></tr></tbody></table>
 
@@ -43,7 +43,7 @@ Test Deletion & History
 
 <figure><picture><source srcset="../.gitbook/assets/flaky-tests-failure-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-failure-details-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-You can _click_ on any of the test cases listed on the Flaky Test dashboard to access the test case’s details. On a test's details page, you can find:
+You can _click_ on any of the test cases listed on the Flaky Tests dashboard to access the test case’s details. On a test's details page, you can find:
 
 * The test's current status (Healthy, Flaky, or Broken)
 * Which monitors are currently active for the test, and which monitor triggered each status change

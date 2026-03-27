@@ -19,7 +19,7 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating reports
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. Testplan can output JUnit XML reports which are compatible with Trunk. You can do so with the `--xml` option:
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. Testplan can output JUnit XML reports which are compatible with Trunk. You can do so with the `--xml` option:
 
 ```sh
 ./test_plan.py --xml
@@ -79,7 +79,7 @@ pool = ThreadPool(name="MyPool", allow_task_rerun=False)
 
 #### The Validate Command
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

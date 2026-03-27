@@ -13,7 +13,7 @@ Manage queue behavior, GitHub integration, CI/CD configuration, and user prefere
 
 ### Integrations
 
-[**Slack integration**](../integration-for-slack.md)\
+[**Integration for Slack**](../integration-for-slack.md)\
 Send real-time queue notifications to Slack channels.
 
 [**Webhooks**](../webhooks.md)\

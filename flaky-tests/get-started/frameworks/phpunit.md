@@ -20,7 +20,7 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. You can do this by generating Trunk-compatible XML reports from your test runs.
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. You can do this by generating Trunk-compatible XML reports from your test runs.
 
 To generate XML reports, append `--log-junit junit.xml` to your `phpunit` test command:
 
@@ -42,7 +42,7 @@ PHPUnit doesn't support retries out of the box, but if you implemented retries, 
 
 #### **The Validate Command**
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

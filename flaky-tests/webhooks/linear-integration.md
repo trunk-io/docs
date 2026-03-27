@@ -1,5 +1,5 @@
 ---
-description: Learn how to automatically create Linear issues with Flaky Test webhooks
+description: Learn how to automatically create Linear issues with Flaky Tests webhooks
 ---
 
 # Linear integration

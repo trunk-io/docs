@@ -6,7 +6,7 @@ description: Configure Flaky Tests detection using a GitHub Action
 
 Before you start these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing Trunk-compatible reports for your test runner.
 
-Trunk Flaky Tests integrates with your CI by adding a step in your GitHub Action workflow to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your GitHub Action workflow to upload tests with the [Trunk Analytics CLI](../../uploader.md).
 
 Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing a Trunk-compatible output for your test framework.
 
@@ -27,15 +27,15 @@ Before setting up uploads to Trunk, you must sign in to [app.trunk.io](https://a
 
 #### Trunk Slug
 
-You can find your organization slug under **Settings > Organization > General > Organization > Name**. You'll save this as a variable in CI in a later step.
+You can find your organization slug under **Settings > Organization > Manage > Organization Name > Slug**. You'll save this as a variable in CI in a later step.
 
 #### Trunk Token
 
-You can find your token under **Settings > Organization > General > API > API Key**. Since this is a secret, do not leak it publicly. Ensure you get your _organization token_, not your project/repo token.
+You can find your token under **Settings > Organization > Manage > Organization API Token > View Organization API Token > View**. Since this is a secret, do not leak it publicly. Ensure you get your _organization token_, not your project/repo token.
 
 ### Add Your Trunk Token and Organization Slug as Secrets
 
-Store the Trunk slug and API token obtained in the previous step in your repo as [GitHub secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_ORG_URL_SLUG` and `TRUNK_API_TOKEN` respectively.
+Store the Trunk slug and API token obtained in the previous step in your repo as [GitHub secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_ORG_URL_SLUG` and `TRUNK_TOKEN` respectively.
 
 ### Upload to Trunk
 
@@ -173,7 +173,7 @@ jobs:
       with:
         junit-paths: &#x3C;TEST OUTPUT PATH>
         org-slug: my-trunk-org-slug
-        token: ${{ secrets.TRUNK_API_TOKEN }}
+        token: ${{ secrets.TRUNK_TOKEN }}
 </code></pre>
 
 If you want to run the test command and upload in a single step, the test command must be **run via the Analytics Uploader** through the `run: <COMMAND TO RUN TESTS>` parameter.
@@ -197,36 +197,36 @@ jobs:
           junit-paths: &#x3C;TEST OUTPUT PATH>
 <strong>          run: &#x3C;COMMAND TO RUN TESTS> # command to run tests goes here
 </strong>          org-slug: my-trunk-org-slug
-          token: ${{ secrets.TRUNK_API_TOKEN }}
+          token: ${{ secrets.TRUNK_TOKEN }}
 </code></pre>
 {% endtab %}
 
-{% tab title="Using The Trunk CLI Directly" %}
+{% tab title="Using The Trunk Analytics CLI Directly" %}
 **Using Flaky Tests as a separate step**
 
 {% hint style="warning" %}
 If you upload your test results as a second step after you run your tests, you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests.&#x20;
 
-When quarantining is enabled, the `flakytests upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
+When quarantining is enabled, the `trunk-analytics-cli upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
 {% endhint %}
 
 <pre class="language-bash"><code class="lang-bash"><strong>&#x3C;run my tests> || true # doesn't fail job on failure
 </strong>|
-    ./trunk flakytests upload \
+    ./trunk-analytics-cli upload \
         --org-url-slug $TRUNK_ORG_SLUG \
-        --token $TRUNK_API_TOKEN \
+        --token $TRUNK_TOKEN \
         --junit-paths $JUNIT_PATH
 </code></pre>
 
 **Using Flaky Tests as a single step**
 
-You can also wrap the test command with the Trunk CLI. When wrapping the command with the Trunk CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code `0`.
+You can also wrap the test command with the Trunk Analytics CLI. When wrapping the command with the Trunk Analytics CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code `0`.
 
 {% code overflow="wrap" %}
 ```bash
-./trunk flakytests test \
+./trunk-analytics-cli test \
     --org-url-slug <TRUNK_ORG_SLUG> \
-    --token $TRUNK_API_TOKEN \
+    --token $TRUNK_TOKEN \
     --junit-paths $JUNIT_PATH \
     --allow-empty-test-results \
     <Test Command>
@@ -284,7 +284,7 @@ If you want **direct links to individual job logs** instead of the workflow run,
         with:
           junit-paths: &#x3C;TEST OUTPUT PATH>
           org-slug: my-trunk-org-slug
-          token: ${{ secrets.TRUNK_API_TOKEN }}
+          token: ${{ secrets.TRUNK_TOKEN }}
 <strong>        env:
 </strong><strong>          JOB_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ steps.get-job-id.outputs.jobId }}
 </strong></code></pre>
@@ -325,7 +325,7 @@ jobs:
         with:
           junit-paths: junit.xml
           org-slug: my-trunk-org-slug
-          token: ${{ secrets.TRUNK_API_TOKEN }}
+          token: ${{ secrets.TRUNK_TOKEN }}
         env:
           JOB_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ steps.get-job-id.outputs.jobId }}
 ```

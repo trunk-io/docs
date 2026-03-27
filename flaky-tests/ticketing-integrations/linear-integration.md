@@ -36,7 +36,7 @@ Selecting _Full Access_ will also grant the required permissions.
 
 You can create a new ticket for any test listed in Flaky Tests.&#x20;
 
-There are 2 ways to create a new ticket in the Flaky Test dashboard:
+There are 2 ways to create a new ticket in the Flaky Tests dashboard:
 
 * Click on the options menu for any test case on the repo overview dashboard
 

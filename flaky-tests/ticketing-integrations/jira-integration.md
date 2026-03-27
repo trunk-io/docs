@@ -70,7 +70,7 @@ Jira tokens cannot last longer than 365 days. Once the token expires, you will n
 
 You can create a new ticket for any test listed in Trunk Flaky Tests.
 
-There are 2 ways to create a new ticket in the Flaky Test dashboard:
+There are 2 ways to create a new ticket in the Flaky Tests dashboard:
 
 * Click on the options menu for any test case on the repo overview dashboard
 

@@ -4,7 +4,7 @@ description: Configure Atlassian Bamboo to upload test results to Trunk Flaky Te
 
 # Atlassian Bamboo
 
-Trunk Flaky Tests integrates with your CI by adding a step in your Bamboo Plans to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your Bamboo Plans to upload tests with the [Trunk Analytics CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
@@ -79,9 +79,9 @@ Run Tests and Upload to Trunk:
     - script:
         name: Upload Test Results to Trunk.io
         body: |
-          curl -fsSLO --retry 3 https://trunk.io/releases/trunk
-          chmod +x ./trunk
-          ./trunk flakytests upload \
+          curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
+          chmod +x trunk-analytics-cli
+          ./trunk-analytics-cli upload \
             --junit-paths "<XML_GLOB_PATH>" \
             --org-url-slug ${bamboo.TRUNK_ORG_SLUG} \
             --token ${bamboo.TRUNK_TOKEN}
@@ -115,9 +115,9 @@ Run Tests and Upload to Trunk:
     - script:
         name: Upload Test Results to Trunk.io
         body: |
-          curl -fsSLO --retry 3 https://trunk.io/releases/trunk
-          chmod +x ./trunk
-          ./trunk flakytests upload \
+          curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
+          chmod +x trunk-analytics-cli
+          ./trunk-analytics-cli upload \
             --bazel-bep-path <BEP_JSON_PATH> \
             --org-url-slug ${bamboo.TRUNK_ORG_SLUG} \
             --token ${bamboo.TRUNK_TOKEN}
@@ -151,9 +151,9 @@ Run Tests and Upload to Trunk:
     - script:
         name: Upload Test Results to Trunk.io
         body: |
-          curl -fsSLO --retry 3 https://trunk.io/releases/trunk
-          chmod +x ./trunk
-          ./trunk flakytests upload \
+          curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
+          chmod +x trunk-analytics-cli
+          ./trunk-analytics-cli upload \
             --xcresult-path <XCRESULT_PATH> \
             --org-url-slug ${bamboo.TRUNK_ORG_SLUG} \
             --token ${bamboo.TRUNK_TOKEN}
@@ -176,10 +176,15 @@ branches:
       accept-fork: false
 ```
 
-Bamboo automatically sets the `bamboo_repository_pr_key` variable on PR builds, which the Trunk CLI uses to associate uploads with the correct pull request.
+Bamboo automatically sets the `bamboo_repository_pr_key` variable on PR builds, which the Trunk Analytics CLI uses to associate uploads with the correct pull request.
 
 {% hint style="info" %}
 **PR number not detected?** If your Bamboo setup does not set `bamboo_repository_pr_key`, you can override it by passing the `--pr-number` flag or setting the `TRUNK_PR_NUMBER` environment variable when running the upload command.
+{% endhint %}
+
+
+{% hint style="info" %}
+The examples above use the Linux x64 binary. If your CI runs on a different platform, see the [Trunk Analytics CLI](../../uploader.md#manual-download) page for all available platform downloads.
 {% endhint %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.

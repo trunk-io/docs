@@ -8,7 +8,7 @@ If you're setting up Trunk Flaky Tests for the first time, you can follow the gu
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guides by Test Frameworks</td><td></td><td></td><td><a href="get-started/frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="get-started/ci-providers/">ci-providers</a></td></tr></tbody></table>
 
-The CLI should be **downloaded as part of your test workflow** in your CI system. The automatic launcher is platform agnostic and will download the latest version of the uploader for your platform.
+The CLI should be **downloaded as part of your test workflow** in your CI system. You can download the appropriate binary for your platform directly from the [GitHub releases page](https://github.com/trunk-io/analytics-cli/releases).
 
 ### Manual Download
 
@@ -82,7 +82,7 @@ You can find your organization slug and token by going to **Settings** > **Manag
 The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as flaky.
 {% endhint %}
 
-Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `./trunk flakytest upload` command like this:
+Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `./trunk-analytics-cli upload` command like this:
 
 {% tabs %}
 {% tab title="XML" %}
@@ -99,7 +99,7 @@ Trunk can accept JUnit XMLs through the `--junit-paths` argument:
 Trunk can accept Bazel through the `--bazel-bep-path` argument:
 
 ```
-./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> \
+./trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -109,7 +109,7 @@ Trunk can accept Bazel through the `--bazel-bep-path` argument:
 Trunk can accept XCode through the `--xcresult-path` argument:
 
 ```
-./trunk flakytests upload --xcresult-path <XCRESULT_PATH> \
+./trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -126,7 +126,7 @@ You can specify a variant during upload using the `--variant` option:
 
 {% code title="Upload an iOS variant " %}
 ```
-./trunk flakytests upload --junit-paths "test_output.xml" \
+./trunk-analytics-cli upload --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN \
    --variant ios
@@ -141,7 +141,7 @@ Variant names are displayed in brackets next to test names in your dashboard:
 
 You can also execute tests and upload results to Trunk in a single step using the `test` command to **wrap** your test command.
 
-This is especially useful for [Quarantining](quarantining.md), where the Trunk CLI will **override the exit code** of the test command if all failures can be quarantined, **preventing** flaky tests from failing your builds in CI.
+This is especially useful for [Quarantining](quarantining.md), where the Trunk Analytics CLI will **override the exit code** of the test command if all failures can be quarantined, **preventing** flaky tests from failing your builds in CI.
 
 {% tabs %}
 {% tab title="XML" %}

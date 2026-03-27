@@ -12,7 +12,7 @@ Trunk Flaky Tests is designed to be test framework agnostic. If you don't see a 
 
 Trunk detects flaky tests by analyzing each test case's results over time. Trunk currently supports the JUnit XML and XCResult report formats. You will need to configure your test runner to report in one of these formats using a plugin or your own test result reporter.
 
-Make sure your tests reports accurately report the file name, test name, and stack trace of each test result. Make sure the test names are not randomized. These details help Trunk better detect and display your test cases' health status.
+Make sure your test reports accurately report the file name, test name, and stack trace of each test result. Make sure the test names are not randomized. These details help Trunk better detect and display your test cases' health status.
 
 ## 2. Output Location
 
@@ -20,9 +20,9 @@ You'll need to validate and upload the generated JUnit files to Trunk later duri
 
 ## 3. Validate Your Reports
 
-Since you'll be generating JUnit reports using a new plugin or custom reporter, you should use the Trunk CLI to validate your results and fix any warnings or errors.
+Since you'll be generating JUnit reports using a new plugin or custom reporter, you should use the Trunk Analytics CLI to validate your results and fix any warnings or errors.
 
-You can install the Trunk CLI locally like this:
+You can install the Trunk Analytics CLI locally like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}
@@ -70,7 +70,7 @@ chmod +x trunk-analytics-cli
 {% endtab %}
 {% endtabs %}
 
-Then, you can validate the results using the `trunk flakytests validate` command like this:
+Then, you can validate the results using the `trunk-analytics-cli validate` command like this:
 
 ```bash
 ./trunk-analytics-cli validate --junit-paths <PATH_TO_REPORTS>

@@ -20,7 +20,7 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. You can do this by generating JUnit XML reports from your test runs.
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. You can do this by generating JUnit XML reports from your test runs.
 
 In your CI job, update your `pytest` command to include the `--junit-xml` and `junit_family=xunit1` arguments to generate XML reports:
 
@@ -42,7 +42,7 @@ Omit the [`--lf` or `--ff` options](https://docs.pytest.org/en/stable/how-to/cac
 
 ### Try It Locally
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}
