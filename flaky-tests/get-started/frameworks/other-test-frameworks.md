@@ -12,7 +12,7 @@ Trunk Flaky Tests is designed to be test framework agnostic. If you don't see a 
 
 Trunk detects flaky tests by analyzing each test case's results over time. Trunk currently supports the JUnit XML and XCResult report formats. You will need to configure your test runner to report in one of these formats using a plugin or your own test result reporter.
 
-Make sure your tests reports accurately report the file name, test name, and stack trace of each test result. Make sure the test names are not randomized. These details help Trunk better detect and display your test cases' health status.
+Make sure your test reports accurately report the file name, test name, and stack trace of each test result. Make sure the test names are not randomized. These details help Trunk better detect and display your test cases' health status.
 
 ## 2. Output Location
 

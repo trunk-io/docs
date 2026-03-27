@@ -19,7 +19,7 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. Behave can output JUnit XML reports which are compatible with Trunk. You can do so with the `--junit` option:
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. Behave can output JUnit XML reports which are compatible with Trunk. You can do so with the `--junit` option:
 
 ```sh
 behave --junit
