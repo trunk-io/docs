@@ -112,6 +112,7 @@
   * [Microsoft Teams integration](flaky-tests/webhooks/microsoft-teams-integration.md)
   * [GitHub Issues integration](flaky-tests/webhooks/github-issues-integration.md)
   * [Linear integration](flaky-tests/webhooks/linear-integration.md)
+  * [Jira integration](flaky-tests/webhooks/jira-integration.md)
 * [Flaky Tests API](flaky-tests/flaky-tests.md)
 * [Trunk Analytics CLI](flaky-tests/uploader.md)
 * [Use MCP Server](flaky-tests/use-mcp-server/README.md)
