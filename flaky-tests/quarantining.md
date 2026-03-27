@@ -10,6 +10,10 @@ description: Mitigate impact of known flaky tests by isolating them at run time
 
 **Why use quarantining:** It acts as a crucial stopgap, minimizing the disruption from known flaky tests while your team works on fixing them. By quarantining flaky tests, you unblock critical CI pipelines—**especially your merge queue**—and regain development velocity without losing visibility, as these tests continue to run and upload results. This constant stream of data allows you to prioritize fixing the worst offenders based on their ongoing impact.
 
+{% hint style="warning" %}
+**Broken tests are not quarantine candidates.** Quarantining is designed for flaky tests — tests that intermittently fail and can be safely skipped to unblock CI while being investigated. A broken test represents a real failure that should not be hidden from CI results. Only tests with a **Flaky** status are eligible for auto-quarantine.
+{% endhint %}
+
 ### What does "Quarantined" mean?
 
 A quarantined test continues running in CI and uploading results to Trunk Flaky Tests, but its failures won't block your pipeline. The [Trunk Analytics CLI](uploader.md) checks with Trunk's backend to determine if failed tests are quarantined, then overrides the exit code for those failures. When all failures in a CI job come from quarantined tests, the entire job passes.
@@ -21,9 +25,9 @@ A quarantined test continues running in CI and uploading results to Trunk Flaky 
 Tests can be quarantined through two methods:
 
 1. **Manual Quarantine** - You explicitly select specific tests using override settings
-2. **Auto-Quarantine** (when enabled) - Tests already flagged by [Trunk's flaky detection](detection.md) are automatically quarantined
+2. **Auto-Quarantine** (when enabled) - Tests already flagged by [Trunk's flaky detection](detection/) are automatically quarantined
 
-Tests are auto-quarantined only if detected as flaky or [flagged as flaky](detection.md#flag-as-flaky) manually. For [manually quarantined tests](quarantining.md#overriding-individual-tests), all failures are quarantined regardless of test state.
+Tests are auto-quarantined only if detected as **flaky** or [flagged as flaky](detection/flag-as-flaky.md) manually. Tests with a **Broken** status are not auto-quarantined — they represent real failures that should be investigated and fixed. For [manually quarantined tests](quarantining.md#overriding-individual-tests), all failures are quarantined regardless of test state.
 
 ### Enable quarantining
 
@@ -59,9 +63,9 @@ Wrap each command and specify its JUnit output path. Trunk captures the exit cod
 
 ```bash
 # run test 1
-trunk flakytests test --org-url-slug=[org] --token=[token] --junit-paths=test1_output/*.xml -- npm run test1
+./trunk-analytics-cli test --org-url-slug=[org] --token=[token] --junit-paths=test1_output/*.xml -- npm run test1
 # run test 2
-trunk flakytests test --org-url-slug=[org] --token=[token] --junit-paths=test2_output/*.xml -- npm run test2
+./trunk-analytics-cli test --org-url-slug=[org] --token=[token] --junit-paths=test2_output/*.xml -- npm run test2
 ```
 
 **Option 2: Handling quarantining during upload**
@@ -75,7 +79,7 @@ To handle build issues that occur outside test runs, use the --test-process-exit
 **Example**
 
 ```sh
-./trunk flakytests test --junit-paths "test_output.xml" \
+./trunk-analytics-cli test --junit-paths "test_output.xml" \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN \
    --junit-paths="**/results/*.xml" \
@@ -90,9 +94,9 @@ The CLI only recognizes tests defined in JUnit. If multiple test executions occu
 
 ### Updates in CI
 
-If you're using the provided [GitHub Actions workflow](get-started/ci-providers/) to upload test results to Flaky Test, you can quarantine flaky tests by wrapping the test command or as a follow-up step.
+If you're using the provided [GitHub Actions workflow](get-started/ci-providers/) to upload test results to Flaky Tests, you can quarantine flaky tests by wrapping the test command or as a follow-up step.
 
-If you're using the Trunk CLI directly or other CI providers, check the instructions in the **Using The Trunk CLI Directly** tab.
+If you're using the Trunk Analytics CLI directly or other CI providers, check the instructions in the **Using The Trunk Analytics CLI Directly** tab.
 
 {% tabs %}
 {% tab title="GitHub Actions Workflow" %}
@@ -153,15 +157,15 @@ jobs:
 {% endcode %}
 {% endtab %}
 
-{% tab title="Using The Trunk CLI Directly" %}
+{% tab title="Using The Trunk Analytics CLI Directly" %}
 **Using Flaky Tests as a separate step**
 
-If you upload your test results as a second step after you run your tests, you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled, the `flakytests upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
+If you upload your test results as a second step after you run your tests, you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests. When quarantining is enabled, the `trunk-analytics-cli upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
 
 ```bash
 <run my tests> || true # doesn't fail job on failure
 |
-    ./trunk flakytests upload \
+    ./trunk-analytics-cli upload \
         --org-url-slug $TRUNK_ORG_SLUG \
         --token $TRUNK_API_TOKEN \
         --junit-paths $JUNIT_PATH
@@ -169,11 +173,11 @@ If you upload your test results as a second step after you run your tests, you n
 
 **Using Flaky Tests as a single step**
 
-You can also wrap the test command with the Trunk CLI. When wrapping the command with the Trunk CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code 0.
+You can also wrap the test command with the Trunk Analytics CLI. When wrapping the command with the Trunk Analytics CLI, if there are unquarantined tests, the command will return an error. If there are no unquarantined tests, the command will return a status code 0.
 
 {% code overflow="wrap" %}
 ```bash
-./trunk flakytests test \
+./trunk-analytics-cli test \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token $TRUNK_API_TOKEN \
     --junit-paths $JUNIT_PATH \

@@ -4,7 +4,7 @@ description: A guide for generating Trunk-compatible test reports for Nightwatch
 
 # Nightwatch
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Nightwatch projects by integrating with Trunk. This document explains how to configure Nightwatch to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Nightwatch projects by integrating with Trunk. This document explains how to configure Nightwatch to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
@@ -56,7 +56,7 @@ Nightwatch doesn't implement any form of automatic retry for failed or flaky tes
 
 #### **The Validate Command**
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

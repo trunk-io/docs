@@ -1,5 +1,5 @@
 ---
-description: Learn how to automatically create GitHub Issues with Flaky Test webhooks
+description: Learn how to automatically create GitHub Issues with Flaky Tests webhooks
 ---
 
 # GitHub Issues integration
@@ -8,7 +8,7 @@ Trunk allows you to automate GitHub Issue creation through webhooks. This will a
 
 <figure><img src="../../.gitbook/assets/example-webhook-github-issue-light.png" alt=""><figcaption><p>GitHub Issue created automatically with webhooks.</p></figcaption></figure>
 
-This guide will walk you through integrating Trunk Flaky Tests with GitHub Issues through webhooks. You will be able to automatically generate GitHub issues for new flaky or broken tests. This guide should take 15 minutes to complete.
+This guide will walk you through integrating Trunk Flaky Tests with GitHub Issues through webhooks. You will be able to automatically generate GitHub issues for new flaky tests. This guide should take 15 minutes to complete.
 
 ### 1. Create a GitHub Token
 
@@ -68,6 +68,10 @@ The generated webhook template contains several configurable constants out of th
 <table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>GITHUB_ISSUE_LABEL_IDS</code></td><td><strong>(Optional)</strong> GitHub labels that will be assigned to issues created by Trunk.</td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>.<br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
 
 Here is the provided transformation for context. You can customize your GitHub Issues integration by following the [GitHub](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
+
+{% hint style="info" %}
+The default transformation only creates issues when `newStatus === "flaky"`. If you also want to create issues for tests marked as **Broken** (consistently failing at a high rate), update the filter condition. For example, change `newStatus !== "flaky"` to `newStatus !== "flaky" && newStatus !== "broken"` to handle both statuses.
+{% endhint %}
 
 {% code lineNumbers="true" %}
 ```javascript

@@ -10,7 +10,7 @@ Trunk provides webhooks for you to build custom integrations to automate workflo
 
 ### Supported Events
 
-Trunk lets you create custom workflows with **event-triggered webhooks**. Flaky Test events are named with a `test_case` prefix. You can find all the events that Trunk supports in the event catalog:
+Trunk lets you create custom workflows with **event-triggered webhooks**. Flaky Tests events are named with a `test_case` prefix. You can find all the events that Trunk supports in the event catalog:
 
 {% embed url="https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed" %}
 

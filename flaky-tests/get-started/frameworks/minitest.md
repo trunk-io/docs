@@ -5,7 +5,7 @@ description: A guide for generating Trunk-compatible test reports for minitest
 
 # minitest
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your minitest projects by integrating with Trunk. This document explains how to configure minitest to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your minitest projects by integrating with Trunk. This document explains how to configure minitest to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
@@ -57,7 +57,7 @@ Minitest doesn't support retries out of the box, but if you implemented retries 
 
 #### **The Validate Command**
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

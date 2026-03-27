@@ -8,10 +8,6 @@ Trunk Flaky Tests detects flaky tests by analyzing test results from your CI run
 * Ability to modify repository CI configuration and add secrets
 * Tests running in CI on both PRs and stable branches (e.g., main)
 
-{% hint style="info" %}
-GitLab and BitBucket support is experimental. [Contact us](mailto:support@trunk.io) if not using GitHub.
-{% endhint %}
-
 #### Step 1: Ensure JUnit XML output
 
 Trunk ingests test results in JUnit XML format. If your CI already generates JUnit XML, note the file paths and skip to Step 2.
@@ -37,26 +33,25 @@ Uploads from both PRs and stable branches are required for accurate flaky test d
 
 1. Push your changes and trigger a CI run
 2. Check CI logs for successful upload confirmation
-3. **Wait 15-30 minutes** for results to process, then verify uploads appear at [app.trunk.io](https://app.trunk.io) → your repo → **Flaky Tests > Uploads**
+3. Results typically appear within a few minutes. Verify uploads appear at [app.trunk.io](https://app.trunk.io) → your repo → **Flaky Tests > Uploads**
 
 <figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-11-11 at 3.57.57 PM.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2025-11-11 at 3.58.16 PM.png" alt=""></picture><figcaption><p>Uploads tab</p></figcaption></figure>
 
-#### Detection timeline
+#### Step 4: Configure flake detection
 
-Trunk requires **10+ runs per test** to start detecting flaky tests accurately. Depending on your CI velocity, this takes hours to days. High-velocity repos (100+ runs/day) may see first detections within a day.
+After uploads are flowing, navigate to your repo → **Flaky Tests > Monitors** to set up detection.
 
-You'll receive email notification when the first flaky test is detected.
+**Pass-on-retry** is enabled by default and is the recommended baseline for everyone. It catches the most common flakiness pattern — a test that fails and then passes on retry within the same commit — without any configuration needed.
 
-[How Trunk detects flaky tests →](../detection.md)
+**Threshold monitors** let you detect flakiness based on failure rate over a rolling time window. How you configure them depends on your CI setup:
+
+- **If tests must pass before merging to main**, set up a threshold monitor scoped to `main` to catch an elevated failure rate. For example, if you run tests 5 times per day on `main`, a 24-hour rolling window with a minimum of 4 runs and a failure threshold of 25% is a reasonable starting point. This ensures the monitor has enough data before flagging anything.
+- **If you use a merge queue**, consider a dedicated monitor scoped to your merge queue branches (e.g., `trunk-merge/*` or `gh-readonly-queue/*`). Failures here are especially suspicious since the code has already passed PR checks, so a low threshold is appropriate.
+
+[How threshold monitors work →](../detection/threshold-monitor.md)
 
 #### Quarantining
 
-Override exit codes for known flaky test failures, allowing CI jobs to pass while tests continue running and uploading results. Requires both UI configuration and CI job modifications.
-
-**Use case:** Unblock merge queues and critical pipelines without losing test coverage or data.
-
-{% hint style="warning" %}
-**Advanced feature:** Enable only after detection is working reliably. Quarantining significantly changes CI behavior.
-{% endhint %}
+Quarantining suppresses failures from known flaky tests, preventing them from forcing CI re-runs or blocking your merge queue. Flaky tests continue to run and report results — they just don't cause pipeline failures while your team works on fixes. This is especially valuable for unblocking merge queues and keeping development velocity high.
 
 [Configure Quarantining →](../quarantining.md)

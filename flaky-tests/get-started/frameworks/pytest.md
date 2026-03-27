@@ -5,7 +5,7 @@ description: A guide for generating Trunk-compatible test reports for Pytest
 
 # Pytest
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Pytest projects by integrating with Trunk. This document explains how to configure Pytest to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Pytest projects by integrating with Trunk. This document explains how to configure Pytest to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
@@ -42,7 +42,7 @@ Omit the [`--lf` or `--ff` options](https://docs.pytest.org/en/stable/how-to/cac
 
 ### Try It Locally
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

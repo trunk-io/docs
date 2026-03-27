@@ -1,5 +1,5 @@
 ---
-description: Learn how to automatically create Linear issues with Flaky Test webhooks
+description: Learn how to automatically create Linear issues with Flaky Tests webhooks
 ---
 
 # Linear integration
@@ -176,6 +176,10 @@ The generated webhook template contains several configurable constants out of th
 <table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>LINEAR_TEAM_ID</code></td><td>(<strong>Required)</strong> Your Linear team ID. <a href="linear-integration.md#team-id">Learn about finding your team ID</a>.</td></tr><tr><td><code>LINEAR_PROJECT_ID</code></td><td><strong>(Optional)</strong> The Linear project ID assigned to new issues. <a href="linear-integration.md#project-id">Learn more about finding your project ID</a>.</td></tr><tr><td><code>LINEAR_LABEL_IDS</code></td><td>(<strong>Optional)</strong> Array of label IDs assigned to new issues. <a href="linear-integration.md#team-id">Learn about finding your l</a><a href="linear-integration.md#label-id">abel IDs</a>.</td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>.<br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
 
 Here is the provided transformation for context. You can customize your Linear Issues integration by following the[ Linear API](https://studio.apollographql.com/public/Linear-API/variant/current/schema/reference) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
+
+{% hint style="info" %}
+The default transformation only creates issues when `newStatus === "flaky"`. If you also want to create issues for tests marked as **Broken** (consistently failing at a high rate), update the filter condition. For example, change `newStatus !== "flaky"` to `newStatus !== "flaky" && newStatus !== "broken"` to handle both statuses.
+{% endhint %}
 
 ```javascript
 /**

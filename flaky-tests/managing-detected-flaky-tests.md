@@ -11,7 +11,7 @@ It is important to have a follow-up process in place to manage detected flaky te
 This guide walks through Trunk's recommended best practices for building a process around detected flaky tests in your organization.
 
 {% hint style="info" %}
-Flaky tests will be [automatically detected](detection.md) by Trunk after you:
+Flaky tests will be [automatically detected](detection/) by Trunk after you:
 
 * [Set up your test framework](get-started/frameworks/) to produce test reports
 * [Integrated with your CI provider](get-started/ci-providers/) to upload those reports on CI runs.
@@ -79,6 +79,10 @@ Flaky tests slow down CI and have a high negative impact on merge queue throughp
 
 After quarantining a test, Trunk will ignore the test result (pass/fail) on CI runs, preventing this flaky test from failing CI.
 
+{% hint style="info" %}
+**Broken tests are not quarantine candidates.** Only tests with a **Flaky** status are eligible for quarantine. If a test is marked as Broken (consistently failing at a high rate), it represents a real regression that should be investigated and fixed rather than hidden. See [detection](detection/) to understand the difference between flaky and broken tests.
+{% endhint %}
+
 ### Step 6: Automation
 
 Trunk has [webhooks](webhooks/) and [Flaky Tests APIs](flaky-tests.md) that can be used to build custom workflows around ticket creation, linking existing tickets to Trunk, sending notifications, and dealing with quarantined tests.
@@ -91,11 +95,11 @@ There is also built-in automation support that handles tasks such as assigning f
 
 You can customize how flaky and quarantined tests are handled to suit your team and organization best.
 
-### Step 7: Review existing flakes
+### Step 7: Review existing flakes and broken tests
 
-It is important to track and triage existing flaky tests over time. Trunk collects historical failure logs and stack traces for flaky tests, providing developers as much information as possible for debugging high-impact flaky tests.
+It is important to track and triage existing flaky and broken tests over time. Trunk collects historical failure logs and stack traces, providing developers as much information as possible for debugging high-impact test failures.
 
-* Review all new flaky tests to determine their impact and the urgency of a fix.
+* Review all new flaky and broken tests to determine their impact and the urgency of a fix. Broken tests (consistently failing at a high rate) should typically be prioritized over flaky tests as they represent real regressions.
 * Review existing quarantined tests regularly to decide which tests should be fixed and which tests should be deleted from your test suite.
 * Trunk can send weekly email reports with information such as your total number of flaky tests and the number of PRs blocked, and how those numbers have changed week over week. Frequently failing tests will also be highlighted in the report. Reach out on [Slack](https://slack.trunk.io/) to ask about enabling weekly reports for your organization.
 

@@ -5,7 +5,7 @@ description: A guide for generating Trunk-compatible test reports with Vitest
 
 # Vitest
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Vitest projects by integrating with Trunk. This document explains how to configure Vitest to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Vitest projects by integrating with Trunk. This document explains how to configure Vitest to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
@@ -100,7 +100,7 @@ vitest run --reporter=json | jq '.testResults[].assertionResults'
 
 If you see test files listed as single entries rather than individual test cases, you likely have configuration issues that need to be resolved before proceeding.
 
-You can validate your test reports using the [Trunk CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 #### **The Validate Command**
 
@@ -163,7 +163,7 @@ Before modifying your CI jobs to automatically upload test results to Trunk, try
 You make an upload to Trunk using the following command:
 
 ```sh
-curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x trunk
+curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
 ./trunk-analytics-cli upload --junit-paths "./junit.xml" \
     --org-url-slug <TRUNK_ORG_SLUG> \
     --token <TRUNK_ORG_TOKEN>

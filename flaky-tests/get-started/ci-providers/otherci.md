@@ -4,7 +4,7 @@ description: Configure Flaky Tests using any CI Provider
 
 # Other CI Providers
 
-Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk Analytics CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
@@ -39,14 +39,14 @@ Store the Trunk slug and API token obtained in the previous step in your CI prov
 
 ### Upload to Trunk
 
-Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example,`main`, `master`, or `develop`.
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection/), for example,`main`, `master`, or `develop`.
 
 {% hint style="danger" %}
-It is important to upload test results from CI runs on [**stable branches**](../../detection.md#stable-branches), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
+It is important to upload test results from CI runs on [**stable branches**](../../detection/), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
 
 Trunk can also detect test flakes on PR and merge branches. To best detect flaky tests, it is recommended to upload test results from stable, PR, and merge branch CI runs.
 
-[Learn more about detection](../../detection.md)
+[Learn more about detection](../../detection/)
 {% endhint %}
 
 #### Example Upload Script
@@ -55,7 +55,7 @@ The following is an example of a script to upload test results after your tests 
 
 To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.
 
-You can install the Trunk CLI locally like this:
+You can install the Trunk Analytics CLI locally like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}
@@ -103,7 +103,7 @@ chmod +x trunk-analytics-cli
 {% endtab %}
 {% endtabs %}
 
-Then, you can validate the results using the `trunk flakytests validate` command like this:
+Then, you can validate the results using the `trunk-analytics-cli validate` command like this:
 
 ```bash
 ./trunk-analytics-cli validate --junit-paths <PATH_TO_REPORTS>
@@ -113,7 +113,7 @@ See the [uploader.md](../../uploader.md "mention") for all available command lin
 
 #### Environment Variables
 
-Set these environment variables before running `trunk flaky-tests upload` on unsupported CI systems:
+Set these environment variables before running `trunk-analytics-cli upload` on unsupported CI systems:
 
 {% hint style="info" %}
 **Config Requirement:** `CUSTOM` must be set to `true` for environment varaibles to take effect and override the auto-detection of CI.
