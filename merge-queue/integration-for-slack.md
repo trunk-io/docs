@@ -4,9 +4,13 @@ description: >-
   notifications — all powered by the Trunk Slack app.
 ---
 
-# Slack Integration
+# Integration for Slack
 
 Trunk Merge Queue integrates with Slack to send real-time notifications about queue activity and pull request state changes. You can route notifications to **multiple Slack channels** per repository, each with its own set of enabled topics, and receive **personal DMs** about your own PRs directly in Slack.
+
+{% hint style="info" %}
+For details on how Trunk collects, manages, and stores your data, see our [Security and Privacy](../setup-and-administration/security.md) page.
+{% endhint %}
 
 
 <figure><img src="../.gitbook/assets/slack-multi-channel.png" alt=""><figcaption></figcaption></figure>
