@@ -20,9 +20,36 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports
 
-Cypress has a built-in XML reporter which you can use to output a Trunk-compatible report.
+Cypress has a built-in Mocha JUnit reporter which outputs XML test reports. However, the built-in reporter does not include file paths in test case elements, which means Trunk cannot match tests to code owners or enable file-based filtering in the dashboard.
 
-Update your Cypress config, such as you `cypress.config.js` or `cypress.config.ts` file to output XML reports:
+#### Recommended: Use cypress-junit-plugin for file paths
+
+For full functionality including code owner detection and file-based search, use the [`cypress-junit-plugin`](https://github.com/saucelabs/cypress-junit-plugin) reporter. It outputs test cases with the correct nested structure and file path attributes that Trunk expects.
+
+Install the plugin:
+
+```bash
+npm install --save-dev @saucelabs/cypress-junit-plugin
+```
+
+Update your Cypress config:
+
+{% code title="cypress.config.js" %}
+```javascript
+const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+  reporter: '@saucelabs/cypress-junit-plugin',
+  reporterOptions: {
+    mochaFile: './junit.xml',
+  },
+})
+```
+{% endcode %}
+
+#### Alternative: Built-in Mocha reporter
+
+If you don't need file path matching or code owner detection, you can use the built-in reporter. Uploads will still work, but you will see warnings about missing file paths and won't be able to search by file in the dashboard.
 
 {% code title="cypress.config.js" %}
 ```javascript
@@ -37,6 +64,10 @@ module.exports = defineConfig({
 })
 ```
 {% endcode %}
+
+{% hint style="info" %}
+The built-in Mocha JUnit reporter places the `file` attribute on `<testsuite>` elements but not on individual `<testcase>` elements. Trunk requires file paths on test cases for code owner matching. If you see warnings like "report has test cases with missing file or filepath", switch to the `cypress-junit-plugin` above.
+{% endhint %}
 
 #### Report File Path
 
