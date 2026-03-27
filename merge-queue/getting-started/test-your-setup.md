@@ -44,7 +44,7 @@ Ready to make it even better? Explore these optimizations
 
 #### Configure integrations
 
-→ [**Slack integration**](../integration-for-slack.md) - Get notifications in Slack
+→ [**Integration for Slack**](../integration-for-slack.md) - Get notifications in Slack
 
 → [**Metrics and monitoring**](../administration/metrics.md) - Track your queue's performance
 
