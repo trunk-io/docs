@@ -14,7 +14,7 @@ The Trunk plugin for Claude Code bundles the MCP server connection, slash comman
 
 This adds the Trunk MCP server and gives you access to slash commands and skills that activate automatically.
 
-You can also install manually — clone the [plugin repo](https://github.com/trunk-io/claude-code-plugin) and run `/plugin` from Claude Code to add it.
+You can also install directly from the repo without waiting for directory approval:
 
 ## Authentication
 
