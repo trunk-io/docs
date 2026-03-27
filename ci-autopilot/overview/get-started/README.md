@@ -22,7 +22,7 @@ CI Autopilot setup and demo
 
 **Basic setup (5 minutes):** Connect CI Autopilot to your GitHub repository to get failure analysis from CI logs.
 
-**Enhanced setup (+10 minutes):** Add structured test reports for precise, test-level analysis with more targeted fix recommendations.
+**Enhanced setup (+10 minutes):** Add structured test results for precise, test-level analysis with more targeted fix recommendations.
 
 #### Basic vs enhanced setup
 
@@ -47,5 +47,5 @@ CI Autopilot setup and demo
 
 Follow the following guides to get started with CI Autopilot.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Basic setup: Connect to GitHub</td><td><a href="connect-to-github.md">connect-to-github.md</a></td></tr><tr><td>Enhanced setup: Upload test reports</td><td><a href="upload-test-reports.md">upload-test-reports.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Basic setup: Connect to GitHub</td><td><a href="connect-to-github.md">connect-to-github.md</a></td></tr><tr><td>Enhanced setup: Upload test results</td><td><a href="upload-test-reports.md">upload-test-reports.md</a></td></tr></tbody></table>
 
