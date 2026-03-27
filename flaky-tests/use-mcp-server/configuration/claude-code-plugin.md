@@ -9,7 +9,7 @@ The Trunk plugin for Claude Code bundles the MCP server connection, slash comman
 ## Install the Plugin
 
 ```bash
-/plugin install trunk@claude-plugin-directory
+/plugin install trunk@https://github.com/trunk-io/claude-code-plugin
 ```
 
 This adds the Trunk MCP server and gives you access to slash commands and skills that activate automatically.
