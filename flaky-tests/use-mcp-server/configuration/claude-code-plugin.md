@@ -55,7 +55,7 @@ Same analysis as `fix-flaky`, but read-only. Useful when you want to understand 
 /trunk:setup-uploads
 ```
 
-Walks through configuring your repo to upload test results to Trunk. The plugin detects your CI provider and test framework automatically, then generates copy-pasteable config snippets.
+Walks through configuring your repo to upload test results to Trunk. The plugin detects your CI provider and test framework automatically, then generates ready-to-paste config snippets.
 
 ## Skills
 
