@@ -94,7 +94,7 @@ The CLI only recognizes tests defined in JUnit. If multiple test executions occu
 
 ### Updates in CI
 
-If you're using the provided [GitHub Actions workflow](get-started/ci-providers/) to upload test results to Flaky Test, you can quarantine flaky tests by wrapping the test command or as a follow-up step.
+If you're using the provided [GitHub Actions workflow](get-started/ci-providers/) to upload test results to Flaky Tests, you can quarantine flaky tests by wrapping the test command or as a follow-up step.
 
 If you're using the Trunk Analytics CLI directly or other CI providers, check the instructions in the **Using The Trunk Analytics CLI Directly** tab.
 

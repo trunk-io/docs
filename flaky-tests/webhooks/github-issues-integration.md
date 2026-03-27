@@ -1,5 +1,5 @@
 ---
-description: Learn how to automatically create GitHub Issues with Flaky Test webhooks
+description: Learn how to automatically create GitHub Issues with Flaky Tests webhooks
 ---
 
 # GitHub Issues integration

@@ -111,7 +111,7 @@ You need to disable automatic retries if you previously enabled them. Retries co
 
 {% tabs %}
 {% tab title="Gradle" %}
-If you've enabled retries using a plugin like the [test-retry-gradle-plugin](https://github.com/gradle/test-retry-gradle-plugin), disable it when running tests for Trunk flaky tests.
+If you've enabled retries using a plugin like the [test-retry-gradle-plugin](https://github.com/gradle/test-retry-gradle-plugin), disable it when running tests for Trunk Flaky Tests.
 {% endtab %}
 
 {% tab title="Maven" %}
