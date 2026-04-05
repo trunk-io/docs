@@ -24,7 +24,7 @@ Optimistic Merging only works when the [Pending Failure Depth](anti-flake-protec
 
 ### Why use it
 
-* **Eliminate false negatives** - Flaky tests cause 20-40% of PR failures in typical pipelines. Anti-flake protection helps get these under control, so developers don't waste time investigating non-issues.
+* **Eliminate false negatives** - Flaky tests frequently cause PR failures unrelated to actual code changes. Anti-flake protection helps get these under control, so developers don't waste time investigating non-issues.
 * **Maintain developer confidence** - When the queue rejects PRs for real reasons (not flaky tests), developers trust the system. Reduces "it's probably just flaky" dismissiveness of real failures.
 * **Reduce manual retries** - Developers don't need to manually resubmit PRs or click "retry" when tests flake. Trunk handles it automatically, saving time and frustration.
 * **Keep queue moving** - Flaky tests don't stall the queue. PRs that would have been blocked by transient failures merge successfully, increasing overall throughput.
