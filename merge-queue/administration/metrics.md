@@ -162,7 +162,8 @@ These metrics summarize activity over a sliding 1-hour window. They update conti
 | `mq_pr_restarts_1h_total` | Gauge | — | PR restarts (TESTING to PENDING transitions) in the last hour |
 | `mq_pr_wait_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent waiting before testing starts |
 | `mq_pr_test_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent in the testing phase |
-Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
+| `mq_pr_time_in_queue_1h_seconds` | Histogram | `le` (bucket boundary), `conclusion` (merged, failed, cancelled) | Total time PRs spent in the queue from submission to exit |
+Each histogram emits `_bucket{le="..."}`, `_sum`, `_count`, and percentile gauge series (`_p50`, `_p75`, `_p95`, `_p99`). Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
 
 {% hint style="warning" %}
 Rolling window metrics use **gauge semantics**, not true Prometheus counters. They represent a snapshot of the last hour, not cumulative totals. PromQL functions like `rate()` and `increase()` are **not meaningful** on these metrics. Use the values directly instead.
@@ -267,6 +268,12 @@ histogram_quantile(0.90, sum(mq_pr_wait_duration_1h_seconds_bucket) by (le))
 
 # Average wait time
 mq_pr_wait_duration_1h_seconds_sum / mq_pr_wait_duration_1h_seconds_count
+
+# P99 total time in queue across all conclusions
+mq_pr_time_in_queue_1h_seconds_p99
+
+# P95 total time in queue for merged PRs only
+mq_pr_time_in_queue_1h_seconds_p95{conclusion="merged"}
 
 # Restart ratio (restarts per merge)
 mq_pr_restarts_1h_total / mq_pr_conclusions_1h_total{conclusion="merged"}
