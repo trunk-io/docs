@@ -20,7 +20,7 @@ Then complete the form and click Connect to Jira Cloud with the following inform
 
 <table data-full-width="false"><thead><tr><th width="176">Field Name</th><th width="266">Description</th><th>Examples</th></tr></thead><tbody><tr><td>Jira URL</td><td>The URL to your Jira Cloud project.</td><td><code>https://trunk-io.atlassian.net</code></td></tr><tr><td>Project Key</td><td>The project key for your Jira project.</td><td><code>KAN</code></td></tr><tr><td>Email</td><td>The email associated with your Jira API token.</td><td><code>johndoe@example.com</code></td></tr><tr><td><a href="jira-integration.md#api-token-permissions">Jira API token</a></td><td><a href="https://id.atlassian.com/manage-profile/security/api-tokens">Create your Jira API token here.</a></td><td><code>ATATT*****19FNY5Q</code></td></tr><tr><td>Default label(s) for new tickets</td><td>Labels applied to new Jira tickets created through Trunk Flaky Tests</td><td><code>flaky-test, debt</code></td></tr></tbody></table>
 
-After connecting to Jira, you can specify a default issue type for new tickets and a default assignee for new tickets.
+After connecting to Jira, you can specify a default issue type for new tickets. Once an issue type is selected, the form fetches all available fields for that type and lets you configure default values for each one.
 
 #### API Token permissions
 
@@ -84,56 +84,47 @@ Before you create the ticket, you will have a preview of the title and descripti
 
 #### Create with Jira
 
-If you are connected to Jira, you can click the **Create Jira Ticket** button at the end of the modal, which will automatically create a ticket with the configured labels and assignees.
+If you are connected to Jira, you can click the **Create Jira Ticket** button at the end of the modal. Any custom field defaults you configured in Settings are pre-filled in the modal. You can override them before submitting.
 
 #### Link existing tickets to tests
 
 If you already have a ticket in Jira that you want to link to a test in the dashboard, you can use the [Link Ticket to Test Case API](../flaky-tests.md#post-flaky-tests-link-ticket-to-test-case).
 
-### Required Custom Fields
+### Custom fields
 
-Some Jira projects require additional fields beyond the standard fields (like summary, description, and issue type) to be specified when creating tickets. Common required custom fields include:
+The Trunk Flaky Tests Jira integration supports dynamic custom fields. When you select an issue type in Settings, Trunk fetches all configurable fields from Jira's API for that type and surfaces them in the form. Admins can set organization-wide defaults; users can override them when creating individual tickets.
 
-* **Components** - Categories or modules within your project
-* **Affects Version** - Which version of your product is impacted
-* **Fix Version** - Target version for the fix
-* **Epic Link** - Parent epic for the ticket
-* **Sprint** - Sprint assignment
-* **Story Points** - Estimation field
-* Custom fields specific to your organization
+#### Configure custom field defaults
 
-#### Enterprise Feature
+1. Navigate to **Settings** -> **Repositories** -> **Ticketing Integration**
+2. Select or update your issue type. The form reloads and displays all configurable fields for that type.
+3. For each field, enter a default value. Fields marked as required in Jira must have either a default value or the **Require user to fill at creation** option checked.
+4. Save your settings.
 
-{% hint style="warning" %}
-**Support for required custom fields is an Enterprise feature.**&#x20;
-{% endhint %}
+#### Supported field types
 
-If your Jira project requires custom fields that aren't supported in the standard Trunk Flaky Tests integration, you'll see an error message when attempting to create a ticket:
+| Jira schema | Input |
+| --- | --- |
+| `string` | Text input |
+| `number` | Number input |
+| `option` | Searchable dropdown |
+| `user` | Searchable dropdown (populated from your Jira project's assignable users) |
+| `array` of `string` | Chip input (press Enter or comma to add values) |
+| `textarea` | Multiline text input |
 
-```
-The Jira project [PROJECT_KEY] requires a field "[field_name]". 
-Contact sales@trunk.io to upgrade your account for custom field support.
-```
+The following fields are always excluded because they are set automatically: `summary`, `description`, `project`, `issuetype`, `attachment`, `issuelinks`, and `parent`.
 
-To enable support for your required custom fields, contact our sales team at [sales@trunk.io](mailto:sales@trunk.io) to discuss Enterprise plan options.
+#### Required fields
 
-#### Alternative: Remove Field Requirements
+If a field is marked required in Jira, you have two options:
 
-If you don't need Enterprise features, you can modify your Jira project settings to make custom fields optional instead of required. This allows Trunk Flaky Tests to create tickets without needing to specify those fields.
-
-**To make a field optional in Jira:**
-
-1. Navigate to **Project Settings** in your Jira project
-2. Select **Issue Types** from the sidebar
-3. Choose the issue type you're using for flaky test tickets (e.g., Task, Bug)
-4. Click **Fields** to see all fields for that issue type
-5. Locate the required custom field (e.g., "Components")
-6. Click the field to open its configuration
-7. Uncheck **Required** or change the field requirement setting
-8. Save your changes
-
-After making the field optional, you should be able to create tickets through Trunk Flaky Tests without encountering the error.
+* **Set a default value** — Trunk fills the field automatically on every ticket.
+* **Require user to fill at creation** — The field appears blank in the create ticket modal and the user must fill it before submitting.
 
 {% hint style="info" %}
-**Note:** You may need Jira Administrator permissions to modify project settings. If you don't have access, contact your Jira administrator to make these changes.
+Jira always marks the `reporter` field as required, but Jira auto-populates it with the API token owner if not provided. Trunk treats `reporter` as optional so it appears as an override rather than a blocking required field.
 {% endhint %}
+
+#### Override defaults at ticket creation
+
+When creating a ticket, any field that has a configured default or is required at creation is shown in the modal. You can edit the pre-filled values before submitting.
