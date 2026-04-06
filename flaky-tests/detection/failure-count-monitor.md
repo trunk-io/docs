@@ -76,6 +76,8 @@ How long a flagged test must go without any new failures before it is automatica
 
 For example, with a resolution timeout of 2 hours, a test that was flagged at 3:00 PM will resolve at 5:00 PM if no new failures occur. If a new failure arrives at 4:30 PM, the clock resets, and the test will not resolve until 6:30 PM.
 
+The resolution timeout must be at least as long as the detection window. If the window is 30 minutes, the resolution timeout should be 30 minutes or longer.
+
 Choose a resolution timeout that gives your team enough time to verify a fix has landed. A short timeout (e.g., 30 minutes) resolves quickly but may prematurely clear tests that fail intermittently. A longer timeout (e.g., 24 hours) is more conservative and ensures the test stays flagged until it has been clean for a full day.
 
 ### Branch Scope
