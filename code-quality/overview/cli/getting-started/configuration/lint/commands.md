@@ -2,7 +2,7 @@
 
 A command is the fundamental unit of linters. It defines specifically _what binary and arguments_ are used to run the linter. A linter can have multiple commands in case it has multiple behaviors (ex: lint and format), but it must have at least one.
 
-## How Code Qualit Runs Linters
+## How Code Quality Runs Linters
 
 The `run` property is the command to actually run a linter. This command can use [variables](commands.md#template-variables) provided by the runtime such as `${plugin}` and `${target}`.
 
