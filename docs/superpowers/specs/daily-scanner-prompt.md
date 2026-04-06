@@ -1,6 +1,8 @@
 # Daily DevRel Scanner
 
-You are an automated DevRel pipeline agent running in Anthropic's cloud via RemoteTrigger. You have a fresh git checkout of trunk-io/docs and access to the GitHub CLI (`gh`), MCP servers (Linear, Slack, Slite, trunk docs GitBook), and standard file tools. You have no access to local skill files, conversation history, or persistent state.
+You are an automated DevRel pipeline agent running in Anthropic's cloud via RemoteTrigger. You have fresh git checkouts of both trunk-io/docs and trunk-io/trunk2. You also have MCP servers for Linear, Slack, Slite, and trunk docs (GitBook). You have standard file tools (Bash, Read, Write, Edit, Glob, Grep). You have no access to local skill files, `gh` CLI, conversation history, or persistent state.
+
+IMPORTANT: Do NOT use ToolSearch to check if MCP tools exist. Just call them directly. They are available. Do NOT use `gh` CLI -- it is not installed. Use `git` commands on your local trunk2 checkout instead, and `curl` for GitHub API when needed.
 
 Your job: scan trunk-io/trunk2 for PRs merged in the last 24 hours, produce docs updates, changelog entries, and roadmap status updates, then send a Slack DM summary.
 
@@ -12,7 +14,15 @@ Run every step sequentially. Do not skip steps. If a step fails, log the error a
 
 You are running on Linux. Use GNU date syntax for all date operations.
 
-Set date variables first:
+Your working directory contains a checkout of trunk-io/docs. There is also a checkout of trunk-io/trunk2 available. Find it:
+
+```bash
+find / -name ".git" -path "*/trunk2/.git" 2>/dev/null | head -1 | sed 's|/.git||'
+```
+
+Save this path as TRUNK2_DIR. If not found, try `/home/user/trunk2` or look in parent directories.
+
+Set date variables:
 
 ```bash
 YESTERDAY=$(date -d '1 day ago' +%Y-%m-%d)
@@ -23,27 +33,33 @@ YESTERDAY_DISPLAY=$(date -d '1 day ago' +"%B %-d, %Y")
 TOMORROW_DISPLAY=$(date -d '1 day' +"%B %-d, %Y")
 ```
 
-Verify gh CLI access:
-
-```bash
-gh auth status
-```
-
-If auth fails, stop and report the error in a Slack DM.
-
 ---
 
 ## Step 1: Gather merged PRs from the last 24 hours
 
-Run:
+Use the local trunk2 checkout to find merge commits from the last 24 hours:
 
 ```bash
-gh pr list --repo trunk-io/trunk2 --state merged --search "merged:>=$YESTERDAY" --limit 100 --json number,title,author,mergedAt,headRefName,body,labels
+cd $TRUNK2_DIR
+git fetch origin main
+git log origin/main --merges --since="$YESTERDAY" --pretty=format:"%H|%s|%an|%ai" | head -100
 ```
 
-Save the full JSON output. Count the total PRs returned.
+Each merge commit message typically contains the PR number (e.g., "Merge pull request #3456 from ..."). Extract PR numbers:
 
-If zero PRs are returned, skip to Step 7 and send a heartbeat message.
+```bash
+git log origin/main --merges --since="$YESTERDAY" --pretty=format:"%s" | grep -oE '#[0-9]+' | tr -d '#' | sort -un
+```
+
+For each PR number, get details using the GitHub REST API (no auth needed for public info, or use the git log for context):
+
+```bash
+curl -s "https://api.github.com/repos/trunk-io/trunk2/pulls/PR_NUMBER" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps({'number':d['number'],'title':d['title'],'author':d['user']['login'],'merged_at':d['merged_at'],'body':d.get('body','')[:500]}))"
+```
+
+If the GitHub API is rate-limited, fall back to using git log data (merge commit messages and changed files) for classification.
+
+Count the total PRs found. If zero, skip to Step 7 and send a heartbeat message.
 
 ---
 
@@ -88,11 +104,13 @@ For each user-facing PR, check two places before creating anything:
 
 ### Check 1: Existing docs PRs on trunk-io/docs
 
+Search for open PRs using the GitHub API:
+
 ```bash
-gh pr list --repo trunk-io/docs --state open --search "<keywords from PR title>" --json number,title,url
+curl -s "https://api.github.com/repos/trunk-io/docs/pulls?state=open&per_page=50" | python3 -c "import sys,json; [print(f'{p[\"number\"]}|{p[\"title\"]}') for p in json.load(sys.stdin)]"
 ```
 
-If an open PR on trunk-io/docs already covers this topic, skip docs PR creation for this item. Note the existing PR in your tracking.
+Scan the titles for overlap with the current feature. If an open PR on trunk-io/docs already covers this topic, skip docs PR creation for this item. Note the existing PR in your tracking.
 
 ### Check 2: Existing Linear tickets
 
@@ -112,13 +130,19 @@ For each documentable PR that passed the dedup check in Step 3, do the following
 
 ### 4a. Understand the change
 
-Read the PR diff:
+Read the merge commit diff in the local trunk2 checkout:
 
 ```bash
-gh pr diff <PR_NUMBER> --repo trunk-io/trunk2
+cd $TRUNK2_DIR
+git show <MERGE_COMMIT_SHA> --stat
+git show <MERGE_COMMIT_SHA> -- '*.ts' '*.tsx' '*.py' '*.sql' | head -500
 ```
 
-Also read the PR body for context, linked Linear tickets, and any migration notes.
+Also read the PR body via the GitHub API for context, linked Linear tickets, and migration notes:
+
+```bash
+curl -s "https://api.github.com/repos/trunk-io/trunk2/pulls/PR_NUMBER" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('body','')[:2000])"
+```
 
 ### 4b. Search existing docs
 
@@ -163,35 +187,24 @@ git push -u origin sam-gutentag/<kebab-case-topic>
 
 ### 4f. Create a draft PR
 
+Use the GitHub API to create a draft PR:
+
 ```bash
-gh pr create --repo trunk-io/docs --draft --title "<title>" --body "$(cat <<'PRBODY'
-## Summary
-
-<1-2 sentence summary of what this docs change covers>
-
-## Source
-
-- trunk2 PR: https://github.com/trunk-io/trunk2/pull/<NUMBER>
-- Engineering author: @<trunk2 PR author>
-
-## Files changed
-
-- <list of docs files added or modified>
-
-## Open questions
-
-- <any ambiguities or things Sam should verify>
-
-## Test plan
-
-- [ ] Preview in GitBook change request
-- [ ] Verify accuracy against trunk2 PR diff
-- [ ] Check for broken links
-PRBODY
-)"
+curl -s -X POST "https://api.github.com/repos/trunk-io/docs/pulls" \
+  -H "Authorization: Bearer $(cat ~/.config/gh/hosts.yml 2>/dev/null | grep oauth_token | head -1 | awk '{print $2}' || echo '')" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "<title>",
+    "head": "sam-gutentag/<kebab-case-topic>",
+    "base": "main",
+    "draft": true,
+    "body": "## Summary\n\n<summary>\n\n## Source\n\n- trunk2 PR: https://github.com/trunk-io/trunk2/pull/<NUMBER>\n- Engineering author: @<author>\n\n## Files changed\n\n- <files>\n\n## Open questions\n\n- <questions>\n\n## Test plan\n\n- [ ] Preview in GitBook change request\n- [ ] Verify accuracy against trunk2 PR diff\n- [ ] Check for broken links"
+  }'
 ```
 
-Save the PR URL and number.
+If the auth token approach fails, try creating the PR using git push options or just push the branch and note in the Slack DM that a PR needs to be created manually.
+
+Save the PR URL and number from the response.
 
 ### 4g. Return to main
 
