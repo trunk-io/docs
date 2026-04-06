@@ -46,12 +46,13 @@ This command template contains all the information Trunk needs to execute `black
 
 The `target` field specifies what paths this linter will run on given an input file. It may be a string literal such as `.`, which will run the linter on the whole repository. It also supports various substitutions:
 
-| Variable                         | Description                                                                                                                                      |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `${file}`                        | The input file.                                                                                                                                  |
-| `${parent}`                      | The folder containing the file.                                                                                                                  |
-| `${parent_with(<name>)}`         | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, do not run any linter.           |
-| `${root_or_parent_with(<name>)}` | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, evaluate to the repository root. |
+| Variable                                | Description                                                                                                                                           |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `${file}`                               | The input file.                                                                                                                                       |
+| `${parent}`                             | The folder containing the file.                                                                                                                       |
+| `${parent_with(<name>)}`                | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, do not run any linter.                |
+| `${root_or_parent_with(<name>)}`        | Walks up toward the repository root looking for the first folder containing `<name>`. If `<name>` is not found, evaluate to the repository root.      |
+| `${root_or_parent_with_regex(<regex>)}` | Walks up toward the repository root looking for the first folder containing a name matching `<regex>`. If not found, evaluate to the repository root. |
 
 If `target` is not specified it will default to `${file}`.
 
