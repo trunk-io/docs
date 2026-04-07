@@ -179,15 +179,15 @@ resource "trunk_merge_queue" "main" {
   }
   target_branch                  = "main"
   mode                           = "parallel"
-  concurrency                    = 10
+  concurrency                    = 20
   batch                          = true
-  batching_min_size              = 3
-  batching_max_wait_time_minutes = 10
+  batching_min_size              = 4
+  batching_max_wait_time_minutes = 5
   can_optimistically_merge       = true
 }
 ```
 
-### Locked-Down Queue With Explicit Required Statuses
+### Queue With Explicit Required Statuses
 
 ```hcl
 resource "trunk_merge_queue" "main" {
