@@ -65,7 +65,7 @@ resource "trunk_merge_queue" "main" {
 }
 ```
 
-Run `terraform plan` to preview changes and `terraform apply` to apply them. If a merge queue already exists for the specified repository and branch, the provider will adopt it rather than creating a duplicate.
+Run `terraform plan` to preview changes and `terraform apply` to apply them. If a merge queue already exists for the specified repository and branch, the provider will import it automatically rather than creating a duplicate.
 
 ***
 
