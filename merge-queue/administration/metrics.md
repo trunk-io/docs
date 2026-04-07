@@ -162,6 +162,7 @@ These metrics summarize activity over a sliding 1-hour window. They update conti
 | `mq_pr_restarts_1h_total` | Gauge | — | PR restarts (TESTING to PENDING transitions) in the last hour |
 | `mq_pr_wait_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent waiting before testing starts |
 | `mq_pr_test_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent in the testing phase |
+| `mq_pr_time_in_queue_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of total time PRs spent in the queue, from entry to exit (includes waiting, testing, and any other phases) |
 Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
 
 {% hint style="warning" %}
