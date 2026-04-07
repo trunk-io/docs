@@ -8,13 +8,27 @@ The Trunk plugin for Claude Code bundles the MCP server connection, slash comman
 
 ## Install the Plugin
 
-```bash
+Run this in Claude Code:
+
+```
+/plugin install trunk@claude-plugin-directory
+```
+
+This installs the Trunk plugin from the [Claude community plugins directory](https://github.com/anthropics/claude-plugins-community), giving you access to the MCP server connection, slash commands, and skills that activate automatically.
+
+<details>
+
+<summary>Alternative: install directly from GitHub</summary>
+
+You can also install from the plugin repository URL:
+
+```
 /plugin install trunk@https://github.com/trunk-io/claude-code-plugin
 ```
 
-This adds the Trunk MCP server and gives you access to slash commands and skills that activate automatically.
+This is useful if you want to pin to a specific version or test changes before they land in the community directory.
 
-You can also install directly from the repo without waiting for directory approval:
+</details>
 
 ## Authentication
 
