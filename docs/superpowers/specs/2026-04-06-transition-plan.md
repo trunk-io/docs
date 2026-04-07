@@ -1,7 +1,7 @@
 # Transition Plan: Automated DevRel Pipeline
 
 **Date:** 2026-04-06
-**Status:** Phase 1 (RemoteTrigger, Anthropic cloud)
+**Status:** Phase 1 (local crontab on Sam's Mac)
 
 ## Phases
 
@@ -47,3 +47,6 @@ Add a third trigger that monitors for LaunchDarkly feature flag changes. Tracked
 | Date | Phase | Notes |
 |------|-------|-------|
 | 2026-04-06 | Design | Architecture approved. Discovered RemoteTrigger, pivoted from local Mac to cloud-hosted. |
+| 2026-04-06 | Phase 1 | RemoteTrigger tested but MCP connections unavailable in CCR environment. Pivoted to local crontab. |
+| 2026-04-06 | Phase 1 | Daily scanner validated end-to-end locally (2 docs PRs, 5 changelog tickets, Slack DM). Crontab installed. |
+| 2026-04-06 | Phase 1 | Deploy watcher prompt updated for macOS/gh. Heartbeat added. Crontab installed. Remote triggers disabled (preserved). |
