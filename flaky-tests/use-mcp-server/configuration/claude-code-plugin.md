@@ -53,7 +53,7 @@ After installing, Claude Code will prompt you to authenticate with Trunk on firs
 /trunk:fix-flaky test_user_login
 ```
 
-Trunk analyzes the test, explains the root cause (race condition, shared state, time dependency, etc.), and shows a proposed fix with a diff. Say yes to apply the changes directly.
+Trunk analyzes the test, explains the root cause (race condition, shared state, time dependency, etc.), and shows a proposed fix with a diff. Confirm to apply the changes directly.
 
 ### Understand why a test is flaky
 
