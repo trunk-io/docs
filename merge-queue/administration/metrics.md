@@ -162,7 +162,11 @@ These metrics summarize activity over a sliding 1-hour window. They update conti
 | `mq_pr_restarts_1h_total` | Gauge | — | PR restarts (TESTING to PENDING transitions) in the last hour |
 | `mq_pr_wait_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent waiting before testing starts |
 | `mq_pr_test_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent in the testing phase |
+| `mq_pr_time_in_queue_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of total time PRs spent in the queue (from entry to exit) |
+
 Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
+
+`mq_pr_time_in_queue_1h_seconds` also exposes gauge percentiles — `_p50`, `_p75`, `_p95`, and `_p99` — for convenient alerting without histogram quantile math.
 
 {% hint style="warning" %}
 Rolling window metrics use **gauge semantics**, not true Prometheus counters. They represent a snapshot of the last hour, not cumulative totals. PromQL functions like `rate()` and `increase()` are **not meaningful** on these metrics. Use the values directly instead.
@@ -270,6 +274,12 @@ mq_pr_wait_duration_1h_seconds_sum / mq_pr_wait_duration_1h_seconds_count
 
 # Restart ratio (restarts per merge)
 mq_pr_restarts_1h_total / mq_pr_conclusions_1h_total{conclusion="merged"}
+
+# P95 total time in queue (using pre-computed gauge)
+mq_pr_time_in_queue_1h_seconds_p95{branch="main"}
+
+# Alert when P99 total time in queue exceeds 2 hours
+mq_pr_time_in_queue_1h_seconds_p99{branch="main"} > 7200
 ```
 
 #### Sample output
@@ -296,4 +306,22 @@ mq_pr_conclusions_1h_total{repo="my-org/my-repo",branch="main",queue_type="main"
 # HELP mq_pr_restarts_1h_total PR restarts in last hour
 # TYPE mq_pr_restarts_1h_total gauge
 mq_pr_restarts_1h_total{repo="my-org/my-repo",branch="main",queue_type="main"} 2
+
+# HELP mq_pr_time_in_queue_1h_seconds Distribution of total time in queue for PRs which exited the queue in the last hour
+# TYPE mq_pr_time_in_queue_1h_seconds histogram
+mq_pr_time_in_queue_1h_seconds_bucket{repo="my-org/my-repo",branch="main",queue_type="main",le="60"} 0
+mq_pr_time_in_queue_1h_seconds_bucket{repo="my-org/my-repo",branch="main",queue_type="main",le="300"} 1
+mq_pr_time_in_queue_1h_seconds_bucket{repo="my-org/my-repo",branch="main",queue_type="main",le="600"} 4
+mq_pr_time_in_queue_1h_seconds_bucket{repo="my-org/my-repo",branch="main",queue_type="main",le="900"} 8
+mq_pr_time_in_queue_1h_seconds_bucket{repo="my-org/my-repo",branch="main",queue_type="main",le="1800"} 12
+mq_pr_time_in_queue_1h_seconds_bucket{repo="my-org/my-repo",branch="main",queue_type="main",le="+Inf"} 13
+mq_pr_time_in_queue_1h_seconds_sum{repo="my-org/my-repo",branch="main",queue_type="main"} 8940
+mq_pr_time_in_queue_1h_seconds_count{repo="my-org/my-repo",branch="main",queue_type="main"} 13
+
+# HELP mq_pr_time_in_queue_1h_seconds_p50 50th percentile of total time in queue for PRs that exited the queue in the last hour
+# TYPE mq_pr_time_in_queue_1h_seconds_p50 gauge
+mq_pr_time_in_queue_1h_seconds_p50{repo="my-org/my-repo",branch="main",queue_type="main"} 620
+mq_pr_time_in_queue_1h_seconds_p75{repo="my-org/my-repo",branch="main",queue_type="main"} 840
+mq_pr_time_in_queue_1h_seconds_p95{repo="my-org/my-repo",branch="main",queue_type="main"} 1650
+mq_pr_time_in_queue_1h_seconds_p99{repo="my-org/my-repo",branch="main",queue_type="main"} 1790
 ```
