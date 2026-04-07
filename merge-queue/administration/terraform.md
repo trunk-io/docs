@@ -2,7 +2,7 @@
 description: Manage Trunk Merge Queue configuration as code using the trunk-io/trunk Terraform provider.
 ---
 
-# Terraform provider
+# Terraform Provider
 
 The [trunk-io/trunk](https://registry.terraform.io/providers/trunk-io/trunk/latest) Terraform provider lets you manage merge queue configuration as infrastructure as code. Define your queue settings in Terraform, track changes in version control, and apply them consistently across repositories.
 
@@ -38,7 +38,7 @@ Never commit your API key to version control. Use environment variables or a sec
 
 ***
 
-## Quick start
+## Quick Start
 
 ```hcl
 terraform {
@@ -69,7 +69,7 @@ Run `terraform plan` to preview changes and `terraform apply` to apply them. If 
 
 ***
 
-## Importing existing queues
+## Importing Existing Queues
 
 Merge queues created through the UI or API can be imported into Terraform. This lets you start managing an existing queue as code without recreating it.
 
@@ -83,9 +83,9 @@ After importing, run `terraform plan` to compare the Terraform configuration aga
 
 ***
 
-## Resource reference: `trunk_merge_queue`
+## Resource Reference: `trunk_merge_queue`
 
-### Required attributes
+### Required Attributes
 
 | Attribute | Type | Description |
 | --- | --- | --- |
@@ -98,7 +98,7 @@ After importing, run `terraform plan` to compare the Terraform configuration aga
 The `repo` and `target_branch` attributes are immutable. Changing any of them will destroy the existing queue and create a new one.
 {% endhint %}
 
-### Optional attributes with API defaults
+### Optional Attributes With API Defaults
 
 These attributes are computed by the API if not specified. You only need to set them if you want to override the defaults.
 
@@ -108,21 +108,21 @@ These attributes are computed by the API if not specified. You only need to set 
 | `concurrency` | integer | API default | Number of PRs that can test simultaneously (minimum 1). See [Testing concurrency](advanced-settings.md#testing-concurrency). |
 | `state` | string | `"RUNNING"` | Queue state: `"RUNNING"`, `"PAUSED"`, or `"DRAINING"`. See [Merge Queue state](advanced-settings.md#merge-queue-state). |
 
-### Other optional attributes
+### Other Optional Attributes
 
 | Attribute | Type | Description |
 | --- | --- | --- |
 | `testing_timeout_minutes` | integer | Maximum minutes to wait for tests before auto-cancellation. See [Timeout for tests to complete](advanced-settings.md#timeout-for-tests-to-complete). |
 | `pending_failure_depth` | integer | Number of PRs behind a failure allowed to test before eviction. See [Pending failure depth](../optimizations/pending-failure-depth.md). |
-| `can_optimistically_merge` | boolean | Enable [optimistic merging](../optimizations/optimistic-merging.md). |
-| `batch` | boolean | Enable [batching](../optimizations/batching.md). |
+| `can_optimistically_merge` | Boolean | Enable [optimistic merging](../optimizations/optimistic-merging.md). |
+| `batch` | Boolean | Enable [batching](../optimizations/batching.md). |
 | `batching_max_wait_time_minutes` | integer | Maximum minutes to wait for a batch to fill. |
 | `batching_min_size` | integer | Minimum number of PRs in a batch before testing begins. |
 | `merge_method` | string | How PRs are merged: `"MERGE_COMMIT"`, `"SQUASH"`, or `"REBASE"`. See [Merge Method](advanced-settings.md#merge-method). |
-| `comments_enabled` | boolean | Whether Trunk posts status comments on PRs. See [GitHub comments](advanced-settings.md#github-comments). |
-| `commands_enabled` | boolean | Whether `/trunk` slash commands are enabled. See [GitHub commands](advanced-settings.md#github-commands). |
-| `create_prs_for_testing_branches` | boolean | Create draft PRs for testing branches. See [Draft pull request creation](advanced-settings.md#draft-pull-request-creation). |
-| `status_check_enabled` | boolean | Whether Trunk posts a status check on PRs. |
+| `comments_enabled` | Boolean | Whether Trunk posts status comments on PRs. See [GitHub comments](advanced-settings.md#github-comments). |
+| `commands_enabled` | Boolean | Whether `/trunk` slash commands are enabled. See [GitHub commands](advanced-settings.md#github-commands). |
+| `create_prs_for_testing_branches` | Boolean | Create draft PRs for testing branches. See [Draft pull request creation](advanced-settings.md#draft-pull-request-creation). |
+| `status_check_enabled` | Boolean | Whether Trunk posts a status check on PRs. |
 | `direct_merge_mode` | string | `"OFF"` or `"ALWAYS"`. See [Direct merge to main](../optimizations/direct-merge-to-main.md). |
 | `optimization_mode` | string | `"OFF"` or `"BISECTION_SKIP_REDUNDANT_TESTS"`. |
 | `bisection_concurrency` | integer | Concurrency for bisection testing during batch failure isolation. See [Bisection Testing Concurrency](advanced-settings.md#bisection-testing-concurrency). |
@@ -130,15 +130,15 @@ These attributes are computed by the API if not specified. You only need to set 
 
 ***
 
-## Managing drift
+## Managing Drift
 
 When a merge queue is managed by Terraform, the Trunk UI displays a banner indicating that the queue is under Terraform management.
 
-<!-- TODO: Add screenshot of Terraform-managed banner -->
+<figure><img src="../../.gitbook/assets/terraform-in-sync.png" alt=""><figcaption>Banner for Merge Queue settings showing that the Merge Queue is managed by Terraform.</figcaption></figure>
 
 Users can still adjust merge queue settings through the UI. However, any changes made in the UI will cause **drift** between the live configuration and your Terraform state. The UI highlights when drift exists so your team is aware of the discrepancy.
 
-<!-- TODO: Add screenshot of drift warning -->
+<figure><img src="../../.gitbook/assets/terraform-drift-mergequeue.png" alt=""><figcaption>Banner for Merge Queue settings showing that the Merge Queue is managed by Terraform but has since drifted due to settings being changed manually in the UI.</figcaption></figure>
 
 To detect drift, run:
 
@@ -154,7 +154,7 @@ If your team adjusts settings through the UI, run `terraform plan` periodically 
 
 ***
 
-## Deleting a queue
+## Deleting a Queue
 
 A merge queue must be empty before it can be deleted. If the queue still has PRs in it, `terraform destroy` will fail.
 
@@ -168,7 +168,7 @@ Terraform will fail to delete a queue that still has PRs in it. Ensure the queue
 
 ## Examples
 
-### High-throughput queue with batching
+### High-Throughput Queue With Batching
 
 ```hcl
 resource "trunk_merge_queue" "main" {
@@ -187,7 +187,7 @@ resource "trunk_merge_queue" "main" {
 }
 ```
 
-### Locked-down queue with explicit required statuses
+### Locked-Down Queue With Explicit Required Statuses
 
 ```hcl
 resource "trunk_merge_queue" "main" {
