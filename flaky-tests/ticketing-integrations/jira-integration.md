@@ -100,7 +100,10 @@ Some Jira projects require additional fields beyond the standard fields (like su
 * **Epic Link** - Parent epic for the ticket
 * **Sprint** - Sprint assignment
 * **Story Points** - Estimation field
+* **Environment** - Rich text field describing the environment where the issue occurred
 * Custom fields specific to your organization
+
+Trunk supports custom fields that use Jira's standard field types, including `string`, `number`, `select`, `multiselect`, `user`, and `rich_text` (ADF format). Fields like Environment and other custom textarea-style fields that use the `rich_text` type are supported.
 
 #### Enterprise Feature
 
