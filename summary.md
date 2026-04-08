@@ -104,6 +104,7 @@
 * [Quarantining](flaky-tests/quarantining.md)
 * [Quarantine Service Availability](flaky-tests/quarantine-service-availability.md)
 * [Pull request comments](flaky-tests/github-pull-request-comments.md)
+* [Test Case Labels](flaky-tests/test-case-labels.md)
 * [Ticketing integrations](flaky-tests/ticketing-integrations/README.md)
   * [Jira integration](flaky-tests/ticketing-integrations/jira-integration.md)
   * [Linear integration](flaky-tests/ticketing-integrations/linear-integration.md)
