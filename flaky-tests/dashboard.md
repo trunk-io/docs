@@ -50,7 +50,25 @@ You can _click_ on any of the test cases listed on the Flaky Tests dashboard to 
 * Visualizations and a timeline detailing the test's health history
 * A table of unique failure types for this test
 
-This is in addition to information like ticket status and the current codeowner.
+This is in addition to information like ticket status, the current codeowner, and any labels assigned to the test.
+
+### Labels
+
+You can assign one or more labels to a test case from the test details page. Labels let you organize and categorize tests across your repo — for example, marking tests by team, component, or severity.
+
+To assign a label:
+
+1. Open a test case's detail page.
+2. In the metadata section at the top, click the **Labels** control.
+3. Select an existing label from the dropdown, or type a name to create a new one inline.
+
+To remove a label, open the same dropdown and click the label again to deselect it.
+
+Labels are organization-wide. You can create, rename, and delete labels from **Settings > Organization > Test Labels**. Each label has a name, an optional description, and a color.
+
+{% hint style="info" %}
+Labels assigned here are separate from the labels in your issue tracker. They are stored in Trunk and have no effect on Linear or Jira tickets.
+{% endhint %}
 
 ### **Code owners**
 
