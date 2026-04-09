@@ -69,15 +69,26 @@ For details on setting priority levels, see [Priority merging](../../merge-queue
 
 ### Health view
 
-Select a period of time to inspect using the **Period** dropdown (default 7 days) and a **Granularity** (defaults  to daily) of queue metrics
+Select a period of time to inspect using the **Period** dropdown (default 7 days) and a **Granularity** (defaults to daily) of queue metrics.
 
 #### Conclusion counts
 
-A Bar chart of PRs and their statuses. More Green = More Merges!
+A bar chart of PRs and their statuses over time. More green means more merges.
 
 #### Time in queue
 
-View statical trends of PR time in queue, default p50 view is useful for an "Average time in queue" evaluation.
+View statistical trends of PR time in queue. The default p50 view is useful as an average time in queue.
+
+#### Date range selection
+
+You can click and drag directly on any health chart to select a specific date range for closer inspection. This lets you zoom in on a period of interest without changing the global Period dropdown.
+
+To select a range:
+1. Click and hold on the chart at your desired start date.
+2. Drag to your desired end date, then release.
+3. The chart updates to show data for the selected range.
+
+To clear the selection, click anywhere on the chart outside the selected range.
 
 
 
