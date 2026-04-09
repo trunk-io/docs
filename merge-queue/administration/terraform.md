@@ -8,7 +8,7 @@ The [trunk-io/trunk](https://registry.terraform.io/providers/trunk-io/trunk/late
 
 The provider currently supports the `trunk_merge_queue` resource for creating, updating, importing, and deleting merge queues.
 
-**Current version:** `0.1.2`
+**Current version:** `0.1.3`
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ terraform {
   required_providers {
     trunk = {
       source  = "trunk-io/trunk"
-      version = "0.1.2"
+      version = "0.1.3"
     }
   }
 }
