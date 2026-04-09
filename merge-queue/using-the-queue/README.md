@@ -26,3 +26,8 @@ Diagnose failures, retry flaky tests, fix issues, and resubmit.
 
 [**Emergency pull requests**](./#emergency-procedures)\
 Bypass the queue for critical production fixes (use sparingly).
+
+### Browser integration
+
+[**Browser extension**](browser-extension.md)\
+Submit, cancel, and monitor queue status directly from GitHub using the Trunk browser extension.
