@@ -29,7 +29,7 @@ Add the following [configuration](https://docs.anthropic.com/en/docs/claude-code
 }
 ```
 
-### Authentication
+### Authentication with OAuth (default)
 
 After the MCP server was added to Claude Code, users need to authorize to communicate with the server. Follow these steps to complete auth.
 
@@ -56,3 +56,25 @@ Authentication successful. Connected to trunk.
 ```
 
 **With auth completed, Claude Code will be able to fetch the tools exposed by Trunk's MCP server.**
+
+### Alternative: Authentication with API token
+
+If you are in a CI or headless environment, or prefer not to use the OAuth browser flow, you can authenticate with your Trunk organization API token instead.
+
+Find your token under **Settings > API** in the Trunk dashboard, then add it to your `.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "trunk": {
+      "url": "https://mcp.trunk.io/mcp",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${TRUNK_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+Set the `TRUNK_API_TOKEN` environment variable to your org API token. Claude Code interpolates environment variables in MCP configuration files automatically.
