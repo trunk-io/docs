@@ -77,6 +77,16 @@ The metrics displayed only include data that have **completed within the time ra
 When working across multiple time zones, enable **Time in UTC** to ensure everyone sees the same data.
 {% endhint %}
 
+### Select a date range on a chart
+
+You can click and drag directly on the Conclusion Count or Time in Queue charts to select a date range. A highlight appears over the selected window as you drag.
+
+This is useful when you spot a spike or anomaly and want to narrow the view to that specific period. Clicking on an empty area of the chart clears the selection.
+
+{% hint style="info" %}
+Selecting a range on a chart highlights the window for inspection. PR-level drill-down for the selected range is coming in a future update.
+{% endhint %}
+
 ### Conclusion count
 
 Conclusion count displays the number of pull requests that exited the merge queue during each time bucket. This includes passes, failures, and cancellations. Passes and failures signal a PR that was tested in the queue to completion, while canceled signals that the request to merge terminated before testing finished or before testing began.
