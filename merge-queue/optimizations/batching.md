@@ -338,7 +338,7 @@ Batching works exceptionally well with these optimizations:
 
 **Optimistic merging** - While a batch is testing, the next batch can begin forming and testing optimistically. Combining batching with optimistic merging provides maximum throughput. Configure both for best results.
 
-**Pending failure depth** - When a batch fails and is being split/retested, pending failure depth controls how many other PRs can test simultaneously. Higher pending failure depth helps maintain throughput during batch failures.
+**Pending failure depth** - When a batch fails, [pending failure depth](pending-failure-depth.md) controls how many successor test runs the system waits on before transitioning the failed batch. Combined with optimistic merging, this can prevent premature bisection of a batch that only failed due to a transient issue.
 
 **Anti-flake protection** - Essential companion to batching. Reduces false batch failures caused by flaky tests, making batching more reliable and efficient.
 

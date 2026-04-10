@@ -50,3 +50,7 @@ Instead of immediately kicking a PR just because its test run failed, the queue 
 5. **Automatic Recovery:** PRs `B` and `C` (which are likely healthy) stay in the queue. They are automatically re-scheduled for testing with a new predicted state that _excludes_ the bad PR (e.g., `B` now tests against `main`, and `C` tests against `main + B`).
 
 **Pending Failure** is the essential recovery mechanism that makes **Predictive Testing** practical. It ensures the queue is resilient and that engineers are not disrupted by test failures they didn't cause.
+
+{% hint style="info" %}
+The predecessor-waiting described above is built into the Pending Failure state and always happens. The [Pending Failure Depth](pending-failure-depth.md) configuration adds an additional hold: it also waits for _successor_ test runs to complete, which enables [optimistic merging](optimistic-merging.md) to automatically clear failures caused by flakes.
+{% endhint %}
