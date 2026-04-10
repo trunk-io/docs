@@ -2,15 +2,19 @@
 description: Detect flaky or broken tests based on failure rate over a configurable time window
 ---
 
-# Threshold Monitor
+# Failure Rate Monitor
 
-The threshold monitor detects tests based on failure rate over a rolling time window. Unlike pass-on-retry, which looks for a specific pattern on a single commit, the threshold monitor identifies tests that fail too often over a period of time, even if no individual failure looks like a retry.
+The failure rate monitor detects tests based on failure rate over a rolling time window. Unlike pass-on-retry, which looks for a specific pattern on a single commit, the failure rate monitor identifies tests that fail too often over a period of time, even if no individual failure looks like a retry.
 
-You can create multiple threshold monitors with different configurations. This is how you tailor detection to different branches, test volumes, sensitivity levels, and detection types.
+You can create multiple failure rate monitors with different configurations. This is how you tailor detection to different branches, test volumes, sensitivity levels, and detection types.
+
+{% hint style="info" %}
+This monitor was previously called the **Threshold Monitor**. The name changed to **Failure Rate Monitor** to more clearly describe what it measures. If you use webhooks or the GraphQL API, the `monitorType` field now surfaces as `failure_rate` instead of `threshold`. Both values are accepted as input during the transition period.
+{% endhint %}
 
 ## Detection Type
 
-Each threshold monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it:
+Each failure rate monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it:
 
 - **Flaky monitors** catch tests that fail intermittently (e.g., 20–50% failure rate). These are typically caused by timing issues, shared state, or non-deterministic behavior.
 - **Broken monitors** catch tests that fail consistently at a high rate (e.g., 80%+ failure rate). These usually indicate a real regression — something in the code or environment is genuinely broken and needs a fix.
@@ -175,7 +179,7 @@ Tests that are still running but haven't accumulated enough runs to meet the min
 
 ## Muting
 
-You can temporarily mute a threshold monitor for a specific test case. See [Muting monitors](README.md#muting-monitors) for details.
+You can temporarily mute a failure rate monitor for a specific test case. See [Muting monitors](README.md#muting-monitors) for details.
 
 ## Recommended Configurations
 
