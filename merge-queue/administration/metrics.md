@@ -73,6 +73,12 @@ The date ranges selector at the top left of the dashboard allows you to filter t
 
 The metrics displayed only include data that have **completed within the time range**, jobs started but not completed during the selected time **will not be displayed**.
 
+### Select a date range on a chart
+
+You can click and drag directly on any merge health chart to select a custom date range. Dragging across a span of bars highlights that window and zooms the view to show only data within the selected range. This lets you isolate a specific incident, deployment window, or performance regression for closer inspection.
+
+To clear a selection and return to the full time range, click anywhere outside the selected area on the chart.
+
 {% hint style="info" %}
 When working across multiple time zones, enable **Time in UTC** to ensure everyone sees the same data.
 {% endhint %}
