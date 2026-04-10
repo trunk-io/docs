@@ -46,7 +46,7 @@ Without Pending Failure Depth, **B** would have been immediately evicted or bise
 ### Why use it
 
 * **Automated flake recovery with optimistic merging** - When combined with [optimistic merging](optimistic-merging.md), a passing successor automatically clears a flaky failure without any manual intervention. This is the [anti-flake protection](anti-flake-protection.md) mechanism.
-* **Manual inspection window without optimistic merging** - Even without optimistic merging, the hold gives you a grace period to inspect the failure and manually restart the test run if it looks transient, before the system auto-transitions the group.
+* **Manual inspection window without optimistic merging** - Even without optimistic merging, the hold gives you a grace period to inspect the failure and manually restart the test run if it looks transient, before the system auto-transitions the PR to Failed (or bisection, if [batching](batching.md) is enabled).
 * **Reduce developer disruption** - PRs that failed due to flakes are not unnecessarily evicted, so authors don't need to re-enqueue or investigate non-issues.
 * **Prevent premature bisection of batches** - When [batching](batching.md) is enabled, the hold prevents the system from immediately bisecting a batch that may have only failed due to a transient issue.
 

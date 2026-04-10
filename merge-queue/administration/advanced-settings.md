@@ -262,7 +262,7 @@ Toggle this setting in **Settings** > **Repositories** > your repository > **Mer
 
 [**Pending Failure Depth**](../optimizations/pending-failure-depth.md) controls how many levels of successor test runs the system waits on before transitioning a failed group out of the Pending Failure state. When combined with [optimistic merging](../optimizations/optimistic-merging.md), this allows a passing successor to retroactively clear a failure caused by a transient issue (flake).
 
-When set to **0** (default), the successor check is skipped and groups transition as soon as predecessors have resolved. When set to a value greater than 0, the system additionally waits for that many successor levels to finish testing before transitioning.
+When set to **0** (default), the successor check is skipped and groups transition as soon as predecessor groups finish testing. When set to a value greater than 0, the system additionally waits for that many successor levels to finish testing before transitioning.
 
 ***
 
