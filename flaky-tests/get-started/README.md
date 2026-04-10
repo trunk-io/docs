@@ -43,12 +43,12 @@ After uploads are flowing, navigate to your repo → **Flaky Tests > Monitors** 
 
 **Pass-on-retry** is enabled by default and is the recommended baseline for everyone. It catches the most common flakiness pattern — a test that fails and then passes on retry within the same commit — without any configuration needed.
 
-**Threshold monitors** let you detect flakiness based on failure rate over a rolling time window. How you configure them depends on your CI setup:
+**Failure rate monitors** let you detect flakiness based on failure rate over a rolling time window. How you configure them depends on your CI setup:
 
-- **If tests must pass before merging to main**, set up a threshold monitor scoped to `main` to catch an elevated failure rate. For example, if you run tests 5 times per day on `main`, a 24-hour rolling window with a minimum of 4 runs and a failure threshold of 25% is a reasonable starting point. This ensures the monitor has enough data before flagging anything.
+- **If tests must pass before merging to main**, set up a failure rate monitor scoped to `main` to catch an elevated failure rate. For example, if you run tests 5 times per day on `main`, a 24-hour rolling window with a minimum of 4 runs and a failure threshold of 25% is a reasonable starting point. This ensures the monitor has enough data before flagging anything.
 - **If you use a merge queue**, consider a dedicated monitor scoped to your merge queue branches (e.g., `trunk-merge/*` or `gh-readonly-queue/*`). Failures here are especially suspicious since the code has already passed PR checks, so a low threshold is appropriate.
 
-[How threshold monitors work →](../detection/threshold-monitor.md)
+[How failure rate monitors work →](../detection/threshold-monitor.md)
 
 #### Quarantining
 
