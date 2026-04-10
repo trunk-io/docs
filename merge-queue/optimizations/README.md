@@ -15,7 +15,7 @@ This section explains each of these key concepts:
 #### Resilience and flake handling
 
 * [**Optimistic Merging**](optimistic-merging.md): Increases merge speed by leveraging test results from pull requests that are later in the queue. When a pull request (e.g., pull request 'c') passes testing, its success also verifies the changes from the pull requests ahead of it ('a' and 'b'). This allows the entire group of pull requests to be safely merged at once.
-* [**Pending Failure Depth**](pending-failure-depth.md): Allows the queue to continue testing subsequent pull requests even if an earlier one fails. Because predictive testing re-tests the failed PR's code along with the subsequent PRs, this feature gives the failed PR additional chances to pass. This prevents a single flaky test from halting all forward progress and makes the queue more resilient to intermittent failures.
+* [**Pending Failure Depth**](pending-failure-depth.md): When a group fails testing, it enters a Pending Failure state and waits for successor test runs to complete before transitioning. When combined with Optimistic Merging, a passing successor can retroactively clear the failure — enabling automated recovery from transient (flaky) failures without evicting the group from the queue.
 * [**Anti-Flake Protection**](anti-flake-protection.md): Combining Optimistic Merging and Pending Failure Depth makes the queue more resilient to flaky tests. This inherent outcome allows the successful test of a later pull request to retroactively validate an earlier one that failed due to a transient issue.
 
 {% hint style="success" %}

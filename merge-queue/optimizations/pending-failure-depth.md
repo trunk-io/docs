@@ -2,136 +2,87 @@
 
 ### What it is
 
-Pending failure depth allows pull requests to wait until other pull requests behind them in the queue complete testing before getting removed from the queue.
+When a group's test run fails in the merge queue, it doesn't immediately get evicted. Instead, it enters a **Pending Failure** state — a holding state where the system hasn't yet decided whether to mark the group as failed or, if [batching](batching.md) is enabled, to bisect the batch to isolate the culprit.
 
-By default, a PR that fails testing will be evicted from the queue. The **Pending Failure Depth** feature allows a failed PR to remain in the queue for pull requests behind it so that testing can be finished before this eviction occurs. The number of PRs that the queue will wait for is the _Pending Failure Depth._ This depth is configurable and reflects the number of pull requests behind this one that should complete testing before eviction is assessed.
+{% hint style="info" %}
+Throughout this page, "group" means either a batch of PRs (when [batching](batching.md) is enabled) or an individual PR (when it's not).
+{% endhint %}
+
+#### Waiting for predecessors
+
+A group in Pending Failure always waits for predecessor groups (the PRs ahead of it in the queue) to finish testing. This is how the system determines root cause:
+
+* If a predecessor also failed, the current group's failure may have been caused by the predecessor. The current group will be retested once the bad predecessor is removed.
+* If all predecessors passed, the failure is attributable to the current group itself.
+
+This predecessor-waiting happens regardless of the Pending Failure Depth setting.
+
+#### Waiting for successors (controlled by Pending Failure Depth)
+
+**Pending Failure Depth** is a configuration value (integer, default 0) that controls how many levels of **successor** test runs (PRs behind the failed group in the queue) the system also waits on before transitioning the group out of the Pending Failure state.
+
+* **When set to 0 (default):** The successor check is skipped. The group transitions as soon as the predecessor condition is met.
+* **When set to a value greater than 0:** The system additionally waits for successor groups within that many hops to finish testing before transitioning.
+
+#### Why wait for successors?
+
+The value of waiting for successors depends on whether [optimistic merging](optimistic-merging.md) is enabled:
+
+* **With optimistic merging (primary use case):** If the failure was caused by a flake rather than a real code problem, a successor further down the queue may pass its tests. Because that successor's test run includes the failed group's changes, a passing result is proof that those changes work. Optimistic merging uses this to retroactively clear the failed group and merge it. The Pending Failure Depth window gives those successors time to finish testing before the system prematurely fails or bisects the group. This is the automated [anti-flake protection](anti-flake-protection.md) path.
+* **Without optimistic merging:** The hold window gives you time to manually inspect the failure and restart the test if it looks transient, before the system auto-transitions the group to Failed (or bisection, if [batching](batching.md) is enabled). This is the only benefit without optimistic merging.
+
+{% hint style="warning" %}
+Pending Failure Depth only helps with transient (flaky) failures. For legitimate failures that propagate to successors, those successors will also fail, and the hold window expires without clearing the failure.
+{% endhint %}
+
+#### Example: anti-flake protection in action
+
+This example shows how Pending Failure Depth works together with optimistic merging to automatically recover from a flaky failure:
+
+<table><thead><tr><th width="331">what's happening?</th><th>queue</th></tr></thead><tbody><tr><td><strong>A</strong>, <strong>B</strong>, <strong>C</strong> begin predictive testing</td><td><code>main</code> &#x3C;- <strong>A</strong> &#x3C;- <strong>B</strong>+a &#x3C;- <strong>C</strong>+ba</td></tr><tr><td><strong>B</strong> fails testing (a flake)</td><td><code>main</code> &#x3C;- <strong>A</strong> &#x3C;- <mark style="color:red;"><strong>B</strong>+a</mark> &#x3C;- <strong>C</strong>+ba</td></tr><tr><td>Pending Failure Depth keeps <strong>B</strong> in the queue while <strong>C</strong> finishes testing</td><td><code>main</code> &#x3C;- <strong>A</strong> &#x3C;- <mark style="color:red;"><strong>B</strong>+a</mark> (hold) &#x3C;- <strong>C</strong>+ba</td></tr><tr><td><strong>C</strong> passes — proving <strong>B</strong>'s failure was a flake</td><td><code>main</code> &#x3C;- <strong>A</strong> &#x3C;- <mark style="color:red;"><strong>B</strong>+a</mark> &#x3C;- <mark style="color:green;"><strong>C</strong>+ba</mark></td></tr><tr><td>Optimistic merging clears <strong>B</strong> and merges <strong>A</strong>, <strong>B</strong>, <strong>C</strong></td><td><code>merge</code> <strong>A B C</strong></td></tr></tbody></table>
+
+Without Pending Failure Depth, **B** would have been immediately evicted or bisected when its tests failed — even though the failure was transient and **C**'s passing result proves the changes work.
 
 ### Why use it
 
-* **Prevent queue stalls** - When a PR fails, the queue doesn't grind to a halt. Other PRs continue testing, assuming the failure was isolated. Keeps merge velocity high even during issues.
-* **Faster failure recovery** - If PR #3 fails but PR #4 fixes the issue, both can be processed quickly because they tested in parallel. Without pending failure depth, you'd wait for #3 to fail, then wait for #4 to test sequentially.
-* **Optimize for your team size** - Small teams benefit from lower values (fewer wasted tests), large teams benefit from higher values (maintain throughput despite occasional failures).
-* **Balance risk vs. throughput** - Tune the setting to match your team's tolerance for wasted CI resources vs. need for high queue velocity.
+* **Automated flake recovery with optimistic merging** - When combined with [optimistic merging](optimistic-merging.md), a passing successor automatically clears a flaky failure without any manual intervention. This is the [anti-flake protection](anti-flake-protection.md) mechanism.
+* **Manual inspection window without optimistic merging** - Even without optimistic merging, the hold gives you a grace period to inspect the failure and manually restart the test if it looks transient, before the system auto-transitions the group.
+* **Reduce developer disruption** - PRs that failed due to flakes are not unnecessarily evicted, so authors don't need to re-enqueue or investigate non-issues.
+* **Prevent premature bisection of batches** - When [batching](batching.md) is enabled, the hold prevents the system from immediately bisecting a batch that may have only failed due to a transient issue.
 
 ### How to enable
 
 {% hint style="info" %}
-Pending failure depth is **set to zero by default** and should be enabled after you're confident in your basic queue setup.
+Pending Failure Depth is **set to 0 by default** (disabled). We recommend enabling it after you have [optimistic merging](optimistic-merging.md) configured and your basic queue setup is working.
 {% endhint %}
 
 Configure Pending Failure Depth in **Settings** > **Repositories** > your repository > **Merge Queue** > select a value from the **Pending Failure Depth** dropdown.
 
-### Configuration options
+You can also configure it via Terraform using the `pending_failure_depth` attribute.
 
-{% hint style="info" %}
-Just getting started with tuning Pending Failure Depth? Try a value of 2, and work from there with your team to find the right balance.
-{% endhint %}
+### Recommendations
 
-**Start with a small value** and observe:
-
-* If your queue frequently stalls when PRs fail → Increase value
-* If you see lots of wasted test runs (many PRs test then all fail) → Decrease value
-* If your CI infrastructure is constrained → Use lower value (3-4)
-* If you have abundant CI capacity → Use higher value (7-10)
-
-#### Verify it's working
-
-When a PR fails, watch for:
-
-* ✅ Multiple other PRs continue testing (up to your configured depth)
-* ✅ Queue doesn't stop entirely
-* ✅ Failed PR is removed, but others keep going
+* **Not using optimistic merging?** We don't recommend enabling Pending Failure Depth out of the box. Without optimistic merging, the only benefit is a manual inspection window, which most teams don't need.
+* **Using optimistic merging?** Start with a depth of 1. This gives one successor a chance to pass and clear a flaky failure automatically.
+* **Optimistic merging not kicking in as often as expected?** If you're seeing PRs get evicted for flakes that a successor _would_ have cleared — but the hold expired before the successor finished testing — increase the depth to give more successors time to complete.
 
 ### Tradeoffs and considerations
 
 #### What you gain
 
-* **Queue never fully stops** - Failures don't block all subsequent PRs
-* **Faster recovery** - Independent PRs can merge while others fail
-* **Tunable throughput** - Adjust for your team's needs
-* **Better CI utilization** - Tests keep running instead of stopping
+* **Grace period for flake recovery** - Failed groups are held while successors finish testing, giving optimistic merging a chance to clear transient failures.
+* **Fewer unnecessary evictions** - PRs that would have been evicted due to flakes can instead be automatically cleared and merged.
+* **Avoids premature batch bisection** - When [batching](batching.md) is enabled, the hold prevents the system from immediately bisecting a batch that failed due to a transient issue.
 
 #### What you give up or risk
 
-* **Wasted CI resources** - PRs may test against a state that includes failing PRs, then need to retest
-* **Cascading failures** - If one PR breaks something, multiple subsequent PRs might fail before the issue is caught
-* **Complexity** - More PRs testing simultaneously = harder to understand queue state
-
-#### When to decrease pending failure depth
-
-Lower the value (3-4) if:
-
-* **Your tests are flaky (>5% flake rate)** - Flaky tests cause false failures, leading to wasted retests
-* **CI resources are expensive/limited** - Lower parallelism reduces waste
-* **PRs frequently conflict** - Related changes often fail together, so testing them in parallel wastes resources
-* **You're seeing excessive retests** - Many PRs testing, failing, retesting pattern
-
-#### When to increase pending failure depth
-
-Raise the value (7-10) if:
-
-* **Your queue stalls frequently when PRs fail** - Low depth is blocking throughput
-* **PRs are mostly independent** - Failures are isolated, not cascading
-* **You have abundant CI capacity** - Waste isn't a concern
-* **Large team, high PR volume** - Need parallelism to maintain velocity
-
-#### Understanding the cost
-
-**Example cost calculation:**
-
-Scenario: Pending failure depth = 5, PR #101 fails testing
-
-* PRs #102, #103, #104, #105, #106 all test against a state including #101
-* All 5 fail because #101 broke something
-* All 5 retest after #101 is removed
-* **Wasted**: 5 test runs
-
-**But consider:**
-
-* Without pending failure depth, PRs would test sequentially (much slower)
-* In most cases, failures ARE independent, so PRs merge successfully
-* Occasional waste is preferable to frequent queue stalls
-
-**Typical waste rate:** 5-10% of test runs are wasted retests in well-configured queues
-
-#### Common misconceptions
-
-* **Misconception:** "Higher pending failure depth always means faster queue"&#x20;
-  * **Reality:** Too high = wasted CI resources and cascading failures. Too low = queue stalls. The sweet spot depends on your team size and test stability.
-* **Misconception:** "Pending failure depth should be set to 1 to avoid waste"&#x20;
-  * **Reality:** Value of 1 means queue stops on every failure (defeats the purpose of predictive testing). Start at 5 and adjust.
-* **Misconception:** "This setting isn't important"&#x20;
-  * **Reality:** Poorly tuned pending failure depth can either waste significant CI resources or cause frequent queue stalls. It's worth monitoring and adjusting.
+* **Delayed failure feedback** - Legitimate failures take longer to surface because the system waits for successors to finish testing before transitioning the group. The higher the depth, the longer the wait.
+* **No automatic benefit for real failures** - If the failure is legitimate (not a flake), successors that include the same broken code will also fail. The hold window expires without clearing the failure — the group transitions to Failed (or bisection) just as it would have, only later.
+* **Limited value without optimistic merging** - Without optimistic merging enabled, there is no automated mechanism to clear the failure during the hold. The only benefit is the manual inspection window.
 
 ### Next Steps
 
-**Initial setup:**
-
-1. Start with a small value (2)
-2. Monitor queue behavior
-3. Check metrics for wasted test runs
-4. Adjust based on observations
-
-**Optimize the value:**
-
-* Queue stalls frequently? → Increase depth
-* Excessive retests (>15%)? → Decrease depth
-* Make small adjustments and observe impact
-
-**Monitor performance:**
-
-* [Metrics and monitoring](../administration/metrics.md) - Track retest rate and queue throughput
-* Watch for patterns: Do failures cascade? Are they independent?
-* Adjust pending failure depth based on data
-
-**Combine with other optimizations:**
-
-* [Anti-flake protection](anti-flake-protection.md) - Reduce false failures first
-* [Batching](batching.md) - Understand how pending failure depth affects batch splitting
-* [Predictive testing](predictive-testing.md) - Read the full explanation of how these work together
-
-**Troubleshooting:**
-
-* Too many wasted tests → Lower pending failure depth
-* Queue stops on every failure → Increase pending failure depth
-* Unclear which value to use → Start at 2, monitor for a week
+* [Anti-flake protection](anti-flake-protection.md) - Understand the combined mechanism of optimistic merging + Pending Failure Depth
+* [Optimistic merging](optimistic-merging.md) - The companion feature that enables automated flake clearing
+* [Batching](batching.md) - How Pending Failure Depth interacts with batch groups and bisection
+* [Predictive testing](predictive-testing.md) - The foundation that makes successor test runs include predecessor changes
