@@ -23,7 +23,7 @@ The `fix-flaky-test` tool retrieves insights and historical failure analysis abo
 
 | Parameter | Type   | Description                                                            |
 | --------- | ------ | ---------------------------------------------------------------------- |
-| `fixId`   | string | Specific fix identifier from CI Autopilot comment (e.g., `FIX-abc123`) |
+| `fixId`   | string | Specific fix identifier from the Trunk Flaky Tests PR comment (e.g., `FIX-abc123`) |
 | `orgSlug` | string | The name of your organization in the Trunk app                         |
 
 ### Getting Parameter Values
@@ -67,6 +67,6 @@ This fix is located in .github/actions/setup-k8s-and-migrate/action.yml at line 
 
 | Error                          | Cause                                         | Resolution                                                |
 | ------------------------------ | --------------------------------------------- | --------------------------------------------------------- |
-| `Fix {fixId} not found`        | Invalid or non-existent fix ID                | Verify the fix ID from the original CI Autopilot comment  |
+| `Fix {fixId} not found`        | Invalid or non-existent fix ID                | Verify the fix ID from the original Trunk Flaky Tests PR comment |
 | `fixId must be provided`       | Missing required query parameter              | Fix ID is required                                        |
 | Repository authorization error | Insufficient permissions or invalid repo name | Verify repository name format and your access permissions |
