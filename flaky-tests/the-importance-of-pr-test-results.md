@@ -1,3 +1,9 @@
+---
+description: >-
+  Why uploading test results from pull requests is required for accurate
+  flaky test detection, quarantining, and impact measurement.
+---
+
 # The Importance of PR Test Results
 
 Uploading test results from pull requests (PRs) is a critical step for enabling Trunk Flaky Tests. This data provides a primary signal for _detecting_ flaky tests and is the key metric for _measuring_ their impact. Without it, you lose the most significant source of information for identifying and prioritizing these disruptive tests.

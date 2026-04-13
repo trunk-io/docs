@@ -1,3 +1,9 @@
+---
+description: >-
+  Set up Trunk Flaky Tests by configuring test result output, uploading from
+  CI, and enabling flake detection monitors.
+---
+
 # Getting Started
 
 Trunk Flaky Tests detects flaky tests by analyzing test results from your CI runs. Setup requires configuring test result output and CI upload integration.
