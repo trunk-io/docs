@@ -125,7 +125,7 @@ Direct Merge to Main complements other optimizations:
 
 * When direct merge doesn't trigger, predictive testing takes over
 * PRs not at tip of main test against predicted future state
-* Both features work together seamlessly
+* Both features work together: direct merge handles the tip, predictive testing handles the rest
 
 [**Optimistic Merging**](optimistic-merging.md)
 

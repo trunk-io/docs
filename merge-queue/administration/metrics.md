@@ -28,7 +28,7 @@ In repositories with multiple teams or distinct components (like a TypeScript/Py
 * **Identify bottlenecks by component** - Determine if certain targets have slower merge times
 * **Optimize strategically** - Focus queue configuration improvements on your highest-priority code paths
 * **Demonstrate value** - Show engineering leadership how parallel mode benefits specific teams or projects
-* **Ensure fairness** - Verify that all teams experience similar queue performance
+* **Check fairness** - Verify that all teams experience similar queue performance
 
 #### How to Use the Filter
 
@@ -74,7 +74,7 @@ The date ranges selector at the top left of the dashboard allows you to filter t
 The metrics displayed only include data that have **completed within the time range**, jobs started but not completed during the selected time **will not be displayed**.
 
 {% hint style="info" %}
-When working across multiple time zones, enable **Time in UTC** to ensure everyone sees the same data.
+When working across multiple time zones, enable **Time in UTC** so everyone sees the same data.
 {% endhint %}
 
 ### Conclusion count

@@ -333,7 +333,7 @@ Configure how many PRs can be tested simultaneously during batch failure isolati
 #### How to Configure
 
 1. Navigate to **Settings** > **Repositories** > your repository > **Merge Queue** > **Batching**
-2. Ensure **Batching** is enabled
+2. Make sure **Batching** is enabled
 3. Set **Bisection Testing Concurrency** to your desired value
 4. Monitor CI resource usage and adjust as needed
 
@@ -346,7 +346,7 @@ For detailed guidance on using this setting effectively, see [Bisection Testing 
 {% hint style="danger" %}
 CAUTION: Any queued merge requests will not be merged and all data will be lost.
 
-**Before deleting:** Ensure all important PRs in the queue are either merged manually or that you're prepared to resubmit them to a new queue.
+**Before deleting:** Make sure all important PRs in the queue are either merged manually or that you're prepared to resubmit them to a new queue.
 {% endhint %}
 
 This setting will delete the Merge Queue configuration and any queued merge requests will not be merged and all data will be lost.
