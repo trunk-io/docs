@@ -6,7 +6,7 @@ description: 'MCP tool reference: setup-trunk-uploads'
 
 ### Overview
 
-The `setup-trunk-uploads` tool helps configure test result uploads to Trunk for flaky test detection and enhanced CI Autopilot analysis. This tool provides step-by-step instructions tailored to your specific test framework and CI provider combination.
+The `setup-trunk-uploads` tool helps configure test result uploads to Trunk Flaky Tests. This tool provides step-by-step instructions tailored to your specific test framework and CI provider combination.
 
 
 

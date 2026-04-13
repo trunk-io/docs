@@ -91,9 +91,9 @@ The right minimum depends on how often a test actually runs on the branches you'
 
 How long (in hours) a flagged test can go without any runs before it's automatically resolved as stale. This clears out tests that have been deleted, renamed, or are no longer part of your test suite.
 
-When not set, flagged tests remain in their detected state indefinitely until they run enough times to recover through the normal threshold check. Setting a stale timeout (e.g., 24 hours) ensures abandoned tests don't clutter your test list.
+When not set, flagged tests remain in their detected state indefinitely until they run enough times to recover through the normal threshold check. Setting a stale timeout (e.g., 24 hours) keeps abandoned tests from cluttering your test list.
 
-A test resolved as stale is simply no longer being tracked by this monitor. If the test starts running again and exceeds the activation threshold, it will be re-flagged.
+A test resolved as stale is no longer being tracked by this monitor. If the test starts running again and exceeds the activation threshold, it will be re-flagged.
 
 {% hint style="info" %}
 Skipped tests count as not being run. If you have a stale timeout configured and a test starts being skipped rather than executed, the monitor will treat it as having no runs and resolve it as stale once the timeout elapses.
