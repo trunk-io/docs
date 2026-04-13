@@ -1,3 +1,9 @@
+---
+description: >-
+  View real-time queue activity, PR status, and test results in the Trunk
+  Merge Queue dashboard.
+---
+
 # Monitor queue status
 
 ### Access the Merge Queue dashboard

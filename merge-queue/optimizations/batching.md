@@ -1,3 +1,9 @@
+---
+description: >-
+  Test multiple PRs together as a single unit to increase merge throughput
+  and reduce CI costs.
+---
+
 # Batching
 
 ### What it is

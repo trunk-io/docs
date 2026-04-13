@@ -1,3 +1,9 @@
+---
+description: >-
+  Switch from GitHub's native merge queue to Trunk Merge Queue with minimal
+  disruption to your workflow.
+---
+
 # Migrate from GitHub Merge Queue
 
 For teams switching from [GitHub Merge Queues](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue) to Trunk Merge Queue, the process is straight forward.

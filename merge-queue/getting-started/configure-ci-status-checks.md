@@ -1,3 +1,9 @@
+---
+description: >-
+  Configure your CI provider to run required status checks on Trunk Merge
+  Queue branches.
+---
+
 # Configure CI status checks
 
 ### If using Draft PR mode (Default) <a href="#if-using-draft-pr-mode-default" id="if-using-draft-pr-mode-default"></a>

@@ -1,3 +1,9 @@
+---
+description: >-
+  Advanced features that increase merge throughput, handle flaky tests, and
+  prioritize critical PRs in Trunk Merge Queue.
+---
+
 # Optimizations
 
 The core concept of any merge queue is [**Predictive Testing**](predictive-testing.md): testing your pull request against the head of the `main` branch, including all pull requests ahead of it in the queue.

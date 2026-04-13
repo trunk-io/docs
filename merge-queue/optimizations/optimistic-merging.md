@@ -1,3 +1,9 @@
+---
+description: >-
+  Merge PRs faster by using passing test results from later PRs in the queue
+  to validate earlier ones.
+---
+
 # Optimistic merging
 
 ### What it is
