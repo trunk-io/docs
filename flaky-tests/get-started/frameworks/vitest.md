@@ -82,13 +82,13 @@ If you've enabled retries, you can disable them following the [Vitest docs](http
 1. **Check TypeScript Configuration**: Ensure your `tsconfig.json` is valid and includes all necessary paths
 2. **Verify Dependencies**: Make sure all imported modules are properly installed and accessible
 3. **Review Setup Files**: Check any test setup files referenced in your Vitest config for errors
-4. **Validate Vitest Config**: Ensure your `vitest.config.ts` doesn't contain invalid options
+4. **Validate Vitest Config**: Make sure your `vitest.config.ts` doesn't contain invalid options
 
 ### Try It Locally
 
 #### Validate Test Execution First
 
-Before validating your JUnit reports with Trunk, ensure Vitest can properly execute your tests:
+Before validating your JUnit reports with Trunk, make sure Vitest can properly execute your tests:
 
 ```bash
 # Run tests with detailed output to catch configuration issues

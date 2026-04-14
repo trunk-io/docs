@@ -64,7 +64,7 @@ pipelines:
         script:
           - &#x3C;COMMAND TO RUN TESTS>
         after-script:
-          # This ensures trunk upload runs even if the test script fails
+          # trunk upload runs even if the test script fails
           - |
             curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
             chmod +x trunk-analytics-cli
@@ -87,7 +87,7 @@ pipelines:
         script:
           - <COMMAND TO RUN TESTS>
         after-script:
-          # This ensures trunk upload runs even if the test script fails
+          # trunk upload runs even if the test script fails
           - |
             curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
             chmod +x trunk-analytics-cli
@@ -110,7 +110,7 @@ pipelines:
         script:
           - <COMMAND TO RUN TESTS>
         after-script:
-          # This ensures trunk upload runs even if the test script fails
+          # trunk upload runs even if the test script fails
           - |
             curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz
             chmod +x trunk-analytics-cli

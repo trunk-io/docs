@@ -1,7 +1,7 @@
 ---
 description: >-
-  Prevent false flaky test detections during CI outages and infrastructure
-  failures.
+  Prevent false Trunk Flaky Tests detections during CI outages and
+  infrastructure failures.
 ---
 
 # Infrastructure Failure Protection
@@ -12,9 +12,9 @@ When infrastructure issues like database outages, network problems, or CI runner
 
 ### How it works
 
-Trunk monitors the failure rate of each test upload. If the percentage of failing tests exceeds your configured threshold, that upload is flagged as an infrastructure failure and excluded from flaky test detection.
+Trunk monitors the failure rate of each test upload. If the percentage of failing tests exceeds your configured threshold, that upload is flagged as an infrastructure failure and excluded from Trunk Flaky Tests detection.
 
-For example, if your threshold is set to 80% and a CI run has 85% of tests failing (this could be due to a database being unavailable or similar infrastructure issue, etc) that entire run will be excluded from flaky test detection. This prevents tests from being incorrectly marked as flaky when they're retried and pass.
+For example, if your threshold is set to 80% and a CI run has 85% of tests failing (this could be due to a database being unavailable or similar infrastructure issue, etc) that entire run will be excluded from Trunk Flaky Tests detection. This prevents tests from being incorrectly marked as flaky when they're retried and pass.
 
 {% hint style="info" %}
 Uploads excluded due to infrastructure failure protection will appear in the **Uploads** tab with the status **"Upload Skipped Due to Infrastructure Error."**

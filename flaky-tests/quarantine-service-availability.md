@@ -34,4 +34,4 @@ We prioritize avoiding false positives over convenience. If Trunk is down, we'd 
 
 #### Caching behavior
 
-Trunk Analytics CLI does not cache quarantine configuration locally. Each invocation requires a successful API call to apply quarantining. This ensures you're always operating on the freshest quarantine state rather than potentially stale data.
+Trunk Analytics CLI does not cache quarantine configuration locally. Each invocation requires a successful API call to apply quarantining. This means you are always operating on the freshest quarantine state rather than potentially stale data.

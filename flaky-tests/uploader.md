@@ -248,7 +248,7 @@ Running tests via `trunk-analytics-cli test` adds negligible memory overhead.
 
 This subcommand is a thin wrapper around your existing test command and doesn't modify or parallelize test execution.
 
-During execution, it simply:
+During execution, it:
 
 * Runs your provided test command directly.
 * Records start and end times.
