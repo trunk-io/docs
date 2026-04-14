@@ -1,3 +1,9 @@
+---
+description: >-
+  Fast-track critical PRs like hotfixes and security patches to the front of
+  the merge queue.
+---
+
 # Priority merging
 
 ### What it is

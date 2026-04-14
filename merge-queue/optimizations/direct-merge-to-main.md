@@ -1,3 +1,9 @@
+---
+description: >-
+  Skip redundant retesting and merge PRs directly when they are already
+  tested against the current tip of main.
+---
+
 # Direct merge to main
 
 ### Overview

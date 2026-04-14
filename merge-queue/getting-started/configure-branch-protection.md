@@ -1,3 +1,9 @@
+---
+description: >-
+  Configure GitHub branch protection rules so Trunk Merge Queue can create
+  test branches and merge PRs into your protected branch.
+---
+
 # Configure branch protection
 
 ### Prerequisites

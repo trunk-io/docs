@@ -1,3 +1,9 @@
+---
+description: >-
+  Combine optimistic merging and pending failure depth to prevent flaky test
+  failures from blocking the merge queue.
+---
+
 # Anti-flake protection
 
 ### What it is

@@ -1,3 +1,9 @@
+---
+description: >-
+  Understand why PRs fail in the merge queue and how to fix and resubmit
+  them.
+---
+
 # Handle failed pull requests
 
 ### Understanding failures

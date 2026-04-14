@@ -1,3 +1,9 @@
+---
+description: >-
+  Test PRs against the projected future state of your main branch to catch
+  conflicts before they reach production.
+---
+
 # Predictive testing
 
 ### What it is

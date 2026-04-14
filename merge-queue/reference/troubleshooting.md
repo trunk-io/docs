@@ -1,3 +1,9 @@
+---
+description: >-
+  Common Trunk Merge Queue issues and how to fix them, including permission
+  errors, stuck PRs, and missing status checks.
+---
+
 # Troubleshooting
 
 #### Troubleshooting common issues

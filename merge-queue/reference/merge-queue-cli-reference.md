@@ -1,3 +1,9 @@
+---
+description: >-
+  Trunk CLI commands for submitting, canceling, pausing, and resuming the
+  merge queue.
+---
+
 # CLI reference
 
 The Trunk CLI allows you to insert and remove PRs into the Merge Queue. You can also pause and resume the queue from the CLI.

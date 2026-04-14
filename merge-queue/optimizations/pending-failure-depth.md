@@ -1,3 +1,9 @@
+---
+description: >-
+  Keep failed PRs in the queue while successor PRs test, giving transient
+  failures a chance to pass.
+---
+
 # Pending failure depth
 
 ### What it is
