@@ -1,3 +1,9 @@
+---
+description: >-
+  CLI tool for uploading test results to Trunk from CI, enabling flaky test
+  detection and quarantining.
+---
+
 # Trunk Analytics CLI
 
 Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Trunk Analytics CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.

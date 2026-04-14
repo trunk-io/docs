@@ -1,3 +1,9 @@
+---
+description: >-
+  How Trunk Analytics CLI handles quarantine service outages without
+  compromising your CI pipeline.
+---
+
 # Quarantine Service Availability
 
 ### Service Availability and Graceful Degradation
