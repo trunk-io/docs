@@ -32,7 +32,7 @@ Test your pull request with the changes ahead of it in the queue
 
 ### The "Unhappy Path": How the Queue Handles Test Failures
 
-Predictive testing is powerful, but it creates a new challenge: **failure cascades**.
+Predictive testing is effective, but it creates a new challenge: **failure cascades**.
 
 In the "Happy Path" example, if PR `A` introduces a failing test, the predictive tests for `B` and `C` are _also_ guaranteed to fail, because they both include the broken code from `A`.
 
