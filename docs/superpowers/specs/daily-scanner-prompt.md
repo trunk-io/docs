@@ -1,1 +1,0 @@
-/Users/samgutentag/Developer/gutils/TRUNK/skills-devrel-pipeline/daily-scanner.md

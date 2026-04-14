@@ -9,3 +9,7 @@
 # Agent outputs (local working files, all under tmp/)
 .claude/tmp/
 .worktrees
+
+# Local agent artifacts (not part of docs site)
+.context/
+docs/
