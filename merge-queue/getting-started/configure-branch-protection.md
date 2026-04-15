@@ -1,7 +1,7 @@
 ---
 description: >-
-  Configure GitHub branch protection rules so Trunk Merge Queue can create
-  test branches and merge PRs into your protected branch.
+  Set up GitHub branch protection so Trunk Merge Queue can admit, test, and
+  merge pull requests through your protected branch.
 ---
 
 # Configure branch protection
@@ -15,9 +15,14 @@ Before configuring branch protection:
 * [ ] CI runs on pull requests and reports status checks to GitHub
 * [ ] You have admin access to repository settings
 
-### How Trunk Merge Queue works
+### How Branch Protection Affects the Queue
 
-Trunk Merge Queue respects GitHub's branch protection rules and works with both Classic branch protection rules and Rulesets. Since Merge Queue ultimately merges pull requests through GitHub, any protection rules on your target branch (like required code reviews or status checks) will still apply.
+Trunk Merge Queue respects GitHub's branch protection rules and works with both Classic branch protection rules and Rulesets. Branch protection plays two distinct roles in how the queue operates:
+
+* **Admission into the queue** — Trunk doesn't admit a submitted PR for testing until GitHub considers it ready to merge. Branch protection (required reviews, required status checks, conversation resolution, etc.) is what determines when GitHub marks a PR as ready to merge, so it directly controls when a PR enters the queue.
+* **Required checks during testing (optional)** — By default, Trunk waits on the same required status checks defined in your branch protection rules while testing a PR in the queue. You can override this with the Trunk UI or `.trunk/trunk.yaml` if you want a different set of checks required during queue testing. See [Required Status Checks](../administration/advanced-settings.md#required-status-checks).
+
+The configurations on this page (push restrictions for the `trunk-io` bot, and excluding `trunk-temp/*` and `trunk-merge/*` from protection) ensure branch protection doesn't *block* Trunk from doing its job. They don't change either of the roles above.
 
 ### Choose your testing approach
 
@@ -60,8 +65,7 @@ When a pull request enters the queue, Trunk creates a `trunk-merge/*` branch and
 
 **Requirements:**
 
-* Configure push-triggered workflows in your CI provider for `trunk-merge/**` branches
-* Define required status checks in your `.trunk/trunk.yaml` [configuration file](configure-ci-status-checks.md#if-using-draft-pr-mode-default)
+* Configure push-triggered workflows in your CI provider for `trunk-merge/**` branches (see [Configure CI status checks](configure-ci-status-checks.md#if-using-push-triggered-mode))
 
 **To enable:** Go to **Settings** > **Repositories** > repository > **Merge Queue** > toggle **off** **Trunk Draft PR Creation**.
 
