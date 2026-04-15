@@ -60,8 +60,7 @@ When a pull request enters the queue, Trunk creates a `trunk-merge/*` branch and
 
 **Requirements:**
 
-* Configure push-triggered workflows in your CI provider for `trunk-merge/**` branches
-* Define required status checks in your `.trunk/trunk.yaml` [configuration file](configure-ci-status-checks.md#if-using-draft-pr-mode-default)
+* Configure push-triggered workflows in your CI provider for `trunk-merge/**` branches (see [Configure CI status checks](configure-ci-status-checks.md#if-using-push-triggered-mode))
 
 **To enable:** Go to **Settings** > **Repositories** > repository > **Merge Queue** > toggle **off** **Trunk Draft PR Creation**.
 

@@ -1,33 +1,27 @@
 ---
 description: >-
-  Configure your CI provider to run required status checks on Trunk Merge
-  Queue branches.
+  Make sure your CI runs whenever Trunk Merge Queue tests a pull request.
 ---
 
 # Configure CI status checks
 
-### If using Draft PR mode (Default) <a href="#if-using-draft-pr-mode-default" id="if-using-draft-pr-mode-default"></a>
+This page covers how to make sure your CI checks run on the branches Trunk Merge Queue creates while testing a pull request. What you need to do depends on the testing mode you selected in [Configure branch protection](configure-branch-protection.md):
+
+* **Draft PR mode (default)** — no additional CI configuration is required.
+* **Push-Triggered mode** — you need to add a CI workflow that triggers on pushes to `trunk-merge/**`.
+
+### If using Draft PR mode (default) <a href="#if-using-draft-pr-mode-default" id="if-using-draft-pr-mode-default"></a>
 
 Your existing pull request-triggered CI workflows will automatically run when Trunk creates draft pull requests to test changes. **No additional configuration is required.**
 
-Trunk will wait for the same required status checks configured in your branch protection rules (either via Classic rules or Rulesets) before merging.
-
-{% hint style="info" %}
-You can also configure required status checks directly in the Trunk UI instead of relying on GitHub branch protection. See [Required Status Checks](../administration/advanced-settings.md#required-status-checks) in the settings documentation.
-{% endhint %}
-
-See GitHub's documentation for configuring required status checks:
+See GitHub's documentation for configuring required status checks on your protected branch:
 
 * [Classic branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging)
 * [Rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets)
 
-**You're done!** Skip to the Verification section below.
+**You're done!** Skip to the [Verification](test-your-setup.md) section.
 
 ### If using Push-Triggered mode <a href="#if-using-push-triggered-mode" id="if-using-push-triggered-mode"></a>
-
-You need to complete two additional steps:
-
-**Step 1: Configure Push-Triggered CI Workflows**
 
 Set up your CI provider to run status checks whenever Trunk pushes to `trunk-merge/*` branches.
 
@@ -50,7 +44,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Run tests
         run: npm test  # Your actual test commands
 
@@ -60,28 +54,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Run integration tests
         run: npm run test:integration  # Your actual test commands
 ```
 
 **For other CI providers:** Configure workflows triggered by pushes to branches matching `trunk-merge/**`.
 
-**Step 2: Define Required Status Checks in .trunk/trunk.yaml**
+### Choosing which checks gate the queue <a href="#choosing-which-checks-gate-the-queue" id="choosing-which-checks-gate-the-queue"></a>
 
-Create or edit your `trunk.yaml` file in a directory named `.trunk` at the root of your repository (so, `.trunk/trunk.yaml`) to specify which status checks Trunk should wait for before merging:
+By default, Merge Queue waits on the same required status checks defined in your GitHub branch protection rules before merging a PR. If you want a different set of checks to gate the queue — for example, because you don't use GitHub branch protection, or because the queue should require different checks than PR review — you can override that in the Trunk UI or in `.trunk/trunk.yaml` (`merge.required_statuses`). Both overrides work in either testing mode.
 
-```yaml
-version: 0.1
-merge:
-  required_statuses:
-    - Unit Tests
-    - Integration Tests
-```
+{% hint style="info" %}
+**This controls which checks gate merging while a PR is being tested in the queue. It does not control which PRs are admitted into the queue.**
+{% endhint %}
 
-**Important:** The status check names in `.trunk/trunk.yaml` must exactly match the job names from your CI workflows.
-
-
+See [Required Status Checks](../administration/advanced-settings.md#required-status-checks) for the full set of options.
 
 ### Next Steps
 

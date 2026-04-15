@@ -214,15 +214,26 @@ For example, assuming a timeout of 4 hours:
 
 > Configure which CI status checks must pass before a PR can merge through the queue.
 
-By default, Trunk infers required status checks from your GitHub branch protection rules. You can override this by configuring required statuses directly in the Trunk UI, giving you independent control over which checks gate the merge queue.
+There are three ways to tell Merge Queue which status checks to wait on while testing a PR:
 
-**When to configure in Trunk:**
+1. **GitHub branch protection rules** (default) — Trunk infers required statuses from the protected branch's required status checks.
+2. **Trunk UI override** — configure required statuses directly in the Trunk UI.
+3. **`.trunk/trunk.yaml` override** — declare required statuses in `merge.required_statuses`.
+
+All three work regardless of which testing mode you chose (Draft PR or Push-Triggered).
+
+{% hint style="info" %}
+**This controls which checks gate merging while a PR is being tested in the queue. It does not control which PRs are admitted into the queue.**
+{% endhint %}
+
+**When to override the default:**
 
 * **Different checks for the queue** - Your branch protection requires checks that shouldn't gate the merge queue (e.g., code coverage reports, deployment previews)
 * **Stricter queue requirements** - You want the merge queue to require additional checks beyond what branch protection enforces
 * **Multiple queues** - Each queue can have its own set of required statuses
+* **No GitHub branch protection** - You don't use branch protection rules and need to tell Merge Queue what to wait on
 
-### How to configure
+### Configure in the Trunk UI
 
 1. Navigate to **Settings** > **Repositories** > your repository > **Merge Queue**
 2. Find the **Required Status Checks** section
@@ -232,6 +243,20 @@ By default, Trunk infers required status checks from your GitHub branch protecti
 {% hint style="info" %}
 When required statuses are configured in Trunk, only those statuses are required for the merge queue. When not configured, Trunk falls back to your GitHub branch protection required checks.
 {% endhint %}
+
+### Configure in `.trunk/trunk.yaml`
+
+Alternatively, declare required statuses in your `.trunk/trunk.yaml` file at the root of your repository:
+
+```yaml
+version: 0.1
+merge:
+  required_statuses:
+    - Unit Tests
+    - Integration Tests
+```
+
+The status check names must exactly match the CI job names that report status to GitHub.
 
 ***
 
