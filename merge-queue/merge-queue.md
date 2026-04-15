@@ -23,7 +23,7 @@ Trunk Merge Queue solves three critical problems that break traditional workflow
 **Key capabilities:**
 
 * Anti-flake protection with optimistic merging
-* Pending failure depth prevents cascade failures
+* Pending failure depth holds failed PRs while successors test, enabling automatic flake recovery
 * Automatic quarantine of flaky tests
 
 → Learn about [anti-flake protection](optimizations/anti-flake-protection.md)

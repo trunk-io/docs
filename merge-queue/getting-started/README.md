@@ -1,3 +1,9 @@
+---
+description: >-
+  Set up Trunk Merge Queue for your repository by installing the GitHub App,
+  creating a queue, and configuring branch protection.
+---
+
 # Getting Started
 
 This guide walks you through setting up Trunk Merge Queue for your repository. The setup process involves installing the GitHub App, creating a queue, and configuring branch protection rules to allow the merge queue to function properly.
@@ -42,7 +48,7 @@ The merge queue needs specific GitHub permissions to function. Follow the [Branc
 
 1. **Configure push restrictions** - Allow the `trunk-io` bot to push to your protected branch
 2. **Disable “Require branches to be up to date before merging.” -** This setting is one of the most common sources of confusion. Many teams enable it to keep their branch green, but it conflicts with how merge queues work. If this is on, PRs will often sit in the “Queued” state forever because GitHub blocks Trunk from updating them.
-3. **Exclude Trunk's temporary branches** - Ensure `trunk-temp/*` and `trunk-merge/*` branches are not protected. They are created and cleaned up automatically by the queue.
+3. **Exclude Trunk's temporary branches** - Make sure `trunk-temp/*` and `trunk-merge/*` branches are not protected. They are created and cleaned up automatically by the queue.
 
 {% hint style="warning" %}
 **Without proper branch protection configuration, the merge queue will not work.** You may see errors like "Permission denied on `trunk-merge/*` branch" or PRs will remain stuck in "Queued" state.
@@ -55,7 +61,7 @@ If you want your organization to merge _exclusively_ through the merge queue:
 * Restrict who can push to your protected branch (e.g., main).
 * Then allow the Trunk GitHub App as the only actor permitted to push to that branch.
 
-This setup ensures all merges flow through the queue and prevents developers from bypassing it accidentally.
+This setup makes sure all merges flow through the queue and prevents developers from bypassing it accidentally.
 
 ### Step 3: Test your setup
 
@@ -85,7 +91,7 @@ If your test PR doesn't merge automatically:
 * **Check the status comments for the PR in** the [Trunk Dashboard](https://app.trunk.io/) to see what it's waiting for
 * **Stuck in "Queued"**: Usually means branch protection rules haven't passed (missing required status checks or code review) or there are merge conflicts. If the status looks correct but the PR still won't enter the queue, try [removing](../using-the-queue/reference.md#submitting-and-cancelling-pull-requests) and re-adding by commenting `/trunk merge` again on the PR.
 * **Fails when attempting to merge**: Check that squash merges are enabled for your repository in GitHub settings (`Settings > General > Allow squash merging`). Trunk Merge Queue requires squash merges to be enabled.
-* **"Permission denied" errors**: Review the [Branch Protection](configure-branch-protection.md) guide to ensure `trunk-temp/*` and `trunk-merge/*` branches aren't protected by wildcard rules like `*/*`.
+* **"Permission denied" errors**: Review the [Branch Protection](configure-branch-protection.md) guide to make sure `trunk-temp/*` and `trunk-merge/*` branches aren't protected by wildcard rules like `*/*`.
 * **Status checks not running**: Verify your CI is configured to run on draft PRs (or `trunk-merge/**` branches if using push-triggered mode). See the [Branch Protection](configure-branch-protection.md) guide for details.
 
 ### Step 4: Configure advanced features

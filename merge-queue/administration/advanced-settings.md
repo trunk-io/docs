@@ -260,9 +260,9 @@ Toggle this setting in **Settings** > **Repositories** > your repository > **Mer
 
 > Pending Failure Depth can be set to any value, options are **0** (default), **1**, **2**, **3**, and **Custom**.
 
-[**Pending Failure Depth**](../optimizations/pending-failure-depth.md) allows a failed PR to remain in the queue temporarily while a configurable number of PRs behind it complete testing. Since predictive testing means the failed PR's code is retested as part of later PRs, this gives flaky tests multiple chances to pass before the PR is evicted from the queue.
+[**Pending Failure Depth**](../optimizations/pending-failure-depth.md) controls how many levels of successor test runs the system waits on before transitioning a failed group out of the Pending Failure state. When combined with [optimistic merging](../optimizations/optimistic-merging.md), this allows a passing successor to retroactively clear a failure caused by a transient issue (flake).
 
-When set to **0** (default), failed PRs are immediately evicted from the queue. Any PRs behind the failed PR that were already testing will be restarted, since they were testing against a predicted future state of the branch that is no longer accurate.
+When set to **0** (default), the successor check is skipped and groups transition as soon as predecessor groups finish testing. When set to a value greater than 0, the system additionally waits for that many successor levels to finish testing before transitioning.
 
 ***
 
@@ -333,7 +333,7 @@ Configure how many PRs can be tested simultaneously during batch failure isolati
 #### How to Configure
 
 1. Navigate to **Settings** > **Repositories** > your repository > **Merge Queue** > **Batching**
-2. Ensure **Batching** is enabled
+2. Make sure **Batching** is enabled
 3. Set **Bisection Testing Concurrency** to your desired value
 4. Monitor CI resource usage and adjust as needed
 
@@ -346,7 +346,7 @@ For detailed guidance on using this setting effectively, see [Bisection Testing 
 {% hint style="danger" %}
 CAUTION: Any queued merge requests will not be merged and all data will be lost.
 
-**Before deleting:** Ensure all important PRs in the queue are either merged manually or that you're prepared to resubmit them to a new queue.
+**Before deleting:** Make sure all important PRs in the queue are either merged manually or that you're prepared to resubmit them to a new queue.
 {% endhint %}
 
 This setting will delete the Merge Queue configuration and any queued merge requests will not be merged and all data will be lost.

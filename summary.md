@@ -35,6 +35,7 @@
 * [Webhooks](merge-queue/webhooks.md)
 * [Administration](merge-queue/administration/README.md)
   * [Settings and configurations](merge-queue/administration/advanced-settings.md)
+  * [Terraform provider](merge-queue/administration/terraform.md)
   * [Metrics and monitoring](merge-queue/administration/metrics.md)
 * [Reference](merge-queue/reference/README.md)
   * [CLI reference](merge-queue/reference/merge-queue-cli-reference.md)

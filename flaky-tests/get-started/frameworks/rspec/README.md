@@ -60,7 +60,7 @@ If you have a step in CI to rerun failed tests with the `--only-failures` option
 
 #### Versions and Updating the Plugin
 
-You can find the Gem for `rspec_trunk_flaky_tests` [here](https://rubygems.org/gems/rspec_trunk_flaky_tests), along with its version history. This plugin is periodically updated for more robust support and bug fixes, and if you're encountering something unexpected, we first encourage you to:
+You can find the Gem for `rspec_trunk_flaky_tests` [here](https://rubygems.org/gems/rspec_trunk_flaky_tests), along with its version history. This plugin is periodically updated with improved support and bug fixes. If you're encountering something unexpected, first try:
 
 ```
 bundle update rspec_trunk_flaky_tests

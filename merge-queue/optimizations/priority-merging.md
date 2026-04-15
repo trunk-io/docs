@@ -1,10 +1,16 @@
+---
+description: >-
+  Fast-track critical PRs like hotfixes and security patches to the front of
+  the merge queue.
+---
+
 # Priority merging
 
 ### What it is
 
 Priority merging allows you to fast-track critical pull requests to the front of the merge queue.&#x20;
 
-By assigning a priority level to a PR, you can ensure urgent changes (like hotfixes, security patches, or critical bug fixes) merge ahead of regular feature work. PRs with higher priority are tested and merged before lower-priority PRs, regardless of when they were submitted.
+By assigning a priority level to a PR, you can make sure urgent changes (like hotfixes, security patches, or critical bug fixes) merge ahead of regular feature work. PRs with higher priority are tested and merged before lower-priority PRs, regardless of when they were submitted.
 
 ### Why use it
 

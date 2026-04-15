@@ -1,3 +1,9 @@
+---
+description: >-
+  Bypass the merge queue entirely for true emergencies. Use with caution as
+  this can invalidate in-progress queue tests.
+---
+
 # Emergency pull requests
 
 Emergency merges bypass the queue entirely and push directly to your main branch. This is the **most disruptive action** you can take and should be reserved for true emergencies only.

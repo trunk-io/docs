@@ -1,3 +1,9 @@
+---
+description: >-
+  Test PRs against the projected future state of your main branch to catch
+  conflicts before they reach production.
+---
+
 # Predictive testing
 
 ### What it is
@@ -26,7 +32,7 @@ Test your pull request with the changes ahead of it in the queue
 
 ### The "Unhappy Path": How the Queue Handles Test Failures
 
-Predictive testing is powerful, but it creates a new challenge: **failure cascades**.
+Predictive testing is effective, but it creates a new challenge: **failure cascades**.
 
 In the "Happy Path" example, if PR `A` introduces a failing test, the predictive tests for `B` and `C` are _also_ guaranteed to fail, because they both include the broken code from `A`.
 
@@ -50,3 +56,7 @@ Instead of immediately kicking a PR just because its test run failed, the queue 
 5. **Automatic Recovery:** PRs `B` and `C` (which are likely healthy) stay in the queue. They are automatically re-scheduled for testing with a new predicted state that _excludes_ the bad PR (e.g., `B` now tests against `main`, and `C` tests against `main + B`).
 
 **Pending Failure** is the essential recovery mechanism that makes **Predictive Testing** practical. It ensures the queue is resilient and that engineers are not disrupted by test failures they didn't cause.
+
+{% hint style="info" %}
+The predecessor-waiting described above is built into the Pending Failure state and always happens. The [Pending Failure Depth](pending-failure-depth.md) configuration adds an additional hold: it also waits for _successor_ test runs to complete, which enables [optimistic merging](optimistic-merging.md) to automatically clear failures caused by flakes.
+{% endhint %}

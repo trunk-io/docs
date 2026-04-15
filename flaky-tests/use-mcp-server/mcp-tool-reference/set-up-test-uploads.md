@@ -6,7 +6,7 @@ description: 'MCP tool reference: setup-trunk-uploads'
 
 ### Overview
 
-The `setup-trunk-uploads` tool helps configure test result uploads to Trunk for flaky test detection and enhanced CI Autopilot analysis. This tool provides step-by-step instructions tailored to your specific test framework and CI provider combination.
+The `setup-trunk-uploads` tool helps configure test result uploads for Trunk Flaky Tests. This tool provides step-by-step instructions tailored to your specific test framework and CI provider combination.
 
 
 
@@ -131,7 +131,7 @@ Add a step to your GitHub Actions workflow to automatically upload test results 
 | ------------------------------------------ | --------------------------------------------- | ------------------------------------------------------ |
 | `Test framework is required`               | `testFramework` parameter missing             | Provide a supported test framework from the list above |
 | `CI provider is required`                  | `ciProvider` parameter missing                | Provide a supported CI provider from the list above    |
-| `User is not authenticated`                | Missing or invalid authentication             | Ensure you're properly authenticated with Trunk        |
+| `User is not authenticated`                | Missing or invalid authentication             | Make sure you are properly authenticated with Trunk    |
 | `User is not a member of any organization` | No organization access                        | Create or join a Trunk organization                    |
 | `No organizations found`                   | No accessible organizations                   | Create an organization in the Trunk app                |
 | Multiple organizations note                | User belongs to multiple orgs, none specified | Provide explicit `orgSlug` parameter                   |

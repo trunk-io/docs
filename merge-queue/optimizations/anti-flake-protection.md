@@ -1,8 +1,14 @@
+---
+description: >-
+  Combine optimistic merging and pending failure depth to prevent flaky test
+  failures from blocking the merge queue.
+---
+
 # Anti-flake protection
 
 ### What it is
 
-Some CI jobs fail for reasons unrelated to a PR's code change, such as due to [flaky tests](https://trunk.io/blog/the-ultimate-guide-to-flaky-tests) or a CI runner disconnecting. These failures are usually cleared when the CI job is rerun. If a second PR that depends on the first **does** pass, it is very likely that the first PR was good and simply experienced a transient failure.&#x20;
+Some CI jobs fail for reasons unrelated to a PR's code change, such as due to [flaky tests](https://trunk.io/blog/the-ultimate-guide-to-flaky-tests) or a CI runner disconnecting. These failures are usually cleared when the CI job is rerun. If a second PR that depends on the first **does** pass, it is very likely that the first PR was good and experienced a transient failure.&#x20;
 
 Trunk Merge Queue can use the combination of [**Optimistic Merging** ](optimistic-merging.md)and [**Pending Failure Depth**](pending-failure-depth.md) to merge pull requests that would otherwise be rejected from the queue.
 

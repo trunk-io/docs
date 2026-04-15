@@ -87,7 +87,7 @@ Features like Optimistic Merging and Batching are validation and testing strateg
 
 Currently, Trunk Merge Queue supports one merge queue per repository. If this is critical for your use case, [talk to us](../../setup-and-administration/support.md) and we'll consider adding support for your use case.
 
-For validating significant changes to your CI process or queue configuration without impacting your primary workflow, the recommended approach is to use a fork of your repository. You can set up and test a separate merge queue on the fork to ensure your changes work as expected before applying them to your primary repository.
+For validating significant changes to your CI process or queue configuration without impacting your primary workflow, the recommended approach is to use a fork of your repository. You can set up and test a separate merge queue on the fork to make sure your changes work as expected before applying them to your primary repository.
 
 </details>
 

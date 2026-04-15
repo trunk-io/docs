@@ -1,3 +1,9 @@
+---
+description: >-
+  CLI tool for uploading test results to Trunk from CI, enabling flaky test
+  detection and quarantining.
+---
+
 # Trunk Analytics CLI
 
 Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Trunk Analytics CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.
@@ -179,7 +185,7 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 {% endtabs %}
 
 {% hint style="info" %}
-### Service Availability and Graceful Degradation
+#### Service Availability and Graceful Degradation
 
 Trunk Analytics CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
 {% endhint %}
@@ -242,7 +248,7 @@ Running tests via `trunk-analytics-cli test` adds negligible memory overhead.
 
 This subcommand is a thin wrapper around your existing test command and doesn't modify or parallelize test execution.
 
-During execution, it simply:
+During execution, it:
 
 * Runs your provided test command directly.
 * Records start and end times.
@@ -251,4 +257,3 @@ During execution, it simply:
 \
 You can safely run the CLI even with large or memory-intensive suites, without risking additional OOMs in your CI agents.
 {% endhint %}
-

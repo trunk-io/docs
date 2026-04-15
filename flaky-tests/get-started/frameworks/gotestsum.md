@@ -9,7 +9,7 @@ You can automatically [detect and manage flaky tests](../../detection/) in your 
 
 ### **Why an Extra Step for `go test`?**
 
-The standard Go test runner, `go test`, is excellent for executing tests and providing immediate feedback to developers. However, it does not natively produce test reports in the JUnit XML format that Trunk Flaky Tests requires for ingestion and analysis. Therefore, an additional tool is needed to convert the output of `go test` into this compatible format. This intermediate step ensures that Trunk can accurately process your test results and identify flaky tests.
+The standard Go test runner, `go test`, is excellent for executing tests and providing immediate feedback to developers. However, it does not natively produce test reports in the JUnit XML format that Trunk Flaky Tests requires for ingestion and analysis. Therefore, an additional tool is needed to convert the output of `go test` into this compatible format. This intermediate step allows Trunk to accurately process your test results and identify flaky tests.
 
 ### Checklist
 
