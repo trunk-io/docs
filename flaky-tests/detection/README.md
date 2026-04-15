@@ -12,8 +12,8 @@ Each monitor independently observes your test runs and tracks two states per tes
 
 | Priority | Status | Condition |
 |----------|--------|-----------|
-| Highest | **Broken** | Any enabled broken-type monitor (threshold or failure count) is active for this test |
-| Middle | **Flaky** | Any enabled flaky-type monitor (threshold, failure count, or pass-on-retry) is active |
+| Highest | **Broken** | Any enabled broken-type monitor (failure rate or failure count) is active for this test |
+| Middle | **Flaky** | Any enabled flaky-type monitor (failure rate, failure count, or pass-on-retry) is active |
 | Lowest | **Healthy** | No active monitors |
 
 If a test triggers both a broken monitor and a flaky monitor simultaneously, it shows as **Broken**. When the broken monitor resolves (e.g., you fix the regression and the failure rate drops), the test transitions to **Flaky** if a flaky monitor is still active, or to **Healthy** if no monitors remain active.
@@ -24,19 +24,19 @@ A test stays in its detected state until every relevant monitor that flagged it 
 
 When you disable or delete a monitor, it is immediately set to **resolved** for every test case in the repo. This triggers a status re-evaluation for all affected tests. If the disabled monitor was the only active monitor for a test, that test transitions to healthy. If other monitors are still active, the test remains in the most severe active state.
 
-For example, if you have a broken threshold monitor and a flaky pass-on-retry monitor, and you disable the broken monitor, any test that was only flagged by the broken monitor will become healthy. A test flagged by both will transition from broken to flaky (because pass-on-retry is still active).
+For example, if you have a broken failure rate monitor and a flaky pass-on-retry monitor, and you disable the broken monitor, any test that was only flagged by the broken monitor will become healthy. A test flagged by both will transition from broken to flaky (because pass-on-retry is still active).
 
 ## Monitor Types
 
 | Monitor | What it detects | Detection type | Plan availability | Default state |
 |---|---|---|---|---|
 | [**Pass-on-Retry**](pass-on-retry-monitor.md) | A test fails then passes on the same commit (retry after failure) | Flaky | Team and above | Enabled |
-| [**Threshold**](threshold-monitor.md) | Failure rate exceeds a configured percentage over a time window | Flaky or Broken | Paid plans | Disabled |
+| [**Failure Rate**](failure-rate-monitor.md) | Failure rate exceeds a configured percentage over a time window | Flaky or Broken | Paid plans | Disabled |
 | [**Failure Count**](failure-count-monitor.md) | A test accumulates a configured number of failures in a rolling window | Flaky or Broken | Paid plans | Disabled |
 
-You can run multiple monitors simultaneously. For example, you might use pass-on-retry to catch classic retry-based flakiness while also running threshold monitors scoped to different branches. A common pattern is to pair a broken-type threshold monitor (catching consistently failing tests) with a flaky-type threshold monitor (catching intermittently failing tests). See [Threshold Monitor: Recommended Configurations](threshold-monitor.md#recommended-configurations) for details.
+You can run multiple monitors simultaneously. For example, you might use pass-on-retry to catch classic retry-based flakiness while also running failure rate monitors scoped to different branches. A common pattern is to pair a broken-type failure rate monitor (catching consistently failing tests) with a flaky-type failure rate monitor (catching intermittently failing tests). See [Failure Rate Monitor: Recommended Configurations](failure-rate-monitor.md#recommended-configurations) for details.
 
-The [failure count monitor](failure-count-monitor.md) complements threshold monitors by reacting to individual failures rather than failure rates. Use it on branches where any failure is a meaningful signal, like `main` or merge queue branches.
+The [failure count monitor](failure-count-monitor.md) complements failure rate monitors by reacting to individual failures rather than failure rates. Use it on branches where any failure is a meaningful signal, like `main` or merge queue branches.
 
 If you need to manually flag a test that automated monitors haven't caught, use [Flag as Flaky](flag-as-flaky.md) from the test detail page.
 
@@ -44,7 +44,7 @@ If you need to manually flag a test that automated monitors haven't caught, use 
 
 Tests often behave differently depending on where they run. Failures on `main` are usually unexpected and signal flakiness. Failures on PR branches may be expected during active development. Merge queue failures are suspicious because the code has already passed PR checks.
 
-Rather than applying a single set of branch rules automatically, Trunk gives you control over how detection treats different branches through **branch scoping** on threshold monitors. You can create separate monitors with different thresholds and windows for your stable branch, PR branches, and merge queue branches. See [Threshold Monitor: Recommended configurations](threshold-monitor.md#recommended-configurations) for specific guidance.
+Rather than applying a single set of branch rules automatically, Trunk gives you control over how detection treats different branches through **branch scoping** on failure rate monitors. You can create separate monitors with different thresholds and windows for your stable branch, PR branches, and merge queue branches. See [Failure Rate Monitor: Recommended configurations](failure-rate-monitor.md#recommended-configurations) for specific guidance.
 
 Pass-on-retry detection is branch-agnostic. It flags any test that fails and passes on the same commit, regardless of which branch the test ran on.
 
