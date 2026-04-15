@@ -15,11 +15,11 @@ Before configuring branch protection:
 * [ ] CI runs on pull requests and reports status checks to GitHub
 * [ ] You have admin access to repository settings
 
-### How branch protection affects the queue
+### How Branch Protection Affects the Queue
 
 Trunk Merge Queue respects GitHub's branch protection rules and works with both Classic branch protection rules and Rulesets. Branch protection plays two distinct roles in how the queue operates:
 
-* **Admission into the queue** — Trunk doesn't admit a submitted PR for testing until GitHub considers it mergeable. Branch protection (required reviews, required status checks, conversation resolution, etc.) is what determines when GitHub flips a PR to mergeable, so it directly controls when a PR enters the queue.
+* **Admission into the queue** — Trunk doesn't admit a submitted PR for testing until GitHub considers it ready to merge. Branch protection (required reviews, required status checks, conversation resolution, etc.) is what determines when GitHub marks a PR as ready to merge, so it directly controls when a PR enters the queue.
 * **Required checks during testing (optional)** — By default, Trunk waits on the same required status checks defined in your branch protection rules while testing a PR in the queue. You can override this with the Trunk UI or `.trunk/trunk.yaml` if you want a different set of checks required during queue testing. See [Required Status Checks](../administration/advanced-settings.md#required-status-checks).
 
 The configurations on this page (push restrictions for the `trunk-io` bot, and excluding `trunk-temp/*` and `trunk-merge/*` from protection) ensure branch protection doesn't *block* Trunk from doing its job. They don't change either of the roles above.

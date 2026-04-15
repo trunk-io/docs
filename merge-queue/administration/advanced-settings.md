@@ -217,8 +217,8 @@ For example, assuming a timeout of 4 hours:
 There are three ways to tell Merge Queue which status checks to wait on while testing a PR:
 
 1. **GitHub branch protection rules** (default) — Trunk infers required statuses from the protected branch's required status checks.
-2. **Trunk UI override** — configure required statuses directly in the Trunk UI.
-3. **`.trunk/trunk.yaml` override** — declare required statuses in `merge.required_statuses`.
+2. **Trunk UI override** — Configure required statuses directly in the Trunk UI.
+3. **`.trunk/trunk.yaml` override** — Declare required statuses in `merge.required_statuses`.
 
 All three work regardless of which testing mode you chose (Draft PR or Push-Triggered).
 

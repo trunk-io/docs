@@ -23,7 +23,7 @@ See GitHub's documentation for configuring required status checks on your protec
 
 ### If using Push-Triggered mode <a href="#if-using-push-triggered-mode" id="if-using-push-triggered-mode"></a>
 
-Set up your CI provider to run status checks whenever Trunk pushes to `trunk-merge/*` branches.
+Set up your CI provider to run status checks whenever Trunk pushes to `trunk-merge/**` branches.
 
 **Example for GitHub Actions:**
 
@@ -61,7 +61,7 @@ jobs:
 
 **For other CI providers:** Configure workflows triggered by pushes to branches matching `trunk-merge/**`.
 
-### Required checks during queue testing <a href="#required-checks-during-queue-testing" id="required-checks-during-queue-testing"></a>
+### Required Checks During Queue Testing <a href="#required-checks-during-queue-testing" id="required-checks-during-queue-testing"></a>
 
 By default, Merge Queue waits on the same required status checks defined in your GitHub branch protection rules while testing a PR. If you want a different set of checks required during queue testing — for example, because you don't use GitHub branch protection, or because the queue should require different checks than PR review — you can override that in the Trunk UI or in `.trunk/trunk.yaml` (`merge.required_statuses`). Both overrides work in either testing mode.
 
@@ -69,7 +69,7 @@ By default, Merge Queue waits on the same required status checks defined in your
 **These checks are what Merge Queue waits on while a PR is already in the queue and testing. They do not control which PRs are admitted into the queue.**
 {% endhint %}
 
-PR admission is governed separately: Trunk waits until GitHub considers the PR mergeable (driven by your [branch protection rules](configure-branch-protection.md#how-branch-protection-affects-the-queue)) before testing begins. If your queue is running in [parallel mode](../optimizations/parallel-queues/README.md), Trunk additionally waits for the PR's [impacted targets](../optimizations/parallel-queues/README.md#what-are-impacted-targets) to be uploaded.
+PR admission is governed separately: Trunk waits until GitHub considers the PR ready to merge (driven by your [branch protection rules](configure-branch-protection.md#how-branch-protection-affects-the-queue)) before testing begins. If your queue is running in [parallel mode](../optimizations/parallel-queues/README.md), Trunk additionally waits for the [impacted targets](../optimizations/parallel-queues/README.md#what-are-impacted-targets) of that PR to be uploaded.
 
 See [Required Status Checks](../administration/advanced-settings.md#required-status-checks) for the full set of options.
 
