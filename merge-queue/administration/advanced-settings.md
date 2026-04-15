@@ -223,7 +223,7 @@ There are three ways to tell Merge Queue which status checks to wait on while te
 All three work regardless of which testing mode you chose (Draft PR or Push-Triggered).
 
 {% hint style="info" %}
-**This controls which checks gate merging while a PR is being tested in the queue. It does not control which PRs are admitted into the queue.**
+**These checks are what Merge Queue waits on while a PR is already in the queue and testing. They do not control which PRs are admitted into the queue.**
 {% endhint %}
 
 **When to override the default:**

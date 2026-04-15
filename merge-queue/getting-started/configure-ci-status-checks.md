@@ -61,17 +61,17 @@ jobs:
 
 **For other CI providers:** Configure workflows triggered by pushes to branches matching `trunk-merge/**`.
 
-### Choosing which checks gate the queue <a href="#choosing-which-checks-gate-the-queue" id="choosing-which-checks-gate-the-queue"></a>
+### Required checks during queue testing <a href="#required-checks-during-queue-testing" id="required-checks-during-queue-testing"></a>
 
-By default, Merge Queue waits on the same required status checks defined in your GitHub branch protection rules before merging a PR. If you want a different set of checks to gate the queue — for example, because you don't use GitHub branch protection, or because the queue should require different checks than PR review — you can override that in the Trunk UI or in `.trunk/trunk.yaml` (`merge.required_statuses`). Both overrides work in either testing mode.
+By default, Merge Queue waits on the same required status checks defined in your GitHub branch protection rules while testing a PR. If you want a different set of checks required during queue testing — for example, because you don't use GitHub branch protection, or because the queue should require different checks than PR review — you can override that in the Trunk UI or in `.trunk/trunk.yaml` (`merge.required_statuses`). Both overrides work in either testing mode.
 
 {% hint style="info" %}
-**This controls which checks gate merging while a PR is being tested in the queue. It does not control which PRs are admitted into the queue.**
+**These checks are what Merge Queue waits on while a PR is already in the queue and testing. They do not control which PRs are admitted into the queue.**
 {% endhint %}
 
 PR admission is governed separately: Trunk waits until GitHub considers the PR mergeable (driven by your [branch protection rules](configure-branch-protection.md#how-branch-protection-affects-the-queue)) before testing begins. If your queue is running in [parallel mode](../optimizations/parallel-queues/README.md), Trunk additionally waits for the PR's [impacted targets](../optimizations/parallel-queues/README.md#what-are-impacted-targets) to be uploaded.
 
-See [Required Status Checks](../administration/advanced-settings.md#required-status-checks) for the full set of gating options.
+See [Required Status Checks](../administration/advanced-settings.md#required-status-checks) for the full set of options.
 
 ### Next Steps
 
