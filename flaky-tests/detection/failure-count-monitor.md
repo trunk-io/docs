@@ -4,7 +4,7 @@ description: Detect flaky or broken tests as soon as they accumulate a configure
 
 # Failure Count Monitor
 
-The failure count monitor flags a test the moment it accumulates a configured number of failures on monitored branches within a rolling time window. Unlike the threshold monitor, which requires a failure *rate* calculated over many runs, the failure count monitor reacts to individual failures without needing a minimum sample size or a percentage calculation.
+The failure count monitor flags a test the moment it accumulates a configured number of failures on monitored branches within a rolling time window. Unlike the failure rate monitor, which requires a failure *rate* calculated over many runs, the failure count monitor reacts to individual failures without needing a minimum sample size or a percentage calculation.
 
 This makes it well-suited for stable branches like `main` where any test failure is unexpected and worth investigating immediately.
 
@@ -13,10 +13,10 @@ This makes it well-suited for stable branches like `main` where any test failure
 Use the failure count monitor when you want immediate visibility into test failures on branches that should be green. Common scenarios:
 
 - **Stable branch alerting:** Flag any test that fails on `main`, even once. On a branch where all tests should pass, a single failure is a meaningful signal.
-- **Post-merge regression detection:** Catch tests that start failing after a merge, before the failure rate accumulates enough data for a threshold monitor to trigger.
+- **Post-merge regression detection:** Catch tests that start failing after a merge, before the failure rate accumulates enough data for a failure rate monitor to trigger.
 - **High-confidence branches:** Monitor merge queue or release branches where failures are suspicious by definition.
 
-If you need to detect patterns of intermittent failure over time (e.g., a test that fails 20% of the time), use a [threshold monitor](threshold-monitor.md) instead. If you want to catch tests that fail and then pass on retry within a single commit, [pass-on-retry](pass-on-retry-monitor.md) handles that automatically.
+If you need to detect patterns of intermittent failure over time (e.g., a test that fails 20% of the time), use a [failure rate monitor](failure-rate-monitor.md) instead. If you want to catch tests that fail and then pass on retry within a single commit, [pass-on-retry](pass-on-retry-monitor.md) handles that automatically.
 
 ## Detection Type
 
@@ -72,7 +72,7 @@ The window should be long enough to capture the failures you care about but shor
 
 ### Resolution Timeout
 
-How long a flagged test must go without any new failures before it is automatically resolved. This is the only way a failure count monitor resolves. There is no "recovery rate" or sample-based resolution like the threshold monitor.
+How long a flagged test must go without any new failures before it is automatically resolved. This is the only way a failure count monitor resolves. There is no "recovery rate" or sample-based resolution like the failure rate monitor.
 
 For example, with a resolution timeout of 2 hours, a test that was flagged at 3:00 PM will resolve at 5:00 PM if no new failures occur. If a new failure arrives at 4:30 PM, the clock resets, and the test will not resolve until 6:30 PM.
 
@@ -84,7 +84,7 @@ Choose a resolution timeout that gives your team enough time to verify a fix has
 
 Which branches the monitor evaluates. You can specify branch names or glob patterns. Only test failures on matching branches count toward the failure count.
 
-Branch patterns work the same way as [threshold monitor branch patterns](threshold-monitor.md#branch-pattern-syntax), including glob syntax and merge queue patterns. Refer to that section for pattern syntax, examples, and tips.
+Branch patterns work the same way as [failure rate monitor branch patterns](failure-rate-monitor.md#branch-pattern-syntax), including glob syntax and merge queue patterns. Refer to that section for pattern syntax, examples, and tips.
 
 ## Resolution Behavior
 

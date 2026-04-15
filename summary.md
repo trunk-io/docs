@@ -97,7 +97,7 @@
 * [Dashboard](flaky-tests/dashboard.md)
 * [Flaky test detection](flaky-tests/detection/README.md)
   * [Pass-on-Retry Monitor](flaky-tests/detection/pass-on-retry-monitor.md)
-  * [Threshold Monitor](flaky-tests/detection/threshold-monitor.md)
+  * [Failure Rate Monitor](flaky-tests/detection/failure-rate-monitor.md)
   * [Failure Count Monitor](flaky-tests/detection/failure-count-monitor.md)
   * [Flag as Flaky](flaky-tests/detection/flag-as-flaky.md)
 * [Infrastructure Failure Protection](flaky-tests/infrastructure-failure-protection.md)
