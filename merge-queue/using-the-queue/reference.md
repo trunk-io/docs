@@ -34,6 +34,31 @@ trunk login
 trunk merge cancel <pr-number>
 ```
 
+## Custom merge commit titles
+
+You can specify a custom merge commit title for any PR by adding a `merge-commit-title:` directive on its own line anywhere in the PR body:
+
+```
+merge-commit-title: Your Custom Commit Title Here
+```
+
+When Trunk merges the PR, it uses this title instead of the default GitHub-generated title. When the directive is not present, the default behavior is preserved.
+
+This is useful for teams that follow conventional commit formats, include ticket numbers in merge commits, or want cleaner git history.
+
+### Example
+
+```markdown
+## Description
+This PR adds user authentication.
+
+merge-commit-title: feat(auth): add OAuth2 login flow [PROJ-123]
+```
+
+{% hint style="info" %}
+The `merge-commit-title:` directive only customizes the commit **title**. The commit body follows the usual behavior for your configured [merge method](../administration/advanced-settings.md#merge-method).
+{% endhint %}
+
 ## Pull request processing
 
 Once a PR is submitted to the merge queue it goes through several states. First, it starts as _Queued_ until all of the required conditions to submit it are met. Once ready, the PR moves to the _Pending_ state, waiting for a Merge Queue to pick it up, and then enters the _Testing_ state. Once the tests pass the PR may still need to wait for upstream PRs. Once any upstream PRs are complete the PR will be merged and then removed from the Merge Queue. If a PR fails or is canceled then it will go to the failed or canceled state.
