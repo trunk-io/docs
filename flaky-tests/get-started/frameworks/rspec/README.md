@@ -68,7 +68,7 @@ bundle update rspec_trunk_flaky_tests
 
 ### Environment Variables
 
-These optoinal environment variables can be set in your project to change the behavior of the RSpec plugin.
+These optional environment variables can be set in your project to change the behavior of the RSpec plugin.
 
 #### Repository metadata variables:
 

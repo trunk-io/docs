@@ -19,7 +19,7 @@ trunk check enable prettier
 
 ## Auto Enabling
 
-Prettier will be auto-enabled if any _TypeScript, Yaml, Css, Postcss, Sass, Html, Markdown, Json, JavaScript, Graphql or Prettier\_supported\_configs_ files are present.
+Prettier will be auto-enabled if any _TypeScript, YAML, CSS, PostCSS, Sass, HTML, Markdown, JSON, JavaScript, GraphQL or Prettier\_supported\_configs_ files are present.
 
 ## Settings
 
