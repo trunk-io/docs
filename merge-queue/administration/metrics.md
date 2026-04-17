@@ -107,6 +107,24 @@ The time in queue can be displayed as different statistical measures. You can sh
 
 ***
 
+### Drill into a metrics data point
+
+You can click any data point on the Conclusion Count or Time in Queue charts to open a detailed view listing the individual PRs that make up that point.
+
+The PR list shows each pull request that exited the queue during the selected time range, along with its conclusion (merged, failed, or canceled) and the time it spent in the queue.
+
+#### Filter the PR list
+
+Use the filters at the top of the PR list to narrow the results:
+
+* **Date range** - Select a start and end date to scope the list to a specific window.
+* **Conclusion** - Filter by outcome: merged, failed, or canceled.
+* **Impacted targets** - When running in Parallel Mode, filter PRs by the targets they affected.
+
+To return to the health charts, click **Back to Health** at the top of the page.
+
+***
+
 ### Prometheus metrics endpoint
 
 Trunk exposes merge queue metrics in [Prometheus text exposition format](https://prometheus.io/docs/instrumenting/exposition_formats/) via a scrapable API endpoint. Use this to build custom Grafana dashboards, set up alerts, or integrate merge queue health into your existing observability stack.
