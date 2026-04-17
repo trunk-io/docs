@@ -41,6 +41,14 @@ lint:
     - linters: [prettier]
       paths:
         - "**/*.md"
+    - linters: [vale]
+      paths:
+        - ".claude/**"
+        - ".github/**"
+        - ".trunk/**"
+        - ".idea/**"
+        - ".worktrees/**"
+        - "readme.md"
 
 merge:
   required_statuses:
