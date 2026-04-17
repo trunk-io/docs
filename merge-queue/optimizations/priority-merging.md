@@ -66,7 +66,7 @@ When prioritizing a PR, Merge will explicitly **not interrupt** any currently te
 **There is an exception to this rule.** Sometimes, when there is a PR urgent enough to get in that it is worth the cost of restarting a currently testing PR, you can move the new PR to the front using the `"urgent"` priority. This is the only time Merge will reschedule a PR that is already in testing.
 
 {% hint style="warning" %}
-Another exception: Admins can still merge PRs in absolutely necessary cases outside of the merge queue. Merge Queue handles thes gracefull and will react properly to restart the rest of the queue.
+Another exception: Admins can still merge PRs in absolutely necessary cases outside of the merge queue. Merge Queue handles this gracefully and will react properly to restart the rest of the queue.
 {% endhint %}
 
 #### Example:

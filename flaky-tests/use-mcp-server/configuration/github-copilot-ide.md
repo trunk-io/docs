@@ -59,7 +59,7 @@ Run `CMD+Shift+P` to open the Command Palette and choose `MCP: List Servers`. Ch
 
 **Step 2: Login & authorize**
 
-A new webpage will be opened. Login with your Trunk account and follow insturctions to authorize GitHub Copilot to communicate with the MCP server.
+A new webpage will be opened. Login with your Trunk account and follow instructions to authorize GitHub Copilot to communicate with the MCP server.
 
 
 

@@ -1,11 +1,11 @@
 ---
 title: Trunk | How to run cfnlint
-description: cfnlint is a linter for Cloudformation
+description: cfnlint is a linter for CloudFormation
 ---
 
 # cfnlint
 
-[**cfnlint**](https://github.com/aws-cloudformation/cfn-lint#readme) is a linter for Cloudformation.
+[**cfnlint**](https://github.com/aws-cloudformation/cfn-lint#readme) is a linter for CloudFormation.
 
 You can enable the cfnlint linter with:
 
@@ -15,7 +15,7 @@ trunk check enable cfnlint
 
 ## Auto Enabling
 
-cfnlint will be auto-enabled if any _Cloudformation_ files are present.
+cfnlint will be auto-enabled if any _CloudFormation_ files are present.
 
 ## Links
 

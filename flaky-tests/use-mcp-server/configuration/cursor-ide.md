@@ -44,7 +44,7 @@ A "Needs authentication" status will be shown:
 
 **Step 3: Login & authorize**
 
-A new webpage will be opened. Login with your Trunk account and follow insturctions to authorize Cursor to communicate with the MCP server.
+A new webpage will be opened. Login with your Trunk account and follow instructions to authorize Cursor to communicate with the MCP server.
 
 **Step 4: Confirm**
 

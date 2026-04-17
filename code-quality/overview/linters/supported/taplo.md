@@ -15,7 +15,7 @@ trunk check enable taplo
 
 ## Auto Enabling
 
-taplo will be auto-enabled if any _Toml_ files are present.
+taplo will be auto-enabled if any _TOML_ files are present.
 
 ## Settings
 
