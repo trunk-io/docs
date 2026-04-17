@@ -94,6 +94,7 @@
     * [Other CI Providers](flaky-tests/get-started/ci-providers/otherci.md)
   * [Multiple Repositories and Forks](flaky-tests/get-started/multiple-repositories.md)
 * [Managing detected flaky tests](flaky-tests/managing-detected-flaky-tests.md)
+* [Test Collections](flaky-tests/test-collections.md)
 * [Dashboard](flaky-tests/dashboard.md)
 * [Flaky test detection](flaky-tests/detection/README.md)
   * [Pass-on-Retry Monitor](flaky-tests/detection/pass-on-retry-monitor.md)
