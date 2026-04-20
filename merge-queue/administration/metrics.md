@@ -105,6 +105,47 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
 
+### Drill down into metrics
+
+From the **Conclusion count** and **Time in queue** charts, you can drill into any point or window on the graph to see the exact pull requests that made up those numbers.
+
+<figure><img src="../../.gitbook/assets/TODO-drill-down-overview.png" alt=""><figcaption><p>Selecting a range of data points on the Time in queue chart.</p></figcaption></figure>
+
+#### Why drill down?
+
+Aggregated charts tell you _that_ something happened — drilling down tells you _which PRs_ caused it. This makes it easy to:
+
+* **Track down outliers** — if the p99 on Time in queue spikes, drill into that bucket to find the specific PR that dragged the tail out.
+* **Investigate failure spikes** — click a bar on Conclusion count where failures jumped and see exactly which PRs failed and why.
+* **Audit a time window** — pull the full list of PRs merged, failed, or canceled during an incident window or release cut.
+* **Answer one-off questions** — "which PRs merged between 2pm and 4pm yesterday?" without writing a query against the Prometheus endpoint.
+
+#### Select data points
+
+You have two ways to select:
+
+* **Click a single data point** to see the PRs in that time bucket.
+* **Click and drag across the chart** to select a range of data points spanning multiple time buckets.
+
+Once a selection is made, a **View PRs** button appears. Click it to open the list of PRs that make up the selection.
+
+<figure><img src="../../.gitbook/assets/TODO-view-prs-button.png" alt=""><figcaption><p>The View PRs button appears after selecting a data point or range.</p></figcaption></figure>
+
+#### Review the PR list
+
+The PR list page shows every PR included in your selection, along with:
+
+* **Conclusion** — how the PR exited the queue (for example, Merged by Trunk, Failed Tests, PR closed). See the [Conclusion count](#conclusion-count) table for the full list of conclusions.
+* **Time in queue** — how long the PR spent in the merge queue from entry to exit.
+
+Both columns are sortable, so you can quickly surface the longest-running PRs in a window or group all failures of the same type together.
+
+<figure><img src="../../.gitbook/assets/TODO-pr-drill-down-list.png" alt=""><figcaption><p>The drill-down PR list, sortable by conclusion and time in queue.</p></figcaption></figure>
+
+{% hint style="info" %}
+Drill-down is currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interaction as they land in the UI.
+{% endhint %}
+
 ***
 
 ### Prometheus metrics endpoint
