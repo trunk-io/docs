@@ -12,7 +12,7 @@ Trunk Flaky Tests detects flaky tests by analyzing test results from your CI run
 
 * Account at [app.trunk.io](https://app.trunk.io)
 * Ability to modify repository CI configuration and add secrets
-* Tests running in CI on both PRs and stable branches (e.g., main)
+* Tests running in CI on both PRs and stable branches (e.g., main, master, or develop)
 
 #### Step 1: Ensure JUnit XML output
 
@@ -34,6 +34,10 @@ Add test result uploads to all CI jobs that run tests.
    * Merge queue branches (if applicable)
 
 Uploads from both PRs and stable branches are required for Trunk Flaky Tests to accurately detect flaky tests.
+
+{% hint style="info" %}
+Trunk automatically recognizes `main`, `master`, and `develop` as stable branches. If your primary branch uses a different name, configure uploads from that branch the same way and Trunk will classify it correctly based on how your monitors are scoped.
+{% endhint %}
 
 #### Step 3: Verify integration
 
