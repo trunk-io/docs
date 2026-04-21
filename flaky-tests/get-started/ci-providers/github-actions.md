@@ -35,7 +35,11 @@ You can find your token under **Settings > Organization > Manage > Organization 
 
 ### Add Your Trunk Token and Organization Slug as Secrets
 
+<<<<<<< samgutentag/org-slug-audit
+Store the Trunk slug and API token obtained in the previous step in your repo as [GitHub secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
+=======
 Store the Trunk slug and API token obtained in the previous step in your repo as [GitHub secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_ORG_URL_SLUG` and `TRUNK_TOKEN` respectively.
+>>>>>>> main
 
 ### Upload to Trunk
 
