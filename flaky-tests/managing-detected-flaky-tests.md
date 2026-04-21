@@ -19,7 +19,19 @@ Flaky tests will be [automatically detected](detection/) by Trunk after you:
 Go through these guides first to start detecting flaky tests.
 {% endhint %}
 
-### Step 1: Create tickets for flaky tests
+### Step 1: Organize tests with labels
+
+Test labels let you categorize and group related flaky tests within Trunk. Labels are useful for tracking tests by team, component, root cause, or any grouping that fits your workflow.
+
+To assign or remove labels on a test:
+
+1. Open the test detail page in the Trunk app.
+2. In the **Metadata** section at the top of the page, click the **Labels** field.
+3. Select labels from the picker or type to create new ones. Remove labels by clicking the **x** on any applied label.
+
+Labels you apply are visible on the test detail page. Use them to filter and prioritize your backlog of flaky tests.
+
+### Step 2: Create tickets for flaky tests
 
 Creating Linear or Jira tickets for detected flaky tests helps to integrate flaky test fixes into your existing workflows.
 
@@ -27,7 +39,7 @@ Creating Linear or Jira tickets for detected flaky tests helps to integrate flak
 * Once connected, you can click **Create Ticket** on a test detail page in Trunk. Trunk will create the ticket with context, including the test ID, flake rate, and the last failure stack trace and reason.
 * The ticket status and assignee will be visible on the test details page in Trunk, and these details will stay in sync with changes to the ticket.
 
-### Step 2: Broadcast flakes
+### Step 3: Broadcast flakes
 
 It is important to keep the team informed on all status changes for flaky tests . This allows for fast follow-up when a test is marked as flaky.
 
@@ -35,7 +47,7 @@ It is important to keep the team informed on all status changes for flaky tests 
 * Trunk's built-in templates help you get started and test the connection.
 * You can then customize the transformation to update the message format and content, including @-mentioning test owners so they can follow up right away.
 
-### Step 3: Mute monitors
+### Step 4: Mute monitors
 
 If a flaky test has a known issue or a fix in progress, you can mute the monitor that flagged it. A muted monitor continues to run and record detections, but it does not contribute to the test's flaky status until the mute expires or is manually removed.
 
@@ -66,11 +78,11 @@ You can unmute a monitor at any time from the test case detail page, regardless 
 Muting suppresses the monitor's contribution to the test's status. If the muted monitor was the only active monitor for a test, the test transitions from flaky to healthy for the duration of the mute.
 {% endhint %}
 
-### Step 4: Flag flaky tests
+### Step 5: Flag flaky tests
 
 If automated detection hasn't caught a test you know is flaky, you can manually [flag it as flaky](detection.md#flag-as-flaky) from the test detail page. Flagged tests are treated as flaky regardless of automated detection state, and the flag can be removed at any time.
 
-### Step 5: Quarantine flaky tests
+### Step 6: Quarantine flaky tests
 
 Flaky tests slow down CI and have a high negative impact on merge queue throughput. You can minimize or eliminate this CI slowdown by [quarantining](quarantining.md) flaky tests at runtime.
 
@@ -83,7 +95,7 @@ After quarantining a test, Trunk will ignore the test result (pass/fail) on CI r
 **Broken tests are not quarantine candidates.** Only tests with a **Flaky** status are eligible for quarantine. If a test is marked as Broken (consistently failing at a high rate), it represents a real regression that should be investigated and fixed rather than hidden. See [detection](detection/) to understand the difference between flaky and broken tests.
 {% endhint %}
 
-### Step 6: Automation
+### Step 7: Automation
 
 Trunk has [webhooks](webhooks/) and [Flaky Tests APIs](flaky-tests.md) that can be used to build custom workflows around ticket creation, linking existing tickets to Trunk, sending notifications, and dealing with quarantined tests.
 
@@ -95,7 +107,7 @@ There is also built-in automation support that handles tasks such as assigning f
 
 You can customize how flaky and quarantined tests are handled to suit your team and organization best.
 
-### Step 7: Review existing flakes and broken tests
+### Step 8: Review existing flakes and broken tests
 
 It is important to track and triage existing flaky and broken tests over time. Trunk collects historical failure logs and stack traces, providing developers as much information as possible for debugging high-impact test failures.
 
