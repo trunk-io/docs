@@ -8,6 +8,30 @@ description: >-
 
 Trunk Flaky Tests detects flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard.
 
+### Repositories overview
+
+When you navigate to `/<your-org>/flaky-tests`, you land on a repositories overview showing all monitored repositories at a glance.
+
+Each repository row displays:
+
+| Column | Description |
+|--------|-------------|
+| **Tests** | Total tracked test cases in the repository (60-day window) |
+| **Flaky** | Number of currently flaky test cases, with a 10-day trend sparkline |
+| **Broken** | Number of currently broken test cases, with a 10-day trend sparkline |
+| **Runs / Day** | Bar chart of test run volume over the last 10 days, with per-day hover tooltips |
+
+A quarantine status icon appears next to each repository name when quarantining is configured:
+
+| Icon | Meaning |
+|------|---------|
+| Shield | Quarantining is enabled for this repository; auto-quarantine is off |
+| Shield with checkmark | Auto-quarantine is enabled — flaky tests are quarantined automatically |
+
+Active repositories (with test data in the last 30 days) appear at the top of the list. Repositories with no recent data are collapsed under an **Inactive Repositories** section that you can expand to view.
+
+Selecting a repository opens its detailed dashboard. If your organization has no repositories connected yet, the page redirects to onboarding. See [Quarantining](quarantining.md) to learn how to configure quarantine settings.
+
 ### Key repository metrics
 
 <figure><picture><source srcset="../.gitbook/assets/key-metrics-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/key-metrics-light.png" alt=""></picture><figcaption><p>Key repo metrics</p></figcaption></figure>
