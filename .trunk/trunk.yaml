@@ -16,6 +16,8 @@ lint:
   # See inherited enabled linters and other config here:
   #   https://github.com/trunk-io/configs/blob/main/plugin.yaml
   enabled:
+    - codespell@2.4.2:
+        config: .trunk/configs/.codespellrc
     - non-relative-link-check
     - vale@3.11.2
   definitions:

@@ -105,7 +105,7 @@ function handler(webhook) {
     "title":`Flaky Test: ${webhook.payload.test_case.name.substring(0, 25)} transitioned to ${webhook.payload.status_change.current_status.value}`,
     "body": summarizeTestCase(webhook.payload),
     "labels": GITHUB_ISSUE_LABEL_IDS,
-    // Uncomment this function for auto asignment
+    // Uncomment this function for auto assignment
     // "assignees": webhook.payload.test_case.codeowners.map((assignee)=>{
     //     // Strip the `@` symbol from codeowners
     //     return assignee.slice(1)
