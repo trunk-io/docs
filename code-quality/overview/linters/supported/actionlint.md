@@ -1,7 +1,7 @@
 ---
 title: Trunk | How to run Actionlint
 description: >-
-  Explore our guide on Actionlint, the linter for Github Actions. Learn about
+  Explore our guide on Actionlint, the linter for GitHub Actions. Learn about
   its features, installation, and configuration.
 ---
 
@@ -17,7 +17,7 @@ trunk check enable actionlint
 
 ## Auto Enabling
 
-Actionlint will be auto-enabled if any _Github-workflow_ files are present.
+Actionlint will be auto-enabled if any _GitHub-workflow_ files are present.
 
 ## Settings
 
