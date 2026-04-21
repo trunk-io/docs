@@ -105,7 +105,7 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
 
-### Drill Down Into Metrics
+### Drill down into metrics
 
 From the **Conclusion count** and **Time in queue** charts, you can drill into any point or window on the graph to see the exact pull requests that made up those numbers.
 
