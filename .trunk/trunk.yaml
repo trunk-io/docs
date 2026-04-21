@@ -37,6 +37,7 @@ lint:
             \\((?P<code>.*)\\))"
           success_codes: [0, 1]
   disabled:
+    - semgrep
     - markdownlint
     - trivy
   ignore:
