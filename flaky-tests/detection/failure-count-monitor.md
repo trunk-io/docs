@@ -94,6 +94,14 @@ When the configured resolution timeout elapses without a new failure on any moni
 
 This time-based approach means you don't need to wait for enough passing runs to bring a failure rate down. Once the test is quiet, it resolves.
 
+## Preview Panel
+
+When you create or edit a failure count monitor, a **Preview** panel appears on the right side of the dialog on larger screens. The preview updates as you adjust the monitor's settings, giving you a live look at what the monitor would detect against your current branch data.
+
+Once the monitor configuration produces detections, the panel shows a **Failing tests** list. Each row displays the test name as a link to its detail page, along with its failure count. Counts that meet or exceed your configured minimum failure threshold are highlighted in red; counts below the threshold appear in muted text.
+
+You can search the list by test name or parent test name. The search is case-insensitive and filters as you type. If no tests match your search term, the list shows a "No tests match" message. When more than 100 tests are detected, only the first 100 are shown with a notice to narrow your search.
+
 ## Muting
 
 You can temporarily mute a failure count monitor for a specific test case. See [Muting monitors](README.md#muting-monitors) for details.
