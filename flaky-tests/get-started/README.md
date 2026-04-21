@@ -8,6 +8,10 @@ description: >-
 
 Trunk Flaky Tests detects flaky tests by analyzing test results from your CI runs. Setup requires configuring test result output and CI upload integration.
 
+{% hint style="info" %}
+**Interactive setup available** — If you have a Trunk account, the [in-app onboarding guide](https://app.trunk.io) walks you through configuration with instructions tailored to your test framework and CI provider.
+{% endhint %}
+
 ### Prerequisites
 
 * Account at [app.trunk.io](https://app.trunk.io)
