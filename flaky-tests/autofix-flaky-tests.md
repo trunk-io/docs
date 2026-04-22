@@ -13,7 +13,7 @@ To use the Autofix Flaky Tests feature, you'll need:
 
 ### Auto-Investigate Flaky Tests
 
-Once enabled, Trunk automatically monitors your test runs and detects flaky tests (tests that pass and fail inconsistently). When a flaky test is detected, Trunk analyzes the failure patterns and git history of the test to provide a number of insights.
+Once enabled, any time that Trunk [detects a flaky test](./detection/README.md), Trunk analyzes the failure patterns, failure output, and git history of the test to provide a number of insights.
 
 <figure><img src="../.gitbook/assets/investigate-flaky-tests.png" alt="Results of an automatic flaky tests analysis"><figcaption></figcaption></figure>
 
