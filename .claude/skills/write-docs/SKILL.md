@@ -1,7 +1,7 @@
 ---
 name: write-docs
 description: Process notes, Slack threads, Slite docs, or trunk2 deploy context into documentation changes. Creates a branch, edits docs, opens a PR, and updates Linear. Use when given a notes file from .claude/drafts/, trunk2 PR numbers, Linear ticket IDs, a deploy tag, Slite doc links, or when the user says "write docs", "document this", or "process drafts".
-allowed-tools: Bash(git *), Bash(gh pr *), Bash(gh issue *), Bash(gh api *), Read, Write, Edit, Glob, Grep, mcp__claude_ai_Linear__get_issue, mcp__claude_ai_Linear__list_issues, mcp__claude_ai_Linear__list_projects, mcp__claude_ai_Linear__save_issue, mcp__claude_ai_Linear__save_comment, mcp__claude_ai_Linear__create_attachment, mcp__claude_ai_trunk_docs__searchDocumentation, mcp__claude_ai_Trunk_Slite__*, mcp__claude_ai_Slack__*, WebFetch
+allowed-tools: Bash(git *), Bash(gh pr *), Bash(gh issue *), Bash(gh api *), Bash(trunk fmt *), Bash(trunk check *), Read, Write, Edit, Glob, Grep, mcp__claude_ai_Linear__get_issue, mcp__claude_ai_Linear__list_issues, mcp__claude_ai_Linear__list_projects, mcp__claude_ai_Linear__save_issue, mcp__claude_ai_Linear__save_comment, mcp__claude_ai_Linear__create_attachment, mcp__claude_ai_trunk_docs__searchDocumentation, mcp__claude_ai_Trunk_Slite__*, mcp__claude_ai_Slack__*, WebFetch
 ---
 
 # Writing Docs
