@@ -135,6 +135,14 @@ The stacked PR is automatically cancelled if any of the following happens:
 
 When cancellation occurs, Trunk posts a comment on each member PR explaining the reason (e.g., "Stacked PR #N was cancelled: a member PR was pushed to.") and closes the stacked PR. To re-stack, run `/trunk stack` again on any member PR. This creates a fresh stacked PR with the latest state of all member PRs.
 
+### Why `/trunk stack` creates a separate PR
+
+An obvious-sounding shortcut would be to test the stack against `main`, then fast-forward `main` to the top of the stack once tests pass. That doesn't work.
+
+Trunk Merge Queue uses [predictive testing](../optimizations/predictive-testing.md): every PR is tested against the projected future state of the target branch, not its current state, and multiple PRs test concurrently against different speculative merge states. By the time your stack finishes testing, the actual target branch tip has almost certainly advanced past where your stack was based: one or more PRs ahead in the queue have merged. You can't fast-forward past those intermediate merges, and pushing over them would skip testing against the new tip: exactly the stale-results blind spot the queue exists to eliminate.
+
+Wrapping the stack in a synthetic PR hands it off to the same predictive-testing machinery every other PR uses. The queue tests it against the current projected future state and produces a real merge commit incorporating both the stack's changes and anything that landed ahead of it. Everything else falls out for free: batching, priority, optimistic merging, failure handling, `/trunk cancel`, and a real PR visible in GitHub's history.
+
 ## Enqueue each PR individually
 
 If you prefer per-PR test isolation, or you don't want to install Trunk Sudo, you can enqueue each PR in the stack separately with `/trunk merge`. Trunk processes the PRs sequentially, testing and merging each one against the actual state of your merge queue branch.
