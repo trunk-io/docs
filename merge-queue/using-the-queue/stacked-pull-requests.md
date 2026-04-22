@@ -37,7 +37,7 @@ Trunk discovers the stack automatically by walking base branches. No separate co
 
 ## Merge the stack as one unit
 
-Comment `/trunk stack` on any PR in the stack and Trunk combines every PR in the chain into a single stacked PR that moves through the merge queue together. That stacked PR tests and merges like any other PR in the queue; batching, priority, and failure handling all behave normally. When the stacked PR merges, Trunk automatically closes every member PR, since their code is already in your target branch.
+Comment `/trunk stack` on any PR in the stack and Trunk combines every PR in the chain into a single stacked PR that moves through the merge queue together. That stacked PR tests and merges like any other PR in the queue; batching, priority, and failure handling all behave normally. When the stacked PR merges, Trunk automatically closes every member PR, since its code is already in your target branch.
 
 ### Prerequisites
 
