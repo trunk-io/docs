@@ -67,7 +67,7 @@ Trunk hermetically installs the static analysis tools you run and their required
 
 If a tool requires `python 3.10` but the projects you're working on require `python 3.7`, Trunk will manage that tool and its `python 3.10` runtime automatically and not affect the `python 3.7` environment. This means Trunk will not modify or pollute your machine.
 
-Trunk manages the hermetic installation of all required runtimes. You can also specifically pin a version of a runtime you'd like Trunk to use, or tell Trunk to re-use an already-installed runtime on the system.
+Trunk manages the hermetic installation of all required runtimes. You can also specifically pin a version of a runtime you'd like Trunk to use, or tell Trunk to reuse an already-installed runtime on the system.
 
 ### Plugin system
 

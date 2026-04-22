@@ -54,6 +54,6 @@ Pull Request comments are enabled by default. If you wish to disable the comment
 
 If you wish to set the resource owner to be a GitHub Organization, you should double check that this is allowed by navigating to your **GitHub Organization** > **Settings** > **Personal access tokens** > **Settings**. Make sure under "_Fine-grained personal access tokens_", you have _"Allow access via fine-grained personal access tokens"_ selected.
 
-Once the token is created, the Organization admin may need to approve the request for the token. This can be done by going to **Github Organization** > **Settings** > **Personal access tokens** > **Pending requests**. To confirm that the token was set, you should be able to see it under **Active tokens**.
+Once the token is created, the Organization admin may need to approve the request for the token. This can be done by going to **GitHub Organization** > **Settings** > **Personal access tokens** > **Pending requests**. To confirm that the token was set, you should be able to see it under **Active tokens**.
 
 At any point, feel free to reach out to our team [through Slack](https://slack.trunk.io).
