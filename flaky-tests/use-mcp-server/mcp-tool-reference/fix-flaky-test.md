@@ -42,7 +42,7 @@ Look for the repository name in the output (e.g., `trunk-io/trunk` from `git@git
 
 ### Usage Examples
 
-#### With Fix ID
+#### With Test ID
 
 ```
 Fix the flaky test with ID <testCaseId>

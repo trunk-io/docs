@@ -29,7 +29,7 @@ You can then set up a [Cursor Automation](https://cursor.com/automations) to tri
 
 <details>
 
-<summary>Recommend Cursor Automation Config</summary>
+<summary>Recommended Cursor Automation Config</summary>
 
 ```json
 {

@@ -25,7 +25,7 @@ The `search-test` tool looks up the ID of a test case given its name.
 | Parameter | Type   | Description                                                            |
 | --------- | ------ | ---------------------------------------------------------------------- |
 | `orgSlug` | string | The name of your organization in the Trunk app                         |
-| `limit`   | number | Return up to 20 search results at a time |
+| `limit`   | number | Limit for test results to return, up to 20 |
 
 ### Getting Parameter Values
 

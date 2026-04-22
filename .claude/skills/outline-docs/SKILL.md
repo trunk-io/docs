@@ -20,7 +20,8 @@ Generate a scaffolded outline for a new docs page in the Trunk docs repo. The sk
   - [Phase 1: Gather inputs](#phase-1-gather-inputs)
   - [Phase 2: Generate preview](#phase-2-generate-preview)
   - [Phase 3: Write file](#phase-3-write-file)
-  - [Phase 4: Post-checklist](#phase-4-post-checklist)
+  - [Phase 4: Docs organization](#phase-4-docs-organization)
+  - [Phase 5: Post-checklist](#phase-5-post-checklist)
 - [Templates](#templates)
 
 ## Inputs
@@ -208,7 +209,13 @@ Next steps:
 
 Then proceed to Phase 4.
 
-### Phase 4: Post-checklist
+### Phase 4: Docs Organization
+
+Add the new page and its appropriate title to the `summary.md` file at the root of the repo.
+
+Then proceed to Phase 5.
+
+### Phase 5: Post-checklist
 
 Print the post-checklist for the user to complete:
 
