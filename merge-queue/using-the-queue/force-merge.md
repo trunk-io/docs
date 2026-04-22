@@ -67,7 +67,7 @@ Force merge can be combined with other `/trunk merge` flags. The most common com
 
 * **Bypasses the human review gate** if required reviews aren't satisfied.
 * **Bypasses required status checks** that would otherwise block the merge.
-* Because force merge bypasses protections every other PR must satisfy, overuse erodes the value of those protections.
+* Because force merge bypasses protections that every other PR must satisfy, overuse erodes the value of those protections.
 
 #### When NOT to use force merge
 

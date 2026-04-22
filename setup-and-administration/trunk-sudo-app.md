@@ -9,7 +9,7 @@ description: >-
 
 Trunk Sudo is a second Trunk GitHub App, separate from the [main Trunk GitHub App](github-app-permissions.md). Its only purpose is to programmatically merge pull requests while bypassing GitHub branch protections, on behalf of Trunk features that need that capability.
 
-Trunk Sudo is a shared prerequisite for bypass-dependent features. Today it powers [Force merge](../merge-queue/using-the-queue/force-merge.md), and Stack PRs will use it next.
+Trunk Sudo is a shared prerequisite for bypass-dependent features. Today it powers [Force merge](../merge-queue/using-the-queue/force-merge.md); support for Stack PRs is planned.
 
 {% hint style="info" %}
 **Trunk Sudo is optional.** You only need to install it if you plan to use a feature that requires it. If you don't use any bypass-dependent features, you can skip this setup.
@@ -72,7 +72,7 @@ If you're using classic branch protection rules, navigate to **Settings → Bran
 
 The Trunk Merge Queue settings page includes a live checklist that validates every piece of the Trunk Sudo configuration end-to-end. **This checklist is the source of truth for whether your setup is correct** — if the checklist is green, the app is ready to merge.
 
-<figure><img src="../.gitbook/assets/trunk-sudo-setup-checklist.png" alt="Trunk Sudo setup checklist in the Merge Queue settings page"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/trunk-sudo-setup-checklist.png" alt="Trunk Sudo setup checklist in the Merge Queue settings page">Trunk Sudo setup checklist in the Merge Queue settings page when everything is configured properly.<figcaption></figcaption></figure>
 
 Each row shows the status of one check (installation, classic branch protection, and one row per active ruleset on the merge branch). If a row is red, revisit the corresponding section above — the check IDs map directly to the configuration surfaces described here.
 

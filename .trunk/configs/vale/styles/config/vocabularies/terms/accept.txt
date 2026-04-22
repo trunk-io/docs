@@ -202,6 +202,7 @@ subnet
 subnets
 subprocess
 subprocesses
+(?i)sudo
 suggest_if
 (?i)svgo
 Svix
@@ -222,6 +223,8 @@ toolset
 (?i)trusted by
 txt
 txtpbfmt
+unbreaking
+unbypassable
 (?i)uncheck
 uncloned
 uncomment
