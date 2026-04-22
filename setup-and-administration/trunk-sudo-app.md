@@ -9,7 +9,7 @@ description: >-
 
 Trunk Sudo is a second Trunk GitHub App, separate from the [main Trunk GitHub App](github-app-permissions.md). Its only purpose is to programmatically merge pull requests while bypassing GitHub branch protections, on behalf of Trunk features that need that capability.
 
-Trunk Sudo is a shared prerequisite for bypass-dependent features. Today it powers [Force merge](../merge-queue/using-the-queue/force-merge.md); support for Stack PRs is planned.
+Trunk Sudo is a shared prerequisite for bypass-dependent features. Today it powers [Force merge](../merge-queue/using-the-queue/force-merge.md) and [stacked pull requests with `/trunk stack`](../merge-queue/using-the-queue/stacked-pull-requests.md#merge-the-stack-as-one-unit).
 
 {% hint style="info" %}
 **Trunk Sudo is optional.** You only need to install it if you plan to use a feature that requires it. If you don't use any bypass-dependent features, you can skip this setup.
@@ -115,8 +115,7 @@ Required so Trunk Sudo can merge PRs that modify files under `.github/`. GitHub 
 ### Features that use Trunk Sudo
 
 * [Force merge](../merge-queue/using-the-queue/force-merge.md) — admins push a PR through Merge Queue even when branch protection isn't satisfied.
-
-Support for Stack PRs is planned; documentation will follow in a separate update.
+* [Stacked pull requests with `/trunk stack`](../merge-queue/using-the-queue/stacked-pull-requests.md#merge-the-stack-as-one-unit) — combine a chain of dependent PRs into a single stacked PR that moves through the merge queue as one unit.
 
 ### Next steps
 
