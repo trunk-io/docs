@@ -51,6 +51,22 @@ Here's what each of these options does when enabled:
 
 <table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>This primary toggle activates the quarantining feature set, unlocking both manual override options and the ability to enable auto-quarantining. For any quarantining to work, the <a href="quarantining.md#updates-in-ci">necessary configurations</a> must also be made in your CI pipeline.</td></tr><tr><td>Auto-Quarantine Flaky Tests</td><td>When enabled, any test already identified by Trunk as "flaky" will be automatically quarantined. This saves you from having to manually quarantine each flaky test as it's discovered.</td></tr><tr><td></td><td></td></tr></tbody></table>
 
+#### Collection-level quarantining settings
+
+[Test Collections](https://docs.trunk.io/flaky-tests/collections) have their own quarantining settings that override the repository-level settings for any uploads routed to that collection. This lets you apply different quarantining policies to different subsets of your test suite.
+
+To configure collection quarantining, navigate to **Flaky Tests** > **Collections** > collection name > **Settings** > **Quarantining**.
+
+The same two toggles are available at the collection level:
+
+<table><thead><tr><th width="256">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable Test Quarantining</td><td>Activates quarantining for this collection. When enabled, this setting overrides the repository-level quarantining setting for uploads that belong to this collection.</td></tr><tr><td>Auto-Quarantine Flaky Tests</td><td>Automatically quarantines any test in this collection that Trunk has identified as flaky. This option is only available when quarantining is enabled for the collection.</td></tr></tbody></table>
+
+{% hint style="info" %}
+Only organization admins can change collection quarantining settings. Members can view the settings page but cannot toggle the controls.
+{% endhint %}
+
+When you disable collection quarantining, auto-quarantine is also disabled automatically. Re-enabling quarantining for the collection does not restore auto-quarantine — you must turn it back on separately.
+
 ### **Quarantining with Sharded or Parallelized Tests**
 
 There are two options for handling quarantining.
