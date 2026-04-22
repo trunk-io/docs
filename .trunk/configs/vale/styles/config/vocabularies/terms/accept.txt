@@ -1,5 +1,6 @@
 [Aa]ctionlint
 (?i)ansible
+(?i)antipatterns
 (?i)api
 (?i)apis
 Arcanist
@@ -11,8 +12,10 @@ autofixed
 autofixes
 autoformat
 autosave
+(?i)automations
 (?i)bazel
-beta
+(?i)beta
+(?i)boolean
 buf
 (?i)buildifier
 (?i)buildkite
@@ -57,7 +60,7 @@ enqueueing
 (?i)eslint
 exfiltrate
 Faire
-filepath
+(?i)filepaths?
 filesize
 filetype
 filetypes
@@ -88,6 +91,7 @@ hermeticity
 (?i)homebrew
 hotfixes
 (?i)idempotency
+(?i)investigationId
 isort
 iwyu
 (?i)javascript
@@ -216,7 +220,7 @@ tcsh
 (?i)textproto
 (?i)tflint
 tfsec
-(?i)todos
+(?i)todos?
 toolset
 (?i)trivy
 (?i)trufflehog
@@ -241,6 +245,7 @@ upvote
 (?i)vitest
 (?i)vpcs
 VSCode
+(?i)waitlist
 (?i)webhook
 whoami
 worktree
