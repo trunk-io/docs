@@ -118,6 +118,7 @@
   * [Jira integration](flaky-tests/webhooks/jira-integration.md)
 * [Flaky Tests API](flaky-tests/flaky-tests.md)
 * [Trunk Analytics CLI](flaky-tests/uploader.md)
+* [Autofix Flaky Tests](flaky-tests/autofix-flaky-tests.md)
 * [Use MCP Server](flaky-tests/use-mcp-server/README.md)
   * [Configuration](flaky-tests/use-mcp-server/configuration/README.md)
     * [Cursor (IDE)](flaky-tests/use-mcp-server/configuration/cursor-ide.md)
@@ -125,7 +126,8 @@
     * [Claude Code (CLI)](flaky-tests/use-mcp-server/configuration/claude-code-cli.md)
     * [Gemini (CLI)](flaky-tests/use-mcp-server/configuration/gemini-cli.md)
   * [MCP Tool Reference](flaky-tests/use-mcp-server/mcp-tool-reference/README.md)
-    * [Get root cause analysis](flaky-tests/use-mcp-server/mcp-tool-reference/get-root-cause-analysis.md)
+    * [Search for tests](flaky-tests/use-mcp-server/mcp-tool-reference/search-test.md)
+    * [Fix flaky tests](flaky-tests/use-mcp-server/mcp-tool-reference/fix-flaky-test.md)
     * [Set up test uploads](flaky-tests/use-mcp-server/mcp-tool-reference/set-up-test-uploads.md)
 
 ## Setup & Administration
