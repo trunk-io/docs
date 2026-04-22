@@ -37,9 +37,11 @@ Trunk discovers the stack automatically by walking base branches — no separate
 
 ## Merge the stack as one unit
 
-Comment `/trunk stack` on any PR in the stack and Trunk combines every PR in the chain into a single stacked PR that moves through the merge queue together.
+Comment `/trunk stack` on any PR in the stack and Trunk combines every PR in the chain into a single stacked PR that moves through the merge queue together. That stacked PR tests and merges like any other PR in the queue — batching, priority, and failure handling all behave normally. When the stacked PR merges, Trunk automatically closes every member PR, since their code is already in your target branch.
 
 ### Prerequisites
+
+Trunk Sudo is required because the stacked PR Trunk creates is brand-new and auto-generated — it doesn't inherit the approvals or required status checks that have already been satisfied on the member PRs. Trunk Sudo merges the stacked PR on the strength of those member PRs by bypassing its branch protection.
 
 * [ ] [Trunk Sudo GitHub App](../../setup-and-administration/trunk-sudo-app.md) installed on your repository. If it isn't installed, `/trunk stack` will fail with an error linking you to the install page.
 * [ ] Trunk Sudo configured to bypass branch protection on your target branch. Required status checks must live in a [GitHub ruleset](../../setup-and-administration/trunk-sudo-app.md#option-a-github-rulesets-recommended) (not classic branch protection) with Trunk Sudo listed as an exempt bypass actor.
