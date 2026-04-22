@@ -163,7 +163,8 @@ Don't use high priority for:
 
 **For true emergencies:**
 
-* If priority isn't fast enough → Emergency pull requests
+* If priority isn't fast enough → [Emergency pull requests](../using-the-queue/emergency-pull-requests.md)
+* If branch protection is blocking an admin merge → [Force merge](../using-the-queue/force-merge.md)
 * If you need to pause the queue → **Settings** > **Repositories** > your repository > **Merge Queue** > **Merge Queue State** and select **Paused** from the dropdown.
 
 **Monitor impact:**

@@ -12,6 +12,10 @@ You can install the Trunk GitHub App by going to **Settings** > **Organization**
 
 The Trunk GitHub App enables functionality for all of Trunk's tools. Not every permission is required for every feature of Trunk, and if you have only enabled one of our tools, we will only access the permissions pertaining to that tool. For complete documentation of the individual permissions the Trunk GitHub App requires, see the [GitHub developer docs](https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps). Below, find an explanation of every permission the Trunk GitHub App requires and what Trunk uses it for.
 
+{% hint style="info" %}
+**Looking for the Trunk Sudo app?** Trunk also provides a separate [Trunk Sudo GitHub App](trunk-sudo-app.md), used by features that need to merge pull requests while bypassing GitHub branch protections (such as [Force merge](../merge-queue/using-the-queue/force-merge.md)). It's optional and only required if you use one of those features.
+{% endhint %}
+
 ## **Repository permissions**
 
 Repository permissions permit access to repositories and related resources.
