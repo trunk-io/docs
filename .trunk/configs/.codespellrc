@@ -1,0 +1,3 @@
+[codespell]
+# Add custom words that should be ignored
+ignore-words-list = Slite

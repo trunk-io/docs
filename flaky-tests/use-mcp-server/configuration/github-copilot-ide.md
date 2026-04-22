@@ -1,5 +1,5 @@
 ---
-description: Add Trunk's MCP Server to Github Copilot
+description: Add Trunk's MCP Server to GitHub Copilot
 ---
 
 # GitHub Copilot (IDE)
