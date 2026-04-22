@@ -21,6 +21,8 @@ lint:
     - non-relative-link-check
     - vale@3.11.2
   definitions:
+    - name: codespell
+      direct_configs: [.codespellrc, todo_dict.txt]
     - name: markdown-link-check
       commands:
         - name: lint
@@ -44,7 +46,7 @@ lint:
     - linters: [prettier]
       paths:
         - "**/*.md"
-    - linters: [vale]
+    - linters: [vale, codespell]
       paths:
         - ".claude/**"
         - ".github/**"
