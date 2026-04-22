@@ -72,7 +72,7 @@ If you're using classic branch protection rules, navigate to **Settings → Bran
 
 The Trunk Merge Queue settings page includes a live checklist that validates every piece of the Trunk Sudo configuration end-to-end. **This checklist is the source of truth for whether your setup is correct** — if the checklist is green, the app is ready to merge.
 
-<figure><img src="../.gitbook/assets/trunk-sudo-setup-checklist.png" alt="Trunk Sudo setup checklist in the Merge Queue settings page">Trunk Sudo setup checklist in the Merge Queue settings page when everything is configured properly.<figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/trunk-sudo-setup-checklist.png" alt="Trunk Sudo setup checklist in the Merge Queue settings page"><figcaption>Trunk Sudo setup checklist in the Merge Queue settings page when everything is configured properly.</figcaption></figure>
 
 Each row shows the status of one check (installation, classic branch protection, and one row per active ruleset on the merge branch). If a row is red, revisit the corresponding section above — the check IDs map directly to the configuration surfaces described here.
 
@@ -114,7 +114,7 @@ Required so Trunk Sudo can merge PRs that modify files under `.github/`. GitHub 
 
 * [Force merge](../merge-queue/using-the-queue/force-merge.md) — admins push a PR through Merge Queue even when branch protection isn't satisfied.
 
-Stack PRs will also use Trunk Sudo; documentation is coming in a separate update.
+Support for Stack PRs is planned; documentation will follow in a separate update.
 
 ### Next steps
 

@@ -38,7 +38,7 @@ On any pull request, post:
 /trunk merge --force
 ```
 
-There is no CLI, checkbox, or web-app equivalent. This is intentional: Trunk verifies admin identity through GitHub comment authorship, so the command is only accepted through the PR comment flow.
+There is no CLI, checkbox, or web app equivalent. This is intentional: Trunk verifies admin identity through GitHub comment authorship, so the command is only accepted through the PR comment flow.
 
 ### What happens step by step
 
