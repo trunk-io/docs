@@ -20,7 +20,7 @@ trunk login
 trunk merge <pr-number>
 ```
 
-Admins can also use [`/trunk merge --force`](force-merge.md) to push a PR through the queue when branch protection isn't satisfied.
+Admins can also use [`/trunk merge --force`](force-merge.md) to push a PR through the queue when branch protection isn't satisfied. To submit a chain of dependent PRs as a single unit, see [`/trunk stack`](stacked-pull-requests.md#merge-the-stack-as-one-unit).
 
 We offer similar commands for cancellation.
 
