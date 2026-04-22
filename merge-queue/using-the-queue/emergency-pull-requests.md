@@ -25,3 +25,7 @@ Use [PR Prioritization](../optimizations/priority-merging.md) to fast-track your
 ```
 
 The `urgent` priority is the only level that will interrupt currently testing PRs. Your PR will immediately begin testing, and other PRs will restart after yours completes.
+
+#### See also
+
+If the blocker is branch protection (not the queue) — for example, a broken required status check — admins can use [Force merge](force-merge.md) instead. Force merge still goes through the queue and still tests the PR; only the branch protection gate is bypassed at merge time.
