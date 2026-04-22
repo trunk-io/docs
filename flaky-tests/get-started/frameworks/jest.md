@@ -52,6 +52,35 @@ Update your Jest config to add `jest-junit` as a reporter:
 
 The `outputDirectory` and `outputName` options specify the path of the XML report. You'll need this path later when configuring automatic uploads to Trunk.
 
+#### Using `filePathPrefix`
+
+In a monorepo with `pnpm` workspaces (or similar), Jest runs from within the package directory, so the file paths it records in the XML report are relative to that package — not to the repository root. For example, a test at `packages/my-package/src/__tests__/foo.test.js` would be recorded as `src/__tests__/foo.test.js`.
+
+This causes codeowners matching to fail because Trunk compares test file paths against the codeowners file at the repo root, which uses full repo-relative paths.
+
+To fix this, set the `filePathPrefix` option to the path of the package within the repo:
+
+{% code title="jest.config.json" %}
+```json
+{
+  "reporters": [
+    [
+      "jest-junit",
+      {
+        "outputDirectory": "./",
+        "outputName": "junit.xml",
+        "addFileAttribute": "true",
+        "reportTestSuiteErrors": "true",
+        "filePathPrefix": "packages/my-package"
+      }
+    ]
+  ]
+}
+```
+{% endcode %}
+
+With `filePathPrefix` set, `jest-junit` will prepend the given path to every file path in the XML output, producing repo-root-relative paths that Trunk can correctly match against your codeowners file.
+
 #### Disable Retries
 
 You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
