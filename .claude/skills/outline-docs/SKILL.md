@@ -6,7 +6,7 @@ description: >-
   then generates a file with section headers and TODO placeholders.
   Prefer this to the write-docs skill when there is not prior specification
   on what the new docs contents should be.
-allowed-tools: Write, Bash(trunk fmt *), Bash(trunk check *)
+allowed-tools: Write, Bash(trunk fmt)
 ---
 
 # Outline Docs
@@ -132,17 +132,17 @@ Post-Checklist:
 [ ] Fill in all <!-- TODO --> sections
 [ ] Add frontmatter description (if page is a top-level overview)
 [ ] Verify all links to related pages are correct
-[ ] Run: trunk fmt <file>
-[ ] Run: trunk check <file>
+[ ] Run: trunk check
 [ ] Use /review-docs skill to review content and get feedback
 ```
 
 Then, on the user's behalf, automatically run:
 
 ```bash
-trunk fmt <save_path>
-trunk check <save_path>
+trunk fmt
 ```
+
+to format the skeleton markdown.
 
 Report the results. If either command reports errors, display them and suggest fixes.
 
@@ -293,10 +293,8 @@ After writing the file, the user should complete these steps:
    [Related page](path/to/page.md "mention")
    ```
 
-4. **Run formatting** — Execute `trunk fmt <file>` to auto-format the markdown.
+4. **Run validation** — Execute `trunk check` to check for linting issues.
 
-5. **Run validation** — Execute `trunk check <file>` to check for linting issues.
-
-6. **Review content** — Use the `/review-docs` skill to review the page content and get feedback before merging.
+5. **Review content** — Use the `/review-docs` skill to review the page content and get feedback before merging.
 
 If any tool reports errors or review identifies issues, fix them before merging.
