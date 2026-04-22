@@ -48,11 +48,13 @@ In GitHub, navigate to **Settings → Rules → Rulesets**. For every active rul
 
 1. Open the ruleset.
 2. Under **Bypass list**, add the **Trunk Sudo** GitHub App.
-3. Set its bypass mode to **"Always (including for pull requests)"**.
+3. Set its bypass mode to **Exempt**.
 4. Save.
 
+<figure><img src="../.gitbook/assets/trunk-sudo-ruleset-bypass-mode.png" alt="GitHub ruleset bypass list with Trunk Sudo set to Exempt"><figcaption>Trunk Sudo's bypass mode must be Exempt.</figcaption></figure>
+
 {% hint style="warning" %}
-**This is the most common setup mistake.** When you add an app to a ruleset's bypass list, GitHub defaults the bypass mode to **"Always"** — which sounds like it covers everything but does *not* cover pull request merges. Only **"Always (including for pull requests)"** (sometimes labeled "exempt" in GitHub's API) allows an app to merge a PR non-interactively. If Trunk Sudo isn't set to this mode, merges will silently fail.
+**This is the most common setup mistake.** When you add an actor to a ruleset's bypass list, GitHub defaults the bypass mode to **Always** — which sounds like it covers everything but does not cover pull request merges. Trunk Sudo must be set to **Exempt**; it's the only mode that lets a GitHub App merge a PR without interactive confirmation. If Trunk Sudo isn't set to Exempt, merges will silently fail.
 {% endhint %}
 
 #### Option B — Classic branch protection
