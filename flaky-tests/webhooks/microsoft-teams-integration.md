@@ -37,7 +37,7 @@ Transformations are custom code snippets you can write to customize the Microsof
 
 1. In the endpoint configuration view, navigate to the **Advanced** tab. Under **Transformation**, toggle the **Enabled** switch.
 2. Click **Edit transformation** to update your transformation code, and click **Save** to update the transformation.
-3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step 4](microsoft-teams-integration.md#id-4.-test-your-webhook).
+3. You can test the transformation by selecting the `v2.test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message in [step 4](microsoft-teams-integration.md#id-4.-test-your-webhook).
 
 Below is an example of a webhook transformation to format the messages as [Actionable Messages](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using?tabs=cURL%2Ctext1). If you're having trouble adding a new webhook endpoint with Svix, please see the [Adding Endpoint docs from Svix](https://docs.svix.com/receiving/using-app-portal/adding-endpoints).
 
@@ -79,34 +79,25 @@ function summarizeTestCase(payload) {
     }
 
     const {
+        previous_status = "Unknown",
+        new_status = "Unknown",
+        timestamp,
+        repository = {},
         test_case: {
             name = "N/A",
-            file_path = "N/A",
-            status = {},
-            quarantine = false,
-            repository = {},
+            classname = "",
+            file_path = "",
+            quarantined = false,
             codeowners = [],
-            failure_rate_last_7d = 0,
-            most_common_failures = [],
-            pull_requests_impacted_last_7d = 0,
-            ticket = {},
             html_url = "N/A"
         }
     } = payload;
 
-    const statusTimestamp = status.timestamp 
-        ? new Date(status.timestamp).toLocaleString()
+    const statusTimestamp = timestamp
+        ? new Date(timestamp).toLocaleString()
         : "Unknown";
 
-    // most_common_failures is a beta feature currently being tested
-    // If you are not on the beta it will be an empty array
-    // Want to try it out? Ask in slack.trunk.io
-    const failureBlocks = most_common_failures.map(failure => ({
-        type: "TextBlock",
-        text: `• ${failure.summary}`,
-        wrap: true,
-        spacing: "small"
-    }));
+    const subtitle = file_path || classname || "";
 
     return {
         type: "message",
@@ -126,7 +117,7 @@ function summarizeTestCase(payload) {
                     },
                     {
                         type: "TextBlock",
-                        text: file_path,
+                        text: subtitle,
                         isSubtle: true,
                         spacing: "none"
                     },
@@ -135,7 +126,7 @@ function summarizeTestCase(payload) {
                         facts: [
                             {
                                 title: "Status",
-                                value: `${status.value || "Unknown"} (${status.reason?.trim() || "N/A"})`
+                                value: `${previous_status} → ${new_status}`
                             },
                             {
                                 title: "Last Updated",
@@ -143,15 +134,7 @@ function summarizeTestCase(payload) {
                             },
                             {
                                 title: "Quarantine Status",
-                                value: quarantine ? "Quarantined" : "Not Quarantined"
-                            },
-                            {
-                                title: "Failure Rate (7d)",
-                                value: `${(failure_rate_last_7d * 100).toFixed(1)}%`
-                            },
-                            {
-                                title: "PRs Impacted (7d)",
-                                value: pull_requests_impacted_last_7d.toString()
+                                value: quarantined ? "Quarantined" : "Not Quarantined"
                             },
                             {
                                 title: "Codeowners",
@@ -159,13 +142,6 @@ function summarizeTestCase(payload) {
                             }
                         ]
                     },
-                    {
-                        type: "TextBlock",
-                        text: "Most Common Failures",
-                        weight: "bolder",
-                        spacing: "medium"
-                    },
-                    ...failureBlocks,
                     {
                         type: "ActionSet",
                         actions: [
@@ -178,11 +154,6 @@ function summarizeTestCase(payload) {
                                 type: "Action.OpenUrl",
                                 title: "View Test Details",
                                 url: html_url || "#"
-                            },
-                            {
-                                type: "Action.OpenUrl",
-                                title: "View Related Ticket",
-                                url: ticket.html_url || "#"
                             }
                         ]
                     }
@@ -198,7 +169,7 @@ function summarizeTestCase(payload) {
 You can send test messages to your Microsoft Teams channels as you make updates. You can do this by:
 
 1. In the endpoint configuration view, navigate to the **Testing** tab and select a **Send event**
-2. Under **Subscribed events,** select `test_case.status_changed`as the event type to send.
+2. Under **Subscribed events,** select `v2.test_case.status_changed`as the event type to send.
 3. Click **Send Example** to test your webhook
 
 ### 5. Monitoring webhooks
@@ -219,7 +190,7 @@ You should now receive notifications in your Teams channel when a test's status 
 
 <figure><picture><source srcset="../../.gitbook/assets/example-slack-message-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-[See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed)
+[See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#v2.test_case.status_changed)
 
 [Learn more about consuming webhooks in the Svix docs](https://docs.svix.com/receiving/introduction)
 

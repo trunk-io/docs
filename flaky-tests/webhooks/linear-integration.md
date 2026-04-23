@@ -8,7 +8,7 @@ Trunk allows you to automate Linear Issue creation through webhooks. This will a
 
 <figure><picture><source srcset="../../.gitbook/assets/example-webhook-linear-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-webhook-linear-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-This guide will walk you through integrating Trunk Flaky Tests with Linear Issues through webhooks. You will be able to automatically generate Linear issues for **new flaky tests** found in your repo that **impact more than 2 PRs**. This guide should take 15 minutes to complete.
+This guide will walk you through integrating Trunk Flaky Tests with Linear Issues through webhooks. You will be able to automatically generate Linear issues for **new flaky tests** found in your repo. This guide should take 15 minutes to complete.
 
 Trunk also has a [built-in Linear integration](linear-integration.md) for ticket creation. You only need to use webhooks if you want to automate ticket creation or need additional customization.
 
@@ -169,16 +169,16 @@ Transformations are custom code snippets you can write to customize the Linear i
 
 1. In the endpoint configuration view, navigate to the **Advanced** tab. Under **Transformation**, toggle the **Enabled** switch.
 2. Click **Edit transformation** to update your transformation code, and click **Save** to update the transformation.
-3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message[ in step 6](linear-integration.md#id-6.-test-your-webhook).
+3. You can test the transformation by selecting the `v2.test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message[ in step 6](linear-integration.md#id-6.-test-your-webhook).
 
 The generated webhook template contains several configurable constants out of the box:
 
-<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>LINEAR_TEAM_ID</code></td><td>(<strong>Required)</strong> Your Linear team ID. <a href="linear-integration.md#team-id">Learn about finding your team ID</a>.</td></tr><tr><td><code>LINEAR_PROJECT_ID</code></td><td><strong>(Optional)</strong> The Linear project ID assigned to new issues. <a href="linear-integration.md#project-id">Learn more about finding your project ID</a>.</td></tr><tr><td><code>LINEAR_LABEL_IDS</code></td><td>(<strong>Optional)</strong> Array of label IDs assigned to new issues. <a href="linear-integration.md#team-id">Learn about finding your </a><a href="linear-integration.md#label-id">label IDs</a>.</td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>.<br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
+<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>LINEAR_TEAM_ID</code></td><td>(<strong>Required)</strong> Your Linear team ID. <a href="linear-integration.md#team-id">Learn about finding your team ID</a>.</td></tr><tr><td><code>LINEAR_PROJECT_ID</code></td><td><strong>(Optional)</strong> The Linear project ID assigned to new issues. <a href="linear-integration.md#project-id">Learn more about finding your project ID</a>.</td></tr><tr><td><code>LINEAR_LABEL_IDS</code></td><td>(<strong>Optional)</strong> Array of label IDs assigned to new issues. <a href="linear-integration.md#team-id">Learn about finding your </a><a href="linear-integration.md#label-id">label IDs</a>.</td></tr></tbody></table>
 
 Here is the provided transformation for context. You can customize your Linear Issues integration by following the[ Linear API](https://studio.apollographql.com/public/Linear-API/variant/current/schema/reference) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
 
 {% hint style="info" %}
-The default transformation only creates issues when `newStatus === "flaky"`. If you also want to create issues for tests marked as **Broken** (consistently failing at a high rate), update the filter condition. For example, change `newStatus !== "flaky"` to `newStatus !== "flaky" && newStatus !== "broken"` to handle both statuses.
+The default transformation only creates issues when `new_status === "FLAKY"`. If you also want to create issues for tests marked as **Broken** (consistently failing at a high rate), update the filter condition. For example, change `new_status !== "FLAKY"` to `new_status !== "FLAKY" && new_status !== "BROKEN"` to handle both statuses.
 {% endhint %}
 
 ```javascript
@@ -198,20 +198,14 @@ const LINEAR_PROJECT_ID = "";
 // IDs of any labels you want added to the linear issue. Optional.
 const LINEAR_LABEL_IDS = [];
 
-// Below are various configs to fine-tune when an issue is created.
-
-// At least many PRs need to be impacted for an issue to be created.
-const PRS_IMPACTED_THRESHOLD = 2;
-
 function handler(webhook) {
-  const impacted_prs = webhook.payload.test_case.pull_requests_impacted_last_7d;
-  const newStatus = webhook.payload.status_change.current_status.value;
+  const new_status = webhook.payload.new_status;
 
   const resolvedProjectId = LINEAR_PROJECT_ID ? `"${LINEAR_PROJECT_ID}"` : undefined;
   const resolvedLinearLabels = LINEAR_LABEL_IDS.map((id) => `"${id}"`).join(",");
 
-  // Filter for only flaky tests that impact more than the provided threshold
-  if (newStatus !== "flaky" || impacted_prs < PRS_IMPACTED_THRESHOLD) {
+  // Filter for only tests that transitioned to flaky
+  if (new_status !== "FLAKY") {
     webhook.payload = "canceled";
     webhook.cancel = true;
     return webhook;
@@ -242,45 +236,32 @@ function handler(webhook) {
 
 function summarizeTestCase(payload) {
     const {
-        status_change: {
-            previous_status
-        },
+        previous_status,
+        new_status,
+        timestamp,
+        repository,
         test_case: {
             name,
             file_path,
-            status,
-            quarantine,
-            repository,
+            quarantined,
             codeowners,
-            failure_rate_last_7d,
-            most_common_failures,
-            pull_requests_impacted_last_7d,
-            ticket,
             html_url
         }
     } = payload;
     // Construct a comprehensive issue body with key details
     const issueBody = `See all details on the [Trunk Test Detail page](${html_url})
- 
-Transition time: ${status.timestamp}
- 
-Latest failure: Dec 9, 2024
- 
-Severity (last 7 days): ${(failure_rate_last_7d * 100).toFixed(2)}% failure rate; impacting ${pull_requests_impacted_last_7d} PRs
- 
-Ownership: this test is owned by ${(codeowners || ['@unassigned']).join(', ')}
 
-___
-__The  most common failure reason (out of ${most_common_failures.length} identified failure reason) are:__
+Transition: ${previous_status} → ${new_status}
 
-${
-  // most_common_failures is a beta feature currently being tested
-  // If you are not on the beta it will be an empty array
-  // Want to try it out? Ask in slack.trunk.io
-  most_common_failures.map((failure, index) => {
-    return `**Reason #${index + 1}**: "${failure.summary}" \n`
-  })
-}
+Transition time: ${timestamp}
+
+File path: ${file_path || 'N/A'}
+
+Quarantined: ${quarantined ? 'Yes' : 'No'}
+
+Ownership: this test is owned by ${(codeowners && codeowners.length ? codeowners : ['@unassigned']).join(', ')}
+
+Repository: ${repository.html_url}
 
 View the full stack trace on the [Test Detail page](${html_url})
     `
@@ -323,7 +304,7 @@ webhook.payload = {query: `mutation IssueCreate {
 You can create test issues by delivering a mock webhook. You can do this by:
 
 1. In the endpoint configuration view, navigate to the **Testing** tab and select a **Send event**
-2. Under **Subscribed events,** select `test_case.status_changed`as the event type to send
+2. Under **Subscribed events,** select `v2.test_case.status_changed`as the event type to send
 3. Click **Send Example** to test your webhook
 
 ### 7. Monitoring webhooks
@@ -340,9 +321,9 @@ You can see a list of past delivery attempts in the **Message Attempts** modal. 
 
 ### Congratulations!
 
-A Linear Issue will now be created when a test's health status changes to **flaky** and **impacts more than 2 PRs**. You can further modify your transformation script to customize your issues.
+A Linear Issue will now be created when a test's health status changes to **flaky**. You can further modify your transformation script to customize your issues.
 
-[See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed)
+[See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#v2.test_case.status_changed)
 
 [Learn more about consuming webhooks in the Svix docs](https://docs.svix.com/receiving/introduction)
 
