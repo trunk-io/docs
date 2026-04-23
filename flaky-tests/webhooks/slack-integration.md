@@ -10,8 +10,6 @@ Trunk allows you to create custom workflows to send customized messages to Slack
 For details on how Trunk collects, manages, and stores your data, see our [Security and Privacy](../../setup-and-administration/security.md) page.
 {% endhint %}
 
-<figure><picture><source srcset="../../.gitbook/assets/example-slack-message (1).png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message.png" alt=""></picture><figcaption></figcaption></figure>
-
 This guide will walk you through sending Slack messages using event-triggered webhooks. By the end of this tutorial, you'll receive Slack messages for test status changes. This guide should take 10 minutes to complete.
 
 ### 1. Configure Slack webhooks
@@ -143,8 +141,6 @@ You can see a list of past delivery attempts in the **Message Attempts** modal. 
 <figure><img src="../../.gitbook/assets/example-webhook-logs.png" alt=""><figcaption></figcaption></figure>
 
 ### Congratulations!
-
-<figure><picture><source srcset="../../.gitbook/assets/example-slack-message (1).png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message.png" alt=""></picture><figcaption></figcaption></figure>
 
 You should now receive notifications in your Slack workspace when a test's status changes. You can further modify your transformation script to customize your messages.
 

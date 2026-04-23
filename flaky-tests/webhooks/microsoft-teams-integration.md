@@ -2,8 +2,6 @@
 
 Trunk allows you to create custom workflows to send customized messages to Microsoft Teams channels through webhooks.
 
-<figure><picture><source srcset="../../.gitbook/assets/example-slack-message-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message-light.png" alt=""></picture><figcaption></figcaption></figure>
-
 This guide will walk you through sending Microsoft Teams messages using event-triggered webhooks. By the end of this tutorial, you'll receive Microsoft Teams messages for test status changes. This guide should take 10 minutes to complete.
 
 ### 1. Configure incoming webhooks for your team
@@ -187,8 +185,6 @@ You can see a list of past delivery attempts in the **Message Attempts** modal. 
 ### Congratulations!
 
 You should now receive notifications in your Teams channel when a test's status changes. You can further modify your transformation script to customize your messages.
-
-<figure><picture><source srcset="../../.gitbook/assets/example-slack-message-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/example-slack-message-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 [See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#v2.test_case.status_changed)
 
