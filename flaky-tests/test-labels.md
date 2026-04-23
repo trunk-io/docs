@@ -26,7 +26,7 @@ You apply and remove labels from a test case using the label picker on the test 
 
 ### Filter tests by label
 
-On the tests list, you can filter the table down to test cases that have a particular label applied. This makes labels useful for slicing the view by the categories your team cares about — for example, tests owned by a specific team, tests tied to a known infrastructure issue, or any other grouping you define.
+On the tests list, you can filter the table down to test cases that have a particular label applied. This makes labels useful for slicing the view by the categories your team cares about.
 
 <figure><img src="../.gitbook/assets/tests-list-filtered-by-label.png" alt="Filter tests to those that have specified label applied"><figcaption></figcaption></figure>
 
