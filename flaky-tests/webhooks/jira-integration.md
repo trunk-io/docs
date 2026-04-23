@@ -4,9 +4,9 @@ description: Learn how to automatically create Jira issues with Flaky Test webho
 
 # Jira integration
 
-Trunk allows you to automate Jira issue creation through webhooks. When a test becomes flaky and impacts enough PRs, a Jira issue is created automatically with full context including failure rates, ownership, and stack traces.
+Trunk allows you to automate Jira issue creation through webhooks. When a test becomes flaky, a Jira issue is created automatically with context including the status transition, ownership, and a link to the test details.
 
-This guide will walk you through integrating Trunk Flaky Tests with Jira through webhooks. You will be able to automatically generate Jira issues for **new flaky tests** found in your repo that **impact more than 2 PRs**. This guide should take 15 minutes to complete.
+This guide will walk you through integrating Trunk Flaky Tests with Jira through webhooks. You will be able to automatically generate Jira issues for **new flaky tests** found in your repo. This guide should take 15 minutes to complete.
 
 Trunk also has a [built-in Jira integration](../ticketing-integrations/jira-integration.md) for manual ticket creation. You only need to use webhooks if you want to automate ticket creation or need additional customization.
 
@@ -71,16 +71,16 @@ Transformations are custom code snippets you can write to customize the Jira iss
 
 1. In the endpoint configuration view, navigate to the **Advanced** tab. Under **Transformation**, toggle the **Enabled** switch.
 2. Click **Edit transformation** to update your transformation code, and click **Save** to update the transformation.
-3. You can test the transformation by selecting the `test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message [in step 6](#6-test-your-webhook).
+3. You can test the transformation by selecting the `v2.test_case.status_changed` payload and clicking **Run Test**. This will test the transformation but not send a message. You will learn to send a test message [in step 6](#6-test-your-webhook).
 
 The generated webhook template contains several configurable constants out of the box:
 
-<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>JIRA_PROJECT_KEY</code></td><td>(<strong>Required)</strong> Your Jira project key (e.g., <code>ENG</code>, <code>PROJ</code>).</td></tr><tr><td><code>JIRA_ISSUE_TYPE</code></td><td><strong>(Optional)</strong> The issue type to create. Defaults to <code>Bug</code>.</td></tr><tr><td><code>JIRA_LABELS</code></td><td>(<strong>Optional)</strong> Array of labels to add to the issue. Defaults to <code>["flaky-test"]</code>.</td></tr><tr><td><code>JIRA_CUSTOM_FIELDS</code></td><td>(<strong>Optional)</strong> Object of custom field key-value pairs for projects that require additional fields.</td></tr><tr><td><code>PRS_IMPACTED_THRESHOLD</code></td><td>Issues will be created only for flaky tests that have impacted more PRs than the <code>PRS_IMPACTED_THRESHOLD</code>.<br><br>You can adjust this value if you see many issues about low-impact flaky tests.</td></tr></tbody></table>
+<table><thead><tr><th width="346">Constant</th><th>Description</th></tr></thead><tbody><tr><td><code>JIRA_PROJECT_KEY</code></td><td>(<strong>Required)</strong> Your Jira project key (e.g., <code>ENG</code>, <code>PROJ</code>).</td></tr><tr><td><code>JIRA_ISSUE_TYPE</code></td><td><strong>(Optional)</strong> The issue type to create. Defaults to <code>Bug</code>.</td></tr><tr><td><code>JIRA_LABELS</code></td><td>(<strong>Optional)</strong> Array of labels to add to the issue. Defaults to <code>["flaky-test"]</code>.</td></tr><tr><td><code>JIRA_CUSTOM_FIELDS</code></td><td>(<strong>Optional)</strong> Object of custom field key-value pairs for projects that require additional fields.</td></tr></tbody></table>
 
 Here is the provided transformation for context. You can customize your Jira issues integration by following the [Jira REST API docs](https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-issues/#api-rest-api-2-issue-post) and [Svix transformations](https://docs.svix.com/transformations#using-transformations) documentation.
 
 {% hint style="info" %}
-The default transformation only creates issues when `newStatus === "flaky"`. If you also want to create issues for tests marked as **Broken** (consistently failing at a high rate), update the filter condition. For example, change `newStatus !== "flaky"` to `newStatus !== "flaky" && newStatus !== "broken"` to handle both statuses.
+The default transformation only creates issues when `new_status === "FLAKY"`. If you also want to create issues for tests marked as **Broken** (consistently failing at a high rate), update the filter condition. For example, change `new_status !== "FLAKY"` to `new_status !== "FLAKY" && new_status !== "BROKEN"` to handle both statuses.
 {% endhint %}
 
 ```javascript
@@ -104,15 +104,11 @@ const JIRA_LABELS = ["flaky-test"];
 // Example: { "customfield_10042": { "value": "Platform" }, "customfield_10043": "some-value" }
 const JIRA_CUSTOM_FIELDS = {};
 
-// At least this many PRs need to be impacted for an issue to be created.
-const PRS_IMPACTED_THRESHOLD = 2;
-
 function handler(webhook) {
-  const impacted_prs = webhook.payload.test_case.pull_requests_impacted_last_7d;
-  const newStatus = webhook.payload.status_change.current_status.value;
+  const new_status = webhook.payload.new_status;
 
-  // Filter for only flaky tests that impact more than the provided threshold
-  if (newStatus !== "flaky" || impacted_prs < PRS_IMPACTED_THRESHOLD) {
+  // Filter for only tests that transitioned to flaky
+  if (new_status !== "FLAKY") {
     webhook.payload = "canceled";
     webhook.cancel = true;
     return webhook;
@@ -135,28 +131,28 @@ function handler(webhook) {
 
 function summarizeTestCase(payload) {
   const {
-    status_change: { previous_status },
+    previous_status,
+    new_status,
+    timestamp,
+    repository,
     test_case: {
-      name, file_path, status, quarantine, repository, codeowners,
-      failure_rate_last_7d, most_common_failures,
-      pull_requests_impacted_last_7d, ticket, html_url
+      name, file_path, quarantined, codeowners, html_url
     }
   } = payload;
 
   const issueBody = `See all details on the [Trunk Test Detail page|${html_url}]
 
-Transition time: ${status.timestamp}
+Transition: ${previous_status} → ${new_status}
 
-Severity (last 7 days): ${(failure_rate_last_7d * 100).toFixed(2)}% failure rate; impacting ${pull_requests_impacted_last_7d} PRs
+Transition time: ${timestamp}
 
-Ownership: this test is owned by ${(codeowners || ['@unassigned']).join(', ')}
+File path: ${file_path || 'N/A'}
 
-----
-*The most common failure reasons (out of ${most_common_failures.length} identified) are:*
+Quarantined: ${quarantined ? 'Yes' : 'No'}
 
-${most_common_failures.map((failure, index) => {
-  return `*Reason #${index + 1}*: "${failure.summary}" \n`
-}).join('')}
+Ownership: this test is owned by ${(codeowners && codeowners.length ? codeowners : ['@unassigned']).join(', ')}
+
+Repository: ${repository.html_url}
 
 View the full stack trace on the [Test Detail page|${html_url}]
   `;
@@ -173,7 +169,7 @@ The description uses [Jira wiki markup](https://jira.atlassian.com/secure/WikiRe
 You can create test issues by delivering a mock webhook. You can do this by:
 
 1. In the endpoint configuration view, navigate to the **Testing** tab and select a **Send event**
-2. Under **Subscribed events,** select `test_case.status_changed` as the event type to send
+2. Under **Subscribed events,** select `v2.test_case.status_changed` as the event type to send
 3. Click **Send Example** to test your webhook
 
 ### 7. Monitoring webhooks
@@ -186,9 +182,9 @@ You can see a list of past delivery attempts in the **Message Attempts** modal. 
 
 ### Congratulations!
 
-A Jira issue will now be created when a test's health status changes to **flaky** and **impacts more than 2 PRs**. You can further modify your transformation script to customize your issues.
+A Jira issue will now be created when a test's health status changes to **flaky**. You can further modify your transformation script to customize your issues.
 
-[See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed)
+[See the Trunk webhook event catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#v2.test_case.status_changed)
 
 [Learn more about consuming webhooks in the Svix docs](https://docs.svix.com/receiving/introduction)
 
