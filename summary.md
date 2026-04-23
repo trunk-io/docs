@@ -101,6 +101,7 @@
   * [Failure Rate Monitor](flaky-tests/detection/failure-rate-monitor.md)
   * [Failure Count Monitor](flaky-tests/detection/failure-count-monitor.md)
   * [Flag as Flaky](flaky-tests/detection/flag-as-flaky.md)
+* [Test Case Labels](flaky-tests/test-case-labels.md)
 * [Infrastructure Failure Protection](flaky-tests/infrastructure-failure-protection.md)
 * [The Importance of PR Test Results](flaky-tests/the-importance-of-pr-test-results.md)
 * [Quarantining](flaky-tests/quarantining.md)
