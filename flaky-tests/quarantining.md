@@ -229,7 +229,7 @@ Trunk provides audit logs for all setting changes and overwrites for individual 
 For advanced use cases, you can interact with quarantining features programmatically.
 
 * API: Use the [Flaky Tests API](flaky-tests.md) to fetch a list of all currently quarantined tests in your project.
-* Webhooks: Subscribe to the `test_case.quarantining_setting_changed` event to trigger automated workflows whenever a test's quarantine override is modified. Learn more about [Webhooks](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed).
+* Webhooks: Subscribe to the `test_case.quarantining_setting_changed` event to trigger automated workflows whenever a test's quarantine override is modified. Learn more about [Webhooks](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.quarantining_setting_changed).
 
 {% hint style="info" %}
 ### Service Availability and Graceful Degradation
