@@ -87,3 +87,14 @@ If you want to see full logging of the original CI job for an individual test fa
 <figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Tests may transition between Healthy, Flaky, and Broken states multiple times over their lifetime. You can see previous status changes in Test History, as well as an explanation for why each transition occurred — including which monitor triggered it.
+
+#### Filtering test runs by branch
+
+The test run history tab includes a branch filter that accepts exact branch names or glob patterns. Use `*` to match any sequence of characters and `?` to match a single character.
+
+| Pattern | Matches |
+|---|---|
+| `main` | The branch named `main` exactly |
+| `release/*` | All release branches, e.g. `release/1.0`, `release/2.3` |
+| `feature-??` | Feature branches with a two-character suffix, e.g. `feature-v2` |
+| `trunk-merge/*` | All merge queue branches |

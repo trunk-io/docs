@@ -9,6 +9,10 @@ To use the Autofix Flaky Tests feature, you'll need:
 1. Beta access via waitlist (reach out to us on [Slack](https://slack.trunk.io))
 2. The "Investigate Flaky Tests" setting enabled in your workspace
 
+{% hint style="info" %}
+The "Investigate Flaky Tests" setting can only be changed by organization admins.
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/investigate-flaky-tests-setting.png" alt="Setting to enable Flaky Test investigation"><figcaption></figcaption></figure>
 
 ### Auto-Investigate Flaky Tests
