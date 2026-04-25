@@ -7,7 +7,7 @@ Trunk can automatically investigate flaky tests in your codebase and raise fix p
 To use the Autofix Flaky Tests feature, you'll need:
 
 1. Beta access via waitlist (reach out to us on [Slack](https://slack.trunk.io))
-2. The "Investigate Flaky Tests" setting enabled in your workspace
+2. The "Investigate Flaky Tests" setting enabled in your workspace by a workspace admin
 
 <figure><img src="../.gitbook/assets/investigate-flaky-tests-setting.png" alt="Setting to enable Flaky Test investigation"><figcaption></figcaption></figure>
 
