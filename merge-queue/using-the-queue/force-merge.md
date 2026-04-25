@@ -84,6 +84,10 @@ Force merge can be combined with other `/trunk merge` flags. The most common com
 * **Misconception:** "Force merge is the same as emergency pull requests."
   * **Reality:** [Emergency pull requests](emergency-pull-requests.md) bypass the queue entirely and push directly to your merge branch. Force merge still goes through the queue and still tests the PR — it only bypasses branch protection at merge time.
 
+### Visibility in the queue dashboard
+
+Force-merged pull requests appear with a **Forced** badge in the merge queue PR list. This lets you identify which PRs bypassed branch protection at a glance without opening each PR individually.
+
 ### Next steps
 
 * [Trunk Sudo GitHub App](../../setup-and-administration/trunk-sudo-app.md) — install and configure the app that powers force merge.
