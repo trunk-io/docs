@@ -30,7 +30,32 @@ The Trunk MCP server is available at `https://mcp.trunk.io/mcp` and exposes the 
 
 ### Authorization
 
-The Trunk MCP server supports the OAuth 2.0 + OpenID Connect standard for MCP authorization.
+The Trunk MCP server supports two authentication methods.
+
+**OAuth (default)**
+
+OAuth 2.0 + OpenID Connect is the default. MCP clients that support the [MCP authorization spec](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization) will initiate the OAuth flow automatically. Most interactive clients (Cursor, Claude Code, GitHub Copilot) use this path.
+
+**API token**
+
+As an alternative, you can authenticate with your Trunk organization API token. This is useful for MCP clients that do not support OAuth, CI/headless environments, or quick manual setup.
+
+Find your token under **Settings > API** in the Trunk dashboard. Pass it as a Bearer token in the `Authorization` header:
+
+```json
+{
+  "mcpServers": {
+    "trunk": {
+      "url": "https://mcp.trunk.io/mcp",
+      "headers": {
+        "Authorization": "Bearer <your-trunk-api-token>"
+      }
+    }
+  }
+}
+```
+
+API token auth is org-level — all requests are attributed to the organization rather than to a specific user. OAuth remains the preferred method for interactive use because it provides user-level identity.
 
 ### Get started
 

@@ -45,9 +45,9 @@ Add the following [configuration](https://code.visualstudio.com/docs/copilot/cha
 }
 ```
 
-### Authentication
+### Authentication with OAuth (default)
 
-After the MCP server was added to Cursor, users need to authorize Cursor to communicate with the server. Follow these steps to complete auth.
+After the MCP server was added, users need to authorize GitHub Copilot to communicate with the server. Follow these steps to complete auth.
 
 
 
@@ -70,4 +70,28 @@ Follow instructions to get back to GitHub Copilot. With auth completed, GitHub C
 ```
 2025-09-10 12:49:16.975 [info] Discovered 2 tools
 ```
+
+### Alternative: Authentication with API token
+
+If you prefer not to use the OAuth flow, you can authenticate with your Trunk organization API token. Find your token under **Settings > API** in the Trunk dashboard.
+
+Add the token to your `.vscode/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "trunk": {
+      "url": "https://mcp.trunk.io/mcp",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${env:TRUNK_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+{% hint style="info" %}
+VS Code uses `${env:VARIABLE_NAME}` syntax for environment variable interpolation in MCP configuration files, unlike other clients which use `${VARIABLE_NAME}`.
+{% endhint %}
 

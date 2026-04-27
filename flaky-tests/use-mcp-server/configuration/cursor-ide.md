@@ -28,7 +28,7 @@ Add the following [configuration](https://docs.cursor.com/en/context/mcp#model-c
 }
 ```
 
-### Authentication
+### Authentication with OAuth (default)
 
 After the MCP server was added to Cursor, users need to authorize Cursor to communicate with the server. Follow these steps to complete auth.
 
@@ -51,3 +51,25 @@ A new webpage will be opened. Login with your Trunk account and follow instructi
 Follow instructions to get back to Cursor. With auth completed, Cursor will be able to fetch the tools exposed by Trunk's MCP server:
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-09-10 at 11.29.00 AM.png" alt="" width="375"><figcaption></figcaption></figure>
+
+
+### Alternative: Authentication with API token
+
+If you prefer not to use the OAuth flow, you can authenticate with your Trunk organization API token. Find your token under **Settings > API** in the Trunk dashboard.
+
+Add the token to your `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "trunk": {
+      "url": "https://mcp.trunk.io/mcp",
+      "headers": {
+        "Authorization": "Bearer ${TRUNK_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+Set `TRUNK_API_TOKEN` as an environment variable. Cursor interpolates environment variables in MCP configuration files automatically.
