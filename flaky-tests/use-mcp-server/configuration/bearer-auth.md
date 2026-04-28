@@ -1,5 +1,5 @@
 ---
-description: Add Trunk's MCP via Bearer Authentication
+description: Add Trunk's MCP Server via Bearer Authentication
 ---
 
 # Bearer Authentication
@@ -12,7 +12,7 @@ Retrieve your organization's API token from the settings page in the web app, e.
 
 ### Authorization Header
 
-Set the following header when connecting to the mcp `https://mcp.trunk.io/mcp`:
+Set the following header when connecting to the MCP `https://mcp.trunk.io/mcp`:
 
 | Header Key | Header Value |
 | - | - |
