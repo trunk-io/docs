@@ -11,7 +11,7 @@ The extension is a companion to Trunk Merge Queue — you still need a configure
 
 **Install the extension**
 
-1. Open the [Trunk for GitHub](https://chromewebstore.google.com/detail/liggeliamkammmieidmmfmmdnjilabgn) listing in the Chrome Web Store.
+1. Open the Trunk for GitHub listing in the Chrome Web Store.
 2. Click **Add to Chrome** and approve the requested permissions.
 3. Pin the Trunk icon to your toolbar so the popup is one click away.
 4. Click the Trunk icon and sign in. The extension uses your existing browser session at [app.trunk.io](https://app.trunk.io/) - if you're already logged in, no additional sign-in is needed.&#x20;
