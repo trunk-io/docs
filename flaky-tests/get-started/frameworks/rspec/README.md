@@ -115,7 +115,7 @@ After your upload, you can verify that Trunk has received and processed it succe
 <figure><picture><source srcset="../../../../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-You do not need to download the `trunk-analytics-cli` when using the Trunk rspec gem. Uploads are handled for you as long as you have set `TRUNK_ORG_URL_SLUG` and `TRUNK_API_TOKEN`.
+You do not need to download the `trunk-analytics-cli` when using the Trunk RSpec plugin. Uploads are handled for you as long as you have set `TRUNK_ORG_URL_SLUG` and `TRUNK_API_TOKEN`.
 {% endhint %}
 
 ### Next Steps
