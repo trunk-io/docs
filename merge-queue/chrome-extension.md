@@ -8,7 +8,7 @@ The extension is a companion to Trunk Merge Queue — you still need a configure
 
 **Install the extension**
 
-1. Open the [Trunk Merge Queue listing](https://chromewebstore.google.com/detail/liggeliamkammmieidmmfmmdnjilabgn) in the Chrome Web Store.
+1. Open the [Trunk for GitHub](https://chromewebstore.google.com/detail/liggeliamkammmieidmmfmmdnjilabgn) listing in the Chrome Web Store.
 2. Click **Add to Chrome** and approve the requested permissions.
 3. Pin the Trunk icon to your toolbar so the popup is one click away.
 4. Click the Trunk icon and sign in. The extension uses your existing browser session at [app.trunk.io](https://app.trunk.io/) - if you're already logged in, no additional sign-in is needed.&#x20;
@@ -19,7 +19,7 @@ On any pull request in a queue-enabled repository, the extension adds a **Merge 
 
 1. Open the pull request on GitHub.
 2. In the Trunk panel, click **Add to Merge Queue**.
-3. Optionally choose a [priority](https://github.com/trunk-io/docs/blob/1a152d61c3091e1007ee9fe70406084fbe06de80/merge-queue/optimizations/priority-merging.md) before submitting.
+3. Optionally choose a [priority](optimizations/priority-merging.md) before submitting.
 
 ### Remove a pull request from the queue
 
