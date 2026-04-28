@@ -3,7 +3,7 @@
 The Trunk Chrome Extension overlays merge queue controls and status onto your normal GitHub experience, so you can submit a PR to the queue, cancel it, and watch its testing progress without leaving the pull request page.\
 <br>
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The extension is a companion to Trunk Merge Queue — you still need a configured queue for your repository. The extension only surfaces controls and status for queues your Trunk organization already owns.
