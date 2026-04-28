@@ -61,5 +61,5 @@ Investigate the CI failure at https://github.com/trunk-io/trunk/actions/runs/123
 | Error                          | Cause                                         | Resolution                                                |
 | ------------------------------ | --------------------------------------------- | --------------------------------------------------------- |
 | `Invalid workflow URL`         | Malformed or incorrect workflow URL           | Verify the URL follows the pattern `https://github.com/{owner}/{repo}/actions/runs/{runId}` |
-| `No test results were uploaded for this CI run`           | No test run uploads were uploaded from the provided workflow | Check that the workflow run URL is correct and it is uploading test results. Compilation and build failures will not upload test results |
+| `No test results were uploaded for this CI run`           | No test run uploads were uploaded from the provided workflow | Check that the workflow run URL is correct and that it is uploading test results. Compilation and build failures will not upload test results |
 | `No test uploads found for this repository` | Repo hasn't configured Trunk test result uploads | Follow setup instructions to [upload test results](../../get-started/README.md) |
