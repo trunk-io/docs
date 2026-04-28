@@ -18,10 +18,14 @@ The extension is a companion to Trunk Merge Queue — you still need a [configur
 
 ## Install the extension
 
-1. Open the [Trunk Merge Queue listing](https://chromewebstore.google.com/) in the Chrome Web Store.
+1. Open the [Trunk Merge Queue listing](https://chromewebstore.google.com/detail/liggeliamkammmieidmmfmmdnjilabgn) in the Chrome Web Store.
 2. Click **Add to Chrome** and approve the requested permissions.
 3. Pin the Trunk icon to your toolbar so the popup is one click away.
 4. Click the Trunk icon and sign in. The extension uses your existing browser session at [app.trunk.io](https://app.trunk.io) — if you're already logged in, no additional sign-in is needed. See [Authentication and security](#authentication-and-security) for details.
+
+{% hint style="info" %}
+**Rolling the extension out to a team?** Chrome admins can force-install the Trunk extension for everyone in a Google Workspace organization using the [Chrome Web Store ID](https://chromewebstore.google.com/detail/liggeliamkammmieidmmfmmdnjilabgn) `liggeliamkammmieidmmfmmdnjilabgn`. See Google's [Automatically install apps and extensions](https://support.google.com/chrome/a/answer/6306504?hl=en) guide for the admin console steps.
+{% endhint %}
 
 <!-- TODO: screenshot of Chrome Web Store listing -->
 
