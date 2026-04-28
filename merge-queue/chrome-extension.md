@@ -12,8 +12,6 @@ The Trunk Chrome Extension overlays merge queue controls and status onto your no
 The extension is a companion to Trunk Merge Queue — you still need a [configured queue](getting-started/) for your repository. The extension only surfaces controls and status for queues your Trunk organization already owns.
 {% endhint %}
 
-<!-- TODO: hero screenshot of the extension overlay on a GitHub PR page -->
-
 <figure><img src="../.gitbook/assets/chrome-extension-overview.png" alt=""><figcaption>The Trunk overlay on a GitHub pull request page.</figcaption></figure>
 
 ## Install the extension
@@ -27,9 +25,7 @@ The extension is a companion to Trunk Merge Queue — you still need a [configur
 **Rolling the extension out to a team?** Chrome admins can force-install the Trunk extension for everyone in a Google Workspace organization using the [Chrome Web Store ID](https://chromewebstore.google.com/detail/liggeliamkammmieidmmfmmdnjilabgn) `liggeliamkammmieidmmfmmdnjilabgn`. See Google's [Automatically install apps and extensions](https://support.google.com/chrome/a/answer/6306504?hl=en) guide for the admin console steps.
 {% endhint %}
 
-<!-- TODO: screenshot of Chrome Web Store listing -->
-
-<figure><img src="../.gitbook/assets/chrome-extension-install.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/chrome-extension-install.png" alt=""><figcaption>The Trunk Merge Queue extension in the Chrome Web Store.</figcaption></figure>
 
 The extension activates automatically on `github.com` pull request pages for repositories that have a Trunk Merge Queue configured.
 
@@ -40,8 +36,6 @@ On any pull request in a queue-enabled repository, the extension adds a **Merge 
 1. Open the pull request on GitHub.
 2. In the Trunk panel, click **Add to Merge Queue**.
 3. Optionally choose a [priority](optimizations/priority-merging.md) before submitting.
-
-<!-- TODO: screenshot of the Add to Merge Queue button on a GitHub PR -->
 
 <figure><img src="../.gitbook/assets/chrome-extension-submit.png" alt=""><figcaption>Submitting a PR to the queue from the GitHub PR page.</figcaption></figure>
 
@@ -54,9 +48,7 @@ If a PR is already in the queue, the panel shows a **Cancel** action.
 1. Click **Cancel** in the Trunk panel on the PR page.
 2. The PR is removed from the queue immediately, the same as running `/trunk cancel`.
 
-<!-- TODO: screenshot of the Cancel control in the extension panel -->
-
-<figure><img src="../.gitbook/assets/chrome-extension-cancel.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/chrome-extension-cancel.png" alt=""><figcaption>Cancelling a PR from the merge queue via the extension panel.</figcaption></figure>
 
 ## Track testing progress
 
@@ -68,9 +60,7 @@ Once a PR is in the queue, the extension panel updates in real time as it moves 
 * **Tests Passed** — waiting for upstream PRs before merging
 * **Merged**, **Failed**, or **Cancelled** — terminal states
 
-The panel shows the current state, time spent in queue, and any upstream PRs whose results this PR depends on. A link jumps to the full PR detail page in the Trunk web app for deeper context.
-
-<!-- TODO: screenshot of the in-progress testing view inside the panel -->
+The panel shows the current state, time spent in the queue, and any upstream PRs whose results this PR depends on. A link jumps to the full PR detail page in the Trunk web app for deeper context.
 
 <figure><img src="../.gitbook/assets/chrome-extension-testing.png" alt=""><figcaption>Live testing progress shown directly on the GitHub PR page.</figcaption></figure>
 
