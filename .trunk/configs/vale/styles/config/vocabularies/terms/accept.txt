@@ -1,4 +1,5 @@
 [Aa]ctionlint
+(?i)agentic
 (?i)ansible
 (?i)antipatterns
 (?i)api
