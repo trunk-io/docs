@@ -1,14 +1,14 @@
 ---
 description: >-
-  Fast-track critical PRs like hotfixes and security patches to the front of
-  the merge queue.
+  Fast-track critical PRs like hotfixes and security patches to the front of the
+  merge queue.
 ---
 
 # Priority merging
 
 ### What it is
 
-Priority merging allows you to fast-track critical pull requests to the front of the merge queue.&#x20;
+Priority merging allows you to fast-track critical pull requests to the front of the merge queue.
 
 By assigning a priority level to a PR, you can make sure urgent changes (like hotfixes, security patches, or critical bug fixes) merge ahead of regular feature work. PRs with higher priority are tested and merged before lower-priority PRs, regardless of when they were submitted.
 
@@ -36,8 +36,6 @@ or
 ```
 /trunk merge -p <level>
 ```
-
-
 
 #### Enable via Command Line argument
 
@@ -73,26 +71,26 @@ Another exception: Admins can still merge PRs in absolutely necessary cases outs
 
 Say you have a queue that is configured to test two PRs at once. The queue currently looks like this:
 
-<img src="../../.gitbook/assets/file.excalidraw (11).svg" alt="Queue with two testing PRs and one pending" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (1).svg" alt="Queue with two testing PRs and one pending" class="gitbook-drawing">
 
 If you submit a PR D with a `"high"` priority it will be put in front of C (since it is a higher priority than C and C is not testing). D will begin as soon as either A or B finishes, like this:
 
-<img src="../../.gitbook/assets/file.excalidraw (12).svg" alt="Queue with two testing PRs and a new higher priority pending PR" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (9).svg" alt="Queue with two testing PRs and a new higher priority pending PR" class="gitbook-drawing">
 
 Instead, if you submit PR D with an `"urgent"` priority, then D would be tested immediately, A would be restarted, and B would be bumped back to pending, like this:
 
-<img src="../../.gitbook/assets/file.excalidraw (13).svg" alt="Queue with an urgent PR moved to the front and a normal PR restarting" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (2).svg" alt="Queue with an urgent PR moved to the front and a normal PR restarting" class="gitbook-drawing">
 
 ### Visual indicators in the dashboard
 
 When a PR is queued with a non-default priority, the merge queue graph view displays a badge on the PR node so you can quickly identify fast-tracked items:
 
-| Priority | Badge | Description |
-|----------|-------|-------------|
+| Priority | Badge                                | Description                                                            |
+| -------- | ------------------------------------ | ---------------------------------------------------------------------- |
 | Urgent   | Red pulsing badge labeled **URGENT** | Draws immediate attention; this PR is interrupting in-progress testing |
-| High     | Orange badge labeled **HIGH** | PR is being fast-tracked ahead of normal-priority items |
-| Medium   | No badge | Default priority — no visual indicator |
-| Low      | No badge | Lower-than-default priority — no visual indicator |
+| High     | Orange badge labeled **HIGH**        | PR is being fast-tracked ahead of normal-priority items                |
+| Medium   | No badge                             | Default priority — no visual indicator                                 |
+| Low      | No badge                             | Lower-than-default priority — no visual indicator                      |
 
 Priority badges appear on individual PR nodes in the [graph view](../using-the-queue/monitor-queue-status.md#graph-view). Batch nodes (multiple PRs tested together) do not display priority badges.
 
@@ -140,11 +138,11 @@ Don't use high priority for:
 
 #### Common misconceptions
 
-* **Misconception:** "Priority PRs skip testing"&#x20;
+* **Misconception:** "Priority PRs skip testing"
   * **Reality:** No! Priority PRs go through full testing, they just test first. Safety is never compromised.
-* **Misconception:** "I can mark my PR priority to avoid waiting"&#x20;
+* **Misconception:** "I can mark my PR priority to avoid waiting"
   * **Reality:** Priority should be reserved for genuine emergencies. Overuse makes the system meaningless for everyone.
-* **Misconception:** "Priority PRs interrupt currently running tests"&#x20;
+* **Misconception:** "Priority PRs interrupt currently running tests"
   * **Reality:** Priority PRs queue at the front but don't cancel in-progress tests. The system remains stable.
 
 ### Next Steps
@@ -171,4 +169,3 @@ Don't use high priority for:
 
 * [Metrics and monitoring](../administration/metrics.md) - Track priority PR usage and merge times
 * Watch for priority overuse (should be <5% of PRs)
-
