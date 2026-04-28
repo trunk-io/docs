@@ -194,6 +194,7 @@ sqlfmt
 stacktrace
 standardrb
 Starlark
+stderr
 stdin
 stdout
 stringslint
@@ -228,6 +229,7 @@ toolset
 (?i)trusted by
 txt
 txtpbfmt
+(?i)typecheck
 unbreaking
 unbypassable
 (?i)uncheck
