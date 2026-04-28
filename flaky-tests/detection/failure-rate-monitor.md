@@ -163,6 +163,25 @@ Show the branch pattern input with a few patterns entered (e.g.,
 `main` and `release/*`), ideally showing the tag/chip-style UI for
 each pattern. -->
 
+## Preview Panel
+
+When creating or editing a failure rate monitor, a preview panel shows which tests the current configuration would flag based on recent data. The panel is split into two sections: **Current** and **Proposed**.
+
+- **Current** shows tests flagged by the existing configuration (if editing an existing monitor).
+- **Proposed** shows tests that would be flagged with the settings currently entered in the form.
+
+The Current section is collapsed by default so the Proposed view is immediately visible when you open the form.
+
+### Status Filter
+
+A **status filter dropdown** in the preview panel lets you filter the test list to any combination of statuses: **Healthy**, **Flaky**, and **Broken**. By default, all statuses are shown.
+
+Filtering to **Healthy** shows tests that are currently healthy but would be flagged by this monitor — the new coverage it adds beyond tests already detected. Filtering to other statuses, or combining them, adjusts the visible list without affecting the underlying detection counts.
+
+When a filter is active, the info tooltip shows "X of Y tests" to indicate how many tests are visible relative to the total matching the configuration. If no tests match the active filter, the empty state includes a hint to clear the filter.
+
+The status filter applies to the **Proposed** section. The not-in-window count in the Current section reflects the full unfiltered result set and is not affected by the filter.
+
 ## Resolution Behavior
 
 A flagged test resolves in one of two ways:
