@@ -33,6 +33,7 @@
   * [Emergency pull requests](merge-queue/using-the-queue/emergency-pull-requests.md)
   * [Force merge](merge-queue/using-the-queue/force-merge.md)
 * [Integration for Slack](merge-queue/integration-for-slack.md)
+* [Chrome Extension](merge-queue/chrome-extension.md)
 * [Webhooks](merge-queue/webhooks.md)
 * [Administration](merge-queue/administration/README.md)
   * [Settings and configurations](merge-queue/administration/advanced-settings.md)
