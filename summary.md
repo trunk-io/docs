@@ -126,6 +126,7 @@
     * [GitHub Copilot (IDE)](flaky-tests/use-mcp-server/configuration/github-copilot-ide.md)
     * [Claude Code (CLI)](flaky-tests/use-mcp-server/configuration/claude-code-cli.md)
     * [Gemini (CLI)](flaky-tests/use-mcp-server/configuration/gemini-cli.md)
+    * [Bearer Auth](flaky-tests/use-mcp-server/configuration/bearer-auth.md)
   * [MCP Tool Reference](flaky-tests/use-mcp-server/mcp-tool-reference/README.md)
     * [Search for tests](flaky-tests/use-mcp-server/mcp-tool-reference/search-test.md)
     * [Fix flaky tests](flaky-tests/use-mcp-server/mcp-tool-reference/fix-flaky-test.md)
