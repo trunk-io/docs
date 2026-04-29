@@ -97,6 +97,7 @@
   * [Multiple Repositories and Forks](flaky-tests/get-started/multiple-repositories.md)
 * [Managing detected flaky tests](flaky-tests/managing-detected-flaky-tests.md)
 * [Dashboard](flaky-tests/dashboard.md)
+* [Uploads](flaky-tests/uploads-page.md)
 * [Flaky test detection](flaky-tests/detection/README.md)
   * [Pass-on-Retry Monitor](flaky-tests/detection/pass-on-retry-monitor.md)
   * [Failure Rate Monitor](flaky-tests/detection/failure-rate-monitor.md)
