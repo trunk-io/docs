@@ -60,6 +60,7 @@ Flaky Tests works by uploading test results from your CI jobs to Trunk's backend
 * **Encryption in transit**: All data transmitted to and from Trunk uses TLS (Transport Layer Security) and HSTS
 * **Encryption at rest**: All customer data is encrypted using AES-256
 * **Network isolation**: Production services run in isolated AWS VPCs with restricted access; all services are within private subnets with no internet access and use a network gateway to permit specific traffic
+* **Clickjacking protection**: All Trunk app pages set `Content-Security-Policy: frame-ancestors 'self'` and `X-Frame-Options: SAMEORIGIN`, preventing Trunk pages from being embedded in external iframes
 
 #### Access Controls
 
