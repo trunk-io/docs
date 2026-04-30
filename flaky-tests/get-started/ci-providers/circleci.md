@@ -41,6 +41,10 @@ Store your Trunk slug and API token in your CircleCI project settings under **En
 
 Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection/), for example, `main`, `master`, or `develop`.
 
+{% hint style="info" %}
+The Trunk Analytics CLI automatically detects PR context from CircleCI environment variables, including the pull request number. No additional configuration is needed to associate test uploads with the correct PR in Trunk.
+{% endhint %}
+
 {% hint style="danger" %}
 It is important to upload test results from CI runs on [**stable branches**](../../detection/), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
 
