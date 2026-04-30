@@ -98,6 +98,26 @@ This time-based approach means you don't need to wait for enough passing runs to
 
 You can temporarily mute a failure count monitor for a specific test case. See [Muting monitors](README.md#muting-monitors) for details.
 
+## Preview Panel
+
+When creating or editing a failure count monitor, a preview panel shows which tests the current configuration would flag based on recent data.
+
+### Status Filter
+
+A **status filter dropdown** in the preview panel lets you filter the test list to any combination of statuses: **Healthy**, **Flaky**, and **Broken**. By default, all statuses are shown.
+
+Filtering to **Healthy** is the most useful view: it shows tests that are currently healthy but would be flagged by this monitor if created with the current settings. This lets you see the new coverage the monitor adds without noise from tests already detected by other monitors.
+
+Selecting multiple statuses (for example, Healthy and Flaky) shows tests matching any of the selected statuses.
+
+When a status filter is active, the info tooltip in the panel header shows "X of Y tests" to indicate how many tests are visible relative to the total that match the monitor configuration.
+
+If no tests match the active filter, the empty state includes a hint to clear the filter.
+
+### Large Repo Truncation
+
+For repositories with a large number of matching tests, preview results may be truncated. When this happens, an amber warning appears in the panel. The truncation applies to the list of tests shown, not to the underlying detection logic — the monitor evaluates all matching tests when active.
+
 ## Choosing Between Monitors
 
 | Scenario | Recommended monitor |
