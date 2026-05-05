@@ -165,7 +165,7 @@ jobs:
       id: unit_tests
       shell: bash
 <strong>      run: &#x3C;COMMAND TO RUN TESTS> # command to run tests goes here
-</strong><strong>      continue-on-error: true # ensure CI job continues to upload step on errors
+</strong><strong>      continue-on-error: true # allow CI job to continue to upload step on errors
 </strong>        
     - name: Upload test results
       if: always()
@@ -205,7 +205,7 @@ jobs:
 **Using Flaky Tests as a separate step**
 
 {% hint style="warning" %}
-If you upload your test results as a second step after you run your tests, you need to ensure your test step **continues on errors** so the upload step that's run after can quarantine failed tests.&#x20;
+If you upload your test results as a second step after you run your tests, you need to make sure your test step **continues on errors** so the upload step that's run after can quarantine failed tests.&#x20;
 
 When quarantining is enabled, the `trunk-analytics-cli upload` command will **return an error** if there are unquarantined failures and return a status code 0 if all tests are quarantined.
 {% endhint %}
