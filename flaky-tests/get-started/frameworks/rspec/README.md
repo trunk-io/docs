@@ -68,7 +68,7 @@ bundle update rspec_trunk_flaky_tests
 
 ### Environment Variables
 
-These optoinal environment variables can be set in your project to change the behavior of the RSpec plugin.
+These optional environment variables can be set in your project to change the behavior of the RSpec plugin.
 
 #### Repository metadata variables:
 
@@ -113,6 +113,10 @@ You can find your Trunk organization URL slug and token in the **Settings** or b
 After your upload, you can verify that Trunk has received and processed it successfully in the **Uploads** tab. Warnings will be displayed if the test report uploaded by the plugin has issues.
 
 <figure><picture><source srcset="../../../../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+You do not need to download the `trunk-analytics-cli` when using the Trunk RSpec plugin. Uploads are handled for you as long as you have set `TRUNK_ORG_URL_SLUG` and `TRUNK_API_TOKEN`.
+{% endhint %}
 
 ### Next Steps
 

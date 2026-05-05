@@ -16,7 +16,7 @@ Looking for a more detailed comparison between Trunk and GitHub's Merge Queues? 
 
 ### Turn off GitHub Merge Queue
 
-To start, you will need to disable the exising merge queue for the target repository. This can be done by navigating to the repository and opening **Settings > Branches >** branch rule **>** toggle **off Require merge queue.** Be sure to click **Save changes** to confirm the settings.
+To start, you will need to disable the existing merge queue for the target repository. This can be done by navigating to the repository and opening **Settings > Branches >** branch rule **>** toggle **off Require merge queue.** Be sure to click **Save changes** to confirm the settings.
 
 {% hint style="info" %}
 Note that only users with admin permissions can manage merge queues for pull requests targeting selected branches of a repository. More information on [manage merge queues](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule#creating-a-branch-protection-rule) can be found in the GitHub documentation.
@@ -55,9 +55,9 @@ This ensures that Trunk always tests against the latest state of your target bra
 
 ***
 
-### Pre migration
+### Pre-migration
 
-Before migrating fully, it may be useful to evaluate the workflows "quiety" and confirm settings before converting your repository to an entirely new workflow.
+Before migrating fully, it may be useful to evaluate the workflows quietly and confirm settings before converting your repository to an entirely new workflow.
 
 Here are some useful steps to get you familiar with the Trunk Merge Queue workflow without disrupting engineers.
 

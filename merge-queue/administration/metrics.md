@@ -4,7 +4,7 @@ The Metrics and Monitoring dashboard provides deep analytics on your merge queue
 
 Your merge experience directly impacts the velocity and productivity of your development team. Merge Queue Metrics provides observability for the **health** of your Trunk Merge Queue, so you can discover issues early and make informed optimizations.
 
-<figure><img src="../../.gitbook/assets/merge-health.png" alt=""><figcaption><p>The Health tab showing metrics in the Trunk Web App.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-health.png" alt="Health tab of the Trunk web app showing a Conclusion Counts stacked bar chart and a Time in Queue p50 line chart over a 30-day range"><figcaption><p>The Health tab showing metrics in the Trunk Web App.</p></figcaption></figure>
 
 ### Access metrics
 
@@ -18,7 +18,7 @@ CI Time and CI Jobs Triggered charts are only available for **GitHub Actions**.
 
 When running in Parallel Mode, you can filter your merge queue health metrics by impacted targets to analyze performance for specific parts of your codebase.
 
-<figure><img src="../../.gitbook/assets/1768426992-impacted-target-filtering.avif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/1768426992-impacted-target-filtering.avif" alt="Health dashboard filtered by PR Conclusion: Failed and Impacted Targets: //trunk/all-ts:node_modules/@trunkio, showing a single failure bar and a p50 Time in Queue line"><figcaption></figcaption></figure>
 
 #### Why Filter by Impacted Targets?
 
@@ -104,6 +104,46 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P50     | The value below 50% of the time in queue falls.     |
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
+
+### Drill down into metrics
+
+From the **Conclusion count** and **Time in queue** charts, you can drill into any point or window on the graph to see the exact pull requests that made up those numbers.
+
+#### Why Drill Down?
+
+Aggregated charts tell you _that_ something happened — drilling down tells you _which PRs_ caused it. This makes it easy to:
+
+* **Track down outliers** — if the P99 on Time in queue spikes, drill into that bucket to find the specific PR that dragged the tail out.
+* **Investigate failure spikes** — click a bar on Conclusion count where failures jumped and see exactly which PRs failed and why.
+* **Audit a time window** — pull the full list of PRs merged, failed, or canceled during an incident window or release cut.
+* **Answer one-off questions** — "which PRs merged between 2pm and 4pm yesterday?" without writing a query against the Prometheus endpoint.
+
+#### Select Data Points
+
+You have two ways to select:
+
+* **Click a single data point** to see the PRs in that time bucket.
+* **Click and drag across the chart** to select a range of data points spanning multiple time buckets.
+
+Once a selection is made, a **View PRs** button appears. Click it to open the list of PRs that make up the selection.
+
+<figure><img src="../../.gitbook/assets/drill-down-overview.png" alt="PR Outcomes and Time in Queue charts with a selected Apr 20–21 range broken out into 998 merged, 30 cancelled, and 30 failed, and a selection bar showing the View PRs button"><figcaption><p>The View PRs button appears after selecting a data point or range.</p></figcaption></figure>
+
+#### Review the PR List
+
+The PR list page shows every PR included in your selection, along with:
+
+* **Conclusion** — whether the PR merged, failed, or was cancelled.
+* **Reason** — the specific cause behind the conclusion (for example, Merged by Trunk, Required status failed, PR closed). See the [Conclusion count](#conclusion-count) table for the full list.
+* **Time in queue** — how long the PR spent in the merge queue from entry to exit.
+
+Both columns are sortable, so you can quickly surface the longest-running PRs in a window or group all failures of the same type together.
+
+<figure><img src="../../.gitbook/assets/pr-drill-down-list.png" alt="PRs in Range table listing individual PRs with Conclusion (Merged or Failed), Reason, and Time in Queue columns, sorted by Time in Queue descending"><figcaption><p>The drill-down PR list, sortable by conclusion and time in queue.</p></figcaption></figure>
+
+{% hint style="info" %}
+Drill down is currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interaction as they land in the UI.
+{% endhint %}
 
 ***
 
