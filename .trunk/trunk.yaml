@@ -16,9 +16,13 @@ lint:
   # See inherited enabled linters and other config here:
   #   https://github.com/trunk-io/configs/blob/main/plugin.yaml
   enabled:
+    - codespell@2.4.2:
+        config: .trunk/configs/.codespellrc
     - non-relative-link-check
     - vale@3.11.2
   definitions:
+    - name: codespell
+      direct_configs: [.codespellrc, todo_dict.txt]
     - name: markdown-link-check
       commands:
         - name: lint
@@ -35,13 +39,14 @@ lint:
             \\((?P<code>.*)\\))"
           success_codes: [0, 1]
   disabled:
+    - semgrep
     - markdownlint
     - trivy
   ignore:
     - linters: [prettier]
       paths:
         - "**/*.md"
-    - linters: [vale]
+    - linters: [vale, codespell]
       paths:
         - ".claude/**"
         - ".github/**"
