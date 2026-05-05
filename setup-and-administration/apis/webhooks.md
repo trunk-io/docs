@@ -4,7 +4,7 @@ description: Documentation on the various webhooks that are provided by Trunk
 
 # Webhooks Reference
 
-<figure><img src="../../.gitbook/assets/webhook-event-catalog (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/webhook-event-catalog.png" alt=""><figcaption></figcaption></figure>
 
 Svix generates a reference for all the exposed webhook events. You can find all possible webhooks from Trunk can be viewed in the [Webhook Events Catalog](https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/):
 
