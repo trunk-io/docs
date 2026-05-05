@@ -102,6 +102,7 @@
 * [The Importance of PR Test Results](flaky-tests/the-importance-of-pr-test-results.md)
 * [Quarantining](flaky-tests/quarantining.md)
 * [Quarantine Service Availability](flaky-tests/quarantine-service-availability.md)
+* [Forked Pull Requests](flaky-tests/forked-pull-requests.md)
 * [Pull request comments](flaky-tests/github-pull-request-comments.md)
 * [Ticketing integrations](flaky-tests/ticketing-integrations/README.md)
   * [Jira integration](flaky-tests/ticketing-integrations/jira-integration.md)
