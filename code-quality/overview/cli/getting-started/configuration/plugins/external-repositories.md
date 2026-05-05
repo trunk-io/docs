@@ -114,7 +114,7 @@ See our documentation on [custom linters](../../../../linters/custom-linters.md)
 
 ### Publishing your plugin
 
-To share your plugin with the world, all you have to do is tag a release and push it to GitHub, Gitlab, or some other repository hosting service:
+To share your plugin with the world, all you have to do is tag a release and push it to GitHub, GitLab, or some other repository hosting service:
 
 ```bash
 git add .

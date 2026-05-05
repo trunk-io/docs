@@ -6,7 +6,7 @@ description: Create dynamic parallel queues to reduce queue time
 
 Normally, a merge queue behaves by enqueueing all submitted pull requests into a single line. Under this mode of operation, every pull request is [predictively tested ](/broken/pages/BAKgbuxqWos5o4kna99T)against the pull requests ahead of it. While this guarantees the correctness of the protected branch at all times, under a high submission load, the wait time for an item in the queue can be negatively impacted.\
 \
-A regular merge queue operates like a grocery store with only a single checkout lane. When a lot of folks are trying to checkout at the same time - the line will grow (sometimes intolerably). With a dynamic parallel queue, trunk merge creates additional checkout lanes in real-time while still guaranteeing that the protected branch doesn't break.​ 
+A regular merge queue operates like a grocery store with only a single checkout lane. When a lot of folks are trying to checkout at the same time - the line will grow (sometimes intolerably). With a dynamic parallel queue, trunk merge creates additional checkout lanes in real-time while still guaranteeing that the protected branch doesn't break.​
 
 {% embed url="https://share.vidyard.com/watch/XeTFxCCLuDUU3kip2RnykW" %}
 track impacted code of each pull request to create dynamic queues
@@ -21,7 +21,7 @@ For example, the following four pull requests:
 
 Without parallelization, the PRs **A**, **B**, **C**, and **D** would all be tested in a single predictive path **A** <- **B** <- **C** <- **D**. Using the impacted target information we can instead build three dynamically provisioned queues and the predictive testing can yield higher throughput - which means your pull request spends less time in the queue stuck testing with unrelated code changes.
 
-<img src="../../../.gitbook/assets/file.excalidraw.svg" alt="Three Dynamic Parallel Queues" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (6).svg" alt="Three Dynamic Parallel Queues" class="gitbook-drawing">
 
 #### **How does it work?**
 
