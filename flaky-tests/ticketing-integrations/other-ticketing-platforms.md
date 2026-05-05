@@ -12,13 +12,13 @@ If you have not set up an integration, Trunk Flaky Tests can still generate a ti
 
 You can create a new ticket for any test listed in Trunk Flaky Tests.&#x20;
 
-There are 2 ways to create a new ticket in the Flaky Test dashboard:
+There are 2 ways to create a new ticket in the Flaky Tests dashboard:
 
 * Click on the options menu for any test case on the repo overview dashboard
 
 <figure><picture><source srcset="../../.gitbook/assets/create-ticket-button-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/create-ticket-button-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-* Use the Create ticket button in the top left corner of the [test case details](../detection.md#test-case-details) page.
+* Use the Create ticket button in the top left corner of the [test case details](../dashboard.md#test-case-details) page.
 
 Before you create the ticket, you will have a preview of the title and description.
 

@@ -4,7 +4,7 @@ description: Configure Flaky Tests using Jenkins
 
 # Jenkins
 
-Trunk Flaky Tests integrates with your CI by adding a step in your Jenkins Pipelines to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your Jenkins Pipelines to upload tests with the [Trunk Analytics CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
@@ -39,14 +39,14 @@ Store the Trunk slug and API token obtained in the previous step in your Jenkins
 
 ### Upload to Trunk
 
-Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection.md#stable-branches), for example, `main`, `master`, or `develop`.
+Add an `Upload Test Results` step after running tests in each of your CI jobs that run tests. This should be minimally all jobs that run on pull requests, as well as from jobs that run on your main or [stable branches](../../detection/), for example, `main`, `master`, or `develop`.
 
 {% hint style="danger" %}
-It is important to upload test results from CI runs on [**stable branches**](../../detection.md#stable-branches), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
+It is important to upload test results from CI runs on [**stable branches**](../../detection/), such as `main`, `master`, or `develop`. This will give you a stronger signal about the health of your code and tests.
 
 Trunk can also detect test flakes on PR and merge branches. To best detect flaky tests, it is recommended to upload test results from stable, PR, and merge branch CI runs.
 
-[Learn more about detection](../../detection.md)
+[Learn more about detection](../../detection/)
 {% endhint %}
 
 #### Example Jenkins Pipeline
@@ -67,8 +67,8 @@ pipeline {
       ...
     }
     stage('Upload Test Results'){
-      sh 'curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk'
-      sh './trunk flakytests upload --junit-paths "<XML_GLOB_PATH>" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN'
+      sh 'curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli'
+      sh './trunk-analytics-cli upload --junit-paths "<XML_GLOB_PATH>" --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN'
     }
   }
 }
@@ -86,8 +86,8 @@ pipeline {
       ...
     }
     stage('Upload Test Results'){
-      sh 'curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk'
-      sh './trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN'
+      sh 'curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli'
+      sh './trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN'
     }
   }
 }
@@ -105,8 +105,8 @@ pipeline {
       ...
     }
     stage('Upload Test Results'){
-      sh 'curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk'
-      sh './trunk flakytests upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN'
+      sh 'curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli'
+      sh './trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN'
     }
   }
 }
@@ -129,6 +129,11 @@ pipeline {
 ```
 {% endtab %}
 {% endtabs %}
+
+
+{% hint style="info" %}
+The examples above use the Linux x64 binary. If your CI runs on a different platform, see the [Trunk Analytics CLI](../../uploader.md#manual-download) page for all available platform downloads.
+{% endhint %}
 
 See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
 

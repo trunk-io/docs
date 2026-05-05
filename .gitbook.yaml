@@ -142,8 +142,8 @@ redirects:
   docs/ignoring-issues: code-quality/ignoring-issues.md
   docs/initialize-trunk-in-a-git-repo: code-quality/cli/init-in-a-git-repo.md
   docs/install: cli/install.md
-  docs/merge-get-started: merge/set-up-trunk-merge.md
-  docs/merge-getting-started: merge/set-up-trunk-merge.md
+  docs/merge-get-started: merge-queue/getting-started/README.md
+  docs/merge-getting-started: merge-queue/getting-started/README.md
   docs/merge: merge-queue/README.md
   docs/overview: readme.md
   docs/plugins: plugins/readme.md
@@ -159,7 +159,7 @@ redirects:
   merge-graph: merge-queue/readme.md
   merge-graph/configuration: merge-queue/set-up-trunk-merge/readme.md
   merge-graph/set-up-trunk-merge: merge-queue/readme.md
-  merge/getting-started: merge/set-up-trunk-merge.md
+  merge/getting-started: merge-queue/getting-started/README.md
   reference/reference-trunk-yaml: cli/configuration/README.md
   reference/trunk-yaml: cli/configuration/README.md
   test-analytics: flaky-tests/readme.md

@@ -1,20 +1,20 @@
 ---
 description: >-
-  Prevent false flaky test detections during CI outages and infrastructure
-  failures.
+  Prevent false Trunk Flaky Tests detections during CI outages and
+  infrastructure failures.
 ---
 
 # Infrastructure Failure Protection
 
 When infrastructure issues like database outages, network problems, or CI runner failures cause a large number of tests to fail simultaneously, retrying those tests can trigger mass false flaky detections. Infrastructure Failure Protection identifies these scenarios and excludes them from flakiness detection.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt="Configuration for Infrastructure Failure Protection and Failure Threshold"><figcaption></figcaption></figure>
 
 ### How it works
 
-Trunk monitors the failure rate of each test upload. If the percentage of failing tests exceeds your configured threshold, that upload is flagged as an infrastructure failure and excluded from flaky test detection.
+Trunk monitors the failure rate of each test upload. If the percentage of failing tests exceeds your configured threshold, that upload is flagged as an infrastructure failure and excluded from Trunk Flaky Tests detection.
 
-For example, if your threshold is set to 80% and a CI run has 85% of tests failing (this could be due to a database being unavailable or similar infrastructure issue, etc) that entire run will be excluded from flaky test detection. This prevents tests from being incorrectly marked as flaky when they're retried and pass.
+For example, if your threshold is set to 80% and a CI run has 85% of tests failing (this could be due to a database being unavailable or similar infrastructure issue, etc) that entire run will be excluded from Trunk Flaky Tests detection. This prevents tests from being incorrectly marked as flaky when they're retried and pass.
 
 {% hint style="info" %}
 Uploads excluded due to infrastructure failure protection will appear in the **Uploads** tab with the status **"Upload Skipped Due to Infrastructure Error."**
@@ -61,7 +61,7 @@ If you're using test quarantine, this feature is especially important to prevent
 
 ### Next steps
 
-* Learn more about how Trunk [detects flaky tests](detection.md)
+* Learn more about how Trunk [detects flaky tests](detection/)
 * View excluded uploads in the Uploads tab
 * Configure [test quarantine](quarantining.md#enable-quarantining) to automatically skip flaky tests
 

@@ -1,3 +1,9 @@
+---
+description: >-
+  Test multiple PRs together as a single unit to increase merge throughput
+  and reduce CI costs.
+---
+
 # Batching
 
 ### What it is
@@ -30,6 +36,62 @@ With Batching enabled, you can configure two options:
 
 {% hint style="info" %}
 A good place to start is with the defaults, Maximum wait time set to 5 (minutes) and Target batch size set to 4 (PRs).
+{% endhint %}
+
+### Excluding PRs from Batching
+
+Sometimes you need a specific PR to test in isolation, even when batching is enabled for your queue. You can prevent individual PRs from batching without changing your overall batching configuration.
+
+#### When to use this
+
+* **High-risk changes** — Infrastructure updates, database migrations, or changes that could affect other PRs in unpredictable ways
+* **Debugging batch failures** — Isolate a suspected problematic PR to confirm it tests correctly on its own
+* **Critical hotfixes** — Make sure a time-sensitive fix isn't delayed or affected by other PRs in a batch
+* **Flaky PR isolation** — Test a PR with known flaky behavior separately to avoid impacting other PRs
+
+#### How to exclude a PR from batching
+
+**Option 1: Using the `/trunk merge` command**
+
+Add the `--no-batch` flag when submitting your PR:
+
+```
+/trunk merge --no-batch
+```
+
+**Option 2: Using the API**
+
+Set `noBatch: true` when calling the [`/submitPullRequest`](../reference/merge.md#post-submitpullrequest) endpoint:
+
+```bash
+curl -X POST https://api.trunk.io/v1/submitPullRequest \
+  -H "Content-Type: application/json" \
+  -H "x-api-token: $TRUNK_API_TOKEN" \
+  -d '{
+    "repo": {
+      "host": "github.com",
+      "owner": "my-org",
+      "name": "my-repo"
+    },
+    "targetBranch": "main",
+    "pr": {
+      "number": 123
+    },
+    "noBatch": true
+  }'
+```
+
+#### How it works
+
+When a PR is submitted with no-batch:
+
+* **Queue position is unchanged** — The PR maintains its position in the queue based on when it was submitted
+* **No restarts triggered** — Submitting a no-batch PR doesn't restart testing for other PRs already in the queue
+* **Tests in isolation** — The PR is guaranteed to test by itself, not grouped with other PRs
+* **Other PRs unaffected** — Batching continues normally for all other PRs in the queue
+
+{% hint style="info" %}
+Excluding a PR from batching only affects that specific PR. Your queue's batching settings and other PRs remain unaffected.
 {% endhint %}
 
 ### Bisection Testing Concurrency
@@ -263,7 +325,7 @@ Together, these features create a highly efficient batch failure recovery system
 
 The downsides here are very limited. Since batching combines multiple pull requests into one, you essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch.&#x20;
 
-In the unlikely case that you have to revert a change from your protected branch or do a rollback, you will need to retest that revert or submit it to the queue to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
+In the unlikely case that you have to revert a change from your protected branch or do a rollback, you will need to retest that revert or submit it to the queue to make sure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
 
 #### Common misconceptions
 
@@ -282,7 +344,7 @@ Batching works exceptionally well with these optimizations:
 
 **Optimistic merging** - While a batch is testing, the next batch can begin forming and testing optimistically. Combining batching with optimistic merging provides maximum throughput. Configure both for best results.
 
-**Pending failure depth** - When a batch fails and is being split/retested, pending failure depth controls how many other PRs can test simultaneously. Higher pending failure depth helps maintain throughput during batch failures.
+**Pending failure depth** - When a batch fails, [pending failure depth](pending-failure-depth.md) controls how many successor test runs the system waits on before transitioning the failed batch. Combined with optimistic merging, this can prevent premature bisection of a batch that only failed due to a transient issue.
 
 **Anti-flake protection** - Essential companion to batching. Reduces false batch failures caused by flaky tests, making batching more reliable and efficient.
 

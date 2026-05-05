@@ -6,7 +6,7 @@ description: >-
 
 # Ticketing integrations
 
-You can integrate directly with your ticketing systems to automatically create tickets when Trunk [detects a broken or flaky test](../detection.md).
+You can integrate directly with your ticketing systems to automatically create tickets when Trunk [detects a flaky test](../detection/).
 
 ### Ticket content
 

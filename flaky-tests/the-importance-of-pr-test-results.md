@@ -1,3 +1,9 @@
+---
+description: >-
+  Why uploading test results from pull requests is required for accurate
+  flaky test detection, quarantining, and impact measurement.
+---
+
 # The Importance of PR Test Results
 
 Uploading test results from pull requests (PRs) is a critical step for enabling Trunk Flaky Tests. This data provides a primary signal for _detecting_ flaky tests and is the key metric for _measuring_ their impact. Without it, you lose the most significant source of information for identifying and prioritizing these disruptive tests.
@@ -23,12 +29,12 @@ The Flaky Tests dashboard is designed to help you prioritize which tests to fix 
 If you don't upload test results from PRs:
 
 * The `PRs Impacted` count for every test will be zero.
-* You will have no way to determine which flaky or broken tests are causing the most disruption.
+* You will have no way to determine which flaky tests are causing the most disruption.
 * You lose the ability to prioritize fixes based on real-world data, potentially wasting time on less important issues.
 
 #### Unblocking Developers with Quarantining
 
-Quarantining is one of the most powerful features of Trunk Flaky Tests. Its core purpose is to prevent known flaky tests from blocking developers and breaking CI pipelines, especially merge queues.
+Quarantining is one of the most important features of Trunk Flaky Tests. Its core purpose is to prevent known flaky tests from blocking developers and breaking CI pipelines, especially merge queues.
 
 The entire quarantining workflow is predicated on analyzing test results from PRs. Without PR data, you cannot:
 
@@ -57,7 +63,7 @@ These comments provide a summary of all tests run on a specific PR, highlighting
 
 #### Next Steps: Enable PR Uploads
 
-Now that you understand why uploading test results from pull requests is essential, the next step is to configure your CI pipeline. This single step is the key to unlocking accurate flakiness detection, true impact measurement, and powerful features like quarantining.
+Now that you understand why uploading test results from pull requests is essential, the next step is to configure your CI pipeline. This single step is the key to accurate flakiness detection, true impact measurement, and features like quarantining.
 
 Our documentation provides step-by-step guides for all major CI providers to make this setup simple.
 

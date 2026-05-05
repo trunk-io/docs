@@ -11,9 +11,14 @@ These pages are for repository administrators and platform engineers who configu
 [**Settings and configurations**](advanced-settings.md)\
 Manage queue behavior, GitHub integration, CI/CD configuration, and user preferences.
 
+### Infrastructure as Code
+
+[**Terraform provider**](terraform.md)\
+Manage merge queue configuration as code using the `trunk-io/trunk` Terraform provider.
+
 ### Integrations
 
-[**Slack integration**](../integration-for-slack.md)\
+[**Integration for Slack**](../integration-for-slack.md)\
 Send real-time queue notifications to Slack channels.
 
 [**Webhooks**](../webhooks.md)\
