@@ -17,7 +17,7 @@ trunk check enable oxipng
 
 ## Auto Enabling
 
-Oxipng will be auto-enabled if any _Png_ files are present.
+Oxipng will be auto-enabled if any _PNG_ files are present.
 
 ## Links
 
