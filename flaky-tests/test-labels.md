@@ -32,8 +32,20 @@ On the tests list, you can filter the table down to test cases that have a parti
 
 ### Automatic labeling from monitors
 
+Monitors can automatically apply and remove labels on test cases based on test behavior. When a monitor activates (detects a flaky or broken test), it applies any configured labels to that test case. When the monitor resolves, it removes those labels.
+
+You configure label actions in the **Actions** section of the monitor edit dialog. Use the **Add label** button to select the labels to apply when the monitor fires. You can configure separate sets of labels to apply on activation and remove on resolution.
+
+The monitor list view shows label action chips on any monitor that has a label action configured, so you can see at a glance which monitors are set up to auto-label.
+
+#### How label cleanup works
+
+- **When you disable or delete a monitor:** any labels that monitor had applied are automatically removed from all affected test cases.
+- **When you change the label set on a monitor's label action:** Trunk reconciles the existing label assignments to match the new configuration.
+- **Deleting a label is blocked** if it is still configured in a label action on an active monitor. Remove it from the monitor's label action first.
+
 {% hint style="info" %}
-**Coming soon.** Monitors will be able to automatically apply and remove labels on test cases based on test behavior. More details will be published when this is available.
+Automatic labeling from monitors is available on paid plans. If you don't see the label action option in your monitor config, contact support to confirm access.
 {% endhint %}
 
 ### Related
