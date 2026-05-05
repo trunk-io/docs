@@ -8,6 +8,7 @@ To use the Autofix Flaky Tests feature, you'll need:
 
 1. Beta access via waitlist (reach out to us on [Slack](https://slack.trunk.io))
 2. The "Investigate Flaky Tests" setting enabled in your workspace
+3. Active installation of the [Trunk GitHub App](../setup-and-administration/github-app-permissions.md)
 
 {% hint style="info" %}
 The "Investigate Flaky Tests" setting can only be changed by organization admins.
@@ -74,4 +75,7 @@ We recommend the following conventions:
 
 - Continue to monitor your tests to confirm the flaky test fixes are effective
 - Investigations can be triggered and applied via [MCP](./use-mcp-server/mcp-tool-reference/fix-flaky-test.md)
-- Set up Claude routines to autofix flaky tests (Coming Soon!)
+
+{% hint style="info" %}
+**Coming soon.** Set up Claude Routines to autofix flaky tests
+{% endhint %}
