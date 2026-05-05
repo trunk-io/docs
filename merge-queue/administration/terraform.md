@@ -113,7 +113,7 @@ These attributes are computed by the API if not specified. You only need to set 
 | Attribute | Type | Description |
 | --- | --- | --- |
 | `testing_timeout_minutes` | integer | Maximum minutes to wait for tests before auto-cancellation. See [Timeout for tests to complete](advanced-settings.md#timeout-for-tests-to-complete). |
-| `pending_failure_depth` | integer | Number of PRs behind a failure allowed to test before eviction. See [Pending failure depth](../optimizations/pending-failure-depth.md). |
+| `pending_failure_depth` | integer | Number of successor test runs to wait on before transitioning a failed group. See [Pending failure depth](../optimizations/pending-failure-depth.md). |
 | `can_optimistically_merge` | Boolean | Enable [optimistic merging](../optimizations/optimistic-merging.md). |
 | `batch` | Boolean | Enable [batching](../optimizations/batching.md). |
 | `batching_max_wait_time_minutes` | integer | Maximum minutes to wait for a batch to fill. |

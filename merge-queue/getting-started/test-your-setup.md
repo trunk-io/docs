@@ -1,3 +1,9 @@
+---
+description: >-
+  Verify your Trunk Merge Queue installation by submitting a test PR and
+  confirming it merges automatically.
+---
+
 # Test your setup
 
 ### Prerequisites

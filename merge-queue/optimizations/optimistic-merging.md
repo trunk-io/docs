@@ -1,3 +1,9 @@
+---
+description: >-
+  Merge PRs faster by using passing test results from later PRs in the queue
+  to validate earlier ones.
+---
+
 # Optimistic merging
 
 ### What it is
@@ -6,7 +12,7 @@ Optimistic merging allows pull requests that fail tests to still get merged if p
 
 The foundation of our merge queue starts with [predictive testing](/broken/pages/BAKgbuxqWos5o4kna99T). When a predictive test is being run, concurrent tests sometimes finish before the work ahead of it. This creates a situation where the system knows that all code ahead of it collectively `passes` tests, and it is safe to merge all those changes into your protected branch (`main)`.\
 \
-With optimistic merging enabled, we can leverage results from pull requests later in the queue to merge faster. In the illustration below you can see that pull request 'c' includes the verified testing results of pull requests 'b' and 'a'. As soon as 'c' passes testing, we can safely merge 'a', 'b', and 'c' and know they will all work correctly together.
+With optimistic merging enabled, the queue uses results from pull requests later in the queue to merge faster. In the illustration below you can see that pull request 'c' includes the verified testing results of pull requests 'b' and 'a'. As soon as 'c' passes testing, we can safely merge 'a', 'b', and 'c' and know they will all work correctly together.
 
 {% embed url="https://share.vidyard.com/watch/5iy2KdNFKHM1Nc13zDv8g8?" %}
 Optimistic merging to merge faster
@@ -41,7 +47,7 @@ After enabling, watch your queue:
 
 The downsides here are very limited. You essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch.&#x20;
 
-In the unlikely case that you have to revert a change from your protected branch, you will need to retest that revert or submit it to the queue to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
+In the unlikely case that you have to revert a change from your protected branch, you will need to retest that revert or submit it to the queue to make sure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
 
 #### What you gain
 
@@ -90,7 +96,7 @@ Don't enable optimistic merging if:
 
 **Before enabling optimistic merging:**
 
-1. Ensure basic queue is working well
+1. Make sure basic queue is working well
 2. Verify test stability (< 5% flake rate recommended)
 3. Enable [Anti-flake protection](anti-flake-protection.md) first
 4. Check that you have consistent PR volume
