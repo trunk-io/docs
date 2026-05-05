@@ -20,12 +20,14 @@ trunk login
 trunk merge <pr-number>
 ```
 
+Admins can also use [`/trunk merge --force`](force-merge.md) to push a PR through the queue when branch protection isn't satisfied. To submit a chain of dependent PRs as a single unit, see [`/trunk stack`](stacked-pull-requests.md#merge-the-stack-as-one-unit).
+
 We offer similar commands for cancellation.
 
 * Posting a GitHub comment `/trunk cancel` on a pull request.
 * Cancellation from the WebApp:
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 * Using the `trunk` CLI:
 

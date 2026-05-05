@@ -1,3 +1,9 @@
+---
+description: >-
+  CLI tool for uploading test results to Trunk from CI, enabling flaky test
+  detection and quarantining.
+---
+
 # Trunk Analytics CLI
 
 Trunk detects and tracks flaky tests in your repos by receiving uploads from your test runs in CI, uploaded from the Trunk Analytics CLI. These uploads happen in the CI jobs used to run tests in your nightly CI, post-commit jobs, and PR checks.
@@ -8,7 +14,7 @@ If you're setting up Trunk Flaky Tests for the first time, you can follow the gu
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Guides by Test Frameworks</td><td></td><td></td><td><a href="get-started/frameworks/">frameworks</a></td></tr><tr><td>Guides by CI Provider</td><td></td><td></td><td><a href="get-started/ci-providers/">ci-providers</a></td></tr></tbody></table>
 
-The CLI should be **downloaded as part of your test workflow** in your CI system. The automatic launcher is platform agnostic and will download the latest version of the uploader for your platform.
+The CLI should be **downloaded as part of your test workflow** in your CI system. You can download the appropriate binary for your platform directly from the [GitHub releases page](https://github.com/trunk-io/analytics-cli/releases).
 
 ### Manual Download
 
@@ -79,10 +85,10 @@ You can find your organization slug and token by going to **Settings** > **Manag
 ### Uploading Test Results
 
 {% hint style="info" %}
-The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as broken or flaky.
+The uploaded tests are processed by Trunk periodically, not in real-time. Wait for at least an hour after the initial upload before they’re displayed in the [Uploads tab](get-started/#id-4.-confirm-your-configuration-analyze-your-dashboard). Multiple uploads are required before a test can be accurately detected as flaky.
 {% endhint %}
 
-Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `./trunk flakytest upload` command like this:
+Trunk accepts uploads in three main report formats, [XML](https://github.com/testmoapp/junitxml), [Bazel Event Protocol JSONs](https://bazel.build/remote/bep#consuming-bep-text-json), and XCode XCResult paths. You can upload each of these test report formats using the `./trunk-analytics-cli upload` command like this:
 
 {% tabs %}
 {% tab title="XML" %}
@@ -99,7 +105,7 @@ Trunk can accept JUnit XMLs through the `--junit-paths` argument:
 Trunk can accept Bazel through the `--bazel-bep-path` argument:
 
 ```
-./trunk flakytests upload --bazel-bep-path <BEP_JSON_PATH> \
+./trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
@@ -109,18 +115,39 @@ Trunk can accept Bazel through the `--bazel-bep-path` argument:
 Trunk can accept XCode through the `--xcresult-path` argument:
 
 ```
-./trunk flakytests upload --xcresult-path <XCRESULT_PATH> \
+./trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> \
    --org-url-slug <TRUNK_ORG_SLUG> \
    --token $TRUNK_API_TOKEN
 ```
 {% endtab %}
 {% endtabs %}
 
+### Variants
+
+If you run the same tests across different environments or architectures, you can use variants to separate these runs into distinct test cases. This allows Trunk to detect environment-specific flakes.
+
+For example, a test for a mobile app might be flaky on iOS but stable on Android. Using variants, Trunk can isolate flakes on the iOS variant instead of marking the test as flaky across all environments.
+
+You can specify a variant during upload using the `--variant` option:
+
+{% code title="Upload an iOS variant " %}
+```
+./trunk-analytics-cli upload --junit-paths "test_output.xml" \
+   --org-url-slug <TRUNK_ORG_SLUG> \
+   --token $TRUNK_API_TOKEN \
+   --variant ios
+```
+{% endcode %}
+
+Variant names are displayed in brackets next to test names in your dashboard:
+
+<figure><picture><source srcset="../.gitbook/assets/variants-dark-border.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/variants-light-border.png" alt=""></picture><figcaption><p>The same test, but the first is a macOS variant.</p></figcaption></figure>
+
 ### Running and Quarantining Tests
 
 You can also execute tests and upload results to Trunk in a single step using the `test` command to **wrap** your test command.
 
-This is especially useful for [Quarantining](quarantining.md), where the Trunk CLI will **override the exit code** of the test command if all failures can be quarantined, **preventing** flaky tests from failing your builds in CI.
+This is especially useful for [Quarantining](quarantining.md), where the Trunk Analytics CLI will **override the exit code** of the test command if all failures can be quarantined, **preventing** flaky tests from failing your builds in CI.
 
 {% tabs %}
 {% tab title="XML" %}
@@ -158,7 +185,7 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 {% endtabs %}
 
 {% hint style="info" %}
-### Service Availability and Graceful Degradation
+#### Service Availability and Graceful Degradation
 
 Trunk Analytics CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
 {% endhint %}
@@ -221,7 +248,7 @@ Running tests via `trunk-analytics-cli test` adds negligible memory overhead.
 
 This subcommand is a thin wrapper around your existing test command and doesn't modify or parallelize test execution.
 
-During execution, it simply:
+During execution, it:
 
 * Runs your provided test command directly.
 * Records start and end times.
@@ -230,4 +257,3 @@ During execution, it simply:
 \
 You can safely run the CLI even with large or memory-intensive suites, without risking additional OOMs in your CI agents.
 {% endhint %}
-

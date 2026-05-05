@@ -1,3 +1,9 @@
+---
+description: >-
+  Install the Trunk GitHub App, connect your repository, and create your first
+  merge queue.
+---
+
 # Install and create your queue
 
 This guide walks you through setting up Trunk Merge Queue for your repository. The setup process involves installing the GitHub App, creating a queue, and configuring branch protection rules to allow the merge queue to function properly.

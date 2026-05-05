@@ -1,3 +1,9 @@
+---
+description: >-
+  View real-time queue activity, PR status, and test results in the Trunk
+  Merge Queue dashboard.
+---
+
 # Monitor queue status
 
 ### Access the Merge Queue dashboard
@@ -69,6 +75,17 @@ The graph view shows all PRs currently being tested by Trunk Merge Queue and the
 * Click any node to navigate to the PR's detail page
 * A link at the top of the graph view lets you switch to the legacy graph layout if needed
 
+#### Priority badges
+
+PR nodes in the graph view display a priority badge when the PR was queued with a non-default priority:
+
+* **Urgent** — a red pulsing badge labeled **URGENT**. Indicates the PR is interrupting in-progress testing.
+* **High** — an orange badge labeled **HIGH**. The PR is fast-tracked ahead of normal-priority items.
+
+PRs queued at the default medium priority or at low priority do not display a badge, keeping the graph view clean.
+
+For details on setting priority levels, see [Priority merging](../../merge-queue/optimizations/priority-merging.md).
+
 ### Health view
 
 Select a period of time to inspect using the **Period** dropdown (default 7 days) and a **Granularity** (defaults  to daily) of queue metrics
@@ -95,4 +112,4 @@ When a PR has not been admitted to the queue yet, Trunk Merge Queue waits for:
 
 <figure><img src="../../.gitbook/assets/merge-details (1).png" alt=""><figcaption><p>PR readiness details for a PR that has been submitted but has not yet entered the merge queue.</p></figcaption></figure>
 
-In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflics with the target branch.
+In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflicts with the target branch.

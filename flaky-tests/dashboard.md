@@ -6,19 +6,19 @@ description: >-
 
 # Dashboard
 
-Trunk Flaky Tests detect flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard.
+Trunk Flaky Tests detects flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard.
 
 ### Key repository metrics
 
 <figure><picture><source srcset="../.gitbook/assets/key-metrics-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/key-metrics-light.png" alt=""></picture><figcaption><p>Key repo metrics</p></figcaption></figure>
 
-Trunk Flaky Test provides key repo metrics based on the detected health status of your tests. You'll find metrics for the following information at the top of the Flaky Test dashboard.
+Trunk Flaky Tests provides key repo metrics based on the detected health status of your tests. You'll find metrics for the following information at the top of the Flaky Tests dashboard.
 
-<table><thead><tr><th width="209">Metric</th><th>Description</th></tr></thead><tbody><tr><td>Flaky tests</td><td>Number of flaky test cases in your repo.</td></tr><tr><td>Broken tests</td><td>Number of broken test cases in your repo.</td></tr><tr><td>PRs blocked by failed tests</td><td>PRs that have been blocked by failed tests in CI.</td></tr></tbody></table>
+<table><thead><tr><th width="209">Metric</th><th>Description</th></tr></thead><tbody><tr><td>Flaky tests</td><td>Number of flaky test cases in your repo.</td></tr><tr><td>PRs blocked by failed tests</td><td>PRs that have been blocked by failed tests in CI.</td></tr></tbody></table>
 
-These numbers are important for understanding the overall health of your repo’s tests, how flaky and broken tests impact your developer productivity, and the developer hours saved from quarantining tests. You can also view the trends in these numbers in the trend charts.
+These numbers are important for understanding the overall health of your repo’s tests, how flaky tests impact your developer productivity, and the developer hours saved from quarantining tests. You can also view the trends in these numbers in the trend charts.
 
-The trend charts display the New Test Cases added by day, as well as Test Transitions and Quarantined Runs. Test Transitions represent the number of tests that have transitioned to a particular status on a particular day, excluding new test cases (which default to a status of Healthy). If a bar shows 5 Healthy, 10 Flaky on a single day, that indicates 5 tests transitioned to Healthy, and 10 tests transitioned to Flaky on that day. Quarantined Runs represents the number of runs of quarantined tests by day.
+The trend charts display the New Test Cases added by day, as well as Test Transitions and Quarantined Runs. Test Transitions represent the number of tests that have transitioned to a particular status on a particular day, excluding new test cases (which default to a status of Healthy). If a bar shows 5 Healthy, 10 Flaky, and 2 Broken on a single day, that indicates 5 tests transitioned to Healthy, 10 to Flaky, and 2 to Broken on that day. Quarantined Runs represents the number of runs of quarantined tests by day.
 
 ### Tests cases overview
 
@@ -30,23 +30,23 @@ Filters can also be set on the table to narrow test results down by test status,
 
 The table is sorted by default by the number of PRs impacted by the case, which is the best way to measure the impact of a flaky test. You can click on each test case to view [the test case’s details](dashboard.md#test-case-details).
 
-<table><thead><tr><th width="188">Column</th><th>Description</th></tr></thead><tbody><tr><td>Tests</td><td>The variant, file path, and name of the test case.</td></tr><tr><td>Status</td><td>The health status of the test case.</td></tr><tr><td>Failure Rate</td><td>The percentage of CI runs failed due to this broken or flaky test case.</td></tr><tr><td>PRs Impacted</td><td>The number of PRs that have been affected by this test case failing in CI.</td></tr><tr><td>Last Run</td><td>The most recent timestamp for an upload test run.</td></tr></tbody></table>
+<table><thead><tr><th width="188">Column</th><th>Description</th></tr></thead><tbody><tr><td>Tests</td><td>The variant, file path, and name of the test case.</td></tr><tr><td>Status</td><td>The health status of the test case: <strong>Healthy</strong>, <strong>Flaky</strong>, or <strong>Broken</strong>. Broken indicates consistent high-rate failures; Flaky indicates intermittent failures.</td></tr><tr><td>Failure Rate</td><td>The percentage of CI runs failed due to this test case.</td></tr><tr><td>PRs Impacted</td><td>The number of PRs that have been affected by this test case failing in CI.</td></tr><tr><td>Last Run</td><td>The most recent timestamp for an upload test run.</td></tr></tbody></table>
 
 {% hint style="info" %}
 Test Deletion & History
 
 * Inactive tests disappear from the dashboard automatically after 30 days and are fully removed after 45 days. Tests cannot be manually deleted.
 * Changing test identifiers (e.g., adding file paths) creates new test entries — merging with old history isn’t supported.
-* To reduce noise, mark old or unused tests as Healthy while waiting for them to expire.
 {% endhint %}
 
 ### Test case details
 
 <figure><picture><source srcset="../.gitbook/assets/flaky-tests-failure-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-failure-details-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-You can _click_ on any of the test cases listed on the Flaky Test dashboard to access the test case’s details. On a test's details page, you can find:
+You can _click_ on any of the test cases listed on the Flaky Tests dashboard to access the test case’s details. On a test's details page, you can find:
 
-* The test's current status
+* The test's current status (Healthy, Flaky, or Broken)
+* Which monitors are currently active for the test, and which monitor triggered each status change
 * Visualizations and a timeline detailing the test's health history
 * A table of unique failure types for this test
 
@@ -86,4 +86,4 @@ If you want to see full logging of the original CI job for an individual test fa
 
 <figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-Tests may transition between flaky, broken, and healthy states multiple times over their lifetime. You can see previous changes in the detected health status of a test in Test History, as well as an explanation for why it was detected to have a new state.
+Tests may transition between Healthy, Flaky, and Broken states multiple times over their lifetime. You can see previous status changes in Test History, as well as an explanation for why each transition occurred — including which monitor triggered it.
