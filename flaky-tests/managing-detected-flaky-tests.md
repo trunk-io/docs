@@ -6,7 +6,7 @@ description: >-
 
 # Managing detected flaky tests
 
-It is important to have a follow-up process in place to manage detected flaky tests. A good process ensures that flaky tests do not slow down CI for your development team and prevents flakes from accumulating over time.&#x20;
+It is important to have a follow-up process in place to manage detected flaky tests. A good process makes sure flaky tests do not slow down CI for your development team and prevents flakes from accumulating over time.&#x20;
 
 This guide walks through Trunk's recommended best practices for building a process around detected flaky tests in your organization.
 

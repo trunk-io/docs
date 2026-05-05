@@ -98,7 +98,7 @@ In order to keep the data up-to-date, you should upload Trunk Code Quality resul
 ### Running `trunk check --upload`
 
 {% hint style="info" %}
-Before running `trunk check --upload` you must have [connected your Github repository to your Trunk account](get-started.md).
+Before running `trunk check --upload` you must have [connected your GitHub repository to your Trunk account](get-started.md).
 {% endhint %}
 
 #### CI Setup for nightly uploads
@@ -125,8 +125,8 @@ trunk check --all --upload --series main --token REDACTED
 Normally we infer repo information from the `origin` remote, however if you don't have an `origin` or for another git configuration reason it can't be inferred, it can be explicitly defined in `trunk.yaml`:
 
 1. Add a `repo` section to your Trunk config. This allows the Trunk CLI to connect with the appropriate repository in the Trunk system.
-   1. `host`: Where your repository is hosted. Currently only Github is supported, so this value should be `github.com`,
-   2. `owner`: The Github Owner of the repository, typically the first path section of your repository URL. For example, if we were connecting with [https://github.com/google/googletest](https://github.com/google/googletest), the `owner` would be `google`.
+   1. `host`: Where your repository is hosted. Currently only GitHub is supported, so this value should be `github.com`,
+   2. `owner`: The GitHub Owner of the repository, typically the first path section of your repository URL. For example, if we were connecting with [https://github.com/google/googletest](https://github.com/google/googletest), the `owner` would be `google`.
    3. `name`: The name of the repository. Continuing with our example above, the `name` would be `googletest`.
 
 This is what the `repo` section of your config would look like if your repository was hosted at [https://github.com/google/googletest](https://github.com/google/googletest)
