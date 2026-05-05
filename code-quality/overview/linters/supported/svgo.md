@@ -18,7 +18,7 @@ trunk check enable svgo
 
 ## Auto Enabling
 
-SVGO will be auto-enabled if any _Svg_ files are present.
+SVGO will be auto-enabled if any _SVG_ files are present.
 
 ## Settings
 
