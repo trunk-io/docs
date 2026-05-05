@@ -21,7 +21,7 @@ Enable the public repo identifier **only for workflows that run on forked pull r
 The identifier authorizes a limited set of operations:
 
 * Uploading test results from the [Trunk Analytics CLI](uploader.md).
-* Fetching the quarantine list so the CLI can apply [Quarantining](quarantining.md) to fork PRs.
+* Fetching the quarantine configuration via `/v1/metrics/getQuarantineConfig` so the CLI can apply [Quarantining](quarantining.md) to fork PRs.
 
 It does not authorize Merge Queue endpoints or any other Trunk APIs. Those continue to require an API token.
 
