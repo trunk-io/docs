@@ -20,13 +20,7 @@ Gemini Code Assist and Windsurf are not supported due to their limited support f
 
 The Trunk MCP server is available at `https://mcp.trunk.io/mcp` and exposes the following tools:
 
-<table>
-<thead><tr><th width="265.30859375">Tool</th><th>Capability</th></tr></thead>
-<tbody>
-<tr><td><a href="mcp-tool-reference/search-test.md"><code>search-test</code></a></td><td>Experimental: Lookup the id of a test case</td></tr>
-<tr><td><a href="mcp-tool-reference/fix-flaky-test.md"><code>fix-flaky-test</code></a></td><td>Experimental: Retrieve insights around a failing/flaky test</td></tr>
-<tr><td><a href="mcp-tool-reference/set-up-test-uploads.md"><code>setup-trunk-uploads</code></a></td><td>Experimental: Create a setup plan to upload test results</td></tr>
-</tbody></table>
+<table><thead><tr><th width="265.30859375">Tool</th><th>Capability</th></tr></thead><tbody><tr><td><a href="mcp-tool-reference/search-test.md"><code>search-test</code></a></td><td>Experimental: Lookup the id of a test case</td></tr><tr><td><a href="mcp-tool-reference/fix-flaky-test.md"><code>fix-flaky-test</code></a></td><td>Experimental: Retrieve insights around a failing/flaky test</td></tr><tr><td><a href="mcp-tool-reference/investigate-ci-failure.md"><code>investigate-ci-failure</code></a></td><td>Experimental: Retrieve failing test logs from a CI run</td></tr><tr><td><a href="mcp-tool-reference/set-up-test-uploads.md"><code>setup-trunk-uploads</code></a></td><td>Create a setup plan to upload test results</td></tr></tbody></table>
 
 ### Authorization
 

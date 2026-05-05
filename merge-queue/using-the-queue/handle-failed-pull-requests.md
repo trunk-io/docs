@@ -1,7 +1,5 @@
 ---
-description: >-
-  Understand why PRs fail in the merge queue and how to fix and resubmit
-  them.
+description: Understand why PRs fail in the merge queue and how to fix and resubmit them.
 ---
 
 # Handle failed pull requests
@@ -55,7 +53,7 @@ The PR Details panel has a dropdown "**Actions"** menu, where you can:
 
 Trunk Merge Queue will automatically restart failed PRs when it can under certain conditions (see PR states). Since the restart is usually from a failed PR being removed from the queue, other PRs behind it will also be restarted. If you want to manually restart a PR, you can restart it _**in place**_ by clicking the **Details** link in the Failures summary screen to open the merge details screen. Then, click the **Actions** dropdown, and select **Restart**
 
-<figure><img src="../../.gitbook/assets/merge-pr-details-action (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merge-pr-details-action.png" alt=""><figcaption></figcaption></figure>
 
 There are a couple of reasons you might want to manually retry a PR. First, if a PR ends up in the `PENDING_FAILURE` state because of something transient like a CI runner disconnecting or flakey tests, you can retry the PR right away instead of waiting for PRs in front of it to pass or fail.
 
