@@ -48,7 +48,7 @@ The Neovim Plugin is designed to mirror the [VSCode extension](vscode.md). Suppo
 
 * Provide inline diagnostics and auto-fixes
 * Format files on save
-* Run [Trunk Actions](../cli/getting-started/actions/) notifications
+* Run [Trunk Actions](../getting-started/actions/) notifications
 * Display the linters that Trunk runs on a file
 
 ### Limitations
