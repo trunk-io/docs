@@ -1,3 +1,9 @@
+---
+description: >-
+  Test multiple PRs together as a single unit to increase merge throughput
+  and reduce CI costs.
+---
+
 # Batching
 
 ### What it is
@@ -40,7 +46,7 @@ Sometimes you need a specific PR to test in isolation, even when batching is ena
 
 * **High-risk changes** — Infrastructure updates, database migrations, or changes that could affect other PRs in unpredictable ways
 * **Debugging batch failures** — Isolate a suspected problematic PR to confirm it tests correctly on its own
-* **Critical hotfixes** — Ensure a time-sensitive fix isn't delayed or affected by other PRs in a batch
+* **Critical hotfixes** — Make sure a time-sensitive fix isn't delayed or affected by other PRs in a batch
 * **Flaky PR isolation** — Test a PR with known flaky behavior separately to avoid impacting other PRs
 
 #### How to exclude a PR from batching
@@ -319,7 +325,7 @@ Together, these features create a highly efficient batch failure recovery system
 
 The downsides here are very limited. Since batching combines multiple pull requests into one, you essentially give up the proof that every pull request in complete isolation can safely be merged into your protected branch.&#x20;
 
-In the unlikely case that you have to revert a change from your protected branch or do a rollback, you will need to retest that revert or submit it to the queue to ensure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
+In the unlikely case that you have to revert a change from your protected branch or do a rollback, you will need to retest that revert or submit it to the queue to make sure nothing has broken. In practice, this re-testing is required in almost any case, regardless of how it was originally merged, and the downsides are fairly limited.
 
 #### Common misconceptions
 
@@ -338,7 +344,7 @@ Batching works exceptionally well with these optimizations:
 
 **Optimistic merging** - While a batch is testing, the next batch can begin forming and testing optimistically. Combining batching with optimistic merging provides maximum throughput. Configure both for best results.
 
-**Pending failure depth** - When a batch fails and is being split/retested, pending failure depth controls how many other PRs can test simultaneously. Higher pending failure depth helps maintain throughput during batch failures.
+**Pending failure depth** - When a batch fails, [pending failure depth](pending-failure-depth.md) controls how many successor test runs the system waits on before transitioning the failed batch. Combined with optimistic merging, this can prevent premature bisection of a batch that only failed due to a transient issue.
 
 **Anti-flake protection** - Essential companion to batching. Reduces false batch failures caused by flaky tests, making batching more reliable and efficient.
 
