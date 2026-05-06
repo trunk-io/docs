@@ -47,6 +47,8 @@ There is no CLI, checkbox, or web app equivalent. This is intentional: Trunk ver
 3. **Merge.** If tests pass, Trunk Sudo merges the PR, bypassing branch protection. Without Trunk Sudo installed and configured, this step will fail.
 4. **Failure.** If tests fail, the PR is handled like any normal queue failure. See [Handle failed pull requests](handle-failed-pull-requests.md).
 
+After a PR is force-merged, the PR shows a **Forced** badge in the Merge Queue dashboard PR list so you can identify which merges bypassed branch protection.
+
 ### Combining with other flags
 
 Force merge can be combined with other `/trunk merge` flags. The most common combination is with [priority](../optimizations/priority-merging.md) when both urgency and protection bypass are needed — for example:
@@ -83,6 +85,10 @@ Force merge can be combined with other `/trunk merge` flags. The most common com
   * **Reality:** Force merge is comment-only and admin-only. The CLI, web app checkbox, and "Retry" button don't accept `--force`.
 * **Misconception:** "Force merge is the same as emergency pull requests."
   * **Reality:** [Emergency pull requests](emergency-pull-requests.md) bypass the queue entirely and push directly to your merge branch. Force merge still goes through the queue and still tests the PR — it only bypasses branch protection at merge time.
+
+### Visibility in the queue dashboard
+
+Force-merged pull requests appear with a **Forced** badge in the merge queue PR list. This lets you identify which PRs bypassed branch protection at a glance without opening each PR individually.
 
 ### Next steps
 
