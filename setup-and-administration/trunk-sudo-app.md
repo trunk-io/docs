@@ -72,7 +72,11 @@ If you're using classic branch protection rules, navigate to **Settings → Bran
 
 ### Verify your setup
 
-The Trunk Merge Queue settings page includes a live checklist that validates every piece of the Trunk Sudo configuration end-to-end. **This checklist is the source of truth for whether your setup is correct** — if the checklist is green, the app is ready to merge.
+The settings page for each Trunk Merge Queue includes a live checklist that validates every piece of the Trunk Sudo configuration end-to-end. **This checklist is the source of truth for whether your setup is correct** — if the checklist is green, the app is ready to merge.
+
+{% hint style="info" %}
+To see this checklist, go to a merge queue belonging to the repo you are setting up Trunk Sudo in, then click on the settings tab.
+{% endhint %}
 
 <figure><img src="../.gitbook/assets/trunk-sudo-setup-checklist.png" alt="Trunk Sudo setup checklist in the Merge Queue settings page"><figcaption>Trunk Sudo setup checklist in the Merge Queue settings page when everything is configured properly.</figcaption></figure>
 
