@@ -61,7 +61,7 @@ Only organization admins can edit collection settings.
 Only organization admins can delete collections.
 
 1. Navigate to the collection's **Settings** tab.
-2. Click **Delete Collection**.
+2. Click **Delete collection**.
 3. Confirm deletion in the dialog.
 
 Deleting a collection removes it from the Collections list. Test data uploaded to the collection is not deleted from your overall test suite.
