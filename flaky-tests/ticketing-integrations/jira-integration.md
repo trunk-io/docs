@@ -20,6 +20,10 @@ Then complete the form and click Connect to Jira Cloud with the following inform
 
 <table data-full-width="false"><thead><tr><th width="176">Field Name</th><th width="266">Description</th><th>Examples</th></tr></thead><tbody><tr><td>Jira URL</td><td>The URL to your Jira Cloud project.</td><td><code>https://trunk-io.atlassian.net</code></td></tr><tr><td>Project Key</td><td>The project key for your Jira project.</td><td><code>KAN</code></td></tr><tr><td>Email</td><td>The email associated with your Jira API token.</td><td><code>johndoe@example.com</code></td></tr><tr><td><a href="jira-integration.md#api-token-permissions">Jira API token</a></td><td><a href="https://id.atlassian.com/manage-profile/security/api-tokens">Create your Jira API token here.</a></td><td><code>ATATT*****19FNY5Q</code></td></tr><tr><td>Default label(s) for new tickets</td><td>Labels applied to new Jira tickets created through Trunk Flaky Tests</td><td><code>flaky-test, debt</code></td></tr></tbody></table>
 
+{% hint style="info" %}
+Jira labels cannot contain spaces — the Trunk UI enforces this restriction in the labels field.
+{% endhint %}
+
 After connecting to Jira, you can specify a default issue type for new tickets and a default assignee for new tickets.
 
 #### API Token permissions
@@ -70,7 +74,7 @@ Jira tokens cannot last longer than 365 days. Once the token expires, you will n
 
 You can create a new ticket for any test listed in Trunk Flaky Tests.
 
-There are 2 ways to create a new ticket in the Flaky Test dashboard:
+There are 2 ways to create a new ticket in the Flaky Tests dashboard:
 
 * Click on the options menu for any test case on the repo overview dashboard
 

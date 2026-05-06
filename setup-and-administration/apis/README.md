@@ -15,31 +15,10 @@ Trunk provides HTTP REST APIs for each of our features. The APIs use status code
 
 ## Authentication
 
-Authenticate to the API with an API key using the header `x-api-token`.
+Authenticate to the API with an API token using the header `x-api-token`.
 
 ### Finding your API token
 
 You can find your API token in the [Trunk App](https://app.trunk.io).
 
 {% @supademo/embed url="https://app.supademo.com/demo/BILCaBxa05Hkol0Ck4Z-y" demoId="BILCaBxa05Hkol0Ck4Z-y" %}
-
-### Example
-
-To submit an empty list of events to be tracked, do the following from the command line.
-
-```sh
-curl \
-    -i \
-    -X POST https://api.trunk.io/v1/metrics/trackEvents \
-    -H "Content-Type: application/json" \
-    -H "x-source: curl-sample" \
-    -H "x-api-token: {REDACTED}" \
-    -d '{
-	"repo": {
-		"host": "github.com",
-		"owner": "trunk-io",
-		"name": "jenkins-plugin"
-	},
-	"events":[]
-	}'
-```

@@ -1,3 +1,9 @@
+---
+description: >-
+  View real-time queue activity, PR status, and test results in the Trunk
+  Merge Queue dashboard.
+---
+
 # Monitor queue status
 
 ### Access the Merge Queue dashboard
@@ -9,12 +15,22 @@ The Trunk Merge Queue dashboard gives you real-time visibility into your queue's
 1. **Navigate to Trunk:** [https://app.trunk.io](https://app.trunk.io/)
 2. **Select your organization** (if you're in multiple)
 3. **Click** the **Merge Queue** tab in the upper left
-4. Select your repository
+4. Select your repository from the selector in the page header
 
 **Quick access from GitHub:**
 
 * Trunk bot comments include dashboard links
 * Click any link in bot comments to go directly to that PR's status
+
+### Repository selector
+
+The selector in the page header lets you switch between merge queues without leaving the dashboard.
+
+**Starred repositories:** Click the star icon next to a repository in the selector list to star it. Starred repositories always appear at the top of the list, regardless of organization.
+
+**Organization grouping:** Unstarred repositories are grouped by GitHub organization. Repositories not associated with a GitHub organization appear under **Other repositories**.
+
+**Search:** Type to filter the repository list by name. Search also matches branch names, making it easy to find the right queue when multiple repositories share a branch.
 
 ### Queue overview
 
@@ -93,4 +109,4 @@ When a PR has not been admitted to the queue yet, Trunk Merge Queue waits for:
 
 <figure><img src="../../.gitbook/assets/merge-details (1).png" alt=""><figcaption><p>PR readiness details for a PR that has been submitted but has not yet entered the merge queue.</p></figcaption></figure>
 
-In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflics with the target branch.
+In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflicts with the target branch.

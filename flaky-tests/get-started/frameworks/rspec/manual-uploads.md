@@ -26,7 +26,7 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. You can do this for your Rspec tests by generating JUnit XML reports from your test runs.
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. You can do this for your Rspec tests by generating JUnit XML reports from your test runs.
 
 To generate Trunk-compatible reports, install the `rspec_junit_formatter`:
 
@@ -54,7 +54,7 @@ If you have a step in CI to rerun failed tests with the `--only-failures` option
 
 #### **The Validate Command**
 
-You can validate your test reports using the [Trunk CLI](../../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

@@ -12,9 +12,9 @@ You can automatically [detect and manage flaky tests](../../../detection/) in yo
 
 By the end of this guide, you should achieve the following before proceeding to the [next steps](./#next-step) to configure your CI provider.
 
-* [ ] Set up and installed Trunk's RSpec plugin
-* [ ] Disable retries for better detection accuracy
-* [ ] Test uploads locally
+- [ ] Set up and installed Trunk's RSpec plugin
+- [ ] Disable retries for better detection accuracy
+- [ ] Test uploads locally
 
 {% hint style="info" %}
 Using the plugin is the best way to accurately detect flaky RSpec tests.
@@ -24,14 +24,16 @@ You can also [manually generate and upload](manual-uploads.md) test results in R
 
 ### Installing the plugin
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. You can do this for your Rspec tests using Trunk's RSpec plugin.
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. You can do this for your Rspec tests using Trunk's RSpec plugin.
 
 To install the plugin in your project, add the `rspec_trunk_flaky_tests` gem to your `Gemfile`:
 
 {% code title="Gemfile" %}
+
 ```shell
 gem "rspec_trunk_flaky_tests"
 ```
+
 {% endcode %}
 
 Install the plugin:
@@ -43,9 +45,11 @@ bundle install
 Then, load the plugin in `spec_helper.rb`:
 
 {% code title="spec/spec_helper.rb" %}
+
 ```shell
 require "trunk_spec_helper"
 ```
+
 {% endcode %}
 
 #### Disable Retries
@@ -56,7 +60,7 @@ If you have a step in CI to rerun failed tests with the `--only-failures` option
 
 #### Versions and Updating the Plugin
 
-You can find the Gem for `rspec_trunk_flaky_tests` [here](https://rubygems.org/gems/rspec_trunk_flaky_tests), along with its version history. This plugin is periodically updated for more robust support and bug fixes, and if you're encountering something unexpected, we first encourage you to:
+You can find the Gem for `rspec_trunk_flaky_tests` [here](https://rubygems.org/gems/rspec_trunk_flaky_tests), along with its version history. This plugin is periodically updated with improved support and bug fixes. If you're encountering something unexpected, first try:
 
 ```
 bundle update rspec_trunk_flaky_tests
@@ -64,7 +68,7 @@ bundle update rspec_trunk_flaky_tests
 
 ### Environment Variables
 
-These optoinal environment variables can be set in your project to change the behavior of the RSpec plugin.
+These optional environment variables can be set in your project to change the behavior of the RSpec plugin.
 
 #### Repository metadata variables:
 
@@ -79,16 +83,16 @@ These optoinal environment variables can be set in your project to change the be
 
 #### Configuration variables:
 
-| Argument                         | Description                                               |
-| -------------------------------- | --------------------------------------------------------- |
-| `TRUNK_CODEOWNERS_PATH`          | Path to CODEOWNERS file                                   |
-| `TRUNK_VARIANT`                  | Variant name for test results (e.g., 'linux', 'pr-123')   |
-| `TRUNK_DISABLE_QUARANTINING`     | Set to 'true' to disable quarantining                     |
-| `TRUNK_ALLOW_EMPTY_TEST_RESULTS` | Set to 'true' to allow empty results                      |
-| `TRUNK_DRY_RUN`                  | Set to 'true' to save bundle locally instead of uploading |
-| `TRUNK_USE_UNCLONED_REPO`        | Set to 'true' for uncloned repo mode                      |
-| `TRUNK_LOCAL_UPLOAD_DIR`         | Directory to save test results locally (disables upload)  |
-| `DISABLE_RPSEC_TRUNK_FLAY_TESTS` | Set to 'true' to completely disable Trunk                 |
+| Argument                          | Description                                               |
+| --------------------------------- | --------------------------------------------------------- |
+| `TRUNK_CODEOWNERS_PATH`           | Path to CODEOWNERS file                                   |
+| `TRUNK_VARIANT`                   | Variant name for test results (e.g., 'linux', 'pr-123')   |
+| `TRUNK_DISABLE_QUARANTINING`      | Set to 'true' to disable quarantining                     |
+| `TRUNK_ALLOW_EMPTY_TEST_RESULTS`  | Set to 'true' to allow empty results                      |
+| `TRUNK_DRY_RUN`                   | Set to 'true' to save bundle locally instead of uploading |
+| `TRUNK_USE_UNCLONED_REPO`         | Set to 'true' for uncloned repo mode                      |
+| `TRUNK_LOCAL_UPLOAD_DIR`          | Directory to save test results locally (disables upload)  |
+| `DISABLE_RSPEC_TRUNK_FLAKY_TESTS` | Set to 'true' to completely disable Trunk                 |
 
 ### Try It Locally
 
@@ -109,6 +113,10 @@ You can find your Trunk organization URL slug and token in the **Settings** or b
 After your upload, you can verify that Trunk has received and processed it successfully in the **Uploads** tab. Warnings will be displayed if the test report uploaded by the plugin has issues.
 
 <figure><picture><source srcset="../../../../.gitbook/assets/data-uploads-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../../.gitbook/assets/data-uploads-light.png" alt=""></picture><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+You do not need to download the `trunk-analytics-cli` when using the Trunk RSpec plugin. Uploads are handled for you as long as you have set `TRUNK_ORG_URL_SLUG` and `TRUNK_API_TOKEN`.
+{% endhint %}
 
 ### Next Steps
 
