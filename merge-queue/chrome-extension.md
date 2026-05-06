@@ -16,6 +16,10 @@ The extension is a companion to Trunk Merge Queue — you still need a configure
 3. Pin the Trunk icon to your toolbar so the popup is one click away.
 4. Click the Trunk icon and sign in. The extension uses your existing browser session at [app.trunk.io](https://app.trunk.io/) - if you're already logged in, no additional sign-in is needed.&#x20;
 
+**Signed-out indicator**
+
+When you are not signed in to Trunk, the extension toolbar icon shows a lock badge. On any pull request page in a queue-enabled repository, a **Sign in to Trunk** row appears in place of the normal merge queue panel, reminding you to sign in before queue controls become available.
+
 ### Submit a pull request to the queue
 
 On any pull request in a queue-enabled repository, the extension adds a **Merge Queue** panel replacing GitHub's native merge controls.
