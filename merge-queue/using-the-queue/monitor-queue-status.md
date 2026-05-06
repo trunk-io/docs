@@ -30,7 +30,7 @@ The selector in the page header lets you switch between merge queues without lea
 
 **Organization grouping:** Unstarred repositories are grouped by GitHub organization. Repositories not associated with a GitHub organization appear under **Other repositories**.
 
-**Search:** Type to filter the list by repository or branch name.
+**Search:** Type to filter the repository list by name. Search also matches branch names, making it easy to find the right queue when multiple repositories share a branch.
 
 ### Queue overview
 
