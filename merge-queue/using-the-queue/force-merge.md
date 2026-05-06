@@ -47,7 +47,7 @@ There is no CLI, checkbox, or web app equivalent. This is intentional: Trunk ver
 3. **Merge.** If tests pass, Trunk Sudo merges the PR, bypassing branch protection. Without Trunk Sudo installed and configured, this step will fail.
 4. **Failure.** If tests fail, the PR is handled like any normal queue failure. See [Handle failed pull requests](handle-failed-pull-requests.md).
 
-After a PR is force-merged, it shows a **Forced** badge in the Merge Queue dashboard PR list so you can identify which merges bypassed branch protection.
+After a PR is force-merged, the PR shows a **Forced** badge in the Merge Queue dashboard PR list so you can identify which merges bypassed branch protection.
 
 ### Combining with other flags
 
