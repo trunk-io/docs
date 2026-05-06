@@ -8,6 +8,30 @@ description: >-
 
 Trunk Flaky Tests detects flaky tests by analyzing test results. The health of your tests is displayed in the Flaky Tests dashboard.
 
+### Repositories overview
+
+When you navigate to `/<your-org>/flaky-tests`, you land on a repositories overview showing all monitored repositories at a glance.
+
+Each repository row displays:
+
+| Column | Description |
+|--------|-------------|
+| **Tests** | Total tracked test cases in the repository (60-day window) |
+| **Flaky** | Number of currently flaky test cases, with a 10-day trend sparkline |
+| **Broken** | Number of currently broken test cases, with a 10-day trend sparkline |
+| **Runs / Day** | Bar chart of test run volume over the last 10 days, with per-day tooltips |
+
+A quarantine status icon appears next to each repository name when quarantining is configured:
+
+| Icon | Meaning |
+|------|---------|
+| Shield | Quarantining is enabled for this repository — auto-quarantine is off |
+| Shield with checkmark | Auto-quarantine is enabled — flaky tests are quarantined automatically |
+
+Active repositories (with test data in the last 30 days) appear at the top of the list. Repositories with no recent data are collapsed under an **Inactive Repositories** section that you can expand to view.
+
+Selecting a repository opens its detailed dashboard. If your organization has no repositories connected yet, the page redirects to onboarding. See [Quarantining](quarantining.md) to learn how to configure quarantine settings.
+
 ### Key repository metrics
 
 <figure><picture><source srcset="../.gitbook/assets/key-metrics-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/key-metrics-light.png" alt=""></picture><figcaption><p>Key repo metrics</p></figcaption></figure>
@@ -87,3 +111,14 @@ If you want to see full logging of the original CI job for an individual test fa
 <figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Tests may transition between Healthy, Flaky, and Broken states multiple times over their lifetime. You can see previous status changes in Test History, as well as an explanation for why each transition occurred — including which monitor triggered it.
+
+#### Filtering test runs by branch
+
+The test run history tab includes a branch filter that accepts exact branch names or glob patterns. Use `*` to match any sequence of characters and `?` to match a single character.
+
+| Pattern | Matches |
+|---|---|
+| `main` | The branch named `main` exactly |
+| `release/*` | All release branches, e.g. `release/1.0`, `release/2.3` |
+| `feature-??` | Feature branches with a two-character suffix, e.g. `feature-v2` |
+| `trunk-merge/*` | All merge queue branches |
