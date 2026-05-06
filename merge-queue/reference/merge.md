@@ -140,13 +140,13 @@ The response includes the queue state (`RUNNING`, `PAUSED`, `DRAINING`, or `SWIT
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
 
-{% hint style="warning" %}
-Large monorepos can produce target lists that exceed the 20 MiB request body limit. If you hit this limit, send `"ALL"` as the impacted targets value to mark the PR as impacting every target.
-{% endhint %}
-
 {% openapi-operation spec="trunk-api" path="/setImpactedTargets" method="post" %}
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
+
+{% hint style="warning" %}
+Large monorepos can produce target lists that exceed the 20 MiB request body limit. If you hit this limit, send `"ALL"` as the `impactedTargets` value to mark the PR as impacting every target.
+{% endhint %}
 
 {% openapi-operation spec="trunk-api" path="/submitPullRequest" method="post" %}
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
