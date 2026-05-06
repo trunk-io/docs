@@ -26,7 +26,7 @@ The Trunk Merge Queue dashboard gives you real-time visibility into your queue's
 
 The selector in the page header lets you switch between merge queues without leaving the dashboard.
 
-**Starred repositories:** Click the star icon next to the selector to star the currently selected repository. Starred repositories always appear at the top of the list, regardless of organization.
+**Starred repositories:** Click the star icon next to a repository in the selector list to star it. Starred repositories always appear at the top of the list, regardless of organization.
 
 **Organization grouping:** Unstarred repositories are grouped by GitHub organization. Repositories not associated with a GitHub organization appear under **Other repositories**.
 
