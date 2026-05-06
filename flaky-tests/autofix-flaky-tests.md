@@ -10,6 +10,10 @@ To use the Autofix Flaky Tests feature, you'll need:
 2. The "Investigate Flaky Tests" setting enabled in your workspace
 3. Active installation of the [Trunk GitHub App](../setup-and-administration/github-app-permissions.md)
 
+{% hint style="info" %}
+The "Investigate Flaky Tests" setting can only be changed by organization admins.
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/investigate-flaky-tests-setting.png" alt="Setting to enable Flaky Test investigation"><figcaption></figcaption></figure>
 
 ### Auto-Investigate Flaky Tests
