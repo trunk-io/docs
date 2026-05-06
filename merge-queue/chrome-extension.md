@@ -27,6 +27,7 @@ On any pull request in a queue-enabled repository, the extension adds a **Merge 
 1. Open the pull request on GitHub.
 2. In the Trunk panel, click **Add to Merge Queue**.
 3. Optionally choose a [priority](optimizations/priority-merging.md) before submitting.
+4. If batching is enabled for the repository, you can toggle **Skip batching** to enqueue this PR without grouping it into a batch — useful for hotfixes or PRs that need to merge without waiting for a batch window.
 
 ### Remove a pull request from the queue
 
