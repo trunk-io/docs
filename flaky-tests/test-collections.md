@@ -2,6 +2,7 @@
 description: >-
   Organize your flaky tests into named collections to track and analyze specific
   subsets of your test suite.
+hidden: true
 ---
 
 # Test Collections
@@ -68,11 +69,11 @@ Deleting a collection removes it from the **Collections** list. Test data upload
 
 ## Permissions
 
-| Action | Admin | Member |
-|---|---|---|
-| View collections | Yes | Yes |
-| Create collection | Yes | No |
-| Edit collection settings | Yes | No |
-| Delete collection | Yes | No |
+| Action                   | Admin | Member |
+| ------------------------ | ----- | ------ |
+| View collections         | Yes   | Yes    |
+| Create collection        | Yes   | No     |
+| Edit collection settings | Yes   | No     |
+| Delete collection        | Yes   | No     |
 
 Members can browse existing collections and view tests and uploads, but cannot create, edit, or delete collections.
