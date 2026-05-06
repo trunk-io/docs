@@ -55,7 +55,7 @@ Here's what each of these options does when enabled:
 
 [Test Collections](https://docs.trunk.io/flaky-tests/collections) have their own quarantining settings that override the repository-level settings for any uploads routed to that collection. This lets you apply different quarantining policies to different subsets of your test suite.
 
-To configure collection quarantining, navigate to **Flaky Tests** > **Collections** > collection name > **Settings** > **Quarantining**.
+To configure collection quarantining, navigate to **Flaky Tests** > **Collections** > _collection name_ > **Settings** > **Quarantining**.
 
 The same two toggles are available at the collection level:
 
