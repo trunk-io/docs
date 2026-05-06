@@ -19,7 +19,7 @@ Each repository row displays:
 | **Tests** | Total tracked test cases in the repository (60-day window) |
 | **Flaky** | Number of currently flaky test cases, with a 10-day trend sparkline |
 | **Broken** | Number of currently broken test cases, with a 10-day trend sparkline |
-| **Runs / Day** | Bar chart of test run volume over the last 10 days, with per-day hover tooltips |
+| **Runs / Day** | Bar chart of test run volume over the last 10 days, with per-day tooltips |
 
 A quarantine status icon appears next to each repository name when quarantining is configured:
 
