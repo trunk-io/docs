@@ -25,7 +25,7 @@ A quarantine status icon appears next to each repository name when quarantining 
 
 | Icon | Meaning |
 |------|---------|
-| Shield | Quarantining is enabled for this repository; auto-quarantine is off |
+| Shield | Quarantining is enabled for this repository — auto-quarantine is off |
 | Shield with checkmark | Auto-quarantine is enabled — flaky tests are quarantined automatically |
 
 Active repositories (with test data in the last 30 days) appear at the top of the list. Repositories with no recent data are collapsed under an **Inactive Repositories** section that you can expand to view.
