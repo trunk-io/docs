@@ -44,6 +44,8 @@ Once tests are uploaded to a collection, the **Tests** and **Uploads** tabs beco
 * **Tests** tab: Shows all tests associated with this collection, with their flaky status, failure rates, and labels.
 * **Uploads** tab: Shows the history of test uploads sent to this collection.
 * **Overview** tab: Shows setup instructions and the upload configuration for this collection.
+* **Tests** tab: Shows all tests associated with this collection, with their flaky status, failure rates, and labels.
+* **Uploads** tab: Shows the history of test uploads sent to this collection.
 
 ## Edit a collection
 
