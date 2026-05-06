@@ -36,7 +36,7 @@ Add test result uploads to all CI jobs that run tests.
 Uploads from both PRs and stable branches are required for Trunk Flaky Tests to accurately detect flaky tests.
 
 {% hint style="info" %}
-Trunk automatically recognizes `main`, `master`, and `develop` as stable branches. If your primary branch uses a different name, configure uploads from that branch the same way and Trunk will classify it correctly based on how your monitors are scoped.
+Trunk automatically recognizes `main`, `master`, and `develop` as stable branches. If your primary branch uses a different name, configure uploads from that branch the same way and Trunk will classify it correctly.
 {% endhint %}
 
 #### Step 3: Verify integration
