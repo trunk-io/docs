@@ -170,7 +170,7 @@ When creating or editing a failure rate monitor, a preview panel shows which tes
 - **Current** shows tests flagged by the existing configuration (if editing an existing monitor).
 - **Proposed** shows tests that would be flagged with the settings currently entered in the form.
 
-The Current section is collapsed by default so the Proposed view is immediately visible when you open the form.
+The Current section is collapsed by default, so the Proposed view is immediately visible when you open the form.
 
 ### Status Filter
 
