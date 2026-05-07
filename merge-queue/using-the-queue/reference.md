@@ -57,7 +57,7 @@ This PR adds user authentication.
 merge-commit-title: feat(auth): add OAuth2 login flow [PROJ-123]
 ```
 
-{% hint style="info" %}
+The `merge-commit-title:` directive only customizes the merge commit **title**. The commit body follows the usual behavior for your configured [merge method](../administration/advanced-settings.md#merge-method).
 The `merge-commit-title:` directive only customizes the commit **title**. The commit body follows the usual behavior for your configured [merge method](../administration/advanced-settings.md#merge-method).
 {% endhint %}
 
