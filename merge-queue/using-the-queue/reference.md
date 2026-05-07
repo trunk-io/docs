@@ -20,12 +20,14 @@ trunk login
 trunk merge <pr-number>
 ```
 
+Admins can also use [`/trunk merge --force`](force-merge.md) to push a PR through the queue when branch protection isn't satisfied. To submit a chain of dependent PRs as a single unit, see [`/trunk stack`](stacked-pull-requests.md#merge-the-stack-as-one-unit).
+
 We offer similar commands for cancellation.
 
 * Posting a GitHub comment `/trunk cancel` on a pull request.
 * Cancellation from the WebApp:
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 * Using the `trunk` CLI:
 
@@ -33,6 +35,35 @@ We offer similar commands for cancellation.
 trunk login
 trunk merge cancel <pr-number>
 ```
+
+## Custom merge commit titles
+
+You can specify a custom merge commit title for any PR by adding a `merge-commit-title:` directive on its own line anywhere in the PR body:
+
+```
+merge-commit-title: Your Custom Commit Title Here
+```
+
+When Trunk merges the PR, it uses this title instead of the default GitHub-generated title. When the directive is not present, the default behavior is preserved.
+
+The directive name is case-sensitive. It must be lowercase `merge-commit-title:`. Variations such as `Merge-Commit-Title:` are not recognized.
+
+This is useful for teams that follow conventional commit formats, include ticket numbers in merge commits, or want a cleaner git history.
+
+### Example
+
+```markdown
+## Description
+This PR adds user authentication.
+
+merge-commit-title: feat(auth): add OAuth2 login flow [PROJ-123]
+```
+
+{% hint style="info" %}
+The `merge-commit-title:` directive only customizes the merge commit **title**. The commit body follows the usual behavior for your configured [merge method](../administration/advanced-settings.md#merge-method).
+
+The directive applies to the **Squash** and **Merge Commit** merge methods. It has no effect when using **Rebase**, since rebase replays the original commits onto the target branch and does not produce a separate merge commit.
+{% endhint %}
 
 ## Pull request processing
 

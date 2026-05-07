@@ -70,8 +70,8 @@ steps:
     environment:
       TRUNK_ORG_SLUG:
         from_secret: TRUNK_ORG_SLUG
-      TRUNK_API_TOKEN:
-        from_secret: TRUNK_API_TOKEN
+      TRUNK_TOKEN:
+        from_secret: TRUNK_TOKEN
     commands:
       - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
       - ./trunk-analytics-cli upload --junit-paths <XML_GLOB_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
@@ -92,8 +92,8 @@ steps:
     environment:
       TRUNK_ORG_SLUG:
         from_secret: TRUNK_ORG_SLUG
-      TRUNK_API_TOKEN:
-        from_secret: TRUNK_API_TOKEN
+      TRUNK_TOKEN:
+        from_secret: TRUNK_TOKEN
     commands:
       - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
       - ./trunk-analytics-cli upload --bazel-bep-path <BEP_JSON_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN
@@ -114,8 +114,8 @@ steps:
     environment:
       TRUNK_ORG_SLUG:
         from_secret: TRUNK_ORG_SLUG
-      TRUNK_API_TOKEN:
-        from_secret: TRUNK_API_TOKEN
+      TRUNK_TOKEN:
+        from_secret: TRUNK_TOKEN
     commands:
       - curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
       - ./trunk-analytics-cli upload --xcresult-path <XCRESULT_PATH> --org-url-slug <TRUNK_ORG_SLUG> --token $TRUNK_TOKEN

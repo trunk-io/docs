@@ -1,3 +1,9 @@
+---
+description: >-
+  Set up Trunk Flaky Tests by configuring test result output, uploading from
+  CI, and enabling flake detection monitors.
+---
+
 # Getting Started
 
 Trunk Flaky Tests detects flaky tests by analyzing test results from your CI runs. Setup requires configuring test result output and CI upload integration.
@@ -6,7 +12,7 @@ Trunk Flaky Tests detects flaky tests by analyzing test results from your CI run
 
 * Account at [app.trunk.io](https://app.trunk.io)
 * Ability to modify repository CI configuration and add secrets
-* Tests running in CI on both PRs and stable branches (e.g., main)
+* Tests running in CI on both PRs and stable branches (e.g., main, master, or develop)
 
 #### Step 1: Ensure JUnit XML output
 
@@ -27,7 +33,11 @@ Add test result uploads to all CI jobs that run tests.
    * Stable branches (`main`, `master`, `develop`, etc.)
    * Merge queue branches (if applicable)
 
-Uploads from both PRs and stable branches are required for accurate flaky test detection.
+Uploads from both PRs and stable branches are required for Trunk Flaky Tests to accurately detect flaky tests.
+
+{% hint style="info" %}
+Trunk automatically recognizes `main`, `master`, and `develop` as stable branches. If your primary branch uses a different name, configure uploads from that branch the same way and Trunk will classify it correctly.
+{% endhint %}
 
 #### Step 3: Verify integration
 
@@ -43,12 +53,12 @@ After uploads are flowing, navigate to your repo → **Flaky Tests > Monitors** 
 
 **Pass-on-retry** is enabled by default and is the recommended baseline for everyone. It catches the most common flakiness pattern — a test that fails and then passes on retry within the same commit — without any configuration needed.
 
-**Threshold monitors** let you detect flakiness based on failure rate over a rolling time window. How you configure them depends on your CI setup:
+**Failure rate monitors** let you detect flakiness based on failure rate over a rolling time window. How you configure them depends on your CI setup:
 
-- **If tests must pass before merging to main**, set up a threshold monitor scoped to `main` to catch an elevated failure rate. For example, if you run tests 5 times per day on `main`, a 24-hour rolling window with a minimum of 4 runs and a failure threshold of 25% is a reasonable starting point. This ensures the monitor has enough data before flagging anything.
+- **If tests must pass before merging to main**, set up a failure rate monitor scoped to `main` to catch an elevated failure rate. For example, if you run tests 5 times per day on `main`, a 24-hour rolling window with a minimum of 4 runs and a failure threshold of 25% is a reasonable starting point. This gives the monitor enough data before flagging anything.
 - **If you use a merge queue**, consider a dedicated monitor scoped to your merge queue branches (e.g., `trunk-merge/*` or `gh-readonly-queue/*`). Failures here are especially suspicious since the code has already passed PR checks, so a low threshold is appropriate.
 
-[How threshold monitors work →](../detection/threshold-monitor.md)
+[How failure rate monitors work →](../detection/failure-rate-monitor.md)
 
 #### Quarantining
 
