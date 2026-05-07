@@ -46,7 +46,7 @@ merge-commit-title: Your Custom Commit Title Here
 
 When Trunk merges the PR, it uses this title instead of the default GitHub-generated title. When the directive is not present, the default behavior is preserved.
 
-This is useful for teams that follow conventional commit formats, include ticket numbers in merge commits, or want cleaner git history.
+This is useful for teams that follow conventional commit formats, include ticket numbers in merge commits, or want a cleaner git history.
 
 ### Example
 
