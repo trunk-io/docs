@@ -4,7 +4,7 @@ description: Configure Google Cloud Build to upload test results to Trunk Flaky 
 
 # Google Cloud Build
 
-Trunk Flaky Tests integrates with your CI by adding a step in your Google Cloud Build configuration to upload tests with the [Trunk Uploader CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your Google Cloud Build configuration to upload tests with the [Trunk Analytics CLI](../../uploader.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
@@ -94,7 +94,7 @@ The following environment variables must be passed to the upload step:
 
 The following is an example of a `cloudbuild.yaml` configuration that runs tests and uploads results to Trunk. Note: you must either run `trunk` from the repo root when uploading test results or pass a `--repo-root` argument.
 
-To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [frameworks](../frameworks/ "mention") docs.&#x20;
+To find out how to produce the report files the uploader needs, see the instructions for your test framework in the [Test Frameworks](../frameworks/ "mention") docs.&#x20;
 
 {% tabs %}
 {% tab title="XML" %}
@@ -127,8 +127,6 @@ steps:
       - "PROJECT_ID=${PROJECT_ID}"
       - "BUILD_ID=${BUILD_ID}"
       - "TRIGGER_NAME=${TRIGGER_NAME}"
-      - "COMMIT_SHA=${COMMIT_SHA}"
-      - "REPO_FULL_NAME=${REPO_FULL_NAME}"
       - "BRANCH_NAME=${BRANCH_NAME}"
       - "_HEAD_BRANCH=${_HEAD_BRANCH}"
       - "_PR_NUMBER=${_PR_NUMBER}"
@@ -170,8 +168,6 @@ steps:
       - "PROJECT_ID=${PROJECT_ID}"
       - "BUILD_ID=${BUILD_ID}"
       - "TRIGGER_NAME=${TRIGGER_NAME}"
-      - "COMMIT_SHA=${COMMIT_SHA}"
-      - "REPO_FULL_NAME=${REPO_FULL_NAME}"
       - "BRANCH_NAME=${BRANCH_NAME}"
       - "_HEAD_BRANCH=${_HEAD_BRANCH}"
       - "_PR_NUMBER=${_PR_NUMBER}"
@@ -189,6 +185,10 @@ availableSecrets:
 {% endtabs %}
 
 {% hint style="info" %}
+The examples above use the Linux x64 binary. If your CI runs on a different platform, see the [Trunk Analytics CLI](../../uploader.md#manual-download) page for all available platform downloads.
+{% endhint %}
+
+{% hint style="info" %}
 **Important:** Set `allowExitCodes: [0, 1]` on your test step so the upload step runs even when tests fail. Without this, Cloud Build stops the pipeline on test failures and your results won't be uploaded.
 {% endhint %}
 
@@ -200,7 +200,7 @@ Replace the following placeholders in the example:
 | `<TRUNK_ORG_SLUG>` | Your Trunk organization slug |
 | `<YOUR_SECRET_NAME>` | The name of the secret you created in GCP Secret Manager |
 
-See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
+See the [Trunk Analytics CLI](../../uploader.md "mention") for all available command line arguments and usage.
 
 #### Stale files
 
