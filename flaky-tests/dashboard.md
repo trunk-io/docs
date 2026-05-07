@@ -142,7 +142,7 @@ Branch filter examples:
 
 All filters combine using AND logic, so you can use them together. For example, set **Result** to **Fail** and **Quarantined** to **Only** to surface only quarantined failures. The **Reset** button clears every filter at once, including the chart date range.
 
-Filter state is saved in the URL, so you can share or bookmark a filtered view.
+Filter state is saved in the URL, so you can share or bookmark a filtered view. The Result filter accepts `result=pass` or `result=fail`. The Quarantined filter accepts `quarantined=include`, `quarantined=exclude`, or `quarantined=only`.
 
 #### Runs table
 
