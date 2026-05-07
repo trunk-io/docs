@@ -44,14 +44,14 @@ A shorter recovery period (e.g., 1 to 3 days) returns tests to healthy quickly, 
 
 ### Branch Scope
 
-By default the pass-on-retry monitor considers test runs from every branch. You can restrict it to a specific set of branches using the **Branch scope** setting in the monitor config.
+Use the **Branch scope** setting to restrict the monitor to a specific set of branches.
 
 This is useful when PR branches generate too much noise. CI often retries tests on pull request branches automatically; if those retries aren't meaningful signals for your team, you can limit detection to stable branches like `main`.
 
-Branch patterns use the same glob syntax as the [failure rate monitor](failure-rate-monitor.md#branch-pattern-syntax). For example:
+Branch scope uses the same glob syntax as [failure rate monitor branch patterns](failure-rate-monitor.md#branch-pattern-syntax) and accepts up to 10 patterns. Type a pattern and press **Enter** or **,** to add it as a chip. For example:
 
 - `main` — only stable branch runs
-- `main, release/*` — stable plus release branches
+- `main` and `release/*` — stable plus release branches
 - `*` (default) — all branches
 
 Changes to branch scope take effect for newly detected events. Previously detected flaky tests are not re-evaluated.
