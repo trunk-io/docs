@@ -4,11 +4,9 @@ description: Configure Flaky Tests detection using a GitHub Action
 
 # GitHub Actions
 
-Before you start these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing Trunk-compatible reports for your test runner.
-
 Trunk Flaky Tests integrates with your CI by adding a step in your GitHub Action workflow to upload tests with the [Trunk Analytics CLI](../../uploader.md).
 
-Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing a Trunk-compatible output for your test framework.
+Before you start these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing Trunk-compatible reports for your test framework.
 
 ### Checklist
 
