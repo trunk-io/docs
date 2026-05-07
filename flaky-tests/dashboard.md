@@ -65,16 +65,14 @@ Test Deletion & History
 
 ### Test case details
 
-<figure><picture><source srcset="../.gitbook/assets/flaky-tests-failure-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-failure-details-light.png" alt=""></picture><figcaption></figcaption></figure>
+You can _click_ on any of the test cases listed on the Flaky Tests dashboard to access the test case’s details. The test details page uses a tabbed layout:
 
-You can _click_ on any of the test cases listed on the Flaky Tests dashboard to access the test case’s details. On a test's details page, you can find:
+* **Summary**: Run result charts and failure types grouped by unique failure reason.
+* **Test History**: A searchable, paginated table of every individual test run with filtering and a detail panel.
+* **Monitors**: Detection monitors configured for this test (visible when the detection engine is enabled).
+* **Events**: Detection events and status changes for this test (visible when the detection engine is enabled).
 
-* The test's current status (Healthy, Flaky, or Broken)
-* Which monitors are currently active for the test, and which monitor triggered each status change
-* Visualizations and a timeline detailing the test's health history
-* A table of unique failure types for this test
-
-This is in addition to information like ticket status and the current codeowner.
+In addition to the tabbed content, the test details page shows the test’s current status (Healthy, Flaky, or Broken), ticket status, and codeowner information.
 
 ### **Code owners**
 
@@ -84,7 +82,13 @@ If you have a codeowners file configured in your repos, you will see who owns ea
 
 This information will also be provided when creating a ticket with the [Jira integration](ticketing-integrations/jira-integration.md) or [webhooks](webhooks/).
 
-### **Failure types**
+### Summary tab
+
+<figure><picture><source srcset="../.gitbook/assets/flaky-tests-failure-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-failure-details-light.png" alt=""></picture><figcaption></figcaption></figure>
+
+The Summary tab shows an overview of the test’s recent run results and groups past failures by unique failure type.
+
+#### **Failure types**
 
 <figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -92,7 +96,7 @@ The Failure Types table shows the history of past test runs grouped by unique fa
 
 The Failure Type is a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, duration, and time.
 
-### Failure details
+#### Failure details
 
 You can click on any of these test runs to see the detailed stack trace:
 
@@ -100,21 +104,34 @@ You can click on any of these test runs to see the detailed stack trace:
 
 You can flip through the stack traces of similar failures across different test runs by clicking the left and right arrow buttons. You can also see other similar failures on this and other tests.
 
-#### Go to the CI job logs
+##### Go to the CI job logs
 
-If you want to see full logging of the original CI job for an individual test failure, you can click **Logs** in the expanded failure details panel to go to the job's page in your CI provider.
+If you want to see full logging of the original CI job for an individual test failure, you can click **Logs** in the expanded failure details panel to go to the job’s page in your CI provider.
 
 <figure><picture><source srcset="../.gitbook/assets/failure-logs-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/failure-logs-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-### **Test history**
+### Test History tab
 
-<figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
+The Test History tab gives you full visibility into every individual run of a test. Use it to investigate patterns across branches, find specific failing runs, and drill into error details.
 
-Tests may transition between Healthy, Flaky, and Broken states multiple times over their lifetime. You can see previous status changes in Test History, as well as an explanation for why each transition occurred — including which monitor triggered it.
+#### Daily runs chart
 
-#### Filtering test runs by branch
+A stacked bar chart at the top of the tab shows daily test run counts broken down by result:
 
-The test run history tab includes a branch filter that accepts exact branch names or glob patterns. Use `*` to match any sequence of characters and `?` to match a single character.
+* **Green**: Pass
+* **Red**: Fail
+* **Blue**: Quarantined
+* **Gray**: Skipped
+
+You can click and drag on the chart to select a date range, which filters the table below to only show runs from the selected days. Click the **Reset** button or the clear icon on the chart to remove the date range selection.
+
+#### Filters
+
+A filter bar below the chart lets you narrow down the runs table:
+
+<table><thead><tr><th width="188">Filter</th><th>Description</th></tr></thead><tbody><tr><td>Result</td><td>Toggle between <strong>All</strong>, <strong>Pass</strong>, <strong>Fail</strong>, and <strong>Quarantined</strong> to show only runs with a specific outcome.</td></tr><tr><td>SHA</td><td>Filter by commit hash. Matches runs whose SHA starts with the entered text.</td></tr><tr><td>Branch</td><td>Filter by branch name. Accepts exact names or glob patterns. Use <code>*</code> to match any sequence of characters and <code>?</code> to match a single character.</td></tr></tbody></table>
+
+Branch filter examples:
 
 | Pattern | Matches |
 |---|---|
@@ -122,3 +139,29 @@ The test run history tab includes a branch filter that accepts exact branch name
 | `release/*` | All release branches, e.g. `release/1.0`, `release/2.3` |
 | `feature-??` | Feature branches with a two-character suffix, e.g. `feature-v2` |
 | `trunk-merge/*` | All merge queue branches |
+
+All filters combine using AND logic, so you can use them together to find specific runs. For example, select **Fail** and enter a branch name to see all failures on that branch. Click the **Reset** button to clear all active filters.
+
+Filter state is saved in the URL, so you can share or bookmark a filtered view.
+
+#### Runs table
+
+The runs table displays a paginated list of individual test runs (25 per page) with the following columns:
+
+<table><thead><tr><th width="188">Column</th><th>Description</th></tr></thead><tbody><tr><td>Timestamp</td><td>When the test ran, displayed in UTC.</td></tr><tr><td>Duration</td><td>How long the test took to execute.</td></tr><tr><td>Branch</td><td>The branch context. Shows "Mergequeue testing #NNN" for merge queue runs, "#NNN" for pull request runs, or the branch name for other runs.</td></tr><tr><td>Commit</td><td>The first 7 characters of the commit SHA.</td></tr></tbody></table>
+
+Each row has a colored left border indicating the result: green for pass, red for fail, blue for quarantined, gray for skipped, and orange for error.
+
+#### Run detail panel
+
+Click any row in the runs table to open a detail panel on the right side of the page. The panel shows:
+
+* **Run header**: Timestamp, result badge, and duration.
+* **Source control**: Links to the commit, pull request, and branch.
+* **Error details**: For failed or errored runs, the error message and stack trace.
+
+### Status history
+
+<figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
+
+Tests may transition between Healthy, Flaky, and Broken states multiple times over their lifetime. You can see previous status changes in the Status History view, including an explanation for why each transition occurred and which monitor triggered it.
