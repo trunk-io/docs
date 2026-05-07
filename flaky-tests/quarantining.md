@@ -210,7 +210,18 @@ If you have tests that should never be quarantined or should always be quarantin
 
 <figure><img src="../.gitbook/assets/qurantine-individual-tests.png" alt=""><figcaption><p>overriding</p></figcaption></figure>
 
-You can manually control a test's quarantine status from its details page.
+You can set a quarantine override from two places:
+
+**From the Flaky Tests table**
+
+Right-click any row in the Flaky Tests table to open the context menu. Two quarantine actions are available:
+
+* **Quarantine test** / **Unquarantine test** — toggles the always-quarantine override for that test.
+* **Never Quarantine test** / **Remove Never Quarantine** — toggles the never-quarantine override. When set, the test is never quarantined, even if auto-quarantining is enabled for the repo.
+
+All four options require admin permissions. Non-admin users see them as disabled with the tooltip "Only admins can set manual quarantine."
+
+**From the test details page**
 
 * To set an override: Click the **Quarantine** (or **Override**) button, then select either Always Quarantine or Never Quarantine.
 * To remove an override: Click the **Remove Override** button.
