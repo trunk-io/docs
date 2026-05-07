@@ -241,6 +241,7 @@ unmute
 unmuted
 unmutes
 (?i)unoptimized
+(?i)unquarantine
 unquarantined
 unselect
 (?i)uploader
