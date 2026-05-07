@@ -123,11 +123,13 @@ Aggregated charts tell you _that_ something happened — drilling down tells you
 You have two ways to select:
 
 * **Click a single data point** to see the PRs in that time bucket.
-* **Click and drag across the chart** to select a range of data points spanning multiple time buckets.
+* **Click and drag across the chart** to select a range of data points spanning multiple time buckets. The selected range stays highlighted and the rest of the chart dims, giving you a focused view of just that window. The same range syncs across both charts so you can correlate Conclusion count and Time in queue data for the period you picked.
 
 Once a selection is made, a **View PRs** button appears. Click it to open the list of PRs that make up the selection.
 
 <figure><img src="../../.gitbook/assets/drill-down-overview.png" alt="PR Outcomes and Time in Queue charts with a selected Apr 20–21 range broken out into 998 merged, 30 cancelled, and 30 failed, and a selection bar showing the View PRs button"><figcaption><p>The View PRs button appears after selecting a data point or range.</p></figcaption></figure>
+
+To pick a different window, drag a new selection. To clear the selection, change the time range, time bucket, or **Time in UTC** setting at the top of the dashboard.
 
 #### Review the PR List
 
@@ -141,8 +143,10 @@ Both columns are sortable, so you can quickly surface the longest-running PRs in
 
 <figure><img src="../../.gitbook/assets/pr-drill-down-list.png" alt="PRs in Range table listing individual PRs with Conclusion (Merged or Failed), Reason, and Time in Queue columns, sorted by Time in Queue descending"><figcaption><p>The drill-down PR list, sortable by conclusion and time in queue.</p></figcaption></figure>
 
+The PR list page shows the selected date range as a subtitle and a **Back to Health** link to return to the charts. If the selection contains more than 2,500 PRs, the list shows the first 2,500 with a notice indicating the total. Narrow the time bucket on the chart to drill into a smaller window.
+
 {% hint style="info" %}
-Drill down is currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interaction as they land in the UI.
+Drill down and range selection are currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interactions as they land in the UI.
 {% endhint %}
 
 ***
@@ -202,7 +206,11 @@ These metrics summarize activity over a sliding 1-hour window. They update conti
 | `mq_pr_restarts_1h_total` | Gauge | — | PR restarts (TESTING to PENDING transitions) in the last hour |
 | `mq_pr_wait_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent waiting before testing starts |
 | `mq_pr_test_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent in the testing phase |
+| `mq_pr_time_in_queue_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of total time PRs spent in the queue, from entry to exit (includes waiting, testing, and any other phases, such as [pending failure](../optimizations/pending-failure-depth.md)). |
+
 Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
+
+For clarity, PRs in the "Waiting to Enter Queue" state (submitted to the queue but still waiting on prerequisites such as GitHub mergeability before they can be admitted to the queue) are not considered to be "in the queue" yet. So any time spent in this state is not counted in the Wait Duration or Time in Queue metrics.
 
 {% hint style="warning" %}
 Rolling window metrics use **gauge semantics**, not true Prometheus counters. They represent a snapshot of the last hour, not cumulative totals. PromQL functions like `rate()` and `increase()` are **not meaningful** on these metrics. Use the values directly instead.

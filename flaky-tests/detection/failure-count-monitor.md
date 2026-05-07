@@ -94,9 +94,37 @@ When the configured resolution timeout elapses without a new failure on any moni
 
 This time-based approach means you don't need to wait for enough passing runs to bring a failure rate down. Once the test is quiet, it resolves.
 
+## Preview Panel
+
+When you create or edit a failure count monitor, a **Preview** panel appears on the right side of the dialog on larger screens. The preview updates as you adjust the monitor's settings, giving you a live look at what the monitor would detect against your current branch data.
+
+Once the monitor configuration produces detections, the panel shows a **Failing tests** list. Each row displays the test name as a link to its detail page, along with its failure count. Counts that meet or exceed your configured failure count are highlighted in red; counts below appear in muted text.
+
+You can search the list by test name or parent test name. The search is case-insensitive and filters as you type. If no tests match your search term, the list shows a "No tests match" message. When more than 100 tests are detected, only the first 100 are shown with a notice to narrow your search.
+
 ## Muting
 
 You can temporarily mute a failure count monitor for a specific test case. See [Muting monitors](README.md#muting-monitors) for details.
+
+## Preview Panel
+
+When creating or editing a failure count monitor, a preview panel shows which tests the current configuration would flag based on recent data.
+
+### Status Filter
+
+A **status filter dropdown** in the preview panel lets you filter the test list to any combination of statuses: **Healthy**, **Flaky**, and **Broken**. By default, all statuses are shown.
+
+Filtering to **Healthy** is the most useful view: it shows tests that are currently healthy but would be flagged by this monitor if created with the current settings. This lets you see the new coverage the monitor adds without noise from tests already detected by other monitors.
+
+Selecting multiple statuses (for example, Healthy and Flaky) shows tests matching any of the selected statuses.
+
+When a status filter is active, the info tooltip in the panel header shows "X of Y tests" to indicate how many tests are visible relative to the total that match the monitor configuration.
+
+If no tests match the active filter, the empty state includes a hint to clear the filter.
+
+### Large Repo Truncation
+
+For repositories with a large number of matching tests, preview results may be truncated. When this happens, an amber warning appears in the panel. The truncation applies to the list of tests shown, not to the underlying detection logic — the monitor evaluates all matching tests when active.
 
 ## Choosing Between Monitors
 
