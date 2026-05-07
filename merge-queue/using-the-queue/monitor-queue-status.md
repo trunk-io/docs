@@ -15,7 +15,7 @@ The Trunk Merge Queue dashboard gives you real-time visibility into your queue's
 1. **Navigate to Trunk:** [https://app.trunk.io](https://app.trunk.io/)
 2. **Select your organization** (if you're in multiple)
 3. **Click** the **Merge Queue** tab in the upper left
-4. Select your repository
+4. Select your repository from the selector in the page header
 
 **Quick access from GitHub:**
 
@@ -35,6 +35,16 @@ When enabled, Trunk posts a commit status on your PR's head commit that shows th
 Click the **Details** link on the status check to go directly to the Trunk dashboard for that PR.
 
 To enable GitHub commit statuses, go to [**GitHub Status**](../../merge-queue/administration/advanced-settings.md#github-status) in **Settings** > **Repositories** > your repository > **Merge Queue**. This is a per-queue setting and is enabled by default.
+
+### Repository selector
+
+The selector in the page header lets you switch between merge queues without leaving the dashboard.
+
+**Starred repositories:** Click the star icon next to a repository in the selector list to star it. Starred repositories always appear at the top of the list, regardless of organization.
+
+**Organization grouping:** Unstarred repositories are grouped by GitHub organization. Repositories not associated with a GitHub organization appear under **Other repositories**.
+
+**Search:** Type to filter the repository list by name. Search also matches branch names, making it easy to find the right queue when multiple repositories share a branch.
 
 ### Queue overview
 
