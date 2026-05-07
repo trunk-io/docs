@@ -58,6 +58,7 @@ docstrings
 dustilock
 (?i)enqueued
 enqueueing
+enqueues
 (?i)errored
 (?i)eslint
 exfiltrate

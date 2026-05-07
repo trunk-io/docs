@@ -48,23 +48,23 @@ Once a PR is in the queue, the extension panel updates in real time as it moves 
 
 ### Stacked pull requests
 
+{% hint style="info" %}
+Stacked PR queue support requires the [Trunk Sudo GitHub App](../setup-and-administration/trunk-sudo-app.md) and the `/trunk stack` workflow. Stacks submitted one PR at a time with `/trunk merge` are tracked individually, not as a group.
+{% endhint %}
+
 When a stack is queued with [`/trunk stack`](using-the-queue/stacked-pull-requests.md#merge-the-stack-as-one-unit), the extension shows a stack-aware view on every member PR page.
 
 **What the panel shows:**
 
 * **Stack path** — the full list of PRs in the stack from tip to base, so you can see where your PR sits within the group.
-* **Speculative PR chip** — a link to the combined test PR Trunk created for the stack (labeled **Stacked PR #N**). Click it to open the speculative PR on GitHub and inspect its CI status.
+* **Stacked PR chip** — a link to the combined test PR Trunk creates for the stack (labeled **Stacked PR #N**). Click it to open the stacked PR on GitHub and inspect its CI status.
 
 **Actions:**
 
-* **Add to Merge Queue** — enqueues the entire stack as one unit. Any PR page in the stack triggers the same operation.
-* **Cancel** — removes the whole stack from the queue.
+* **Add stack to queue** — enqueues the entire stack as one unit. Clicking it on any member PR page submits the same stack.
+* **Remove** — removes the whole stack from the queue.
 
-Re-enqueueing after a cancel works the same way: click **Add to Merge Queue** on any member PR page to resubmit the stack.
-
-{% hint style="info" %}
-Stacked PR queue support requires the [Trunk Sudo GitHub App](../setup-and-administration/trunk-sudo-app.md) and the `/trunk stack` workflow. Stacks submitted one PR at a time with `/trunk merge` are tracked individually, not as a group.
-{% endhint %}
+Re-enqueueing after a remove works the same way: click **Add stack to queue** on any member PR page to resubmit the stack.
 
 ### Rolling the Extension out to an entire Org
 
