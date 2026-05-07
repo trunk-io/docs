@@ -110,14 +110,6 @@ When running in [Parallel mode](../optimizations/parallel-queues/), the graph vi
 
 This is useful for debugging unexpected queue ordering or understanding why specific PRs are batched together.
 
-#### Impacted targets on the PR detail page
-
-In [Parallel mode](../optimizations/parallel-queues/), each PR's detail page includes a **View Impacted Targets** button when targets have been uploaded for the PR. The modal shows one of three states:
-
-* `IMPACTS_ALL`: The PR depends on everything in the queue, and every PR submitted after this one will depend on it. No parallel optimization is possible.
-* **Specific targets**: A list of each target the PR impacts.
-* **None (empty list)**: An empty list of targets was uploaded. The PR will not depend on anything, and nothing will depend on it.
-
 ### Health view
 
 Select a period of time to inspect using the **Period** dropdown (default 7 days) and a **Granularity** (defaults  to daily) of queue metrics
@@ -145,3 +137,11 @@ When a PR has not been admitted to the queue yet, Trunk Merge Queue waits for:
 <figure><img src="../../.gitbook/assets/merge-details (1).png" alt=""><figcaption><p>PR readiness details for a PR that has been submitted but has not yet entered the merge queue.</p></figcaption></figure>
 
 In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflicts with the target branch.
+
+### View impacted targets
+
+In [Parallel mode](../optimizations/parallel-queues/), the PR detail page includes a **View Impacted Targets** button when targets have been uploaded for the PR. The modal shows one of three states:
+
+* `IMPACTS_ALL`: The PR depends on everything in the queue, and every PR submitted after this one will depend on it. No parallel optimization is possible.
+* **Specific targets**: A list of each target the PR impacts.
+* **None (empty list)**: An empty list of targets was uploaded. The PR will not depend on anything, and nothing will depend on it.
