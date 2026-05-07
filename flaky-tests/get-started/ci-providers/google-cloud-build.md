@@ -85,7 +85,7 @@ The following environment variables must be passed to the upload step:
 |----------|-------------|
 | `TRIGGER_NAME` | Name of the Cloud Build trigger (used for CI platform detection) |
 | `PROJECT_ID` | GCP project ID (used to construct the CI job link) |
-| `BUILD_ID` | Cloud Build build ID (used to construct the CI job link) |
+| `BUILD_ID` | Unique ID of the Cloud Build run (used to construct the CI job link) |
 | `BRANCH_NAME` | Git branch being built (used for push/stable branch uploads) |
 | `_HEAD_BRANCH` | Head branch for PR-triggered builds |
 | `_PR_NUMBER` | Pull request number for PR-triggered builds |
@@ -115,8 +115,8 @@ steps:
     script: |
       #!/bin/bash
       set -euo pipefail
-      curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-      ./trunk flakytests upload \
+      curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
+      ./trunk-analytics-cli upload \
         --junit-paths "<XML_GLOB_PATH>" \
         --org-url-slug <TRUNK_ORG_SLUG> \
         --token "${TRUNK_API_TOKEN}"
@@ -158,8 +158,8 @@ steps:
     script: |
       #!/bin/bash
       set -euo pipefail
-      curl -fsSLO --retry 3 https://trunk.io/releases/trunk && chmod +x ./trunk
-      ./trunk flakytests upload \
+      curl -fL --retry 3 "https://github.com/trunk-io/analytics-cli/releases/latest/download/trunk-analytics-cli-x86_64-unknown-linux.tar.gz" | tar -xz && chmod +x trunk-analytics-cli
+      ./trunk-analytics-cli upload \
         --bazel-bep-path bep.json \
         --org-url-slug <TRUNK_ORG_SLUG> \
         --token "${TRUNK_API_TOKEN}"
