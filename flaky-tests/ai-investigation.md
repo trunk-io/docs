@@ -18,7 +18,12 @@ The Analysis tab requires a GitHub app installation for the repository. If your 
 2. Click a test case to open the test detail page.
 3. Select the **Analysis** tab.
 
-If no investigation has run for this test yet, the tab shows an empty state with an **Analyze** button.
+### Empty states
+
+The tab shows an empty state in two cases:
+
+- **AI investigation disabled for the repo**: If `aiFlakyInvestigationEnabled` is set to `DISABLED` in the repo's Flaky Tests settings, the tab shows a message that AI investigation is not enabled along with a **Go to Settings** button. No Analyze button is shown until the setting is enabled.
+- **Investigation enabled, no analysis yet**: If the setting is enabled but no investigation has run for this test yet, the tab shows an **Analyze** button. When the GitHub app is installed, tests are also analyzed automatically when they first become flaky.
 
 ## Understanding investigation results
 
@@ -33,6 +38,10 @@ At the top, you will see:
 - An **Analyze** button to trigger a new investigation
 - An **Apply Fix** button to open the fix options modal
 - A **History** button to view past investigations
+
+### Summary
+
+Below the header, the Analysis tab renders the AI's prose summary of the investigation. The summary highlights the most likely root cause, references specific findings, and links to relevant files, lines, and commits. Use it as the entry point to the investigation before drilling into Key Findings.
 
 ### Key Findings
 
