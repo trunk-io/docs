@@ -28,11 +28,11 @@ When an investigation is available, the Analysis tab shows:
 
 At the top, you will see:
 
-- The **overall confidence score** (color-coded green for 80%+, yellow for 50%+, orange below 50%)
+- The **overall confidence score** (color-coded green for 80% and above, yellow for 50% to 79%, orange below 50%)
 - A relative timestamp for when the investigation ran
 - An **Analyze** button to trigger a new investigation
+- An **Apply Fix** button to open the fix options modal
 - A **History** button to view past investigations
-- An **Apply Fix** button if the investigation produced actionable findings
 
 ### Key Findings
 
@@ -52,7 +52,7 @@ Each finding is labeled with the analysis source used to produce it:
 
 | Fact type | What it analyzes |
 |---|---|
-| **CI Logs** | Supplements test failure outputs with CI workflow logs |
+| **CI Logs** | CI workflow logs analyzed alongside the test's failure output |
 | **Git Blame** | Recent code changes that may have introduced flakiness |
 | **Failure Mode** | Patterns in error outputs and failure metadata |
 | **Test Purpose** | What the test covers and how it has drifted from its intent |
@@ -88,6 +88,6 @@ Click any past investigation to expand its details.
 
 ## Related
 
-- [Get root cause analysis (MCP)](use-mcp-server/mcp-tool-reference/get-root-cause-analysis.md)
+- [Fix Flaky Test (MCP)](use-mcp-server/mcp-tool-reference/fix-flaky-test.md)
 - [Webhooks](webhooks/README.md)
 - [Managing detected flaky tests](managing-detected-flaky-tests.md)
