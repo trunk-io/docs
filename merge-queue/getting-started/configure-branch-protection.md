@@ -77,8 +77,8 @@ GitHub offers two systems for branch protection: [Rulesets](https://docs.github.
 
 The Trunk Merge Queue GitHub App is fully supported on both systems. **Rulesets are recommended** for two reasons:
 
-* **More granular protections.** Rulesets let you layer multiple targeted rulesets on the same branch with per-actor bypass control — finer-grained than what Classic rules can express.
-* **Repository admins can be held to the rule.** Classic branch protection always lets admins bypass, so admins see a green **Merge** button on every PR and can accidentally merge without going through the queue. Rulesets subject admins to the rule unless they're explicitly on the bypass list; even when they are, GitHub displays a red warning that they're circumventing branch protection — much harder to misclick through than a green button.
+* **Rulesets allow more granular protections.** You can layer multiple targeted rulesets on the same branch with per-actor bypass control — finer-grained than what Classic rules can express.
+* **Repository admins can be held to the rule.** With Classic branch protection, admins bypass by default and see a green **Merge** button on every PR — easy to misclick into a merge that skips the queue. Rulesets flip the default: admins are subject to the rule unless they're explicitly on the bypass list, and even when they are, GitHub displays a red warning that they're circumventing branch protection — much harder to misclick through than a green button.
 
 #### Option A — GitHub Rulesets (recommended) <a href="#option-a-github-rulesets-recommended" id="option-a-github-rulesets-recommended"></a>
 
