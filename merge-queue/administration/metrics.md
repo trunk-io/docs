@@ -123,11 +123,13 @@ Aggregated charts tell you _that_ something happened — drilling down tells you
 You have two ways to select:
 
 * **Click a single data point** to see the PRs in that time bucket.
-* **Click and drag across the chart** to select a range of data points spanning multiple time buckets.
+* **Click and drag across the chart** to select a range of data points spanning multiple time buckets. The selected range stays highlighted and the rest of the chart dims, giving you a focused view of just that window. The same range syncs across both charts so you can correlate Conclusion count and Time in queue data for the period you picked.
 
 Once a selection is made, a **View PRs** button appears. Click it to open the list of PRs that make up the selection.
 
 <figure><img src="../../.gitbook/assets/drill-down-overview.png" alt="PR Outcomes and Time in Queue charts with a selected Apr 20–21 range broken out into 998 merged, 30 cancelled, and 30 failed, and a selection bar showing the View PRs button"><figcaption><p>The View PRs button appears after selecting a data point or range.</p></figcaption></figure>
+
+To pick a different window, drag a new selection. To clear the selection, change the time range, time bucket, or **Time in UTC** setting at the top of the dashboard.
 
 #### Review the PR List
 
@@ -142,7 +144,7 @@ Both columns are sortable, so you can quickly surface the longest-running PRs in
 <figure><img src="../../.gitbook/assets/pr-drill-down-list.png" alt="PRs in Range table listing individual PRs with Conclusion (Merged or Failed), Reason, and Time in Queue columns, sorted by Time in Queue descending"><figcaption><p>The drill-down PR list, sortable by conclusion and time in queue.</p></figcaption></figure>
 
 {% hint style="info" %}
-Drill down is currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interaction as they land in the UI.
+Drill down and range selection are currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interactions as they land in the UI.
 {% endhint %}
 
 ***
