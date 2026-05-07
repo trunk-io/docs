@@ -224,6 +224,7 @@ tcsh
 tfsec
 (?i)todos?
 toolset
+(?i)tooltips?
 (?i)trivy
 (?i)trufflehog
 (?i)trusted by
