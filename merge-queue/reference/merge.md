@@ -14,17 +14,17 @@ All requests must be [authenticated](../../setup-and-administration/apis/#authen
 
 | Endpoint | Method | Description |
 | --- | --- | --- |
-| [`/submitPullRequest`](#pull-request-endpoints) | POST | Submit a PR to the merge queue for testing and merging |
-| [`/cancelPullRequest`](#pull-request-endpoints) | POST | Remove a PR from the merge queue |
-| [`/restartTestsOnPullRequest`](#pull-request-endpoints) | POST | Re-run tests on a PR currently in the queue |
-| [`/getSubmittedPullRequest`](#pull-request-endpoints) | POST | Check the status of a submitted PR |
-| [`/setImpactedTargets`](#pull-request-endpoints) | POST | Set impacted targets for a PR (used with [parallel queues](../optimizations/parallel-queues/)) |
-| [`/getMergeQueueTestingDetails`](#pull-request-endpoints) | POST | Get details about in-progress merge queue testing |
-| [`/createQueue`](#queue-endpoints) | POST | Create a new merge queue for a branch |
-| [`/deleteQueue`](#queue-endpoints) | POST | Delete an empty merge queue |
-| [`/getQueue`](#queue-endpoints) | POST | Get queue state, configuration, and enqueued PRs |
-| [`/updateQueue`](#queue-endpoints) | POST | Update queue configuration (mode, concurrency, batching, etc.) |
-| [`/getMergeQueueMetrics`](#metrics-endpoints) | GET | Get Prometheus-format metrics for monitoring |
+| [`/submitPullRequest`](#post-submitpullrequest) | POST | Submit a PR to the merge queue for testing and merging |
+| [`/cancelPullRequest`](#post-cancelpullrequest) | POST | Remove a PR from the merge queue |
+| [`/restartTestsOnPullRequest`](#post-restarttestsonpullrequest) | POST | Re-run tests on a PR currently in the queue |
+| [`/getSubmittedPullRequest`](#post-getsubmittedpullrequest) | POST | Check the status of a submitted PR |
+| [`/setImpactedTargets`](#post-setimpactedtargets) | POST | Set impacted targets for a PR (used with [parallel queues](../optimizations/parallel-queues/)) |
+| [`/getMergeQueueTestingDetails`](#post-getmergequeuetestingdetails) | POST | Get details about in-progress merge queue testing |
+| [`/createQueue`](#post-createqueue) | POST | Create a new merge queue for a branch |
+| [`/deleteQueue`](#post-deletequeue) | POST | Delete an empty merge queue |
+| [`/getQueue`](#post-getqueue) | POST | Get queue state, configuration, and enqueued PRs |
+| [`/updateQueue`](#post-updatequeue) | POST | Update queue configuration (mode, concurrency, batching, etc.) |
+| [`/getMergeQueueMetrics`](#prometheus-metrics) | GET | Get Prometheus-format metrics for monitoring |
 
 ## Common use cases
 
@@ -37,6 +37,8 @@ All requests must be [authenticated](../../setup-and-administration/apis/#authen
 **PR status checks** — Query the status of submitted PRs to build custom notifications or gate downstream workflows.
 
 ## Request format
+
+Request bodies must not exceed 20 MiB.
 
 Most endpoints accept a JSON request body with these common fields:
 
@@ -141,6 +143,10 @@ The response includes the queue state (`RUNNING`, `PAUSED`, `DRAINING`, or `SWIT
 {% openapi-operation spec="trunk-api" path="/setImpactedTargets" method="post" %}
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)
 {% endopenapi-operation %}
+
+{% hint style="warning" %}
+Large monorepos can produce target lists that exceed the 20 MiB request body limit. If you hit this limit, send `"ALL"` as the `impactedTargets` value to mark the PR as impacting every target.
+{% endhint %}
 
 {% openapi-operation spec="trunk-api" path="/submitPullRequest" method="post" %}
 [OpenAPI trunk-api](https://static.trunk.io/docs/openapi.json)

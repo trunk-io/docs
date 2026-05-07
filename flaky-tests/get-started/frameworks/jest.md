@@ -5,7 +5,7 @@ description: A guide for generating Trunk-compatible test reports for Jest tests
 
 # Jest
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Jest projects by integrating with Trunk. This document explains how to configure Jest to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Jest projects by integrating with Trunk. This document explains how to configure Jest to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
@@ -20,7 +20,7 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports
 
-Trunk detects flaky tests by analyzing test reports automatically uploaded from your CI jobs. You can do this by generating XML reports from your test runs.
+Trunk detects flaky tests by analyzing test results automatically uploaded from your CI jobs. You can do this by generating XML reports from your test runs.
 
 To generate a Trunk-compatible XML report, install the `jest-junit` package:
 
@@ -51,6 +51,35 @@ Update your Jest config to add `jest-junit` as a reporter:
 #### Report File Path
 
 The `outputDirectory` and `outputName` options specify the path of the XML report. You'll need this path later when configuring automatic uploads to Trunk.
+
+#### Using `filePathPrefix`
+
+In a monorepo with `pnpm` workspaces (or similar), Jest runs from within the package directory, so the file paths it records in the XML report are relative to that package — not to the repository root. For example, a test at `packages/my-package/src/__tests__/foo.test.js` would be recorded as `src/__tests__/foo.test.js`.
+
+This causes codeowners matching to fail because Trunk compares test file paths against the codeowners file at the repo root, which uses full repo-relative paths.
+
+To fix this, set the `filePathPrefix` option to the path of the package within the repo:
+
+{% code title="jest.config.json" %}
+```json
+{
+  "reporters": [
+    [
+      "jest-junit",
+      {
+        "outputDirectory": "./",
+        "outputName": "junit.xml",
+        "addFileAttribute": "true",
+        "reportTestSuiteErrors": "true",
+        "filePathPrefix": "packages/my-package"
+      }
+    ]
+  ]
+}
+```
+{% endcode %}
+
+With `filePathPrefix` set, `jest-junit` will prepend the given path to every file path in the XML output, producing repo-root-relative paths that Trunk can correctly match against your codeowners file.
 
 #### Disable Retries
 
@@ -134,4 +163,4 @@ Configure your CI to upload test runs to Trunk. Find the guides for your CI fram
 
 {% include "../../../.gitbook/includes/ci-providers.md" %}
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Azure DevOps Pipelines</strong></td><td></td><td><a href="../ci-providers/azure-devops-pipelines.md">azure-devops-pipelines.md</a></td><td><a href="../../../.gitbook/assets/azure.png">azure.png</a></td></tr><tr><td><strong>BitBucket Pipelines</strong></td><td></td><td><a href="../ci-providers/bitbucket-pipelines.md">bitbucket-pipelines.md</a></td><td><a href="../../../.gitbook/assets/bitbucket.png">bitbucket.png</a></td></tr><tr><td><strong>BuildKite</strong></td><td></td><td><a href="../ci-providers/buildkite.md">buildkite.md</a></td><td><a href="../../../.gitbook/assets/buildkite.png">buildkite.png</a></td></tr><tr><td><strong>CircleCI</strong></td><td></td><td><a href="../ci-providers/circleci.md">circleci.md</a></td><td><a href="../../../.gitbook/assets/circle-ci.png">circle-ci.png</a></td></tr><tr><td><strong>Drone CI</strong></td><td></td><td><a href="../ci-providers/droneci.md">droneci.md</a></td><td><a href="../../../.gitbook/assets/drone.png">drone.png</a></td></tr><tr><td><strong>GitHub Actions</strong></td><td></td><td><a href="../ci-providers/github-actions.md">github-actions.md</a></td><td><a href="../../../.gitbook/assets/github.png">github.png</a></td></tr><tr><td><strong>Gitlab</strong></td><td></td><td><a href="../ci-providers/gitlab.md">gitlab.md</a></td><td><a href="../../../.gitbook/assets/gitlab.png">gitlab.png</a></td></tr><tr><td><strong>Jenkins</strong></td><td></td><td><a href="../ci-providers/jenkins.md">jenkins.md</a></td><td><a href="../../../.gitbook/assets/jenkins.png">jenkins.png</a></td></tr><tr><td><strong>Semaphore</strong></td><td></td><td><a href="../ci-providers/semaphoreci.md">semaphoreci.md</a></td><td><a href="../../../.gitbook/assets/semaphore.png">semaphore.png</a></td></tr><tr><td><strong>TeamCity</strong></td><td></td><td><a href="broken-reference/">broken-reference</a></td><td><a href="../../../.gitbook/assets/teamcity.png">teamcity.png</a></td></tr><tr><td><strong>Travis CI</strong></td><td></td><td><a href="../ci-providers/travisci.md">travisci.md</a></td><td><a href="../../../.gitbook/assets/travis.png">travis.png</a></td></tr><tr><td><strong>Other CI Providers</strong></td><td></td><td><a href="../ci-providers/otherci.md">otherci.md</a></td><td><a href="../../../.gitbook/assets/other.png">other.png</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Azure DevOps Pipelines</strong></td><td></td><td><a href="../ci-providers/azure-devops-pipelines.md">azure-devops-pipelines.md</a></td><td><a href="../../../.gitbook/assets/azure.png">azure.png</a></td></tr><tr><td><strong>BitBucket Pipelines</strong></td><td></td><td><a href="../ci-providers/bitbucket-pipelines.md">bitbucket-pipelines.md</a></td><td><a href="../../../.gitbook/assets/bitbucket.png">bitbucket.png</a></td></tr><tr><td><strong>BuildKite</strong></td><td></td><td><a href="../ci-providers/buildkite.md">buildkite.md</a></td><td><a href="../../../.gitbook/assets/buildkite.png">buildkite.png</a></td></tr><tr><td><strong>CircleCI</strong></td><td></td><td><a href="../ci-providers/circleci.md">circleci.md</a></td><td><a href="../../../.gitbook/assets/circle-ci.png">circle-ci.png</a></td></tr><tr><td><strong>Drone CI</strong></td><td></td><td><a href="../ci-providers/droneci.md">droneci.md</a></td><td><a href="../../../.gitbook/assets/drone.png">drone.png</a></td></tr><tr><td><strong>GitHub Actions</strong></td><td></td><td><a href="../ci-providers/github-actions.md">github-actions.md</a></td><td><a href="../../../.gitbook/assets/github.png">github.png</a></td></tr><tr><td><strong>GitLab</strong></td><td></td><td><a href="../ci-providers/gitlab.md">gitlab.md</a></td><td><a href="../../../.gitbook/assets/gitlab.png">gitlab.png</a></td></tr><tr><td><strong>Jenkins</strong></td><td></td><td><a href="../ci-providers/jenkins.md">jenkins.md</a></td><td><a href="../../../.gitbook/assets/jenkins.png">jenkins.png</a></td></tr><tr><td><strong>Semaphore</strong></td><td></td><td><a href="../ci-providers/semaphoreci.md">semaphoreci.md</a></td><td><a href="../../../.gitbook/assets/semaphore.png">semaphore.png</a></td></tr><tr><td><strong>TeamCity</strong></td><td></td><td><a href="broken-reference/">broken-reference</a></td><td><a href="../../../.gitbook/assets/teamcity.png">teamcity.png</a></td></tr><tr><td><strong>Travis CI</strong></td><td></td><td><a href="../ci-providers/travisci.md">travisci.md</a></td><td><a href="../../../.gitbook/assets/travis.png">travis.png</a></td></tr><tr><td><strong>Other CI Providers</strong></td><td></td><td><a href="../ci-providers/otherci.md">otherci.md</a></td><td><a href="../../../.gitbook/assets/other.png">other.png</a></td></tr></tbody></table>

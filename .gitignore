@@ -8,3 +8,4 @@
 
 # Agent outputs (local working files, all under tmp/)
 .claude/tmp/
+.worktrees

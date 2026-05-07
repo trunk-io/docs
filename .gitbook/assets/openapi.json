@@ -43,32 +43,21 @@
                       "owner": {
                         "type": "string",
                         "description": "The owner of the repository. For example, `my-github-org` or `my-gitlab-org/my/sub/group`.",
-                        "examples": [
-                          "my-github-org",
-                          "my-gitlab-org/my/sub/group"
-                        ]
+                        "examples": ["my-github-org", "my-gitlab-org/my/sub/group"]
                       },
                       "name": {
                         "type": "string",
                         "description": "The name of the repository.",
-                        "examples": [
-                          "my-repo"
-                        ]
+                        "examples": ["my-repo"]
                       }
                     },
-                    "required": [
-                      "host",
-                      "owner",
-                      "name"
-                    ],
+                    "required": ["host", "owner", "name"],
                     "description": "The repository to list quarantined tests for."
                   },
                   "org_url_slug": {
                     "type": "string",
-                    "description": "The slug of your organization. Find this at https://app.trunk.io/trunk/settings under \"Organization Name\" > \"Slug\"",
-                    "examples": [
-                      "my-trunk-org-slug"
-                    ]
+                    "description": "The slug of your organization. Find this at https://app.trunk.io/<org-slug>/settings under \"Organization Name\" > \"Slug\"",
+                    "examples": ["my-trunk-org-slug"]
                   },
                   "page_query": {
                     "type": "object",
@@ -82,22 +71,14 @@
                       "page_token": {
                         "type": "string",
                         "description": "The page token to use for pagination. This is returned from the previous call to this endpoint. For the first page, this should be empty.",
-                        "examples": [
-                          ""
-                        ]
+                        "examples": [""]
                       }
                     },
-                    "required": [
-                      "page_size"
-                    ],
+                    "required": ["page_size"],
                     "description": "Pagination options for the list of quarantined tests."
                   }
                 },
-                "required": [
-                  "repo",
-                  "org_url_slug",
-                  "page_query"
-                ]
+                "required": ["repo", "org_url_slug", "page_query"]
               }
             }
           }
@@ -120,33 +101,20 @@
                             "description": "The name of the test case."
                           },
                           "parent": {
-                            "type": [
-                              "string",
-                              "null"
-                            ],
+                            "type": ["string", "null"],
                             "description": "The parent of the test case."
                           },
                           "file": {
-                            "type": [
-                              "string",
-                              "null"
-                            ],
+                            "type": ["string", "null"],
                             "description": "The file of the test case."
                           },
                           "classname": {
-                            "type": [
-                              "string",
-                              "null"
-                            ],
+                            "type": ["string", "null"],
                             "description": "The class name of the test case."
                           },
                           "status": {
                             "type": "string",
-                            "enum": [
-                              "HEALTHY",
-                              "FLAKY",
-                              "BROKEN"
-                            ],
+                            "enum": ["HEALTHY", "FLAKY", "BROKEN"],
                             "description": "The status of the test case."
                           },
                           "codeowners": {
@@ -158,10 +126,7 @@
                           },
                           "quarantine_setting": {
                             "type": "string",
-                            "enum": [
-                              "ALWAYS_QUARANTINE",
-                              "AUTO_QUARANTINE"
-                            ],
+                            "enum": ["ALWAYS_QUARANTINE", "AUTO_QUARANTINE"],
                             "description": "The quarantine setting of the test case."
                           },
                           "status_last_updated_at": {
@@ -231,10 +196,7 @@
                       "description": "Pagination information for the list of quarantined test cases."
                     }
                   },
-                  "required": [
-                    "quarantined_tests",
-                    "page"
-                  ]
+                  "required": ["quarantined_tests", "page"]
                 }
               }
             }
@@ -275,20 +237,14 @@
                             },
                             "color": {
                               "type": "string",
-                              "enum": [
-                                "green"
-                              ]
+                              "enum": ["green"]
                             },
                             "overallStatusDescription": {
                               "type": "string",
                               "const": "All systems operational"
                             }
                           },
-                          "required": [
-                            "type",
-                            "color",
-                            "overallStatusDescription"
-                          ]
+                          "required": ["type", "color", "overallStatusDescription"]
                         },
                         {
                           "type": "object",
@@ -299,10 +255,7 @@
                             },
                             "color": {
                               "type": "string",
-                              "enum": [
-                                "yellow",
-                                "red"
-                              ]
+                              "enum": ["yellow", "red"]
                             },
                             "overallStatusDescription": {
                               "type": "string",
@@ -318,20 +271,13 @@
                                   },
                                   "color": {
                                     "type": "string",
-                                    "enum": [
-                                      "yellow",
-                                      "red"
-                                    ]
+                                    "enum": ["yellow", "red"]
                                   },
                                   "statusDescription": {
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "name",
-                                  "color",
-                                  "statusDescription"
-                                ]
+                                "required": ["name", "color", "statusDescription"]
                               }
                             }
                           },
@@ -354,28 +300,17 @@
                           },
                           "color": {
                             "type": "string",
-                            "enum": [
-                              "green",
-                              "yellow",
-                              "red"
-                            ]
+                            "enum": ["green", "yellow", "red"]
                           },
                           "statusDescription": {
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "name",
-                          "color",
-                          "statusDescription"
-                        ]
+                        "required": ["name", "color", "statusDescription"]
                       }
                     }
                   },
-                  "required": [
-                    "overallStatus",
-                    "statuses"
-                  ]
+                  "required": ["overallStatus", "statuses"]
                 }
               }
             }
