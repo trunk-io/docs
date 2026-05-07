@@ -314,19 +314,18 @@ When enabled, Trunk posts comments on pull requests with merge queue status upda
 
 ***
 
-## Post GitHub Status
+## GitHub Status
 
-> Toggle this feature **Enabled** or **Disabled**. Default is **Disabled**.
+> Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
 
-When enabled, Trunk posts a GitHub commit status on PRs that are in the merge queue. The status appears in the PR's checks section (e.g., `trunk/merge-queue`) and updates as the PR moves through the queue — from waiting, to testing, to merging.
+When enabled, Trunk posts a GitHub commit status on PRs that are in the merge queue. The status appears in the PR's checks section and updates as the PR moves through the queue, from queued to testing to a final outcome.
 
 Each status includes a **Details** link that goes directly to the PR's page in the Trunk dashboard. This gives developers visibility into their PR's queue position without leaving GitHub.
 
 **When to enable:**
 
 * **Team adoption** - Makes the merge queue visible in developers' existing GitHub workflow
-* **Status-based automation** - Other tools or workflows can react to the `trunk/merge-queue` status
-* **Status-based automation** - Other tools or workflows can react to the `trunk/merge-queue` status
+* **Status-based automation** - Other tools or workflows can react to the queue status check
 
 See [GitHub commit status](../using-the-queue/monitor-queue-status.md#github-commit-status) for details on each status value.
 ***

@@ -24,16 +24,17 @@ The Trunk Merge Queue dashboard gives you real-time visibility into your queue's
 
 #### GitHub commit status
 
-When enabled, Trunk posts a commit status (e.g., `trunk/merge-queue`) on your PR's head commit that shows the current queue state. The status updates as the PR moves through the queue:
+When enabled, Trunk posts a commit status on your PR's head commit that shows the current queue state. The status updates as the PR moves through the queue:
 
-* **Waiting in queue** — PR is queued but not yet testing
-* **Testing** — PR is actively being tested
-* **Merging** — Tests passed, PR is being merged
-* **Merged** / **Failed** — Final outcome
+* **Queued** - PR is in the queue, waiting to test
+* **Testing** - PR is actively being tested
+* **Merged** - Successfully merged into the base branch
+* **Cancelled** - PR was removed from the queue without merging
+* **Failed** - Tests failed and the PR could not merge
 
-* **Merged** or **Failed** — Final outcome
+Click the **Details** link on the status check to go directly to the Trunk dashboard for that PR.
 
-To enable GitHub commit statuses, go to [**Post GitHub Status**](../../merge-queue/administration/advanced-settings.md#post-github-status) in **Settings** > **Repositories** > your repository > **Merge Queue**. This is a per-queue setting and is disabled by default.
+To enable GitHub commit statuses, go to [**GitHub Status**](../../merge-queue/administration/advanced-settings.md#github-status) in **Settings** > **Repositories** > your repository > **Merge Queue**. This is a per-queue setting and is enabled by default.
 
 ### Queue overview
 
