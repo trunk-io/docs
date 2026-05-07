@@ -22,6 +22,24 @@ The Trunk Merge Queue dashboard gives you real-time visibility into your queue's
 * Trunk bot comments include dashboard links
 * Click any link in bot comments to go directly to that PR's status
 
+#### GitHub status check
+
+When enabled, Trunk posts a check on your PR that reflects the current queue state. The check is named `Trunk Merge Queue (<branch>)`, for example `Trunk Merge Queue (main)` for a queue on `main`. A repository with multiple queues will have a separate check for each branch.
+
+The check is posted once the PR is admitted to the queue and updates in place as it moves through:
+
+* **Queued** - PR has been admitted to the queue and is waiting to test
+* **Testing** - PR is actively being tested
+* **Merged** - Successfully merged into the base branch
+* **Cancelled** - PR was removed from the queue without merging
+* **Failed** - Tests failed and the PR could not merge
+
+Once the PR reaches a terminal state (Merged, Cancelled, or Failed), the check remains on the commit in that final state.
+
+Click the **Details** link on the check to go directly to the Trunk dashboard for that PR.
+
+To enable GitHub status checks, go to [**GitHub Statuses**](../../merge-queue/administration/advanced-settings.md#github-statuses) in **Settings** > **Repositories** > your repository > **Merge Queue**. This is a per-queue setting and is enabled by default.
+
 ### Repository selector
 
 The selector in the page header lets you switch between merge queues without leaving the dashboard.
