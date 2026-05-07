@@ -39,8 +39,7 @@ When Trunk's AI finishes investigating a flaky test, it fires a `test_case.inves
     {
       "fact_type": "CI_LOGS",
       "content": "The test failed in [CI run #4821](https://ci.example.com/runs/4821) with a TypeError at line 42.",
-      "confidence": 0.91,
-      "impact": 0.85
+      "confidence": 0.91
     }
   ]
 }
@@ -75,7 +74,7 @@ When Trunk's AI finishes investigating a flaky test, it fires a `test_case.inves
 |---|---|---|
 | `id` | string (UUID) | Stable unique identifier for the test case. |
 | `name` | string | Name of the test. |
-| `classname` | string | Classname of the test. |
+| `classname` | string | Class name of the test. |
 | `codeowners` | string[] | GitHub CODEOWNERS entries associated with the test file. |
 | `file_path` | string | Path to the test file in the repository. |
 | `html_url` | string | URL to the test detail page in the Trunk app. |
@@ -90,7 +89,6 @@ When Trunk's AI finishes investigating a flaky test, it fires a `test_case.inves
 | `fact_type` | string | Category of evidence (e.g., `CI_LOGS`, `COMMIT`, `TEST_RUN`). |
 | `content` | string | Markdown content for this finding with rendered citation links. |
 | `confidence` | number | Confidence score (0-1) that this fact is correct. |
-| `impact` | number | Impact score (0-1) indicating how relevant this fact is to the failure. |
 
 ## Markdown summary
 
