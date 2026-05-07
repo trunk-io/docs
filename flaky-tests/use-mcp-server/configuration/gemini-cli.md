@@ -32,7 +32,7 @@ Add the following [configuration](https://github.com/google-gemini/gemini-cli/bl
 
 
 
-### Authentication
+### Authentication with OAuth (default)
 
 After the MCP server was added to Gemini, users need to authorize to communicate with the server. Follow these steps to complete auth.
 
@@ -71,3 +71,24 @@ Follow instructions to get back to Gemini. A confirmation should be shown:
 ```
 
 **With auth completed, Gemini will be able to fetch the tools exposed by Trunk's MCP server.**
+
+### Alternative: Authentication with API token
+
+If you prefer not to use the OAuth flow, you can authenticate with your Trunk organization API token. Find your token under **Settings > API** in the Trunk dashboard.
+
+Add the token to your `.gemini/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "trunk": {
+      "httpUrl": "https://mcp.trunk.io/mcp",
+      "headers": {
+        "Authorization": "Bearer ${TRUNK_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+Set `TRUNK_API_TOKEN` as an environment variable. Gemini CLI interpolates environment variables in MCP configuration files automatically.
