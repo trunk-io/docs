@@ -105,6 +105,31 @@ The `Running` state is the default state of your merge queue, and will be the no
 
 ***
 
+## Multiple queues per repository
+
+You can create multiple merge queues within a single repository, with each queue targeting a different branch. This is useful for teams that maintain separate branches for different environments (e.g., `main`, `staging`, `release/v2`).
+
+A branch can only be associated with one queue. Attempting to create a second queue against the same branch returns the error `A merge queue already exists for branch "<branch>" in this repository`.
+
+Each queue operates independently. PRs submitted to one queue don't interact with PRs in another queue for the same repo, and every queue has its own settings, including merge method, required statuses, batching, and concurrency.
+
+### Creating additional queues
+
+1. Navigate to **Merge Queue** and click **New Queue** at the top right
+2. Select the same repository and enter a different target branch
+3. Click **Create Queue**
+
+### Navigating between queues
+
+The Merge Queue dashboard groups queues by repository:
+
+* **Single-queue repos**: The repository row is itself a link that goes directly to the queue.
+* **Multi-queue repos**: The repository row expands inline to list each queue with its target branch label. Click any queue to open it.
+
+In the Settings page, when a repository has more than one queue, a **Merge Queues** selector appears so you can switch between queues. The currently selected branch is shown next to the **Merge Queue Settings** heading.
+
+***
+
 ## Merge Queue mode
 
 > Merge Queues operate in one of two modes, **Single** (default) or [**Parallel**](../optimizations/parallel-queues/)**.**
@@ -173,7 +198,17 @@ You can change your merge method at any time:
 
 The merge method is configured per repository, so different repositories in your organization can use different methods based on their needs.
 
+### Custom merge commit titles
 
+You can override the merge commit title on a per-PR basis by adding a `merge-commit-title:` directive on its own line anywhere in the PR body:
+
+```
+merge-commit-title: feat(auth): add OAuth2 login flow [PROJ-123]
+```
+
+When present, Trunk uses this title for the merge commit instead of the default GitHub-generated title. The commit body follows the usual behavior for the configured merge method. When the directive is not present, the default behavior is preserved.
+
+See [Submit and cancel pull requests](../using-the-queue/reference.md#custom-merge-commit-titles) for more details and examples.
 
 ***
 
@@ -311,6 +346,23 @@ When enabled, Trunk posts comments on pull requests with merge queue status upda
 * **Custom tooling** - You're building your own bot or integration that will provide merge queue instructions to developers, making Trunk's default comments redundant.
 
 <figure><img src="../../.gitbook/assets/merge-github-comment (1).png" alt=""><figcaption></figcaption></figure>
+
+***
+
+## GitHub Statuses
+
+> Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
+
+When enabled, Trunk posts a GitHub check on PRs that are in the merge queue. The check appears in the PR's Checks section with the name `Trunk Merge Queue (<branch>)` (for example, `Trunk Merge Queue (main)` for a queue on `main`) and updates as the PR moves through the queue, from queued to testing to a final outcome.
+
+Each check includes a **Details** link that goes directly to the PR's page in the Trunk dashboard. This gives developers visibility into their PR's queue position without leaving GitHub.
+
+**When to enable:**
+
+* **Team adoption** - Makes the merge queue visible in developers' existing GitHub workflow
+* **Status-based automation** - Other tools or workflows can react to the queue check
+
+See [GitHub status check](../using-the-queue/monitor-queue-status.md#github-status-check) for details on each status value.
 
 ***
 

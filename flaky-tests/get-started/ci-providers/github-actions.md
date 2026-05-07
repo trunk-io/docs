@@ -4,11 +4,9 @@ description: Configure Flaky Tests detection using a GitHub Action
 
 # GitHub Actions
 
-Before you start these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing Trunk-compatible reports for your test runner.
-
 Trunk Flaky Tests integrates with your CI by adding a step in your GitHub Action workflow to upload tests with the [Trunk Analytics CLI](../../uploader.md).
 
-Before you start on these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing a Trunk-compatible output for your test framework.
+Before you start these steps, see the [Test Frameworks](../frameworks/) docs for instructions on producing Trunk-compatible reports for your test framework.
 
 ### Checklist
 
@@ -35,7 +33,7 @@ You can find your token under **Settings > Organization > Manage > Organization 
 
 ### Add Your Trunk Token and Organization Slug as Secrets
 
-Store the Trunk slug and API token obtained in the previous step in your repo as [GitHub secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_ORG_URL_SLUG` and `TRUNK_TOKEN` respectively.
+Store the Trunk slug and API token obtained in the previous step in your repo as [GitHub secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) named `TRUNK_ORG_SLUG` and `TRUNK_TOKEN` respectively.
 
 ### Upload to Trunk
 
