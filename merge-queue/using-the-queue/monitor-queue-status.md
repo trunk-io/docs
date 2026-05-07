@@ -31,9 +31,9 @@ When enabled, Trunk posts a commit status (e.g., `trunk/merge-queue`) on your PR
 * **Merging** — Tests passed, PR is being merged
 * **Merged** / **Failed** — Final outcome
 
-Click the **Details** link on the status check to go directly to the Trunk dashboard for that PR.
+* **Merged** or **Failed** — Final outcome
 
-To enable GitHub commit statuses, go to **Settings** > **Repositories** > your repository > **Merge Queue** and toggle **Post GitHub Status**. This is a per-queue setting and is disabled by default.
+To enable GitHub commit statuses, go to [**Post GitHub Status**](../../merge-queue/administration/advanced-settings.md#post-github-status) in **Settings** > **Repositories** > your repository > **Merge Queue**. This is a per-queue setting and is disabled by default.
 
 ### Queue overview
 

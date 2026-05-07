@@ -326,7 +326,9 @@ Each status includes a **Details** link that goes directly to the PR's page in t
 
 * **Team adoption** - Makes the merge queue visible in developers' existing GitHub workflow
 * **Status-based automation** - Other tools or workflows can react to the `trunk/merge-queue` status
+* **Status-based automation** - Other tools or workflows can react to the `trunk/merge-queue` status
 
+See [GitHub commit status](../using-the-queue/monitor-queue-status.md#github-commit-status) for details on each status value.
 ***
 
 ## GitHub commands
