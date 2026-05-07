@@ -1,3 +1,7 @@
+---
+description: Submit, cancel, and track Trunk Merge Queue pull requests directly from GitHub with the Trunk Chrome Extension.
+---
+
 # Chrome Extension
 
 The Trunk Chrome Extension overlays merge queue controls and status onto your normal GitHub experience, so you can submit a PR to the queue, cancel it, and watch its testing progress without leaving the pull request page.\
@@ -28,6 +32,8 @@ On any pull request in a queue-enabled repository, the extension adds a **Merge 
 2. In the Trunk panel, click **Add to Merge Queue**.
 3. Optionally choose a [priority](optimizations/priority-merging.md) before submitting.
 4. If batching is enabled for the repository, you can toggle **Skip batching** to enqueue this PR without grouping it into a batch — useful for hotfixes or PRs that need to merge without waiting for a batch window.
+
+Submission goes through the same backend as the `/trunk merge` comment and the Trunk web app, so behavior is identical. See [Submit and cancel pull requests](using-the-queue/reference.md) for the full lifecycle.
 
 ### Remove a pull request from the queue
 
@@ -86,7 +92,7 @@ The extension does **not** ask you for credentials, API tokens, or a separate pa
 
 <summary><strong>Do I need to setup anything besides the extension?</strong></summary>
 
-Yes - the extension is an add-on on top of Trunk Merge Queue. Your repository must have the [Trunk GitHub App installed and a queue configured](https://github.com/trunk-io/docs/blob/1a152d61c3091e1007ee9fe70406084fbe06de80/merge-queue/getting-started) before the overlay does anything useful.
+Yes - the extension is an add-on on top of Trunk Merge Queue. Your repository must have the [Trunk GitHub App installed and a queue configured](getting-started/) before the overlay does anything useful.
 
 </details>
 
