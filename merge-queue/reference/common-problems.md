@@ -85,7 +85,7 @@ Features like Optimistic Merging and Batching are validation and testing strateg
 
 <summary>Can I create multiple merge queues for a single repository?</summary>
 
-Yes! You can create multiple queues within a single repository, each targeting a different branch (e.g., `main`, `staging`, `release/v2`). Each queue operates independently with its own settings, required statuses, and merge behavior.
+Yes! You can create multiple queues within a single repository, with each queue targeting a different branch (e.g., `main`, `staging`, `release/v2`). Each queue operates independently with its own settings, required statuses, and merge behavior. A branch can only be associated with one queue.
 
 To create an additional queue, click **Create New Queue** from the Merge Queue dashboard and select the same repository with a different target branch. See [Multiple queues per repository](../administration/advanced-settings.md#multiple-queues-per-repository) for details.
 

@@ -107,9 +107,11 @@ The `Running` state is the default state of your merge queue, and will be the no
 
 ## Multiple queues per repository
 
-You can create multiple merge queues within a single repository, each targeting a different branch. This is useful for teams that maintain separate branches for different environments (e.g., `main`, `staging`, `release/v2`).
+You can create multiple merge queues within a single repository, with each queue targeting a different branch. This is useful for teams that maintain separate branches for different environments (e.g., `main`, `staging`, `release/v2`).
 
-Each queue operates independently — PRs submitted to one queue don't interact with PRs in another queue for the same repo. Every queue has its own settings, including merge method, required statuses, batching, and concurrency.
+A branch can only be associated with one queue. Attempting to create a second queue against the same branch returns a `merge queue already exists for this branch` error.
+
+Each queue operates independently. PRs submitted to one queue don't interact with PRs in another queue for the same repo, and every queue has its own settings, including merge method, required statuses, batching, and concurrency.
 
 ### Creating additional queues
 
