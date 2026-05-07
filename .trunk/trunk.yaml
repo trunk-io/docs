@@ -15,12 +15,31 @@ plugins:
 lint:
   # See inherited enabled linters and other config here:
   #   https://github.com/trunk-io/configs/blob/main/plugin.yaml
+  files:
+    - name: gitbook-yaml
+      filenames:
+        - .gitbook.yaml
   enabled:
     - codespell@2.4.2:
         config: .trunk/configs/.codespellrc
     - non-relative-link-check
+    - redirect-target-check@4.1.0
     - vale@3.11.2
   definitions:
+    - name: redirect-target-check
+      description: Checks that all redirect target files in .gitbook.yaml exist on disk
+      files: [gitbook-yaml]
+      runtime: node
+      package: js-yaml
+      commands:
+        - name: lint
+          run:
+            node --experimental-strip-types ${workspace}/.trunk/linters/check-redirects.ts ${target}
+          output: regex
+          parse_regex:
+            '((?P<path>.*):(?P<line>-?\d+):(?P<col>-?\d+): \[(?P<severity>.*)\] (?P<message>.*)
+            \((?P<code>.*)\))'
+          success_codes: [0, 1]
     - name: codespell
       direct_configs: [.codespellrc, todo_dict.txt]
     - name: markdown-link-check
@@ -42,6 +61,7 @@ lint:
     - semgrep
     - markdownlint
     - trivy
+    - eslint
   ignore:
     - linters: [prettier]
       paths:
