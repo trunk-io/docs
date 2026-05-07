@@ -1,8 +1,14 @@
+---
+description: >-
+  Combine optimistic merging and pending failure depth to prevent flaky test
+  failures from blocking the merge queue.
+---
+
 # Anti-flake protection
 
 ### What it is
 
-Some CI jobs fail for reasons unrelated to a PR's code change, such as due to [flaky tests](https://trunk.io/blog/the-ultimate-guide-to-flaky-tests) or a CI runner disconnecting. These failures are usually cleared when the CI job is rerun. If a second PR that depends on the first **does** pass, it is very likely that the first PR was good and simply experienced a transient failure.&#x20;
+Some CI jobs fail for reasons unrelated to a PR's code change, such as due to [flaky tests](https://trunk.io/blog/the-ultimate-guide-to-flaky-tests) or a CI runner disconnecting. These failures are usually cleared when the CI job is rerun. If a second PR that depends on the first **does** pass, it is very likely that the first PR was good and experienced a transient failure.&#x20;
 
 Trunk Merge Queue can use the combination of [**Optimistic Merging** ](optimistic-merging.md)and [**Pending Failure Depth**](pending-failure-depth.md) to merge pull requests that would otherwise be rejected from the queue.
 
@@ -24,7 +30,7 @@ Optimistic Merging only works when the [Pending Failure Depth](anti-flake-protec
 
 ### Why use it
 
-* **Eliminate false negatives** - Flaky tests cause 20-40% of PR failures in typical pipelines. Anti-flake protection helps get these under control, so developers don't waste time investigating non-issues.
+* **Eliminate false negatives** - Flaky tests frequently cause PR failures unrelated to actual code changes. Anti-flake protection helps get these under control, so developers don't waste time investigating non-issues.
 * **Maintain developer confidence** - When the queue rejects PRs for real reasons (not flaky tests), developers trust the system. Reduces "it's probably just flaky" dismissiveness of real failures.
 * **Reduce manual retries** - Developers don't need to manually resubmit PRs or click "retry" when tests flake. Trunk handles it automatically, saving time and frustration.
 * **Keep queue moving** - Flaky tests don't stall the queue. PRs that would have been blocked by transient failures merge successfully, increasing overall throughput.

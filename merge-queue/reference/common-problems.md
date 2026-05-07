@@ -62,6 +62,8 @@ Commit messages depend on your configured merge method:
 * **Merge Commit**: Preserves all individual commit messages from the PR and creates an additional merge commit message
 * **Rebase**: Preserves all individual commit messages from the PR as they are replayed onto the target branch
 
+You can override the merge commit title for any PR by adding `merge-commit-title: Your Custom Title` on its own line in the PR body. See [Custom merge commit titles](../using-the-queue/reference.md#custom-merge-commit-titles) for details.
+
 You can configure your preferred merge method in [Advanced Settings](../administration/advanced-settings.md#merge-method).
 
 </details>
@@ -88,6 +90,8 @@ Features like Optimistic Merging and Batching are validation and testing strateg
 Yes! You can create multiple queues within a single repository, with each queue targeting a different branch (e.g., `main`, `staging`, `release/v2`). Each queue operates independently with its own settings, required statuses, and merge behavior. A branch can only be associated with one queue.
 
 To create an additional queue, click **Create New Queue** from the Merge Queue dashboard and select the same repository with a different target branch. See [Multiple queues per repository](../administration/advanced-settings.md#multiple-queues-per-repository) for details.
+
+For validating significant changes to your CI process or queue configuration without impacting your primary workflow, you can use a fork of your repository. Set up and test a separate merge queue on the fork to make sure your changes work as expected before applying them to your primary repository.
 
 </details>
 

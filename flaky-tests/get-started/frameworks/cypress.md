@@ -5,7 +5,7 @@ description: A guide for generating Trunk-compatible test reports for Cypress te
 
 # Cypress
 
-You can automatically [detect and manage flaky tests](../../detection.md) in your Cypress projects by integrating with Trunk. This document explains how to configure Cypress to output JUnit XML reports that can be uploaded to Trunk for analysis.
+You can automatically [detect and manage flaky tests](../../detection/) in your Cypress projects by integrating with Trunk. This document explains how to configure Cypress to output JUnit XML reports that can be uploaded to Trunk for analysis.
 
 ### Checklist
 
@@ -20,9 +20,36 @@ After correctly generating reports following the above steps, you'll be ready to
 
 ### Generating Reports
 
-Cypress has a built-in XML reporter which you can use to output a Trunk-compatible report.
+Cypress has a built-in Mocha JUnit reporter which outputs XML test reports. However, the built-in reporter does not include file paths in test case elements, which means Trunk cannot match tests to code owners or enable file-based filtering in the dashboard.
 
-Update your Cypress config, such as you `cypress.config.js` or `cypress.config.ts` file to output XML reports:
+#### Recommended: Use cypress-junit-plugin for file paths
+
+For full functionality including code owner detection and file-based search, use the [`cypress-junit-plugin`](https://github.com/saucelabs/cypress-junit-plugin) reporter. It outputs test cases with the correct nested structure and file path attributes that Trunk expects.
+
+Install the plugin:
+
+```bash
+npm install --save-dev @saucelabs/cypress-junit-plugin
+```
+
+Update your Cypress config:
+
+{% code title="cypress.config.js" %}
+```javascript
+const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+  reporter: '@saucelabs/cypress-junit-plugin',
+  reporterOptions: {
+    mochaFile: './junit.xml',
+  },
+})
+```
+{% endcode %}
+
+#### Alternative: Built-in Mocha reporter
+
+If you don't need file path matching or code owner detection, you can use the built-in reporter. Uploads will still work, but you will see warnings about missing file paths and won't be able to search by file in the dashboard.
 
 {% code title="cypress.config.js" %}
 ```javascript
@@ -37,6 +64,10 @@ module.exports = defineConfig({
 })
 ```
 {% endcode %}
+
+{% hint style="info" %}
+The built-in Mocha JUnit reporter places the `file` attribute on `<testsuite>` elements but not on individual `<testcase>` elements. Trunk requires file paths on test cases for code owner matching. If you see warnings like "report has test cases with missing file or filepath", switch to the `cypress-junit-plugin` above.
+{% endhint %}
 
 #### Report File Path
 
@@ -130,4 +161,4 @@ You can find your Trunk organization slug and token in the settings or by follow
 
 Configure your CI to upload test runs to Trunk. Find the guides for your CI framework below:
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Azure DevOps Pipelines</strong></td><td></td><td><a href="../ci-providers/azure-devops-pipelines.md">azure-devops-pipelines.md</a></td><td><a href="../../../.gitbook/assets/azure.png">azure.png</a></td></tr><tr><td><strong>BitBucket Pipelines</strong></td><td></td><td><a href="../ci-providers/bitbucket-pipelines.md">bitbucket-pipelines.md</a></td><td><a href="../../../.gitbook/assets/bitbucket.png">bitbucket.png</a></td></tr><tr><td><strong>BuildKite</strong></td><td></td><td><a href="../ci-providers/buildkite.md">buildkite.md</a></td><td><a href="../../../.gitbook/assets/buildkite.png">buildkite.png</a></td></tr><tr><td><strong>CircleCI</strong></td><td></td><td><a href="../ci-providers/circleci.md">circleci.md</a></td><td><a href="../../../.gitbook/assets/circle-ci.png">circle-ci.png</a></td></tr><tr><td><strong>Drone CI</strong></td><td></td><td><a href="../ci-providers/droneci.md">droneci.md</a></td><td><a href="../../../.gitbook/assets/drone.png">drone.png</a></td></tr><tr><td><strong>GitHub Actions</strong></td><td></td><td><a href="../ci-providers/github-actions.md">github-actions.md</a></td><td><a href="../../../.gitbook/assets/github.png">github.png</a></td></tr><tr><td><strong>Gitlab</strong></td><td></td><td><a href="../ci-providers/gitlab.md">gitlab.md</a></td><td><a href="../../../.gitbook/assets/gitlab.png">gitlab.png</a></td></tr><tr><td><strong>Jenkins</strong></td><td></td><td><a href="../ci-providers/jenkins.md">jenkins.md</a></td><td><a href="../../../.gitbook/assets/jenkins.png">jenkins.png</a></td></tr><tr><td><strong>Semaphore</strong></td><td></td><td><a href="../ci-providers/semaphoreci.md">semaphoreci.md</a></td><td><a href="../../../.gitbook/assets/semaphore.png">semaphore.png</a></td></tr><tr><td><strong>TeamCity</strong></td><td></td><td><a href="broken-reference/">broken-reference</a></td><td><a href="../../../.gitbook/assets/teamcity.png">teamcity.png</a></td></tr><tr><td><strong>Travis CI</strong></td><td></td><td><a href="../ci-providers/travisci.md">travisci.md</a></td><td><a href="../../../.gitbook/assets/travis.png">travis.png</a></td></tr><tr><td><strong>Other CI Providers</strong></td><td></td><td><a href="../ci-providers/otherci.md">otherci.md</a></td><td><a href="../../../.gitbook/assets/other.png">other.png</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Azure DevOps Pipelines</strong></td><td></td><td><a href="../ci-providers/azure-devops-pipelines.md">azure-devops-pipelines.md</a></td><td><a href="../../../.gitbook/assets/azure.png">azure.png</a></td></tr><tr><td><strong>BitBucket Pipelines</strong></td><td></td><td><a href="../ci-providers/bitbucket-pipelines.md">bitbucket-pipelines.md</a></td><td><a href="../../../.gitbook/assets/bitbucket.png">bitbucket.png</a></td></tr><tr><td><strong>BuildKite</strong></td><td></td><td><a href="../ci-providers/buildkite.md">buildkite.md</a></td><td><a href="../../../.gitbook/assets/buildkite.png">buildkite.png</a></td></tr><tr><td><strong>CircleCI</strong></td><td></td><td><a href="../ci-providers/circleci.md">circleci.md</a></td><td><a href="../../../.gitbook/assets/circle-ci.png">circle-ci.png</a></td></tr><tr><td><strong>Drone CI</strong></td><td></td><td><a href="../ci-providers/droneci.md">droneci.md</a></td><td><a href="../../../.gitbook/assets/drone.png">drone.png</a></td></tr><tr><td><strong>GitHub Actions</strong></td><td></td><td><a href="../ci-providers/github-actions.md">github-actions.md</a></td><td><a href="../../../.gitbook/assets/github.png">github.png</a></td></tr><tr><td><strong>GitLab</strong></td><td></td><td><a href="../ci-providers/gitlab.md">gitlab.md</a></td><td><a href="../../../.gitbook/assets/gitlab.png">gitlab.png</a></td></tr><tr><td><strong>Jenkins</strong></td><td></td><td><a href="../ci-providers/jenkins.md">jenkins.md</a></td><td><a href="../../../.gitbook/assets/jenkins.png">jenkins.png</a></td></tr><tr><td><strong>Semaphore</strong></td><td></td><td><a href="../ci-providers/semaphoreci.md">semaphoreci.md</a></td><td><a href="../../../.gitbook/assets/semaphore.png">semaphore.png</a></td></tr><tr><td><strong>TeamCity</strong></td><td></td><td><a href="broken-reference/">broken-reference</a></td><td><a href="../../../.gitbook/assets/teamcity.png">teamcity.png</a></td></tr><tr><td><strong>Travis CI</strong></td><td></td><td><a href="../ci-providers/travisci.md">travisci.md</a></td><td><a href="../../../.gitbook/assets/travis.png">travis.png</a></td></tr><tr><td><strong>Other CI Providers</strong></td><td></td><td><a href="../ci-providers/otherci.md">otherci.md</a></td><td><a href="../../../.gitbook/assets/other.png">other.png</a></td></tr></tbody></table>

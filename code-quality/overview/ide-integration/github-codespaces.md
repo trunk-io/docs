@@ -2,7 +2,7 @@
 
 We provide support for running `trunk` in GitHub Codespaces.
 
-[Github Codespaces](https://github.com/features/codespaces) are fully configured virtual containers for developing your GitHub repositories.
+[GitHub Codespaces](https://github.com/features/codespaces) are fully configured virtual containers for developing your GitHub repositories.
 
 ## Installing the Trunk feature
 

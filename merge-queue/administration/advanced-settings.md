@@ -198,7 +198,17 @@ You can change your merge method at any time:
 
 The merge method is configured per repository, so different repositories in your organization can use different methods based on their needs.
 
+### Custom merge commit titles
 
+You can override the merge commit title on a per-PR basis by adding a `merge-commit-title:` directive on its own line anywhere in the PR body:
+
+```
+merge-commit-title: feat(auth): add OAuth2 login flow [PROJ-123]
+```
+
+When present, Trunk uses this title for the merge commit instead of the default GitHub-generated title. The commit body follows the usual behavior for the configured merge method. When the directive is not present, the default behavior is preserved.
+
+See [Submit and cancel pull requests](../using-the-queue/reference.md#custom-merge-commit-titles) for more details and examples.
 
 ***
 
@@ -239,15 +249,26 @@ For example, assuming a timeout of 4 hours:
 
 > Configure which CI status checks must pass before a PR can merge through the queue.
 
-By default, Trunk infers required status checks from your GitHub branch protection rules. You can override this by configuring required statuses directly in the Trunk UI, giving you independent control over which checks gate the merge queue.
+There are three ways to tell Merge Queue which status checks to wait on while testing a PR:
 
-**When to configure in Trunk:**
+1. **GitHub branch protection rules** (default) — Trunk infers required statuses from the protected branch's required status checks.
+2. **Trunk UI override** — Configure required statuses directly in the Trunk UI.
+3. **`.trunk/trunk.yaml` override** — Declare required statuses in `merge.required_statuses`.
+
+All three work regardless of which testing mode you chose (Draft PR or Push-Triggered).
+
+{% hint style="info" %}
+**These checks are what Merge Queue waits on while a PR is already in the queue and testing. They do not control which PRs are admitted into the queue.**
+{% endhint %}
+
+**When to override the default:**
 
 * **Different checks for the queue** - Your branch protection requires checks that shouldn't gate the merge queue (e.g., code coverage reports, deployment previews)
 * **Stricter queue requirements** - You want the merge queue to require additional checks beyond what branch protection enforces
 * **Multiple queues** - Each queue can have its own set of required statuses
+* **No GitHub branch protection** - You don't use branch protection rules and need to tell Merge Queue what to wait on
 
-### How to configure
+### Configure in the Trunk UI
 
 1. Navigate to **Settings** > **Repositories** > your repository > **Merge Queue**
 2. Find the **Required Status Checks** section
@@ -257,6 +278,20 @@ By default, Trunk infers required status checks from your GitHub branch protecti
 {% hint style="info" %}
 When required statuses are configured in Trunk, only those statuses are required for the merge queue. When not configured, Trunk falls back to your GitHub branch protection required checks.
 {% endhint %}
+
+### Configure in `.trunk/trunk.yaml`
+
+Alternatively, declare required statuses in your `.trunk/trunk.yaml` file at the root of your repository:
+
+```yaml
+version: 0.1
+merge:
+  required_statuses:
+    - Unit Tests
+    - Integration Tests
+```
+
+The status check names must exactly match the CI job names that report status to GitHub.
 
 ***
 
@@ -285,9 +320,9 @@ Toggle this setting in **Settings** > **Repositories** > your repository > **Mer
 
 > Pending Failure Depth can be set to any value, options are **0** (default), **1**, **2**, **3**, and **Custom**.
 
-[**Pending Failure Depth**](../optimizations/pending-failure-depth.md) allows a failed PR to remain in the queue temporarily while a configurable number of PRs behind it complete testing. Since predictive testing means the failed PR's code is retested as part of later PRs, this gives flaky tests multiple chances to pass before the PR is evicted from the queue.
+[**Pending Failure Depth**](../optimizations/pending-failure-depth.md) controls how many levels of successor test runs the system waits on before transitioning a failed group out of the Pending Failure state. When combined with [optimistic merging](../optimizations/optimistic-merging.md), this allows a passing successor to retroactively clear a failure caused by a transient issue (flake).
 
-When set to **0** (default), failed PRs are immediately evicted from the queue. Any PRs behind the failed PR that were already testing will be restarted, since they were testing against a predicted future state of the branch that is no longer accurate.
+When set to **0** (default), the successor check is skipped and groups transition as soon as predecessor groups finish testing. When set to a value greater than 0, the system additionally waits for that many successor levels to finish testing before transitioning.
 
 ***
 
@@ -314,6 +349,23 @@ When enabled, Trunk posts comments on pull requests with merge queue status upda
 
 ***
 
+## GitHub Statuses
+
+> Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
+
+When enabled, Trunk posts a GitHub check on PRs that are in the merge queue. The check appears in the PR's Checks section with the name `Trunk Merge Queue (<branch>)` (for example, `Trunk Merge Queue (main)` for a queue on `main`) and updates as the PR moves through the queue, from queued to testing to a final outcome.
+
+Each check includes a **Details** link that goes directly to the PR's page in the Trunk dashboard. This gives developers visibility into their PR's queue position without leaving GitHub.
+
+**When to enable:**
+
+* **Team adoption** - Makes the merge queue visible in developers' existing GitHub workflow
+* **Status-based automation** - Other tools or workflows can react to the queue check
+
+See [GitHub status check](../using-the-queue/monitor-queue-status.md#github-status-check) for details on each status value.
+
+***
+
 ## GitHub commands
 
 > Toggle this feature **Enabled** or **Disabled**. Default is **Enabled**.
@@ -329,7 +381,7 @@ Whether or not GitHub slash commands like `/trunk merge` are enabled for this me
 
 ## Connect with Slack
 
-[Connect Trunk Merge Queue to Slack](../integration-for-slack.md) to receive real-time notifications about queue activity in a designated channel. After connecting, you can choose which events trigger notifications.
+[Connect Trunk Merge Queue to Slack](../integration-for-slack.md) to receive real-time notifications about queue activity. After [installing the Trunk Slack app](../integration-for-slack.md#installing-the-trunk-slack-app) for your organization, you can route notifications to **multiple Slack channels** per repository, each with its own set of enabled topics. Individual users can also receive **personal DMs** about their PRs.
 
 **Available notifications include:**
 
@@ -358,7 +410,7 @@ Configure how many PRs can be tested simultaneously during batch failure isolati
 #### How to Configure
 
 1. Navigate to **Settings** > **Repositories** > your repository > **Merge Queue** > **Batching**
-2. Ensure **Batching** is enabled
+2. Make sure **Batching** is enabled
 3. Set **Bisection Testing Concurrency** to your desired value
 4. Monitor CI resource usage and adjust as needed
 
@@ -371,7 +423,7 @@ For detailed guidance on using this setting effectively, see [Bisection Testing 
 {% hint style="danger" %}
 CAUTION: Any queued merge requests will not be merged and all data will be lost.
 
-**Before deleting:** Ensure all important PRs in the queue are either merged manually or that you're prepared to resubmit them to a new queue.
+**Before deleting:** Make sure all important PRs in the queue are either merged manually or that you're prepared to resubmit them to a new queue.
 {% endhint %}
 
 This setting will delete the Merge Queue configuration and any queued merge requests will not be merged and all data will be lost.
