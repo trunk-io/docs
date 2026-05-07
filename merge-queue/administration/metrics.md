@@ -202,8 +202,11 @@ These metrics summarize activity over a sliding 1-hour window. They update conti
 | `mq_pr_restarts_1h_total` | Gauge | — | PR restarts (TESTING to PENDING transitions) in the last hour |
 | `mq_pr_wait_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent waiting before testing starts |
 | `mq_pr_test_duration_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of time PRs spent in the testing phase |
-| `mq_pr_time_in_queue_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of total time PRs spent in the queue, from entry to exit (includes waiting, testing, and any other phases) |
+| `mq_pr_time_in_queue_1h_seconds` | Histogram | `le` (bucket boundary) | Distribution of total time PRs spent in the queue, from entry to exit (includes waiting, testing, and any other phases, such as [pending failure](../optimizations/pending-failure-depth.md)). |
+
 Each histogram emits `_bucket{le="..."}`, `_sum`, and `_count` series. Bucket boundaries (in seconds): 60, 300, 600, 900, 1800, 3600, 5400, 7200, +Inf.
+
+For clarity, PRs in the "Waiting to Enter Queue" state (submitted to the queue but still waiting on prerequisites such as GitHub mergeability before they can be admitted to the queue) are not considered to be "in the queue" yet. So any time spent in this state is not counted in the Wait Duration or Time in Queue metrics.
 
 {% hint style="warning" %}
 Rolling window metrics use **gauge semantics**, not true Prometheus counters. They represent a snapshot of the last hour, not cumulative totals. PromQL functions like `rate()` and `increase()` are **not meaningful** on these metrics. Use the values directly instead.
