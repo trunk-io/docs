@@ -117,6 +117,7 @@ Mergify
 (?i)metalinter
 (?i)metalinters
 (?i)minitest
+misclick
 misconfiguration
 misconfigurations
 misconfigured
