@@ -16,11 +16,12 @@ Review docs changes for quality before opening a PR. Checks git diff for unneces
 - [Inputs](#inputs)
 - [Workflow](#workflow)
   - [Phase 1: Identify changed files](#phase-1-identify-changed-files)
-  - [Phase 2: Run automated checks](#phase-2-run-automated-checks)
-  - [Phase 3: Read related pages for style baseline](#phase-3-read-related-pages-for-style-baseline)
-  - [Phase 4: Review each changed file](#phase-4-review-each-changed-file)
-  - [Phase 5: Generate report](#phase-5-generate-report)
-  - [Phase 6: Prompt for fixes](#phase-6-prompt-for-fixes)
+  - [Phase 2: Check redirects](#phase-2-check-redirects)
+  - [Phase 3: Run automated checks](#phase-3-run-automated-checks)
+  - [Phase 4: Read related pages for style baseline](#phase-4-read-related-pages-for-style-baseline)
+  - [Phase 5: Review each changed file](#phase-5-review-each-changed-file)
+  - [Phase 6: Generate report](#phase-6-generate-report)
+  - [Phase 7: Prompt for fixes](#phase-7-prompt-for-fixes)
 - [Review Criteria](#review-criteria)
 - [Style Conventions](#style-conventions)
 
@@ -47,7 +48,49 @@ If no `.md` files are found, output:
 ```
 and exit.
 
-### Phase 2: Run automated checks
+### Phase 2: Check redirects
+
+Early in the process, audit `.gitbook.yaml` for stale or missing redirects caused by file moves or deletions.
+
+#### Step 2a — Extract moved and deleted .md files from Phase 1 diff
+
+Run:
+```bash
+git diff --name-status --diff-filter=R main...HEAD
+git diff --name-only --diff-filter=D main...HEAD
+```
+
+Filter results to `.md` files only. Parse the rename output to extract `old_path -> new_path` mappings.
+
+#### Step 2b — Audit .gitbook.yaml for stale and missing redirects
+
+Read `.gitbook.yaml`. For each renamed file (old → new):
+
+1. **Fix stale redirect target** — if any existing redirect _value_ (the right-hand side) equals the old path, update it to the new path using `Edit`
+2. **Add missing redirect** — compute the GitBook URL key for the old path by:
+   - Stripping the `.md` extension
+   - Stripping leading `./`
+   - Converting to the format used as keys in the `redirects:` block
+   If no redirect with that key exists, insert a new entry in **alphabetical sort order** within the `redirects:` block
+
+For each deleted file: compute the redirect key the same way, then suggest the nearest logical parent page or sibling as the target; flag for user confirmation if unclear.
+
+#### Step 2c — Add YAML comments for redirects with known dependents
+
+Before each **newly inserted** redirect, search for evidence that the old URL has dependents:
+- `Grep` the docs repo markdown files (`.md` files) for the old path string
+- If the trunk2 repo is installed on the system, `Grep` `<path>/trunk2` for the old URL path (CLI or webapp references)
+- Known heuristic: paths starting with `docs/`, `check/`, or `cli/` are commonly hardcoded in CLI output or documentation links
+
+If evidence found, prepend a YAML comment on the line above the new entry:
+```yaml
+# Used by: <source> (e.g., "CLI output in trunk check --help", "webapp /settings page")
+old/path: new/path/file.md
+```
+
+If no evidence found, insert the redirect without a comment.
+
+### Phase 3: Run automated checks
 
 On behalf of the user, run:
 
@@ -58,7 +101,7 @@ trunk check
 
 Collect the output (success or any issues found). Include this in the final report.
 
-### Phase 3: Read related pages for style baseline
+### Phase 4: Read related pages for style baseline
 
 For each changed file, determine its product area from its directory path:
 
@@ -76,15 +119,15 @@ Use `Glob` to find 2 other `.md` files in the same product area directory. Read 
 - Header structure and naming
 - Section flow and organization
 
-Store these as reference for Phase 4 comparisons.
+Store these as reference for Phase 5 comparisons.
 
-### Phase 4: Review each changed file
+### Phase 5: Review each changed file
 
 Read each changed `.md` file and evaluate it against the four review criteria (see [Review Criteria](#review-criteria) below).
 
 Document findings by criterion. If a file passes a criterion with no issues, no note needed. Only document issues.
 
-### Phase 5: Generate report
+### Phase 6: Generate report
 
 Print the review report. Format:
 
@@ -117,7 +160,7 @@ Summary: N issues found across M files.
   ✅ No issues found. All files are ready for a PR.
   ```
 
-### Phase 6: Prompt for fixes
+### Phase 7: Prompt for fixes
 
 After the report, ask:
 
