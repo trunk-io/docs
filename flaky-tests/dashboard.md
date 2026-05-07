@@ -122,3 +122,27 @@ The test run history tab includes a branch filter that accepts exact branch name
 | `release/*` | All release branches, e.g. `release/1.0`, `release/2.3` |
 | `feature-??` | Feature branches with a two-character suffix, e.g. `feature-v2` |
 | `trunk-merge/*` | All merge queue branches |
+
+#### Filtering test runs by result and quarantine state
+
+The test run history tab also includes two independent filters for narrowing runs by outcome and quarantine state.
+
+**Result** filters by whether a test run passed or failed:
+
+| Value | Shows |
+|---|---|
+| All | All runs regardless of outcome (default) |
+| Pass | Only passing runs |
+| Fail | Only failing runs |
+
+**Quarantined** filters by whether a test was quarantined at the time of the run:
+
+| Value | Shows |
+|---|---|
+| Include | All runs, quarantined and non-quarantined (default) |
+| Exclude | Only runs where the test was not quarantined |
+| Only | Only runs where the test was quarantined |
+
+The two filters are independent. For example, setting Result to **Fail** and Quarantined to **Exclude** shows only non-quarantined failures, while setting Result to **Fail** and Quarantined to **Only** shows only quarantined failures.
+
+You can also set these filters via URL parameters: `result=pass` or `result=fail` for the result filter, and `quarantined=include`, `quarantined=exclude`, or `quarantined=only` for the quarantine filter.
