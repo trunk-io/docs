@@ -15,12 +15,40 @@ The Trunk Merge Queue dashboard gives you real-time visibility into your queue's
 1. **Navigate to Trunk:** [https://app.trunk.io](https://app.trunk.io/)
 2. **Select your organization** (if you're in multiple)
 3. **Click** the **Merge Queue** tab in the upper left
-4. Select your repository
+4. Select your repository from the selector in the page header
 
 **Quick access from GitHub:**
 
 * Trunk bot comments include dashboard links
 * Click any link in bot comments to go directly to that PR's status
+
+#### GitHub status check
+
+When enabled, Trunk posts a check on your PR that reflects the current queue state. The check is named `Trunk Merge Queue (<branch>)`, for example `Trunk Merge Queue (main)` for a queue on `main`. A repository with multiple queues will have a separate check for each branch.
+
+The check is posted once the PR is admitted to the queue and updates in place as it moves through:
+
+* **Queued** - PR has been admitted to the queue and is waiting to test
+* **Testing** - PR is actively being tested
+* **Merged** - Successfully merged into the base branch
+* **Cancelled** - PR was removed from the queue without merging
+* **Failed** - Tests failed and the PR could not merge
+
+Once the PR reaches a terminal state (Merged, Cancelled, or Failed), the check remains on the commit in that final state.
+
+Click the **Details** link on the check to go directly to the Trunk dashboard for that PR.
+
+To enable GitHub status checks, go to [**GitHub Statuses**](../../merge-queue/administration/advanced-settings.md#github-statuses) in **Settings** > **Repositories** > your repository > **Merge Queue**. This is a per-queue setting and is enabled by default.
+
+### Repository selector
+
+The selector in the page header lets you switch between merge queues without leaving the dashboard.
+
+**Starred repositories:** Click the star icon next to a repository in the selector list to star it. Starred repositories always appear at the top of the list, regardless of organization.
+
+**Organization grouping:** Unstarred repositories are grouped by GitHub organization. Repositories not associated with a GitHub organization appear under **Other repositories**.
+
+**Search:** Type to filter the repository list by name. Search also matches branch names, making it easy to find the right queue when multiple repositories share a branch.
 
 ### Queue overview
 
@@ -73,6 +101,15 @@ PRs queued at the default medium priority or at low priority do not display a ba
 
 For details on setting priority levels, see [Priority merging](../../merge-queue/optimizations/priority-merging.md).
 
+#### Impacted targets in the graph
+
+When running in [Parallel mode](../optimizations/parallel-queues/), the graph view surfaces impacted targets data to help you understand why PRs are grouped or ordered the way they are.
+
+* **Per-PR tooltips**: Hover over a PR node to see which targets that PR impacts.
+* **Overlapping targets on edges**: Use the **Show targets on hover** toggle to display which targets overlap between connected PRs. Overlapping targets explain why PRs are in the same testing sequence: PRs with shared targets must be tested together.
+
+This is useful for debugging unexpected queue ordering or understanding why specific PRs are batched together.
+
 ### Health view
 
 Select a period of time to inspect using the **Period** dropdown (default 7 days) and a **Granularity** (defaults  to daily) of queue metrics
@@ -100,3 +137,11 @@ When a PR has not been admitted to the queue yet, Trunk Merge Queue waits for:
 <figure><img src="../../.gitbook/assets/merge-details (1).png" alt=""><figcaption><p>PR readiness details for a PR that has been submitted but has not yet entered the merge queue.</p></figcaption></figure>
 
 In the screenshot above, the PR has been submitted to Merge but has not yet been added to the queue. It will be added once all of the branch protection rules pass and there are no merge conflicts with the target branch.
+
+### View impacted targets
+
+In [Parallel mode](../optimizations/parallel-queues/), the PR detail page includes a **View Impacted Targets** button when targets have been uploaded for the PR. The modal shows one of three states:
+
+* `IMPACTS_ALL`: The PR depends on everything in the queue, and every PR submitted after this one will depend on it. No parallel optimization is possible.
+* **Specific targets**: A list of each target the PR impacts.
+* **None (empty list)**: An empty list of targets was uploaded. The PR will not depend on anything, and nothing will depend on it.
