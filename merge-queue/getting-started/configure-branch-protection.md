@@ -73,11 +73,11 @@ When a pull request enters the queue, Trunk creates a `trunk-merge/*` branch and
 
 #### Rulesets vs. Classic branch protection <a href="#rulesets-vs-classic-branch-protection" id="rulesets-vs-classic-branch-protection"></a>
 
-GitHub offers two systems for branch protection: [Rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets) and Classic branch protection rules. Both can coexist on the same branch — see GitHub's documentation for how the two systems interact.
+GitHub offers two systems for branch protection: [Rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets) and Classic branch protection rules. Both can coexist on the same branch.
 
 The Trunk Merge Queue GitHub App is fully supported on both systems. **Rulesets are recommended:** their bypass model lets Trunk merge through your protected branch cleanly, while Classic branch protection has rules that no GitHub App can bypass (notably required status checks and "Require branches to be up to date"). See [Configure branch protection for Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md#configure-branch-protection-for-trunk-sudo) for more on those Classic limits.
 
-#### Option A — GitHub Rulesets (Recommended) <a href="#option-a-github-rulesets-recommended" id="option-a-github-rulesets-recommended"></a>
+#### Option A — GitHub Rulesets (recommended) <a href="#option-a-github-rulesets-recommended" id="option-a-github-rulesets-recommended"></a>
 
 Trunk Merge Queue requires **at least two rulesets** on your protected branch:
 
@@ -86,15 +86,15 @@ Trunk Merge Queue requires **at least two rulesets** on your protected branch:
 
 Splitting them keeps Trunk's bypass scope minimal: GitHub bypass permissions apply to the whole ruleset, so a single combined ruleset would force Trunk to bypass review and status checks too — the opposite of what you want.
 
-**Ruleset #1 — Branch update (Trunk bypasses this)**
+##### Ruleset #1 — Branch update (Trunk bypasses this) <a href="#ruleset-1-branch-update" id="ruleset-1-branch-update"></a>
 
 This ruleset lets the Trunk GitHub App update your protected branch when merging from the queue, while still preventing direct pushes from anyone else.
 
-1. In GitHub, go to **Settings → Rules → Rulesets** and create a new ruleset (e.g. name it `main - force push`).
-2. Under **Target branches**, target the protected branch only (e.g. `main`). No exclude pattern is needed — Trunk's `trunk-temp/*` and `trunk-merge/*` branches are not in the include list, so they aren't matched.
+1. In GitHub, go to **Settings → Rules → Rulesets** and create a new ruleset (e.g., name it `main - force push`).
+2. Under **Target branches**, target the protected branch only (e.g., `main`). No exclude pattern is needed — Trunk's `trunk-temp/*` and `trunk-merge/*` branches are not in the include list, so they aren't matched.
 3. Under **Rules → Branch rules**, enable **Restrict updates** ("Only allow users with bypass permission to update matching refs"). You can optionally co-locate **Restrict deletions** and **Restrict creations** in the same ruleset; the bypass list applies to the entire ruleset.
 4. Under **Bypass list**, add the **Trunk** GitHub App (`trunk-io`) and set its bypass mode to **Exempt**.
-5. (If you also use [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md)) add **Trunk Sudo** to the bypass list as **Exempt** as well.
+5. If you also use [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md), add **Trunk Sudo** to the bypass list as **Exempt** as well.
 6. Save.
 
 <figure><img src="../../.gitbook/assets/merge-github-ruleset-push.png" alt="GitHub ruleset with Restrict updates and Restrict deletions enabled, Trunk.io and Trunk Sudo on the bypass list as Exempt"><figcaption>Ruleset #1: Trunk on the bypass list as <strong>Exempt</strong> so it can update <code>main</code>.</figcaption></figure>
@@ -103,15 +103,15 @@ This ruleset lets the Trunk GitHub App update your protected branch when merging
 **Bypass mode defaults to Always — change it to Exempt.** When you add an actor to a ruleset's bypass list, GitHub defaults its bypass mode to **Always**, which sounds permissive but does not cover branch updates from a GitHub App. Trunk must be set to **Exempt**. If Trunk isn't Exempt, merges will fail with permission errors on the protected branch.
 {% endhint %}
 
-**Ruleset #2 — Mergeability requirements (Trunk does NOT bypass this)**
+##### Ruleset #2 — Mergeability requirements (Trunk does NOT bypass this) <a href="#ruleset-2-mergeability-requirements" id="ruleset-2-mergeability-requirements"></a>
 
 This ruleset encodes the rules that determine when a PR is ready to merge. Trunk reads these to decide when to admit a PR into the queue.
 
-1. Create a second ruleset (e.g. name it `main - PRs`).
-2. Target the same protected branch (e.g. `main`) with the same single-include targeting.
+1. Create a second ruleset (e.g., name it `main - PRs`).
+2. Target the same protected branch (e.g., `main`) with the same single-include targeting.
 3. Under **Rules → Branch rules**, add the rules that gate mergeability — typically **Require a pull request before merging** and **Require status checks to pass**. Add others (signed commits, linear history, etc.) as your team requires.
 4. **Do not** add the Trunk GitHub App (`trunk-io`) to the bypass list. The queue relies on GitHub reporting the PR as not-yet-ready until these rules pass.
-5. (Optional) Add **Trunk Sudo** to the bypass list as **Exempt** if you use [Force merge](../using-the-queue/force-merge.md) or stacked PRs. See the [Trunk Sudo page](../../setup-and-administration/trunk-sudo-app.md) for the full guidance.
+5. Optionally, add **Trunk Sudo** to the bypass list as **Exempt** if you use [Force merge](../using-the-queue/force-merge.md) or stacked PRs. See the [Trunk Sudo page](../../setup-and-administration/trunk-sudo-app.md) for the full guidance.
 6. Save.
 
 <figure><img src="../../.gitbook/assets/merge-github-ruleset-prs.png" alt="GitHub ruleset with Require a pull request before merging and Require status checks to pass enabled, Trunk.io not on the bypass list"><figcaption>Ruleset #2: Trunk is <em>not</em> on the bypass list, so the queue respects these requirements when admitting PRs.</figcaption></figure>
@@ -146,7 +146,7 @@ Trunk Merge Queue needs permission to push to your protected branch. Configure t
 6. Save your changes.
 
 {% hint style="warning" %}
-**Important:** Regular users should use [pull request prioritization](https://file+.vscode-resource.vscode-cdn.net/merge-queue/pr-prioritization) with `--priority=urgent` or `--priority=high` to fast-track pull requests through the queue while maintaining validation. Direct push access is only needed for rare emergencies where the queue itself must be bypassed.
+**Important:** Regular users should use [pull request prioritization](../optimizations/priority-merging.md) with `--priority=urgent` or `--priority=high` to fast-track pull requests through the queue while maintaining validation. Direct push access is only needed for rare emergencies where the queue itself must be bypassed.
 {% endhint %}
 
 **Exclude Trunk's temporary branches (critical)**
