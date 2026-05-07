@@ -32,7 +32,7 @@ You can also install from the plugin repository URL:
 /plugin install trunk@https://github.com/trunk-io/claude-code-plugin
 ```
 
-This is useful if you want to pin to a specific version or test changes before they land in the community directory.
+This is useful if you want to pin to a specific version or test changes before publishing a new release.
 
 </details>
 
