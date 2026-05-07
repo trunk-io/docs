@@ -25,7 +25,7 @@ Emitted when a monitor activates or resolves for a test case.
 | `type` | string | Always `test_case.monitor_status_changed` |
 | `timestamp` | string (ISO 8601) | When the event occurred |
 | `monitor.id` | string (UUID) | Unique identifier for the monitor |
-| `monitor.type` | string | The type of monitor (e.g. `pass_on_retry`) |
+| `monitor.type` | string | The type of monitor (e.g., `pass_on_retry`) |
 | `monitor.status` | string | Current monitor status (`active` or `resolved`) |
 | `evidence` | object | Data supporting the status change; structure varies by monitor type |
 | `repository.id` | string (UUID) | Unique identifier for the repository |
@@ -35,13 +35,13 @@ Emitted when a monitor activates or resolves for a test case.
 | `test_case.classname` | string | Test classname |
 | `test_case.file_path` | string | File path of the test |
 | `test_case.html_url` | string | URL to the test detail page in Trunk |
-| `test_case.codeowners` | string[] | Code owners associated with the test |
+| `test_case.codeowners` | array of strings | Code owners associated with the test |
 | `test_case.quarantined` | boolean | Whether the test is quarantined |
 | `test_case.variant` | string | Test variant name |
 
 #### `v2.test_case.status_changed`
 
-Emitted when a test case changes status (e.g. becomes flaky or is resolved), triggered by a monitor.
+Emitted when a test case changes status (e.g., becomes flaky or is resolved), as triggered by a monitor.
 
 | Field | Type | Description |
 |---|---|---|
@@ -49,7 +49,7 @@ Emitted when a test case changes status (e.g. becomes flaky or is resolved), tri
 | `timestamp` | string (ISO 8601) | When the event occurred |
 | `previous_status` | string | The prior status of the test case |
 | `new_status` | string | The updated status of the test case |
-| `triggered_by.monitor_id` | string | Unique identifier of the triggering monitor |
+| `triggered_by.monitor_id` | string (UUID) | Unique identifier of the triggering monitor |
 | `triggered_by.monitor_type` | string | Type of monitor that triggered the change |
 | `triggered_by.monitor_status` | string | Status of the monitor at the time of the trigger |
 | `repository` | object | See `repository` fields above |
@@ -68,7 +68,7 @@ Emitted when an AI-powered flaky test analysis finishes for a test case.
 | `markdown_summary` | string | Markdown-formatted summary of findings and recommendations |
 | `failure_message` | string | The original failure message that triggered the investigation |
 | `facts` | array | Facts discovered during the investigation |
-| `facts[].fact_type` | string | Category of the fact (e.g. `GIT_BLAME`) |
+| `facts[].fact_type` | string | Category of the fact (e.g., `GIT_BLAME`) |
 | `facts[].content` | string | Detailed description with citations to supporting evidence |
 | `facts[].confidence` | number | Confidence score (0-1) for this individual fact |
 | `repository` | object | See `repository` fields above |
