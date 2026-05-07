@@ -75,7 +75,10 @@ When a pull request enters the queue, Trunk creates a `trunk-merge/*` branch and
 
 GitHub offers two systems for branch protection: [Rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets) and Classic branch protection rules. Both can coexist on the same branch.
 
-The Trunk Merge Queue GitHub App is fully supported on both systems. **Rulesets are recommended:** their bypass model lets Trunk merge through your protected branch cleanly, while Classic branch protection has rules that no GitHub App can bypass (notably required status checks and "Require branches to be up to date").
+The Trunk Merge Queue GitHub App is fully supported on both systems. **Rulesets are recommended** for two reasons:
+
+* **More granular protections.** Rulesets let you layer multiple targeted rulesets on the same branch with per-actor bypass control — finer-grained than what Classic rules can express.
+* **Repository admins can be held to the rule.** Classic branch protection always lets admins bypass, so admins see a green **Merge** button on every PR and can accidentally merge without going through the queue. Rulesets subject admins to the rule unless they're explicitly on the bypass list; even when they are, GitHub displays a red warning that they're circumventing branch protection — much harder to misclick through than a green button.
 
 #### Option A — GitHub Rulesets (recommended) <a href="#option-a-github-rulesets-recommended" id="option-a-github-rulesets-recommended"></a>
 
