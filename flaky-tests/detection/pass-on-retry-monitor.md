@@ -48,11 +48,11 @@ Use the **Branch scope** setting to restrict the monitor to a specific set of br
 
 This is useful when PR branches generate too much noise. CI often retries tests on pull request branches automatically; if those retries aren't meaningful signals for your team, you can limit detection to stable branches like `main`.
 
-Branch scope uses the same glob syntax as [failure rate monitor branch patterns](failure-rate-monitor.md#branch-pattern-syntax) and accepts up to 10 patterns. Type a pattern and press **Enter** or **,** to add it as a chip. For example:
+Branch scope uses the same glob syntax as [failure rate monitor branch patterns](failure-rate-monitor.md#branch-pattern-syntax) and accepts up to 10 patterns. Type a pattern and press **Enter** or comma to add it as a chip. For example:
 
-- `main` — only stable branch runs
-- `main` and `release/*` — stable plus release branches
-- `*` (default) — all branches
+- `main`: only stable branch runs
+- `main` and `release/*`: stable plus release branches
+- `*` (default): all branches
 
 Changes to branch scope take effect for newly detected events. Previously detected flaky tests are not re-evaluated.
 
