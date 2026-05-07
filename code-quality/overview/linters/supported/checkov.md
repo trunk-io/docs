@@ -8,7 +8,7 @@ description: >-
 
 # Checkov
 
-[**Checkov**](https://github.com/bridgecrewio/checkov) is a linter for Cloudformation, Security, Terraform and Docker.
+[**Checkov**](https://github.com/bridgecrewio/checkov) is a linter for CloudFormation, Security, Terraform and Docker.
 
 You can enable the Checkov linter with:
 
@@ -20,7 +20,7 @@ trunk check enable checkov
 
 ## Auto Enabling
 
-Checkov will be auto-enabled if any _Terraform, Cloudformation, Docker, Yaml or Json_ files are present.
+Checkov will be auto-enabled if any _Terraform, CloudFormation, Docker, Yaml or Json_ files are present.
 
 ## Settings
 
