@@ -116,13 +116,12 @@ The Test History tab gives you full visibility into every individual run of a te
 
 #### Daily runs chart
 
-A stacked bar chart at the top of the tab shows daily test run counts. The legend identifies three colors:
+A stacked bar chart at the top of the tab shows daily test run counts. The legend identifies four categories:
 
 * **Green**: Pass
 * **Red**: Fail
 * **Blue**: Quarantined
-
-Skipped runs also appear on the chart in gray, stacked alongside the other categories.
+* **Gray**: Skipped
 
 Click and drag on the chart to select a date range, which scopes the table below to runs from the selected days. The selected range appears next to the legend with an X button to clear just the range. The **Reset** button on the filter bar clears all filters at once, including the date range.
 
@@ -151,7 +150,7 @@ The runs table displays a paginated list of individual test runs (25 per page) w
 
 <table><thead><tr><th width="160">Column</th><th>Description</th></tr></thead><tbody><tr><td>Timestamp</td><td>When the test ran, displayed in your local time zone.</td></tr><tr><td>Duration</td><td>How long the test took to execute.</td></tr><tr><td>PR</td><td>The pull request number associated with the run, e.g. <code>#1234</code>. Empty for runs that aren't tied to a PR.</td></tr><tr><td>Branch</td><td>The branch the test ran against, e.g. <code>main</code>, <code>feature/x</code>, or <code>trunk-merge/pr-1234/...</code> for merge queue branches.</td></tr><tr><td>Commit</td><td>The first 7 characters of the commit SHA.</td></tr></tbody></table>
 
-Each row has a colored left border indicating the run's outcome: blue for quarantined runs, then green for pass, red for fail, orange for error, and a neutral gray for any other state.
+Each row has a colored left border indicating the run's outcome. Quarantined runs always show blue, regardless of whether the run passed or failed. For non-quarantined runs, the border is green for pass, red for fail, orange for error, and a neutral gray for any other state.
 
 #### Run detail panel
 
