@@ -50,7 +50,7 @@ and exit.
 
 ### Phase 2: Check redirects
 
-Early in the process, audit `.gitbook.yaml` for stale or missing redirects caused by file moves or deletions.
+Audit `.gitbook.yaml` for stale or missing redirects caused by file moves or deletions.
 
 #### Step 2a — Extract moved and deleted .md files from Phase 1 diff
 
