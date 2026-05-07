@@ -5,164 +5,164 @@ structure:
   summary: summary.md
 
 redirects:
-  adminstration: administration/readme.md
-  check: code-quality/README.md
-  check/cli: code-quality/setup-and-installation/initialize-trunk.md
-  check/configuration: cli/configuration/README.md
-  check/get-started: code-quality/ci-setup/README.md
-  check/usage: code-quality/setup-and-installation/initialize-trunk.md
-  check/performance: code-quality/overview/how-does-it-work.md
-  check/supported-linters: code-quality/linters/supported/README.md
-  check/tools/configuration: cli/configuration/tools.md
-  check/under-the-hood: code-quality/overview/how-does-it-work.md
-  check/github-integration: code-quality/ci-setup/github-integration.md
-  check/configuration/supported: code-quality/linters/supported/README.md
-  check/configuration/supported/ansible-lint: code-quality/linters/supported/ansible-lint.md
-  check/configuration/supported/codespell: code-quality/linters/supported/codespell.md
-  check/configuration/supported/cspell: code-quality/linters/supported/cspell.md
-  check/configuration/supported/gitleaks: code-quality/linters/supported/gitleaks.md
-  check/configuration/supported/git-diff-check: code-quality/linters/supported/git-diff-check.md
-  check/configuration/supported/pre-commit-hooks: code-quality/linters/supported/pre-commit-hooks.md
-  check/configuration/supported/pmd: code-quality/linters/supported/pmd.md
-  check/configuration/supported/shellcheck: code-quality/linters/supported/shellcheck.md
-  check/configuration/supported/shfmt: code-quality/linters/supported/shfmt.md
-  check/configuration/supported/buildifier: code-quality/linters/supported/buildifier.md
-  check/configuration/supported/iwyu: code-quality/linters/supported/iwyu.md
-  check/configuration/supported/pragma-once: code-quality/linters/supported/pragma-once.md
-  check/configuration/supported/dotnet-format: code-quality/linters/supported/dotnet-format.md
-  check/configuration/supported/circleci: code-quality/linters/supported/circleci.md
-  check/configuration/supported/cfnlint: code-quality/linters/supported/cfnlint.md
-  check/configuration/supported/checkov: code-quality/linters/supported/checkov.md
-  check/configuration/supported/stylelint: code-quality/linters/supported/stylelint.md
-  check/configuration/supported/prettier: code-quality/linters/supported/prettier.md
-  check/configuration/supported/cue-fmt: code-quality/linters/supported/cue-fmt.md
-  check/configuration/supported/hadolint: code-quality/linters/supported/hadolint.md
-  check/configuration/supported/dotenv-linter: code-quality/linters/supported/dotenv-linter.md
-  check/configuration/supported/actionlint: code-quality/linters/supported/actionlint.md
-  check/configuration/supported/gofmt: code-quality/linters/supported/gofmt.md
-  check/configuration/supported/gofumpt: code-quality/linters/supported/gofumpt.md
-  check/configuration/supported/goimports: code-quality/linters/supported/goimports.md
-  check/configuration/supported/gokart: code-quality/linters/supported/gokart.md
-  check/configuration/supported/golangci-lint: code-quality/linters/supported/golangci-lint.md
-  check/configuration/supported/golines: code-quality/linters/supported/golines.md
-  check/configuration/supported/semgrep: code-quality/linters/supported/semgrep.md
-  check/configuration/supported/graphql-schema-linter: code-quality/linters/supported/graphql-schema-linter.md
-  check/configuration/supported/haml-lint: code-quality/linters/supported/haml-lint.md
-  check/configuration/supported/djlint: code-quality/linters/supported/djlint.md
-  check/configuration/supported/google-java-format: code-quality/linters/supported/google-java-format.md
-  check/configuration/supported/deno: code-quality/linters/supported/deno.md
-  check/configuration/supported/eslint: code-quality/linters/supported/eslint.md
-  check/configuration/supported/rome: code-quality/linters/supported/rome.md
-  check/configuration/supported/detekt: code-quality/linters/supported/detekt.md
-  check/configuration/supported/ktlint: code-quality/linters/supported/ktlint.md
-  check/configuration/supported/kube-linter: code-quality/linters/supported/kube-linter.md
-  check/configuration/supported/stylua: code-quality/linters/supported/stylua.md
-  check/configuration/supported/markdownlint: code-quality/linters/supported/markdownlint.md
-  check/configuration/supported/remark-lint: code-quality/linters/supported/remark-lint.md
-  check/configuration/supported/markdown-link-check: code-quality/linters/supported/markdown-link-check.md
-  check/configuration/supported/nixpkgs-fmt: code-quality/linters/supported/nixpkgs-fmt.md
-  check/configuration/supported/sort-package-json: code-quality/linters/supported/sort-package-json.md
-  check/configuration/supported/perlcritic: code-quality/linters/supported/perlcritic.md
-  check/configuration/supported/perltidy: code-quality/linters/supported/perltidy.md
-  check/configuration/supported/oxipng: code-quality/linters/supported/oxipng.md
-  check/configuration/supported/prisma: code-quality/linters/supported/prisma.md
-  check/configuration/supported/buf: code-quality/linters/supported/buf.md
-  check/configuration/supported/clang-format: code-quality/linters/supported/clang-format.md
-  check/configuration/supported/clang-tidy: code-quality/linters/supported/clang-tidy.md
-  check/configuration/supported/autopep8: code-quality/linters/supported/autopep8.md
-  check/configuration/supported/bandit: code-quality/linters/supported/bandit.md
-  check/configuration/supported/black: code-quality/linters/supported/black.md
-  check/configuration/supported/flake8: code-quality/linters/supported/flake8.md
-  check/configuration/supported/isort: code-quality/linters/supported/isort.md
-  check/configuration/supported/mypy: code-quality/linters/supported/mypy.md
-  check/configuration/supported/pylint: code-quality/linters/supported/pylint.md
-  check/configuration/supported/pyright: code-quality/linters/supported/pyright.md
-  check/configuration/supported/yapf: code-quality/linters/supported/yapf.md
-  check/configuration/supported/ruff: code-quality/linters/supported/ruff.md
-  check/configuration/supported/sourcery: code-quality/linters/supported/sourcery.md
-  check/configuration/supported/renovate: code-quality/linters/supported/renovate.md
-  check/configuration/supported/brakeman: code-quality/linters/supported/brakeman.md
-  check/configuration/supported/rubocop: code-quality/linters/supported/rubocop.md
-  check/configuration/supported/rufo: code-quality/linters/supported/rufo.md
-  check/configuration/supported/standardrb: code-quality/linters/supported/standardrb.md
-  check/configuration/supported/clippy: code-quality/linters/supported/clippy.md
-  check/configuration/supported/rustfmt: code-quality/linters/supported/rustfmt.md
-  check/configuration/supported/scalafmt: code-quality/linters/supported/scalafmt.md
-  check/configuration/supported/dustilock: code-quality/linters/supported/dustilock.md
-  check/configuration/supported/nancy: code-quality/linters/supported/nancy.md
-  check/configuration/supported/osv-scanner: code-quality/linters/supported/osv-scanner.md
-  check/configuration/supported/tfsec: code-quality/linters/supported/tfsec.md
-  check/configuration/supported/trivy: code-quality/linters/supported/trivy.md
-  check/configuration/supported/trufflehog: code-quality/linters/supported/trufflehog.md
-  check/configuration/supported/terrascan: code-quality/linters/supported/terrascan.md
-  check/configuration/supported/sqlfluff: code-quality/linters/supported/sqlfluff.md
-  check/configuration/supported/sqlfmt: code-quality/linters/supported/sqlfmt.md
-  check/configuration/supported/sql-formatter: code-quality/linters/supported/sql-formatter.md
-  check/configuration/supported/svgo: code-quality/linters/supported/svgo.md
-  check/configuration/supported/stringslint: code-quality/linters/supported/stringslint.md
-  check/configuration/supported/swiftlint: code-quality/linters/supported/swiftlint.md
-  check/configuration/supported/swiftformat: code-quality/linters/supported/swiftformat.md
-  check/configuration/supported/terraform: code-quality/linters/supported/terraform.md
-  check/configuration/supported/tflint: code-quality/linters/supported/tflint.md
-  check/configuration/supported/terragrunt: code-quality/linters/supported/terragrunt.md
-  check/configuration/supported/txtpbfmt: code-quality/linters/supported/txtpbfmt.md
-  check/configuration/supported/taplo: code-quality/linters/supported/taplo.md
-  check/configuration/supported/yamllint: code-quality/linters/supported/yamllint.md
-  check/configuration/supported/biome: code-quality/linters/supported/biome.md
-  check/configuration/supported/markdown-table-prettify: code-quality/linters/supported/markdown-table-prettify.md
-  check/configuration/supported/psscriptanalyzer: code-quality/linters/supported/psscriptanalyzer.md
-  check/configuration/supported/cmake-format: code-quality/linters/supported/cmake-format.md
-  check/configuration/supported/dart: code-quality/linters/supported/dart.md
-  check/configuration/supported/opa: code-quality/linters/supported/opa.md
-  check/configuration/supported/phpstan: code-quality/linters/supported/phpstan.md
-  check/configuration/supported/regal: code-quality/linters/supported/regal.md
-  check/configuration/supported/tofu: code-quality/linters/supported/tofu.md
-  check/configuration/supported/vale: code-quality/linters/supported/vale.md
-  check/configuration/supported/php-cs-fixer: code-quality/linters/supported/php-cs-fixer.md
-  cli/windows-beta: cli/compatibility.md
+  adminstration: setup-and-administration/managing-your-organization.md
+  check: code-quality/overview/README.md
+  check/cli: code-quality/overview/cli/getting-started/README.md
+  check/configuration: code-quality/overview/cli/getting-started/configuration/README.md
+  check/get-started: code-quality/overview/setup-and-installation/README.md
+  check/usage: code-quality/overview/cli/getting-started/README.md
+  check/performance: code-quality/overview/README.md
+  check/supported-linters: code-quality/overview/linters/supported/README.md
+  check/tools/configuration: code-quality/overview/cli/getting-started/configuration/README.md
+  check/under-the-hood: code-quality/overview/README.md
+  check/github-integration: code-quality/overview/setup-and-installation/github-integration.md
+  check/configuration/supported: code-quality/overview/linters/supported/README.md
+  check/configuration/supported/ansible-lint: code-quality/overview/linters/supported/ansible-lint.md
+  check/configuration/supported/codespell: code-quality/overview/linters/supported/codespell.md
+  check/configuration/supported/cspell: code-quality/overview/linters/supported/cspell.md
+  check/configuration/supported/gitleaks: code-quality/overview/linters/supported/gitleaks.md
+  check/configuration/supported/git-diff-check: code-quality/overview/linters/supported/git-diff-check.md
+  check/configuration/supported/pre-commit-hooks: code-quality/overview/linters/supported/pre-commit-hooks.md
+  check/configuration/supported/pmd: code-quality/overview/linters/supported/pmd.md
+  check/configuration/supported/shellcheck: code-quality/overview/linters/supported/shellcheck.md
+  check/configuration/supported/shfmt: code-quality/overview/linters/supported/shfmt.md
+  check/configuration/supported/buildifier: code-quality/overview/linters/supported/buildifier.md
+  check/configuration/supported/iwyu: code-quality/overview/linters/supported/iwyu.md
+  check/configuration/supported/pragma-once: code-quality/overview/linters/supported/pragma-once.md
+  check/configuration/supported/dotnet-format: code-quality/overview/linters/supported/dotnet-format.md
+  check/configuration/supported/circleci: code-quality/overview/linters/supported/circleci.md
+  check/configuration/supported/cfnlint: code-quality/overview/linters/supported/cfnlint.md
+  check/configuration/supported/checkov: code-quality/overview/linters/supported/checkov.md
+  check/configuration/supported/stylelint: code-quality/overview/linters/supported/stylelint.md
+  check/configuration/supported/prettier: code-quality/overview/linters/supported/prettier.md
+  check/configuration/supported/cue-fmt: code-quality/overview/linters/supported/cue-fmt.md
+  check/configuration/supported/hadolint: code-quality/overview/linters/supported/hadolint.md
+  check/configuration/supported/dotenv-linter: code-quality/overview/linters/supported/dotenv-linter.md
+  check/configuration/supported/actionlint: code-quality/overview/linters/supported/actionlint.md
+  check/configuration/supported/gofmt: code-quality/overview/linters/supported/gofmt.md
+  check/configuration/supported/gofumpt: code-quality/overview/linters/supported/gofumpt.md
+  check/configuration/supported/goimports: code-quality/overview/linters/supported/goimports.md
+  check/configuration/supported/gokart: code-quality/overview/linters/supported/gokart.md
+  check/configuration/supported/golangci-lint: code-quality/overview/linters/supported/golangci-lint.md
+  check/configuration/supported/golines: code-quality/overview/linters/supported/golines.md
+  check/configuration/supported/semgrep: code-quality/overview/linters/supported/semgrep.md
+  check/configuration/supported/graphql-schema-linter: code-quality/overview/linters/supported/graphql-schema-linter.md
+  check/configuration/supported/haml-lint: code-quality/overview/linters/supported/haml-lint.md
+  check/configuration/supported/djlint: code-quality/overview/linters/supported/djlint.md
+  check/configuration/supported/google-java-format: code-quality/overview/linters/supported/google-java-format.md
+  check/configuration/supported/deno: code-quality/overview/linters/supported/deno.md
+  check/configuration/supported/eslint: code-quality/overview/linters/supported/eslint.md
+  check/configuration/supported/rome: code-quality/overview/linters/supported/rome.md
+  check/configuration/supported/detekt: code-quality/overview/linters/supported/detekt.md
+  check/configuration/supported/ktlint: code-quality/overview/linters/supported/ktlint.md
+  check/configuration/supported/kube-linter: code-quality/overview/linters/supported/kube-linter.md
+  check/configuration/supported/stylua: code-quality/overview/linters/supported/stylua.md
+  check/configuration/supported/markdownlint: code-quality/overview/linters/supported/markdownlint.md
+  check/configuration/supported/remark-lint: code-quality/overview/linters/supported/remark-lint.md
+  check/configuration/supported/markdown-link-check: code-quality/overview/linters/supported/markdown-link-check.md
+  check/configuration/supported/nixpkgs-fmt: code-quality/overview/linters/supported/nixpkgs-fmt.md
+  check/configuration/supported/sort-package-json: code-quality/overview/linters/supported/sort-package-json.md
+  check/configuration/supported/perlcritic: code-quality/overview/linters/supported/perlcritic.md
+  check/configuration/supported/perltidy: code-quality/overview/linters/supported/perltidy.md
+  check/configuration/supported/oxipng: code-quality/overview/linters/supported/oxipng.md
+  check/configuration/supported/prisma: code-quality/overview/linters/supported/prisma.md
+  check/configuration/supported/buf: code-quality/overview/linters/supported/buf.md
+  check/configuration/supported/clang-format: code-quality/overview/linters/supported/clang-format.md
+  check/configuration/supported/clang-tidy: code-quality/overview/linters/supported/clang-tidy.md
+  check/configuration/supported/autopep8: code-quality/overview/linters/supported/autopep8.md
+  check/configuration/supported/bandit: code-quality/overview/linters/supported/bandit.md
+  check/configuration/supported/black: code-quality/overview/linters/supported/black.md
+  check/configuration/supported/flake8: code-quality/overview/linters/supported/flake8.md
+  check/configuration/supported/isort: code-quality/overview/linters/supported/isort.md
+  check/configuration/supported/mypy: code-quality/overview/linters/supported/mypy.md
+  check/configuration/supported/pylint: code-quality/overview/linters/supported/pylint.md
+  check/configuration/supported/pyright: code-quality/overview/linters/supported/pyright.md
+  check/configuration/supported/yapf: code-quality/overview/linters/supported/yapf.md
+  check/configuration/supported/ruff: code-quality/overview/linters/supported/ruff.md
+  check/configuration/supported/sourcery: code-quality/overview/linters/supported/sourcery.md
+  check/configuration/supported/renovate: code-quality/overview/linters/supported/renovate.md
+  check/configuration/supported/brakeman: code-quality/overview/linters/supported/brakeman.md
+  check/configuration/supported/rubocop: code-quality/overview/linters/supported/rubocop.md
+  check/configuration/supported/rufo: code-quality/overview/linters/supported/rufo.md
+  check/configuration/supported/standardrb: code-quality/overview/linters/supported/standardrb.md
+  check/configuration/supported/clippy: code-quality/overview/linters/supported/clippy.md
+  check/configuration/supported/rustfmt: code-quality/overview/linters/supported/rustfmt.md
+  check/configuration/supported/scalafmt: code-quality/overview/linters/supported/scalafmt.md
+  check/configuration/supported/dustilock: code-quality/overview/linters/supported/dustilock.md
+  check/configuration/supported/nancy: code-quality/overview/linters/supported/nancy.md
+  check/configuration/supported/osv-scanner: code-quality/overview/linters/supported/osv-scanner.md
+  check/configuration/supported/tfsec: code-quality/overview/linters/supported/tfsec.md
+  check/configuration/supported/trivy: code-quality/overview/linters/supported/trivy.md
+  check/configuration/supported/trufflehog: code-quality/overview/linters/supported/trufflehog.md
+  check/configuration/supported/terrascan: code-quality/overview/linters/supported/terrascan.md
+  check/configuration/supported/sqlfluff: code-quality/overview/linters/supported/sqlfluff.md
+  check/configuration/supported/sqlfmt: code-quality/overview/linters/supported/sqlfmt.md
+  check/configuration/supported/sql-formatter: code-quality/overview/linters/supported/sql-formatter.md
+  check/configuration/supported/svgo: code-quality/overview/linters/supported/svgo.md
+  check/configuration/supported/stringslint: code-quality/overview/linters/supported/stringslint.md
+  check/configuration/supported/swiftlint: code-quality/overview/linters/supported/swiftlint.md
+  check/configuration/supported/swiftformat: code-quality/overview/linters/supported/swiftformat.md
+  check/configuration/supported/terraform: code-quality/overview/linters/supported/terraform.md
+  check/configuration/supported/tflint: code-quality/overview/linters/supported/tflint.md
+  check/configuration/supported/terragrunt: code-quality/overview/linters/supported/terragrunt.md
+  check/configuration/supported/txtpbfmt: code-quality/overview/linters/supported/txtpbfmt.md
+  check/configuration/supported/taplo: code-quality/overview/linters/supported/taplo.md
+  check/configuration/supported/yamllint: code-quality/overview/linters/supported/yamllint.md
+  check/configuration/supported/biome: code-quality/overview/linters/supported/biome.md
+  check/configuration/supported/markdown-table-prettify: code-quality/overview/linters/supported/markdown-table-prettify.md
+  check/configuration/supported/psscriptanalyzer: code-quality/overview/linters/supported/psscriptanalyzer.md
+  check/configuration/supported/cmake-format: code-quality/overview/linters/supported/cmake-format.md
+  check/configuration/supported/dart: code-quality/overview/linters/supported/dart.md
+  check/configuration/supported/opa: code-quality/overview/linters/supported/opa.md
+  check/configuration/supported/phpstan: code-quality/overview/linters/supported/phpstan.md
+  check/configuration/supported/regal: code-quality/overview/linters/supported/regal.md
+  check/configuration/supported/tofu: code-quality/overview/linters/supported/tofu.md
+  check/configuration/supported/vale: code-quality/overview/linters/supported/vale.md
+  check/configuration/supported/php-cs-fixer: code-quality/overview/linters/supported/php-cs-fixer.md
+  cli/windows-beta: code-quality/overview/cli/getting-started/compatibility.md
   docs: welcome.md
-  docs/actions-config: cli/configuration/actions/README.md
-  docs/actions-git-hooks: cli/configuration/actions/README.md
-  docs/actions: cli/configuration/actions/README.md
-  docs/check-cli: code-quality/linters/run-linters.md
-  docs/check-config: code-quality/linters/configure-linters.md
-  docs/check-custom-linters: code-quality/linters/custom-linters.md
-  docs/check-debugging: code-quality/debugging.md
-  docs/check-get-started: code-quality/setup-and-installation/README.md
-  docs/check-github-integration: code-quality/setup-and-installation/prevent-new-issues.md
-  docs/check-supported-linters: code-quality/linters/supported/readme.md
-  docs/check: code-quality/README.md
-  docs/check/github-integration: code-quality/ci-setup/github-integration.md
-  docs/cli: code-quality/cli/readme.md
-  docs/code-quality: code-quality/README.md
+  docs/actions-config: code-quality/overview/cli/getting-started/configuration/actions/README.md
+  docs/actions-git-hooks: code-quality/overview/cli/getting-started/configuration/actions/README.md
+  docs/actions: code-quality/overview/cli/getting-started/configuration/actions/README.md
+  docs/check-cli: code-quality/overview/cli/getting-started/README.md
+  docs/check-config: code-quality/overview/cli/getting-started/configuration/README.md
+  docs/check-custom-linters: code-quality/overview/linters/supported/README.md
+  docs/check-debugging: code-quality/overview/debugging.md
+  docs/check-get-started: code-quality/overview/setup-and-installation/README.md
+  docs/check-github-integration: code-quality/overview/deal-with-existing-issues.md
+  docs/check-supported-linters: code-quality/overview/linters/supported/README.md
+  docs/check: code-quality/overview/README.md
+  docs/check/github-integration: code-quality/overview/setup-and-installation/github-integration.md
+  docs/cli: code-quality/overview/cli/getting-started/README.md
+  docs/code-quality: code-quality/overview/README.md
   docs/get-started: welcome.md
   docs/getting-started: welcome.md
-  docs/github-app-permissions: administration/github-app-permissions.md
-  docs/github-codespaces: code-quality/cli/github-codespaces.md
-  docs/ignoring-issues: code-quality/ignoring-issues.md
-  docs/initialize-trunk-in-a-git-repo: code-quality/cli/init-in-a-git-repo.md
-  docs/install: cli/install.md
+  docs/github-app-permissions: setup-and-administration/github-app-permissions.md
+  docs/github-codespaces: code-quality/overview/ide-integration/github-codespaces.md
+  docs/ignoring-issues: code-quality/overview/deal-with-existing-issues.md
+  docs/initialize-trunk-in-a-git-repo: code-quality/overview/cli/getting-started/README.md
+  docs/install: code-quality/overview/cli/getting-started/install.md
   docs/merge-get-started: merge-queue/getting-started/README.md
   docs/merge-getting-started: merge-queue/getting-started/README.md
-  docs/merge: merge-queue/README.md
+  docs/merge: merge-queue/merge-queue.md
   docs/overview: readme.md
-  docs/plugins: plugins/readme.md
-  docs/reference-trunk-yaml: cli/configuration/README.md
-  docs/shell-hooks: cli/configuration/tools.md
-  docs/tools: cli/configuration/tools.md
-  docs/trunk-app-for-slack: merge-queue/set-up-trunk-merge/integration-for-slack.md
-  docs/vscode: code-quality/ide-integration/vscode.md
+  docs/plugins: code-quality/overview/linters/README.md
+  docs/reference-trunk-yaml: code-quality/overview/cli/getting-started/configuration/README.md
+  docs/shell-hooks: code-quality/overview/cli/getting-started/configuration/tools.md
+  docs/tools: code-quality/overview/cli/getting-started/configuration/tools.md
+  docs/trunk-app-for-slack: merge-queue/integration-for-slack.md
+  docs/vscode: code-quality/overview/ide-integration/vscode.md
   docs/what-is-trunk: readme.md
-  docs/windows-beta: cli/compatibility.md
+  docs/windows-beta: code-quality/overview/cli/getting-started/compatibility.md
   flaky-tests/generating-junit-reports: flaky-tests/get-started/frameworks/README.md
   get-started: welcome.md
-  merge-graph: merge-queue/readme.md
-  merge-graph/configuration: merge-queue/set-up-trunk-merge/readme.md
-  merge-graph/set-up-trunk-merge: merge-queue/readme.md
+  merge-graph: merge-queue/merge-queue.md
+  merge-graph/configuration: merge-queue/merge-queue.md
+  merge-graph/set-up-trunk-merge: merge-queue/merge-queue.md
   merge/getting-started: merge-queue/getting-started/README.md
-  reference/reference-trunk-yaml: cli/configuration/README.md
-  reference/trunk-yaml: cli/configuration/README.md
-  test-analytics: flaky-tests/readme.md
+  reference/reference-trunk-yaml: code-quality/overview/cli/getting-started/configuration/README.md
+  reference/trunk-yaml: code-quality/overview/cli/getting-started/configuration/README.md
+  test-analytics: flaky-tests/flaky-tests.md
   test-analytics/ci-providers: flaky-tests/get-started/ci-providers/README.md
   test-analytics/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite.md
   test-analytics/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci.md
@@ -180,18 +180,18 @@ redirects:
   test-analytics/frameworks/mocha: flaky-tests/get-started/frameworks/mocha.md
   test-analytics/frameworks/playwright: flaky-tests/get-started/frameworks/playwright.md
   test-analytics/frameworks/pytest: flaky-tests/get-started/frameworks/pytest.md
-  test-analytics/frameworks/rspec: flaky-tests/get-started/frameworks/rspec.md
+  test-analytics/frameworks/rspec: flaky-tests/get-started/frameworks/README.md
   test-analytics/frameworks/swift-testing: flaky-tests/get-started/frameworks/swift-testing.md
   test-analytics/frameworks/xctest: flaky-tests/get-started/frameworks/xctest.md
   test-analytics/github-pull-request-comments: flaky-tests/github-pull-request-comments.md
-  runtimes: cli/configuration/runtimes.md
-  plugins: code-quality/linters/README.md
-  ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
-  code-quality/usage: code-quality/setup-and-installation/initialize-trunk.md
-  code-quality/ci/get-started: code-quality/ci-setup/README.md
-  code-quality/ci/get-started/github-integration: code-quality/ci-setup/github-integration.md
-  code-quality/configuration/debugging: code-quality/debugging.md
-  check/check-cloud-ci-integration/get-started/github-integration: code-quality/ci-setup/github-integration.md
+  runtimes: code-quality/overview/cli/getting-started/configuration/runtimes.md
+  plugins: code-quality/overview/linters/README.md
+  ci/get-started/github-integration: code-quality/overview/setup-and-installation/github-integration.md
+  code-quality/usage: code-quality/overview/initialize-trunk.md
+  code-quality/ci/get-started: code-quality/overview/setup-and-installation/README.md
+  code-quality/ci/get-started/github-integration: code-quality/overview/setup-and-installation/github-integration.md
+  code-quality/configuration/debugging: code-quality/overview/debugging.md
+  check/check-cloud-ci-integration/get-started/github-integration: code-quality/overview/setup-and-installation/github-integration.md
   flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite.md
   flaky-tests/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci.md
   flaky-tests/ci-providers/droneci: flaky-tests/get-started/ci-providers/droneci.md
@@ -215,39 +215,39 @@ redirects:
   flaky-tests/frameworks/phpunit: flaky-tests/get-started/frameworks/phpunit.md
   flaky-tests/frameworks/playwright: flaky-tests/get-started/frameworks/playwright.md
   flaky-tests/frameworks/pytest: flaky-tests/get-started/frameworks/pytest.md
-  flaky-tests/frameworks/rspec: flaky-tests/get-started/frameworks/rspec.md
+  flaky-tests/frameworks/rspec: flaky-tests/get-started/frameworks/README.md
   flaky-tests/frameworks/swift-testing: flaky-tests/get-started/frameworks/swift-testing.md
   flaky-tests/frameworks/vitest: flaky-tests/get-started/frameworks/vitest.md
   flaky-tests/frameworks/xctest: flaky-tests/get-started/frameworks/xctest.md
-  administration: setup-and-configuration/managing-your-organization.md
-  apis/api: references/apis.md
-  apis: references/apis.md
-  cli/configuration: references/cli/configuration.md
-  cli/configuration/actions: references/cli/configuration/actions.md
-  cli/configuration/lint: references/cli/configuration/lint.md
-  cli/configuration/plugins: references/cli/configuration/plugins.md
-  cli/commands-reference: references/cli/commands-reference.md
-  cli/getting-started/actions: references/cli/getting-started/actions.md
-  cli/getting-started: references/cli/getting-started.md
-  cli: references/cli/README.md
-  merge-queue/parallel-queues: merge-queue/concepts/parallel-queues.md
-  code-quality/linters/supported/sqlfluff: references/code-quality/linters/supported/sqlfluff.md
-  code-quality/linters/supported/sourcery: references/code-quality/linters/supported/sourcery.md
-  administration/github-app-permissions: references/administration/github-app-permissions.md
-  administration/billing: references/administration/billing.md
-  apis/flaky-tests: references/apis/flaky-tests.md
-  cli/configuration/lint/dependencies: references/cli/configuration/lint/dependencies.md
-  cli/configuration/lint/output-parsing: references/cli/configuration/lint/output-parsing.md
-  cli/configuration/lint/commands: references/cli/configuration/lint/commands.md
-  cli/configuration/tools: references/cli/configuration/tools.md
-  cli/configuration/plugins/exported-configs: references/cli/configuration/plugins/exported-configs.md
-  cli/getting-started/actions/git-hooks: references/cli/getting-started/actions/git-hooks.md
-  cli/install: references/cli/install.md
-  merge-queue/command-line: merge-queue/managing-merge-queue/command-line.md
-  merge-queue/optimistic-merging: merge-queue/concepts/optimistic-merging.md
+  administration: setup-and-administration/managing-your-organization.md
+  apis/api: setup-and-administration/apis/README.md
+  apis: setup-and-administration/apis/README.md
+  cli/configuration: code-quality/overview/cli/getting-started/configuration/README.md
+  cli/configuration/actions: code-quality/overview/cli/getting-started/configuration/actions/README.md
+  cli/configuration/lint: code-quality/overview/cli/getting-started/configuration/lint/README.md
+  cli/configuration/plugins: code-quality/overview/cli/getting-started/configuration/plugins/README.md
+  cli/commands-reference: code-quality/overview/cli/getting-started/commands-reference/README.md
+  cli/getting-started/actions: code-quality/overview/cli/getting-started/actions/README.md
+  cli/getting-started: code-quality/overview/cli/getting-started/README.md
+  cli: code-quality/overview/cli/getting-started/README.md
+  merge-queue/parallel-queues: merge-queue/optimizations/parallel-queues/README.md
+  code-quality/linters/supported/sqlfluff: code-quality/overview/linters/supported/sqlfluff.md
+  code-quality/linters/supported/sourcery: code-quality/overview/linters/supported/sourcery.md
+  administration/github-app-permissions: setup-and-administration/github-app-permissions.md
+  administration/billing: setup-and-administration/billing.md
+  apis/flaky-tests: setup-and-administration/apis/README.md
+  cli/configuration/lint/dependencies: code-quality/overview/cli/getting-started/configuration/lint/dependencies.md
+  cli/configuration/lint/output-parsing: code-quality/overview/cli/getting-started/configuration/lint/output-parsing.md
+  cli/configuration/lint/commands: code-quality/overview/cli/getting-started/configuration/lint/commands.md
+  cli/configuration/tools: code-quality/overview/cli/getting-started/configuration/tools.md
+  cli/configuration/plugins/exported-configs: code-quality/overview/cli/getting-started/configuration/plugins/exported-configs.md
+  cli/getting-started/actions/git-hooks: code-quality/overview/cli/getting-started/actions/git-hooks.md
+  cli/install: code-quality/overview/cli/getting-started/install.md
+  merge-queue/command-line: merge-queue/reference/merge-queue-cli-reference.md
+  merge-queue/optimistic-merging: merge-queue/optimizations/optimistic-merging.md
   merge-queue: merge-queue/merge-queue.md
-  code-quality/overview: code-quality/code-quality.md
-  code-quality: code-quality/code-quality.md
+  code-quality/overview: code-quality/overview/README.md
+  code-quality: code-quality/overview/README.md
   flaky-tests: flaky-tests/flaky-tests.md
 
   merge-queue/set-up-trunk-merge: merge-queue/getting-started/README.md
@@ -269,12 +269,12 @@ redirects:
   merge-queue/managing-merge-queue/advanced-settings: /merge-queue/optimizations/README.md
   merge-queue/managing-merge-queue/reference: merge-queue/using-the-queue/reference.md
   merge-queue/set-up-trunk-merge/branch-protection-and-required-status-checks: merge-queue/getting-started/configure-branch-protection.md
-  merge-queue/set-up-trunk-merge/integration-for-slack: merge-queue/administration/integration-for-slack.md
+  merge-queue/set-up-trunk-merge/integration-for-slack: merge-queue/integration-for-slack.md
 
   merge-queue/managing-merge-queue/metrics: merge-queue/administration/metrics.md
-  merge-queue/webhooks: merge-queue/administration/webhooks.md
+  merge-queue/webhooks: merge-queue/webhooks.md
   merge-queue/concepts-and-optimizations/pr-prioritization: merge-queue/optimizations/priority-merging.md
   merge-queue/managing-merge-queue: merge-queue/using-the-queue/reference.md
   merge-queue/managing-merge-queue/using-the-webapp: merge-queue/using-the-queue/reference.md
 
-  merge-queue/references/apis/merge: merge-queue/administration/merge.md
+  merge-queue/references/apis/merge: merge-queue/reference/merge.md
