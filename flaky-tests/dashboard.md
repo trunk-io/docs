@@ -70,7 +70,7 @@ You can _click_ on any of the test cases listed on the Flaky Tests dashboard to 
 * **Summary**: Run result charts and failure types grouped by unique failure reason.
 * **Test History**: A searchable, paginated table of every individual test run with filtering and a detail panel.
 * **Monitors**: Detection monitors configured for this test (visible when the detection engine is enabled).
-* **Events**: Detection events and status changes for this test (visible when the detection engine is enabled).
+* **Events**: A timeline of detection events, quarantine actions, ticketing events, and status transitions (Healthy, Flaky, Broken) for this test (visible when the detection engine is enabled). Use the category filter to scope to **Flake Detection** events to see which monitor triggered each transition.
 
 In addition to the tabbed content, the test details page shows the test’s current status (Healthy, Flaky, or Broken), ticket status, and codeowner information.
 
@@ -88,7 +88,7 @@ This information will also be provided when creating a ticket with the [Jira int
 
 The Summary tab shows an overview of the test’s recent run results and groups past failures by unique failure type.
 
-#### **Failure types**
+#### Failure types
 
 <figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -116,20 +116,21 @@ The Test History tab gives you full visibility into every individual run of a te
 
 #### Daily runs chart
 
-A stacked bar chart at the top of the tab shows daily test run counts broken down by result:
+A stacked bar chart at the top of the tab shows daily test run counts. The legend identifies three colors:
 
 * **Green**: Pass
 * **Red**: Fail
 * **Blue**: Quarantined
-* **Gray**: Skipped
 
-You can click and drag on the chart to select a date range, which filters the table below to only show runs from the selected days. Click the **Reset** button or the clear icon on the chart to remove the date range selection.
+Skipped runs also appear on the chart in gray, stacked alongside the other categories.
+
+Click and drag on the chart to select a date range, which scopes the table below to runs from the selected days. The selected range appears next to the legend with an X button to clear just the range. The **Reset** button on the filter bar clears all filters at once, including the date range.
 
 #### Filters
 
-A filter bar below the chart lets you narrow down the runs table:
+A filter bar below the chart provides four independent controls:
 
-<table><thead><tr><th width="188">Filter</th><th>Description</th></tr></thead><tbody><tr><td>Result</td><td>Toggle between <strong>All</strong>, <strong>Pass</strong>, <strong>Fail</strong>, and <strong>Quarantined</strong> to show only runs with a specific outcome.</td></tr><tr><td>SHA</td><td>Filter by commit hash. Matches runs whose SHA starts with the entered text.</td></tr><tr><td>Branch</td><td>Filter by branch name. Accepts exact names or glob patterns. Use <code>*</code> to match any sequence of characters and <code>?</code> to match a single character.</td></tr></tbody></table>
+<table><thead><tr><th width="160">Filter</th><th>Description</th></tr></thead><tbody><tr><td>Result</td><td>Segmented control with <strong>All</strong>, <strong>Pass</strong>, and <strong>Fail</strong> to scope the table to a specific outcome.</td></tr><tr><td>Quarantined</td><td>Segmented control with <strong>Include</strong> (default), <strong>Exclude</strong>, and <strong>Only</strong> to control whether quarantined runs are mixed in, hidden, or shown exclusively.</td></tr><tr><td>SHA</td><td>Filter by commit hash. Matches runs whose SHA starts with the entered text.</td></tr><tr><td>Branch</td><td>Filter by branch name. Accepts exact names or glob patterns. Use <code>*</code> to match any sequence of characters and <code>?</code> to match a single character.</td></tr></tbody></table>
 
 Branch filter examples:
 
@@ -140,7 +141,7 @@ Branch filter examples:
 | `feature-??` | Feature branches with a two-character suffix, e.g. `feature-v2` |
 | `trunk-merge/*` | All merge queue branches |
 
-All filters combine using AND logic, so you can use them together to find specific runs. For example, select **Fail** and enter a branch name to see all failures on that branch. Click the **Reset** button to clear all active filters.
+All filters combine using AND logic, so you can use them together. For example, set **Result** to **Fail** and **Quarantined** to **Only** to surface only quarantined failures. The **Reset** button clears every filter at once, including the chart date range.
 
 Filter state is saved in the URL, so you can share or bookmark a filtered view.
 
@@ -148,20 +149,14 @@ Filter state is saved in the URL, so you can share or bookmark a filtered view.
 
 The runs table displays a paginated list of individual test runs (25 per page) with the following columns:
 
-<table><thead><tr><th width="188">Column</th><th>Description</th></tr></thead><tbody><tr><td>Timestamp</td><td>When the test ran, displayed in UTC.</td></tr><tr><td>Duration</td><td>How long the test took to execute.</td></tr><tr><td>Branch</td><td>The branch context. Shows "Mergequeue testing #NNN" for merge queue runs, "#NNN" for pull request runs, or the branch name for other runs.</td></tr><tr><td>Commit</td><td>The first 7 characters of the commit SHA.</td></tr></tbody></table>
+<table><thead><tr><th width="160">Column</th><th>Description</th></tr></thead><tbody><tr><td>Timestamp</td><td>When the test ran, displayed in your local time zone.</td></tr><tr><td>Duration</td><td>How long the test took to execute.</td></tr><tr><td>PR</td><td>The pull request number associated with the run, e.g. <code>#1234</code>. Empty for runs that aren't tied to a PR.</td></tr><tr><td>Branch</td><td>The branch the test ran against, e.g. <code>main</code>, <code>feature/x</code>, or <code>trunk-merge/pr-1234/...</code> for merge queue branches.</td></tr><tr><td>Commit</td><td>The first 7 characters of the commit SHA.</td></tr></tbody></table>
 
-Each row has a colored left border indicating the result: green for pass, red for fail, blue for quarantined, gray for skipped, and orange for error.
+Each row has a colored left border indicating the run's outcome: blue for quarantined runs, then green for pass, red for fail, orange for error, and a neutral gray for any other state.
 
 #### Run detail panel
 
 Click any row in the runs table to open a detail panel on the right side of the page. The panel shows:
 
-* **Run header**: Timestamp, result badge, and duration.
-* **Source control**: Links to the commit, pull request, and branch.
-* **Error details**: For failed or errored runs, the error message and stack trace.
-
-### Status history
-
-<figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
-
-Tests may transition between Healthy, Flaky, and Broken states multiple times over their lifetime. You can see previous status changes in the Status History view, including an explanation for why each transition occurred and which monitor triggered it.
+* **Run header**: Timestamp, a result badge (Pass, Fail, Error, or Quarantined), and run duration.
+* **Source control**: A CI job link (with the provider's icon, the job name, and the CI duration), the linked pull request, branch, and commit. Merge queue runs also include a **View in Merge Queue** link.
+* **Error details**: For failed, errored, or quarantined runs, an optional AI summary of the failure followed by the raw error text or stack trace.
