@@ -65,16 +65,14 @@ Test Deletion & History
 
 ### Test case details
 
-<figure><picture><source srcset="../.gitbook/assets/flaky-tests-failure-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-failure-details-light.png" alt=""></picture><figcaption></figcaption></figure>
+You can _click_ on any of the test cases listed on the Flaky Tests dashboard to access the test case’s details. The test details page uses a tabbed layout:
 
-You can _click_ on any of the test cases listed on the Flaky Tests dashboard to access the test case’s details. On a test's details page, you can find:
+* **Summary**: Run result charts and failure types grouped by unique failure reason.
+* **Test History**: A searchable, paginated table of every individual test run with filtering and a detail panel.
+* **Monitors**: Detection monitors configured for this test (visible when the detection engine is enabled).
+* **Events**: A timeline of detection events, quarantine actions, ticketing events, and status transitions (Healthy, Flaky, Broken) for this test (visible when the detection engine is enabled). Use the category filter to scope to **Flake Detection** events to see which monitor triggered each transition.
 
-* The test's current status (Healthy, Flaky, or Broken)
-* Which monitors are currently active for the test, and which monitor triggered each status change
-* Visualizations and a timeline detailing the test's health history
-* A table of unique failure types for this test
-
-This is in addition to information like ticket status and the current codeowner.
+In addition to the tabbed content, the test details page shows the test’s current status (Healthy, Flaky, or Broken), ticket status, and codeowner information.
 
 ### **Code owners**
 
@@ -84,7 +82,13 @@ If you have a codeowners file configured in your repos, you will see who owns ea
 
 This information will also be provided when creating a ticket with the [Jira integration](ticketing-integrations/jira-integration.md) or [webhooks](webhooks/).
 
-### **Failure types**
+### Summary tab
+
+<figure><picture><source srcset="../.gitbook/assets/flaky-tests-failure-details-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/flaky-tests-failure-details-light.png" alt=""></picture><figcaption></figcaption></figure>
+
+The Summary tab shows an overview of the test’s recent run results and groups past failures by unique failure type.
+
+#### Failure types
 
 <figure><picture><source srcset="../.gitbook/assets/unique-failure-reason-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/unique-failure-reason-light.png" alt=""></picture><figcaption></figcaption></figure>
 
@@ -92,7 +96,7 @@ The Failure Types table shows the history of past test runs grouped by unique fa
 
 The Failure Type is a summary of the stack trace of the test run. You can click on the failure type to see a list of test runs labeled by branch, PR, Author, CI Job link, duration, and time.
 
-### Failure details
+#### Failure details
 
 You can click on any of these test runs to see the detailed stack trace:
 
@@ -100,21 +104,34 @@ You can click on any of these test runs to see the detailed stack trace:
 
 You can flip through the stack traces of similar failures across different test runs by clicking the left and right arrow buttons. You can also see other similar failures on this and other tests.
 
-#### Go to the CI job logs
+##### Go to the CI job logs
 
-If you want to see full logging of the original CI job for an individual test failure, you can click **Logs** in the expanded failure details panel to go to the job's page in your CI provider.
+If you want to see full logging of the original CI job for an individual test failure, you can click **Logs** in the expanded failure details panel to go to the job’s page in your CI provider.
 
 <figure><picture><source srcset="../.gitbook/assets/failure-logs-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/failure-logs-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-### **Test history**
+### Test History tab
 
-<figure><picture><source srcset="../.gitbook/assets/test-history-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/test-history-light.png" alt=""></picture><figcaption></figcaption></figure>
+The Test History tab gives you full visibility into every individual run of a test. Use it to investigate patterns across branches, find specific failing runs, and drill into error details.
 
-Tests may transition between Healthy, Flaky, and Broken states multiple times over their lifetime. You can see previous status changes in Test History, as well as an explanation for why each transition occurred — including which monitor triggered it.
+#### Daily runs chart
 
-#### Filtering test runs by branch
+A stacked bar chart at the top of the tab shows daily test run counts. The legend identifies four categories:
 
-The test run history tab includes a branch filter that accepts exact branch names or glob patterns. Use `*` to match any sequence of characters and `?` to match a single character.
+* **Green**: Pass
+* **Red**: Fail
+* **Blue**: Quarantined
+* **Gray**: Skipped
+
+Click and drag on the chart to select a date range, which scopes the table below to runs from the selected days. The selected range appears next to the legend with an X button to clear just the range. The **Reset** button on the filter bar clears all filters at once, including the date range.
+
+#### Filters
+
+A filter bar below the chart provides four independent controls:
+
+<table><thead><tr><th width="160">Filter</th><th>Description</th></tr></thead><tbody><tr><td>Result</td><td>Segmented control with <strong>All</strong>, <strong>Pass</strong>, and <strong>Fail</strong> to scope the table to a specific outcome.</td></tr><tr><td>Quarantined</td><td>Segmented control with <strong>Include</strong> (default), <strong>Exclude</strong>, and <strong>Only</strong> to control whether quarantined runs are mixed in, hidden, or shown exclusively.</td></tr><tr><td>SHA</td><td>Filter by commit hash. Matches runs whose SHA starts with the entered text.</td></tr><tr><td>Branch</td><td>Filter by branch name. Accepts exact names or glob patterns. Use <code>*</code> to match any sequence of characters and <code>?</code> to match a single character.</td></tr></tbody></table>
+
+Branch filter examples:
 
 | Pattern | Matches |
 |---|---|
@@ -122,3 +139,23 @@ The test run history tab includes a branch filter that accepts exact branch name
 | `release/*` | All release branches, e.g. `release/1.0`, `release/2.3` |
 | `feature-??` | Feature branches with a two-character suffix, e.g. `feature-v2` |
 | `trunk-merge/*` | All merge queue branches |
+
+All filters combine using AND logic, so you can use them together. For example, set **Result** to **Fail** and **Quarantined** to **Only** to surface only quarantined failures. The **Reset** button clears every filter at once, including the chart date range.
+
+Filter state is saved in the URL, so you can share or bookmark a filtered view.
+
+#### Runs table
+
+The runs table displays a paginated list of individual test runs (25 per page) with the following columns:
+
+<table><thead><tr><th width="160">Column</th><th>Description</th></tr></thead><tbody><tr><td>Timestamp</td><td>When the test ran, displayed in your local time zone.</td></tr><tr><td>Duration</td><td>How long the test took to execute.</td></tr><tr><td>PR</td><td>The pull request number associated with the run, e.g. <code>#1234</code>. Empty for runs that aren't tied to a PR.</td></tr><tr><td>Branch</td><td>The branch the test ran against, e.g. <code>main</code>, <code>feature/x</code>, or <code>trunk-merge/pr-1234/...</code> for merge queue branches.</td></tr><tr><td>Commit</td><td>The first 7 characters of the commit SHA.</td></tr></tbody></table>
+
+Each row has a colored left border indicating the run's outcome. Quarantined runs always show blue, regardless of whether the run passed or failed. For non-quarantined runs, the border is green for pass, red for fail, orange for error, and a neutral gray for any other state.
+
+#### Run detail panel
+
+Click any row in the runs table to open a detail panel on the right side of the page. The panel shows:
+
+* **Run header**: Timestamp, a result badge (Pass, Fail, Error, or Quarantined), and run duration.
+* **Source control**: A CI job link (with the provider's icon, the job name, and the CI duration), the linked pull request, branch, and commit. Merge queue runs also include a **View in Merge Queue** link.
+* **Error details**: For failed, errored, or quarantined runs, an optional AI summary of the failure followed by the raw error text or stack trace.
