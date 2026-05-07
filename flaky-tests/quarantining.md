@@ -210,7 +210,18 @@ If you have tests that should never be quarantined or should always be quarantin
 
 <figure><img src="../.gitbook/assets/qurantine-individual-tests.png" alt=""><figcaption><p>overriding</p></figcaption></figure>
 
-You can manually control a test's quarantine status from its details page.
+You can set a quarantine override from two places:
+
+**From the Flaky Tests table**
+
+Right-click any row in the Flaky Tests table to open the context menu. Two quarantine actions are available:
+
+* **Quarantine test** / **Unquarantine test** — toggles the always-quarantine override for that test.
+* **Never Quarantine test** / **Remove Never Quarantine** — toggles the never-quarantine override. When set, the test is never quarantined, even if auto-quarantining is enabled for the repo.
+
+All four options require admin permissions. Non-admin users see them as disabled with the tooltip "Only admins can set manual quarantine."
+
+**From the test details page**
 
 * To set an override: Click the **Quarantine** (or **Override**) button, then select either Always Quarantine or Never Quarantine.
 * To remove an override: Click the **Remove Override** button.
@@ -221,7 +232,7 @@ When a manual override is active, a banner shows who set it and when.
 
 <figure><img src="../.gitbook/assets/qurantine-individual-tests-revert.png" alt=""><figcaption></figcaption></figure>
 
-To review a history of all quarantine changes on a test, use the **Quarantine Events** filter within the **Test History** section. This will show every override, setting change, and comment, along with the author and timestamp for each entry.
+To review a history of all quarantine changes on a test, check the **Events** tab on the test details page. The Events tab shows every override, setting change, and comment, along with the author and timestamp for each entry. To see all quarantined runs of a test, set the **Quarantined** filter to **Only** on the **Test History** tab.
 
 ### Tracking quarantined jobs in the dashboard
 
