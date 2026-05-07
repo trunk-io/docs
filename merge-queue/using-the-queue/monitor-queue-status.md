@@ -103,7 +103,7 @@ For details on setting priority levels, see [Priority merging](../../merge-queue
 
 #### Impacted targets in the graph
 
-When running in [Parallel mode](../optimizations/parallel-queues/), the graph view shows impacted targets information to help you understand why PRs are grouped or ordered the way they are.
+When running in [Parallel mode](../optimizations/parallel-queues/), the graph view surfaces impacted targets data to help you understand why PRs are grouped or ordered the way they are.
 
 * **Per-PR tooltips**: Hover over a PR node to see which targets that PR impacts.
 * **Overlapping targets on edges**: Use the **Show targets on hover** toggle to display which targets overlap between connected PRs. Overlapping targets explain why PRs are in the same testing sequence: PRs with shared targets must test together.
@@ -114,7 +114,7 @@ This is useful for debugging unexpected queue ordering or understanding why spec
 
 In [Parallel mode](../optimizations/parallel-queues/), each PR's detail page includes a **View Impacted Targets** button when targets have been uploaded for the PR. The modal shows one of three states:
 
-* **IMPACTS\_ALL**: The PR depends on everything in the queue, and every PR submitted after this one will depend on it. No parallel optimization is possible.
+* `IMPACTS_ALL`: The PR depends on everything in the queue, and every PR submitted after this one will depend on it. No parallel optimization is possible.
 * **Specific targets**: A list of each target the PR impacts.
 * **None (empty list)**: An empty list of targets was uploaded. The PR will not depend on anything, and nothing will depend on it.
 
