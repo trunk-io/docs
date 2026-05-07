@@ -111,12 +111,13 @@ Lua
 (?i)markdownlint
 markdownlint-cli2
 (?i)mcp
-mergeability
+(?i)mergeability
 mergeable
 Mergify
 (?i)metalinter
 (?i)metalinters
 (?i)minitest
+misclick
 misconfiguration
 misconfigurations
 misconfigured
@@ -168,7 +169,7 @@ Roomba
 (?i)rspec
 rubocop
 rufo
-ruleset
+(?i)ruleset
 (?i)rulesets
 run_from
 (?i)runtime
