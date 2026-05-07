@@ -62,7 +62,7 @@ The extension does **not** ask you for credentials, API tokens, or a separate pa
 
 ### Extension settings
 
-Click the Trunk extension icon and open **Options** (or right-click the icon and choose **Manage extension → Options**) to access the extension settings page.
+Click the Trunk extension icon and open **Options** (or right-click the icon and choose **Options**) to access the extension settings page.
 
 | Setting | Description | Default |
 |---|---|---|
