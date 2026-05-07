@@ -143,27 +143,11 @@ Both columns are sortable, so you can quickly surface the longest-running PRs in
 
 <figure><img src="../../.gitbook/assets/pr-drill-down-list.png" alt="PRs in Range table listing individual PRs with Conclusion (Merged or Failed), Reason, and Time in Queue columns, sorted by Time in Queue descending"><figcaption><p>The drill-down PR list, sortable by conclusion and time in queue.</p></figcaption></figure>
 
+The PR list page shows the selected date range as a subtitle and a **Back to Health** link to return to the charts. If the selection contains more than 2,500 PRs, the list shows the first 2,500 with a notice indicating the total. Narrow the time bucket on the chart to drill into a smaller window.
+
 {% hint style="info" %}
 Drill down and range selection are currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interactions as they land in the UI.
 {% endhint %}
-
-***
-
-### Drill into a metrics data point
-
-You can click any data point on the Conclusion Count or Time in Queue charts to open a detailed view listing the individual PRs that make up that point.
-
-The PR list shows each pull request that exited the queue during the selected time range, along with its conclusion (merged, failed, or canceled) and the time it spent in the queue.
-
-#### Filter the PR list
-
-Use the filters at the top of the PR list to narrow the results:
-
-* **Date range** - Select a start and end date to scope the list to a specific window.
-* **Conclusion** - Filter by outcome: merged, failed, or canceled.
-* **Impacted targets** - When running in Parallel Mode, filter PRs by the targets they affected.
-
-To return to the health charts, click **Back to Health** at the top of the page.
 
 ***
 
