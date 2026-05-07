@@ -106,7 +106,7 @@ For details on setting priority levels, see [Priority merging](../../merge-queue
 When running in [Parallel mode](../optimizations/parallel-queues/), the graph view surfaces impacted targets data to help you understand why PRs are grouped or ordered the way they are.
 
 * **Per-PR tooltips**: Hover over a PR node to see which targets that PR impacts.
-* **Overlapping targets on edges**: Use the **Show targets on hover** toggle to display which targets overlap between connected PRs. Overlapping targets explain why PRs are in the same testing sequence: PRs with shared targets must test together.
+* **Overlapping targets on edges**: Use the **Show targets on hover** toggle to display which targets overlap between connected PRs. Overlapping targets explain why PRs are in the same testing sequence: PRs with shared targets must be tested together.
 
 This is useful for debugging unexpected queue ordering or understanding why specific PRs are batched together.
 
