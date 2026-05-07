@@ -120,7 +120,9 @@ Trunk Merge Queue creates temporary branches to test pull requests before mergin
 
 **What happens if these branches are protected:** Merge Queue will encounter GitHub permission errors and display messages like "Permission denied on trunk-merge/\* branch."
 
-
+{% hint style="info" %}
+**Using Force merge or other bypass-dependent features?** Features like [Force merge](../using-the-queue/force-merge.md) require the separate [Trunk Sudo GitHub App](../../setup-and-administration/trunk-sudo-app.md), plus additional branch protection configuration to list Trunk Sudo as a bypass actor. That's documented on the Trunk Sudo page.
+{% endhint %}
 
 ### Next Steps
 

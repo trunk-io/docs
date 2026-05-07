@@ -14,7 +14,7 @@ Trunk lets you create custom workflows with **event-triggered webhooks**. Flaky 
 
 For a detailed reference of the AI investigation result event, see [AI Investigation Completed Event](investigation-completed-event.md).
 
-{% embed url="https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#test_case.status_changed" %}
+{% embed url="https://www.svix.com/event-types/us/org_2eQPL41Ew5XSHxiXZIamIUIXg8H/#v2.test_case.status_changed" %}
 
 You can also find guides for specific examples here:
 
