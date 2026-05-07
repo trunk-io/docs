@@ -143,6 +143,8 @@ Both columns are sortable, so you can quickly surface the longest-running PRs in
 
 <figure><img src="../../.gitbook/assets/pr-drill-down-list.png" alt="PRs in Range table listing individual PRs with Conclusion (Merged or Failed), Reason, and Time in Queue columns, sorted by Time in Queue descending"><figcaption><p>The drill-down PR list, sortable by conclusion and time in queue.</p></figcaption></figure>
 
+The PR list page shows the selected date range as a subtitle and a **Back to Health** link to return to the charts. If the selection contains more than 2,500 PRs, the list shows the first 2,500 with a notice indicating the total. Narrow the time bucket on the chart to drill into a smaller window.
+
 {% hint style="info" %}
 Drill down and range selection are currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interactions as they land in the UI.
 {% endhint %}
