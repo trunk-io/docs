@@ -60,7 +60,9 @@ The extension does **not** ask you for credentials, API tokens, or a separate pa
 * **Scoped to GitHub PR pages.** The content script runs on `github.com` pull request URLs so it can render the overlay; it does not read or transmit page contents beyond the repository and PR identifiers needed to query the Trunk API.
 * **Same transport guarantees as the rest of Trunk.** All extension traffic to Trunk uses TLS, and your data is handled per the [Trunk Security policy](../setup-and-administration/security.md).
 
-### Extension settings
+<details>
+
+<summary><strong>Have you turned on Celebration Mode?</strong></summary>
 
 Click the Trunk extension icon and open **Options** (or right-click the icon and choose **Options**) to access the extension settings page.
 
@@ -69,6 +71,8 @@ Click the Trunk extension icon and open **Options** (or right-click the icon and
 | **Celebration** | When enabled, a confetti burst plays each time you add a pull request to the merge queue. | Off |
 
 The celebration effect respects your operating system's reduced motion preference. If you have **Reduce motion** enabled in your system accessibility settings, no animation plays regardless of this toggle.
+
+</details>
 
 ### Frequently asked questions
 
