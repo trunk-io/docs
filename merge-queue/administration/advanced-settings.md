@@ -109,13 +109,13 @@ The `Running` state is the default state of your merge queue, and will be the no
 
 You can create multiple merge queues within a single repository, with each queue targeting a different branch. This is useful for teams that maintain separate branches for different environments (e.g., `main`, `staging`, `release/v2`).
 
-A branch can only be associated with one queue. Attempting to create a second queue against the same branch returns a `merge queue already exists for this branch` error.
+A branch can only be associated with one queue. Attempting to create a second queue against the same branch returns the error `A merge queue already exists for branch "<branch>" in this repository`.
 
 Each queue operates independently. PRs submitted to one queue don't interact with PRs in another queue for the same repo, and every queue has its own settings, including merge method, required statuses, batching, and concurrency.
 
 ### Creating additional queues
 
-1. Navigate to **Merge Queue** and click **Create New Queue** at the top right
+1. Navigate to **Merge Queue** and click **New Queue** at the top right
 2. Select the same repository and enter a different target branch
 3. Click **Create Queue**
 
@@ -123,10 +123,10 @@ Each queue operates independently. PRs submitted to one queue don't interact wit
 
 The Merge Queue dashboard groups queues by repository:
 
-* **Single-queue repos**: Appear as a clickable row that goes directly to the queue
-* **Multi-queue repos**: Expand to show each queue with its target branch label
+* **Single-queue repos**: The repository row is itself a link that goes directly to the queue.
+* **Multi-queue repos**: The repository row expands inline to list each queue with its target branch label. Click any queue to open it.
 
-In the Settings page, use the branch selector at the top to switch between queues within a repo.
+In the Settings page, when a repository has more than one queue, a **Merge Queues** selector appears so you can switch between queues. The currently selected branch is shown next to the **Merge Queue Settings** heading.
 
 ***
 
