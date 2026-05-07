@@ -221,7 +221,7 @@ When a manual override is active, a banner shows who set it and when.
 
 <figure><img src="../.gitbook/assets/qurantine-individual-tests-revert.png" alt=""><figcaption></figcaption></figure>
 
-To review a history of all quarantine changes on a test, use the **Quarantine Events** filter within the **Test History** section. This will show every override, setting change, and comment, along with the author and timestamp for each entry.
+To review a history of all quarantine changes on a test, check the **Events** tab on the test details page. The Events tab shows every override, setting change, and comment, along with the author and timestamp for each entry. To see all quarantined runs of a test, set the **Quarantined** filter to **Only** on the **Test History** tab.
 
 ### Tracking quarantined jobs in the dashboard
 
