@@ -4,7 +4,7 @@ description: Organize and categorize test cases with organization-scoped labels.
 
 # Test Labels
 
-Test labels are organization-scoped tags you can apply to individual test cases to organize, filter, and categorize your test suite. Labels are applied manually today; see [Automatic labeling from monitors](#automatic-labeling-from-monitors) for what's coming.
+Test labels are organization-scoped tags you can apply to individual test cases to organize, filter, and categorize your test suite. Labels can also be applied automatically via monitors; see [Automatic labeling from monitors](#automatic-labeling-from-monitors).
 
 <figure><img src="../.gitbook/assets/test-details-labels.png" alt="Labels applied to a test on details page"><figcaption></figcaption></figure>
 
@@ -40,7 +40,7 @@ The monitor list view shows label action chips on any monitor that has a label a
 
 #### How label cleanup works
 
-- **When you disable or delete a monitor:** any labels that monitor had applied are automatically removed from all affected test cases.
+- **When you disable or delete a monitor:** Any labels that the monitor had applied are automatically removed from all affected test cases.
 - **When you change the label set on a monitor's label action:** Trunk reconciles the existing label assignments to match the new configuration.
 - **Deleting a label is blocked** if it is still configured in a label action on an active monitor. Remove it from the monitor's label action first.
 
