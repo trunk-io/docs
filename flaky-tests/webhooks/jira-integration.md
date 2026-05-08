@@ -8,7 +8,7 @@ Trunk allows you to automate Jira issue creation through webhooks. When a test b
 
 This guide will walk you through integrating Trunk Flaky Tests with Jira through webhooks. You will be able to automatically generate Jira issues for **new flaky tests** found in your repo. This guide should take 15 minutes to complete.
 
-Trunk also has a [built-in Jira integration](../ticketing-integrations/jira-integration.md) for manual ticket creation. You only need to use webhooks if you want to automate ticket creation or need additional customization.
+Trunk also has a [built-in Jira integration](../management/ticketing/jira-integration.md) for manual ticket creation. You only need to use webhooks if you want to automate ticket creation or need additional customization.
 
 ### 1. Create a Jira API Token
 

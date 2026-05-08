@@ -67,4 +67,4 @@ Now that you understand why uploading test results from pull requests is essenti
 
 Our documentation provides step-by-step guides for all major CI providers to make this setup simple.
 
-[➡️ Find your CI provider and start uploading test results](get-started/ci-providers/)
+[➡️ Find your CI provider and start uploading test results](../get-started/ci-providers/README.md)

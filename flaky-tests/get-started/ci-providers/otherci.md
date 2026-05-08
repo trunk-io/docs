@@ -4,7 +4,7 @@ description: Configure Flaky Tests using any CI Provider
 
 # Other CI Providers
 
-Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk Analytics CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI provider by adding an upload step in each of your testing CI jobs via the [Trunk Analytics CLI](../../reference/cli-reference.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
@@ -109,7 +109,7 @@ Then, you can validate the results using the `trunk-analytics-cli validate` comm
 ./trunk-analytics-cli validate --junit-paths <PATH_TO_REPORTS>
 ```
 
-See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
+See the [uploader.md](../../reference/cli-reference.md "mention") for all available command line arguments and usage.
 
 #### Environment Variables
 

@@ -4,7 +4,7 @@ description: Configure Flaky Tests using Semaphore CI
 
 # Semaphore CI
 
-Trunk Flaky Tests integrates with your CI by adding a step in your Semaphore CI Pipeline to upload tests with the [Trunk Analytics CLI](../../uploader.md).
+Trunk Flaky Tests integrates with your CI by adding a step in your Semaphore CI Pipeline to upload tests with the [Trunk Analytics CLI](../../reference/cli-reference.md).
 
 {% include "../../../.gitbook/includes/not-using-github-for-source....md" %}
 
@@ -183,10 +183,10 @@ blocks:
 
 
 {% hint style="info" %}
-The examples above use the Linux x64 binary. If your CI runs on a different platform, see the [Trunk Analytics CLI](../../uploader.md#manual-download) page for all available platform downloads.
+The examples above use the Linux x64 binary. If your CI runs on a different platform, see the [Trunk Analytics CLI](../../reference/cli-reference.md#manual-download) page for all available platform downloads.
 {% endhint %}
 
-See the [uploader.md](../../uploader.md "mention") for all available command line arguments and usage.
+See the [uploader.md](../../reference/cli-reference.md "mention") for all available command line arguments and usage.
 
 #### Stale files
 
