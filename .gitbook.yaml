@@ -256,12 +256,14 @@ redirects:
   flaky-tests/autofix-ci-failures: flaky-tests/agents/autofix-ci-failures.md
   flaky-tests/autofix-flaky-tests: flaky-tests/agents/autofix-flaky-tests.md
   flaky-tests/infrastructure-failure-protection: flaky-tests/detection/infrastructure-failure-protection.md
+  flaky-tests/managing-detected-flaky-tests: flaky-tests/management/managing-detected-flaky-tests.md
   flaky-tests/quarantine-service-availability: flaky-tests/quarantining/quarantine-service-availability.md
   flaky-tests/quarantining: flaky-tests/quarantining/README.md
   flaky-tests/test-collections: flaky-tests/get-started/test-collections.md
   flaky-tests/test-labels: flaky-tests/management/test-labels.md
   flaky-tests/the-importance-of-pr-test-results: flaky-tests/detection/the-importance-of-pr-test-results.md
   flaky-tests/ticketing-integrations: flaky-tests/management/ticketing/README.md
+  flaky-tests/uploader: flaky-tests/reference/cli-reference.md
   # Ticketing integration subpages
   flaky-tests/ticketing-integrations/jira-integration: flaky-tests/management/ticketing/jira-integration.md
   flaky-tests/ticketing-integrations/linear-integration: flaky-tests/management/ticketing/linear-integration.md
