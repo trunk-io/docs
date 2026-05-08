@@ -8,7 +8,7 @@ description: >-
 
 ### Service Availability and Graceful Degradation
 
-[Trunk Analytics CLI](uploader.md) is designed to fail safe when our quarantine service is unavailable. Your CI pipeline's integrity is never compromised by Trunk outages.
+[Trunk Analytics CLI](../reference/cli-reference.md) is designed to fail safe when our quarantine service is unavailable. Your CI pipeline's integrity is never compromised by Trunk outages.
 
 #### What happens if Trunk is unreachable?
 

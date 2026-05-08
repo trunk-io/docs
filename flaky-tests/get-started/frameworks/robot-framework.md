@@ -33,7 +33,7 @@ The JUnit report will be written to the location specified by the `--xunit` argu
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable them and prefer using the [Quarantine](../../quarantining.md) feature to mitigate the negative impact of Flaky Tests.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable them and prefer using the [Quarantine](../../quarantining/) feature to mitigate the negative impact of Flaky Tests.
 
 Omit the [`--rerunfailed`](https://docs.robotframework.org/docs/flaky_tests#re-execute-failed-tests-and-merge-results) flag and remove any [RetryFailed Listeners](https://docs.robotframework.org/docs/flaky_tests#retryfailed-listener) previously configured to run as part of your CI pipeline to disable retries.
 
@@ -41,7 +41,7 @@ Omit the [`--rerunfailed`](https://docs.robotframework.org/docs/flaky_tests#re-e
 
 #### **The Validate Command**
 
-You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../reference/cli-reference.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

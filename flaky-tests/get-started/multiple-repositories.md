@@ -77,7 +77,7 @@ export TRUNK_REPO_URL="https://github.com/your-company/your-repo.git"
   --token $TRUNK_API_TOKEN
 ```
 
-See the [Trunk Analytics CLI](../../uploader.md) reference for the full list of override flags.
+See the [Trunk Analytics CLI](../../reference/cli-reference.md) reference for the full list of override flags.
 
 ### Monorepo with Multiple Test Suites
 

@@ -32,9 +32,9 @@ To learn more, [see how Flaky Tests does detection](https://docs.trunk.io/flaky-
 
 <figure><picture><source srcset="../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/github-comment-light.png" alt="PR comment linking to PR Test Summary"></picture><figcaption><p>PR comment linking to PR Test Summary</p></figcaption></figure>
 
-Flaky Tests helps everyone in your team stay in sync about flaky test failures with [GitHub PR comments](https://docs.trunk.io/flaky-tests/github-pull-request-comments), so no time is wasted debugging failures from known flaky tests.
+Flaky Tests helps everyone in your team stay in sync about flaky test failures with [GitHub PR comments](management/github-pull-request-comments.md), so no time is wasted debugging failures from known flaky tests.
 
-To learn more, [see our docs about GitHub Comments and Test Summaries](github-pull-request-comments.md).
+To learn more, [see our docs about GitHub Comments and Test Summaries](management/github-pull-request-comments.md).
 
 ### Investigate flaky failures
 
@@ -54,7 +54,7 @@ Flaky Tests allows you to [quarantine](https://docs.trunk.io/flaky-tests/quarant
 
 <figure><picture><source srcset="../.gitbook/assets/override-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/override-light.png" alt=""></picture><figcaption><p>flaky tests can be quarantined automatically or manually</p></figcaption></figure>
 
-To learn more, [see our docs about quarantining tests](quarantining.md).
+To learn more, [see our docs about quarantining tests](quarantining/).
 
 ### Manage tickets
 
@@ -62,7 +62,7 @@ To learn more, [see our docs about quarantining tests](quarantining.md).
 
 Trunk enables the automation of quickly creating and assigning tickets through integrations with platforms like Jira and Linear, as well as custom workflows with webhooks. The status of tickets created will be reflected in real-time in the Trunk web app. This helps you track efforts to fix high-impact, flaky tests.
 
-To learn more, [learn about our ticketing integrations](ticketing-integrations/jira-integration.md).
+To learn more, [learn about our ticketing integrations](management/ticketing/jira-integration.md).
 
 ### **Next steps**
 

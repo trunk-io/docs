@@ -20,7 +20,7 @@ Gemini Code Assist and Windsurf are not supported due to their limited support f
 
 The Trunk MCP server is available at `https://mcp.trunk.io/mcp` and exposes the following tools:
 
-<table><thead><tr><th width="265.30859375">Tool</th><th>Capability</th></tr></thead><tbody><tr><td><a href="mcp-tool-reference/search-test.md"><code>search-test</code></a></td><td>Experimental: Lookup the id of a test case</td></tr><tr><td><a href="mcp-tool-reference/fix-flaky-test.md"><code>fix-flaky-test</code></a></td><td>Experimental: Retrieve insights around a failing/flaky test</td></tr><tr><td><a href="mcp-tool-reference/investigate-ci-failure.md"><code>investigate-ci-failure</code></a></td><td>Experimental: Retrieve failing test logs from a CI run</td></tr><tr><td><a href="mcp-tool-reference/set-up-test-uploads.md"><code>setup-trunk-uploads</code></a></td><td>Create a setup plan to upload test results</td></tr></tbody></table>
+<table><thead><tr><th width="265.30859375">Tool</th><th>Capability</th></tr></thead><tbody><tr><td><a href="search-test.md"><code>search-test</code></a></td><td>Experimental: Lookup the id of a test case</td></tr><tr><td><a href="fix-flaky-test.md"><code>fix-flaky-test</code></a></td><td>Experimental: Retrieve insights around a failing/flaky test</td></tr><tr><td><a href="investigate-ci-failure.md"><code>investigate-ci-failure</code></a></td><td>Experimental: Retrieve failing test logs from a CI run</td></tr><tr><td><a href="set-up-test-uploads.md"><code>setup-trunk-uploads</code></a></td><td>Create a setup plan to upload test results</td></tr></tbody></table>
 
 ### Authorization
 
@@ -55,7 +55,7 @@ API token auth is org-level — all requests are attributed to the organization 
 
 **To get started, configure your AI application to communicate with Trunk's MCP server:**
 
-* [Cursor](configuration/cursor-ide.md)
-* [GitHub Copilot](configuration/github-copilot-ide.md)
-* [Claude Code CLI](configuration/claude-code-cli.md)
-* [Gemini CLI](configuration/gemini-cli.md)
+* [Cursor](../../agents/mcp-server/configuration/cursor-ide.md)
+* [GitHub Copilot](../../agents/mcp-server/configuration/github-copilot-ide.md)
+* [Claude Code CLI](../../agents/mcp-server/configuration/claude-code-cli.md)
+* [Gemini CLI](../../agents/mcp-server/configuration/gemini-cli.md)

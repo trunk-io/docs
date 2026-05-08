@@ -6,15 +6,15 @@ Trunk can return targeted information about CI failures, enabling AI agents and 
 
 To use the Autofix CI Failures feature, you'll need to have:
 
-- Your repository set up to [upload test results to Trunk](./get-started/README.md)
+- Your repository set up to [upload test results to Trunk](../get-started/README.md)
 
 ### Cursor CI Autofix
 
 You can set up a [Cursor Automation](https://cursor.com/automations) to automatically fix CI failures by connecting to Trunk's CI failure investigation data via MCP. This is an extension of the Cursor `CI Autofix` template.
 
-<figure><img src="../.gitbook/assets/ci-autofix-cursor-automation.png" alt="Configuration for Cursor Automation"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ci-autofix-cursor-automation.png" alt="Configuration for Cursor Automation"><figcaption></figcaption></figure>
 
-Set up the Trunk MCP using [Bearer Authentication](./use-mcp-server/configuration/bearer-auth.md).
+Set up the Trunk MCP using [Bearer Authentication](./mcp-server/configuration/bearer-auth.md).
 
 <details>
 

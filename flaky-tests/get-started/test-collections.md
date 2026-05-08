@@ -36,7 +36,7 @@ Pass the short ID when uploading results using the Trunk CLI:
 trunk flakytests upload --collection <short-id> ...
 ```
 
-See the [Uploader reference](uploader.md) for full upload options.
+See the [Uploader reference](../reference/cli-reference.md) for full upload options.
 
 ## View collection tests and uploads
 

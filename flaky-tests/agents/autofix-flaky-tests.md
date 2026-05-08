@@ -14,15 +14,15 @@ To use the Autofix Flaky Tests feature, you'll need:
 The "Investigate Flaky Tests" setting can only be changed by organization admins.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/investigate-flaky-tests-setting.png" alt="Setting to enable Flaky Test investigation"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/investigate-flaky-tests-setting.png" alt="Setting to enable Flaky Test investigation"><figcaption></figcaption></figure>
 
 ### Auto-Investigate Flaky Tests
 
 Once enabled, any time that Trunk [detects a flaky test](./detection/README.md), Trunk analyzes the failure patterns, failure output, and git history of the test to provide a number of insights.
 
-<figure><img src="../.gitbook/assets/investigate-flaky-tests.png" alt="Results of an automatic flaky tests analysis"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/investigate-flaky-tests.png" alt="Results of an automatic flaky tests analysis"><figcaption></figcaption></figure>
 
-Flaky tests can also be analyzed manually via the UI and via the [MCP server](./use-mcp-server/mcp-tool-reference/fix-flaky-test.md).
+Flaky tests can also be analyzed manually via the UI and via the [MCP server](../reference/mcp-reference/fix-flaky-test.md).
 
 ### Autofix with Cursor Automations
 
@@ -30,7 +30,7 @@ Whenever an investigation is completed, Trunk will emit a [webhook](./webhooks/R
 
 You can then set up a [Cursor Automation](https://cursor.com/automations) to trigger when webhooks are received.
 
-<figure><img src="../.gitbook/assets/autofix-cursor-automation.png" alt="Configuration for Cursor Automation"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/autofix-cursor-automation.png" alt="Configuration for Cursor Automation"><figcaption></figcaption></figure>
 
 <details>
 
@@ -74,7 +74,7 @@ We recommend the following conventions:
 ### What's next?
 
 - Continue to monitor your tests to confirm the flaky test fixes are effective
-- Investigations can be triggered and applied via [MCP](./use-mcp-server/mcp-tool-reference/fix-flaky-test.md)
+- Investigations can be triggered and applied via [MCP](../reference/mcp-reference/fix-flaky-test.md)
 
 {% hint style="info" %}
 **Coming soon.** Set up Claude Routines to autofix flaky tests

@@ -8,17 +8,17 @@ Flaky Tests can post comments on GitHub pull requests that summarize test result
 
 **Note:** Flaky Tests will only post a comment when there are failing tests.
 
-<figure><picture><source srcset="../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/github-comment-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/github-comment-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/github-comment-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 Each GitHub comment includes a summary report showing all tests that passed, failed, flaked, were skipped, or were quarantined on the PR.
 
-<figure><picture><source srcset="../.gitbook/assets/pr-test-summary (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/pr-test-summary.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/pr-test-summary (1).png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/pr-test-summary.png" alt=""></picture><figcaption></figcaption></figure>
 
 Each test case includes the full stack trace when expanded, and the job run link takes you to the complete CI logs.
 
 ## Configuration
 
-If you have the [Trunk GitHub App installed](https://docs.trunk.io/administration/github-app-permissions) and are [uploading JUnit XML](get-started/frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App, you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
+If you have the [Trunk GitHub App installed](../../setup-and-administration/github-app-permissions.md) and are [uploading JUnit XML](../get-started/frameworks/) test results on pull requests, expect to start seeing comments on your Pull Requests soon. If you prefer not to use the Trunk GitHub App, you can still set up comments on your Pull Requests by providing Trunk with a GitHub access token.
 
 
 
@@ -37,7 +37,7 @@ It's recommended that the Trunk GitHub App be used to manage GitHub comments. If
 7. **Permissions** - you must enable **Issues (Read and write)** and **Pull requests (Read and write)**. Note: It is expected that metadata permissions automatically change.
 8.  If everything looks good, scroll down to double check that your Overview for permissions looks something like the image below. If so, create the token.
 
-    <figure><img src="../.gitbook/assets/Screenshot 2024-06-12 at 9.52.28 AM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Screenshot 2024-06-12 at 9.52.28 AM.png" alt=""><figcaption></figcaption></figure>
 9. Once the token is generated, go back to the Trunk App ([app.trunk.io](https://app.trunk.io/login?intent=flaky%20tests)) > click on your profile > **Settings** > **Manage** (under _Organization_) > **Organization GitHub Token** and enter the copied token into the text field, then finally press **Submit**.
 
 You should see comments posted by your service account on your next PR.

@@ -66,13 +66,13 @@ Jasmine will generate an XML report at the location specified by the `savePath` 
 
 You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests.
 
-If you're using a package like [protractor-flake](https://www.npmjs.com/package/protractor-flake), disable it to get more accurate results from Trunk. Instead, you can mitigate flaky tests using the [Quarantining](../../quarantining.md) feature in Trunk.
+If you're using a package like [protractor-flake](https://www.npmjs.com/package/protractor-flake), disable it to get more accurate results from Trunk. Instead, you can mitigate flaky tests using the [Quarantining](../../quarantining/) feature in Trunk.
 
 ### Try It Locally
 
 #### The Validate Command
 
-You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../reference/cli-reference.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

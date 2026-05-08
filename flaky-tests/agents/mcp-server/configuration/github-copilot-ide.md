@@ -94,4 +94,3 @@ Add the token to your `.vscode/mcp.json`:
 {% hint style="info" %}
 VS Code uses `${env:VARIABLE_NAME}` syntax for environment variable interpolation in MCP configuration files, unlike other clients which use `${VARIABLE_NAME}`.
 {% endhint %}
-

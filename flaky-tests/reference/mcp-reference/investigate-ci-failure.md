@@ -13,7 +13,7 @@ The `investigate-ci-failure` tool investigates a failing CI run by fetching stru
 ### Prerequisites
 
 - Your repository must be set up to [upload test results to Trunk](../../get-started/README.md)
-- For best results, [enable quarantining](../../quarantining.md) so known-flaky tests are filtered out automatically
+- For best results, [enable quarantining](../../quarantining/) so known-flaky tests are filtered out automatically
 
 ### Parameters
 

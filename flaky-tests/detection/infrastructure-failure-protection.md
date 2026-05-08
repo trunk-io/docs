@@ -8,7 +8,7 @@ description: >-
 
 When infrastructure issues like database outages, network problems, or CI runner failures cause a large number of tests to fail simultaneously, retrying those tests can trigger mass false flaky detections. Infrastructure Failure Protection identifies these scenarios and excludes them from flakiness detection.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="Configuration for Infrastructure Failure Protection and Failure Threshold"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt="Configuration for Infrastructure Failure Protection and Failure Threshold"><figcaption></figcaption></figure>
 
 ### How it works
 
@@ -63,5 +63,4 @@ If you're using test quarantine, this feature is especially important to prevent
 
 * Learn more about how Trunk [detects flaky tests](detection/)
 * View excluded uploads in the Uploads tab
-* Configure [test quarantine](quarantining.md#enable-quarantining) to automatically skip flaky tests
-
+* Configure [test quarantine](../quarantining/#enable-quarantining) to automatically skip flaky tests
