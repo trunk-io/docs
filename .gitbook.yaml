@@ -192,6 +192,8 @@ redirects:
   code-quality/ci/get-started/github-integration: code-quality/overview/setup-and-installation/github-integration.md
   code-quality/configuration/debugging: code-quality/overview/debugging.md
   check/check-cloud-ci-integration/get-started/github-integration: code-quality/overview/setup-and-installation/github-integration.md
+  # Link from plugins repo README.md
+  tools: code-quality/overview/cli/getting-started/configuration/tools.md
   flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite.md
   flaky-tests/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci.md
   flaky-tests/ci-providers/droneci: flaky-tests/get-started/ci-providers/droneci.md
