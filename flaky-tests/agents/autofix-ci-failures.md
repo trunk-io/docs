@@ -14,7 +14,7 @@ You can set up a [Cursor Automation](https://cursor.com/automations) to automati
 
 <figure><img src="../../.gitbook/assets/ci-autofix-cursor-automation.png" alt="Configuration for Cursor Automation"><figcaption></figcaption></figure>
 
-Set up the Trunk MCP using [Bearer Authentication](./mcp-server/configuration/bearer-auth.md).
+Set up the Trunk MCP using [Bearer Authentication](../reference/mcp-reference/configuration/bearer-auth.md).
 
 <details>
 

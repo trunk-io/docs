@@ -55,7 +55,7 @@ API token auth is org-level — all requests are attributed to the organization 
 
 **To get started, configure your AI application to communicate with Trunk's MCP server:**
 
-* [Cursor](../../agents/mcp-server/configuration/cursor-ide.md)
-* [GitHub Copilot](../../agents/mcp-server/configuration/github-copilot-ide.md)
-* [Claude Code CLI](../../agents/mcp-server/configuration/claude-code-cli.md)
-* [Gemini CLI](../../agents/mcp-server/configuration/gemini-cli.md)
+* [Cursor](configuration/cursor-ide.md)
+* [GitHub Copilot](configuration/github-copilot-ide.md)
+* [Claude Code CLI](configuration/claude-code-cli.md)
+* [Gemini CLI](configuration/gemini-cli.md)
