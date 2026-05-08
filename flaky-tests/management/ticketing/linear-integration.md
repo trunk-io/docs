@@ -6,7 +6,7 @@ description: >-
 
 # Linear integration
 
-When Trunk Flaky Tests [detects a flaky test](../detection/), you can create an automatically generated Linear ticket for your team to pick up and fix the test.
+When Trunk Flaky Tests [detects a flaky test](../../detection/README.md), you can create an automatically generated Linear ticket for your team to pick up and fix the test.
 
 Webhook payloads will also contain ticket information when a Jira ticket is created with the integration or when [existing tickets are linked](linear-integration.md#link-existing-tickets-to-tests).
 
@@ -42,7 +42,7 @@ There are 2 ways to create a new ticket in the Flaky Tests dashboard:
 
 <figure><picture><source srcset="../../../.gitbook/assets/create-ticket-button-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/create-ticket-button-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-* Use the Create ticket button in the top left corner of the [test case details](../dashboard.md#test-case-details) page.
+* Use the Create ticket button in the top left corner of the [test case details](../../dashboard.md#test-case-details) page.
 
 Before you create the ticket, you get a preview of the title and description.
 
@@ -52,7 +52,7 @@ Before you create the ticket, you get a preview of the title and description.
 
 If you are connected to Linear, you can click the **Create Linear Ticket** button at the end of the modal to automatically create a ticket with the configured team and assignees.
 
-Note: You can use [Flaky Tests webhooks](../webhooks/linear-integration.md) to automate ticket creation, or if you need more control over how tickets are created in Linear. This integration is not required when using webhooks.
+Note: You can use [Flaky Tests webhooks](../../webhooks/linear-integration.md) to automate ticket creation, or if you need more control over how tickets are created in Linear. This integration is not required when using webhooks.
 
 #### Link existing tickets to tests
 

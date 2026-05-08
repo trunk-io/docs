@@ -6,7 +6,7 @@ description: 'MCP tool reference: investigate-ci-failure'
 
 ### Overview
 
-The `investigate-ci-failure` tool investigates a failing CI run by fetching structured test failure data from Trunk. Given a GitHub Actions workflow URL, this tool looks up test result bundles, parses them to extract test names and error messages, filters out quarantined (known-flaky) tests, and returns structured failure details the agent can act on. For more information, see [Autofix CI Failures](../../autofix-ci-failures.md).
+The `investigate-ci-failure` tool investigates a failing CI run by fetching structured test failure data from Trunk. Given a GitHub Actions workflow URL, this tool looks up test result bundles, parses them to extract test names and error messages, filters out quarantined (known-flaky) tests, and returns structured failure details the agent can act on. For more information, see [Autofix CI Failures](../../agents/autofix-ci-failures.md).
 
 **Return Type:** Structured failure details with test names, error messages, stdout, and stderr. If the CI job failed before tests ran (build or compilation failure), the tool suggests pulling raw logs from the workflow URL as a fallback.
 

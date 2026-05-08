@@ -61,6 +61,6 @@ If you're using test quarantine, this feature is especially important to prevent
 
 ### Next steps
 
-* Learn more about how Trunk [detects flaky tests](detection/)
+* Learn more about how Trunk [detects flaky tests](./README.md)
 * View excluded uploads in the Uploads tab
 * Configure [test quarantine](../quarantining/#enable-quarantining) to automatically skip flaky tests

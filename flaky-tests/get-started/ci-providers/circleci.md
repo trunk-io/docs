@@ -135,7 +135,7 @@ jobs:
 The examples above use the Linux x64 binary. If your CI runs on a different platform, see the [Trunk Analytics CLI](../../reference/cli-reference.md#manual-download) page for all available platform downloads.
 {% endhint %}
 
-See the [Uploader CLI Reference](https://docs.trunk.io/flaky-tests/uploader) for all available command line arguments and usage.
+See the [Uploader CLI Reference](../../reference/cli-reference.md) for all available command line arguments and usage.
 
 #### Stale files
 
