@@ -83,7 +83,7 @@ With `filePathPrefix` set, `jest-junit` will prepend the given path to every fil
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining/) feature to stop flaky tests from failing your CI jobs.
 
 If you have retries configured using the [jest.retryTimes method](https://jestjs.io/docs/jest-object#jestretrytimesnumretries-options), disable them for more accurate results.
 

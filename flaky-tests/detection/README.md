@@ -89,4 +89,8 @@ You can only mute a monitor that has already detected flaky behavior for a test.
 
 ## Variants
 
-If you run the same tests across different environments or architectures, you can use [variants](../uploader.md) to separate these runs into distinct test cases. This lets monitors detect environment-specific flakes. For example, a test might be flaky on iOS but stable on Android. Using variants, monitors isolate flakes on the iOS variant instead of marking the test as flaky across all environments. See the [Trunk Analytics CLI docs](../uploader.md) for details on how to upload with variants.
+If you run the same tests across different environments or architectures, you can use [variants](../reference/cli-reference.md) to separate these runs into distinct test cases. This lets monitors detect environment-specific flakes. For example, a test might be flaky on iOS but stable on Android. Using variants, monitors isolate flakes on the iOS variant instead of marking the test as flaky across all environments. See the [Trunk Analytics CLI docs](../reference/cli-reference.md) for details on how to upload with variants.
+
+## Detection Time
+
+Detection of flaky tests is run automatically when test uploads are processed. From the time that a test with configured flake detection is uploaded, it will take at most 20 minutes for the flakiness to be detected.

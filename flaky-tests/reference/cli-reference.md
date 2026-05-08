@@ -147,7 +147,7 @@ Variant names are displayed in brackets next to test names in your dashboard:
 
 You can also execute tests and upload results to Trunk in a single step using the `test` command to **wrap** your test command.
 
-This is especially useful for [Quarantining](quarantining.md), where the Trunk Analytics CLI will **override the exit code** of the test command if all failures can be quarantined, **preventing** flaky tests from failing your builds in CI.
+This is especially useful for [Quarantining](../quarantining/), where the Trunk Analytics CLI will **override the exit code** of the test command if all failures can be quarantined, **preventing** flaky tests from failing your builds in CI.
 
 {% tabs %}
 {% tab title="XML" %}
@@ -187,7 +187,7 @@ Trunk can accept XCode through the `--xcresult-path` argument:
 {% hint style="info" %}
 #### Service Availability and Graceful Degradation
 
-Trunk Analytics CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](quarantine-service-availability.md)
+Trunk Analytics CLI is designed to fail safe when our quarantine service is unavailable. Read more at [Quarantine Service Availability](../quarantining/quarantine-service-availability.md)
 {% endhint %}
 
 #### Upload failure vs test failure
@@ -235,7 +235,7 @@ The `trunk` command-line tool can upload and analyze test results. The `trunk-an
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `trunk-analytics-cli upload`         | Upload data to Trunk Flaky Tests.                                                                                                                                                                   |
 | `trunk-analytics-cli validate`       | Validates if the provided JUnit XML files and prints any errors.                                                                                                                                    |
-| `trunk-analytics-cli test <COMMAND>` | Runs tests using the provided command, uploads results, checks whether the failures are [quarantined](quarantining.md#using-the-trunk-cli-directly) tests, and correct the exit code based on that. |
+| `trunk-analytics-cli test <COMMAND>` | Runs tests using the provided command, uploads results, checks whether the failures are [quarantined](../quarantining/#using-the-trunk-cli-directly) tests, and correct the exit code based on that. |
 
 The `upload` and `test` commands accept the following options:
 

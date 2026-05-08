@@ -64,4 +64,4 @@ After uploads are flowing, navigate to your repo → **Flaky Tests > Monitors** 
 
 Quarantining suppresses failures from known flaky tests, preventing them from forcing CI re-runs or blocking your merge queue. Flaky tests continue to run and report results — they just don't cause pipeline failures while your team works on fixes. This is especially valuable for unblocking merge queues and keeping development velocity high.
 
-[Configure Quarantining →](../quarantining.md)
+[Configure Quarantining →](../quarantining/)

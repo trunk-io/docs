@@ -37,7 +37,7 @@ Behave outputs multiple XML reports under the JUnit directory. You can locate th
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining/) feature to stop flaky tests from failing your CI jobs.
 
 You must remove the [rerun formatter](https://behave.readthedocs.io/en/latest/formatters/#formatters) from your `behave.ini` file if it is being used to automatically rerun failed tests.
 
@@ -45,7 +45,7 @@ You must remove the [rerun formatter](https://behave.readthedocs.io/en/latest/fo
 
 #### The Validate Command
 
-You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../reference/cli-reference.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

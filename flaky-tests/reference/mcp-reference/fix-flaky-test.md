@@ -6,7 +6,7 @@ description: 'MCP tool reference: fix-flaky-test'
 
 ### Overview
 
-The `fix-flaky-test` tool retrieves insights and historical failure analysis about a flaky test. This tool allows AI assistants to access investigation results and apply fixes directly in your development environment. For more information, see [Autofix Flaky Tests](../../autofix-flaky-tests.md).
+The `fix-flaky-test` tool retrieves insights and historical failure analysis about a flaky test. This tool allows AI assistants to access investigation results and apply fixes directly in your development environment. For more information, see [Autofix Flaky Tests](../../agents/autofix-flaky-tests.md).
 
 
 **Return Type:** Structured analysis data with fix recommendations. Structure: metadata, summary, facts
@@ -66,6 +66,6 @@ Retrieve the investigation for test <testCaseId> with investigationId <investiga
 | ------------------------------ | --------------------------------------------- | --------------------------------------------------------- |
 | `Investigation {investigationId} not found`        | Invalid or non-existent fix ID                | Verify the investigationId from the previous query |
 | `testCaseId must be provided`       | Missing required query parameter              | Test ID is required                                        |
-| `This investigation was skipped before producing a completed summary.` | Investigation was skipped | The setting may be disabled, revisit prerequisites in [Autofix Flaky Tests](../../autofix-flaky-tests.md) |
+| `This investigation was skipped before producing a completed summary.` | Investigation was skipped | The setting may be disabled, revisit prerequisites in [Autofix Flaky Tests](../../agents/autofix-flaky-tests.md) |
 | `This investigation failed before producing a completed summary. Please contact Trunk support.` | Investigation error | This feature is still in Beta, please contact support |
 | Repository authorization error | Insufficient permissions or invalid repo name | Verify repository name format and your access permissions |

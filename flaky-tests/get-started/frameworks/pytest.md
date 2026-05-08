@@ -28,7 +28,7 @@ In your CI job, update your `pytest` command to include the `--junit-xml` and `j
 pytest --junit-xml=junit.xml -o junit_family=xunit1
 ```
 
-The `junit_family=xunit1` is necessary so that the generated XML report includes file paths for each test case. File paths for test cases are used for features that use code owners like the [Jira integration](../../ticketing-integrations/jira-integration.md) and [webhooks](../../webhooks/).
+The `junit_family=xunit1` is necessary so that the generated XML report includes file paths for each test case. File paths for test cases are used for features that use code owners like the [Jira integration](../../management/ticketing/jira-integration.md) and [webhooks](../../webhooks/).
 
 #### Report File Path
 
@@ -36,13 +36,13 @@ The `--junit-xml` argument specifies the path of the JUnit report. You'll need t
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining/) feature to stop flaky tests from failing your CI jobs.
 
 Omit the [`--lf` or `--ff` options](https://docs.pytest.org/en/stable/how-to/cache.html) if you've previously configured your CI with these options to disable retries.
 
 ### Try It Locally
 
-You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../reference/cli-reference.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

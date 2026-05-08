@@ -11,10 +11,10 @@ It is important to have a follow-up process in place to manage detected flaky te
 This guide walks through Trunk's recommended best practices for building a process around detected flaky tests in your organization.
 
 {% hint style="info" %}
-Flaky tests will be [automatically detected](detection/) by Trunk after you:
+Flaky tests will be [automatically detected](../detection/) by Trunk after you:
 
-* [Set up your test framework](get-started/frameworks/) to produce test reports
-* [Integrated with your CI provider](get-started/ci-providers/) to upload those reports on CI runs.
+* [Set up your test framework](../get-started/frameworks/) to produce test reports
+* [Integrated with your CI provider](../get-started/ci-providers/) to upload those reports on CI runs.
 
 Go through these guides first to start detecting flaky tests.
 {% endhint %}
@@ -35,7 +35,7 @@ Labels you apply are visible on the test detail page. Use them to filter and pri
 
 Creating Linear or Jira tickets for detected flaky tests helps to integrate flaky test fixes into your existing workflows.
 
-* Start by [connecting to Linear or Jira](ticketing-integrations/). You can also set default labels or teams for flaky test tickets.
+* Start by [connecting to Linear or Jira](ticketing/). You can also set default labels or teams for flaky test tickets.
 * Once connected, you can click **Create Ticket** on a test detail page in Trunk. Trunk will create the ticket with context, including the test ID, flake rate, and the last failure stack trace and reason.
 * The ticket status and assignee will be visible on the test details page in Trunk, and these details will stay in sync with changes to the ticket.
 
@@ -43,7 +43,7 @@ Creating Linear or Jira tickets for detected flaky tests helps to integrate flak
 
 It is important to keep the team informed on all status changes for flaky tests . This allows for fast follow-up when a test is marked as flaky.
 
-* Use the [built-in Slack or Microsoft Teams webhook integrations](webhooks/) to transform webhook payloads into messages.
+* Use the [built-in Slack or Microsoft Teams webhook integrations](../webhooks/) to transform webhook payloads into messages.
 * Trunk's built-in templates help you get started and test the connection.
 * You can then customize the transformation to update the message format and content, including @-mentioning test owners so they can follow up right away.
 
@@ -80,11 +80,11 @@ Muting suppresses the monitor's contribution to the test's status. If the muted 
 
 ### Step 5: Flag flaky tests
 
-If automated detection hasn't caught a test you know is flaky, you can manually [flag it as flaky](detection.md#flag-as-flaky) from the test detail page. Flagged tests are treated as flaky regardless of automated detection state, and the flag can be removed at any time.
+If automated detection hasn't caught a test you know is flaky, you can manually [flag it as flaky](../detection/flag-as-flaky.md) from the test detail page. Flagged tests are treated as flaky regardless of automated detection state, and the flag can be removed at any time.
 
 ### Step 6: Quarantine flaky tests
 
-Flaky tests slow down CI and have a high negative impact on merge queue throughput. You can minimize or eliminate this CI slowdown by [quarantining](quarantining.md) flaky tests at runtime.
+Flaky tests slow down CI and have a high negative impact on merge queue throughput. You can minimize or eliminate this CI slowdown by [quarantining](../quarantining/) flaky tests at runtime.
 
 * Enable quarantining for your repo at **Settings > your repo > Enable Test Quarantining**.
 * Manually quarantine flaky tests by going to the test details page, clicking **Quarantine**, and setting the status to **Always**. Leave a comment detailing why you are quarantining this test to keep your team informed. The comment and quarantine status change will appear in the timeline on the test details page.
@@ -92,17 +92,17 @@ Flaky tests slow down CI and have a high negative impact on merge queue throughp
 After quarantining a test, Trunk will ignore the test result (pass/fail) on CI runs, preventing this flaky test from failing CI.
 
 {% hint style="info" %}
-**Broken tests are not quarantine candidates.** Only tests with a **Flaky** status are eligible for quarantine. If a test is marked as Broken (consistently failing at a high rate), it represents a real regression that should be investigated and fixed rather than hidden. See [detection](detection/) to understand the difference between flaky and broken tests.
+**Broken tests are not quarantine candidates.** Only tests with a **Flaky** status are eligible for quarantine. If a test is marked as Broken (consistently failing at a high rate), it represents a real regression that should be investigated and fixed rather than hidden. See [detection](../detection/) to understand the difference between flaky and broken tests.
 {% endhint %}
 
 ### Step 7: Automation
 
-Trunk has [webhooks](webhooks/) and [Flaky Tests APIs](flaky-tests.md) that can be used to build custom workflows around ticket creation, linking existing tickets to Trunk, sending notifications, and dealing with quarantined tests.
+Trunk has [webhooks](../webhooks/) and [Flaky Tests APIs](../reference/api-reference.md) that can be used to build custom workflows around ticket creation, linking existing tickets to Trunk, sending notifications, and dealing with quarantined tests.
 
 There is also built-in automation support that handles tasks such as assigning flaky test ownership, ticket creation, and quarantining (so that unblocking CI is not a manual process).&#x20;
 
-* [`CODEOWNERS` files](dashboard.md#code-owners) can automatically assign ownership of test flakes.
-* Tickets can be [auto-created using webhooks](webhooks/) as triggers, similar to Slack or MS Teams notifications.
+* [`CODEOWNERS` files](../dashboard.md#code-owners) can automatically assign ownership of test flakes.
+* Tickets can be [auto-created using webhooks](../webhooks/) as triggers, similar to Slack or MS Teams notifications.
 * Automatically quarantine flaky tests by enabling **Settings > your repo > Auto-Quarantine Flaky Tests**.
 
 You can customize how flaky and quarantined tests are handled to suit your team and organization best.

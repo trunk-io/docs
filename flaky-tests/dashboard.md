@@ -30,7 +30,7 @@ A quarantine status icon appears next to each repository name when quarantining 
 
 Active repositories (with test data in the last 30 days) appear at the top of the list. Repositories with no recent data are collapsed under an **Inactive Repositories** section that you can expand to view.
 
-Selecting a repository opens its detailed dashboard. If your organization has no repositories connected yet, the page redirects to onboarding. See [Quarantining](quarantining.md) to learn how to configure quarantine settings.
+Selecting a repository opens its detailed dashboard. If your organization has no repositories connected yet, the page redirects to onboarding. See [Quarantining](quarantining/) to learn how to configure quarantine settings.
 
 ### Key repository metrics
 
@@ -80,7 +80,7 @@ If you have a codeowners file configured in your repos, you will see who owns ea
 
 <figure><picture><source srcset="../.gitbook/assets/details-code-owners-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/details-code-owners-light.png" alt=""></picture><figcaption><p>You can find the code owners of each test on the top right of the test details screen.</p></figcaption></figure>
 
-This information will also be provided when creating a ticket with the [Jira integration](ticketing-integrations/jira-integration.md) or [webhooks](webhooks/).
+This information will also be provided when creating a ticket with the [Jira integration](management/ticketing/jira-integration.md) or [webhooks](webhooks/).
 
 ### Summary tab
 

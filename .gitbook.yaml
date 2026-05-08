@@ -162,7 +162,7 @@ redirects:
   merge/getting-started: merge-queue/getting-started/README.md
   reference/reference-trunk-yaml: code-quality/overview/cli/getting-started/configuration/README.md
   reference/trunk-yaml: code-quality/overview/cli/getting-started/configuration/README.md
-  test-analytics: flaky-tests/flaky-tests.md
+  test-analytics: flaky-tests/overview.md
   test-analytics/ci-providers: flaky-tests/get-started/ci-providers/README.md
   test-analytics/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite.md
   test-analytics/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci.md
@@ -183,7 +183,7 @@ redirects:
   test-analytics/frameworks/rspec: flaky-tests/get-started/frameworks/README.md
   test-analytics/frameworks/swift-testing: flaky-tests/get-started/frameworks/swift-testing.md
   test-analytics/frameworks/xctest: flaky-tests/get-started/frameworks/xctest.md
-  test-analytics/github-pull-request-comments: flaky-tests/github-pull-request-comments.md
+  test-analytics/github-pull-request-comments: flaky-tests/management/github-pull-request-comments.md
   runtimes: code-quality/overview/cli/getting-started/configuration/runtimes.md
   plugins: code-quality/overview/linters/README.md
   ci/get-started/github-integration: code-quality/overview/setup-and-installation/github-integration.md
@@ -192,6 +192,8 @@ redirects:
   code-quality/ci/get-started/github-integration: code-quality/overview/setup-and-installation/github-integration.md
   code-quality/configuration/debugging: code-quality/overview/debugging.md
   check/check-cloud-ci-integration/get-started/github-integration: code-quality/overview/setup-and-installation/github-integration.md
+  # Link from plugins repo README.md
+  tools: code-quality/overview/cli/getting-started/configuration/tools.md
   flaky-tests/ci-providers/buildkite-quickstart: flaky-tests/get-started/ci-providers/buildkite.md
   flaky-tests/ci-providers/circleci-quickstart: flaky-tests/get-started/ci-providers/circleci.md
   flaky-tests/ci-providers/droneci: flaky-tests/get-started/ci-providers/droneci.md
@@ -248,7 +250,26 @@ redirects:
   merge-queue: merge-queue/merge-queue.md
   code-quality/overview: code-quality/overview/README.md
   code-quality: code-quality/overview/README.md
-  flaky-tests: flaky-tests/flaky-tests.md
+  flaky-tests: flaky-tests/overview.md
+  flaky-tests/use-mcp-server/mcp-tool-reference: flaky-tests/reference/mcp-reference/README.md
+  # External links to top-level flaky-tests pages (now reorganized under subdirectories)
+  flaky-tests/autofix-ci-failures: flaky-tests/agents/autofix-ci-failures.md
+  flaky-tests/autofix-flaky-tests: flaky-tests/agents/autofix-flaky-tests.md
+  flaky-tests/infrastructure-failure-protection: flaky-tests/detection/infrastructure-failure-protection.md
+  flaky-tests/managing-detected-flaky-tests: flaky-tests/management/managing-detected-flaky-tests.md
+  flaky-tests/quarantine-service-availability: flaky-tests/quarantining/quarantine-service-availability.md
+  flaky-tests/quarantining: flaky-tests/quarantining/README.md
+  flaky-tests/test-collections: flaky-tests/get-started/test-collections.md
+  flaky-tests/test-labels: flaky-tests/management/test-labels.md
+  flaky-tests/the-importance-of-pr-test-results: flaky-tests/detection/the-importance-of-pr-test-results.md
+  flaky-tests/ticketing-integrations: flaky-tests/management/ticketing/README.md
+  flaky-tests/uploader: flaky-tests/reference/cli-reference.md
+  # Ticketing integration subpages
+  flaky-tests/ticketing-integrations/jira-integration: flaky-tests/management/ticketing/jira-integration.md
+  flaky-tests/ticketing-integrations/linear-integration: flaky-tests/management/ticketing/linear-integration.md
+  # MCP server pages
+  flaky-tests/use-mcp-server: flaky-tests/reference/mcp-reference/README.md
+  flaky-tests/use-mcp-server/investigate-ci-failures: flaky-tests/reference/mcp-reference/investigate-ci-failure.md
 
   merge-queue/set-up-trunk-merge: merge-queue/getting-started/README.md
 

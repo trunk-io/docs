@@ -6,13 +6,13 @@ description: >-
 
 # Jira integration
 
-When Trunk Flaky Tests [detects a flaky test](../detection/), you can create an automatically generated Jira ticket for your team to pick up and fix the test.
+When Trunk Flaky Tests [detects a flaky test](../../detection/README.md), you can create an automatically generated Jira ticket for your team to pick up and fix the test.
 
 Webhook payloads will also contain ticket information when a Jira ticket is created with the integration or when [existing tickets are linked](jira-integration.md#link-existing-tickets-to-tests).
 
 ### Connecting to Jira
 
-<figure><picture><source srcset="../../.gitbook/assets/jira-connect-form-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/jira-connect-form-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/jira-connect-form-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/jira-connect-form-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 To connect a Jira Cloud project, navigate to **Settings** -> **Repositories** -> **Ticketing Integration** and select **Jira** as your Ticketing System.
 
@@ -78,13 +78,13 @@ There are 2 ways to create a new ticket in the Flaky Tests dashboard:
 
 * Click on the options menu for any test case on the repo overview dashboard
 
-<figure><picture><source srcset="../../.gitbook/assets/create-ticket-button-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/create-ticket-button-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/create-ticket-button-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/create-ticket-button-light.png" alt=""></picture><figcaption></figcaption></figure>
 
-* Use the Create ticket button in the top left corner of the [test case details](../dashboard.md#test-case-details) page.
+* Use the Create ticket button in the top left corner of the [test case details](../../dashboard.md#test-case-details) page.
 
 Before you create the ticket, you will have a preview of the title and description.
 
-<figure><picture><source srcset="../../.gitbook/assets/jira-ticket-creation-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/jira-ticket-creation-light.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/jira-ticket-creation-dark.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/jira-ticket-creation-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 #### Create with Jira
 
@@ -92,7 +92,7 @@ If you are connected to Jira, you can click the **Create Jira Ticket** button at
 
 #### Link existing tickets to tests
 
-If you already have a ticket in Jira that you want to link to a test in the dashboard, you can use the [Link Ticket to Test Case API](../flaky-tests.md#post-flaky-tests-link-ticket-to-test-case).
+If you already have a ticket in Jira that you want to link to a test in the dashboard, you can use the [Link Ticket to Test Case API](../../reference/api-reference.md#post-flaky-tests-link-ticket-to-test-case).
 
 ### Custom Fields
 
@@ -118,7 +118,7 @@ Fields are rendered using an appropriate input type based on the Jira field sche
 | `option` | Searchable dropdown |
 | `user` | User picker dropdown |
 | `array` of `string` | Chip input (comma or Enter to add values) |
-| `textarea` / `string` with textarea hint | Textarea |
+| `text` / `string` with text hint | Text input |
 
 {% hint style="info" %}
 The `reporter` field is treated as optional even when Jira marks it as required. Jira automatically assigns the API token owner as reporter if the field is not specified.

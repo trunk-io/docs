@@ -62,10 +62,8 @@ Follow instructions to get back to Gemini. A confirmation should be shown:
 
 ```
 ℹ✅ Successfully authenticated with MCP server 'trunk'!
- 
 
 ℹRe-discovering tools from 'trunk'...
- 
 
 ℹSuccessfully authenticated and refreshed tools for 'trunk'.
 ```

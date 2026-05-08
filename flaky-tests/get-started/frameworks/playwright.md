@@ -60,7 +60,7 @@ export default defineConfig({
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining/) feature to stop flaky tests from failing your CI jobs.
 
 You can disable retries in Playwright by omitting the `--retries` command line option and [removing retries in your `playwright.config.ts` file](https://playwright.dev/docs/test-retries#retries).
 
@@ -68,7 +68,7 @@ You can disable retries in Playwright by omitting the `--retries` command line o
 
 #### **The Validate Command**
 
-You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../reference/cli-reference.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 {% tabs %}
 {% tab title="Linux (x64)" %}

@@ -48,7 +48,7 @@ The `outputFile: './junit.xml'` option specifies the path of the JUnit report. Y
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining/) feature to stop flaky tests from failing your CI jobs.
 
 If you've enabled retries, you can disable them following the [Vitest docs](https://vitest.dev/api/) for more accurate results.
 
@@ -100,7 +100,7 @@ vitest run --reporter=json | jq '.testResults[].assertionResults'
 
 If you see test files listed as single entries rather than individual test cases, you likely have configuration issues that need to be resolved before proceeding.
 
-You can validate your test reports using the [Trunk Analytics CLI](../../uploader.md). If you don't have it installed already, you can install and run the `validate` command like this:
+You can validate your test reports using the [Trunk Analytics CLI](../../reference/cli-reference.md). If you don't have it installed already, you can install and run the `validate` command like this:
 
 #### **The Validate Command**
 

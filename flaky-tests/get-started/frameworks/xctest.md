@@ -39,7 +39,7 @@ The test reports will be written to the `./test-results.xcresult` directory when
 
 #### Disable Retries
 
-You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining.md) feature to stop flaky tests from failing your CI jobs.
+You need to disable automatic retries if you previously enabled them. Retries compromise the accurate detection of flaky tests. You should disable retries for accurate detection and use the [Quarantining](../../quarantining/) feature to stop flaky tests from failing your CI jobs.
 
 If you run tests in CI with [the `-retry-tests-on-failure` option](https://keith.github.io/xcode-man-pages/xcodebuild.1.html#retry-tests-on-failure), disable it for more accurate results.
 
