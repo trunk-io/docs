@@ -105,6 +105,48 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
 
+### Testing duration
+
+Testing duration shows how long each PR spends in the TESTING state within the Merge Queue, measured from when testing begins to when the cycle reaches its final state. Unlike the Conclusion count and Time in queue charts, testing duration uses separate data bucketing — hovering over a data point will not highlight the corresponding point on the other charts.
+
+Each data point represents one TESTING-to-final-state transition. A single PR can contribute multiple data points if its testing cycle restarted.
+
+The stat measures match those on the Time in queue chart:
+
+| Measure | Explanation |
+| ------- | ----------- |
+| Average | Average testing duration during the time bucket |
+| Minimum | The shortest testing duration in the time bucket |
+| Maximum | The longest testing duration in the time bucket |
+| Sum | The total of all testing durations added together |
+| P50 | The value below which 50% of testing durations fall |
+| P95 | The value below which 95% of testing durations fall |
+| P99 | The value below which 99% of testing durations fall |
+
+#### Filters
+
+Two dropdowns let you narrow the data shown in the chart:
+
+**Outcome** — filter by how each testing cycle ended:
+
+| Value | Meaning |
+| ----- | ------- |
+| All Outcomes | Include all testing cycles (default) |
+| Passed | Cycles where tests passed |
+| Failed | Cycles where tests failed |
+| Interrupted | Cycles interrupted before completion |
+| Cancelled | Cycles cancelled before tests ran to completion |
+
+**Cycle ended in** — filter by how the PR's overall merge cycle resolved:
+
+| Value | Meaning |
+| ----- | ------- |
+| All | Include all PR cycles (default) |
+| Merged | PR was ultimately merged |
+| Failed | PR ultimately failed out of the queue |
+| Cancelled | PR was cancelled |
+| In Flight | PR cycle is still in progress |
+
 ### Drill down into metrics
 
 From the **Conclusion count** and **Time in queue** charts, you can drill into any point or window on the graph to see the exact pull requests that made up those numbers.
