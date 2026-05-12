@@ -95,19 +95,19 @@ Understanding the amount of time a pull request spends in the queue is important
 
 The time in queue can be displayed as different statistical measures. You can show or hide them by using the **+ Add** button.
 
-| Measure | Explanation                                         |
-| ------- | --------------------------------------------------- |
-| Average | Average of all time in queue during the time bucket |
-| Minimum | The shortest time in queue in the time bucket.      |
-| Maximum | The longest time in queue in the time bucket.       |
-| Sum     | The total of all time in queue added together.      |
-| P50     | The value below 50% of the time in queue falls.     |
-| P95     | The value below 95% of the time in queue falls.     |
-| P99     | The value below 99% of the time in queue falls.     |
+| Measure | Explanation |
+| ------- | ----------- |
+| Average | Average time in queue during the time bucket |
+| Minimum | The shortest time in queue in the time bucket |
+| Maximum | The longest time in queue in the time bucket |
+| Sum | The total of all time in queue added together |
+| P50 | The value below which 50% of times in queue fall |
+| P95 | The value below which 95% of times in queue fall |
+| P99 | The value below which 99% of times in queue fall |
 
 ### Testing duration
 
-Testing duration shows how long each PR spends in the TESTING state within the Merge Queue, measured from when testing begins to when the cycle reaches its final state. Unlike the Conclusion count and Time in queue charts, testing duration uses separate data bucketing. Hovering over a data point will not highlight the corresponding point on the other charts.
+Testing duration shows how long each PR spends in the TESTING state within the Merge Queue, measured from when testing begins to when the testing cycle reaches its final state. Unlike the Conclusion count and Time in queue charts, testing duration uses separate data bucketing. Hovering over a data point will not highlight the corresponding point on the other charts.
 
 This is distinct from [Time in queue](#time-in-queue), which measures total time from queue entry to exit. A PR that waits before testing starts will have a longer time in queue but the same testing duration. Use this chart to understand CI performance specifically, separate from queue wait time.
 
@@ -126,8 +126,8 @@ Two dropdowns let you narrow the data shown in the chart.
 | All Outcomes | Include all testing cycles (default) |
 | Passed | Cycles where tests passed |
 | Failed | Cycles where tests failed |
-| Interrupted | Cycles interrupted before completion |
-| Cancelled | Cycles cancelled before tests ran to completion |
+| Interrupted | Test runs cut short by a restart, preempt, or base-branch change (the cycle may continue with a new run) |
+| Cancelled | Cycles cancelled mid-test (the cycle ends without a passing or failing result) |
 
 **Cycle ended in** filters by how the PR's overall merge cycle resolved:
 
