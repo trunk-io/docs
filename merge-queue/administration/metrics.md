@@ -107,9 +107,41 @@ The time in queue can be displayed as different statistical measures. You can sh
 
 ### Testing duration
 
-Testing duration shows how long each PR spends in the TESTING state within the Merge Queue, measured from when testing begins to when the cycle reaches its final state. Unlike the Conclusion count and Time in queue charts, testing duration uses separate data bucketing — hovering over a data point will not highlight the corresponding point on the other charts.
+Testing duration shows how long each PR spends in the TESTING state within the Merge Queue, measured from when testing begins to when the cycle reaches its final state. Unlike the Conclusion count and Time in queue charts, testing duration uses separate data bucketing. Hovering over a data point will not highlight the corresponding point on the other charts.
 
+This is distinct from [Time in queue](#time-in-queue), which measures total time from queue entry to exit. A PR that waits before testing starts will have a longer time in queue but the same testing duration. Use this chart to understand CI performance specifically, separate from queue wait time.
+
+{% hint style="info" %}
 Each data point represents one TESTING-to-final-state transition. A single PR can contribute multiple data points if its testing cycle restarted.
+{% endhint %}
+
+#### Filters
+
+Two dropdowns let you narrow the data shown in the chart.
+
+**Outcome** filters by how each testing cycle ended:
+
+| Value | Meaning |
+| ----- | ------- |
+| All Outcomes | Include all testing cycles (default) |
+| Passed | Cycles where tests passed |
+| Failed | Cycles where tests failed |
+| Interrupted | Cycles interrupted before completion |
+| Cancelled | Cycles cancelled before tests ran to completion |
+
+**Cycle ended in** filters by how the PR's overall merge cycle resolved:
+
+| Value | Meaning |
+| ----- | ------- |
+| All | Include all PR cycles (default) |
+| Merged | PR was ultimately merged |
+| Failed | PR ultimately failed out of the queue |
+| Cancelled | PR was cancelled |
+| In Flight | PR cycle is still in progress |
+
+Combine the two to isolate specific patterns. For example, set **Outcome** to Passed and **Cycle ended in** to Merged to see testing durations for PRs that ultimately merged, giving you a clean baseline for CI speed without noise from canceled or failed runs.
+
+#### Statistical measures
 
 The stat measures match those on the Time in queue chart:
 
@@ -122,30 +154,6 @@ The stat measures match those on the Time in queue chart:
 | P50 | The value below which 50% of testing durations fall |
 | P95 | The value below which 95% of testing durations fall |
 | P99 | The value below which 99% of testing durations fall |
-
-#### Filters
-
-Two dropdowns let you narrow the data shown in the chart:
-
-**Outcome** — filter by how each testing cycle ended:
-
-| Value | Meaning |
-| ----- | ------- |
-| All Outcomes | Include all testing cycles (default) |
-| Passed | Cycles where tests passed |
-| Failed | Cycles where tests failed |
-| Interrupted | Cycles interrupted before completion |
-| Cancelled | Cycles cancelled before tests ran to completion |
-
-**Cycle ended in** — filter by how the PR's overall merge cycle resolved:
-
-| Value | Meaning |
-| ----- | ------- |
-| All | Include all PR cycles (default) |
-| Merged | PR was ultimately merged |
-| Failed | PR ultimately failed out of the queue |
-| Cancelled | PR was cancelled |
-| In Flight | PR cycle is still in progress |
 
 ### Drill down into metrics
 
