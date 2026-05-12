@@ -125,6 +125,8 @@ A stacked bar chart at the top of the tab shows daily test run counts. The legen
 
 Click and drag on the chart to select a date range, which scopes the table below to runs from the selected days. The selected range appears next to the legend with an X button to clear just the range. The **Reset** button on the filter bar clears all filters at once, including the date range.
 
+The **Result** and **Quarantined** filters from the filter bar also apply to the chart bars. When you filter to only passing runs, for example, the chart shows only green (Pass) bars. The chart and table always reflect the same set of runs.
+
 #### Filters
 
 A filter bar below the chart provides four independent controls:
