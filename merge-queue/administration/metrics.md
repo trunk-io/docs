@@ -105,6 +105,41 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
 
+### Testing duration
+
+Testing duration shows how long each PR spends in the **TESTING** phase of the merge queue -- from when testing begins to when the test cycle reaches a final state (merged, failed, or canceled).
+
+This is distinct from [Time in queue](#time-in-queue), which measures total time from queue entry to exit. A PR that waits before testing starts will have a longer time in queue but the same testing duration. Use this chart to understand CI performance specifically, separate from queue wait time.
+
+{% hint style="info" %}
+Each data point represents one TESTING-to-final-state transition. A PR that is kicked back to PENDING and re-enters testing (for example, due to a queue restart) can appear more than once.
+{% endhint %}
+
+The chart appears in a **Testing Metrics** section below the queue metrics charts and uses the same time range and granularity controls.
+
+#### Filters
+
+Two filters let you narrow the data:
+
+* **Outcome** -- Filter by how the test cycle ended. Options include Passed, Failed, and others. Select **All Outcomes** to see the full distribution.
+* **Cycle ended in** -- Filter by the final disposition of the PR. Select **Merged**, **Failed**, or **All Cycle Ended In** to see the full set.
+
+Use these together to isolate, for example, only the testing durations of PRs that ultimately merged (outcome: Passed, cycle ended in: Merged), giving you a clean baseline for your CI speed without noise from canceled or failed runs.
+
+#### Statistical measures
+
+Testing duration displays the same statistical measures as Time in queue. Use the **+ Add** button to show or hide them.
+
+| Measure | Explanation |
+| ------- | ----------------------------------------------------------- |
+| Average | Average testing duration during the time bucket |
+| Minimum | The shortest testing duration in the time bucket |
+| Maximum | The longest testing duration in the time bucket |
+| Sum | The total of all testing durations added together |
+| P50 | The value below which 50% of testing durations fall |
+| P95 | The value below which 95% of testing durations fall |
+| P99 | The value below which 99% of testing durations fall |
+
 ### Drill down into metrics
 
 From the **Conclusion count** and **Time in queue** charts, you can drill into any point or window on the graph to see the exact pull requests that made up those numbers.
