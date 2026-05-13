@@ -4,7 +4,7 @@ description: Organize and categorize test cases with organization-scoped labels.
 
 # Test Labels
 
-Test labels are organization-scoped tags you can apply to individual test cases to organize, filter, and categorize your test suite. Labels are applied manually today; see [Automatic labeling from monitors](#automatic-labeling-from-monitors) for what's coming.
+Test labels are organization-scoped tags you can apply to individual test cases to organize, filter, and categorize your test suite. Labels can be applied manually or automatically by monitors.
 
 <figure><img src="../../.gitbook/assets/test-details-labels.png" alt="Labels applied to a test on details page"><figcaption></figcaption></figure>
 
@@ -32,9 +32,24 @@ On the tests list, you can filter the table down to test cases that have a parti
 
 ### Automatic labeling from monitors
 
-{% hint style="info" %}
-**Coming soon.** Monitors will be able to automatically apply and remove labels on test cases based on test behavior. More details will be published when this is available.
-{% endhint %}
+Monitors can automatically apply labels to test cases when the monitor activates. This lets you tag tests as they accumulate failures without any manual triage.
+
+When creating a failure count or failure rate monitor, you choose the **action type**:
+
+* **Classify test status** — the monitor marks tests as flaky or broken (the default behavior)
+* **Apply labels** — the monitor tags matching tests with one or more labels when it activates
+
+The action type is set at creation and cannot be changed afterward. If you need to switch a monitor's action type, create a new monitor with the desired type and disable the old one.
+
+To configure automatic labeling:
+
+1. Go to **Flaky Tests** > select your repository > **Monitors**
+2. Click **Add** next to the monitor type you want to create
+3. In the creation form, select **Apply labels** as the action type
+4. Choose one or more labels to apply when the monitor activates
+5. Complete the rest of the monitor configuration and save
+
+Tests that the monitor flags will have the selected labels applied automatically. You can still apply or remove labels manually on top of what monitors set.
 
 ### Related
 
