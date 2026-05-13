@@ -52,26 +52,6 @@ Once a PR is in the queue, the extension panel updates in real time as it moves 
 * **Tests Passed** - waiting for upstream PRs before merging
 * **Merged**, **Failed** - terminal states
 
-### Stacked pull requests
-
-{% hint style="info" %}
-Stacked PR queue support requires the [Trunk Sudo GitHub App](../setup-and-administration/trunk-sudo-app.md) and the `/trunk stack` workflow. Stacks submitted one PR at a time with `/trunk merge` are tracked individually, not as a group.
-{% endhint %}
-
-When a stack is queued with [`/trunk stack`](using-the-queue/stacked-pull-requests.md#merge-the-stack-as-one-unit), the extension shows a stack-aware view on every member PR page.
-
-**What the panel shows:**
-
-* **Stack path** — the full list of PRs in the stack from tip to base, so you can see where your PR sits within the group.
-* **Stacked PR chip** — a link to the combined test PR Trunk creates for the stack (labeled **Stacked PR #N**). Click it to open the stacked PR on GitHub and inspect its CI status.
-
-**Actions:**
-
-* **Add stack to queue** — enqueues the entire stack as one unit. Clicking it on any member PR page submits the same stack.
-* **Remove** — removes the whole stack from the queue.
-
-Re-enqueueing after a remove works the same way: click **Add stack to queue** on any member PR page to resubmit the stack.
-
 ### Rolling the Extension out to an entire Org
 
 Chrome admins can install the Trunk extension for everyone in a Google Workspace organization using the [Chrome Web Store ID](https://chromewebstore.google.com/detail/liggeliamkammmieidmmfmmdnjilabgn) `liggeliamkammmieidmmfmmdnjilabgn`. See Google's [Automatically install apps and extensions](https://support.google.com/chrome/a/answer/6306504?hl=en) guide for the admin console steps.

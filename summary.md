@@ -29,7 +29,6 @@
   * [Submit and cancel pull requests](merge-queue/using-the-queue/reference.md)
   * [Monitor queue status](merge-queue/using-the-queue/monitor-queue-status.md)
   * [Handle failed pull requests](merge-queue/using-the-queue/handle-failed-pull-requests.md)
-  * [Work with stacked pull requests](merge-queue/using-the-queue/stacked-pull-requests.md)
   * [Emergency pull requests](merge-queue/using-the-queue/emergency-pull-requests.md)
   * [Force merge](merge-queue/using-the-queue/force-merge.md)
 * [Integration for Slack](merge-queue/integration-for-slack.md)
