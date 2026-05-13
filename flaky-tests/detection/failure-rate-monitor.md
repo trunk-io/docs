@@ -6,16 +6,27 @@ description: Detect flaky or broken tests based on failure rate over a configura
 
 The failure rate monitor detects tests based on failure rate over a rolling time window. Unlike pass-on-retry, which looks for a specific pattern on a single commit, the failure rate monitor identifies tests that fail too often over a period of time, even if no individual failure looks like a retry.
 
-You can create multiple failure rate monitors with different configurations. This is how you tailor detection to different branches, test volumes, sensitivity levels, and detection types.
+You can create multiple failure rate monitors with different configurations. This is how you tailor detection to different branches, test volumes, sensitivity levels, and action types.
+
+## Action Type
+
+When creating a failure rate monitor, choose what action it takes when a test is flagged:
+
+- **Classify test status** — marks the test as flaky or broken. This is the default and integrates with quarantine workflows and status-based filtering.
+- **Apply labels** — tags matching tests with one or more labels when the monitor activates. Use this when you want to categorize tests automatically without changing their status. See [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors) for details.
+
+The action type is set at creation and cannot be changed afterward. If you need to switch a monitor's action type, create a new monitor with the desired type and disable the old one.
 
 ## Detection Type
 
-Each failure rate monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it:
+Applies only to monitors with the **Classify test status** action type.
+
+Each classify-action failure rate monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it:
 
 - **Flaky monitors** catch tests that fail intermittently (e.g., 20–50% failure rate). These are typically caused by timing issues, shared state, or non-deterministic behavior.
 - **Broken monitors** catch tests that fail consistently at a high rate (e.g., 80%+ failure rate). These usually indicate a real regression — something in the code or environment is genuinely broken and needs a fix.
 
-The detection type is set at creation and cannot be changed afterward. If you need to switch a monitor's type, create a new monitor with the desired type and disable the old one.
+The detection type is set at creation and cannot be changed afterward. If you need to switch a monitor's detection type, create a new monitor with the desired type and disable the old one.
 
 This distinction matters because the two problems call for different responses. Flaky tests might be quarantined while you investigate the root cause. Broken tests represent real failures that should be fixed, not hidden.
 
@@ -53,9 +64,13 @@ stale timeout, and branch scope. Capture it with realistic example values filled
 in (e.g., "Broken on main", Broken detection type, 80% activation, 60% resolution,
 6 hour window, 50 min sample, main branch). -->
 
+### Action Type
+
+Choose **Classify test status** or **Apply labels**. See [Action Type](#action-type) above for details. This cannot be changed after the monitor is created.
+
 ### Detection Type
 
-Choose **Flaky** or **Broken**. This determines the status a test receives when the monitor flags it. See [Detection Type](#detection-type) above for guidance on which to use.
+Appears only when the action type is **Classify test status**. Choose **Flaky** or **Broken**. This determines the status a test receives when the monitor flags it. See [Detection Type](#detection-type) above for guidance on which to use.
 
 ### Activation Threshold
 

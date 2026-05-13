@@ -1,5 +1,5 @@
 ---
-description: Detect flaky or broken tests as soon as they accumulate a configured number of failures
+description: Detect and classify or label tests as soon as they accumulate a configured number of failures
 ---
 
 # Failure Count Monitor
@@ -18,14 +18,25 @@ Use the failure count monitor when you want immediate visibility into test failu
 
 If you need to detect patterns of intermittent failure over time (e.g., a test that fails 20% of the time), use a [failure rate monitor](failure-rate-monitor.md) instead. If you want to catch tests that fail and then pass on retry within a single commit, [pass-on-retry](pass-on-retry-monitor.md) handles that automatically.
 
+## Action Type
+
+When creating a failure count monitor, choose what action it takes when a test is flagged:
+
+- **Classify test status** — marks the test as flaky or broken. This is the default and integrates with quarantine workflows and status-based filtering.
+- **Apply labels** — tags matching tests with one or more labels when the monitor activates. Use this when you want to categorize tests automatically without changing their status. See [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors) for details.
+
+The action type is set at creation and cannot be changed afterward. If you need to switch a monitor's action type, create a new monitor with the desired type and disable the old one.
+
 ## Detection Type
 
-Each failure count monitor has a **detection type** -- either **flaky** or **broken** -- which controls what status a test receives when the monitor flags it:
+Applies only to monitors with the **Classify test status** action type.
+
+Each classify-action failure count monitor has a **detection type** -- either **flaky** or **broken** -- which controls what status a test receives when the monitor flags it:
 
 - **Flaky monitors** are appropriate when failures on the monitored branch are likely non-deterministic. A test that fails once on `main` but passes on retry is probably flaky.
 - **Broken monitors** are appropriate when failures indicate a real regression. If a test fails on `main` and you expect it to keep failing until someone fixes it, broken is the right classification.
 
-The detection type is set at creation and cannot be changed afterward. If you need to switch a monitor's type, create a new monitor with the desired type and disable the old one.
+The detection type is set at creation and cannot be changed afterward. If you need to switch a monitor's detection type, create a new monitor with the desired type and disable the old one.
 
 ## How It Works
 
@@ -37,6 +48,7 @@ You configure a failure count monitor with:
 
 | Setting | Value |
 |---|---|
+| Action type | Classify test status |
 | Detection type | Broken |
 | Failure count | 1 |
 | Window | 30 minutes |
@@ -55,6 +67,14 @@ A developer merges a change that breaks `test_checkout`. Here is what happens:
 If another test, `test_signup`, also failed during that window, it would be flagged independently. Each test is evaluated on its own.
 
 ## Configuration
+
+### Action Type
+
+Choose **Classify test status** or **Apply labels**. See [Action Type](#action-type) above for details. This cannot be changed after the monitor is created.
+
+### Detection Type
+
+Appears only when the action type is **Classify test status**. Choose **Flaky** or **Broken**. This determines the status a test receives when the monitor flags it. See [Detection Type](#detection-type) above for guidance.
 
 ### Failure Count
 
