@@ -24,7 +24,7 @@ A test stays in its detected state until every classifying monitor that flagged 
 
 ### Disabling or Deleting a Monitor
 
-When you disable or delete a monitor, it is immediately set to **resolved** for every test case in the repo. This triggers a status re-evaluation for all affected tests. If the disabled monitor was the only active monitor for a test, that test transitions to healthy. If other monitors are still active, the test remains in the most severe active state.
+When you disable or delete a monitor, it is immediately set to **resolved** for every test case in the repo. For a classifying monitor, this triggers a status re-evaluation for all affected tests: if the disabled monitor was the only active classifying monitor for a test, that test transitions to healthy; if others are still active, the test remains in the most severe active state. For a labeling monitor, the labels it had applied are removed (subject to its **Remove these labels when the monitor resolves** setting).
 
 For example, if you have a broken failure rate monitor and a flaky pass-on-retry monitor, and you disable the broken monitor, any test that was only flagged by the broken monitor will become healthy. A test flagged by both will transition from broken to flaky (because pass-on-retry is still active).
 

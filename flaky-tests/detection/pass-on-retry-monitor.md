@@ -37,6 +37,7 @@ default 7-day recovery period visible. -->
 | **Enabled** | Whether the monitor is active | On |
 | **Recovery days** | Days without pass-on-retry behavior before a test is resolved as healthy. Range: 1 to 15 days. | 7 |
 | **Branch scope** | Which branches the monitor evaluates. Accepts branch names and glob patterns. | All branches (`*`) |
+| **Action** | What happens when the monitor activates. Either classify the test as flaky or apply labels. | Classify as flaky |
 
 ### What Recovery Days Controls
 
@@ -56,9 +57,12 @@ Branch scope uses the same glob syntax as [failure rate monitor branch patterns]
 
 Changes to branch scope take effect for newly detected events. Previously detected flaky tests are not re-evaluated.
 
-## Action
+### Action
 
-By default, an active pass-on-retry monitor classifies the test as **flaky** and restores it to healthy on resolution. You can switch the monitor's action to **Apply labels** instead — see [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
+You pick the action at creation and can switch it at any time.
+
+* **Classify test status** (default) — flags the test as **flaky** while the monitor is active and restores it to healthy when the monitor resolves. Pass-on-retry only classifies as flaky; there is no broken option.
+* **Apply labels** — adds the configured labels to the test while the monitor is active. The test's health status is not changed by this monitor. See [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
 
 ## When Detection Happens
 

@@ -18,18 +18,9 @@ Use the failure count monitor when you want immediate visibility into test failu
 
 If you need to detect patterns of intermittent failure over time (e.g., a test that fails 20% of the time), use a [failure rate monitor](failure-rate-monitor.md) instead. If you want to catch tests that fail and then pass on retry within a single commit, [pass-on-retry](pass-on-retry-monitor.md) handles that automatically.
 
-## Detection Type
-
-Each failure count monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it. The detection type applies when the monitor's [action](#action) is **Classify test status** (the default). If you switch the action to **Apply labels** instead, the detection type is unused.
-
-- **Flaky monitors** are appropriate when failures on the monitored branch are likely non-deterministic. A test that fails once on `main` but passes on retry is probably flaky.
-- **Broken monitors** are appropriate when failures indicate a real regression. If a test fails on `main` and you expect it to keep failing until someone fixes it, broken is the right classification.
-
-The detection type is set at creation and cannot be changed afterward. If you need to switch a monitor's type, create a new monitor with the desired type and disable the old one.
-
 ## How It Works
 
-The monitor counts the number of test failures on configured branches within a rolling time window. When a test reaches the configured failure count, it is flagged.
+The monitor counts the number of test failures on configured branches within a rolling time window. When a test reaches the configured failure count, the monitor activates and runs its configured [action](#action) — by default, flagging the test as flaky or broken.
 
 ### Example
 
@@ -72,7 +63,7 @@ The window should be long enough to capture the failures you care about but shor
 
 ### Resolution Timeout
 
-How long a flagged test must go without any new failures before it is automatically resolved. This is the only way a failure count monitor resolves. There is no "recovery rate" or sample-based resolution like the failure rate monitor.
+How long a flagged test must go without any new failures before it is automatically resolved. This is the only way a failure count monitor resolves — there is no "recovery rate" or sample-based resolution like the failure rate monitor, and no stale timeout. If a test stops running entirely (e.g., it was deleted or renamed), it stays flagged until the resolution timeout elapses from its last observed failure.
 
 For example, with a resolution timeout of 2 hours, a test that was flagged at 3:00 PM will resolve at 5:00 PM if no new failures occur. If a new failure arrives at 4:30 PM, the clock resets, and the test will not resolve until 6:30 PM.
 
@@ -86,13 +77,20 @@ Which branches the monitor evaluates. You can specify branch names or glob patte
 
 Branch patterns work the same way as [failure rate monitor branch patterns](failure-rate-monitor.md#branch-pattern-syntax), including glob syntax and merge queue patterns. Refer to that section for pattern syntax, examples, and tips.
 
-## Resolution Behavior
+### Action
 
-A failure count monitor resolves in one way: **the test stops failing for long enough.**
+What happens when the monitor activates on a test. You pick the action at creation and can switch it at any time.
 
-When the configured resolution timeout elapses without a new failure on any monitored branch, the test is resolved as healthy. There is no rate-based recovery and no stale timeout. If a test stops running entirely (e.g., it was deleted or renamed), it remains in its flagged state until the resolution timeout passes from the last observed failure.
+#### Classify test status (default)
 
-This time-based approach means you don't need to wait for enough passing runs to bring a failure rate down. Once the test is quiet, it resolves.
+The test's status is set according to the monitor's **detection type**, and restored to healthy when the monitor resolves. The detection type is either:
+
+* **Flaky** — appropriate when failures on the monitored branch are likely non-deterministic. A test that fails once on `main` but passes on retry is probably flaky.
+* **Broken** — appropriate when failures indicate a real regression. If a test fails on `main` and you expect it to keep failing until someone fixes it, broken is the right classification.
+
+#### Apply labels
+
+The configured labels are added to the test while the monitor is active. The test's health status is not changed by this monitor. See [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors) for how to configure and what to expect.
 
 ## Preview Panel
 
@@ -117,10 +115,6 @@ If no tests match the active filter, the empty state includes a hint to clear th
 ### Large Repo Truncation
 
 For repositories with a large number of matching tests, preview results may be truncated. When this happens, an amber warning appears in the panel. The truncation applies to the list of tests shown, not to the underlying detection logic — the monitor evaluates all matching tests when active.
-
-## Action
-
-By default, an active failure count monitor classifies the test according to its [detection type](#detection-type) (flaky or broken) and restores it to healthy on resolution. You can switch the monitor's action to **Apply labels** instead — see [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
 
 ## Muting
 
