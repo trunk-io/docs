@@ -22,7 +22,7 @@ Trunk Merge Queue respects GitHub's branch protection rules and works with both 
 * **Admission into the queue** — Trunk doesn't admit a submitted PR for testing until GitHub considers it ready to merge. Branch protection (required reviews, required status checks, conversation resolution, etc.) is what determines when GitHub marks a PR as ready to merge, so it directly controls when a PR enters the queue.
 * **Required checks during testing (optional)** — By default, Trunk waits on the same required status checks defined in your branch protection rules while testing a PR in the queue. You can override this with the Trunk UI or `.trunk/trunk.yaml` if you want a different set of checks required during queue testing. See [Required Status Checks](../administration/advanced-settings.md#required-status-checks).
 
-The configurations on this page (push restrictions for the `trunk-io` bot, and excluding `trunk-temp/*` and `trunk-merge/*` from protection) ensure branch protection doesn't *block* Trunk from doing its job. They don't change either of the roles above.
+The configurations on this page (push restrictions for the `trunk-io` bot, and excluding `trunk-temp/**/*` and `trunk-merge/**/*` from protection) ensure branch protection doesn't *block* Trunk from doing its job. They don't change either of the roles above.
 
 ### Choose your testing approach
 
@@ -55,7 +55,7 @@ Things to look out for:
 **Best for:** Teams who need different CI behavior for merge queue testing versus pull request review.
 {% endhint %}
 
-When a pull request enters the queue, Trunk creates a `trunk-merge/*` branch and pushes to it. You configure specific CI jobs to run on these branches.
+When a pull request enters the queue, Trunk creates a branch under `trunk-merge/` and pushes to it. You configure specific CI jobs to run on these branches.
 
 **Advantages:**
 
@@ -94,7 +94,7 @@ Splitting them keeps Trunk's bypass scope minimal: GitHub bypass permissions app
 This ruleset lets the Trunk GitHub App update your protected branch when merging from the queue, while still preventing direct pushes from anyone else.
 
 1. In GitHub, go to **Settings → Rules → Rulesets** and create a new ruleset (e.g., name it `main - force push`).
-2. Under **Target branches**, target the protected branch only (e.g., `main`). No exclude pattern is needed *for this ruleset* — Trunk's `trunk-temp/*` and `trunk-merge/*` branches are not in the include list, so they aren't matched. Other rulesets (especially at the organization level) may still need explicit excludes; see [Exempt Trunk's temporary branches from other rulesets](#exempt-trunk-temporary-branches) below.
+2. Under **Target branches**, target the protected branch only (e.g., `main`). No exclude pattern is needed *for this ruleset* — Trunk's `trunk-temp/**/*` and `trunk-merge/**/*` branches are not in the include list, so they aren't matched. Other rulesets (especially at the organization level) may still need explicit excludes; see [Exempt Trunk's temporary branches from other rulesets](#exempt-trunk-temporary-branches) below.
 3. Under **Rules → Branch rules**, enable **Restrict updates** ("Only allow users with bypass permission to update matching refs"). You can optionally co-locate **Restrict deletions** and **Restrict creations** in the same ruleset; the bypass list applies to the entire ruleset.
 4. Under **Bypass list**, add the Trunk GitHub App (`trunk-io`) and set its bypass mode to **Exempt**.
 5. If you also use [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md), add **Trunk Sudo** to the bypass list as **Exempt** as well.
@@ -123,13 +123,13 @@ See [Required Status Checks](../administration/advanced-settings.md#required-sta
 
 ##### Exempt Trunk's temporary branches from other rulesets <a href="#exempt-trunk-temporary-branches" id="exempt-trunk-temporary-branches"></a>
 
-The two rulesets above target only your protected branch, so they don't match `trunk-temp/**/*` or `trunk-merge/**/*`. But any **other** Branch ruleset — at the **organization** level or elsewhere on this repository — whose targeting is broader (e.g. **All branches**, or a wildcard include like `**/*`) will match Trunk's temporary branches and block the queue.
+The two rulesets above target only your protected branch, so they don't match `trunk-temp/**/*` or `trunk-merge/**/*`. But any **other** Branch ruleset — at the **organization** level or elsewhere on this repository — whose targeting is broader (e.g., **All branches**, or a wildcard include like `**/*`) will match Trunk's temporary branches and block the queue.
 
 {% hint style="danger" %}
-**Symptom:** A PR enters the queue and then fails out shortly after testing starts with a GitHub permission error (e.g. "Permission denied on trunk-merge/\* branch"). You'll see this on the **Trunk Merge Queue** status check on the PR, in Trunk's status comment on the PR, and on the PR's detail page in the [Trunk dashboard](https://app.trunk.io/). This almost always means a Branch ruleset is preventing Trunk from creating, pushing to, or deleting `trunk-temp/**/*` or `trunk-merge/**/*`.
+**Symptom:** A PR enters the queue and then fails out shortly after testing starts with a GitHub permission error (e.g., "Permission denied on trunk-merge/\* branch"). You'll see this on the **Trunk Merge Queue** status check on the PR, in Trunk's status comment on the PR, and on the PR's detail page in the [Trunk dashboard](https://app.trunk.io/). This almost always means a Branch ruleset is preventing Trunk from creating, pushing to, or deleting `trunk-temp/**/*` or `trunk-merge/**/*`.
 {% endhint %}
 
-**Branch rulesets vs. Push rulesets.** Only **Branch** rulesets need this exemption — this is a GitHub ruleset type and is unrelated to the [Push-Triggered testing mode](#push-triggered-mode-advanced) above. Push rulesets gate the *content* of pushes (file size limits, secret scanning, restricted file paths, etc.) rather than the branch operations the queue performs, so they can target Trunk's temporary branches without breaking the queue. To tell them apart, open a ruleset's edit page: Branch rulesets have a **Branch targeting criteria** section, while Push rulesets have **Push rules** and target repositories rather than branches. Audit only the Branch rulesets.
+**Branch rulesets vs. Push rulesets.** Only **Branch** rulesets need this exemption. Branch vs. Push is a GitHub ruleset type and is unrelated to the [Push-Triggered testing mode](#push-triggered-mode-advanced) above. Push rulesets gate the *content* of pushes (file size limits, secret scanning, restricted file paths, etc.) rather than the branch operations the queue performs, so they can target Trunk's temporary branches without breaking the queue. To tell them apart, open a ruleset's edit page: Branch rulesets have a **Branch targeting criteria** section, while Push rulesets have **Push rules** and target repositories rather than branches. Audit only the Branch rulesets.
 
 **Where to look:**
 
@@ -159,7 +159,8 @@ Before submitting your first PR to the queue, confirm:
 * [ ] Ruleset #1 targets only your protected branch and has the Trunk GitHub App on the bypass list as **Exempt**.
 * [ ] Ruleset #2 targets only your protected branch and does **not** bypass Trunk.
 * [ ] Every other Branch ruleset visible at the organization level and on this repository either does not match `trunk-temp/**/*`/`trunk-merge/**/*`, or explicitly excludes both patterns.
-* [ ] (If using [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md)) Trunk Sudo is on Ruleset #1's bypass list as **Exempt**, and on Ruleset #2's bypass list as **Exempt** if you use Force merge or stacked PRs.
+* [ ] (If using [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md)) Trunk Sudo is on Ruleset #1's bypass list as **Exempt**.
+* [ ] (If using [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md) **and** Force merge or stacked PRs) Trunk Sudo is also on Ruleset #2's bypass list as **Exempt**.
 
 #### Migrating from Classic rules to Rulesets <a href="#migrating-from-classic-rules-to-rulesets" id="migrating-from-classic-rules-to-rulesets"></a>
 
@@ -196,8 +197,8 @@ Trunk Merge Queue needs permission to push to your protected branch. Configure t
 
 Trunk Merge Queue creates temporary branches to test pull requests before merging them:
 
-* `trunk-temp/*` — temporary testing branches
-* `trunk-merge/*` — merge testing branches
+* `trunk-temp/**/*` — temporary testing branches
+* `trunk-merge/**/*` — merge testing branches
 
 {% hint style="danger" %}
 **Trunk needs unrestricted access** to create, push to, and delete these branches. If your branch protection rules apply to these branches, Merge Queue cannot function.
@@ -207,12 +208,12 @@ To verify and fix:
 
 1. Go to **Settings → Branches** in your repository.
 2. Review all Classic branch protection rules.
-3. Check for wildcard patterns like `*/*`, `**/*`, or similar that would match `trunk-temp/*` or `trunk-merge/*`.
+3. Check for wildcard patterns like `*/*`, `**/*`, or similar that would match `trunk-temp/**/*` or `trunk-merge/**/*`.
 4. If you find matching rules, either:
    * Remove the wildcard rules and create more specific rules for your actual branches, or
    * Add the `trunk-io` bot to the bypass list for those rules.
 
-**Example of a problematic rule:** a branch protection rule with pattern `*/*` would protect all branches including `trunk-temp/*` and `trunk-merge/*`.
+**Example of a problematic rule:** a branch protection rule with pattern `*/*` would protect all branches including `trunk-temp/**/*` and `trunk-merge/**/*`.
 
 **What happens if these branches are protected:** Merge Queue encounters GitHub permission errors and displays messages like "Permission denied on trunk-merge/\* branch."
 
