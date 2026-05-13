@@ -114,7 +114,7 @@ This ruleset encodes the rules that determine when a PR is ready to merge. Trunk
 2. Target the same protected branch (e.g., `main`) with the same single-include targeting.
 3. Under **Rules → Branch rules**, add the rules that gate mergeability — typically **Require a pull request before merging** and **Require status checks to pass**. Add others (signed commits, linear history, etc.) as your team requires.
 4. **Do not** add the Trunk GitHub App (`trunk-io`) to the bypass list. The queue relies on GitHub reporting the PR as not-yet-ready until these rules pass.
-5. Optionally, add **Trunk Sudo** to the bypass list as **Exempt** if you use [Force merge](../using-the-queue/force-merge.md) or stacked PRs. See the [Trunk Sudo page](../../setup-and-administration/trunk-sudo-app.md) for the full guidance.
+5. Optionally, add **Trunk Sudo** to the bypass list as **Exempt** if you use [Force merge](../using-the-queue/force-merge.md). See the [Trunk Sudo page](../../setup-and-administration/trunk-sudo-app.md) for the full guidance.
 6. Save.
 
 <figure><img src="../../.gitbook/assets/merge-github-ruleset-prs.png" alt="GitHub ruleset with Require a pull request before merging and Require status checks to pass enabled, Trunk.io not on the bypass list"><figcaption>Ruleset #2: Trunk is <em>not</em> on the bypass list, so the queue respects these requirements when admitting PRs.</figcaption></figure>
@@ -160,7 +160,7 @@ Before submitting your first PR to the queue, confirm:
 * [ ] Ruleset #2 targets only your protected branch and does **not** bypass Trunk.
 * [ ] Every other Branch ruleset visible at the organization level and on this repository either does not match `trunk-temp/**/*`/`trunk-merge/**/*`, or explicitly excludes both patterns.
 * [ ] (If using [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md)) Trunk Sudo is on Ruleset #1's bypass list as **Exempt**.
-* [ ] (If using [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md) **and** Force merge or stacked PRs) Trunk Sudo is also on Ruleset #2's bypass list as **Exempt**.
+* [ ] (If using [Trunk Sudo](../../setup-and-administration/trunk-sudo-app.md) **and** Force merge) Trunk Sudo is also on Ruleset #2's bypass list as **Exempt**.
 
 #### Migrating from Classic rules to Rulesets <a href="#migrating-from-classic-rules-to-rulesets" id="migrating-from-classic-rules-to-rulesets"></a>
 

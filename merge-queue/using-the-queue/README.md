@@ -11,9 +11,6 @@ These pages cover the daily operations that developers perform when working with
 [**Submit and cancel pull requests**](reference.md)\
 How to add PRs to the queue via GitHub comments, CLI, or UI, and remove them when needed.
 
-[**Work with stacked pull requests**](stacked-pull-requests.md)\
-Manage dependent PRs that build on each other.
-
 ### Monitor and troubleshoot
 
 [**Monitor queue status**](monitor-queue-status.md)\
