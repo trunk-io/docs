@@ -63,8 +63,8 @@ Trunk also supports SSO login. If you wish to use SSO, please contact us at supp
 
 You can remove yourself from an organization at any time by navigating to **Settings** > **Organization** > **General** and clicking **Leave Organization**.
 
-A confirmation dialog will ask you to confirm. Once you leave, you lose access to the organization's settings, repositories, and test data. Another member can invite you back if needed.
+A confirmation dialog will appear. Once you leave, you lose access to the organization's settings, repositories, and test data. Another member can invite you back if needed.
 
-**If you are an admin**, the **Leave Organization** button appears in the **Danger Zone** section at the bottom of the General settings page alongside the Delete Organization option.
+**If you are an admin**, the **Leave Organization** button appears in the **Danger Zone** section at the bottom of the General settings page alongside the **Delete Organization** option.
 
-**If you are not an admin**, the Leave Organization option appears as a standalone card outside the Danger Zone section.
+**If you are not an admin**, the **Leave Organization** option appears as a standalone card outside the Danger Zone section.
