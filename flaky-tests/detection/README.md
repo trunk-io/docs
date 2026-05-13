@@ -10,7 +10,7 @@ Flake Detection automatically identifies problematic tests in your test suite by
 
 Each monitor independently observes your test runs and tracks two states per test: **active** (problematic behavior detected) or **inactive** (no problematic behavior). When a monitor transitions to active, it executes its configured action; when it resolves, it undoes that action (restoring health status, or removing the labels it applied).
 
-For monitors whose action is **Classify test status**, the test's overall status is determined by combining all such monitors, with the most severe status winning:
+For monitors whose action is **Classify test status** (referred to below as _classifying monitors_), the test's overall status is determined by combining all such monitors, with the most severe status winning:
 
 | Priority | Status | Condition |
 |----------|--------|-----------|

@@ -41,7 +41,7 @@ When you create or edit one of these monitors, the **Action** section asks what 
 * **Classify test status** (the default) — marks the test as flaky or broken while the monitor is active, and restores the test to healthy when the monitor resolves. This is the original behavior.
 * **Apply labels** — adds the configured labels to the test while the monitor is active. The test's health status is not changed by this monitor.
 
-A monitor uses one action or the other, not both. Switching an active monitor to **Apply labels** stops it from contributing to the test's health status.
+A monitor uses one action or the other, not both.
 
 #### Configure the label action
 

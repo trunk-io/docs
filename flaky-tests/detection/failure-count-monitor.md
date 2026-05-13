@@ -20,7 +20,7 @@ If you need to detect patterns of intermittent failure over time (e.g., a test t
 
 ## Detection Type
 
-Each failure count monitor has a **detection type** -- either **flaky** or **broken** -- which controls what status a test receives when the monitor flags it. The detection type applies when the monitor's [action](#action) is **Classify test status** (the default). If you switch the action to **Apply labels** instead, the detection type is unused.
+Each failure count monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it. The detection type applies when the monitor's [action](#action) is **Classify test status** (the default). If you switch the action to **Apply labels** instead, the detection type is unused.
 
 - **Flaky monitors** are appropriate when failures on the monitored branch are likely non-deterministic. A test that fails once on `main` but passes on retry is probably flaky.
 - **Broken monitors** are appropriate when failures indicate a real regression. If a test fails on `main` and you expect it to keep failing until someone fixes it, broken is the right classification.
@@ -102,18 +102,6 @@ Once the monitor configuration produces detections, the panel shows a **Failing 
 
 You can search the list by test name or parent test name. The search is case-insensitive and filters as you type. If no tests match your search term, the list shows a "No tests match" message. When more than 100 tests are detected, only the first 100 are shown with a notice to narrow your search.
 
-## Action
-
-By default, an active failure count monitor classifies the test according to its [detection type](#detection-type) (flaky or broken) and restores it to healthy on resolution. You can switch the monitor's action to **Apply labels** instead — see [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
-
-## Muting
-
-You can temporarily mute a failure count monitor for a specific test case. See [Muting monitors](README.md#muting-monitors) for details.
-
-## Preview Panel
-
-When creating or editing a failure count monitor, a preview panel shows which tests the current configuration would flag based on recent data.
-
 ### Status Filter
 
 A **status filter dropdown** in the preview panel lets you filter the test list to any combination of statuses: **Healthy**, **Flaky**, and **Broken**. By default, all statuses are shown.
@@ -129,6 +117,14 @@ If no tests match the active filter, the empty state includes a hint to clear th
 ### Large Repo Truncation
 
 For repositories with a large number of matching tests, preview results may be truncated. When this happens, an amber warning appears in the panel. The truncation applies to the list of tests shown, not to the underlying detection logic — the monitor evaluates all matching tests when active.
+
+## Action
+
+By default, an active failure count monitor classifies the test according to its [detection type](#detection-type) (flaky or broken) and restores it to healthy on resolution. You can switch the monitor's action to **Apply labels** instead — see [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
+
+## Muting
+
+You can temporarily mute a failure count monitor for a specific test case. See [Muting monitors](README.md#muting-monitors) for details.
 
 ## Choosing Between Monitors
 
