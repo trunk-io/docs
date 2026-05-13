@@ -20,7 +20,7 @@ If you need to detect patterns of intermittent failure over time (e.g., a test t
 
 ## Detection Type
 
-Each failure count monitor has a **detection type** -- either **flaky** or **broken** -- which controls what status a test receives when the monitor flags it:
+Each failure count monitor has a **detection type** -- either **flaky** or **broken** -- which controls what status a test receives when the monitor flags it. The detection type applies when the monitor's [action](#action) is **Classify test status** (the default). If you switch the action to **Apply labels** instead, the detection type is unused.
 
 - **Flaky monitors** are appropriate when failures on the monitored branch are likely non-deterministic. A test that fails once on `main` but passes on retry is probably flaky.
 - **Broken monitors** are appropriate when failures indicate a real regression. If a test fails on `main` and you expect it to keep failing until someone fixes it, broken is the right classification.
@@ -101,6 +101,10 @@ When you create or edit a failure count monitor, a **Preview** panel appears on 
 Once the monitor configuration produces detections, the panel shows a **Failing tests** list. Each row displays the test name as a link to its detail page, along with its failure count. Counts that meet or exceed your configured failure count are highlighted in red; counts below appear in muted text.
 
 You can search the list by test name or parent test name. The search is case-insensitive and filters as you type. If no tests match your search term, the list shows a "No tests match" message. When more than 100 tests are detected, only the first 100 are shown with a notice to narrow your search.
+
+## Action
+
+By default, an active failure count monitor classifies the test according to its [detection type](#detection-type) (flaky or broken) and restores it to healthy on resolution. You can switch the monitor's action to **Apply labels** instead — see [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
 
 ## Muting
 

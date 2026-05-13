@@ -10,7 +10,7 @@ You can create multiple failure rate monitors with different configurations. Thi
 
 ## Detection Type
 
-Each failure rate monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it:
+Each failure rate monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it. The detection type applies when the monitor's [action](#action) is **Classify test status** (the default). If you switch the action to **Apply labels** instead, the detection type is unused.
 
 - **Flaky monitors** catch tests that fail intermittently (e.g., 20–50% failure rate). These are typically caused by timing issues, shared state, or non-deterministic behavior.
 - **Broken monitors** catch tests that fail consistently at a high rate (e.g., 80%+ failure rate). These usually indicate a real regression — something in the code or environment is genuinely broken and needs a fix.
@@ -191,6 +191,10 @@ A flagged test resolves in one of two ways:
 **Stale recovery:** If a stale timeout is configured and the test has no runs on matching branches within that period, it resolves as stale. This is an automatic cleanup mechanism, not an indication that the test has improved.
 
 Tests that are still running but haven't accumulated enough runs to meet the minimum sample size remain in their current state. They won't be resolved until there's enough data to make a determination.
+
+## Action
+
+By default, an active failure rate monitor classifies the test according to its [detection type](#detection-type) (flaky or broken) and restores it to healthy on resolution. You can switch the monitor's action to **Apply labels** instead — see [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
 
 ## Muting
 

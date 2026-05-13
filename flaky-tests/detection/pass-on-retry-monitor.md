@@ -10,9 +10,9 @@ By default, this monitor evaluates test runs on all branches. You can scope it t
 
 ## How It Works
 
-The monitor continuously scans your test runs looking for commits where a test has both a failure and a success. When it finds one, the test is flagged as flaky.
+The monitor continuously scans your test runs looking for commits where a test has both a failure and a success. When it finds one, the monitor activates on that test and runs its configured [action](#action): by default, the test is flagged as flaky.
 
-Once flagged, the test remains flaky until no pass-on-retry behavior has been observed for a configurable recovery period. This prevents tests from bouncing between flaky and healthy if they only fail intermittently.
+Once active, the monitor stays active on the test until no pass-on-retry behavior has been observed for a configurable recovery period. This prevents tests from bouncing between flaky and healthy if they only fail intermittently.
 
 ### Example
 
@@ -55,6 +55,10 @@ Branch scope uses the same glob syntax as [failure rate monitor branch patterns]
 - `*` (default): all branches
 
 Changes to branch scope take effect for newly detected events. Previously detected flaky tests are not re-evaluated.
+
+## Action
+
+By default, an active pass-on-retry monitor classifies the test as **flaky** and restores it to healthy on resolution. You can switch the monitor's action to **Apply labels** instead — see [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
 
 ## When Detection Happens
 

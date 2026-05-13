@@ -4,21 +4,23 @@ description: Learn how Trunk detects and labels flaky and broken tests
 
 # Flake Detection
 
-Flake Detection automatically identifies problematic tests in your test suite by monitoring test behavior over time. Instead of a single set of built-in detection rules, Trunk uses **monitors**, independent detectors that each watch for a specific pattern. When any monitor flags a test, it's marked as flaky or broken. When all monitors agree the test has recovered, it returns to healthy.
+Flake Detection automatically identifies problematic tests in your test suite by monitoring test behavior over time. Instead of a single set of built-in detection rules, Trunk uses **monitors**, independent detectors that each watch for a specific pattern. When a monitor activates on a test, it runs the **action** you configured on the monitor — either classifying the test as flaky or broken, or [applying labels](../management/test-labels.md#automatic-labeling-from-monitors) to it.
 
 ## How Monitors Work
 
-Each monitor independently observes your test runs and tracks two states per test: **active** (problematic behavior detected) or **inactive** (no problematic behavior). A test's overall status is determined by combining all of its monitors, with the most severe status winning:
+Each monitor independently observes your test runs and tracks two states per test: **active** (problematic behavior detected) or **inactive** (no problematic behavior). When a monitor transitions to active, it executes its configured action; when it resolves, it undoes that action (restoring health status, or removing the labels it applied).
+
+For monitors whose action is **Classify test status**, the test's overall status is determined by combining all such monitors, with the most severe status winning:
 
 | Priority | Status | Condition |
 |----------|--------|-----------|
 | Highest | **Broken** | Any enabled broken-type monitor (failure rate or failure count) is active for this test |
 | Middle | **Flaky** | Any enabled flaky-type monitor (failure rate, failure count, or pass-on-retry) is active |
-| Lowest | **Healthy** | No active monitors |
+| Lowest | **Healthy** | No active classifying monitor |
 
-If a test triggers both a broken monitor and a flaky monitor simultaneously, it shows as **Broken**. When the broken monitor resolves (e.g., you fix the regression and the failure rate drops), the test transitions to **Flaky** if a flaky monitor is still active, or to **Healthy** if no monitors remain active.
+If a test triggers both a broken monitor and a flaky monitor simultaneously, it shows as **Broken**. When the broken monitor resolves (e.g., you fix the regression and the failure rate drops), the test transitions to **Flaky** if a flaky monitor is still active, or to **Healthy** if no classifying monitors remain active.
 
-A test stays in its detected state until every relevant monitor that flagged it has independently resolved.
+A test stays in its detected state until every classifying monitor that flagged it has independently resolved. Monitors configured to apply labels do not contribute to this status calculation — they only add or remove labels.
 
 ### Disabling or Deleting a Monitor
 
@@ -28,11 +30,11 @@ For example, if you have a broken failure rate monitor and a flaky pass-on-retry
 
 ## Monitor Types
 
-| Monitor | What it detects | Detection type | Plan availability | Default state |
+| Monitor | What it detects | Available actions | Plan availability | Default state |
 |---|---|---|---|---|
-| [**Pass-on-Retry**](pass-on-retry-monitor.md) | A test fails then passes on the same commit (retry after failure) | Flaky | Team and above | Enabled |
-| [**Failure Rate**](failure-rate-monitor.md) | Failure rate exceeds a configured percentage over a time window | Flaky or Broken | Paid plans | Disabled |
-| [**Failure Count**](failure-count-monitor.md) | A test accumulates a configured number of failures in a rolling window | Flaky or Broken | Paid plans | Disabled |
+| [**Pass-on-Retry**](pass-on-retry-monitor.md) | A test fails then passes on the same commit (retry after failure) | Classify (flaky) or [apply labels](../management/test-labels.md#automatic-labeling-from-monitors) | Team and above | Enabled |
+| [**Failure Rate**](failure-rate-monitor.md) | Failure rate exceeds a configured percentage over a time window | Classify (flaky or broken) or [apply labels](../management/test-labels.md#automatic-labeling-from-monitors) | Paid plans | Disabled |
+| [**Failure Count**](failure-count-monitor.md) | A test accumulates a configured number of failures in a rolling window | Classify (flaky or broken) or [apply labels](../management/test-labels.md#automatic-labeling-from-monitors) | Paid plans | Disabled |
 
 You can run multiple monitors simultaneously. For example, you might use pass-on-retry to catch classic retry-based flakiness while also running failure rate monitors scoped to different branches. A common pattern is to pair a broken-type failure rate monitor (catching consistently failing tests) with a flaky-type failure rate monitor (catching intermittently failing tests). See [Failure Rate Monitor: Recommended Configurations](failure-rate-monitor.md#recommended-configurations) for details.
 
@@ -66,7 +68,7 @@ You can mute a monitor from the test case view in the Trunk app. When muting, yo
 | 7 days |
 | 30 days |
 
-While muted, the monitor is excluded from the test's status calculation. If the muted monitor was the only active monitor, the test transitions from flaky to healthy for the duration of the mute. When the mute expires, the monitor is automatically included in the next status evaluation. If it's still active, the test will be flagged as flaky again.
+While muted, the monitor is excluded from the test's status calculation. If the muted monitor was the only active classifying monitor, the test transitions from flaky to healthy for the duration of the mute. When the mute expires, the monitor is automatically included in the next status evaluation. If it's still active, the test will be flagged again.
 
 You can also unmute a monitor early from the test case view.
 
