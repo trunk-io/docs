@@ -105,9 +105,68 @@ The time in queue can be displayed as different statistical measures. You can sh
 | P95     | The value below 95% of the time in queue falls.     |
 | P99     | The value below 99% of the time in queue falls.     |
 
+### Testing duration
+
+Testing duration shows how long each PR spends in the Testing state within the Merge Queue — measured from when testing begins to when the testing cycle reaches its final outcome. Unlike the Conclusion count and Time in queue charts, testing duration uses separate data bucketing. Hovering over a data point does not highlight corresponding points on the other charts.
+
+This is distinct from [Time in queue](#time-in-queue), which measures total time from queue entry to exit. A PR that waits before testing starts will have a longer time in queue but the same testing duration. Use this chart to understand CI performance specifically, separate from queue wait time.
+
+{% hint style="info" %}
+Each data point represents one testing-to-final-state transition. A single PR can contribute multiple data points if its testing cycle restarted.
+{% endhint %}
+
+#### Filters
+
+Two dropdowns let you narrow the data shown in the chart.
+
+**Outcome** filters by how each testing cycle ended:
+
+| Value | Meaning |
+| ----- | ------- |
+| All Outcomes | Include all testing cycles (default) |
+| Passed | Cycles where tests passed |
+| Failed | Cycles where tests failed |
+| Interrupted | Test runs cut short by a restart, preempt, or base-branch change |
+| Cancelled | Cycles cancelled mid-test |
+
+**Cycle ended in** filters by how the PR's overall merge cycle resolved:
+
+| Value | Meaning |
+| ----- | ------- |
+| All | Include all PR cycles (default) |
+| Merged | PR was ultimately merged |
+| Failed | PR ultimately failed out of the queue |
+| Cancelled | PR was cancelled |
+| In Flight | PR cycle is still in progress |
+
+Combine the two filters to isolate specific patterns. For example, set **Outcome** to Passed and **Cycle ended in** to Merged to see testing durations for PRs that ultimately merged — giving you a clean baseline for CI speed without noise from cancelled or failed runs.
+
+#### Statistical measures
+
+| Measure | Explanation |
+| ------- | ----------- |
+| Average | Average testing duration during the time bucket |
+| Minimum | The shortest testing duration in the time bucket |
+| Maximum | The longest testing duration in the time bucket |
+| Sum | The total of all testing durations added together |
+| P50 | The value below which 50% of testing durations fall |
+| P95 | The value below which 95% of testing durations fall |
+| P99 | The value below which 99% of testing durations fall |
+
+#### Drill down into individual test runs
+
+Click and drag on the Testing duration chart to select a time range, then click **View PRs** to see the individual PRs that contributed data points in that window. The drill-down list shows:
+
+* **PR number** — links directly to the pull request on GitHub.
+* **Testing duration** — how long that PR's testing cycle took.
+* **Outcome** — whether tests passed, failed, interrupted, or were cancelled.
+* **Cycle conclusion** — the PR's overall outcome (Merged, Failed, Cancelled, or In Flight).
+
+The list is sortable by any column. Use it to identify outlier PRs that dragged P95 or P99 up, or to audit testing times across a specific time window.
+
 ### Drill down into metrics
 
-From the **Conclusion count** and **Time in queue** charts, you can drill into any point or window on the graph to see the exact pull requests that made up those numbers.
+From the **Conclusion count**, **Time in queue**, and **Testing duration** charts, you can drill into any point or window on the graph to see the exact pull requests that made up those numbers.
 
 #### Why Drill Down?
 
@@ -144,10 +203,6 @@ Both columns are sortable, so you can quickly surface the longest-running PRs in
 <figure><img src="../../.gitbook/assets/pr-drill-down-list.png" alt="PRs in Range table listing individual PRs with Conclusion (Merged or Failed), Reason, and Time in Queue columns, sorted by Time in Queue descending"><figcaption><p>The drill-down PR list, sortable by conclusion and time in queue.</p></figcaption></figure>
 
 The PR list page shows the selected date range as a subtitle and a **Back to Health** link to return to the charts. If the selection contains more than 2,500 PRs, the list shows the first 2,500 with a notice indicating the total. Narrow the time bucket on the chart to drill into a smaller window.
-
-{% hint style="info" %}
-Drill down and range selection are currently available on the Conclusion count and Time in queue charts. Additional Health charts will support the same interactions as they land in the UI.
-{% endhint %}
 
 ***
 
