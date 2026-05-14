@@ -20,6 +20,8 @@ trunk login
 trunk merge <pr-number>
 ```
 
+* Applying the configured enqueueing label to a pull request (when label commands are enabled — see [Label Commands](#label-commands) below).
+
 Admins can also use [`/trunk merge --force`](force-merge.md) to push a PR through the queue when branch protection isn't satisfied.
 
 We offer similar commands for cancellation.
@@ -35,6 +37,31 @@ We offer similar commands for cancellation.
 trunk login
 trunk merge cancel <pr-number>
 ```
+
+* Removing the configured enqueueing label from a pull request (when label commands are enabled).
+
+## Label Commands
+
+Label Commands let you enqueue and cancel PRs in the Merge Queue by applying or removing a GitHub label, without leaving a comment or using the CLI.
+
+### Enabling Label Commands
+
+Label Commands are configured per merge queue instance in **Merge Queue Settings** > **Label Commands**. Only organization admins can change this setting.
+
+When Label Commands are enabled, you can configure the enqueueing label name. The default label is `trunk-merge-queue-submit`.
+
+### How it works
+
+| Action | Effect |
+| ------ | ------ |
+| Apply the enqueueing label to a PR | Submits the PR to the Merge Queue |
+| Remove the enqueueing label from a PR | Cancels the PR from the queue |
+
+The label must already exist in your GitHub repository. Trunk does not create the label automatically.
+
+{% hint style="info" %}
+Label Commands work alongside comment commands and the Trunk web app. You can use any combination of submission methods; they all target the same queue.
+{% endhint %}
 
 ## Custom merge commit titles
 
