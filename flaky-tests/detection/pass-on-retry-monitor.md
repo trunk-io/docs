@@ -10,9 +10,9 @@ By default, this monitor evaluates test runs on all branches. You can scope it t
 
 ## How It Works
 
-The monitor continuously scans your test runs looking for commits where a test has both a failure and a success. When it finds one, the test is flagged as flaky.
+The monitor continuously scans your test runs looking for commits where a test has both a failure and a success. When it finds one, the monitor activates on that test and runs its configured [action](#action): by default, the test is flagged as flaky.
 
-Once flagged, the test remains flaky until no pass-on-retry behavior has been observed for a configurable recovery period. This prevents tests from bouncing between flaky and healthy if they only fail intermittently.
+Once active, the monitor stays active on the test until no pass-on-retry behavior has been observed for a configurable recovery period. This prevents tests from bouncing between flaky and healthy if they only fail intermittently.
 
 ### Example
 
@@ -37,6 +37,7 @@ default 7-day recovery period visible. -->
 | **Enabled** | Whether the monitor is active | On |
 | **Recovery days** | Days without pass-on-retry behavior before a test is resolved as healthy. Range: 1 to 15 days. | 7 |
 | **Branch scope** | Which branches the monitor evaluates. Accepts branch names and glob patterns. | All branches (`*`) |
+| **Action** | What happens when the monitor activates. Either classify the test as flaky or apply labels. | Classify as flaky |
 
 ### What Recovery Days Controls
 
@@ -55,6 +56,13 @@ Branch scope uses the same glob syntax as [failure rate monitor branch patterns]
 - `*` (default): all branches
 
 Changes to branch scope take effect for newly detected events. Previously detected flaky tests are not re-evaluated.
+
+### Action
+
+You pick the action at creation and can switch it at any time.
+
+* **Classify test status** (default) — flags the test as **flaky** while the monitor is active and restores it to healthy when the monitor resolves. Pass-on-retry only classifies as flaky; there is no broken option.
+* **Apply labels** — adds the configured labels to the test while the monitor is active. The test's health status is not changed by this monitor. See [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors).
 
 ## When Detection Happens
 
