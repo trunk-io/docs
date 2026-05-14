@@ -42,6 +42,19 @@ The [failure count monitor](failure-count-monitor.md) complements failure rate m
 
 If you need to manually flag a test that automated monitors haven't caught, use [Flag as Flaky](flag-as-flaky.md) from the test detail page.
 
+## Dry-Running with Labels
+
+You can preview how a new classifying monitor would behave by deploying it as a labeling monitor first. Because **Apply labels** attaches labels without changing health status, you can let the monitor run on live test data, see which tests it activates on, refine the settings, and only flip it to **Classify test status** once you trust the configuration.
+
+The flow is typically:
+
+1. Create the monitor with **Apply labels** and a dedicated label (e.g., `would-be-flaky`).
+2. Let the monitor run for a few cycles and observe which tests pick up the label.
+3. Refine the settings until the labeled set matches what you want classified.
+4. Switch the monitor's action to **Classify test status**.
+
+The Preview Panel on each monitor config form shows a static snapshot at configuration time, but a label dry-run validates the monitor against live runs without committing to a status change.
+
 ## Branch-Aware Detection
 
 Tests often behave differently depending on where they run. Failures on `main` are usually unexpected and signal flakiness. Failures on PR branches may be expected during active development. Merge queue failures are suspicious because the code has already passed PR checks.

@@ -32,7 +32,7 @@ On the tests list, you can filter the table down to test cases that have a parti
 
 ### Automatic labeling from monitors
 
-The [pass-on-retry](../detection/pass-on-retry-monitor.md), [failure rate](../detection/failure-rate-monitor.md), and [failure count](../detection/failure-count-monitor.md) monitors can be configured to apply one or more labels to a test instead of classifying it as flaky or broken. Use this when you want a monitor to surface a pattern (for example, _fails on retry on PR branches_) for triage or filtering without changing the test's health status.
+The [pass-on-retry](../detection/pass-on-retry-monitor.md), [failure rate](../detection/failure-rate-monitor.md), and [failure count](../detection/failure-count-monitor.md) monitors can be configured to apply one or more labels to a test instead of classifying it as flaky or broken. Use this when you want a monitor to surface a pattern (for example, _fails on retry on PR branches_) for triage or filtering without changing the test's health status. The same setup also works as a [dry-run](../detection/README.md#dry-running-with-labels) while you tune a new monitor before flipping it to classify.
 
 #### Choose the monitor's action
 
