@@ -6,22 +6,11 @@ description: Detect flaky or broken tests based on failure rate over a configura
 
 The failure rate monitor detects tests based on failure rate over a rolling time window. Unlike pass-on-retry, which looks for a specific pattern on a single commit, the failure rate monitor identifies tests that fail too often over a period of time, even if no individual failure looks like a retry.
 
-You can create multiple failure rate monitors with different configurations. This is how you tailor detection to different branches, test volumes, sensitivity levels, and detection types.
-
-## Detection Type
-
-Each failure rate monitor has a **detection type** — either **flaky** or **broken** — which controls what status a test receives when the monitor flags it:
-
-- **Flaky monitors** catch tests that fail intermittently (e.g., 20–50% failure rate). These are typically caused by timing issues, shared state, or non-deterministic behavior.
-- **Broken monitors** catch tests that fail consistently at a high rate (e.g., 80%+ failure rate). These usually indicate a real regression — something in the code or environment is genuinely broken and needs a fix.
-
-The detection type is set at creation and cannot be changed afterward. If you need to switch a monitor's type, create a new monitor with the desired type and disable the old one.
-
-This distinction matters because the two problems call for different responses. Flaky tests might be quarantined while you investigate the root cause. Broken tests represent real failures that should be fixed, not hidden.
+You can create multiple failure rate monitors with different configurations. This is how you tailor detection to different branches, test volumes, and sensitivity levels.
 
 ## How It Works
 
-The monitor periodically calculates the failure rate for each test within a time window you define. If the rate meets or exceeds your activation threshold and the test has enough runs to be statistically meaningful, the test is flagged as flaky or broken depending on the monitor's detection type.
+The monitor periodically calculates the failure rate for each test within a time window you define. If the rate meets or exceeds your activation threshold and the test has enough runs to be statistically meaningful, the monitor activates on the test and runs its configured [action](#action) — by default, flagging the test as flaky or broken.
 
 ### Example
 
@@ -52,10 +41,6 @@ activation threshold, resolution threshold, window duration, minimum sample size
 stale timeout, and branch scope. Capture it with realistic example values filled
 in (e.g., "Broken on main", Broken detection type, 80% activation, 60% resolution,
 6 hour window, 50 min sample, main branch). -->
-
-### Detection Type
-
-Choose **Flaky** or **Broken**. This determines the status a test receives when the monitor flags it. See [Detection Type](#detection-type) above for guidance on which to use.
 
 ### Activation Threshold
 
@@ -163,6 +148,21 @@ Show the branch pattern input with a few patterns entered (e.g.,
 `main` and `release/*`), ideally showing the tag/chip-style UI for
 each pattern. -->
 
+### Action
+
+What happens when the monitor activates on a test. You pick the action at creation and can switch it at any time.
+
+#### Classify test status (default)
+
+The test's status is set according to the monitor's **detection type**, and restored to healthy when the monitor resolves. The detection type is either:
+
+* **Flaky** — for tests that fail intermittently (e.g., 20–50% failure rate). These are typically caused by timing issues, shared state, or non-deterministic behavior. Flaky tests are often quarantined while you investigate the root cause.
+* **Broken** — for tests that fail consistently at a high rate (e.g., 80%+ failure rate). These usually indicate a real regression — something in the code or environment is genuinely broken and needs a fix. Broken tests represent real failures that should be fixed, not hidden.
+
+#### Apply labels
+
+The configured labels are added to the test while the monitor is active. The test's health status is not changed by this monitor. See [Automatic labeling from monitors](../management/test-labels.md#automatic-labeling-from-monitors) for how to configure and what to expect.
+
 ## Preview Panel
 
 When creating or editing a failure rate monitor, a preview panel shows which tests the current configuration would flag based on recent data. The panel is split into two sections: **Current** and **Proposed**.
@@ -181,16 +181,6 @@ Filtering to **Healthy** shows tests that are currently healthy but would be fla
 When a filter is active, the info tooltip shows "X of Y tests" to indicate how many tests are visible relative to the total matching the configuration. If no tests match the active filter, the empty state includes a hint to clear the filter.
 
 The status filter applies to the **Proposed** section. The not-in-window count in the Current section reflects the full unfiltered result set and is not affected by the filter.
-
-## Resolution Behavior
-
-A flagged test resolves in one of two ways:
-
-**Healthy recovery:** The test's failure rate drops below the resolution threshold (or activation threshold, if no resolution threshold is set) and it still has enough runs to meet the minimum sample size. This means the test is actively running and has improved.
-
-**Stale recovery:** If a stale timeout is configured and the test has no runs on matching branches within that period, it resolves as stale. This is an automatic cleanup mechanism, not an indication that the test has improved.
-
-Tests that are still running but haven't accumulated enough runs to meet the minimum sample size remain in their current state. They won't be resolved until there's enough data to make a determination.
 
 ## Muting
 
