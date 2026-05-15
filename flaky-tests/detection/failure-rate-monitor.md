@@ -150,7 +150,7 @@ each pattern. -->
 
 ### Action
 
-What happens when the monitor activates on a test. You pick the action at creation and can switch it at any time.
+What happens when the monitor activates on a test. You pick the action at creation and can change both the action type and the detection type (Flaky or Broken) at any time. If the monitor is active on any tests when you switch the detection type, those tests are re-evaluated immediately with the new classification.
 
 #### Classify test status (default)
 
