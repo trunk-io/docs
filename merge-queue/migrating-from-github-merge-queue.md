@@ -1,86 +1,94 @@
 ---
 description: >-
-  Switch from GitHub's native merge queue to Trunk Merge Queue with minimal
-  disruption to your workflow.
+  Move a repository from GitHub Merge Queue to Trunk Merge Queue with a brief
+  dual-mode validation followed by a full switch.
 ---
 
 # Migrate from GitHub Merge Queue
 
-For teams switching from [GitHub Merge Queues](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue) to Trunk Merge Queue, the process is straight forward.
+For teams switching from [GitHub Merge Queues](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue) to Trunk Merge Queue, the recommended path is a short dual-mode validation followed by a full switch to Trunk.
 
 {% hint style="success" %}
-Looking for a more detailed comparison between Trunk and GitHub's Merge Queues?  [Learn more](https://trunk.io/trunk-vs-github-merge-queue)
+Looking for a more detailed comparison between Trunk and GitHub's Merge Queues? [Learn more](https://trunk.io/trunk-vs-github-merge-queue)
+{% endhint %}
+
+{% hint style="warning" %}
+Running both queues for an extended period is not recommended. Use dual mode only to verify Trunk's settings against a few real PRs, then disable GitHub Merge Queue and run on Trunk only. See [Why complete the migration](#why-complete-the-migration) for the reasoning.
 {% endhint %}
 
 ***
 
-### Turn off GitHub Merge Queue
+### Migration steps
 
-To start, you will need to disable the existing merge queue for the target repository. This can be done by navigating to the repository and opening **Settings > Branches >** branch rule **>** toggle **off Require merge queue.** Be sure to click **Save changes** to confirm the settings.
+The recommended sequence for admins moving a repository from GitHub Merge Queue to Trunk Merge Queue.
+
+#### 1. Enable Trunk Merge Queue alongside GitHub
+
+Follow [Getting Started](getting-started/) to install Trunk and configure your repository. Leave GitHub Merge Queue enabled for now.
+
+Before opting your team in, turn off Trunk's automatic PR comments so developers aren't confused by comments from a queue they don't yet know about.
+
+This setting is under **Merge Queue** tab **>** repository **> Settings >** toggle **off GitHub Comments.**
+
+#### 2. Verify settings in dual mode
+
+With both queues enabled, run a few real PRs through Trunk to confirm:
+
+* Branch protection rules trigger the required checks you expect.
+* Test orchestration policies match your repo's CI.
+* [Advanced settings](administration/advanced-settings.md) such as timeouts, batching, and optimistic merging behave correctly for your repo.
+
+Dual mode exists for this validation step only. The goal is to confirm Trunk's configuration before committing to the switch, not to run both queues indefinitely. See [What happens during dual mode](#what-happens-during-dual-mode) for behavior details.
+
+#### 3. Turn off GitHub Merge Queue
+
+Once you've validated Trunk's configuration, disable GitHub Merge Queue. In the GitHub repository, navigate to **Settings > Branches >** branch rule **>** toggle **off Require merge queue.** Click **Save changes** to confirm.
 
 {% hint style="info" %}
-Note that only users with admin permissions can manage merge queues for pull requests targeting selected branches of a repository. More information on [manage merge queues](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule#creating-a-branch-protection-rule) can be found in the GitHub documentation.
+Only users with GitHub admin permissions can manage merge queues for pull requests targeting selected branches of a repository. See GitHub's [managing merge queues](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule#creating-a-branch-protection-rule) documentation for details.
 {% endhint %}
 
-***
+#### 4. Re-enable Trunk's GitHub comments and announce
 
-### Enable Trunk Merge Queue
+Turn Trunk's automatic PR comments back on under the **Merge Queue** tab **>** repository **> Settings >** toggle **on GitHub Comments.**
 
-Follow the [Getting Started](getting-started/) to setup your repo with Trunk Merge Queue and configure the [settings](administration/advanced-settings.md) for your repository.
-
-***
-
-### Running both merge queues simultaneously
-
-Many teams prefer a gradual migration approach where Trunk Merge Queue runs alongside GitHub Merge Queue before fully switching over. This is a common path for teams migrating from GitHub's merge queue to Trunk and works well for several reasons:
-
-#### No Disruption to Existing Workflows
-
-Enabling Trunk Merge Queue does not stop or prevent your current merging flow. GitHub's merge queue will continue to function normally and merge PRs as it always has. Your team can continue using their familiar workflow while you evaluate Trunk Merge Queue.
-
-#### Disable Comments During Evaluation
-
-To prevent confusion for developers who aren't yet aware of the migration, you can disable the comments Trunk leaves on PRs. This way, developers won't see unfamiliar comments about Trunk Merge Queue while you're still evaluating.
-
-This setting is found under **Merge Queue** tab **>** repository **> Settings >** toggle **off GitHub Comments.**
-
-#### Trunk Handles External Merges Gracefully
-
-Trunk Merge Queue understands when a PR is merged outside of its queue (for example, through GitHub's merge queue):
-
-- **If the PR is also in Trunk's queue**: Trunk will automatically mark it as merged on its side.
-- **If the PR is not in Trunk's queue**: Trunk will restart any PRs currently in its queue so they can test on top of the new commit.
-
-This ensures that Trunk always tests against the latest state of your target branch, regardless of how PRs are merged.
+Share the change with your team. See [Dev-facing announcement copy](#dev-facing-announcement-copy) for a template you can paste into Slack or email, and [Using the Queue](using-the-queue/) for the full developer workflow.
 
 ***
 
-### Pre-migration
+### What happens during dual mode
 
-Before migrating fully, it may be useful to evaluate the workflows quietly and confirm settings before converting your repository to an entirely new workflow.
+While both queues are enabled, Trunk Merge Queue detects when a PR is merged outside of its queue (for example, by GitHub's merge queue or a direct push to the target branch):
 
-Here are some useful steps to get you familiar with the Trunk Merge Queue workflow without disrupting engineers.
+* **If the PR is also in Trunk's queue**: Trunk automatically marks it as merged on its side.
+* **If the PR is not in Trunk's queue**: Trunk restarts any PRs currently in its queue so they can test on top of the new commit.
 
-#### Enable Trunk Merge for testing but with the automatic comments disabled
+This ensures that Trunk always tests against the latest state of your target branch and never merges a PR that would conflict with a commit that landed externally.
 
-While evaluating and testing Trunk Merge Queue for your team, we suggest disabling automatic comments on PRs. This can be done by toggling off GitHub Comments in the Trunk web app.
+#### Why complete the migration
 
-This setting is found under **Merge Queue** tab **>** repository **> Settings >** toggle **off GitHub Comments.**
-
-#### Make the switch
-
-Once you have [configured settings](administration/advanced-settings.md) and tested out the workflow quietly, turn off other merge tools (like [GitHub merge queue](migrating-from-github-merge-queue.md#turn-off-github-merge-queue)), re-enable GitHub comments in the Trunk web app under the **Merge Queue** tab **>** repository **> Settings >** toggle **on GitHub Comments**
+The handling above is correct, but every restart cancels in-flight test runs and re-tests against the new target branch head. With both queues active and busy, in-flight PRs from both sides will preempt each other, and your team will see slower merge times overall. That is why dual mode is a verification step, not a long-term mode.
 
 {% hint style="info" %}
-It is important that a repository is configured to use ONLY Trunk Merge Queue and no other merge queue tools for best results.
+A repository should be configured to use ONLY Trunk Merge Queue. Running both queues long-term degrades the merge experience for the whole team.
 {% endhint %}
 
-#### Share the news
+***
 
-Now that you have migrated to Trunk Merge Queue, be sure to share the workflow with your team, [using-the-queue](using-the-queue/ "mention")as a great place to start.
+### Dev-facing announcement copy
+
+Once you've cut over, share the change with your team. Below is a template admins can adapt for Slack or email.
+
+> **Heads up: we're moving to Trunk Merge Queue.**
+>
+> Starting \[date], pull requests on `[repo]` will merge through Trunk Merge Queue instead of GitHub's. The day-to-day flow is the same: open a PR, get required checks green, then post `/trunk merge` on the PR instead of clicking GitHub's "Merge when ready" button.
+>
+> Trunk will leave a comment on each PR with its queue position and status. The full developer workflow is documented at \[link to Trunk's Using the Queue page].
+>
+> Questions? Reply in this thread or DM \[admin contact].
 
 ***
 
 ### Getting help
 
-If you or your team are running into issues be sure to join the [Trunk Slack community](https://slack.trunk.io/) for assistance.
+If you or your team are running into issues, join the [Trunk Slack community](https://slack.trunk.io/) for assistance.
