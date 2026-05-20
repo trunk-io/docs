@@ -1,3 +1,5 @@
+> **Deprecated — reference only.** This repo backed the GitBook-era docs.trunk.io. Active documentation now lives in [trunk-io/docs2](https://github.com/trunk-io/docs2) (Mintlify) and publishes from there. New PRs against this repo will not be merged.
+
 # Trunk.io documentation ([docs.trunk.io][docs])
 
 [![docs](https://img.shields.io/badge/-docs-darkgreen?logo=readthedocs&logoColor=ffffff)][docs]
@@ -37,7 +39,7 @@ Edit locally → git push → GitBook auto-syncs branch → Preview in GitBook e
 
 If you see any mistakes or any improvements that can be made, we'd love your contributions! Just fork the repo and open a PR with your changes. While you're browsing [docs.trunk.io][docs], you can get to the GitHub source for that page via the `...` menu → `Edit on GitHub`:
 
-![Screenshot 2023-11-29 at 11 37 32 AM](https://github.com/trunk-io/docs/assets/3904462/ce706890-84c3-44c7-9e5f-9bc85aaca99f)
+![Screenshot 2023-11-29 at 11 37 32 AM](https://github.com/trunk-io/docs/assets/3904462/ce706890-84c3-44c7-9e5f-9bc85aaca99f)
 
 ## Feedback, Advice, and Help
 
